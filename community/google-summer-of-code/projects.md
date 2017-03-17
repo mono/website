@@ -1,5 +1,5 @@
 ---
-title: Summer of Code Project Ideas
+title: Projects
 redirect_from:
   - /StudentProjects/
   - /GSoC/
@@ -21,6 +21,7 @@ Help developers build applications by improving the cross-platform MonoDevelop /
 
 * [MonoDevelop code complexity metrics](#monodevelop-code-complexity-metrics)
 * [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
+* [Code Contracts Support](#code-contracts-support)
 * [Improve Auto-Documentation System](#improve-auto-documentation-system)
 * [Visual Basic with Roslyn in MD](#visual-basic-with-roslyn-in-md)
 * [Overhaul MonoDevelop C/C++ addin](#overhaul-monodevelop-cc-addin)
@@ -37,6 +38,7 @@ Work on Mono's tools and compilers
 **[Mono Runtime](#mono-runtime)**<br/>
 Improve the core Mono runtime and JIT
 
+* [Sgen improvements](#sgen-improvements)
 * [Allocator for sgen blocks](#allocator-for-sgen-blocks)
 * [Improve our dynamic checking mode](#improve-our-dynamic-checking-mode)
 * [Improve sgen debugging](#improve-sgen-debugging)
@@ -100,7 +102,40 @@ This project would involve adding support to the MonoDevelop.UnitTesting AddIn t
 
 **Deliverables**: Add support to MonoDevelop to collect code coverage information when running tests, and display it visually in the text editor.
 
-**Mentors:** Iain Holmes
+**Mentors:** Iain Holmes, Kirill Osenkov
+
+### Code Contracts Support
+
+**Complexity:** Medium
+
+The goal of this project is to add Code COntracts support to Mono using the open-source [.NET Code Code Contracts support](https://github.com/Microsoft/CodeContracts).
+
+For more information, see: 
+
+* https://msdn.microsoft.com/en-us/library/dd264808%28v=vs.110%29.aspx
+* http://research.microsoft.com/en-us/projects/contracts/
+
+This is a technology that is made of four components:
+
+* APIs in mscorlib that are used to specify things like preconditions and post conditions
+* The use of these APIs in user code
+* Tools to modify binaries to insert/remove code contracts instrumentation
+* IDE support for the tools.
+
+We have already done the first step, and as we import more code from .NET, the second step will be done for us in the core libraries.
+
+This task focuses on two things:
+
+* Porting the tools to modify binaries to insert/remove code
+* IDE support for the tools
+
+The first step should be relatively simple.   The code is open source, and might require some minimal changes to run on Unix with Mono.
+
+The second step includes extending the MonoDevelop IDE to add the configuration options to use Code Contracts and call the code contract tools at the appropriate times. The UI looks like the attached screenshot, and under the hood it works using MSBuild targets.
+
+**Deliverables**: Code contracts tools working on Mono and integrated into MonoDevelop.
+
+**Mentors:** Aleksey Kliger
 
 ### Improve Auto-Documentation System
 
@@ -151,14 +186,21 @@ Optional:
 
 The [MonoDevelop C/C++ addin](https://github.com/mhutch/cbinding) was substantially updated as part of Summer of Code 2015. However, there are still many things that could be done to improve it!
 
-- improving the code completion and adding a test suite
-- adding refactoring support
-- improving the GDB debugger addin or switching to LLDB
-- making the addin usable on Windows with msvc, clang and/or mingw32 gcc.
+There's far more than could be done in a single Summer of Code, so feel free to pick and choose from the list of tasks when writing your proposal:
+
+- detect missing dependencies (libclang, CMake etc) and prompting the user to install them
+- improve the code completion and add a test suite
+- adding various refactorings
+- integrating the (Clang Source Analyzer)[https://clang-analyzer.llvm.org]
+- improving the GDB debugger integration
+- integrating the LLDB debugger
+- making the addin usable on Windows with msvc, clang and/or mingw32 gcc
+- improving the file and project templates
+- anything else you can think of!
 
 Your proposal can include any of that you find interesting and feel can be realistically be completed in addition to the core tasks.
 
-**Deliverables:** a set of improvements to the C/C++ addin of your choosing, to be specified in your proposal
+**Deliverables:** a set of improvements to the C/C++ addin, as specified in your proposal
 
 **Mentors:** Mikayla Hutchinson
 
@@ -184,7 +226,7 @@ Roslyn has [support for compiling expressions](https://github.com/dotnet/roslyn/
 
 **Deliverables**: Support for lambdas in the Immediate pad. 
 
-**Mentors:** David Karlas
+**Mentors:** David Karlas, Kirill Osenkov
 
 ### Reuse MonoDevelop Roslyn compilation to perform compile
 
@@ -196,7 +238,7 @@ This will require implementing the MSBuild ICscHostObject interface in the MonoD
 
 **Deliverables**: Fully implement ICscHostObject in the MonoDevelop build system, including tests.
 
-**Mentors:** David Karlas
+**Mentors:** David Karlas, Kirill Osenkov
 
 ### Debugging disassembled code could use C# decompiler to generate source
 
@@ -206,7 +248,7 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 
 **Deliverables:** Ability to see C# instead of IL when debugging methods without source code.
 
-**Mentors:** David Karlas
+**Mentors:** David Karlas, Kirill Osenkov
 
 ## Compilers and Tools
 
@@ -230,6 +272,25 @@ ccache (for reference): https://github.com/ccache/ccache
 
 ## Mono Runtime
 
+
+### Sgen improvements
+
+**Complexity:** Medium
+
+List of SGen projects to consider:
+
+- Store-replacing write barrier
+- Crash-safe process/heap dump & analysis tool
+- Improve our canaries (better handle nursery & AOT)
+- Improve heap checker to handle roots
+- Reduce the number of roots the runtime register (types and threads)
+
+Your proposal proposal may include one of these or a combination of several of them.
+
+**Deliverables**: the sgen improvements described in your proposal, passing all tests.
+
+
+**Mentors:** Jonathan Purdy, Vlad Brezae
 
 ### Allocator for sgen blocks
 
