@@ -34,6 +34,8 @@ We especially want to see:
 
 Remember that multiple people may apply for the same project, and we cannot accept multiple people for each project, even if they are amazing and we really want to work with all of them. However, you may apply multiple times for different projects, which gives us more flexibility when picking students and projects.
 
+The [student manual](http://write.flossmanuals.net/gsocstudentguide/writing-a-proposal/) is also an source of advice for writing a good proposal.
+
 Make sure you get your application in by the deadline, which is shown on the [Summer of Code website](https://summerofcode.withgoogle.com/). Don't leave it till the last minute!
 
 Ground Rules
