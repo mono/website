@@ -22,7 +22,7 @@ So you are enjoying your day developing with mono when all of a sudden you run i
 
 Panic. Confusion. Chaos. These are generally the common reactions to such an Exception.
 
-Fortunetly there is hope. This error means that mono was unable to locate a library that one of the classes you are trying to use needs. This guide is here to help.
+Fortunately there is hope. This error means that mono was unable to locate a library that one of the classes you are trying to use needs. This guide is here to help.
 
 Background Information & Possible Questions
 -------------------------------------------
@@ -65,7 +65,7 @@ A good first step is to set up the log level so you can see what file names mono
     (GdiExample.exe:18793): Mono-WARNING **: DllImport unable to load library 'libgdiplus.dll: cannot open shared object file: No such file or directory'.
     <snip>
 
-What we see here is that mono is making several attemps to locate the missing library, by prepending "lib", replacing the ".dll" extension with ".so", etc, but it was still unable to find the library.
+What we see here is that mono is making several attempts to locate the missing library, by prepending "lib", replacing the ".dll" extension with ".so", etc, but it was still unable to find the library.
 
 If a library location has not been explicitly specified in a [DllMap](/docs/advanced/pinvoke/dllmap/) entry in an application or assembly .config file, Mono will search for a library in a few places:
 
@@ -94,7 +94,7 @@ The dynamic linker should now know about all the libraries in this path. You can
 
 Yay! Your application should now run properly.
 
-NOTE: As mentioned above you can also set the \$LD_LIBRARY_PATH environment variable to the path containing the library, but this is not as recomended because it can cause other problems and is more difficult to maintain.
+NOTE: As mentioned above you can also set the \$LD_LIBRARY_PATH environment variable to the path containing the library, but this is not as recommended because it can cause other problems and is more difficult to maintain.
 
 ### Native dependencies and P/Invoke
 
