@@ -42,14 +42,19 @@ Work on Mono's tools and compilers
 Improve the core Mono runtime and JIT
 
 * [Sgen improvements](#sgen-improvements)
+* [Succinct data structure implementations to replace glib dependencies](#succinct-data-structure-implementations-to-replace-glib-dependencies)
 * [Allocator for sgen blocks](#allocator-for-sgen-blocks)
 * [Improve our dynamic checking mode](#improve-our-dynamic-checking-mode)
 * [Improve sgen debugging](#improve-sgen-debugging)
+* [Implement Reflection.Emit Save support using ikvm.reflect.](#implement-reflectionemit-save-support-using-ikvmreflect)
 * [Make sgen's binary protocol a general purpose runtime tool](#make-sgens-binary-protocol-a-general-purpose-runtime-tool)
 * [LLVM Sanitizers](#llvm-sanitizers)
 * [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
 * [JIT optimizations](#jit-optimizations)
 * [Extend the profiler](#extend-the-profiler)
+* [Lightweight pinvoke-debugging](#lightweight-pinvoke-debugging)
+* [RR integration](#rr-integration)
+* [Statistical analysis tool for flaky tests](#statistical-analysis-tool-for-flaky-tests)
 * [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
 
 **[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**
@@ -291,6 +296,28 @@ Your proposal proposal may include one of these or a combination of several of t
 
 **Mentors:** Jonathan Purdy, Vlad Brezae
 
+### Succinct data structure implementations to replace glib dependencies
+
+**Complexity:** Medium
+
+Bitmask-driven data structures allow for SIMD operations on the data structure's top-level structure schema. They're space-efficient, cache-efficient, and they're easy to debug after a crash because the bitmask and the data structure have a minimal number of pointers. 
+
+Offering succinct arrays (no nulls) and other data structures as drop-in replacements might be ways to significantly reduce memory footprint for some specific use cases.
+
+Benchmarking is necessary to find those use-cases.
+
+Deliverables:
+
+- Implement full replacement for GArray and ensure passes GLib GArray tests.
+
+- Benchmark high-allocation places and see if the succinct replacement helps
+
+- (Optional) Implement replacement for ghashtable which supports bare minimum of operations, using CTries
+
+- (Optional) Use CTries in high-contention environments or high-allocation environments and benchmark uses that have savings
+
+**Mentors:** Alexander Kyte
+
 ### Allocator for sgen blocks
 
 **Complexity:** Hard
@@ -338,6 +365,20 @@ We encounter problems with these debugging functions crashing on invalid heap st
 **Deliverables**: Make debug functions crash safe. Expand support for nursery canaries.
 
 **Mentors:** Vlad Brezae
+
+### Implement Reflection.Emit Save support using ikvm.reflect.
+
+**Complexity:** Medium
+
+Currently, the support for saving assemblies when using Reflection.Emit is implemented in the runtime using C code that directly fills mono runtime metadata. Since this code is rarely used nowadays, and it duplicates the well maintained IKVM.reflect, this task should reimplement this functionality by using IKVM.reflect to generate a byte blob which then can be passed to the runtime (e.g. as a method implementation) instead of directly populating internal runtime types.
+
+This would make the runtime smaller by removing error prone C code, etc.
+
+One approach is to implement System.Reflection.Emit.AssemblyBuilder.Save () by traversing the SRE objects and convert them into IKVM.Reflect objects and then use the IKVM.reflect AssemblyBuilder.Save to write the assembly to disk.
+
+Additionally, this is an opportunity to expand our System.Reflection.Emit test suite.
+
+**Mentors:** Aleksey Kliger
 
 ### Make sgen's binary protocol a general purpose runtime tool
 
@@ -426,6 +467,77 @@ Here are a few projects that students could tackle:
 **Deliverables**: Implement one the suggested projects, including tests.
 
 **Mentors:** Rodrigo Kumpera
+
+### Lightweight pinvoke-debugging
+
+**Complexity:** Medium
+
+Right now, a customer is free to pinvoke into a bad function and destroy data structures. Are there runtime debugging things we can do to prevent this from seeming like a mono bug to the customer? 
+
+If pinvoke were to use memmap to get a pointer that could not be written to, we could prevent unintended writes from unmanaged code from silently happening.
+
+Valgrind integration might be a non-invasive way to do this too. 
+
+Lastly, we could always just hash and re-verify our mempools before and after pinvokes. These ideas and others could be explored by a student with the right background.
+
+I would mentor this project. Worth noting, this would probably be a specific "debug mode". I can't imagine this being overhead-free.
+
+Deliverables:
+
+- Produce tests cases with common pinvoke usage errors that corrupts runtime/managed memory
+
+- Create a debug mode (a flag for MONO_DEBUG) that would detect one or more of the identified cases at runtime. Detection means aborting the runtime with enough context to help the user identify the faulty code.
+
+- Reporting of issues in user-friendly way
+
+**Mentors:** Alexander Kyte
+
+### RR integration
+
+**Complexity:** Medium
+
+RR is a debugger that allows for recording of execution in a way that can be replayed later in a debugger. The results of syscalls are fed back into the program to replicate the environment the program saw over time.
+
+The runtime can be debugged with RR on linux, but this is mostly useful for low-level debugging. 
+
+We have two options here: We can expose managed logging and heap/stack snapshotting to the debugger-agent and do this is a managed way. This allows us to work on ARM, linux, windows, ios, etc. The downside is that we don't get to replay state changes in unmanaged code.
+
+Alternatively, we can have the student create glue code for using rr to debug the entire runtime remotely, and add in the hooks to get the information on managed methods from the runtime. Someone can then record a crash on their machine as it is happening, and submit it with a bug report. 
+
+I believe that the latter idea would make bug reports an order of magnitude more useful. By removing the difficulty of reproducing crashes, we may save our own developers a lot of time. 
+
+Deliverables:
+
+- Get RR debugging of mono working interactively
+- Create automated RR client that records and replays mono
+- Create infrastructure to use RR client and create self contained "debug me" blob
+
+**Mentors:** Alexander Kyte, Rodrigo Kumpera
+
+### Statistical analysis tool for flaky tests
+
+**Complexity:** Medium
+
+Flaky tests are not like normal tests. They fail when execution races in such a way as to make assumptions fail. They usually do not indicate a bug in the runtime itself. 
+
+Flaky tests have distinctive behavior that is different from normal tests. Across all tests, they'll go from failing to green to failing with a regularity that is independent of the changes made to the commit. Flaky tests will also not fail together in the same way as code broken by a change that breaks a subsystem.
+
+It can and has become a statistical discipline. 
+https://www.youtube.com/watch?v=CrzpkF1-VsA
+
+We want both a tool which is general-purpose for C# projects and a flake analysis of the BCL as a C# project.
+
+A statistical analysis of flakes would allow us to avoid re-running every failure, would allow us to indicate that a failure to a flaky test is probably genuine, and would bring some suggestions and sanity to our build output.
+
+Deliverables:
+
+- Create tools (not running services!) that collect historical global test coverage changes across all master builders. Have them emit an XML summary. This can be slow, as long as it is tractable.
+
+- Study the statistical properties of flaky tests, and study the classes of flaky tests in the mono BCL that are linked to one another. Perhaps better understand the flakes that will flaky together or will only genuinely fail together. 
+
+- Create a nunit patch that can detect if the current test is in an XML file which lists the flaky tests, and how to behave for each flake
+
+**Mentors:** Andi Mcclure, Alexander Kyte
 
 ### Implement Clang static analyser checkers that would verify runtime invariants
 
