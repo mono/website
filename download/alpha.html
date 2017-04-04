@@ -28,15 +28,63 @@ redirect_from:
         </div>
       </div>
       <div class="panel content" id="download-lin">
-        <h3>Mono for Linux is available for various distributions</h3>
-        <p>Please refer to the <a href="/docs/getting-started/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
-        <h4>Xamarin packages</h4>
-        <div>
-          <p>These packages are built, tested and distributed by Xamarin. Use these if you want to use a stable, official and up-to-date version of Mono.</p>
-          <ul>
-            <li><a href="/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives-alpha-channel">Debian, Ubuntu, and derivatives</a></li>
-            <li><a href="/docs/getting-started/install/linux/#centos-fedora-and-derivatives-alpha-channel">CentOS, Fedora, and derivatives</a></li>
-          </ul>
+        <dl id="mono-download-linux" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
+          <dd class="active"><a href="#download-lin-debian"><i class="fa fa-debian"></i>&nbsp;Debian</a></dd>
+          <dd><a href="#download-lin-ubuntu"><i class="fa fa-ubuntu"></i>&nbsp;Ubuntu</a></dd>
+          <dd><a href="#download-lin-raspbian"><i class="fa fa-raspbian"></i>&nbsp;Raspbian</a></dd>
+          <dd><a href="#download-lin-centos"><i class="fa fa-centos"></i>&nbsp;CentOS</a></dd>
+        </dl>
+        <div class="tabs-content horizontal">
+          <div class="panel content active" id="download-lin-debian">
+            <h3>Mono is available as an Apt repository for Debian 8</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian alpha-jessie main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+            <h3>Mono is available as an Apt repository for Debian 7</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian alpha-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+          </div>
+          <div class="panel content active" id="download-lin-ubuntu">
+            <h3>Mono is available as an Apt repository for Ubuntu 16.04</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/ubuntu alpha-xenial main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+            <h3>Mono is available as an Apt repository for Ubuntu 14.04</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian alpha-trusty main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+            <h3>Mono is available as an Apt repository for Ubuntu 12.04</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian alpha-precise main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+          </div>
+          <div class="panel content active" id="download-lin-raspbian">
+            <h3>Mono is available as an Apt repository for Raspbian 8</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian alpha-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
+sudo apt-get update</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+          </div>
+          <div class="panel content active" id="download-lin-centos">
+            <h3>Mono is available as a Yum repository for CentOS 7</h3>
+            <p>Add the Mono repository to your system:</p>
+            <pre><code class="language-bash">yum install yum-utils
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos/</code></pre>
+            <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
+          </div>
         </div>
       </div>
       <div class="panel content" id="download-win">
