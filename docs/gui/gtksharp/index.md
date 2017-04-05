@@ -21,7 +21,8 @@ References
 -   [What's New?](/docs/gui/gtksharp/new-in-version-2x/)
 -   [Release Plans](/docs/gui/gtksharp/plan/)
 -   [Articles and Tutorials on Gtk#](/docs/gui/gtksharp/tutorials/)
--   [Component Descriptions](/docs/gui/gtksharp/details/#gtks-components)
+-   [Gtk# Widget Overview](/docs/gui/gtksharp/widgets/)
+-   [GTK# Component Descriptions](/docs/gui/gtksharp/details/#gtks-components)
 
 Features
 --------
