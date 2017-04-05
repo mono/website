@@ -4,6 +4,7 @@ redirect_from:
   - /MoMA/
   - /Moma/
   - /MoMa/
+  - /docs/tools+libraries/tools/moma/
 ---
 
 {% include note.html type='alert' message='MoMA is not updated with data for the latest Mono releases and there are no current plans to do so.' %}
