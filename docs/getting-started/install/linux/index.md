@@ -128,30 +128,6 @@ echo "deb http://download.mono-project.com/repo/debian 312-security main" | sudo
 echo "deb http://download.mono-project.com/repo/debian 40-security main" | sudo tee -a /etc/apt/sources.list.d/mono-xamarin-security.list
 ```
 
-Alpha update channel
---------------------
-
-If you want to test bleeding-edge updates to Mono, we now have an alpha update channel. Please report bugs promptly, so we have time to fix them before packages are migrated to stable!
-
-#### Debian, Ubuntu, and derivatives (alpha channel)
-
-``` bash
-echo "deb http://download.mono-project.com/repo/debian alpha main" | sudo tee /etc/apt/sources.list.d/mono-xamarin-alpha.list
-sudo apt-get update
-```
-
-#### CentOS, Fedora, and derivatives (alpha channel)
-
-``` bash
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos-alpha/
-```
-
-This repository URL is also valid for SUSE when added to YaST. This can be done using the [YaST GUI](https://en.opensuse.org/SDB:Add_package_repositories#YaST_software_repositories), or via [zypper](https://en.opensuse.org/SDB:Add_package_repositories#Zypper):
-
-``` bash
-zypper ar -f http://download.mono-project.com/repo/centos-alpha/ mono-project-alpha
-```
-
 Beta update channel
 --------------------
 
