@@ -19,7 +19,7 @@ redirect_from:
       <dd><a href="#download-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
     </dl>
 
-    <div class="tabs-content vertical">
+    <div class="tabs-content vertical" id="mono-download-panel">
       <div class="panel content active" id="download-mac">
         <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
@@ -49,7 +49,7 @@ echo "deb http://download.mono-project.com/repo/debian alpha-wheezy main" | sudo
 sudo apt-get update</code></pre>
             <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
           </div>
-          <div class="panel content active" id="download-lin-ubuntu">
+          <div class="panel content" id="download-lin-ubuntu">
             <h3>Repository for Ubuntu 16.04</h3>
             <p>Add the Mono repository to your system:</p>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -69,7 +69,7 @@ echo "deb http://download.mono-project.com/repo/debian alpha-precise main" | sud
 sudo apt-get update</code></pre>
             <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
           </div>
-          <div class="panel content active" id="download-lin-raspbian">
+          <div class="panel content" id="download-lin-raspbian">
             <h3>Repository for Raspbian 8</h3>
             <p>Add the Mono repository to your system:</p>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -77,7 +77,7 @@ echo "deb http://download.mono-project.com/repo/debian alpha-raspbianjessie main
 sudo apt-get update</code></pre>
             <p>Then update or install <strong><em>mono-devel</em></strong> to get started.</p>
           </div>
-          <div class="panel content active" id="download-lin-centos">
+          <div class="panel content" id="download-lin-centos">
             <h3>Repository for CentOS 7</h3>
             <p>Add the Mono repository to your system:</p>
             <pre><code class="language-bash">yum install yum-utils
@@ -104,10 +104,30 @@ yum-config-manager --add-repo http://download.mono-project.com/repo/centos/</cod
       </div>
     </div>
 
-    <h2>Release Notes</h2>
-    <p>Check out the release notes of all Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
-
-    <h2>MonoDevelop IDE</h2>
-    <p>Please visit the <a href="http://www.monodevelop.com/">MonoDevelop website</a> for more details about our cross-platform IDE.</p> 
   </div>
 </div>
+
+<script>
+function runScripts() {
+  $(document).ready(function() {
+    function activate(os,distro) {
+      $('#mono-download>dd.active').removeClass();
+      $('#mono-download>dd:has(a[href=#download-' + os + '])').addClass('active');
+      $('#mono-download-panel>div.panel.active').removeClass('active');
+      $('#mono-download-panel>#download-' + os).addClass('active');
+    }
+    if (window.location.hash) {
+      if (window.location.hash.search("download-lin-") >= 0) {
+        activate('lin');
+      }
+    }
+    else {
+      if (window.navigator.appVersion.search('Linux') >= 0 || window.navigator.platform.search('Linux') >= 0) {
+        activate('lin');
+      } else if (window.navigator.appVersion.search('Windows') >= 0 || window.navigator.platform.search('Windows') >= 0) {
+        activate('win');
+      }
+    }
+  });
+}
+</script>
