@@ -425,7 +425,7 @@ Each command requires at least one ObjectID (of type id) parameter mapping to a 
 
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
-|GET_VALUES|1|Ask for a list of position (int) information.|Returns a list of miscelleanous typed values. If the position information was negative, the value corresponds to a parameter and if it was positive to a local variable.|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION|
+|GET_VALUES|1|Returns a list of miscelleanous typed values. If the position information was negative, the value corresponds to a parameter and if it was positive to a local variable.|Ask for a list of position (int) information.|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION|
 |GET_THIS|2|Returns the *this* value prepended by a single byte value describing its type, or the special TYPE_ID_NULL (byte) value which is equal to 0xf0 in case there is no *this* parameter.|None|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION|
 |SET_VALUES|3|Returns an empty reply|Ask for a list of pair of position (int) information and variant whose value is going to be used.|INVALID_OBJECT, INVALID_FRAMEID, ABSENT_INFORMATION, INVALID_ARGUMENT|
 
@@ -462,7 +462,7 @@ Each command requires at least one ObjectID (of type id) parameter before any ad
 |Name|Value|Type of reply|Additional parameters|Possible error code returned|
 |:---|:----|:------------|:--------------------|:---------------------------|
 |GET_TYPE|1|Returns the TypeID as an id|None|INVALID_OBJECT|
-|GET_VALUES|2|Ask for a list of FieldID to fetch value of|Returns *length* values of miscellaneous type and size corresponding to the underlying type of each queried field|INVALID_OBJECT, UNLOADED, INVALID_FIELDID|
+|GET_VALUES|2|Returns *length* values of miscellaneous type and size corresponding to the underlying type of each queried field|Ask for a list of FieldID to fetch value of|INVALID_OBJECT, UNLOADED, INVALID_FIELDID|
 |IS_COLLECTED|3|Returns an int equals to 1 if the object has been collected by GC, 0 otherwise|None|None|
 |GET_ADDRESS|4|Returns a long value corresponding to the address where the object is stored in memory|None|INVALID_OBJECT|
 |GET_DOMAIN|5|Returns an id corresponding to the DomainID the object is located in|None|INVALID_OBJECT|

@@ -2,6 +2,7 @@
 title: Using MoMA Guide
 redirect_from:
   - /Using_MoMA_Guide/
+  - /docs/tools+libraries/tools/moma/using-moma-guide/
 ---
 
 Step 1
