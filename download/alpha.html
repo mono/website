@@ -35,19 +35,23 @@ redirect_from:
           <dd><a href="#download-lin-centos"><i class="fa fa-centos"></i>&nbsp;CentOS</a></dd>
         </dl>
         <div class="tabs-content horizontal">
-          <div class="panel content active" id="download-lin-debian" style="padding: 10px">
+          <div class="panel content active" id="download-lin-ubuntu" style="padding: 10px">
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
               Add the Mono repository to your system
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
-            <h3>Debian 8</h3>
+            <h3>Ubuntu 16.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian alpha-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/ubuntu alpha-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
-            <h3>Debian 7</h3>
+            <h3>Ubuntu 14.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian alpha-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/ubuntu alpha-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+sudo apt-get update</code></pre>
+            <h3>Ubuntu 12.04</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/ubuntu alpha-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
@@ -66,23 +70,19 @@ sudo apt-get update</code></pre>
             <h4>Notes</h4>
             <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
           </div>
-          <div class="panel content" id="download-lin-ubuntu" style="padding: 10px">
+          <div class="panel content" id="download-lin-debian" style="padding: 10px">
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
               Add the Mono repository to your system
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
-            <h3>Ubuntu 16.04</h3>
+            <h3>Debian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu alpha-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian alpha-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
-            <h3>Ubuntu 14.04</h3>
+            <h3>Debian 7</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu alpha-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
-sudo apt-get update</code></pre>
-            <h3>Ubuntu 12.04</h3>
-            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu alpha-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian alpha-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
