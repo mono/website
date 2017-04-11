@@ -2,7 +2,6 @@
 title: "GtkSharp: Widget Overview"
 ---
 
-
 Overview of the Widgets used in GTK#
 ------------------------------------
 
@@ -34,5 +33,3 @@ The following widgets do not have an associated window. If you want to capture e
     Gtk.Separator           Gtk.Table          Gtk.Toolbar
     Gtk.AspectFrame         Gtk.Frame          Gtk.VBox
     Gtk.HBox                Gtk.VSeparator     Gtk.HSeparator
-
-

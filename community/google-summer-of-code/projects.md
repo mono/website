@@ -119,8 +119,8 @@ The goal of this project is to add Code COntracts support to Mono using the open
 
 For more information, see:
 
-* https://msdn.microsoft.com/en-us/library/dd264808%28v=vs.110%29.aspx
-* http://research.microsoft.com/en-us/projects/contracts/
+* [https://msdn.microsoft.com/en-us/library/dd264808%28v=vs.110%29.aspx](https://msdn.microsoft.com/en-us/library/dd264808%28v=vs.110%29.aspx)
+* [http://research.microsoft.com/en-us/projects/contracts/](http://research.microsoft.com/en-us/projects/contracts/)
 
 This is a technology that is made of four components:
 
@@ -268,9 +268,9 @@ C-based languages (C/C++/Objective-C) have ccache to cache results of compilatio
 It would be nice to have something similar for C#/VB/F#.
 
 This can be used as a starting point to identify the set of inputs for C#/VB:
-https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md
+[https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md](https://github.com/dotnet/roslyn/blob/master/docs/compilers/Deterministic%20Inputs.md)
 
-ccache (for reference): https://github.com/ccache/ccache
+ccache (for reference): [https://github.com/ccache/ccache](https://github.com/ccache/ccache)
 
 **Deliverables**: a functional tool for C# that works on linux + mac, with a test suite, and is able to cache/lookup everything during a (re)build of the mono BCL.
 
@@ -300,7 +300,7 @@ Your proposal proposal may include one of these or a combination of several of t
 
 **Complexity:** Medium
 
-Bitmask-driven data structures allow for SIMD operations on the data structure's top-level structure schema. They're space-efficient, cache-efficient, and they're easy to debug after a crash because the bitmask and the data structure have a minimal number of pointers. 
+Bitmask-driven data structures allow for SIMD operations on the data structure's top-level structure schema. They're space-efficient, cache-efficient, and they're easy to debug after a crash because the bitmask and the data structure have a minimal number of pointers.
 
 Offering succinct arrays (no nulls) and other data structures as drop-in replacements might be ways to significantly reduce memory footprint for some specific use cases.
 
@@ -308,13 +308,13 @@ Benchmarking is necessary to find those use-cases.
 
 Deliverables:
 
-- Implement full replacement for GArray and ensure passes GLib GArray tests.
+* Implement full replacement for GArray and ensure passes GLib GArray tests.
 
-- Benchmark high-allocation places and see if the succinct replacement helps
+* Benchmark high-allocation places and see if the succinct replacement helps
 
-- (Optional) Implement replacement for ghashtable which supports bare minimum of operations, using CTries
+* (Optional) Implement replacement for ghashtable which supports bare minimum of operations, using CTries
 
-- (Optional) Use CTries in high-contention environments or high-allocation environments and benchmark uses that have savings
+* (Optional) Use CTries in high-contention environments or high-allocation environments and benchmark uses that have savings
 
 **Mentors:** Alexander Kyte
 
@@ -366,7 +366,7 @@ We encounter problems with these debugging functions crashing on invalid heap st
 
 **Mentors:** Vlad Brezae
 
-### Implement Reflection.Emit Save support using ikvm.reflect.
+### Implement Reflection.Emit Save support using ikvm.reflect
 
 **Complexity:** Medium
 
@@ -472,11 +472,11 @@ Here are a few projects that students could tackle:
 
 **Complexity:** Medium
 
-Right now, a customer is free to pinvoke into a bad function and destroy data structures. Are there runtime debugging things we can do to prevent this from seeming like a mono bug to the customer? 
+Right now, a customer is free to pinvoke into a bad function and destroy data structures. Are there runtime debugging things we can do to prevent this from seeming like a mono bug to the customer?
 
 If pinvoke were to use memmap to get a pointer that could not be written to, we could prevent unintended writes from unmanaged code from silently happening.
 
-Valgrind integration might be a non-invasive way to do this too. 
+Valgrind integration might be a non-invasive way to do this too.
 
 Lastly, we could always just hash and re-verify our mempools before and after pinvokes. These ideas and others could be explored by a student with the right background.
 
@@ -484,11 +484,11 @@ I would mentor this project. Worth noting, this would probably be a specific "de
 
 Deliverables:
 
-- Produce tests cases with common pinvoke usage errors that corrupts runtime/managed memory
+* Produce tests cases with common pinvoke usage errors that corrupts runtime/managed memory
 
-- Create a debug mode (a flag for MONO_DEBUG) that would detect one or more of the identified cases at runtime. Detection means aborting the runtime with enough context to help the user identify the faulty code.
+* Create a debug mode (a flag for MONO_DEBUG) that would detect one or more of the identified cases at runtime. Detection means aborting the runtime with enough context to help the user identify the faulty code.
 
-- Reporting of issues in user-friendly way
+* Reporting of issues in user-friendly way
 
 **Mentors:** Alexander Kyte
 
@@ -498,19 +498,19 @@ Deliverables:
 
 RR is a debugger that allows for recording of execution in a way that can be replayed later in a debugger. The results of syscalls are fed back into the program to replicate the environment the program saw over time.
 
-The runtime can be debugged with RR on linux, but this is mostly useful for low-level debugging. 
+The runtime can be debugged with RR on linux, but this is mostly useful for low-level debugging.
 
 We have two options here: We can expose managed logging and heap/stack snapshotting to the debugger-agent and do this is a managed way. This allows us to work on ARM, linux, windows, ios, etc. The downside is that we don't get to replay state changes in unmanaged code.
 
-Alternatively, we can have the student create glue code for using rr to debug the entire runtime remotely, and add in the hooks to get the information on managed methods from the runtime. Someone can then record a crash on their machine as it is happening, and submit it with a bug report. 
+Alternatively, we can have the student create glue code for using rr to debug the entire runtime remotely, and add in the hooks to get the information on managed methods from the runtime. Someone can then record a crash on their machine as it is happening, and submit it with a bug report.
 
-I believe that the latter idea would make bug reports an order of magnitude more useful. By removing the difficulty of reproducing crashes, we may save our own developers a lot of time. 
+I believe that the latter idea would make bug reports an order of magnitude more useful. By removing the difficulty of reproducing crashes, we may save our own developers a lot of time.
 
 Deliverables:
 
-- Get RR debugging of mono working interactively
-- Create automated RR client that records and replays mono
-- Create infrastructure to use RR client and create self contained "debug me" blob
+* Get RR debugging of mono working interactively
+* Create automated RR client that records and replays mono
+* Create infrastructure to use RR client and create self contained "debug me" blob
 
 **Mentors:** Alexander Kyte, Rodrigo Kumpera
 
@@ -518,12 +518,12 @@ Deliverables:
 
 **Complexity:** Medium
 
-Flaky tests are not like normal tests. They fail when execution races in such a way as to make assumptions fail. They usually do not indicate a bug in the runtime itself. 
+Flaky tests are not like normal tests. They fail when execution races in such a way as to make assumptions fail. They usually do not indicate a bug in the runtime itself.
 
 Flaky tests have distinctive behavior that is different from normal tests. Across all tests, they'll go from failing to green to failing with a regularity that is independent of the changes made to the commit. Flaky tests will also not fail together in the same way as code broken by a change that breaks a subsystem.
 
-It can and has become a statistical discipline. 
-https://www.youtube.com/watch?v=CrzpkF1-VsA
+It can and has become a statistical discipline.
+[https://www.youtube.com/watch?v=CrzpkF1-VsA](https://www.youtube.com/watch?v=CrzpkF1-VsA)
 
 We want both a tool which is general-purpose for C# projects and a flake analysis of the BCL as a C# project.
 
@@ -531,11 +531,11 @@ A statistical analysis of flakes would allow us to avoid re-running every failur
 
 Deliverables:
 
-- Create tools (not running services!) that collect historical global test coverage changes across all master builders. Have them emit an XML summary. This can be slow, as long as it is tractable.
+* Create tools (not running services!) that collect historical global test coverage changes across all master builders. Have them emit an XML summary. This can be slow, as long as it is tractable.
 
-- Study the statistical properties of flaky tests, and study the classes of flaky tests in the mono BCL that are linked to one another. Perhaps better understand the flakes that will flaky together or will only genuinely fail together. 
+* Study the statistical properties of flaky tests, and study the classes of flaky tests in the mono BCL that are linked to one another. Perhaps better understand the flakes that will flaky together or will only genuinely fail together.
 
-- Create a nunit patch that can detect if the current test is in an XML file which lists the flaky tests, and how to behave for each flake
+* Create a nunit patch that can detect if the current test is in an XML file which lists the flaky tests, and how to behave for each flake
 
 **Mentors:** Andi Mcclure, Alexander Kyte
 
@@ -577,9 +577,9 @@ We are tracking various ideas in the [.NET Integration in Mono](https://trello.c
 
 `System.Threading.ThreadPool` is the main class that allow users to launch background tasks, and it's one of the component that the TPL is based on. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
 
-The goal is to replace our BCL implementation of `System.Threading.ThreadPool` (https://github.com/mono/mono/blob/master/mcs/class/referencesource/mscorlib/system/threading/threadpool.cs), with the CoreRT one (https://github.com/dotnet/corert/blob/master/src/System.Private.CoreLib/src/System/Threading/ThreadPool.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+The goal is to replace our BCL implementation of [`System.Threading.ThreadPool`](https://github.com/mono/mono/blob/master/mcs/class/referencesource/mscorlib/system/threading/threadpool.cs), with the [CoreRT one](https://github.com/dotnet/corert/blob/master/src/System.Private.CoreLib/src/System/Threading/ThreadPool.cs). This would allow us to get closer to .NET Core code quality and behaviour.
 
-All changes made to adapt `System.Threading.ThreadPool` to Mono would then be upstreamed to the .NET foundation CoreRT repo (https://github.com/dotnet/corert)
+All changes made to adapt `System.Threading.ThreadPool` to Mono would then be upstreamed to the .NET foundation [CoreRT repo](https://github.com/dotnet/corert)
 
 **Deliverables**: Integrate `ThreadPool` from CoreRT into Mono and upstream any necessary changes.
 
@@ -591,9 +591,9 @@ All changes made to adapt `System.Threading.ThreadPool` to Mono would then be up
 
 `System.IO.FileStream` is the main class that allow users to read and write to files, pipes and consoles. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
 
-The goal is to replace our BCL implementation of `System.IO.FileStream` (https://github.com/mono/mono/blob/master/mcs/class/corlib/System.IO/FileStream.cs), with the CoreFX one (https://github.com/dotnet/corefx/blob/master/src/System.IO.FileSystem/src/System/IO/FileStream.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+The goal is to replace our BCL implementation of [`System.IO.FileStream`](https://github.com/mono/mono/blob/master/mcs/class/corlib/System.IO/FileStream.cs), with the [CoreFX one](https://github.com/dotnet/corefx/blob/master/src/System.IO.FileSystem/src/System/IO/FileStream.cs). This would allow us to get closer to .NET Core code quality and behaviour.
 
-All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation CoreFx repo (https://github.com/dotnet/corefx)
+All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation [CoreFx repo](https://github.com/dotnet/corefx)
 
 **Deliverables**: Integrate `FileStream` from CoreFX into Mono and upstream any necessary changes.
 
@@ -605,9 +605,9 @@ All changes made to adapt `System.IO.FileStream` to Mono would then be upstreame
 
 `System.Diagnostics.Process` is the main class that allow users to launch and access other processes. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
 
-The goal is to replace our BCL implementation of `System.Diagnostics.Process` (https://github.com/mono/mono/blob/master/mcs/class/System/System.Diagnostics/Process.cs), with the CoreFX one (https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Process/src/System/Diagnostics/Process.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+The goal is to replace our BCL implementation of [`System.Diagnostics.Process`](https://github.com/mono/mono/blob/master/mcs/class/System/System.Diagnostics/Process.cs), with the [CoreFX one](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Process/src/System/Diagnostics/Process.cs). This would allow us to get closer to .NET Core code quality and behaviour.
 
-All changes made to adapt `System.Diagnostics.Process` to Mono would then be upstreamed to the .NET foundation CoreFx repo (https://github.com/dotnet/corefx)
+All changes made to adapt `System.Diagnostics.Process` to Mono would then be upstreamed to the .NET foundation [CoreFx repo](https://github.com/dotnet/corefx)
 
 **Deliverables**: Integrate `Process` from CoreFX into Mono and upstream any necessary changes.
 
@@ -660,13 +660,13 @@ QtSharp has reached alpha status and it needs the final improvements to make it 
 * Qt Quick support –  enables writing of Qt Quick applications using C#. Deliverables: the ability to include QML files in the application (an integrated in Visual Studio/MonoDevelop editor is not included, for now external editors such as Qt Creator will have to be used) and working interaction between C# and QML (property changes and emitting of signals in QML must call the corresponding C# code);
 * Documentation package – online and off-line documentation for QtSharp. Deliverables: A compressed directory containing a complete DOxygen documentation package for QtSharp. The documentation itself is generated as XML code comments which DOxygen then takes from the source files and uses a configuration file to generate the package.
 * Binaries – users must be able to download binaries for each platform QtSharp currently supports, namely all three major desktop platforms – Windows, Linux and OS X. Deliverables: Build scripts to produce and upload Qt# binaries.
-* Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers (https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203, http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all. Deliverables: Generation of managed destructors (finalisers) to call their native counterparts in order to free the memory allocated for the native part of wrapped objects.
+* Auto-memory management – this feature is deliberately last in the list because it may or may not be reasonable. The problem is that the only way to implement it is to use managed destructors to call their native counterparts, and the former are, in short, not guaranteed to be called. In long, each managed destructor (or finaliser) must take less than two seconds of execution time and all finalisers combined must take less than forty. If either condition fails, the VM terminates the process without calling the remaining finalisers([source 1](https://blogs.msdn.microsoft.com/oldnewthing/20100809-00/?p=13203), [source 2](http://blog.stephencleary.com/2009/08/finalizers-at-process-exit.html)) which would lead to leaks in native memory. On the other hand, if the bindings are correct, a finaliser would only take an instant so the time limit should be more than enough for all of them. Basically, it can be done but it really is a stretch of the capabilities of the VM, so what's certain is that this task must be left last – if implemented at all. Deliverables: Generation of managed destructors (finalisers) to call their native counterparts in order to free the memory allocated for the native part of wrapped objects.
 
 Related code:
 
-https://github.com/mono/CppSharp
-https://gitlab.com/ddobrev/QtSharp
-https://techbase.kde.org/Development/Languages/Qyoto – obsolete bindings for Qt which can however give some ideas, for example for type maps
+* [https://github.com/mono/CppSharp](https://github.com/mono/CppSharp)
+* [https://gitlab.com/ddobrev/QtSharp](https://gitlab.com/ddobrev/QtSharp)
+* [https://techbase.kde.org/Development/Languages/Qyoto](https://techbase.kde.org/Development/Languages/Qyoto) – obsolete bindings for Qt which can however give some ideas, for example for type maps
 
 Feel free to get in touch with @tritao if you’re interested in this and would like more guidance.
 

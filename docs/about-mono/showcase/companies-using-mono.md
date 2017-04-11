@@ -136,7 +136,7 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Syltek Solutions](http://www.syltek.com/) runs all their reservation-management tools with Mono, with customers around the world.
 
--   [THR Support](https://thishosting.rocks/support/) uses Mono for their customer ticket-tracking system. 
+-   [THR Support](https://thishosting.rocks/support/) uses Mono for their customer ticket-tracking system.
 
 MindTouch Based Projects
 ========================
@@ -169,7 +169,6 @@ Web Projects Using Mono
 -   [Orion's Belt](http://www.orionsbelt.eu/) a web-based MMO game.
 -   [Agentka's Job Board](http://www.agentka.cz):
 
-
 <!-- -->
 
     We launched a job board at www.agentka.cz in November 2008.
@@ -179,4 +178,3 @@ Web Projects Using Mono
     the web application is using a custom C# framework. The performance of the
     whole system (including full-text indexing) is really good when comparing to a
     "standard" LAMP solutions.
-

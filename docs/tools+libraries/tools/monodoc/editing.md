@@ -82,9 +82,7 @@ To embed images you use the \<img\> tag.There are two different ways to use that
 
 For example, if you want to link the following image `http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png`, use `<img src="http://www.mono-project.com/files/8/8d/Mono-gorilla-aqua.100px.png" />`. If you want to link to the `monkey.png` you dropped in your `_images` folder, simply write tt\>\<img href="monkey.png" /\>\</tt\>
 
-Note that bundled images must have unique names at the scope of the documentation bundle, so it may be wise to use a naming scheme that avoids collision, e.g., prepending the namespace to the filename.   
-
-
+Note that bundled images must have unique names at the scope of the documentation bundle, so it may be wise to use a naming scheme that avoids collision, e.g., prepending the namespace to the filename.
 
 Monodoc browser editing
 =======================
@@ -96,4 +94,3 @@ After clicking on an [Edit] link, monodoc will show an aspect similar to this on
 [![Monodoc-edit.png](/archived/images/4/41/Monodoc-edit.png)](/archived/images/4/41/Monodoc-edit.png)
 
 Where you can see the window is divided in two panels. The upper panel is where you type the [XML Documentation code](#writing-xml-documentation). Some buttons in the middle will help you with the most important tags. In the lower panel you can see a preview of the documentation as it is being typed. Finally, at the lowest part of the window you can see three buttons, *Close* for canceling the actual editing, *Save* for saving the changes and *Restore* to remove all your changes and restore the node as it was originally.
-
