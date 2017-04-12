@@ -7,7 +7,7 @@ redirect_from:
 Reporting vulnerabilities
 =========================
 
-Please report security vulnerabilities by sending email to hello@xamarin.com
+Please report security vulnerabilities by sending email to secure@microsoft.com
 
 Known vulnerabilities
 =====================
