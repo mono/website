@@ -53,16 +53,18 @@ sudo apt-get update</code></pre>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu alpha-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
               Install Mono
             </h2>
-            <pre><code class="language-bash">sudo apt-get install mono-devel</code></pre>
+            <pre style="margin-top: 20px"><code class="language-bash">sudo apt-get install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
             <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
             <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
               Verify Installation
@@ -85,16 +87,18 @@ sudo apt-get update</code></pre>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian alpha-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
               Install Mono
             </h2>
-            <pre><code class="language-bash">sudo apt-get install mono-devel</code></pre>
+            <pre style="margin-top: 20px"><code class="language-bash">sudo apt-get install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
             <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
             <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
               Verify Installation
@@ -113,16 +117,18 @@ sudo apt-get update</code></pre>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian alpha-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
 sudo apt-get update</code></pre>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
               Install Mono
             </h2>
-            <pre><code class="language-bash">sudo apt-get install mono-devel</code></pre>
+            <pre style="margin-top: 20px"><code class="language-bash">sudo apt-get install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
             <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
             <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
               Verify Installation
@@ -139,17 +145,19 @@ sudo apt-get update</code></pre>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <h3>CentOS 7</h3>
             <pre><code class="language-bash">yum install yum-utils
-rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos/</code></pre>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
               Install Mono
             </h2>
-            <pre><code class="language-bash">yum install mono-devel</code></pre>
+            <pre style="margin-top: 20px"><code class="language-bash">yum install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
             <p>The package <b>xsp</b> should be installed for running ASP.NET applications.</p>
+            <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
               Verify Installation
