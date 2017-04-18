@@ -219,7 +219,7 @@ Porting an existing backend to the new IR
 -   In mono_arch_create_vars, when the result is a valuetype, it needs to create a new variable to represent the hidden argument holding the vtype return address and store this variable into cfg-\>vret_addr.
 -   Also, in mono_arch_allocate_vars, when the result is a valuetype, it needs to setup cfg-\>vret_addr instead of cfg-\>ret.
 
-For more info, compare the already converted backends like x86/amd64/ia64 with their original versions in HEAD. For example: [[1]](http://lists.ximian.com/pipermail/mono-patches/2006-April/073170.html)
+For more info, compare the already converted backends like x86/amd64/ia64 with their original versions in HEAD. For example: [[1]](https://lists.dot.net/pipermail/mono-patches/2006-April/073170.html)
 
 Benchmark results
 -----------------
@@ -254,7 +254,7 @@ All the benchmarks were run on an amd64 machine in 64 bit mode.
         current JIT: 18.648 secs
         linear IR: 9.934 secs (50% faster)
 
--   decimal arithmetic benchmark from [http://lists.ximian.com/pipermail/mono-devel-list/2008-May/028061.html](http://lists.ximian.com/pipermail/mono-devel-list/2008-May/028061.html):
+-   decimal arithmetic benchmark from [https://lists.dot.net/pipermail/mono-devel-list/2008-May/028061.html](https://lists.dot.net/pipermail/mono-devel-list/2008-May/028061.html):
 
 <!-- -->
 

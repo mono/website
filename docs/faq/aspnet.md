@@ -135,7 +135,7 @@ Another (very risky) way: use a setuid 'root' wrapper for the mono executable, i
 
 And finally: drop mod_mono and use mod_proxy + mod_proxy_http + XSP instead. It's slightly easier to configure, especially if you are not used to mod_mono.
 
-From [the mono-devel-list](http://lists.ximian.com/pipermail/mono-devel-list/2006-May/018520.html)
+From [the mono-devel-list](https://lists.dot.net/pipermail/mono-devel-list/2006-May/018520.html)
 
 ### I get Service Unavailable
 

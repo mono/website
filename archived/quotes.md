@@ -62,14 +62,14 @@ A few quotes from developers using Mono:
     large code base in C# .NET on Windows and a large portion of that code
     was reusable with minimal effort on Linux/Mono.
 
- [Bill Seddon, reporting a problem on Mono](http://lists.ximian.com/pipermail/mono-list/2006-January/030276.html):
+ [Bill Seddon, reporting a problem on Mono](https://lists.dot.net/pipermail/mono-list/2006-January/030276.html):
 
     My reason is that Mono applications can be run without an install.  .NET
     requires a lengthy installation (and a reboot with 1.1 SP) that many
     administrators (if not users) will not consider.  Mono can be copied on (or
     even run from a memory stick).
 
-From a satisfied user on our [mailing list](http://lists.ximian.com/archives/public/mono-list/2005-April/026486.html):
+From a satisfied user on our [mailing list](https://lists.dot.net/archives/public/mono-list/2005-April/026486.html):
 
     Ive recently successfully ported an ASP.Net application from MS .net to
     mono-1.1.4.

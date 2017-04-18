@@ -29,7 +29,7 @@ A Restructuring Plan for Mono Documentation Production Tools
 
 The tool set available for stubbing, editing, validating, and assembling Mono documentation catalogs has evolved in a traditional linux style, with standalone tools implementing a focused portion of the process which must be linked together to produce a consumable documentation catalog.
 
-I (Mike Kestner) have commented on the state of the documentation tools as of early 2008 [on the mailing list](http://lists.ximian.com/pipermail/mono-docs-list/2008-January/001868.html), and am embarking on a process to integrate the capabilities into a Graphical WYSISYG editing environment for start-to-finish document catalog maintenance.
+I (Mike Kestner) have commented on the state of the documentation tools as of early 2008 [on the mailing list](https://lists.dot.net/pipermail/mono-docs-list/2008-January/001868.html), and am embarking on a process to integrate the capabilities into a Graphical WYSISYG editing environment for start-to-finish document catalog maintenance.
 
 The project will be developed as a standalone widget library, named Monodoc.Widgets.dll exposing the Monodoc.Widgets namespace. This is to facilitate the implementation of a standalone browser application to replace the existing monodoc browser, in addition to a new editor application and possibly a plugin for browsing and editing catalogs in MonoDevelop at some point in the future.
 

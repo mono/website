@@ -41,10 +41,10 @@ Our project mailing lists should be your first stop for questions
 about contributing to Mono. There are [many
 lists](http://mono-project.com/Mailing_Lists) for different topics,
 but the main ones are
-[mono](http://lists.ximian.com/mailman/listinfo/mono-list),
-[mono-devel](http://lists.ximian.com/mailman/listinfo/mono-devel-list)
+[mono](https://lists.dot.net/mailman/listinfo/mono-list),
+[mono-devel](https://lists.dot.net/mailman/listinfo/mono-devel-list)
 and
-[monodevelop-devel](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list). For
+[monodevelop-devel](https://lists.dot.net/mailman/listinfo/monodevelop-devel-list). For
 external projects, you should also contact the developers in their
 project mailing lists.
 

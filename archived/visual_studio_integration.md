@@ -112,7 +112,7 @@ Questions, questions
 -   Why?
 -   What types of devs would not be interested at all?
 
-[jpobst] Taken from [here](http://lists.ximian.com/pipermail/mono-list/2006-October/033221.html):
+[jpobst] Taken from [here](https://lists.dot.net/pipermail/mono-list/2006-October/033221.html):
 
 Covering the 80/20 case, I think the following assumptions can be made:
 

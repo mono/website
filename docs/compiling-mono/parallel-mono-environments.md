@@ -83,7 +83,7 @@ sudo make install
 
 ### mono
 
-*Under SUSE 10, compilation may fail. See the fix [related to the VER_1](http://lists.ximian.com/pipermail/mono-list/2005-October/028833.html) ld build error.*
+*Under SUSE 10, compilation may fail. See the fix [related to the VER_1](https://lists.dot.net/pipermail/mono-list/2005-October/028833.html) ld build error.*
 
 ``` bash
 tar zxf mono-1.1.9.1.tar.gz

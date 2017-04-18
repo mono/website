@@ -1536,7 +1536,7 @@ Yes, the P/Invoke specification (or lack thereof) is a mess. It was done by peop
 Thanks
 ======
 
-Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [http://lists.ximian.com/archives/public/mono-list/2003-July/014886.html](http://lists.ximian.com/archives/public/mono-list/2003-July/014886.html).
+Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [https://lists.dot.net/archives/public/mono-list/2003-July/014886.html](https://lists.dot.net/archives/public/mono-list/2003-July/014886.html).
 
 Thanks also to Paolo Molaro, Bernie Solomon, and Marcus for reviews and comments.
 

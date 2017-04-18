@@ -112,6 +112,6 @@ Keeping track of code changes
 
 We provide an e-mail based mechanisms to keep track of changes to the code base:
 
--   [mono-patches](http://lists.ximian.com/mailman/listinfo/mono-patches): This mailing list receives in patch form all the changes that are being made to git. To subscribe, send an email message to mono-patches-request@ximian.com and in the body of the message put \`subscribe' or click on the link.
+-   [mono-patches](https://lists.dot.net/mailman/listinfo/mono-patches): This mailing list receives in patch form all the changes that are being made to git. To subscribe, send an email message to mono-patches-request@ximian.com and in the body of the message put \`subscribe' or click on the link.
 
 This will send you an email message every time a change is made to the git repository, together with the information that the author of the changes submitted.

@@ -19,7 +19,7 @@ Community
 
 A chat room to discuss MonoMac exists on the IRC server at irc.gnome.org on the channel #monomac. You can access it on the [web as well](http://wbe02.mibbit.com/index.html?server=irc.gnome.org&channel=%23monomac).
 
-We are using the [mono-osx@lists.ximian.com mailing list](http://lists.ximian.com/mailman/listinfo/mono-osx) to discuss.
+We are using the [mono-osx@lists.dot.net mailing list](https://lists.dot.net/mailman/listinfo/mono-osx) to discuss.
 
 Obtaining MonoMac
 =================

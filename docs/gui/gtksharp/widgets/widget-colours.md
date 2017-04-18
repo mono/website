@@ -9,7 +9,7 @@ Colouring Widgets and Windows
 
 Colouring widgets and windows (which is itself a widget) alluded me for ages due to my basic knowledge of gtk.
 
-Thanks to a [tiny example](http://lists.ximian.com/pipermail/gtk-sharp-list/2004-September/004820.html) I found by John Bailo on the [gtk# mailing list](http://lists.ximian.com/pipermail/gtk-sharp-list/) it turns out to not be such a tricky thing after all. I’ve recreated it here.
+Thanks to a [tiny example](https://lists.dot.net/pipermail/gtk-sharp-list/2004-September/004820.html) I found by John Bailo on the [gtk# mailing list](https://lists.dot.net/pipermail/gtk-sharp-list/) it turns out to not be such a tricky thing after all. I’ve recreated it here.
 
 The following code sets up a gtk.window, a DrawingArea widget on top, colours the window and the drawing area both red, then draws a diagonal line across the page.
 

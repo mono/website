@@ -99,15 +99,15 @@ I've yet to find a way to get a ServicePoint out of a Method declaration so that
 
 What to display if a type/module or assembly rule is hit and no member is specified? The class header? How to identify it (Cecil has no TypeDefinition::ServicePoint property).
 
--   [reference](http://lists.ximian.com/pipermail/mono-devel-list/2006-September/020651.html)
+-   [reference](https://lists.dot.net/pipermail/mono-devel-list/2006-September/020651.html)
 
 Framework
 ---------
 
 -   Localization support I18N
-    -   [reference 1](http://lists.ximian.com/pipermail/mono-devel-list/2006-September/020651.html)
-    -   [reference 2](http://lists.ximian.com/pipermail/mono-devel-list/2006-August/020161.html)
-    -   [reference 3](http://lists.ximian.com/pipermail/mono-devel-list/2006-August/020166.html)
+    -   [reference 1](https://lists.dot.net/pipermail/mono-devel-list/2006-September/020651.html)
+    -   [reference 2](https://lists.dot.net/pipermail/mono-devel-list/2006-August/020161.html)
+    -   [reference 3](https://lists.dot.net/pipermail/mono-devel-list/2006-August/020166.html)
 
 Rules
 -----

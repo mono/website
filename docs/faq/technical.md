@@ -311,7 +311,7 @@ Mono-aware compilers generate debugging information in a file with the extension
 
 ### Can I convert Microsoft PDB files to Mono MDB files?
 
-You can convert PDB files to MDB files using "pdb2mdb" in mono tree, a program written by JB Evain. For details see [his blog post](http://evain.net/blog/articles/2009/04/27/pdb2mdb-and-mono-cecil-pdb). For earlier effort by Robert Jordan, see his emails on the subject [here](http://lists.ximian.com/pipermail/mono-list/2006-September/032692.html) and [here](http://lists.ximian.com/pipermail/mono-list/2006-September/032693.html).
+You can convert PDB files to MDB files using "pdb2mdb" in mono tree, a program written by JB Evain. For details see [his blog post](http://evain.net/blog/articles/2009/04/27/pdb2mdb-and-mono-cecil-pdb). For earlier effort by Robert Jordan, see his emails on the subject [here](https://lists.dot.net/pipermail/mono-list/2006-September/032692.html) and [here](https://lists.dot.net/pipermail/mono-list/2006-September/032693.html).
 
 ### Does Mono have a profiler?
 

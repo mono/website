@@ -83,7 +83,7 @@ Tentative roadmap for WF:
 
 -   Complete persistence support.
 
-If you are interested in helping in this effort please join the mono-devel-list@lists.ximian.com mailing list, explain your experiencie and how you can help.
+If you are interested in helping in this effort please join the mono-devel-list@lists.dot.net mailing list, explain your experiencie and how you can help.
 
 Getting a copy
 --------------

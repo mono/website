@@ -141,7 +141,7 @@ We need to determine a timeline for testing.
 Other Dependencies
 ==================
 
--   Keep [http://lists.ximian.com/pipermail/mono-patches](http://lists.ximian.com/pipermail/mono-patches) working
+-   Keep [https://lists.dot.net/pipermail/mono-patches](https://lists.dot.net/pipermail/mono-patches) working
 -   Keep [http://groups.google.com/group/mono-svn-patches](http://groups.google.com/group/mono-svn-patches) working
 -   Keep [http://cia.vc/stats/project/mono](http://cia.vc/stats/project/mono) working
 -   Keep [http://www.ohloh.net/p/mono](http://www.ohloh.net/p/mono) working

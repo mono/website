@@ -85,7 +85,7 @@ Server: [Asp.net](/ASP.NET) | [Database Access](/Database_Access)
 <p>Zac Bowling has written an article on how to use bind your favorite GLib/Gnome-based libraries for consumption in Mono. See his article <a href="/GAPI" title="GAPI">here</a>.</p>
 <p>Jon Pryor wrote an article on understanding the Mono versioning scheme and how it related to the .NET Framework. <a href="/Mono:Versioning" title="Mono:Versioning">here</a></p>
 <h3>Apr 07 2005: New Mono on OSX Mailing List</h3>
-<p>We have opened a new mailing list for users of Mono on OSX. You can find the details <a href="http://lists.ximian.com/mailman/listinfo/mono-osx">here</a></p>
+<p>We have opened a new mailing list for users of Mono on OSX. You can find the details <a href="https://lists.dot.net/mailman/listinfo/mono-osx">here</a></p>
 <h3>Apr 02 2005: Articles</h3>
 <p>A new article explainig <a href="/Article:ThreadPool_Deadlocks" title="Article:ThreadPool Deadlocks">ThreadPool deadlocks</a> is available.</p>
 <p>Gonzalo has written a document on <a href="/Generating_class_status_pages" title="Generating class status pages">Generating class status pages</a> to track changes in your APIs.</p>

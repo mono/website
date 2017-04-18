@@ -10,7 +10,7 @@ Early Posts
 ===========
 
 -   [Mono and GNOME, the long reply](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Local Copy](/archived/mailpostlongreply)
--   [Mono early history](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html) [Local Copy](/archived/mailpostearlystory)
+-   [Mono early history](https://lists.dot.net/archives/public/mono-list/2003-October/016345.html) [Local Copy](/archived/mailpostearlystory)
 
 Milestones
 ==========
@@ -42,7 +42,7 @@ Milestones
 
 -   Oct 5th: Sergey publishes his IL assembler.
 
--   Nov 4th: Mike posts an [update on Gtk#](http://lists.ximian.com/archives/public/gtk-sharp-list/2001-November/000017.html)
+-   Nov 4th: Mike posts an [update on Gtk#](https://lists.dot.net/archives/public/gtk-sharp-list/2001-November/000017.html)
 
 -   Nov 14th: Paolo Molaro checks in the code that makes the C# compiler run and compile "Hello world" on Linux for the first time.
 

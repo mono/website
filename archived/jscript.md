@@ -111,7 +111,7 @@ There are a number of ways to contribute to the JScript effort. They range from 
 
 Currently, the best way of contributing is to have a look at the failing tests in **mcs/class/Microsoft.JScript/Test/Mozilla** and fix them. Detailed instructions for how to use the test suite are in the README of that directory.
 
-If you need specific details don't hesitate to send an e-mail to [cesar](mailto:cesar@ciencias.unam.mx) or the [mono-devel](mailto:mono-devel-list@lists.ximian.com) mailing list. If you have questions about the run time you can also try contacting [flgr](mailto:flgr@ccan.de) for help.
+If you need specific details don't hesitate to send an e-mail to [cesar](mailto:cesar@ciencias.unam.mx) or the [mono-devel](mailto:mono-devel-list@lists.dot.net) mailing list. If you have questions about the run time you can also try contacting [flgr](mailto:flgr@ccan.de) for help.
 
 If you are generally interested in the project you might also want to join the developers at [#mjs on irc.gimp.org](irc://irc.gimp.org/mjs).
 

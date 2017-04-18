@@ -71,7 +71,7 @@ The Developer Meeting will be held from Wednesday to Friday, we will open with a
 
 This year we will be allocating more free face-to-face time for people to talk to the developers by having explicit "Meet the Experts" sessions, and dedicating the afternoons for un-conference sessions, hacking and consulting.
 
-The current agenda is available [here](/Mono_Summit_2007_Schedule), but it is still a work in progress. Please submit any topic ideas to the mono-list@lists.ximian.com mailing list. [(Mailing List info)](/Mailing_Lists)
+The current agenda is available [here](/Mono_Summit_2007_Schedule), but it is still a work in progress. Please submit any topic ideas to the mono-list@lists.dot.net mailing list. [(Mailing List info)](/Mailing_Lists)
 
 Event Planning
 ==============

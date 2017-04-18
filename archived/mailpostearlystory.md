@@ -10,7 +10,7 @@ Mailpost:earlystory
 
 Originally from:
 
-[http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html](http://lists.ximian.com/archives/public/mono-list/2003-October/016345.html)
+[https://lists.dot.net/archives/public/mono-list/2003-October/016345.html](https://lists.dot.net/archives/public/mono-list/2003-October/016345.html)
 
     Miguel de Icaza miguel@ximian.com
     13 Oct 2003 12:48:58 -0400

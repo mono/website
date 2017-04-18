@@ -44,7 +44,7 @@ export AS='as -64'
 
 Similarly, depending on the build tools used some other variables (MAKE=gmake RANLIB=granlib AR=gar STRIP=gstrip) are necessary too but those are not specific to the amd64 target.
 
-Andreas posted some generic compilation instructions for Solaris 10/x86 [here](http://lists.ximian.com/pipermail/mono-list/2007-January/034101.html)
+Andreas posted some generic compilation instructions for Solaris 10/x86 [here](https://lists.dot.net/pipermail/mono-list/2007-January/034101.html)
 
 Known bugs
 ----------

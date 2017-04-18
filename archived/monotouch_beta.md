@@ -61,7 +61,7 @@ Release History
 Caveats
 =======
 
-We consider MonoTouch feature complete, but there will be bugs lurking in this beta release. We will be issuing new builds every few days to correct bugs that developers will be running into, so please report these issues to the monotouch@lists.ximian.com mailing list.
+We consider MonoTouch feature complete, but there will be bugs lurking in this beta release. We will be issuing new builds every few days to correct bugs that developers will be running into, so please report these issues to the monotouch@lists.dot.net mailing list.
 
 The beta does not come with a license to redistribute the code beyond testing. For that you will need to wait for the official release in the first two weeks of September to buy the real product version.
 

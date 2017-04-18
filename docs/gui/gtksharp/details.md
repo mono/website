@@ -300,7 +300,7 @@ Window navigator construction kit library.
 Versions & Status
 -----------------
 
-You might want to [subscribe](http://lists.ximian.com/mailman/listinfo/gtk-sharp-list)to gtk-sharp-list@ximian.com for status updates and general discussion.
+You might want to [subscribe](https://lists.dot.net/mailman/listinfo/gtk-sharp-list)to gtk-sharp-list@ximian.com for status updates and general discussion.
 
 The [Gtk# project](http://gtk-sharp.sourceforge.net) is closely associated with the Mono project.  Development is proceeding in the [Mono git](/community/contributing/source-code-repository/) repository.  The git repository can be browsed [on the web.](https://github.com/mono)
 
