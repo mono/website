@@ -47,7 +47,8 @@ mcs tlstest.cs /r:System.dll /r:Mono.Security.dll
 mono tlstest.exe https://www.nuget.org
 ```
 
-The program prints an error if something is wrong.
+The program prints an error if something is wrong. If you receive a `CERT_E_CHAINING` error you must import the root certificates using the [mozroots tool](http://www.mono-project.com/docs/faq/security/#does-ssl-work-for-smtp-like-gmail).
+
 
 Winforms Hello World
 --------------------
