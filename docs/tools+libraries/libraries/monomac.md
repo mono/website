@@ -1,5 +1,5 @@
 ---
-title: MonoMac
+title: Xamarin.Mac
 redirect_from:
   - /MonoMac/
   - /CocoaSharp/
@@ -17,12 +17,12 @@ There are plenty of [Xamarin.Mac examples](https://developer.xamarin.com/samples
 Community
 =========
 
-A chat room to discuss MonoMac exists on the IRC server at irc.gnome.org on the channel #monomac. You can access it on the [web as well](http://wbe02.mibbit.com/index.html?server=irc.gnome.org&channel=%23monomac).
+A chat room to discuss Xamarin.Mac exists at [https://gitter.im/xamarin/xamarin-macios](https://gitter.im/xamarin/xamarin-macios).
 
-We are using the [mono-osx@lists.dot.net mailing list](https://lists.dot.net/mailman/listinfo/mono-osx) to discuss.
+We are using the [macios-devel@lists.dot.net mailing list](https://lists.dot.net/mailman/listinfo/macios-devel) to discuss.
 
-Obtaining MonoMac
-=================
+Obtaining Xamarin.Mac
+=====================
 
 Xamarin.Mac is available as part of [Xamarin Studio](https://www.xamarin.com/studio) or [Visual Studio](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx) to download your package.
 

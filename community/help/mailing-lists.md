@@ -7,8 +7,6 @@ redirect_from:
   - /Forums/
 ---
 
-If you prefer forums over mailing lists, please see our [Forums](http://mono.1490590.n4.nabble.com/) page.
-
 To subscribe to a mailing list, click the mailing list name in the left column and follow the directions.
 
 <table>

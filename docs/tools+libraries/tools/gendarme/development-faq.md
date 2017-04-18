@@ -25,7 +25,7 @@ Maybe never :-) Seriously engines grows from the frustration of writing **many*
 Where can I ask technical questions about Gendarme ?
 ----------------------------------------------------
 
-Many [Gendarme](/docs/tools+libraries/tools/gendarme/) developers are on [IRC](/community/help/irc/), channel **#gendarme** on **GimpNET**. You can also join the [Gendarme Google group](http://groups.google.com/group/gendarme) and email your questions to its mailing-list.
+Many [Gendarme](/docs/tools+libraries/tools/gendarme/) developers are on [Chat](/community/help/chat/), channel **#gendarme** on **GimpNET**. You can also join the [Gendarme Google group](http://groups.google.com/group/gendarme) and email your questions to its mailing-list.
 
 If your questions are related to [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/) then you should send them to the [Cecil Google group](http://groups.google.com/group/mono-cecil?hl=en).
 

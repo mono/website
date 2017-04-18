@@ -15,7 +15,7 @@ Users:<br/>
  Contributors:<br/>
   [Class Status](/archived/resources#api-completion-status-pages) | [Build Status](https://jenkins.mono-project.com/) | [Source Code](/community/contributing/source-code-repository/)<br/>
  Community:<br/>
-  [Mailing Lists](/community/help/mailing-lists/) | [Forums](http://mono.1490590.n4.nabble.com/) | [Chat](/community/help/irc/) | [Blogs](http://www.go-mono.com/monologue/)<br/>
+  [Mailing Lists](/community/help/mailing-lists/) | [Chat](/community/help/chat/) | [Blogs](http://www.go-mono.com/monologue/)<br/>
  FAQ:<br/>
   [General](/docs/faq/general/) | [Technical](/docs/faq/technical/) | [Licensing](/docs/faq/licensing/) | [Asp.net](/docs/faq/aspnet/) | [Security](/docs/faq/security/) | [WinForms](/docs/faq/winforms/)
 
@@ -116,7 +116,7 @@ Ways to Contribute
 
 There are three different philosophical approaches to helping the Mono project:
 
--   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report](/community/bugs/); track down the problem and provide a better [bug report](/community/bugs/); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](https://lists.dot.net/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test](/community/contributing/test-suite/) so the bug does not get re-introduced in the future. You can also get contact with the hackers through [IRC](/community/help/irc/) channels.
+-   The selfish way is packed with adventure. You start by building your own software, and start using the compiler and tools that come with Mono. Eventually you will run into missing features, or a bug in the software. Since we ship all the source code for Mono, you can start tracking down the problem. Depending on how much time you have to devote to the problem you could: [File a bug report](/community/bugs/); track down the problem and provide a better [bug report](/community/bugs/); fix the bug and provide a patch (you can [post it](mailto:mono-devel-list@ximian.com) to the [mono-devel mailing list](https://lists.dot.net/mailman/listinfo/mono-devel-list); or discuss the solution on the mailing list). Ideally you will also write a [regression test](/community/contributing/test-suite/) so the bug does not get re-introduced in the future. You can also get contact with the hackers through [chat](/community/help/chat/) channels.
 
 -   The altruistic way is probably the easiest because you get to pick a piece of Mono that you might want to work on. You can pick an unfinished [class](/community/contributing/the-class-library/) (from our [Class_Status](/docs/about-mono/class-status/)); help with the [documentation effort](/docs/) ([mailing list for the documentation effort](https://lists.dot.net/mailman/listinfo/mono-docs-list)); fix existing [bugs](/community/bugs/); help with the [tools](/docs/tools+libraries/tools/) or writing [tests](/community/contributing/test-suite/) that help make Mono more robust.
 

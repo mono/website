@@ -78,8 +78,7 @@ Working with Mono
 <li><a href="/archived/books" title="Books">Books</a></li>
 <li><a href="/archived/articles" title="Articles">Articles</a></li>
 <li><a href="/community/help/mailing-lists/">Mailing Lists</a></li>
-<li><a href="http://mono.1490590.n4.nabble.com/">Forums</a></li>
-<li><a href="/community/help/irc/">Chat Rooms</a></li>
+<li><a href="/community/help/chat/">Chat Rooms</a></li>
 <li><a href="/archived/related_mono_sites" title="Related Mono Sites">Related Sites</a></li>
 <li><a href="/archived/user_groups" title="User Groups">User Groups</a></li>
 <li><a href="/docs/tools+libraries/tools/moma/">Mono Migration Analyzer</a></li>
