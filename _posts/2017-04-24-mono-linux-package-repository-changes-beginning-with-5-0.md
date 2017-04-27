@@ -31,7 +31,7 @@ And here's the new one:
 | Debian 7     | ARM hard float (v7), ARM soft float, AMD64, i386 |
 | Debian 8     | ARM hard float (v7), ARM soft float, ARM64, AMD64, i386, PPC64el |
 | Raspbian 8   | ARM hard float (v6) |
-| Ubuntu 12.04 (*) | ARM hard float (v7), ARM64, AMD64, i386 |
+| Ubuntu 12.04 (*) | ARM hard float (v7), AMD64, i386 |
 | Ubuntu 14.04 | ARM hard float (v7), ARM64, AMD64, i386, PPC64el |
 | Ubuntu 16.04 | ARM hard float (v7), ARM64, AMD64, i386, PPC64el |
 | CentOS 6     | AMD64, i386 |
