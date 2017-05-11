@@ -14,70 +14,174 @@ redirect_from:
     <h5>The latest Mono release is: <strong>{{ site.data.latestrelease.version }}</strong></h5>
     <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> or as a <a href="https://download.mono-project.com/sources/mono/">Tarball</a>.</p>
 
-    <dl id="mono-download" class="tabs vertical" data-tab data-options="deep_linking: true; scroll_to_content: false">
+    <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
       <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
       <dd><a href="#download-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
       <dd><a href="#download-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
     </dl>
 
-    <div class="tabs-content vertical">
-      <div class="panel content active" id="download-mac">
+    <div class="tabs-content" id="mono-download-panel">
+      <div class="panel content active" id="download-mac" style="padding: 20px 10px 10px 10px">
         <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           <a href="{{ site.data.latestrelease.mono_mac_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
         </div>
       </div>
-      <div class="panel content" id="download-lin">
-        <h3>Mono for Linux is available for various distributions</h3>
-        <p>Please refer to the <a href="/docs/getting-started/install/linux">installation guide</a> for more information about how to install and configure your Mono environment.</p>
-        <h4>Xamarin packages</h4>
-        <div>
-          <p>These packages are built, tested and distributed by Xamarin. Use these if you want to use a stable, official and up-to-date version of Mono.</p>
-          <ul>
-            <li><a href="/docs/getting-started/install/linux/#debian-ubuntu-and-derivatives">Debian, Ubuntu, and derivatives</a></li>
-            <li><a href="/docs/getting-started/install/linux/#centos-7-fedora-19-and-later-and-derivatives">CentOS, Fedora, and derivatives</a></li>
-            <li><a href="/docs/getting-started/install/linux/#opensuse-and-sles">openSUSE and SLES</a></li>
-          </ul>
-        </div>
-        <h4>Linux distribution packages</h4>
-        <p>Mono is packaged in various Linux distributions by third-party maintainers. Some packages do not ship the latest Mono version; this depends on the distribution/maintainer.</p>
-        <div>
-          <ul>
-            <li><a href="https://www.archlinux.org/packages/extra/i686/mono/">Arch Linux</a></li>
-            <li><a href="https://apps.fedoraproject.org/packages/mono">CentOS EPEL</a></li>
-            <li><a href="https://packages.debian.org/mono-complete">Debian</a></li>
-            <li><a href="https://apps.fedoraproject.org/packages/mono">Fedora</a></li>
-            <li><a href="https://packages.gentoo.org/package/dev-lang/mono">Gentoo</a></li>
-            <li><a href="https://software.opensuse.org/package/mono-complete">openSUSE</a></li>
-            <li><a href="http://packages.ubuntu.com/mono-complete">Ubuntu</a></li>
-          </ul>
-        </div>
-        <h4>Continuous Integration packages</h4>
-        <div>
-          <p>Every commit to our repository automatically builds distribution packages. Use these if you want a bleeding edge Mono version and don't care about stability.</p>
-          <p><a href="/docs/getting-started/install/linux/ci-packages/"><i class="fa fa-book"></i> Learn more about CI packages</a></p>
-        </div>
-        <h4>Community packages</h4>
-        <div>
-          <p>These packages are provided by the community and linked here for your convenience. They are not tested by Xamarin, so use them at your own risk.</p>
-          <ul>
-            <li><a href="http://software.opensuse.org/download/package?project=home:tpokorra:mono&amp;package=mono-opt">Mono Packages installed to /opt for Debian and Ubuntu</a></li>
-            <li><a href="https://copr.fedoraproject.org/coprs/tpokorra/mono-opt/">Mono Packages installed to /opt for CentOS</a></li>
-            <li><a href="https://copr.fedoraproject.org/coprs/tpokorra/mono/">Latest Fedora mono packages for Fedora Rawhide and earlier Fedora versions</a></li>
-            <li><a href="http://software.opensuse.org/download/package?project=Mono:Factory&amp;package=mono-complete">Latest SUSE mono packages, part of the official "Factory" repository</a></li>
-            <li><a href="http://sotirov-bg.net/slackpack/search.cgi?q=mono">Latest Slackware mono packages from SlackPack repository</a></li>
-          </ul>
+      <div class="panel content" id="download-lin" style="padding: 10px 10px 10px 10px">
+        <dl id="mono-download-linux" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
+          <dd class="active"><a href="#download-lin-ubuntu"><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" />&nbsp;&nbsp;Ubuntu</a></dd>
+          <dd><a href="#download-lin-debian"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" />&nbsp;&nbsp;Debian</a></dd>
+          <dd><a href="#download-lin-raspbian"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" />&nbsp;&nbsp;Raspbian</a></dd>
+          <dd><a href="#download-lin-centos"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" />&nbsp;&nbsp;CentOS</a></dd>
+        </dl>
+        <div class="tabs-content horizontal">
+          <div class="panel content active" id="download-lin-ubuntu" style="padding: 10px">
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <h3>Ubuntu 16.04</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update</code></pre>
+            <h3>Ubuntu 14.04</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update</code></pre>
+            <h3>Ubuntu 12.04</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update</code></pre>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
+              Install Mono
+            </h2>
+            <pre style="margin-top: 20px"><code class="language-bash">sudo apt-get install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
+            <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+            <h4>Notes</h4>
+            <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
+          </div>
+          <div class="panel content" id="download-lin-debian" style="padding: 10px">
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <h3>Debian 8</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian jessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update</code></pre>
+            <h3>Debian 7</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update</code></pre>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
+              Install Mono
+            </h2>
+            <pre style="margin-top: 20px"><code class="language-bash">sudo apt-get install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
+            <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+            <h4>Notes</h4>
+            <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
+          </div>
+          <div class="panel content" id="download-lin-raspbian" style="padding: 10px">
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <h3>Raspbian 8</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+sudo apt-get update</code></pre>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
+              Install Mono
+            </h2>
+            <pre style="margin-top: 20px"><code class="language-bash">sudo apt-get install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
+            <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+            <h4>Notes</h4>
+            <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
+          </div>
+          <div class="panel content" id="download-lin-centos" style="padding: 10px">
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
+            <h3>CentOS 7</h3>
+            <pre><code class="language-bash">yum install yum-utils
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos7/</code></pre>
+            <h3>CentOS 6</h3>
+            <pre><code class="language-bash">yum install yum-utils
+rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos6/</code></pre>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
+              Install Mono
+            </h2>
+            <pre style="margin-top: 20px"><code class="language-bash">yum install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>xsp</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+          </div>
         </div>
       </div>
-      <div class="panel content" id="download-win">
+      <div class="panel content" id="download-win" style="padding: 20px 10px 10px 10px">
         <h3>Mono for Windows is available as a Windows Installer file</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           <a href="{{ site.data.latestrelease.mono_windows_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 32-bit</a>
-          <a href="{{ site.data.latestrelease.mono_windows64_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (Preview, no GTK#)</a>
+          <a href="{{ site.data.latestrelease.mono_windows64_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (no GTK#)</a>
         </div>
-        <p>Supported on Windows Vista, 7, 8, 10 or later.</p>
+        <p>Supported on Windows 7, 8, 10 or later.</p>
         <hr />
         <h5>GTK# for .NET</h5>
         <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
@@ -107,13 +211,18 @@ redirect_from:
 <script>
 function runScripts() {
   $(document).ready(function() {
-    function activate(os) {
-      $('dd.active').removeClass();
-      $('dd:has(a[href=#download-' + os + '])').addClass('active');
-      $('div.panel.active').removeClass('active');
-      $('#download-' + os).addClass('active');
+    function activate(os,distro) {
+      $('#mono-download>dd.active').removeClass();
+      $('#mono-download>dd:has(a[href=#download-' + os + '])').addClass('active');
+      $('#mono-download-panel>div.panel.active').removeClass('active');
+      $('#mono-download-panel>#download-' + os).addClass('active');
     }
-    if (!window.location.hash) {
+    if (window.location.hash) {
+      if (window.location.hash.search("download-lin-") >= 0) {
+        activate('lin');
+      }
+    }
+    else {
       if (window.navigator.appVersion.search('Linux') >= 0 || window.navigator.platform.search('Linux') >= 0) {
         activate('lin');
       } else if (window.navigator.appVersion.search('Windows') >= 0 || window.navigator.platform.search('Windows') >= 0) {
