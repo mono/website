@@ -69,7 +69,7 @@ Mono version numbers follow a specific policy, learn more [here](/docs/about-mon
 {% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "releasedate" | reverse %}
 {% assign upcoming = site.pages | where: "layout", "releasenotes" | sort: "version" | reverse %}
 
-Mono 4.x
+Mono 5.x
 --------
 
 {% for p in upcoming %}
@@ -77,6 +77,16 @@ Mono 4.x
   - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(not released yet)*
 {% endif %}
 {% endfor %}
+
+{% for p in release_notes %}
+{% assign major_ver = p.version | split: '.' | first %}
+{% if major_ver == '5' and p.releasedate and p.releasedate != '' %}
+  - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
+{% endif %}
+{% endfor %}
+
+Mono 4.x
+--------
 
 {% for p in release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
