@@ -31,8 +31,6 @@ The experiment is to run this with and without the concurrent mode enabled. We m
 
 ![GC Pause Times](/images/concurrent-gc-pause-times.png)
 
-https://d2mxuefqeaa7sj.cloudfront.net/s_1E1F1B4D0D10BB05B5FFD9AD80DED38AC2103AD08FB5AA02E2079C19CC7C62B6_1493165793285_xs-pause.png
-
 
 The result is that the long pauses, 200ms, 500ms and higher are now completely gone and even the worst case for concurrent GC shows that there are fewer 150ms pauses. 
 
