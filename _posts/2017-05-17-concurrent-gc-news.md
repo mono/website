@@ -66,4 +66,4 @@ This reduces the chances that you will hit the limit that would trigger a major 
 
 We hope to make this tuning a thing of the past when we introduce some of our new game and interactive features for this new mode.
 
-[1] [Typing with Pleasure] (https://pavelfatin.com/typing-with-pleasure/)
+[1] [Typing with Pleasure](https://pavelfatin.com/typing-with-pleasure/)
