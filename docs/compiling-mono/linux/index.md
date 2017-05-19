@@ -15,6 +15,22 @@ Building Mono is a very simple process as Mono has very few external dependencie
 
 On some distribution you will need to install some development tools which are not installed by default.
 
+Compiler/Build dependencies
+---------------------
+
+Mono depends on GCC 4.8+ or Clang 3.3+ (it needs to support C++11) and on CMake 2.8.10.
+
+| Distribution | GCC         | Clang   | CMake     |
+| ------------ | ----------- | ------- | --------- |
+| Debian 7     | ~~4.7/4.6~~ | ~~3.0~~ | ~~2.8.9~~ |
+| Debian 8     | 4.9         | 3.5     | 2.8.11    |
+| Raspbian 8   |             |         |           |
+| Ubuntu 12.04 | ~~4.6~~     | ~~3.0~~ | ~~2.8.7~~ |
+| Ubuntu 14.04 | 4.8         | 3.4     | 2.8.12    |
+| Ubuntu 16.04 | 5.3         | 3.8     | 3.5.1     |
+| CentOS 6     | ~~4.4~~     | 3.4     | 2.8.12    |
+| CentOS 7     | 4.8         |         |           |
+
 Debian based distributions
 --------------------------
 
