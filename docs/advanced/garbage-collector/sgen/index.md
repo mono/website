@@ -121,12 +121,6 @@ The collection process can be thought of as a coloring game. At the start of the
 
 One of the central data structures in this process, then, is the “gray set”, i.e. the set of all gray objects. In SGen it is implemented as a stack.
 
-### The Roots
-
-The collection process can be thought of as a coloring game. At the start of the collection all objects start out as white. First the collector goes through all the roots and marks those gray, signifying that they are reachable but their contents have not been processed yet. Each gray object is then scanned for further references. The objects found during that scanning are also colored gray if they are still white. When the collector has finished scanning a gray object it paints it black, meaning that object is reachable and fully processed. This is repeated until there are no gray objects left, at which point all white objects are known not to be reachable and can be disposed of whereas all black objects must be considered reachable.
-
-One of the central data structures in this process, then, is the “gray set”, i.e. the set of all gray objects. In SGen it is implemented as a stack.
-
 ### Forwarding
 
 In a copying collector like SGen’s nursery collector, which copies reachable objects from the nursery to the major heap, coloring an object also implies copying it, which in turn requires that all references to it must be updated. To that end we must keep track of where each object has been copied to. The easiest way to do this is to use a forwarding pointer. In Mono, the first pointer-sized word of each object is a pointer to the object’s vtable, which is aligned to at least 4 bytes. This alignment leaves the two least significant bits for SGen to play with during a collection, so we use one of them to indicate whether that particular object is forwarded, i.e. has already been copied to the major heap. If it is set, the rest of the word doesn’t actually point to the vtable anymore, but to the object’s new location on the major heap. The second bit is used for pinning, which I will discuss further down.
@@ -171,7 +165,7 @@ Pinned objects are a bit of a complication since it is not possible to completel
 
 ### Finishing Up
 
-After all the copying is done what’s left is to clean up the nursery for the next round of allocations. SGen doesn’t actually zero the nursery memory at this point, however. Instead that happens at the point when TLABs areassigned to threads. The advantage is not only that it potentially gets distributed over more than one thread, but also that is has better cache behavior – the TLAB is likely to be touched again soon by that thread.
+After all the copying is done what’s left is to clean up the nursery for the next round of allocations. SGen doesn’t actually zero the nursery memory at this point, however. Instead that happens at the point when TLABs are assigned to threads. The advantage is not only that it potentially gets distributed over more than one thread, but also that is has better cache behavior – the TLAB is likely to be touched again soon by that thread.
 
 What has to happen at this point, though, is to take score of the regions of nursery memory that are available for allocation, which means everything apart from pinned objects. Since we have a list of all pinned objects this is done very efficiently. It is these “fragments” from which TLABs will be assigned in the next mutator round.
 
