@@ -16,9 +16,11 @@ Building Mono is a very simple process as Mono has very few external dependencie
 On some distribution you will need to install some development tools which are not installed by default.
 
 Compiler/Build dependencies
----------------------
+---------------------------
 
 Mono depends on GCC 4.8+ or Clang 3.3+ (it needs to support C++11) and on CMake 2.8.10.
+
+The table below shows a (not necessarily complete list) of the compiler versions in various distributions. Strikethrough means it doesn't satisfy the version needed.
 
 | Distribution | GCC         | Clang   | CMake      |
 | ------------ | ----------- | ------- | ---------- |
