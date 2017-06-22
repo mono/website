@@ -13,7 +13,7 @@ Methods of Generating Documentation
 
 There are two ways to create documentation for your libraries:
 
--   Using a [separate set of tools](#monodoc-documentation) for maintaining documenation files outside of your source code and which produce ECMA-styled documentation.
+-   Using a [separate set of tools](#monodoc-documentation) for maintaining documentation files outside of your source code and which produce ECMA-styled documentation.
 
 -   Using [the /doc option of mcs](#inline-xml-documentation), which takes documentation comments from within your source code files and compiles them into a Visual Studio-format XML documentation file.
 
@@ -239,7 +239,7 @@ $ mdoc export-html --template doctemplate.xsl -o htmldocs docfiles
 
 ### Validate Monodoc XML format
 
-There is a tool for validating the correction of the XML format of every XML documenation file of a class. To use it:
+There is a tool for validating the correction of the XML format of every XML documentation file of a class. To use it:
 
 ``` bash
 $ mdvalidater ecma path-to-xml-file
