@@ -228,7 +228,7 @@ csharp>
 Startup Files
 =============
 
-On startup the csharp shell will load any C# script files and
+On startup the csharp shell will load any C# script files (ending with .cs) and
 pre-compiled libraries (ending with .dll) that are located in the
 \~/.config/csharp directory (on Windows this is the value of
 Environment.GetFolderPath
