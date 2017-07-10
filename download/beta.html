@@ -80,6 +80,10 @@ sudo apt-get update</code></pre>
               Add the Mono repository to your system
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <h3>Debian 9</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian beta-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-beta.list
+sudo apt-get update</code></pre>
             <h3>Debian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian beta-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-beta.list
@@ -115,6 +119,10 @@ sudo apt-get update</code></pre>
               Add the Mono repository to your system
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <h3>Raspbian 9</h3>
+            <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb http://download.mono-project.com/repo/debian beta-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-beta.list
+sudo apt-get update</code></pre>
             <h3>Raspbian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian beta-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-beta.list
