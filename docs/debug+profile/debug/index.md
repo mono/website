@@ -12,9 +12,9 @@ You can find bugs by using a debugger: setting breakpoints, running the code lin
 
 You can also debug an application by looking at stack traces. These are typically the result of an exception being thrown, or are the result of the code containing explicit calls to `Console.WriteLine(Environment.StackTrace)`. This helps you understand what the call frames were at the point of the stack traces and you can use this to understand what could have lead to the particular state that you are exploring (the crash, the exception, the report).
 
-Debuggers and stack traces are not enough, sometimes you want to see what is happening as the application runs, "trace" its execution and look at parameters and return values that are being passed around. See the [Tracing Programing Execution](/docs/debug+profile/debug/#tracing-program-execution) section for details on this technique.
+Debuggers and stack traces are not enough, sometimes you want to see what is happening as the application runs, "trace" its execution and look at parameters and return values that are being passed around. See the [Tracing Programming Execution](/docs/debug+profile/debug/#tracing-program-execution) section for details on this technique.
 
-Another diagnostics mechanism is exploring which exceptions are being thrown (you might be accidentally capturing exceptions that should be propagated, or your program might be performing suboptimally). See the section on [Exceptions](/docs/debug+profile/debug/#exceptions) to understand how to see these.
+Another diagnostics mechanism is exploring which exceptions are being thrown (you might be accidentally capturing exceptions that should be propagated, or your program might be performing sub optimally). See the section on [Exceptions](/docs/debug+profile/debug/#exceptions) to understand how to see these.
 
 Debugging information
 ---------------------
@@ -42,10 +42,10 @@ For example, when faced with a stack trace, like this:
 
     (gdb) where
     #0  ves_icall_System_String_GetHashCode (me=0x80795d0) at string-icalls.c:861
-    #1  0x0817f490 in ?? ()
-    #2  0x0817f42a in ?? ()
-    #3  0x0817f266 in ?? ()
-    #4  0x0817f1a5 in ?? ()
+    #1  0x0817f490 in ?? ()
+    #2  0x0817f42a in ?? ()
+    #3  0x0817f266 in ?? ()
+    #4  0x0817f1a5 in ?? ()
 
 You can find out what methods are at each address using the mono_print_method_from_ip function (or mono_pmip if you are using Mono 1.1.x):
 
@@ -56,7 +56,7 @@ You can find out what methods are at each address using the mono_print_method_fr
     IP 0x817f42a at offset 0x52 of method System.Collections.Hashtable:GetHash (object) (0x817f3d8 0x817f43b)
     $2 = void
 
-Sometimes you will want to produce a complete dump of all the managed names from within gdb, this can be achived with a gdb macro, put this in your .gdbinit file in your HOME directory:
+Sometimes you will want to produce a complete dump of all the managed names from within gdb, this can be achieved with a gdb macro, put this in your .gdbinit file in your HOME directory:
 
     define mono_backtrace
      select-frame 0
@@ -64,7 +64,7 @@ Sometimes you will want to produce a complete dump of all the managed names from
      while ($i < $arg0)
        set $foo = (char*) mono_pmip ($pc)
        if ($foo)
-         printf "#%d %p in %s\n", $i, $pc, $foo
+         printf "#%d %p in %s\n", $i, $pc, $foo
        else
          frame
        end
@@ -137,15 +137,15 @@ Here is an example session:
     We can now write to the console
     Program received signal SIGTRAP, Trace/breakpoint trap.
     [Switching to Thread -1210435904 (LWP 634)]
-    0xb7a2b97f in ?? ()
+    0xb7a2b97f in ?? ()
     (gdb) call mono_pmip ($eip)
     $1 = 0x8279750 " System.Buffer:BlockCopy (System.Array,int,System.Array,int,int) + 0x17 (0xb7a04968 0xb7a04b93) [0x21f00 - console.exe]"
     (gdb) call mono_debug_print_vars ($eip, 1)
-    Arg src (0) in memory: base register %ebp + 8
-    Arg srcOffset (1) in memory: base register %ebp + 12
-    Arg dest (2) in register %ebx
-    Arg destOffset (3) in register %esi
-    Arg count (4) in register %edi
+    Arg src (0) in memory: base register %ebp + 8
+    Arg srcOffset (1) in memory: base register %ebp + 12
+    Arg dest (2) in register %ebx
+    Arg destOffset (3) in register %esi
+    Arg count (4) in register %edi
     (gdb) call mono_object_describe (*(char**)($ebp+8))
     System.Char[] at 0x43e58, rank: 1, length: 1
     (gdb) call mono_object_describe ($ebx)
@@ -169,11 +169,11 @@ Most of the techniques that you can use in GDB can also be used on Windows using
 
     p mono_pmip(0xdeadbeef)
 
-the equivalent command for the immediate window is the same without the p, and explictely casting the argument to a void\*
+the equivalent command for the immediate window is the same without the p, and explicitly casting the argument to a void\*
 
     mono_pmip((void*)0xdeadbeef)
 
-When mono was loaded from a dynamic library, and the above command doesn't work, you can tell visual studio more explicitely where to find the function. Assuming mono was loaded from "mono.dll", the somewhat cryptic command is:
+When mono was loaded from a dynamic library, and the above command doesn't work, you can tell visual studio more explicitly where to find the function. Assuming mono was loaded from "mono.dll", the somewhat cryptic command is:
 
     {,,mono}mono_pmip((void*)0xdeadbeef)
 
@@ -187,13 +187,13 @@ One of the obviously incorrect way to use locks is to have multiple locks and ac
 ``` csharp
 using System;
 using System.Threading;
- 
+ 
 class TestDeadlock {
- 
+ 
     static object lockA = new object ();
     static object lockB = new object ();
- 
- 
+ 
+ 
     static void normal_order () {
         lock (lockA) {
              Console.WriteLine ("took lock A");
@@ -293,7 +293,7 @@ If the deadlock you're experiencing is not caused by your code, it might be a Mo
 Debugging Pinned Objects
 ------------------------
 
-The Mono GC will conservatively scan part of the stacks of the threads to find if they reference objects that thus would need to be kept alive. Sometimes the stack, though, contains intergers or other data that look like a pointer to an object, but it isn't really used to hold a reference to managed memory. When using the SGen GC, to help debug those cases, you can call the function find_pinning_ref_from_thread(obj, obj_size) to check whether the object obj is being pinned from some thread locations. Make sure you have a mono debug build, as the linker could optimize away this function from production builds.
+The Mono GC will conservatively scan part of the stacks of the threads to find if they reference objects that thus would need to be kept alive. Sometimes the stack, though, contains integers or other data that look like a pointer to an object, but it isn't really used to hold a reference to managed memory. When using the SGen GC, to help debug those cases, you can call the function find_pinning_ref_from_thread(obj, obj_size) to check whether the object obj is being pinned from some thread locations. Make sure you have a mono debug build, as the linker could optimize away this function from production builds.
 
 ### Triggering the Debugger
 
@@ -408,7 +408,7 @@ The full options available are:
 ``` bash
 Tracing options:
    --trace[=EXPR]        Trace every call, optional EXPR controls the scope
- 
+ 
 EXPR is composed of:
     all                  All assemblies
     none                 No assemblies
@@ -482,4 +482,5 @@ sh$ valgrind --tool=memcheck -v --leak-check=full \
 > --suppressions=libgdiplus/cairo/test/.valgrind-suppressions \
 >  mono app.exe
 ```
+
 
