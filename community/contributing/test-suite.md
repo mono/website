@@ -82,21 +82,21 @@ Here I list them up as long as I know. If you are going to add another standalon
 
 there are some standalone tests. See the bottom of [ADO.NET page](/docs/database-access/adonet/) for detail.
 
--   System.Web/Test/TestMonoWeb : see README
+-   System.Web/Test/TestMonoWeb : see README
 
--   System.Web.Services/Test/standalone : see README
+-   System.Web.Services/Test/standalone : see README
 
 -   System.Windows.Forms/SWFTest/
 
--   System.XML/Test/System.Xml/standalone_tests : see README
+-   System.XML/Test/System.Xml/standalone_tests : see README
 
--   System.XML/Test/System.Xml.Schema/standalone_tests : see README
+-   System.XML/Test/System.Xml.Schema/standalone_tests : see README
 
 -   System.XML/System.Xml.Serialization/standalone_tests/
 
--   System.XML/Test/System.Xml.Xsl/standalone_tests : see README
+-   System.XML/Test/System.Xml.Xsl/standalone_tests : see README
 
--   Commons.Xml.Relaxng/Test/standalone_tests : see README
+-   Commons.Xml.Relaxng/Test/standalone_tests : see README
 
 **Getting started**
 
@@ -104,7 +104,7 @@ If you are new to writing NUnit tests, there is a template you may use to help g
 
 [**mcs/class/doc/TemplateTest.cs**](https://github.com/mono/mono/blob/master/mcs/class/doc/TemplateTest.cs)
 
-Save a copy of this file in the appropriate test subdirecty (see below), and replace all the {text} markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them. [StringTest.cs](https://github.com/mono/mono/blob/master/mcs/class/corlib/Test/System/StringTest.cs) is a good example that might help you get started.
+Save a copy of this file in the appropriate test sub-directory (see below), and replace all the {text} markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them. [StringTest.cs](https://github.com/mono/mono/blob/master/mcs/class/corlib/Test/System/StringTest.cs) is a good example that might help you get started.
 
 The directory that will contain your new file depends on the assembly/namespace of the class for which you are creating the tests. Under mcs/class there is a directory for each assembly. In each assembly there is a Test directory, e.g. mcs/class/corlib/Test. In the Test directory there are sub-directories for each namespace in the assembly, e.g. mcs/class/corlib/Test/Sytem. Put your new test file in the appropriate sub-directory under Test for the class you are testing.
 
@@ -161,7 +161,7 @@ Why do unit testing? It becomes simple to run automated tests for the whole libr
 
 ### Getting Started
 
-We welcome all contributions to the Class Libary Test Suite.
+We welcome all contributions to the Class Library Test Suite.
 
 There is information to help you get started in git at mcs/class/doc/NUnitGuidelines. Once you have written your test, please post it to [mono-list](/community/help/mailing-lists/).
 
