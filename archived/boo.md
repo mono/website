@@ -1,6 +1,6 @@
 ---
 title: "Boo"
-lastmodified: '2005-09-21'
+lastmodified: '2017-07-20'
 redirect_from:
   - /Boo/
 ---
@@ -26,7 +26,9 @@ Boo
 Overview
 ========
 
-Boo is a new object oriented statically typed programming language for the Common Language Infrastructure with a python inspired syntax and a special focus on language and compiler extensibility. Features such as type inference, closures (similar to C#'s anonymous delegates), duck typing, and syntactic macros are just a few of the features Boo offers that are not found in many currently available CLI languages.
+Boo is an object oriented, statically typed programming language for the Common Language Infrastructure, with a Python-inspired syntax and a special focus on language and compiler extensibility. Features such as type inference everywhere, duck typing on demand, pattern matching and syntactic macros are just a few of the special features Boo offers, in addition to the standard features a modern CLR developer expects (classes, structs, enums, generics, extension methods, async/await and so on.)
+
+It was designed with a strong emphasis on metaprogramming, with language-level support for macros, meta-methods, and AST-transforming attributes to do AOP-style rewriting as a part of the ordinary compile process.
 
 Syntax Example
 ==============
@@ -49,13 +51,13 @@ Syntax Example
 Compilers/Interpreters
 ======================
 
--   [booc](http://boo.codehaus.org/How+To+Compile) - Compile boo code to IL assemblies.
--   [booi](http://boo.codehaus.org/How+To+Run) - Execute a boo script without first compiling it.
--   [booish](http://boo.codehaus.org/Interactive+Interpreter) - Interactive interpreter boo shell.
+-   [booc](https://github.com/boo-lang/boo/wiki/How-To-Compile) - Compile boo code to IL assemblies.
+-   [booi](https://github.com/boo-lang/boo/wiki/How-to-Run) - Execute a boo script without first compiling it.
+-   [booish](https://github.com/boo-lang/boo/wiki/Interactive-Interpreter) - Interactive interpreter boo shell.
 
 Additional Information
 ======================
 
--   [Boo Home Page](http://boo.codehaus.org/)
+-   [Boo Project Home Page](https://github.com/boo-lang/boo)
 
 
