@@ -22,7 +22,7 @@ Using Blacklists
 
 ### Getting started
 
-Many of these 150 races are harmless - among them are hazard pointers and less important logging counters, to name a few examples. A convenient way to (de)activate reporting of specific races quickly is to work with blacklists. A blacklist file contains the names of source files and/or functions whose races should not be reported. Such blacklist files can be placed anywhere on the system. The simplest approach (an empty blacklist) would look like this:
+Many of these 150 races are harmless - among them are hazard pointers and less important logging counters, to name a few examples. A convenient way to (de)activate the report of specific races quickly, is to work with blacklists. A blacklist file contains the names of source files and/or functions whose races should not be reported. Such blacklist files can be placed anywhere on the system. The simplest approach (an empty blacklist) would look like this:
 
 ``` bash
 $ touch /home/some/path/blacklist
@@ -65,6 +65,22 @@ CFLAGS_FOR_BUILD = -fsanitize=thread -fsanitize-blacklist=/home/some/path/blackl
 ...
 $ make
 ```
+
+Permanent Solutions (Function Annotation)
+-----------------------------------------
+
+While blacklist files are handy when it comes to debugging, they are less convenient when looking for permanent solutions that work without the setup process of blacklists. As mentioned above, some data races are known, can be ignored, and will not be fixed. These races should be blacklisted via function annotation. Functions that are flagged with [`MONO_NO_SANITIZE_THREAD`](https://github.com/mono/mono/blob/master/mono/utils/mono-compiler.h) behave exactly as if their name was found in a blacklist file. If, for example, `foo ()` contains a known race, the following code could be used:
+
+``` c
+MONO_NO_SANITIZE_THREAD
+void
+foo (void)
+{
+  // ...
+}
+```
+
+Mind, however, that these annotations should be used with **great caution**! Many functions contain more than just one data race. Furthermore, other (new) races might arise due to code refactoring but stay hidden if racy functions are annotated already. Therefore, all occurrences of `MONO_NO_SANITIZE_THREAD` should come with meaningful and detailed descriptions of all expected data races.
 
 Helpful Information
 -------------------
