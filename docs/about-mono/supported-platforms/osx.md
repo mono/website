@@ -60,17 +60,13 @@ You will have a choice of [GUI toolkits](/docs/gui/gui-toolkits/) for building y
 32 and 64 bit support
 ---------------------
 
-The Mono packages published on this web site provide a 32-bit Mono VM.
+The Mono packages published on this web site provide both a 32-bit and a 64-bit Mono VM.
 
-Support for 64-bit VMs as of Mono 2.10 is only available if you build Mono from source code and install your own copy of the VM. In the future we will ship both mono and mono64 binaries for our users.
+Starting from Mono 5.2 the `mono` command defaults to 64-bit, you can use the `--arch=32/64` switch to control the bitness.
 
-The 64 bit support has a few limitations today which is why we have not entirely switched to it:
+The 64 bit support has a few limitations today:
 
 -   Our Windows.Forms implementation uses Carbon, and as such, it would not work with a 64-bit Mono.
--   MonoDevelop uses Carbon for its menu integration so it would not run on a 64-bit VM.
--   MonoMac bindings have not been ported to 64 bits.
-
-Supporting 64-bit Mono across the board would also require us to ship a 64-bit Gtk+ stack and that would increase the download size for most users.
 
 Building Client Applications
 ----------------------------
