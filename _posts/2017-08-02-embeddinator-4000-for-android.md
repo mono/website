@@ -1,7 +1,15 @@
+---
+layout: blog
+title: "Embeddinator-4000 for Android: Available on NuGet"
+author: Jonathan Peppers
+tags: [releases]
+---
 Today we are announcing the first preview release of Embeddinator-4000 for Android available on [NuGet](https://www.nuget.org/packages/Embeddinator-4000/).
-```
+
+```bash
 nuget install Embeddinator-4000
 ```
+
 This will place `Embeddinator-4000.exe` into the `packages/Embeddinator-4000/tools` directory.
 
 This release supports the following scenarios:
@@ -15,16 +23,18 @@ This release supports the following scenarios:
 * Package a .NET library project into a `dylib`, `so`, or `dll` as appropriate per platform for use from C
 
 For general usage, run Embeddinator on a compiled Android library assembly as follows:
-```
+
+```bash
 mono Embeddinator-4000.exe -gen=Java -platform=Android -c YourAndroidLibrary.dll
 ```
+
 This will output `YourAndroidLibrary.aar` for use in Android Studio.
 
 In Android Studio, create a new module and choose `Import .JAR/.AAR package`:
-![Import AAR Package](../images/e4k-android-studio-import.png)
+![Import AAR Package](/images/e4k-android-studio-import.png)
 
 Adding a dependency to the new module, will give Java access to your .NET code:
-![Add Module Dependency](../images/e4k-android-studio-dep.png)
+![Add Module Dependency](/images/e4k-android-studio-dep.png)
 
 For detailed instructions on using Embeddinator-4000 for Android see our [Getting Started](https://mono.github.io/Embeddinator-4000/getting-started-java-android.html) guide.
 
