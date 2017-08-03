@@ -42,4 +42,4 @@ For a complete walkthrough, check out this video embedding Charles Petzold's [Fi
 
 [![Embeddinator-4000 for Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
-For iOS support, you can continue to use the iOS [Getting Started](https://mono.github.io/Embeddinator-4000/getting-started-objc-ios.html) guide and the previous installer.
+For iOS support, you can use `objcgen.exe` included in the NuGet package. Additionally, you can follow the iOS [Getting Started](https://mono.github.io/Embeddinator-4000/getting-started-objc-ios.html) guide and use the previous installer package.
