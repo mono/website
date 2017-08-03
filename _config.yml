@@ -4,6 +4,7 @@ paginate: 5
 
 # General settings
 name: Mono Project
+repository: mono/website
 permalink: pretty
 markdown: kramdown
 kramdown:
