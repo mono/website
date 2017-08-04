@@ -44,7 +44,7 @@ various configurations in Mono-powered stacks (Mono and Xamarin).
 Mono’s original `HttpWebRequest` stack was written in 2004 and was
 built using the asynchronous APIs that were available in .NET 1.0,
 that is the
-`[BeginInvoke](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously)`[/](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously)`[EndInvoke](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously)`
+[BeginInvoke](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously) / [EndInvoke](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously)
 patterns, a pattern that was heavily based on queuing work, waiting
 for a result and resuming execution at a later point.
 
