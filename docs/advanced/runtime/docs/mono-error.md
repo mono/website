@@ -92,7 +92,6 @@ Important points from the above:
 - Given we're still transitioning, not all code can handle in the same ways
 - Since all calls that take a MonoError init it, only check it after the first call;
 
-
 Handling the transition
 =======================
 

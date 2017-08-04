@@ -11,6 +11,7 @@ The [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) is integ
 $ cd /home/root/of/mono
 $ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS=-fsanitize=thread LDFLAGS=-fsanitize=thread CXX=clang++
 $ make
+...
 ```
 
 Please mind that `CXX` has to be set to `clang++` to avoid unwanted side effects and compiling errors.
@@ -29,6 +30,7 @@ $ touch /home/some/path/blacklist
 $ cd /home/root/of/mono
 $ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang++
 $ make
+...
 ```
 
 Currently (July 2017) it seems like a good idea to leave all blacklist files outside of the repository, as sometimes `autogen.sh` treats blacklist files like source files and lists them as dependencies. As an additional, positive side effect, the blacklist files will not interfere with git.
@@ -99,6 +101,7 @@ Clang's ThreadSanitizer supports a lot of [compiler options](https://github.com/
 $ cd /home/root/of/mono
 $ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist -mllvm -tsan-instrument-atomics=false" LDFLAGS=-fsanitize=thread CXX=clang++
 $ make
+...
 ```
 
 ### Runtime Options
@@ -108,6 +111,7 @@ Clang's ThreadSanitizer also supports various [runtime options](https://github.c
 ``` bash
 $ cd /home/root/of/mono
 $ TSAN_OPTIONS="foo=bar foo2=bar2 foo3=bar3" make
+...
 ```
 
 Please be aware that the runtime options have to be set everytime a ThreadSanitizer-annotated program is used. `TSAN_OPTIONS` is only applied to the `make` process in the example code above. When using `mono` later, `TSAN_OPTIONS` has to be provided again.

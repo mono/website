@@ -187,13 +187,12 @@ One of the obviously incorrect way to use locks is to have multiple locks and ac
 ``` csharp
 using System;
 using System.Threading;
- 
+
 class TestDeadlock {
- 
+
     static object lockA = new object ();
     static object lockB = new object ();
- 
- 
+
     static void normal_order () {
         lock (lockA) {
              Console.WriteLine ("took lock A");
@@ -408,7 +407,7 @@ The full options available are:
 ``` bash
 Tracing options:
    --trace[=EXPR]        Trace every call, optional EXPR controls the scope
- 
+
 EXPR is composed of:
     all                  All assemblies
     none                 No assemblies

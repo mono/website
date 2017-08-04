@@ -12,7 +12,7 @@ This does not include Mono source code.
 
 Sample code shown on the website is licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
---------------------------------------
+---
 
 The Debian Open Use Logo(s) are Copyright (c) 1999 Software in the Public Interest, Inc., and are released under the terms of the GNU Lesser General Public License, version 3 or any later version, or, at your option, of the Creative Commons Attribution-ShareAlike 3.0 Unported License. [https://www.debian.org/](https://www.debian.org/).
 
