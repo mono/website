@@ -23,8 +23,8 @@ Accessibility: Testing Howto
 <li><a href="#strongwind-introduction">1.1.3 Strongwind Introduction</a></li>
 <li><a href="#strongwind-test-harness">1.1.4 Strongwind Test Harness</a>
 <ul>
-<li><a href="#localrunpy">1.1.4.1 local_run.py</a></li>
-<li><a href="#remoterunpy">1.1.4.2 remote_run.py</a></li>
+<li><a href="#local_runpy">1.1.4.1 local_run.py</a></li>
+<li><a href="#remote_runpy">1.1.4.2 remote_run.py</a></li>
 <li><a href="#official-tests">1.1.4.3 &quot;Official Tests&quot;</a></li>
 <li><a href="#official-test-machine-configuration">1.1.4.4 Official Test Machine Configuration</a></li>
 <li><a href="#qa-architecture-diagram">1.1.4.5 QA Architecture Diagram</a></li>
@@ -32,7 +32,7 @@ Accessibility: Testing Howto
 <li><a href="#example-sample-application">1.1.5 Example Sample Application</a></li>
 <li><a href="#example-application-wrapper">1.1.6 Example Application Wrapper</a>
 <ul>
-<li><a href="#initpy">1.1.6.1 __init__.py</a></li>
+<li><a href="#__init__py">1.1.6.1 __init__.py</a></li>
 <li><a href="#gtktutorialframepy">1.1.6.2 gtktutorialframe.py</a></li>
 </ul></li>
 <li><a href="#example-test-script">1.1.7 Example Test Script</a></li>

@@ -39,12 +39,12 @@ This document is intended to provide a basic overview of how to configure and te
 <li><a href="#unable-to-determine-the-apache-mpm">2.2.4 &quot;Unable to determine the Apache MPM&quot;</a></li>
 <li><a href="#internal-error">2.2.5 &quot;Internal error&quot;</a></li>
 <li><a href="#configuration-not-found-or-invalid-syntax-details-logged">2.2.6 &quot;Configuration not found or invalid syntax (details logged)&quot;</a></li>
-<li><a href="#the-modmono-apache-module-is-not-loaded-or-configuration-syntax-error-details-logged">2.2.7 &quot;The mod_mono Apache module is not loaded or configuration syntax error (details logged)&quot;</a></li>
-<li><a href="#unable-to-find-modmono-configuration">2.2.8 &quot;Unable to find mod_mono configuration&quot;</a></li>
-<li><a href="#the-modmono-binary-file-does-not-exist-at-path-to-the-expected-modmono-binary">2.2.9 &quot;The mod_mono binary file does not exist at &lt;path to the expected mod_mono binary&gt;&quot;</a></li>
-<li><a href="#unknown-os-architecture-osarch">2.2.10 &quot;Unknown OS architecture $OS_ARCH&quot;</a></li>
-<li><a href="#modmono-has-unresolvable-shared-library-dependencies-details-logged">2.2.11 &quot;mod_mono has unresolvable shared library dependencies (details logged)&quot;</a></li>
-<li><a href="#modmono-might-not-be-loadable-on-this-architecture-osarch-bit-details-logged">2.2.12 &quot;mod_mono might not be loadable on this architecture (${OS_ARCH}-bit, details logged)&quot;</a></li>
+<li><a href="#the-mod_mono-apache-module-is-not-loaded-or-configuration-syntax-error-details-logged">2.2.7 &quot;The mod_mono Apache module is not loaded or configuration syntax error (details logged)&quot;</a></li>
+<li><a href="#unable-to-find-mod_mono-configuration">2.2.8 &quot;Unable to find mod_mono configuration&quot;</a></li>
+<li><a href="#the-mod_mono-binary-file-does-not-exist-at-path-to-the-expected-mod_mono-binary">2.2.9 &quot;The mod_mono binary file does not exist at &lt;path to the expected mod_mono binary&gt;&quot;</a></li>
+<li><a href="#unknown-os-architecture-os_arch">2.2.10 &quot;Unknown OS architecture $OS_ARCH&quot;</a></li>
+<li><a href="#mod_mono-has-unresolvable-shared-library-dependencies-details-logged">2.2.11 &quot;mod_mono has unresolvable shared library dependencies (details logged)&quot;</a></li>
+<li><a href="#mod_mono-might-not-be-loadable-on-this-architecture-os_arch-bit-details-logged">2.2.12 &quot;mod_mono might not be loadable on this architecture (${OS_ARCH}-bit, details logged)&quot;</a></li>
 <li><a href="#some-packages-are-missing-list-of-missing-packages">2.2.13 &quot;Some packages are missing: &lt;list of missing packages&gt;&quot;</a></li>
 <li><a href="#unable-to-determine-mono-version">2.2.14 &quot;Unable to determine mono version&quot;</a></li>
 <li><a href="#virtual-host-improperly-configured-vhost">2.2.15 &quot;Virtual host &lt;improperly configured vhost&gt;&quot;</a></li>
@@ -52,7 +52,7 @@ This document is intended to provide a basic overview of how to configure and te
 <li><a href="#virtual-host-configuration-file-path-to-vhost-config-file-does-not-exist">2.2.17 &quot;Virtual host configuration file &lt;path to vhost config file&gt; does not exist&quot;</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#configuring-modmono">3 Configuring mod_mono</a>
+<li><a href="#configuring-mod_mono">3 Configuring mod_mono</a>
 <ul>
 <li><a href="#mono-extension-specific-configuration">3.1 Mono Extension specific configuration</a></li>
 </ul></li>

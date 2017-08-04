@@ -165,7 +165,7 @@ A simple Apache configuration file (*/home/username/public_html/.htaccess*):
     Action mono-cgi /cgi-bin/mono-cgi
     AddHandler mono-cgi .aspx .asmx .ashx .ascx .asax .axd .config .cs
 
-You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/docs/web/mod_mono/#manual-modmono-configuration).
+You may want to handle other extensions with ASP.NET. For more examples on configuration see [Manual Mod_Mono Configuration](/docs/web/mod_mono/#manual-mod_mono-configuration).
 
  To improve security you should protect ASP.NET Application Folders:
 

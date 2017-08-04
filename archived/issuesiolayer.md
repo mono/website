@@ -38,7 +38,7 @@ Shared information like thread handles is kept in this page and this page can gr
 <li><a href="#process-id-storage">5.1 Process ID storage</a></li>
 <li><a href="#reducing-the-size-of-the-table">5.2 Reducing the size of the table</a></li>
 <li><a href="#mono-modes">5.3 Mono Modes</a></li>
-<li><a href="#write-read-operations">5.4 _write, _read operations</a></li>
+<li><a href="#_write-_read-operations">5.4 _write, _read operations</a></li>
 </ul></li>
 </ul></td>
 </tr>

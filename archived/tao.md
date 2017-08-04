@@ -18,7 +18,7 @@ The Tao website is now located at : [http://sourceforge.net/projects/taoframewo
 <ul>
 <li><a href="#availability">1 Availability</a>
 <ul>
-<li><a href="#release-2-nov-2005">1.1 1.2.0 Release (2 Nov 2005)</a></li>
+<li><a href="#120-release-2-nov-2005">1.1 1.2.0 Release (2 Nov 2005)</a></li>
 <li><a href="#svn">1.2 SVN</a></li>
 <li><a href="#tao--autotools">1.3 Tao + autotools</a></li>
 </ul></li>

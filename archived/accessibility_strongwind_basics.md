@@ -25,7 +25,7 @@ This tutorial is not meant to cover all Strongwind features exhaustively. This t
 <li><a href="#testable-application">2.1 Testable Application</a></li>
 <li><a href="#application-wrapper">2.2 Application Wrapper</a>
 <ul>
-<li><a href="#initpy">2.2.1 __init__.py</a></li>
+<li><a href="#__init__py">2.2.1 __init__.py</a></li>
 <li><a href="#gtkcheckbuttonframepy">2.2.2 gtkcheckbuttonframe.py</a></li>
 <li><a href="#the-find-functions">2.2.3 the find* functions</a></li>
 </ul></li>

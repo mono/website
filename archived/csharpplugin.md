@@ -66,7 +66,7 @@ Abstract
 <li><a href="#define-symbols">9.1.18 Define Symbols</a></li>
 <li><a href="#allow-unsafe-code">9.1.19 Allow Unsafe Code</a></li>
 <li><a href="#specify-language">9.1.20 Specify Language</a></li>
-<li><a href="#targettype">9.1.21 TARGET_TYPE</a></li>
+<li><a href="#target_type">9.1.21 TARGET_TYPE</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#using-the-plugin">10 Using the Plugin</a>

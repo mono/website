@@ -85,7 +85,7 @@ First, always make sure you are running in the parallel mono environment when yo
     sandy@linux:~> source ~/mono-dev-env
     [mono] ~ @
 
-(If you don't have your [CONFIG_SITE](/docs/compiling-mono/parallel-mono-environments/#tip-configsite) set up, you will need to specify the correct prefix when you run autogen.sh, for example \`./autogen.sh --prefix=/home/[user]/parallel-mono\`)
+(If you don't have your [CONFIG_SITE](/docs/compiling-mono/parallel-mono-environments/#tip-config_site) set up, you will need to specify the correct prefix when you run autogen.sh, for example \`./autogen.sh --prefix=/home/[user]/parallel-mono\`)
 
     [mono] ~/mono-svn/uia2atk/UIAutomation @ ./autogen.sh && make && make install
 

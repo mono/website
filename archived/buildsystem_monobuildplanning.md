@@ -27,7 +27,7 @@ BuildSystem/MonoBuildPlanning
 <ul>
 <li><a href="#configuration-path-to-release-work-area">2.1 Configuration: Path to release Work Area</a></li>
 <li><a href="#configuring-apache-for-monobuild">2.2 Configuring Apache for MonoBuild</a></li>
-<li><a href="#working-example-of-etcapache2confdmodperlconf">2.3 Working example of /etc/apache2/conf.d/mod_perl.conf</a></li>
+<li><a href="#working-example-of-etcapache2confdmod_perlconf">2.3 Working example of /etc/apache2/conf.d/mod_perl.conf</a></li>
 </ul></li>
 </ul></td>
 </tr>

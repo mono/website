@@ -16,16 +16,16 @@ MonoTouch Release Notes:
 <tr class="odd">
 <td align="left"><h2>Table of contents</h2>
 <ul>
-<li><a href="#rc2">1 1.0 RC2</a></li>
-<li><a href="#rc">2 1.0 RC</a></li>
-<li><a href="#beta-8">3 1.0 Beta 8</a></li>
-<li><a href="#beta-7">4 1.0 Beta 7</a></li>
-<li><a href="#beta-6">5 1.0 Beta 6</a></li>
-<li><a href="#beta-5">6 1.0 Beta 5</a></li>
-<li><a href="#beta-4">7 1.0 Beta 4</a></li>
-<li><a href="#beta-3">8 1.0 Beta 3</a></li>
-<li><a href="#beta-2">9 1.0 Beta 2</a></li>
-<li><a href="#beta-1">10 1.0 Beta 1</a></li>
+<li><a href="#10-rc2">1 1.0 RC2</a></li>
+<li><a href="#10-rc">2 1.0 RC</a></li>
+<li><a href="#10-beta-8">3 1.0 Beta 8</a></li>
+<li><a href="#10-beta-7">4 1.0 Beta 7</a></li>
+<li><a href="#10-beta-6">5 1.0 Beta 6</a></li>
+<li><a href="#10-beta-5">6 1.0 Beta 5</a></li>
+<li><a href="#10-beta-4">7 1.0 Beta 4</a></li>
+<li><a href="#10-beta-3">8 1.0 Beta 3</a></li>
+<li><a href="#10-beta-2">9 1.0 Beta 2</a></li>
+<li><a href="#10-beta-1">10 1.0 Beta 1</a></li>
 </ul></td>
 </tr>
 </tbody>
