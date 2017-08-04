@@ -1,4 +1,4 @@
-version: 5.2.0 Preview 6 (5.2.0.215)
+version: 5.2.0 Preview 7 (5.2.0.215)
 mono_mac_url: https://download.mono-project.com/archive/5.2.0/macos-10-universal/MonoFramework-MDK-5.2.0.215.macos10.xamarin.universal.pkg
 mono_windows_url: https://download.mono-project.com/archive/5.2.0/windows-installer/mono-5.2.0.215-gtksharp-2.12.45-win32-0.msi
 mono_windows64_url: https://download.mono-project.com/archive/5.2.0/windows-installer/mono-5.2.0.215-x64-0.msi
