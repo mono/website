@@ -3,7 +3,7 @@ paginate_path: "news/page/:num/"
 paginate: 5
 
 # General settings
-name: Mono Project
+title: Mono Project
 repository: mono/website
 permalink: pretty
 markdown: kramdown
