@@ -5,7 +5,7 @@ author: Miguel de Icaza
 tags: [runtime]
 ---
 
-We have been experimenting a couple of approached to bring Mono to the
+We have been experimenting with a couple of approaches to bring Mono to the
 web using WebAssembly - a technology that can efficiently and safely
 execute code in web browsers without being limited to Javascript.
 Running code written in C or C++ inside the browser has been a big
