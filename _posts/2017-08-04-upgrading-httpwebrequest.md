@@ -20,19 +20,19 @@ programming support in mind.
 
 On each platform, `HttpClient` tries to use the best available transport:
 
-| **Host/Runtime**  | **Backend**                                                                             |
-| ----------------- | --------------------------------------------------------------------------------------- |
-| Windows/.NET      | `HttpWebRequest`                                                                        |
-| Windows/Mono      | `HttpWebRequest`                                                                        |
-| Windows/UWP       | Windows native `WinHttpHandler` (HTTP 2.0 capable)                                      |
-| Windows/.NET Core | Windows native `WinHttpHandler` (HTTP 2.0 capable)                                      |
-| Android/Xamarin   | Default to Android’s HTTP transport<br/>Can be configured to be `HttpWebRequest`.       |
-| iOS, tvOS/Xamarin | Default to `NSUrlSession` (HTTP 2.0 capable)<br/>Can be configured to use `HttpWebRequest`. |
-| macOS/Xamarin     | Default to `NSUrlSession` (HTTP 2.0 capable)<br/>Can be configured to use `HttpWebRequest`  |
-| macOS/Mono        | `HttpWebRequest`                                                                        |
-| macOS/.NET Core   | `libcurl`-based HTTP transport (HTTP 2.0 capable)                                       |
-| Linux/Mono        | `HttpWebRequest`                                                                        |
-| Linux/.NET Core   | `libcurl`-based HTTP transport (HTTP 2.0 capable)                                       |
+| **Host/Runtime**            | **Backend**                                                                                 |
+| --------------------------- | --------------------------------------------------------------------------------------------|
+| Windows/.NET Framework      | `HttpWebRequest`                                                                            |
+| Windows/Mono                | `HttpWebRequest`                                                                            |
+| Windows/UWP                 | Windows native `WinHttpHandler` (HTTP 2.0 capable)                                          |
+| Windows/.NET Core           | Windows native `WinHttpHandler` (HTTP 2.0 capable)                                          |
+| Android/Xamarin             | Default to Android’s HTTP transport<br/>Can be configured to be `HttpWebRequest`.           |
+| iOS, tvOS, watchOS/Xamarin  | Default to `NSUrlSession` (HTTP 2.0 capable)<br/>Can be configured to use `HttpWebRequest`. |
+| macOS/Xamarin               | Default to `NSUrlSession` (HTTP 2.0 capable)<br/>Can be configured to use `HttpWebRequest`  |
+| macOS/Mono                  | `HttpWebRequest`                                                                            |
+| macOS/.NET Core             | `libcurl`-based HTTP transport (HTTP 2.0 capable)                                           |
+| Linux/Mono                  | `HttpWebRequest`                                                                            |
+| Linux/.NET Core             | `libcurl`-based HTTP transport (HTTP 2.0 capable)                                           |
 
 As you can see, while `HttpWebRequest` is not the default across the
 board and lacks HTTP 2.0 capabilities, it is still available in
