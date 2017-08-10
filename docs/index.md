@@ -105,9 +105,10 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
                         <li><a href="/docs/debug+profile/profile/code-coverage/">Code Coverage</a></li>
                     </ul>
                 </li>
-                <li><a href="/docs/debug+profile/clang/">Clang - Overview</a>
+                <li><a href="/docs/debug+profile/clang/">Clang Sanitizers - Overview</a>
                     <ul>
-                        <li><a href="/docs/debug+profile/clang/threadsanitizer/">ThreadSanitizer</a></li>
+                        <li><a href="/docs/debug+profile/clang/threadsanitizer/">ThreadSanitizer (TSan)</a></li>
+                        <li><a href="/docs/debug+profile/clang/addresssanitizer/">AddressSanitizer (ASan)</a></li>
                     </ul>
                 </li>
             </ul>

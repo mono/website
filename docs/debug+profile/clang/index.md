@@ -1,7 +1,8 @@
 ---
-title: Clang
+title: Clang Sanitizers
 ---
 
-The Mono runtime can be compiled and linked with [Clang](https://clang.llvm.org/) and therefore, many of [Clang's sanitisers](https://clang.llvm.org/docs/index.html#using-clang-as-a-compiler) can be used to check and verify different aspects:
+The Mono runtime can be compiled and linked with [Clang](https://clang.llvm.org/) and due to this, many of [Clang's sanitizers](https://clang.llvm.org/docs/index.html#using-clang-as-a-compiler) can be used to check and verify different aspects:
 
-- [ThreadSanitizer](/docs/debug+profile/clang/threadsanitizer/) - detect data races at execution time
+- [ThreadSanitizer (TSan)](/docs/debug+profile/clang/threadsanitizer/) - detect data races and thread leaks at runtime
+- [AddressSanitizer (ASan)](/docs/debug+profile/clang/addresssanitizer/) - detect memory errors (mostly buffer over- / underflows) at runtime
