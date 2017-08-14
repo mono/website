@@ -25,7 +25,7 @@ fully just-in-time compiled, to fully statically compiled with a
 couple of hybrid modes in between (statically compiled with JIT, and
 statically compiled with an interpreter).
 
-Today we have two prototypes running in WebAssembly.   
+Today we have two prototypes running in WebAssembly.
 
 The first one uses the traditional full static compilation mode of
 Mono, this compiled both the Mono C runtime and the Mono class
@@ -47,11 +47,10 @@ or this F# code [in action](http://www.kumpera.com/wasm/fsharp.html):
     open System
     type Shape = | Circle of float | Square of float * float
     [EntryPoint]
-    let main argv = 
+    let main argv =
       let s = Circle 10.
       Console.WriteLine (s)
       0
-
 
 Currently neither approach has been optimized for size, they are using
 the full Mono Desktop profiles.  The size should come down

@@ -6,7 +6,6 @@ tags: [releases]
 ---
 Today we are announcing the first preview release of Embeddinator-4000 for Android available on [NuGet](https://www.nuget.org/packages/Embeddinator-4000/). The package also includes the previously released iOS support.
 
-
 ```bash
 nuget install Embeddinator-4000
 ```
