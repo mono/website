@@ -16,7 +16,7 @@ capabilities from being implemented.   The upgrade to the API will allow us to:
 
 * Reconfigure the profiling features at runtime
 * Look at the values of incoming parameters and return values.
-* Ability to instrument the managed allocators, thus allowing these to be profiled. 
+* Ability to instrument the managed allocators, thus allowing these to be profiled.
 
 This is what we did.
 
