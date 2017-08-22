@@ -18,7 +18,7 @@ After `autogen.sh` has been executed as suggested above, the following `make` co
 Dynamic Blacklisting
 --------------------
 
-Many of these 150 races are harmless - among them are hazard pointers and less important logging counters, to name a few examples. A convenient way to (de)activate the report of specific races quickly is to work with blacklists. Please have a look at [this article](/docs/debug+profile/clang/blacklists/) to find out how to work with blacklists in combination with Mono.
+Many of these 150 races are harmless &ndash; among them are hazard pointers and less important logging counters, to name a few examples. A convenient way to (de)activate the report of specific races quickly is to work with blacklists. Please have a look at [this article](/docs/debug+profile/clang/blacklists/) to find out how to work with blacklists in combination with Mono.
 
 Furthermore, the [blacklist](https://github.com/mono/mono/blob/master/scripts/ci/clang-thread-sanitizer-blacklist) in `scripts/ci/` can be a good starting point when exploring Mono with the ThreadSanitizer.
 
@@ -66,7 +66,7 @@ Sometimes, races extend over a long period of time; however, they might not be h
 
 ### Exit with 0
 
-By default, the ThreadSanitizer exits with `66` whenever at least one race or leak was detected. This can be inconvenient, when compiling a batch of files. Luckily, the runtime option `exitcode=0` (or `1`, `2`, ...) can help with that.
+By default, the ThreadSanitizer exits with `66` whenever at least one race or leak was detected. This can be inconvenient when working with a batch of executions that depend on clean program shutdowns. Luckily, the runtime option `exitcode=0` (or `1`, `2`, ...) can help with that.
 
 Additional Information
 ----------------------
