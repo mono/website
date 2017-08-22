@@ -14,14 +14,27 @@ $ make
 ...
 ```
 
-The easiest way of blocking everything is to simply put `src:*` into the blacklist file:
+Content of Blacklist Files
+--------------------------
+
+The easiest way of blocking everything is to simply put `src:*` into a blacklist file:
 
 ``` bash
 $ cat /home/some/path/blacklist
 src:*
 ```
 
-However, a finer granularity (toggling the reporting of functions instead of the reporting of whole source files) is often desirable. Currently, `fun:` can be used to achieve that. Also, `src:` and `fun:` can be used in the same blacklist file and even the usage of wildcards (`*`) is supported. Please have a look at the [official documentation](https://clang.llvm.org/docs/SanitizerSpecialCaseList.html) for more details.
+However, a finer granularity (toggling the reporting of functions instead of the reporting of whole source files) is often desirable. While `fun:` can be used to achieve that, only top level functions (where the races occur) can be blacklisted. For example, the following race could only be blacklisted if the C standard library was built from source, as the top level function is `calloc ()`. Blacklisting `monoeg_g_calloc ()` or `monoeg_malloc0 ()` would not blacklist this specific race.
+
+``` text
+#0 calloc <null> (mono-sgen+0x43a477)
+#1 monoeg_g_calloc /home/root/of/mono/mono/eglib/src/gmem.c:114:9 (mono-sgen+0xf2081b)
+#2 monoeg_malloc0 /home/root/of/mono/mono/eglib/src/gmem.c:121:9 (mono-sgen+0xf208bf)
+#3 inflate_generic_signature_checked /home/root/of/mono/mono/mono/metadata/loader.c:537:31 (mono-sgen+0xb9
+...
+```
+
+`src:` and `fun:` instructions can be used in the same blacklist file and the usage of wildcards (`*`) is supported. Please have a look at the [official documentation](https://clang.llvm.org/docs/SanitizerSpecialCaseList.html) for more details.
 
 Partitioning Blacklists
 -----------------------
