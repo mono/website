@@ -4,15 +4,15 @@ title: "CppSharp / Maintenance & Improvement tasks (Kimon Topouzidis)"
 
 Author: Kimon Topouzidis
 
-# Summary
+## Summary
 
 My name is Kimon Topouzidis and I am a student at the IT Department of Alexander Technological Institute Thessaloniki, Greece. This summer of 2017, I was accepted to participate at the [Google Summer of Code](https://summerofcode.withgoogle.com) and more specifically at [CppSharp](https://github.com/mono/CppSharp). August 21, 2017, marks the end of the program. It was a long way, since May the 4th, when the journey began. My task was to fix as many as possible of the issues reported by the community. I will try to briefly present my work here and show the world what I did during the summer.
 
-# Early days
+## Early days
 
 May was a month of preparation. I studied the docs, cloned the project, built the solution and tried to understand the concept of the project. First things first I learned how to use the [TortoiseGit](https://tortoisegit.org/). Since I was about to use Github I had to learn how to properly use Git. In addition, my mentor, [João Matos](https://github.com/tritao), taught me the basics of the project, how it works, what's its purpose etc. etc.
 
-# The way we worked
+## The way we worked
 
 Working on debugging is quite demanding. You solve an issue here and you open 30 somewhere else. Thats why I had to split and slowly work on an issue to avoid as many problems as possible. After a brief discussion I had with my mentor, we decided to split my work in pieces. I was responsible for an issue that he would assign me and I had to fix it, with his guidance of course. The first issues I took were easy ones and I just had to do minor changes to the code. Later on, I was assigned way more difficult ones, such as wrapping values from [Clang](https://clang.llvm.org), something I never thought I would be able to do so.
 
@@ -22,7 +22,7 @@ After dealing with some issues I became way more comfortable and confident. Work
 
 In the end, I had just slightly improved CppSharp project, and I have contributed in the Open Source Community for the first time. My changes and work are incomparable with those others do but I am really proud of my code and the things I learned throughout the summer.
 
-# My work
+## My work
 
 As mentioned, my job this summer was to solve as many issues as possible. You can see my PR's [here](https://github.com/mono/CppSharp/pulls?q=is%3Apr+is%3Aclosed+author%3Aktopouzi). I have worked on several parts of the CppSharp projects and made quite a few changes. Some of them are:
 
@@ -34,7 +34,7 @@ I wrapped the width of each Primitive from Clang, and then proceeded with the pr
 
 ```csharp
 
-     Write($"{access} {retType} {retType.NameSuffix} = {fieldValuePrinted};");
+Write($"{access} {retType} {retType.NameSuffix} = {fieldValuePrinted};");
 
 ```
 
@@ -42,9 +42,9 @@ and then I proceeded with the implementation of the LongDoubles, Int128 and Half
 
 ```csharp
 
-     case PrimitiveType.LongDouble/Int128/Half:
-            return new TypePrinterResult { Type = "fixed byte",
-            NameSuffix = $"[{Context.TargetInfo.LongDoubleWidth/Int128Width/HalfWidth}]"};
+case PrimitiveType.LongDouble/Int128/Half:
+    return new TypePrinterResult { Type = "fixed byte",
+    NameSuffix = $"[{Context.TargetInfo.LongDoubleWidth/Int128Width/HalfWidth}]"};
 ```
 
 ### Support for C/C++ structure packing
@@ -63,18 +63,18 @@ After creating the getter/setter for the variable, I had to implement it in the 
 
 ```csharp
 
-    if (Decl && D->hasAttrs())
-     {
-         for (auto it = D->attr_begin(); it != D->attr_end(); ++it)
-         {
-             Attr* Attr = (*it);
-             if (Attr->getKind() == clang::attr::Kind::MaxFieldAlignment)
-             {
-                 auto MFA = cast<clang::MaxFieldAlignmentAttr>(Attr);
-                 Decl->maxFieldAlignment = MFA->getAlignment();
-             }
-         }
-     }
+if (Decl && D->hasAttrs())
+{
+    for (auto it = D->attr_begin(); it != D->attr_end(); ++it)
+    {
+        Attr* Attr = (*it);
+        if (Attr->getKind() == clang::attr::Kind::MaxFieldAlignment)
+        {
+            auto MFA = cast<clang::MaxFieldAlignmentAttr>(Attr);
+            Decl->maxFieldAlignment = MFA->getAlignment();
+        }
+    }
+}
 
 ```
 
@@ -88,24 +88,24 @@ First of all I had to deal with a problem we had with XML blocks. Clang has a ve
 
 ```csharp
 
-    public bool VisitParagraphCommand(ParagraphComment comment)
-         {
-             bool tag = false;
-             foreach (var item in comment.Content.Where(c => c.Kind == DocumentationCommentKind.TextComment))
-             {
-                 TextComment com = (TextComment) item;
-                 if (Generators.Helpers.RegexTag.IsMatch(com.Text))
-                     tag = true;
-                 else if (tag)
-                     com.Text = com.Text.Substring(1);
+public bool VisitParagraphCommand(ParagraphComment comment)
+{
+    bool tag = false;
+    foreach (var item in comment.Content.Where(c => c.Kind == DocumentationCommentKind.TextComment))
+    {
+        TextComment com = (TextComment) item;
+        if (Generators.Helpers.RegexTag.IsMatch(com.Text))
+            tag = true;
+        else if (tag)
+            com.Text = com.Text.Substring(1);
 
-                 if (com.Text.StartsWith("<", StringComparison.Ordinal))
-                     com.Text = $"{com.Text}{">"}";
-                 else if (com.Text.StartsWith(">", StringComparison.Ordinal))
-                     com.Text = com.Text.Substring(1);
-             }
-             return true;
-         }
+        if (com.Text.StartsWith("<", StringComparison.Ordinal))
+            com.Text = $"{com.Text}{">"}";
+        else if (com.Text.StartsWith(">", StringComparison.Ordinal))
+            com.Text = com.Text.Substring(1);
+    }
+    return true;
+}
 
 ```
 
@@ -115,18 +115,18 @@ Later on I introduced a new way of creating and detecting the comments. I extend
 
 ```csharp
 
-    public void NewLine()
-    {
-        lines.Add(CurrentLine.ToString());
-        CurrentLine.Clear();
-    }
+public void NewLine()
+{
+    lines.Add(CurrentLine.ToString());
+    CurrentLine.Clear();
+}
 
-    public List<string> GetLines()
-    {
-     if (CurrentLine.Length > 0)
-        NewLine();
-     return lines;
-    }
+public List<string> GetLines()
+{
+    if (CurrentLine.Length > 0)
+    NewLine();
+    return lines;
+}
 
 ```
 
@@ -144,10 +144,10 @@ Most of the times, when you are about to fix something, you have to prepare the 
 
 ```lua
 
-    files { testsdir .. "/Native/AST.h", testsdir .. "/Native/ASTExtensions.h", testsdir .. "/Native/Passes.h" }
-    filter "files:**.h"
-      buildaction "None"
-    filter {}
+files { testsdir .. "/Native/AST.h", testsdir .. "/Native/ASTExtensions.h", testsdir .. "/Native/Passes.h" }
+filter "files:**.h"
+    buildaction "None"
+filter {}
 
 ```
 
@@ -156,7 +156,7 @@ Most of the times, when you are about to fix something, you have to prepare the 
 I was able to fix quite few of issues this summer and I had the chance of learning things such as Lambda expressions and statements, working with Regex and delegates, have a look at the Lua scripting language and get to know with LLVM and Clang. I also learn quite a few things about [Boost](http://www.boost.org/) and some cool technologies like, [IoTivity](https://www.iotivity.org/) and [Android NDK](https://developer.android.com/ndk/index.html).
 I have earned experience and knowledge on many fields throughout this summer and I thrilled about it! 🤗 😊
 
-# Special Thanks
+## Special Thanks
 
 I want to thank everyone that mentored me during this summer, cause it was a great and unforgettable experience. I had a great time working and contributing to the Open Source community, as it is something that I have never done before. Special thanks to my mentor, João Matos, for everything he taught me and his guidance through the CppSharp project, Dimitar Dobrev, a maintainer for the CppSharp project who helped a lot establishing here and the fellow student, also accepted in CppSharp, from India, Mohit, with whom I had a very good understanding and we connected immediately.
 
