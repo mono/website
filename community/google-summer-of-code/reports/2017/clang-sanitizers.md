@@ -1,5 +1,5 @@
 ---
-title: "Google Summer of Code 2017 - Clang Sanitizers (Armin Hasitzka)"
+title: "Clang Sanitizers (Armin Hasitzka)"
 ---
 
 Author: Armin Hasitzka
