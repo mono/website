@@ -12,3 +12,4 @@ Please note that to apply for GSoC, you will need to go through the standard [Go
 * [Application Guidance](/community/google-summer-of-code/guidance/)
 * [Project Ideas](/community/google-summer-of-code/projects/)
 * [Previous Years](/community/google-summer-of-code/previous-years/)
+* [Student Reports](/community/google-summer-of-code/reports/)

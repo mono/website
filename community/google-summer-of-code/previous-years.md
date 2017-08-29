@@ -8,12 +8,16 @@ The Mono Project has been an active participant in previous years of [Google Sum
 
 For inspiration, here are the accepted projects from previous years:
 
-- [2012 Projects](http://www.google-melange.com/gsoc/org/show/google/gsoc2012/mono)
-- [2011 Projects](http://www.google-melange.com/gsoc/org/show/google/gsoc2011/mono)
-- [2010 Projects](http://www.google-melange.com/gsoc/org/show/google/gsoc2010/mono)
-- [2009 Projects](http://www.google-melange.com/gsoc/org/show/google/gsoc2009/mono)
-- [2008 Projects](http://code.google.com/soc/2008/mono/about.html)
-- [2007 Projects](/archived/summer2007)
-- [2006 Projects](/archived/summer2006)
-- [2005 Projects](/archived/summer2005)
-- [follow-up review](http://tirania.org/blog/archive/2006/Apr-13.html)
+- [2015 Projects](https://www.google-melange.com/archive/gsoc/2015/orgs/mono)
+- [2014 Projects](https://www.google-melange.com/archive/gsoc/2014/orgs/mono)
+- [2013 Projects](https://www.google-melange.com/archive/gsoc/2013/orgs/mono)
+- [2012 Projects](https://www.google-melange.com/archive/gsoc/2012/orgs/mono)
+- [2011 Projects](https://www.google-melange.com/archive/gsoc/2011/orgs/mono)
+- [2010 Projects](https://www.google-melange.com/archive/gsoc/2010/orgs/mono)
+- [2009 Projects](https://www.google-melange.com/archive/gsoc/2009/orgs/mono)
+- [2008 Projects](https://developers.google.com/open-source/gsoc/2008/)
+- [2007 Projects](https://developers.google.com/open-source/gsoc/2007/)
+- [2006 Projects](https://developers.google.com/open-source/gsoc/2006/)
+- [2005 Projects](https://developers.google.com/open-source/gsoc/2005/)
+
+Miguel also did a follow-up review of the 2006 edition: [http://tirania.org/blog/archive/2006/Apr-13.html](http://tirania.org/blog/archive/2006/Apr-13.html)
