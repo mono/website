@@ -2,7 +2,7 @@
 title: "MonoDevelop C/C++ Extension (Anubhav Singh)"
 ---
 
-Author:  Anubhav Singh
+Author:  [Anubhav Singh](https://github.com/gitexperience)
 
 The MonoDevelop IDE is built around the concept of an extension tree. An extension package is a set of extensions that plug into extension points to add functionality to the IDE. The whole IDE is built this way.
 
