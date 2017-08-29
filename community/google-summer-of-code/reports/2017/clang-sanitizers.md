@@ -11,7 +11,7 @@ Most of my adventures can be tracked via pull requests as well as on the website
 # My Journey
 
 Main Quests "Playing with TSan and ASan":
-* Find out how to work with [TSan](/docs/debug+profile/clang/threadsanitizer/) and [ASan](http://www.mono-project.com/docs/debug+profile/clang/addresssanitizer/) in combination with Mono
+* Find out how to work with [TSan](/docs/debug+profile/clang/threadsanitizer/) and [ASan](/docs/debug+profile/clang/addresssanitizer/) in combination with Mono
 * [Add a CI lane for TSan](https://github.com/mono/mono/pull/5254)
 
 Main Quests "Permanently Blacklisting Races":
