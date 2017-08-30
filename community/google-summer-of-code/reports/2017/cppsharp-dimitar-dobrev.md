@@ -1,5 +1,5 @@
 ---
-title: "CppSharp / Continue Mono/.NET bindings for Qt#"
+title: "CppSharp / Continue Mono/.NET bindings for QtSharp (Dimitar Dobrev)"
 ---
 
 Author:  [Dimitar Dobrev](https://github.com/ddobrev)
@@ -172,7 +172,7 @@ public unsafe static partial class BasicStringExtensions
 
 ## Remaining work
 
-Once I overcame the major problems, work was a matter of running Qt# and then fixing any invalid generated code as needed. Fortunately, each separate case could be fully tested so there are going to be no regressions. There are two major problems remaining:
+Once I overcame the major problems, work was a matter of running QtSharp and then fixing any invalid generated code as needed. Fortunately, each separate case could be fully tested so there are going to be no regressions. There are two major problems remaining:
 1. Removal of invalid specialised methods from the generated C++ - bodies of templated functions may include method calls, most often operators, involving type arguments. This cannot always work because a type argument might lack the required members. A simple example is a template list class with an method which finds the index of an object by using comparison. This problem can be solved by using the ``clang::Sema`` class and its ``InstantiateFunctionDefinition``. I would like to insert my special thanks to my mentor Joao Matos who had the brilliant idea of me compiling the offending code with my locally compiled Clang copy in order to see the right function in the stack trace. This function reports errors when the passed declaration cannot be compiled. So I can detect such functions early on and ignore then before they reach code generation. It has, however, yet to be done;
 2. Support for type arguments external to the library the template itself is in - I can use Qt as an example. ``QList`` is in ``QtCore``, ``QWidget`` is in ``QtWidgets`` which depends on ``QtCore``. So ``QList<QWidget>`` has to be supported but it cannot directly. If it's simply added to the switch case, the generated code will not compile because of missing internal representations. Therefore I am going to create dictionaries taking a key pointing to the specialisation (such as its Clang USR) and a lambda to call each function, with the functions located in the external library. This is also not completed yet.
 
