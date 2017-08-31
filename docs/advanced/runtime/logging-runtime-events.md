@@ -23,7 +23,7 @@ There are a number of different types of trace information the runtime can displ
 -   "type" - Type load information
 -   "gc" - Garbage collector information
 
-The MONO_LOG_MASK can be set to one or more values. Values are separated by a comma. To display only messages for native library loading and config file loading the log mask would look like this: MONO_LOG_MASK="dll,config".
+The MONO_LOG_MASK can be set to one or more values. Values are separated by a comma. To display only messages for native library loading and config file loading the log mask would look like this: MONO_LOG_MASK="dll,cfg".
 
 The default log mask is "all". If the mask is not set by the user all message types will be displayed.
 
