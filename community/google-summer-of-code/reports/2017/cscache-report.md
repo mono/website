@@ -5,6 +5,7 @@ title: "CSCache / Mono cache tool (Calancea Daniel)"
 Author:  [Calancea Daniel](https://github.com/dcalance)
 
 ### 1.Introduction
+
 A friend of mine told me about this interesting event, google summer of code. Of course I've heard about it before but I wasn't sure how you can apply or what you need to do. He told me that there are a lot of interesting projects. I took a look
 at the companies and projects and there were a lot of projects, most of them very advanced. At university I was doing my laboratories mostly in C#, since it's pretty easy and Visual Studio is pretty powerful as an IDE.
 The most interesting thing is that when my friend told me about GSOC there were only 2 days left to apply. I applied to 3 projects from mono-project, but mostly wanted to work on the one with the cache tool, the one I was assigned to later.
@@ -12,7 +13,7 @@ Honestly, I had very little idea about how a compiler works, but I knew more or 
 
 At first, it was pretty hard because I had no idea where to start but with help from my mentor and after reading documentation I started to understand what I need to do.
 
-The hardest part was to make the first working program that would cache, store binaries and execute the compiler command. 
+The hardest part was to make the first working program that would cache, store binaries and execute the compiler command.
 
 At the end of the project I learned a lot of things that I'm more than sure will help me in the future. This was an interesting experience and I would gladly apply for GSOC at mono next year aswell.
 
@@ -21,7 +22,7 @@ This year at GSOC I applied to make a similar tool as ccache, but for mono. I wo
 - Where are the unit tests made in MSTest (UnitTests)
 - Where is the nuget package. (NugetPackage)
 
-Link to the repository: https://github.com/dcalance/GSOC17
+Link to the repository: [https://github.com/dcalance/GSOC17](https://github.com/dcalance/GSOC17)
 
 The tool had to have the following features:
 - Able to prevent repeated compilation of a program.
@@ -53,6 +54,7 @@ The process of making the project was the following:
 9. Creating install files for windows and linux.
 
 ### 2.Implementation
+
 The tool is a class library that has a bunch of classes:
 - CSCache - is the main class that recieves the compiler with arguments in constructor and has a method `void Cache()` that caches the input arguments if there is no error.
 - Config - class that handles the config. It generates config if it doesn't exist and stores the values read from config file in properties.
@@ -66,6 +68,7 @@ The tool is minimalistic since the main objective is to be integrated in bigger 
 The classes that are with static members can be reused, that was the main propouse to make them static and public. For example:
 
 #### ConsoleTools.cs
+
 Contains the class ConsoleTools with the following methods and fields:
 - `static bool IsUnix` - This field can determine if your OS is either unix or windows.
 - `static string Execute(string cmdLine, out int errCode)` - This method allows execution of a command either in bash or cmd. The execution is based on the enviromnent from where the application was executed.
@@ -77,12 +80,14 @@ Contains the class ConsoleTools with the following methods and fields:
     - **int errCode** - Exit code of the application.
 
 #### FilesTools.cs
+
 Contains the class FilesTools and methods to work with files:
 - `static string[] GetRecurseFiles(string pattern)` - Gets all files that are fitting the current pattern.
     - **string pattern** - pattern that will be evaluated.
     - **return** - an array of all the files found that correspond to the pattern.
 
 #### MD5Tools.cs
+
 Contains the class MD5Tools and methods for hashing:
 - `static byte[] GenerateFilesCache(List<string> inputF)` - Generates a single MD5 hash from all the input files. Uses the following methods from the same class : **static byte[] MakeMD5File(string filename)**, **static byte[] CombineHashes(List<byte[]> input)**.
     - **List<string> inputF** - a list of input files location. The method throws unhandled error if the file does not exist.
@@ -98,6 +103,7 @@ Contains the class MD5Tools and methods for hashing:
     - **return** - a byte array that is the result of hashing the contents of the file.
 
 #### ParseTools.cs
+
 Contains the class ParseTools with methods for parsing:
 - `static string[] ParseArguments(string commandLine)` - parses the input string as a command line argument.
     - **string commandLine** - the input string that will be parsed.
@@ -116,7 +122,9 @@ Contains the class ParseTools with methods for parsing:
     - **return** - array of strings with parsed elements.
 
 ### 3.Bugs
+
 There is a bug regarding windows bash that I wasn't able to fix. The problem with it appears when you try to create a windows bash process and pass it a compiler line with arguments. The bug is that the paths that have dashes (example: folder1\input1.cs) does not have dashes anymore and compiler throws error that input files is not found. The problem is not at my level of implementation but either at process class or in the way the windows bash processes the input arguments. This bug may appear at random times.
 
 ### 4.Conclusion
+
 This project was an interesting experience for me since it was entirely new, I've never worked at compiler level. Now I can understand more things about how compilers work, how arguments are passed and processed, how the output is generated. This project was great for learning because it was not very difficult and at the same time it had specific things that you can learn from it. The mentor was amazing and helped me in difficult situation at the same time leaving the entire thought process to me.
