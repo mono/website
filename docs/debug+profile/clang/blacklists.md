@@ -9,7 +9,7 @@ The simplest approach (an empty blacklist) would look like this:
 ``` bash
 $ touch /home/some/path/blacklist
 $ cd /home/root/of/mono
-$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang++
+$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang
 $ make
 ...
 ```
@@ -45,7 +45,7 @@ For example, if `mono/sgen/` was to be debugged, a setup could look like this:
 
 ``` bash
 $ cd /home/root/of/mono
-$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang++
+$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang
 $ cat /home/some/path/blacklist-sgen
 fun:sweep_block
 fun:sweep_block_for_size

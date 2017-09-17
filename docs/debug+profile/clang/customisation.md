@@ -13,7 +13,7 @@ One group of options have to be applied at compile time when the sanitizers inje
 
 ``` bash
 $ cd /home/root/of/mono
-$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang++
+$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS="-fsanitize=thread -fsanitize-blacklist=/home/some/path/blacklist" LDFLAGS=-fsanitize=thread CXX=clang
 $ make
 ...
 ```
