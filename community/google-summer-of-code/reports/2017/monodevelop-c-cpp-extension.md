@@ -27,6 +27,7 @@ Since the inception of CBinding, MonoDevelop's codebase has changed a lot and th
 Apart from this, the CMake projects subclass _SolutionItem_ but it needs some functionality from the Project base class which is quite specific to MSBuild project system, so I have done some chaining between the _Project_ and _SolutionItem/WorkspaceObject_ in the MonoDevelop source code to allow CBinding to use those properties.
 
 The code can be found here:
+
 - [Changes to MonoDevelop source code](https://github.com/mono/monodevelop/pull/2870/commits)
 - [Changes to CBinding Addin](https://gist.github.com/gitexperience/c7d4ab8546e55da88675bfc641e763ea)
 
