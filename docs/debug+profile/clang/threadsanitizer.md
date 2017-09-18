@@ -6,12 +6,12 @@ The [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) is integ
 
 ``` bash
 $ cd /home/root/of/mono
-$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS=-fsanitize=thread LDFLAGS=-fsanitize=thread CXX=clang++
+$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS=-fsanitize=thread LDFLAGS=-fsanitize=thread CXX=clang
 $ make
 ...
 ```
 
-Please keep in mind that `CXX` has to be set to `clang++` to avoid unwanted side effects and compiling errors.
+Please keep in mind that `CXX` has to be set to `clang` to avoid unwanted side effects and compiling errors.
 
 After `autogen.sh` has been executed as suggested above, the following `make` command will use Clang. In turn, Clang then injects necessary reporting functions into the code. Later, `make` uses [roslyn](https://github.com/dotnet/roslyn) to compile  the `mscorlib.dll` with the freshly built Mono runtime. This reports a bit more than 150 races and produces slightly more than 1.5 MB of race traces (`master` branch, August 2017).
 

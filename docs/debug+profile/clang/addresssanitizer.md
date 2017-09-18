@@ -6,12 +6,12 @@ The [AddressSanitizer](https://clang.llvm.org/docs/AddressSanitizer.html) is int
 
 ``` bash
 $ cd /home/root/of/mono
-$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS=-fsanitize=address LDFLAGS=-fsanitize=address CXX=clang++
+$ ./autogen.sh --prefix=/usr/local CC=clang CFLAGS=-fsanitize=address LDFLAGS=-fsanitize=address CXX=clang
 $ make
 ...
 ```
 
-Please keep in mind that `CXX` has to be set to `clang++` to avoid unwanted side effects and compiling errors.
+Please keep in mind that `CXX` has to be set to `clang` to avoid unwanted side effects and compiling errors.
 
 After `autogen.sh` has been executed as suggested above, the following `make` command uses Clang and injects necessary reporting functions.
 
