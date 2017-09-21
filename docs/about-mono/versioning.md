@@ -11,7 +11,7 @@ Mono's Version Policy Explained
 
 For an X.Y.Z tuple:
 
--   *X* is the major version mumber
+-   *X* is the major version number
 -   *Y* is the minor version number
 -   *Z* is a revision number
 
@@ -31,19 +31,33 @@ Mono 1.1.6 is the 7th development release of the 1.1 development series. When fi
 
 After Mono 1.2 is released, a Mono 1.3 development branch will be started. The 1.3.x series will lead up to the future Mono 2.0 release.
 
-.NET Versioning
----------------
+## .NET Versioning
 
-Microsoft .NET's version policy is similar to Mono's, in that a major version number change indicates an API/ABI break. That's where the simularities stop. .NET does not have a stable/development split; .NET 1.0 and 1.1 were both stable releases.
+Microsoft .NET's version policy is similar to Mono's, in that a major version number change indicates an API/ABI break. That's where the similarities stop. .NET does not have a stable/development split; .NET 1.0 and 1.1 were both stable releases.
 
 Furthermore, there is no mapping between Mono's version numbers and .NET's version numbers. Mono 1.0 implemented *parts* of the .NET 1.0/1.1 API; in particular, it lacked System.Windows.Forms support. Mono 1.1 (a *development* branch) also implements parts of the .NET 1.0/1.1 API; in particular, it will support System.Windows.Forms. Mono 1.1 also implements parts of the .NET 2.0 API. Other parts of the .NET API are not implemented at all, such as System.EnterpriseServices.
 
-Framework Versioning
---------------------
+## Framework Versioning
 
 For compatibility reasons, Mono's `System.Environment.Version` property returns the version of the .NET profile that Mono targets, *not* the version of Mono that is being used. This should be the same version number that .NET would return. As such, it will return 2.0.X.Y when running under the 2.0 profile, even though it's running under Mono 1.1. :-)
 
-Application Versioning
-----------------------
+## Application Versioning
 
 `mono --version` returns the version of the Mono distribution.
+
+
+## Mono Version sources
+
+Before Mono version 5.0 each release has it's own matching branch using following schema `mono-X.Y.Z-branch`. For example Mono 3.12 release branch can be found at https://github.com/mono/mono/tree/mono-3.12.0-branch.
+
+Starting with Mono 5.0 regular bi-monthly branching started and the version is no longer included in the branch name. For easier decoding which version matched to which branch following table can be used.
+
+| Mono version | Mono branch
+|-----------------|--------------
+| 5.0        | [2017-02](https://github.com/mono/mono/tree/2017-02)             
+| 5.2        | [d15-3](https://github.com/mono/mono/tree/d15-3)   
+| 5.4        | [2017-06](https://github.com/mono/mono/tree/2017-06)
+| 5.6*       | [2017-08](https://github.com/mono/mono/tree/2017-08)
+
+
+
