@@ -52,12 +52,12 @@ Before Mono version 5.0 each release has it's own matching branch using followin
 
 Starting with Mono 5.0 regular bi-monthly branching started and the version is no longer included in the branch name. For easier decoding which version matched to which branch following table can be used.
 
-| Mono version | Mono branch
+| Mono version | Github branch name
 |-----------------|--------------
 | 5.0        | [2017-02](https://github.com/mono/mono/tree/2017-02)             
 | 5.2        | [d15-3](https://github.com/mono/mono/tree/d15-3)   
 | 5.4        | [2017-06](https://github.com/mono/mono/tree/2017-06)
-| 5.6*       | [2017-08](https://github.com/mono/mono/tree/2017-08)
+| 5.6       | [2017-08](https://github.com/mono/mono/tree/2017-08)
 
 
 
