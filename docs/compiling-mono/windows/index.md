@@ -31,7 +31,7 @@ VERSION=4.2.1
 tar xvf mono-$VERSION.tar.bz2
 cd mono-$VERSION
 ```
-And then you can continue with the appropriate commands below.
+And then you can continue with the appropriate commands below, without running git clone and cd mono.
 
 ## Build Mono 64-bit using Visual Studio
 
