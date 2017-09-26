@@ -31,6 +31,7 @@ VERSION=4.2.1
 tar xvf mono-$VERSION.tar.bz2
 cd mono-$VERSION
 ```
+
 And then you can continue with the appropriate commands below, without running git clone and cd mono.
 
 ## Build Mono 64-bit using Visual Studio
@@ -46,10 +47,10 @@ git clone https://github.com/mono/mono.git
 cd mono
 ./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --disable-boehm
 ```
+
 ### 32-bit build
 
 To build Mono 32-bit, run autogen with `--host=i686-w64-mingw32` instead and choose 32-bit when building in Visual Studio.
-
 
 Now open the mono solution `msvc\mono.sln` in Visual Studio. Rebuild the solution and point the `MONO_EXECUTABLE` to the mono exe you just built in Visual Studio. Eg:
 
