@@ -55,7 +55,7 @@ Starting with Mono 5.0 regular bi-monthly branching started and the version is n
 |-----------------|-------------------
 | 5.0             | [2017-02](https://github.com/mono/mono/tree/2017-02)
 | 5.2             | [d15-3](https://github.com/mono/mono/tree/d15-3)
-| 5.4             | [2017-06](https://github.com/mono/mono/tree/2017-06)
+| 5.4             | [2017-06](https://github.com/mono/mono/tree/2017-06)
 | 5.6             | [2017-08](https://github.com/mono/mono/tree/2017-08)
 
 
