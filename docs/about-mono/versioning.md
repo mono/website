@@ -47,7 +47,7 @@ For compatibility reasons, Mono's `System.Environment.Version` property returns 
 
 ## Mono Source Versioning
 
-Before Mono version 5.0 each release has its own matching branch using the following schema: `mono-X.Y.Z-branch`. For example the Mono 3.12 release branch can be found at [https://github.com/mono/mono/tree/mono-3.12.0-branch](https://github.com/mono/mono/tree/mono-3.12.0-branch).
+Before Mono version 5.0 each release had its own matching branch using the following schema: `mono-X.Y.Z-branch`. For example the Mono 3.12 release branch can be found at [https://github.com/mono/mono/tree/mono-3.12.0-branch](https://github.com/mono/mono/tree/mono-3.12.0-branch).
 
 Starting with Mono 5.0 regular bi-monthly branching started and the version is no longer included in the branch name. For easier decoding which version matched to which branch the following table can be used:
 
