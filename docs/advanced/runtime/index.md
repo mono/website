@@ -105,7 +105,7 @@ The idea is to allow developers to pre-compile their code to native code to redu
 
 Although in Mono this has not been a visible problem, we wanted to pro-actively address this problem.
 
-When an assembly (a Mono/.NET executable) is installed in the system, it is then be possible to pre-compile the code, and have the JIT compiler tune the generated code to the particular CPU on which the software is installed.
+When an assembly (a Mono/.NET executable) is installed in the system, then it is possible to pre-compile the code, and have the JIT compiler tune the generated code to the particular CPU on which the software is installed.
 
 This is done in the Microsoft.NET world with a tool called ngen.exe.
 
