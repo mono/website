@@ -9,7 +9,7 @@ redirect_from:
 .NET Download
 -------------
 
-For .NET users who wish to use mdoc without installing Mono (e.g. to bundle mdoc specifically with a larger project), you can download [mdoc-net-2010-01-04.zip](http://www.go-mono.com/archive/mdoc-net-2010-01-04.zip).
+For .NET users who wish to use mdoc without installing Mono (e.g. to bundle mdoc specifically with a larger project), you can download from the [latest release from github](https://github.com/mono/api-doc-tools/releases), or otherwise clone and build the source yourself: https://github.com/mono/api-doc-tools/
 
 mdoc Commands
 -------------
