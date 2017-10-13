@@ -77,6 +77,7 @@ Open Source applications
 -   [MonoDevelop](http://monodevelop.org/) is a port of SharpDevelop to Mono and gtk#. The goal for MonoDevelop is to be an IDE for creating Mono applications.
 -   [MonoUML](http://www.monouml.org/) is a CASE tool. Aims to be the most advanced CASE tool for mono developers.
 -   [Muine](http://muine.gooeylinux.org/) is a music player with a cool and inovative user interface developed by Jorn Baayen, founder of Rhythmbox.
+-   [OpenRA](http://www.openra.net/) is an open-source remake of the Command & Conquer Red Alert game.
 -   [OpenVPN-Admin](http://sourceforge.net/projects/openvpn-admin) is a GUI client for [OpenVPN](http://openvpn.net/) written with Gtk#.
 -   [SkyNET](http://sky-net.sourceforge.net/screenshots.php) is a sky chart application.
 -   [Smuxi](http://www.smuxi.org/) is an irssi-inspired, flexible, user-friendly and cross-platform IRC client for advanced users, targeting the GNOME desktop.
