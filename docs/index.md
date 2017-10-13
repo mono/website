@@ -181,7 +181,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
                     </ul>
                 </li>
                 <li><a href="/docs/advanced/aot/">AOT</a></li>
-                <li><a href="/docs/advanced/bcl-debugging">Base Class Library debugging</a></li>
+                <li><a href="/docs/advanced/bcl-debugging/">Base Class Library debugging</a></li>
                 <li><a href="/docs/advanced/embedding/">Embedding</a></li>
                 <li><a href="/docs/advanced/assemblies-and-the-gac/">Assemblies and the GAC</a></li>
                 <li><a href="/docs/advanced/pinvoke/">P/Invoke</a></li>
