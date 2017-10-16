@@ -15,9 +15,8 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
-# Getting Started
+# [Getting Started](/docs/getting-started)
 
-* [Overview](/docs/getting-started)
 * Install Mono on
     * [macOS](/docs/getting-started/install/mac/)
     * [Linux](/docs/getting-started/install/linux/)
@@ -27,9 +26,8 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Application Portability](/docs/getting-started/application-portability/)
 * [Application Deployment](/docs/getting-started/application-deployment/)
 
-# About Mono
+# [About Mono](/docs/about-mono/)
 
-* [Overview](/docs/about-mono/)
 * [Supported Platforms](/docs/about-mono/supported-platforms/)
 * [Languages](/docs/about-mono/languages/)
 * [Compatibility](/docs/about-mono/compatibility/)
@@ -42,15 +40,15 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Roadmap](/docs/about-mono/roadmap/)
 * [Plans](/docs/about-mono/plans/)
 * [Vulnerabilities](/docs/about-mono/vulnerabilities/)
-* Showcases
-    * [Screenshots](/docs/about-mono/showcase/screenshots/)
-    * [Software](/docs/about-mono/showcase/software/)
-    * [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/)
-    * [Mono Logos](/docs/about-mono/logos/)
 
-# Compiling Mono
+## Showcases
+ * [Screenshots](/docs/about-mono/showcase/screenshots/)
+ * [Software](/docs/about-mono/showcase/software/)
+ * [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/)
+ * [Mono Logos](/docs/about-mono/logos/)
 
-* [Overview](/docs/compiling-mono/)
+# [Compiling Mono](/docs/compiling-mono/)
+
 * Platforms
     * [macOS](/docs/compiling-mono/mac/)
     * [Linux](/docs/compiling-mono/linux/)
@@ -63,9 +61,8 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Parallel Mono environments](/docs/compiling-mono/parallel-mono-environments/)
 * [Small footprint](/docs/compiling-mono/small-footprint/)
 
-# FAQ
+# [FAQ](/docs/faq/general/)
 
-* [General](/docs/faq/general/)
 * [Security](/docs/faq/security/)
 * [Technical](/docs/faq/technical/)
 * [Licensing](/docs/faq/licensing/)
@@ -74,28 +71,24 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [GTK](/docs/faq/gtk/)
 * [WinForms](/docs/faq/winforms/)
 
-# Database Access
+# [Database Access](/docs/database-access/)
 
-* [Overview](/docs/database-access/)
 * [ADO.NET](/docs/database-access/adonet/)
 * [EntityFramework](/docs/database-access/entityframework/)
 
-# Debugging
+# [Debugging](/docs/debug+profile/debug/)
 
-* [Overview](/docs/debug+profile/debug/)
 * [Debugger](/docs/debug+profile/debug/debugger/)
 
-# Profiling
+# [Profiling](/docs/debug+profile/profile/)
 
-* [Overview](/docs/debug+profile/profile/)
 * [Profiler](/docs/debug+profile/profile/profiler/)
 * [HeapShot](/docs/debug+profile/profile/heapshot/)
 * [DTrace](/docs/debug+profile/profile/dtrace/)
 * [Code Coverage](/docs/debug+profile/profile/code-coverage/)
 
-# Clang Sanitizers
+# [Clang Sanitizers](/docs/debug+profile/clang/)
 
-* [Overview](/docs/debug+profile/clang/)
 * [ThreadSanitizer (TSan)](/docs/debug+profile/clang/threadsanitizer/)
 * [AddressSanitizer (ASan)](/docs/debug+profile/clang/addresssanitizer/)
 
@@ -116,18 +109,16 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [mod_mono](/docs/web/mod_mono/)
 * [Moonlight](/docs/web/moonlight/)
 * [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/)
-* [>Using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/)
+* [Using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/)
 
-# Tools
+# [Tools](/docs/tools+libraries/tools/)
 
-* [Overview](/docs/tools+libraries/tools/)
 * [Gendarme](/docs/tools+libraries/tools/gendarme/)
 * [MoMA](/docs/tools+libraries/tools/moma/)
 * [XBuid](/docs/tools+libraries/tools/xbuild/)
 
-# Libraries
+# [Libraries](/docs/tools+libraries/libraries/)
 
-* [Overview](/docs/tools+libraries/libraries/)
 * [MonoMac](/docs/tools+libraries/libraries/monomac/)
 * [XML](/docs/tools+libraries/libraries/xml/)
 * [Mono.Cairo](/docs/tools+libraries/libraries/Mono.Cairo/)
@@ -135,9 +126,8 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
 # Advanced Topics
 
-## Runtime
+## [Runtime](/docs/advanced/runtime/)
 
-* [Runtime](/docs/advanced/runtime/)
 * [Runtime memory leaks](/docs/advanced/runtime/memory-leaks/)
 * [Garbage Collector](/docs/advanced/garbage-collector/sgen/)
 * [GC Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/)
