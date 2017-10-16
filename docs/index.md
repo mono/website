@@ -76,11 +76,11 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [ADO.NET](/docs/database-access/adonet/)
 * [EntityFramework](/docs/database-access/entityframework/)
 
-# [Debugging](/docs/debug+profile/debug/)
+# [Debugging](/docs/debug+profile/debug/index.md/)
 
 * [Debugger](/docs/debug+profile/debug/debugger/)
 
-# [Profiling](/docs/debug+profile/profile/)
+# [Profiling](/docs/debug+profile/profile/index.md/)
 
 * [Profiler](/docs/debug+profile/profile/profiler/)
 * [HeapShot](/docs/debug+profile/profile/heapshot/)
@@ -132,7 +132,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Garbage Collector](/docs/advanced/garbage-collector/sgen/)
 * [GC Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/)
 * [AOT](/docs/advanced/aot/)
-* [Base Class Library debugging](/docs/advanced/bcl-debugging.md)
+* [Base Class Library debugging](/docs/advanced/bcl-debugging.md/)
 * [Embedding](/docs/advanced/embedding/)
 * [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/)
 * [P/Invoke](/docs/advanced/pinvoke/)
