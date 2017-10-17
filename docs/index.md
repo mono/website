@@ -42,10 +42,11 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Vulnerabilities](/docs/about-mono/vulnerabilities/)
 
 ## Showcases
- * [Screenshots](/docs/about-mono/showcase/screenshots/)
- * [Software](/docs/about-mono/showcase/software/)
- * [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/)
- * [Mono Logos](/docs/about-mono/logos/)
+
+* [Screenshots](/docs/about-mono/showcase/screenshots/)
+* [Software](/docs/about-mono/showcase/software/)
+* [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/)
+* [Mono Logos](/docs/about-mono/logos/)
 
 # [Compiling Mono](/docs/compiling-mono/)
 
