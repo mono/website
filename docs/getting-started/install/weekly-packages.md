@@ -17,7 +17,7 @@ Mac OS X packages can be found [here](https://download.mono-project.com/archive/
 Debian, Ubuntu, and derivatives
 -------------------------------
 
-Assuming you have already configured the other Mono repositories required for your distribution:
+Assuming you have already configured [the other Mono repositories](/download/#download-lin) required for your distribution:
 
 ``` bash
 echo "deb http://download.mono-project.com/repo/debian nightly main" | sudo tee /etc/apt/sources.list.d/mono-nightly.list
@@ -27,7 +27,7 @@ sudo apt-get update
 CentOS, Fedora, and derivatives
 -------------------------------
 
-Assuming you have already configured the other Mono repositories required for your distribution:
+Assuming you have already configured [the other Mono repositories](/download/#download-lin) required for your distribution:
 
 ``` bash
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos-nightly/
