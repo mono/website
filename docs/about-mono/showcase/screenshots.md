@@ -164,7 +164,7 @@ Other Mono Applications
       <td>Eclipse on IKVM</td>
     </tr>
     <tr>
-      <td><a href="http://spm.sirkadirov.com/">SimplePM</a> <br /> SimplePM_Server solutions checking subsystem, a part of SimplePM programming contests management system, was written in C# and fully supports Mono. SimplePM is an open source software licensed under Apache License 2.0</td>
+      <td><a href="http://spm.sirkadirov.com/">SimplePM</a> (non-English website)<br /> SimplePM_Server solutions checking subsystem, a part of SimplePM programming contests management system, was written in C# and fully supports Mono. SimplePM is an open source software licensed under Apache License 2.0</td>
       <td></td>
     </tr>
   </tbody>
