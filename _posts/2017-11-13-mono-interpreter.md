@@ -62,7 +62,8 @@ adding the support for generics and upgraded it to run .NET as it
 exists in 2017.  Next as well as adding support for mixed-mode
 execution.
 
-It is one of the ways that Mono runs on WebAssembly for example.
+It is one of the ways that Mono runs on WebAssembly today for example
+(the other being the static compilation using LLVM)
 
 The interpreter is now part of mainline Mono and it passes a large
 part of our extensive test suites, you can use it today when building
