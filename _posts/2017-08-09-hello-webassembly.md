@@ -38,8 +38,9 @@ compilation [currently lives here](https://github.com/lrz/mono-wasm).
 The second prototype compiles the Mono C runtime into web assembly,
 and then uses Mono’s IL interpreter to run managed code.  This one is
 a smaller download, but comes at the expense of performance.  The
-mixed mode execution prototype currently [lives
-here](https://github.com/kumpera/mono/tree/wasm-port).
+mixed mode execution prototype ~~currently [lives
+here](https://github.com/kumpera/mono/tree/wasm-port)~~
+was merged to Mono master in November 2017.
 
 You can see [C# Hello World](http://www.kumpera.com/wasm/driver.html),
 or this F# code [in action](http://www.kumpera.com/wasm/fsharp.html):
