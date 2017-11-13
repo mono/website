@@ -30,7 +30,7 @@ for dynamic code generation. iOS was the main driver for this, but it
 opened the doors to allow Mono to run on gaming consoles like the
 PlayStation and the Xbox.
 
-The main downside of full static compilation is that a complete new
+The main downside of full static compilation is that a completely new
 executable has to be recreated every time that you update your
 code. This is a slow process and one that was not suitable for
 interactive development that is practiced by some.
@@ -52,14 +52,14 @@ that he wrote his own .NET interpreter using F# to bring his vision of
 having a complete development environment for .NET on the iPad.
 
 To address these issues, and to support some internal Microsoft
-products, we brought Mono’s interpreter back to life, and it is back
+products, we brought Mono's interpreter back to life, and it is back
 with a twist.
 
 # New Mono Interpreter
 
-We resuscitated Mono’s old interpreter and upgraded its .NET support,
+We resuscitated Mono's old interpreter and upgraded its .NET support,
 adding the support for generics and upgraded it to run .NET as it
-exists in 2017.  Next as well as adding support for mixed-mode
+exists in 2017.  Next is adding support for mixed-mode
 execution.
 
 It is one of the ways that Mono runs on WebAssembly today for example
@@ -69,8 +69,9 @@ The interpreter is now part of mainline Mono and it passes a large
 part of our extensive test suites, you can use it today when building
 Mono from source code, like this:
 
-
-    $ mono --interpreter yourassembly.exe
+```bash
+$ mono --interpreter yourassembly.exe
+```
 
 # Mixed Mode Execution
 
@@ -107,14 +108,15 @@ an interpreter, we can.
 There are several uses for this.
 
 The `System.Linq.Expressions` API which is used extensively by many
-advanced scenarios like Entity Framework or by users leveraging C#
+advanced scenarios like Entity Framework or by users leveraging the C#
 compiler to parse expressions into expression trees, you have probably
 seen the code in scenarios like this:
 
-
-    Expression sum = a + b;
-    var adder = sum.Compile ();
-    adder ();
+```csharp
+Expression sum = a + b;
+var adder = sum.Compile ();
+adder ();
+```
 
 In Full AOT scenarios, the way that we made Entity Framework and the
 above work was to ship an interpreter for the above `Expression`
