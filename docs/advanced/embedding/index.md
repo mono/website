@@ -196,8 +196,12 @@ void DoSomething ()
   /* ... */
 }
 ```
+Sice this method tends to be an unuses symbol in the C code, instruct the linker to add all symbols to the dynamic symbol table, not just the used ones.
+``` bash
+gcc sample.c -rdynamic `pkg-config --cflags --libs mono-2`
+```
 
-To make the runtime lookup the symbol in the current executable, use the special library name **__Internal** like this, in your DllImport attribute:
+To make the runtime then lookup this symbol in the current executable, use the special library name **__Internal** like this, in your DllImport attribute:
 
 ``` csharp
 using System.Runtime.InteropServices;
