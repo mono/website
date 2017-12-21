@@ -13,6 +13,13 @@ Here is a slightly more detailed view, by .NET framework version:
 
 |<i class="fa fa-check"/>|Implemented|<i class="fa fa-exclamation-triangle"/>|Partially Implemented|<i class="fa fa-ban"/>|Not Implemented|
 
+.NET 4.7
+--------
+
+|<i class="fa fa-check"/>|C# 7.0|
+|<i class="fa fa-check"/>|ValueTuples|
+
+
 .NET 4.6
 --------
 
