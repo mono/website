@@ -159,7 +159,7 @@ Candidates for this include:
 These are libraries of high quality code and whose Mono counterpart might be known to have limitations, bugs or problems. But yet, the Microsoft implementation contains dependencies on native libraries that do not exist across all platforms.
 
 * HTTP client stack
-* `System.Data.*` - Microsoft's impementation has many dependencies on native code that need to be refactored to be cross platform.
+* ~~`System.Data.*` - Microsoft's impementation has many dependencies on native code that need to be refactored to be cross platform.~~ ... this was done by https://github.com/mono/mono/pull/4893 and similar PRs.
 
 ### Individual Members
 
