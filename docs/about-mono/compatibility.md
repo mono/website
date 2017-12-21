@@ -5,7 +5,7 @@ redirect_from:
 ---
 
 The easiest way to describe what Mono currently supports is:<br/>
-**Everything in .NET 4.5** except **WPF**, **WWF**, and with **limited WCF** and **limited ASP.NET 4.5 async stack**.
+**Everything in .NET 4.7** except **WPF**, **WWF**, and with **limited WCF** and **limited ASP.NET async stack**.
 
 System.Web and WCF are [candidates for 'almost immediate' porting from the .NET reference source back to Mono](/docs/about-mono/dotnet-integration/#entire-assemblies), so support coverage may improve.
 
