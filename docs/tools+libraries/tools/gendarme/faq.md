@@ -43,7 +43,7 @@ I'm scripting Gendarme, what are the different exit code of the console runner 
 
 **3** : The runner founds errors in the (default or user supplied) configuration files. Specific error messages should be printed on the console.
 
-**4** : The runner execution was interrupted by a non-handled exception. This is likely a bug inside Gendarme and should be reported on Novell's bugzilla ([http://bugzilla.novell.com](http://bugzilla.novell.com)) or on the mailing-list.
+**4** : The runner execution was interrupted by a non-handled exception. This is likely a bug inside Gendarme and should be reported on the mailing-list.
 
 Features
 ========

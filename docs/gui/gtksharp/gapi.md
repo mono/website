@@ -54,7 +54,7 @@ Once your .sources file is complete, run the parser with the following syntax:
 
     gapi2-parser my-sources-file
 
-The parser will print to stdout any content that it doesn't know how to handle. This is typically minimal if the library being parsed follows GNOME coding standards. However, if you are seeing source output to the console during the parse, please report it to bugzilla so the parser's regexen can be extended to accommodate your library.
+The parser will print to stdout any content that it doesn't know how to handle. This is typically minimal if the library being parsed follows GNOME coding standards. However, if you are seeing source output to the console during the parse, please report it so the parser's regexen can be extended to accommodate your library.
 
 Generating Code from API files
 ------------------------------

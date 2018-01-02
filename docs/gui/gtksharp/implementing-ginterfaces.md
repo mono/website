@@ -100,5 +100,5 @@ TreeModelAdapter provides a TreeModelImplementor cast operator to get access to 
 Availability
 ============
 
-As of October 2, 2007, the above capabilities are available on the trunk branch of gtk-sharp. The hearty and fearless among you are encouraged to dig in and report [any bugs you discover.](http://bugzilla.novell.com) This capability will be released in the Gtk# 2.12 releases which will commence shortly with a 2.11.0 unstable release. We are currently debating whether to backport the capability to the 2.8 and 2.10 release lines. This will likely not happen until at least the 2.12.0 stable release.
+As of October 2, 2007, the above capabilities are available on the trunk branch of gtk-sharp. The hearty and fearless among you are encouraged to dig in and report any bugs you discover. This capability will be released in the Gtk# 2.12 releases which will commence shortly with a 2.11.0 unstable release. We are currently debating whether to backport the capability to the 2.8 and 2.10 release lines. This will likely not happen until at least the 2.12.0 stable release.
 

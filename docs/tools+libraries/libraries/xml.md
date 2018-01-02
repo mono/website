@@ -78,7 +78,7 @@ Lluis Sanchez is the maintainer of this namespace (as well as System.Web.Service
 
 -   xsd.exe and wsdl.exe to create classes.
 
-If you find any problems, please file a bug in to [bugzilla](http://bugzilla.ximian.com)
+If you find any problems, please file a [bug report](/community/bugs/)
 
 Lluis also has built an interesting standalone system test. It is located in mcs/class/System.Web.Services/Test/standalone.
 

@@ -326,7 +326,7 @@ Class members dialog:
 Continuing the Port
 -------------------
 
-Now that the application runs, you have a good starting point to work from. However, it needs to be thoroughly tested for issues that MoMA can't find. When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly. If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) to Mono's bugzilla so we can fix them. See [Bugs](/community/bugs/) for details. Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
+Now that the application runs, you have a good starting point to work from. However, it needs to be thoroughly tested for issues that MoMA can't find. When exercising the application's code, it is possible that you will run into things that do not function as expected or the application may crash unexpectedly. If these issues are bugs in Mono, please file the bug with a small test case (not your entire application) so we can fix them. See [Bugs](/community/bugs/) for details. Other issues may just be poorly written code that can be fixed by rewriting it to be more robust and error-proof.
 
 There are still many issues with the NClass port, but for the sake of brevity, we will not attempt to fix them in this guide.
 

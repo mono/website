@@ -2,7 +2,10 @@
 title: Bug severity definitions
 redirect_from:
   - /BugSeverityDefinitions/
+  - /community/bugs/bug-severity-definitions/
 ---
+
+** Note: these guidelines were written for Bugzilla, Mono uses GitHub issues now. **
 
 When filing a bug against Mono, here are the guidelines for determining the severity of a bug.
 

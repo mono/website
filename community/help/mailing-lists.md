@@ -58,10 +58,6 @@ To subscribe to a mailing list, click the mailing list name in the left column a
   <td>Discussion on the documentation of Mono.</td>
 </tr>
 <tr>
-  <td><a href="https://lists.dot.net/mailman/listinfo/mono-bugs">mono-bugs</a></td>
-  <td><p>This mailing list is used to keep track of the bugs in Mono as reported in <a href="http://bugzilla.novell.com">bugzilla.novell.com</a></p></td>
-</tr>
-<tr>
   <td><a href="https://lists.dot.net/mailman/listinfo/mono-winforms-list">mono-winforms-list</a></td>
   <td><p>Used to discuss the <a href="/docs/gui/winforms/">Windows.Forms</a> implementation for Mono.</p></td>
 </tr>

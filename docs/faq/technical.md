@@ -198,7 +198,7 @@ Yes, the goal of Mono is to implement precisely the .NET Framework API (as well 
 
 ### If the behavior of an API call is different, will you fix it?
 
-Yes, we will. But we will need your assistance for this. If you find a bug in the Mono implementation, please fill a bug report in [http://bugzilla.xamarin.com](http://bugzilla.xamarin.com). Do not assume we know about the problem, we might not, and using the bug tracking system helps us organize the development process.
+Yes, we will. But we will need your assistance for this. If you find a bug in the Mono implementation, please file a [bug report](/community/bugs/). Do not assume we know about the problem, we might not, and using the bug tracking system helps us organize the development process.
 
 ### Can I develop my applications on Windows, and deploy on a supported Mono platform (like Linux)?
 

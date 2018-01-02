@@ -14,6 +14,4 @@ In addition to managed code debugging, you can [use the Unix GDB debugger with M
 Bugs
 ====
 
-[Known issues](https://bugzilla.xamarin.com/buglist.cgi?component=Debugger&list_id=324673&product=Runtime&resolution=---)
-
-
+[Known issues](https://github.com/mono/mono/labels/area-Debugger)
