@@ -63,13 +63,16 @@ Mono features a few memory allocation subsystems such as: a lock-free allocator,
 
 It is useful to model locks by a locking hierarchy, which is a relation between locks, which is reflexive, transitive, and antisymmetric, in other words, a lattice. If a thread wants to acquire a lock B, while already holding A, it can only do it if A \< B. If all threads work this way, then no deadlocks can occur.
 
-Our locking hierarchy so far looks like this:
+Our locking hierarchy so far looks like this (if lock A is above lock B, then A \< B):
 
         <LOADER LOCK>
             \
            <DOMAIN LOCK>
-            \           \                                         \
+            \                 \                  \
            <DOMAIN JIT LOCK> <SIMPLE LOCK 1>    <SIMPLE LOCK 2>
+
+For example: if a thread wants to hold a domain jit lock, a domain lock and the loader lock, it must acquire them in the order: loader lock, domain lock, domain jit lock.
+
 
 ### Notes
 
