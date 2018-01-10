@@ -74,7 +74,7 @@ Mono 5.x
 
 {% for p in upcoming %}
 {% if p.releasedate == null %}
-  - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(not released yet)*
+  - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *({% if p.version == '5.6.0' %}skipped{% else %}not released yet{% endif %})*
 {% endif %}
 {% endfor %}
 
