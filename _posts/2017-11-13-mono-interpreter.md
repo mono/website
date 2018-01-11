@@ -71,6 +71,7 @@ Mono from source code, like this:
 
 ```bash
 $ mono --interpreter yourassembly.exe
+...
 ```
 
 # Mixed Mode Execution

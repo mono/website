@@ -73,7 +73,6 @@ Our locking hierarchy so far looks like this (if lock A is above lock B, then A 
 
 For example: if a thread wants to hold a domain jit lock, a domain lock and the loader lock, it must acquire them in the order: loader lock, domain lock, domain jit lock.
 
-
 ### Notes
 
 Some common scenarios:

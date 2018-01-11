@@ -196,7 +196,9 @@ void DoSomething ()
   /* ... */
 }
 ```
-Sice this method tends to be an unuses symbol in the C code, instruct the linker to add all symbols to the dynamic symbol table, not just the used ones.
+
+Since this method tends to be an unuses symbol in the C code, instruct the linker to add all symbols to the dynamic symbol table, not just the used ones.
+
 ``` bash
 gcc sample.c -rdynamic `pkg-config --cflags --libs mono-2`
 ```
