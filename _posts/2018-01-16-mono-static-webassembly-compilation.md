@@ -5,8 +5,6 @@ author: Laurent Sansonetti
 tags: [runtime]
 ---
 
-# Mono and WebAssembly - Updates on Static Compilation
-
 As you may know we have been working on [bringing Mono to the
 WebAssembly platform](http://www.mono-project.com/news/2017/08/09/hello-webassembly).
 As part of the effort we have been pursuing two strategies; one that
