@@ -83,9 +83,8 @@ to generate `.wasm` object files directly (with the
 enough that we changed `mono-wasm` accordingly. We also noticed a
 slight increase in build time.
 
-|                        | Old toolchain | New toolchain
-First Compile | New toolchain
-Rebuild |
+|                        | Old toolchain | New toolchain | New toolchain
+|                        |               | First Compile | Rebuild
 | ---------------------- | ------------- | --------------------------- | --------------------- |
 | Full application build | ~40s          | ~30s                        | <1s                   |
 | Hello World program    | ~40s          | <1s                         | <1s                   |
@@ -97,3 +96,7 @@ making. Feel free to watch this space for further updates. You can
 also track the work on the https://github.com/lrz/mono-wasm GitHub
 repository.
 
+For those of you that want to take this for a spin you can download a
+[preview release](https://github.com/lrz/mono-wasm/releases), unzip
+and run "make" in the samples.  This currently requires MacOS High
+Sierra to run.
