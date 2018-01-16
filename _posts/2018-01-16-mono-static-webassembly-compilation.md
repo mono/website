@@ -93,8 +93,8 @@ slight increase in build time.
 There is still a lot of work to do on bringing C# to WebAssembly, but
 we are happy with this new approach and the progresses we are
 making. Feel free to watch this space for further updates. You can
-also track the work on the https://github.com/lrz/mono-wasm GitHub
-repository.
+also track the work on the [mono-wasm GitHub
+repository](https://github.com/lrz/mono-wasm).
 
 For those of you that want to take this for a spin you can download a
 [preview release](https://github.com/lrz/mono-wasm/releases), unzip
