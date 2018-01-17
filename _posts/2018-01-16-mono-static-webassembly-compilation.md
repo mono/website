@@ -50,7 +50,7 @@ and a C library with a version of `clang` that also generates LLVM
 WebAssembly bitcode.
 
 Until recently, `mono-wasm` was linking all the bitcode into a single
-LLVM module then performing a the WebAssembly code generation on
+LLVM module then performing the WebAssembly code generation on
 it. While this created a functional `.wasm` file, this had the
 downside of taking a significant amount of time (half a minute on a
 recent MacBook Pro) every time we were building a project as a lot of
@@ -81,7 +81,7 @@ create the `.wasm` code.  We have been testing the backend's ability
 to generate `.wasm` object files directly (with the
 `wasm32-unknown-unknown-wasm` triple) and so far it seems promising
 enough that we changed `mono-wasm` accordingly. We also noticed a
-slight increase in build time.
+slight decrease in build time.
 
 |                        | Old toolchain | New toolchain | New toolchain
 |                        |               | First Compile | Rebuild
