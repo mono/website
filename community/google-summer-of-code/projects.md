@@ -20,45 +20,45 @@ You can use the following links to jump to sections that you're interested in:
 
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
-* [Urho3D Scene Editor for MonoDevelop](#urho3d-scene-editor-for-monodevelop)
-* [Urho3D Material Editor for MonoDevelop](#urho3d-material-editor-for-monodevelop)
-* [Visual Basic with Roslyn in MD](#visual-basic-with-roslyn-in-md)
-* [Codelens for MD](#codelens-for-md)
-* [Improve Auto-Documentation System](#improve-auto-documentation-system)
 * [Code Contracts Support](#code-contracts-support)
-* [Support for Symbol Servers](#support-for-symbol-servers)
+* [Codelens for MD](#codelens-for-md)
 * [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
-* [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
+* [Improve Auto-Documentation System](#improve-auto-documentation-system)
 * [Overhaul MD database addins](#overhaul-md-database-addins)
 * [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
+* [Support for Symbol Servers](#support-for-symbol-servers)
+* [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
+* [Urho3D Material Editor for MonoDevelop](#urho3d-material-editor-for-monodevelop)
+* [Urho3D Scene Editor for MonoDevelop](#urho3d-scene-editor-for-monodevelop)
+* [Visual Basic with Roslyn in MD](#visual-basic-with-roslyn-in-md)
 
 **[Compilers and Tools](#compilers-and-tools)**
 
 Work on Mono's tools and compilers
 
-* [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
 * [Bring IronPython to Android and iOS.](#bring-ironpython-to-android-and-ios)
+* [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
 
 **[Mono Runtime](#mono-runtime)**
 
 Improve the core Mono runtime and JIT
 
-* [JIT optimizations](#jit-optimizations)
-* [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
-* [Improve sgen debugging](#improve-sgen-debugging)
-* [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
-* [Allocator for sgen blocks](#allocator-for-sgen-blocks)
-* [Make sgen's binary protocol a general purpose runtime tool](#make-sgens-binary-protocol-a-general-purpose-runtime-tool)
-* [Implement https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics](#implement-httpsgithubcomdotnetcorefxtreemastersrcsystemruntimeintrinsics)
 * [Add platform specific backends for the ThreadPool](#add-platform-specific-backends-for-the-threadpool)
+* [Allocator for sgen blocks](#allocator-for-sgen-blocks)
+* [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
+* [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
+* [Implement https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics](#implement-httpsgithubcomdotnetcorefxtreemastersrcsystemruntimeintrinsics)
 * [Improve our dynamic checking mode](#improve-our-dynamic-checking-mode)
+* [Improve sgen debugging](#improve-sgen-debugging)
+* [JIT optimizations](#jit-optimizations)
+* [Make sgen's binary protocol a general purpose runtime tool](#make-sgens-binary-protocol-a-general-purpose-runtime-tool)
 
 **[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**
 
 Work on blending the worlds of open source .NET and Mono projects together
 
-* [Import System.IO.FileStream from CoreFX](#import-systemiofilestream-from-corefx)
 * [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
+* [Import System.IO.FileStream from CoreFX](#import-systemiofilestream-from-corefx)
 
 **[Platforms and Bindings](#platforms-and-bindings)**
 
@@ -77,85 +77,6 @@ Suggest your own ideas for a project
 How to get in touch with us and ask questions
 
 ## MonoDevelop / Xamarin Studio IDE
-
-### Urho3D Scene Editor for MonoDevelop
-
-**Complexity:** Medium
-
-Urho3D is an open source game engine that C#/F# developers can use via the [UrhoSharp](https://github.com/xamarin/urho) binding. It's small and easily embeddeable, and thus suitable for visualization as well as games.
-
-It would be very useful for developers using MonoDevelop to be able to edit Urho3D scene definitions directly within their project. This editor should allow placing objects in the scene; moving, scaling and rotating; and editing properties such as materials and components.
-
-**Deliverables**: An Urho3D scene editor embedded into MonoDevelop that allows developers to preview and edit scenes that are in their projects.
-
-**Mentors:** Mikayla Hutchinson
-
-### Urho3D Material Editor for MonoDevelop
-
-**Complexity:** Medium
-
-Urho3D is an open source game engine that C#/F# developers can use via the [UrhoSharp](https://github.com/xamarin/urho) binding. It's small and easily embeddeable, and thus suitable for visualization as well as games.
-
-It would be very useful for developers using MonoDevelop to be able to edit Urho3D materials definitions directly within their project. The editor should have code completion and validation for the material format, and a way to preview the material live as is is edited.
-
-**Deliverables**: An Urho3D material editor embedded into MonoDevelop that allows developers to preview and edit materials that are in their projects.
-
-**Mentors:** Mikayla Hutchinson, Miguel de Icaza
-
-### Visual Basic with Roslyn in MD
-
-**Complexity:** Medium
-
-Overhaul the VB language binding addin or rewrite it from scratch and
-make use of the full VB .NET support in Roslyn (without mono-basic). The CSharpBinding addin is a good starting point and reference.
-
-Main goals:
-
-* Compatibility with Visual Studio projects
-* Panels for editing all project options
-* Updated project templates
-* Integration into the MonoDevelop type system
-* Code completion ported from Roslyn EditorFeatures
-* Other standard IDE language integration (code folding, document outline, symbol tooltips, Find References, etc)
-
-Optional:
-
-* Mac/Linux support (depends on MSBuild and Roslyn compilers being included in Mono)
-* VB.NET source analysis
-* VB.NET refactorings ported from Roslyn EditorFeatures
-* Semantic highlighting
-
-**Deliverables**: VB.NET support in MonoDevelop with updated project options and templates, and Roslyn-based code completion
-
-**Mentors:** Vsevolod Kukol, Marius Ungureanu
-
-### Codelens for MD
-
-**Complexity:** Easy
-
-The monodevelop editor has support for extending lines e.g. drawing stuff above or below lines.
-
-Visual Studio.NET introduced code lenses which does exactly that. The task would be to create an infrastructure for these code lenses and implement some proof of concept lenses. References & Authors at least. 
-
-The lenses should be extendable by other addins. You'll learn about the extension mechanism we use as well as drawing with cairo using C#/Mono. The underpinnings are already implemented it's just gluing the stuff together.
-
-**Mentors:** maryannexe
-
-### Improve Auto-Documentation System
-
-**Complexity:** Medium
-
-MonoDevelop has an addin that automatically generates documentation comments based on the member types and  naming conventions. This is very useful, as it gets the boilerplate out the way leaving more time for the developer to add meaningful details.
-
-However, sometimes its assumptions do not hold and the resulting docs  do not make sense. Although this is funny, we would like to fix it.
-
-This is an ideal project for a student interested in linguistics, parsing & understanding natural language.
-
-Your proposal should describe the approaches you intend to use to fix the issue, and a number of cases where the generated docs could be improved.
-
-**Deliverables:** Fix the docs generation for the cases covered in your proposal.
-
-**Mentors:** Mike Krüger
 
 ### Code Contracts Support
 
@@ -190,17 +111,17 @@ The second step includes extending the MonoDevelop IDE to add the configuration 
 
 **Mentors:** Aleksey Kliger
 
-### Support for Symbol Servers
+### Codelens for MD
 
-**Complexity:** Hard
+**Complexity:** Easy
 
-Support for downloading symbol packages from symbol servers on demand and using them in the debugger. This is primarily useful for NuGet.
+The monodevelop editor has support for extending lines e.g. drawing stuff above or below lines.
 
-Making this work will require implementing support for handling debugger symbols on the client (IDE) side instead of the debugger agent.
+Visual Studio.NET introduced code lenses which does exactly that. The task would be to create an infrastructure for these code lenses and implement some proof of concept lenses. References & Authors at least. 
 
-**Deliverables**: Support for downloading symbol packages and using them when debugging apps.
+The lenses should be extendable by other addins. You'll learn about the extension mechanism we use as well as drawing with cairo using C#/Mono. The underpinnings are already implemented it's just gluing the stuff together.
 
-**Mentors:** David Karlas
+**Mentors:** maryannexe
 
 ### Debugging disassembled code could use C# decompiler to generate source
 
@@ -212,15 +133,21 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 
 **Mentors:** David Karlas
 
-### Unit tests code coverage visualised inside MonoDevelop editor
+### Improve Auto-Documentation System
 
 **Complexity:** Medium
 
-The [monocov](https://github.com/mono/monocov) profiler module can be used to collect information about which code was executed. This project would involve adding support to the MonoDevelop.UnitTesting extension to collect code coverage information when running unit tests on the Mono runtime, and to display that information in a pad and visually in the source editor.
+MonoDevelop has an addin that automatically generates documentation comments based on the member types and  naming conventions. This is very useful, as it gets the boilerplate out the way leaving more time for the developer to add meaningful details.
 
-**Deliverables**: Add support to MonoDevelop to collect code coverage information when running tests, and display it visually in the text editor.
+However, sometimes its assumptions do not hold and the resulting docs  do not make sense. Although this is funny, we would like to fix it.
 
-**Mentors:** David Karlas
+This is an ideal project for a student interested in linguistics, parsing & understanding natural language.
+
+Your proposal should describe the approaches you intend to use to fix the issue, and a number of cases where the generated docs could be improved.
+
+**Deliverables:** Fix the docs generation for the cases covered in your proposal.
+
+**Mentors:** Mike Krüger
 
 ### Overhaul MD database addins
 
@@ -242,17 +169,80 @@ This will require implementing the MSBuild ICscHostObject interface in the MonoD
 
 **Mentors:** Marius Ungureanu
 
-## Compilers and Tools
+### Support for Symbol Servers
 
-### Port ilasm to use IKVM.Reflection instead of PEAPI.
+**Complexity:** Hard
+
+Support for downloading symbol packages from symbol servers on demand and using them in the debugger. This is primarily useful for NuGet.
+
+Making this work will require implementing support for handling debugger symbols on the client (IDE) side instead of the debugger agent.
+
+**Deliverables**: Support for downloading symbol packages and using them when debugging apps.
+
+**Mentors:** David Karlas
+
+### Unit tests code coverage visualised inside MonoDevelop editor
 
 **Complexity:** Medium
 
-Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
+The [monocov](https://github.com/mono/monocov) profiler module can be used to collect information about which code was executed. This project would involve adding support to the MonoDevelop.UnitTesting extension to collect code coverage information when running unit tests on the Mono runtime, and to display that information in a pad and visually in the source editor.
 
-**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
+**Deliverables**: Add support to MonoDevelop to collect code coverage information when running tests, and display it visually in the text editor.
 
-**Mentors:** Marek Safar, Zoltan Varga
+**Mentors:** David Karlas
+
+### Urho3D Material Editor for MonoDevelop
+
+**Complexity:** Medium
+
+Urho3D is an open source game engine that C#/F# developers can use via the [UrhoSharp](https://github.com/xamarin/urho) binding. It's small and easily embeddeable, and thus suitable for visualization as well as games.
+
+It would be very useful for developers using MonoDevelop to be able to edit Urho3D materials definitions directly within their project. The editor should have code completion and validation for the material format, and a way to preview the material live as is is edited.
+
+**Deliverables**: An Urho3D material editor embedded into MonoDevelop that allows developers to preview and edit materials that are in their projects.
+
+**Mentors:** Mikayla Hutchinson, Miguel de Icaza
+
+### Urho3D Scene Editor for MonoDevelop
+
+**Complexity:** Medium
+
+Urho3D is an open source game engine that C#/F# developers can use via the [UrhoSharp](https://github.com/xamarin/urho) binding. It's small and easily embeddeable, and thus suitable for visualization as well as games.
+
+It would be very useful for developers using MonoDevelop to be able to edit Urho3D scene definitions directly within their project. This editor should allow placing objects in the scene; moving, scaling and rotating; and editing properties such as materials and components.
+
+**Deliverables**: An Urho3D scene editor embedded into MonoDevelop that allows developers to preview and edit scenes that are in their projects.
+
+**Mentors:** Mikayla Hutchinson
+
+### Visual Basic with Roslyn in MD
+
+**Complexity:** Medium
+
+Overhaul the VB language binding addin or rewrite it from scratch and
+make use of the full VB .NET support in Roslyn (without mono-basic). The CSharpBinding addin is a good starting point and reference.
+
+Main goals:
+
+* Compatibility with Visual Studio projects
+* Panels for editing all project options
+* Updated project templates
+* Integration into the MonoDevelop type system
+* Code completion ported from Roslyn EditorFeatures
+* Other standard IDE language integration (code folding, document outline, symbol tooltips, Find References, etc)
+
+Optional:
+
+* Mac/Linux support (depends on MSBuild and Roslyn compilers being included in Mono)
+* VB.NET source analysis
+* VB.NET refactorings ported from Roslyn EditorFeatures
+* Semantic highlighting
+
+**Deliverables**: VB.NET support in MonoDevelop with updated project options and templates, and Roslyn-based code completion
+
+**Mentors:** Vsevolod Kukol, Marius Ungureanu
+
+## Compilers and Tools
 
 ### Bring IronPython to Android and iOS.
 
@@ -268,50 +258,37 @@ The goal of this project would include:
 
 **Mentors:** Miguel de Icaza, Mikayla Hutchinson
 
+### Port ilasm to use IKVM.Reflection instead of PEAPI.
+
+**Complexity:** Medium
+
+Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
+
+**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
+
+**Mentors:** Marek Safar, Zoltan Varga
+
 ## Mono Runtime
 
-### JIT optimizations
+### Add platform specific backends for the ThreadPool
+
+**Complexity:** Medium
+
+The ThreadPool supports the concept of workers backend which is responsible for allocating the appropriate number of threads. This allows for platform-specific implementations. For example, we can use  `dispatch_async` on macOS/iOS, the Win32 threadpool on Windows, and the existing - hand rolled - implementation on the other platforms.
+
+**Deliverables:** Add backend for `dispatch_async` on macOS/iOS and for the Win32 threadpool on Windows.
+
+**Mentors:** Ludovic Henry
+
+### Allocator for sgen blocks
 
 **Complexity:** Hard
 
-There are a few JIT optimizations that we could profile from:
+Most of the objects in sgen are allocated in major blocks. We don't allocate the blocks in an organised way, we allocate them in chunks and free them individually. This leads to incapability of freeing them on some targets, virtual space fragmentation and bad structure.
 
-* type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
-* delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
+We need to allocate blocks in well determined contiguous regions that we can keep track of and have sgen's compaction mechanism account for this structure.
 
-**Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
-
-**Mentors:** Bernhard Urban
-
-### Implement Clang static analyser checkers that would verify runtime invariants
-
-**Complexity:** Medium
-
-Clang static analyser support writing custom rules.
-
-Add new rules that understand idioms in the runtime (and maybe extra hints on it) to verify multiple conditions:
-
-* Managed exception cleaningness;
-* Managed allocation OOM handling;
-* Correct lock ordering;
-* GC invariants;
-* AppDomain invariants;
-
-Together with the clang work, this project should annotate the runtime to verify those properties as needed.
-
-**Deliverables:** One or more of the above bullet points.
-
-**Mentors:** Bernhard Urban
-
-### Improve sgen debugging
-
-**Complexity:** Medium
-
-In order to debug issues with our garbage collector, we have a set of functions that we invoke (at runtime or from gdb) in order to check the state of the heap.
-
-We encounter problems with these debugging functions crashing on invalid heap states (we need safe dereferencing of invalid pointers and recovering) or not being fully supported on all configurations.
-
-**Deliverables**: Make debug functions crash safe. Expand support for nursery canaries.
+**Deliverables** : Implement an allocator for sgen blocks
 
 **Mentors:** Vlad Brezae
 
@@ -333,41 +310,25 @@ Note that some work on this has been done already and can be found [here](https:
 
 **Mentors:** Alexis Christoforides
 
-### Allocator for sgen blocks
-
-**Complexity:** Hard
-
-Most of the objects in sgen are allocated in major blocks. We don't allocate the blocks in an organised way, we allocate them in chunks and free them individually. This leads to incapability of freeing them on some targets, virtual space fragmentation and bad structure.
-
-We need to allocate blocks in well determined contiguous regions that we can keep track of and have sgen's compaction mechanism account for this structure.
-
-**Deliverables** : Implement an allocator for sgen blocks
-
-**Mentors:** Vlad Brezae
-
-### Make sgen's binary protocol a general purpose runtime tool
+### Implement Clang static analyser checkers that would verify runtime invariants
 
 **Complexity:** Medium
 
-SGen's binary protocol proved to be an invaluable troubleshooting tool.
+Clang static analyser support writing custom rules.
 
-It's a flight-recorder kind of tool that should be accessible for all part of the runtime.
+Add new rules that understand idioms in the runtime (and maybe extra hints on it) to verify multiple conditions:
 
-This project is to extract it from sgen and make it a general purpose tool for the runtime.
+* Managed exception cleaningness;
+* Managed allocation OOM handling;
+* Correct lock ordering;
+* GC invariants;
+* AppDomain invariants;
 
-In addition, it should add probes for a few runtime facilities:
+Together with the clang work, this project should annotate the runtime to verify those properties as needed.
 
-* threadpool events
-* JIT activity
-* ???
+**Deliverables:** One or more of the above bullet points.
 
-A good use case would be to use it to replace the runtime's dtrace probes.
-
-Additionally, improving the tooling around processing binprot files can be part of this project.
-
-**Deliverables**: Extract the binary protocol from sgen and use it to replace the runtime's dtrace probes.
-
-**Mentors:** Ludovic Henry
+**Mentors:** Bernhard Urban
 
 ### Implement https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics
 
@@ -376,16 +337,6 @@ Additionally, improving the tooling around processing binprot files can be part 
 
 
 **Mentors:** Miguel de Icaza, Zoltan Varga
-
-### Add platform specific backends for the ThreadPool
-
-**Complexity:** Medium
-
-The ThreadPool supports the concept of workers backend which is responsible for allocating the appropriate number of threads. This allows for platform-specific implementations. For example, we can use  `dispatch_async` on macOS/iOS, the Win32 threadpool on Windows, and the existing - hand rolled - implementation on the other platforms.
-
-**Deliverables:** Add backend for `dispatch_async` on macOS/iOS and for the Win32 threadpool on Windows.
-
-**Mentors:** Ludovic Henry
 
 ### Improve our dynamic checking mode
 
@@ -411,6 +362,55 @@ This project would extend it with some number of the following improvements, to 
 
 **Mentors:** Alexander Kyte
 
+### Improve sgen debugging
+
+**Complexity:** Medium
+
+In order to debug issues with our garbage collector, we have a set of functions that we invoke (at runtime or from gdb) in order to check the state of the heap.
+
+We encounter problems with these debugging functions crashing on invalid heap states (we need safe dereferencing of invalid pointers and recovering) or not being fully supported on all configurations.
+
+**Deliverables**: Make debug functions crash safe. Expand support for nursery canaries.
+
+**Mentors:** Vlad Brezae
+
+### JIT optimizations
+
+**Complexity:** Hard
+
+There are a few JIT optimizations that we could profile from:
+
+* type propagation. Right now we perform zero type propagation in the JIT, leading to a lot of missed opportunities.
+* delayed/iterated inlining & casting. Allow those to be performed after method-to-ir. This would allow us to do a TON of VERY profitable strength reduction.
+
+**Deliverables**: Implementation of a JIT optimization from the above list, or another of your suggestion. Must pass all unit tests.
+
+**Mentors:** Bernhard Urban
+
+### Make sgen's binary protocol a general purpose runtime tool
+
+**Complexity:** Medium
+
+SGen's binary protocol proved to be an invaluable troubleshooting tool.
+
+It's a flight-recorder kind of tool that should be accessible for all part of the runtime.
+
+This project is to extract it from sgen and make it a general purpose tool for the runtime.
+
+In addition, it should add probes for a few runtime facilities:
+
+* threadpool events
+* JIT activity
+* ???
+
+A good use case would be to use it to replace the runtime's dtrace probes.
+
+Additionally, improving the tooling around processing binprot files can be part of this project.
+
+**Deliverables**: Extract the binary protocol from sgen and use it to replace the runtime's dtrace probes.
+
+**Mentors:** Ludovic Henry
+
 ## Microsoft .NET and Mono integration
 
 Microsoft open sourced large chunks of code the past couple of years:
@@ -423,6 +423,16 @@ Microsoft open sourced large chunks of code the past couple of years:
 
 We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
 
+### Import reference source System.Web* assemblies
+
+**Complexity:** Medium
+
+Mono has its own implementation of the System.Web assemblies. Microsoft has open-sourced their Reference Source implementation. We would like to replace Mono's existing implementation with Reference Source in order to increase compatibility, and fix bugs and missing features..
+
+**Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
+
+**Mentors:** Marek Safar
+
 ### Import System.IO.FileStream from CoreFX
 
 **Complexity:** Medium
@@ -434,16 +444,6 @@ The goal is to replace our BCL implementation of `System.IO.FileStream` (https:/
 All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation CoreFx repo (https://github.com/dotnet/corefx)
 
 **Deliverables**: Integrate `FileStream` from CoreFX into Mono and upstream any necessary changes.
-
-**Mentors:** Marek Safar
-
-### Import reference source System.Web* assemblies
-
-**Complexity:** Medium
-
-Mono has its own implementation of the System.Web assemblies. Microsoft has open-sourced their Reference Source implementation. We would like to replace Mono's existing implementation with Reference Source in order to increase compatibility, and fix bugs and missing features..
-
-**Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
 
 **Mentors:** Marek Safar
 
@@ -530,10 +530,10 @@ For any questions you may have about the program itself and to talk to the Mono 
 
 ### Mailing Lists
 
-[http://lists.ximian.com/mailman/listinfo/mono-devel-list](http://lists.ximian.com/mailman/listinfo/mono-devel-list)
+[https://lists.dot.net/mailman/listinfo/mono-devel-list](https://lists.dot.net/mailman/listinfo/mono-devel-list)
 A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
 
-[http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list](http://lists.ximian.com/mailman/listinfo/monodevelop-devel-list)
+[https://lists.dot.net/listinfo/monodevelop-devel-list](https://lists.dot.net/mailman/listinfo/monodevelop-devel-list)
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
