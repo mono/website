@@ -21,11 +21,13 @@ You can use the following links to jump to sections that you're interested in:
 Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
 
 * [Code Contracts Support](#code-contracts-support)
-* [Codelens for MD](#codelens-for-md)
+* [CodeLens for MonoDevelop](#codelens-for-monodevelop)
 * [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
 * [Improve Auto-Documentation System](#improve-auto-documentation-system)
-* [Overhaul MD database addins](#overhaul-md-database-addins)
+* [Overhaul MonoDevelop C/C++ support](#overhaul-monodevelop-cc-support)
+* [Resurrect MonoDevelop database support](#resurrect-monodevelop-database-support)
 * [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
+* [Support creation of sandboxed Linux apps](#support-creation-of-sandboxed-linux-apps)
 * [Support for Symbol Servers](#support-for-symbol-servers)
 * [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
 * [Urho3D Material Editor for MonoDevelop](#urho3d-material-editor-for-monodevelop)
@@ -38,6 +40,7 @@ Work on Mono's tools and compilers
 
 * [Bring IronPython to Android and iOS.](#bring-ironpython-to-android-and-ios)
 * [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
+* [Replace mono-cil-strip](#replace-mono-cil-strip)
 
 **[Mono Runtime](#mono-runtime)**
 
@@ -65,6 +68,7 @@ Work on blending the worlds of open source .NET and Mono projects together
 Bindings to native toolkits and libraries, including GTK#, Xamarin.Android, Xamarin.iOS, Xamarin.Mac and UrhoSharp
 
 * [Implement WebAssembly versions of class library missing bits](#implement-webassembly-versions-of-class-library-missing-bits)
+* [Port Go's HTTP client/server to .NET](#port-gos-http-clientserver-to-net)
 * [Test & fix remaining profile assemblies under WASM](#test--fix-remaining-profile-assemblies-under-wasm)
 * [Urho3d Game Engine Improvements](#urho3d-game-engine-improvements)
 
@@ -111,15 +115,19 @@ The second step includes extending the MonoDevelop IDE to add the configuration 
 
 **Mentors:** Aleksey Kliger
 
-### Codelens for MD
+### CodeLens for MonoDevelop
 
-**Complexity:** Easy
+**Complexity:** Medium
 
-The monodevelop editor has support for extending lines e.g. drawing stuff above or below lines.
+A code lens is an adornment drawn above lines in the source editor to provide ambient contextual information, such as when a method was last modified, or the number of places it is referenced. They can be seen in action in Visual Studio and Visual Studio Code.
 
-Visual Studio.NET introduced code lenses which does exactly that. The task would be to create an infrastructure for these code lenses and implement some proof of concept lenses. References & Authors at least. 
+This task is to create an infrastructure for code lenses in MonoDevelop that can be extended by extension packages, and to implement several built-in code lenses using this infrastructure.
 
-The lenses should be extendable by other addins. You'll learn about the extension mechanism we use as well as drawing with cairo using C#/Mono. The underpinnings are already implemented it's just gluing the stuff together.
+Many of the underpinnings are already present, so this project is partly a UX task. Prior to the implementation, you will need to do user research and testing to provide support for the design:
+- What information is useful to show in a code editor, and how should it be displayed?
+- How do developers interact with the code lenses?
+- How do we make them unobtrusive, and make the experience smooth and subtle?
+You will learn how to find a tradeoff between optimal user experience and technical complications.
 
 **Mentors:** maryannexe
 
@@ -149,11 +157,36 @@ Your proposal should describe the approaches you intend to use to fix the issue,
 
 **Mentors:** Mike Krüger
 
-### Overhaul MD database addins
+### Overhaul MonoDevelop C/C++ support
 
 **Complexity:** Medium
 
-Take the database addins from MonoDevelop core, update them to MD6 API. Remove all the backends except Sqlite, MySQL and PostgreSQL. Ship then as standalone addins. Add a unit test suite. Fix bugs (check bugzilla) and add general polish and features (to be proposed by student).
+The [MonoDevelop C/C++ extension](https://github.com/mhutch/cbinding) was substantially updated as part of Summer of Code 2015 and 2017. However, there are still many things that could be done to improve it!
+
+There's far more than could be done in a single Summer of Code, so feel free to pick and choose from the list of tasks when writing your proposal:
+
+* detect missing dependencies (libclang, CMake etc) and prompt the user to install them
+* improve the code completion and add a test suite
+* add various refactorings
+* integrate the [Clang Source Analyzer](https://clang-analyzer.llvm.org)
+* improve the GDB debugger integration
+* integrate the LLDB debugger
+* improve the file and project templates
+* anything else you can think of!
+
+**Deliverables:** a set of improvements to the C/C++ addin, as specified in your proposal
+
+**Mentors:** Mikayla Hutchinson
+
+### Resurrect MonoDevelop database support
+
+**Complexity:** Medium
+
+MonoDevelop used to have database support, but it was abandoned and eventually bitrotted away. This task is to bring it back!
+
+The recommended approach is to start with the old database extensions and update them to MonoDevelop 7.0 API. Remove all the backends except Sqlite, MySQL and PostgreSQL, and ship the remaining extensions as standalone extensions. You should also add a unit test suite, fix bugs (check bugzilla) and add general polish and features (to be proposed by student).
+
+**Deliverables**: Working database support in MonoDevelop, with details to be specified in the proposal
 
 **Mentors:** Marius Ungureanu
 
@@ -168,6 +201,16 @@ This will require implementing the MSBuild ICscHostObject interface in the MonoD
 **Deliverables**: Fully implement ICscHostObject in the MonoDevelop build system, including tests.
 
 **Mentors:** Marius Ungureanu
+
+### Support creation of sandboxed Linux apps
+
+**Complexity:** Medium
+
+When creating new C or Vala apps in the GNOME Builder IDE, projects are created with a manifest file for building a sandboxed version of the application for distribution. MonoDevelop's current Linux package creation support should be enhanced to make it easy to create sandboxed applications, in line with GNOME Builder's feature
+
+**Deliverables**: New projects on Linux should offer to create a flatpak-builder manifest file, and build/run should integrate sufficiently with flatpak-builder that its use should be transparent.
+
+**Mentors:** Jo Shields
 
 ### Support for Symbol Servers
 
@@ -250,11 +293,9 @@ Optional:
 
 IronPython has been maintained all of this years, and with the increased popularity of Python in schools, we would like to add bring IronPython to mobile platforms.
 
-The goal of this project would include:
+You will need to define the workflow and project/build system for working with IronPython code on Android and/or iOS, including samples and templates, and port IronPython to compile with the Xamarin mobile profiles.
 
-* Adjust IronPython to compile with Xamarin's mobile profiles (Android or iOS).
-* Define a launcher for Android or iOS to start IronPython from the existing C# shell
-* Define the MSBuild project system for IronPython
+**Deliverables**: end-to-end IronPython support on iOS and/or Android
 
 **Mentors:** Miguel de Icaza, Mikayla Hutchinson
 
@@ -267,6 +308,24 @@ Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backen
 **Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
 
 **Mentors:** Marek Safar, Zoltan Varga
+
+### Replace mono-cil-strip
+
+**Complexity:** Medium
+
+The current tool requires [1] us to keep a very old version of Cecil around (in the submodules). It's also not very fast [2] and cannot be reused with (or embedded into) other projects [3] that are using a new version of Cecil.
+
+Notes: it does not have to use (or hack around) the latest Cecil, e.g. it could be based on System.Reflection.Metadata or even a custom solution.
+
+[1] The most important feature, for full-AOT, is that the metadata tokens *must* remain identical (it's part of the executable and stripping happens after the AOT process).
+
+[2] needs measurements but the old-cecil was not very fast
+
+[3] XI mtouch, XM mmp and XA tooling - the later too needs a mode that can partially strip IL too
+
+**Deliverables**: Pull requests that replace *mono-cil-strip* with a new version that has the described characteristics.
+
+**Mentors:** Alexander Kyte
 
 ## Mono Runtime
 
@@ -372,7 +431,7 @@ We encounter problems with these debugging functions crashing on invalid heap st
 
 **Deliverables**: Make debug functions crash safe. Expand support for nursery canaries.
 
-**Mentors:** Vlad Brezae
+**Mentors:** Vlad Brezae, Alexis Christoforides
 
 ### JIT optimizations
 
@@ -468,6 +527,16 @@ A student proposal should pick a few of those items.
 
 **Mentors:** Miguel de Icaza
 
+### Port Go's HTTP client/server to .NET
+
+**Complexity:** Medium
+
+[Go's HTTP client/server stack](https://github.com/golang/go/tree/master/src/net/http) is fast and elegant. This project is to make it available to C# developers by porting it line by line to C#.
+
+**Deliverables**:  a working port of the Go client/server stack in C#, with tests
+
+**Mentors:** Miguel de Icaza
+
 ### Test & fix remaining profile assemblies under WASM
 
 **Complexity:** Medium
@@ -530,11 +599,10 @@ For any questions you may have about the program itself and to talk to the Mono 
 
 ### Mailing Lists
 
-[https://lists.dot.net/mailman/listinfo/mono-devel-list](https://lists.dot.net/mailman/listinfo/mono-devel-list)
+[https://lists.dot.net/mailman/listinfo/mono-devel-list](http://lists.dot.net/mailman/listinfo/mono-devel-list)  
 A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
 
-[https://lists.dot.net/listinfo/monodevelop-devel-list](https://lists.dot.net/mailman/listinfo/monodevelop-devel-list)
+[http://lists.dot.net/mailman/listinfo/monodevelop-devel-list](http://lists.dot.net/mailman/listinfo/monodevelop-devel-list)  
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).
-
