@@ -95,3 +95,7 @@ See also these articles:
 
 * [Compiling with Visual Studio](/docs/compiling-mono/windows/compiling-with-visualstudio/)
 * [Cross-compiling Mono for Windows](/docs/compiling-mono/windows/cross-compiling-mono-for-windows/)
+
+### Building with Windows Subsystem for Linux (WSL)
+
+Normally you should be able to just use the [Linux instructions](/docs/compiling-mono/linux/). Currently your `autogen`/`configure` invocations must include `--with-csc=mcs`, as building with Roslyn triggers as severe (system-crashing) [known issue](https://github.com/Microsoft/WSL/issues/2697).
