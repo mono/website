@@ -14,14 +14,15 @@ Main tools
 -   [gacutil](/docs/advanced/assemblies-and-the-gac/) is a tool used by developers to install versioned assemblies into the system Global Assembly Cache (GAC) to become part of the assemblies that are available for all applications at runtime.
 -   [xsp](/docs/web/aspnet/), Mono's stand alone ASP.NET web services and web application server
 -   mono-config - Mono runtime file format configuration
--   [mkbundle](/docs/tools+libraries/tools/mkbundle.md) - Create and cross-compile self-contained executables with no external dependencies.
+-   [mkbundle](/docs/tools+libraries/tools/mkbundle) - Create and cross-compile self-contained executables with no external dependencies.
 
 Miscellaneous tools
 ===================
 
 -   ilasm: IL assembler
--   monodis: IL disassembler
--   monop: command line class display.
+-   monodis: IL disassembler and metadata explorer
+-   ikdasm: IL disassembler, more robust, but lacks some of the metadata features of monodis.
+-   monop: command line class display (Try: `monop System.String`)
 -   sn: StrongName (code signing) utility for signing IL assemblies
 -   sqlsharp: command line SQL client for most of the the System.Data based DB Connectors
 -   [Gendarme](/docs/tools+libraries/tools/gendarme/): Rule-based assembly analyser for developers.
