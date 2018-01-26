@@ -17,9 +17,8 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 -   [Sun Solaris](/docs/about-mono/supported-platforms/solaris/)
 -   [BSD](/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
 -   [Microsoft Windows](/docs/getting-started/install/windows/)
--   [Nintendo Wii](/docs/about-mono/supported-platforms/wii/)
--   [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/)
 -   [Sony PlayStation 4](/docs/about-mono/supported-platforms/playstation4/)
+-   [XboxOne](/docs/about-mono/supported-platforms/xbox-one/)
 
 ### Supported Architectures
 
@@ -27,23 +26,30 @@ Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime
 
 |Supported Architectures|Runtime|Operating system|
 |:----------------------|:------|:---------------|
-|[s390, s390x (32 and 64 bits)](/docs/about-mono/supported-platforms/s390/)|JIT|Linux|
+|[s390x (64 bits)](/docs/about-mono/supported-platforms/s390/)|JIT|Linux|
 |[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|JIT|Solaris, Linux|
 |[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|JIT|Linux, Mac OSX, Wii, PlayStation 3|
 |[x86](/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, OS X, Android|
 |[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT|Linux, FreeBSD, OpenBSD, Solaris, OS X|
-|[IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit)|JIT|Linux|
 |[ARM](/docs/about-mono/supported-platforms/arm/): little and big endian|JIT|Linux (both old and new ABI), iPhone, Android|
-|Alpha|JIT|**not maintained**. Linux|
 |[MIPS](/docs/about-mono/supported-platforms/mips/)|JIT|Linux|
-|HPPA|JIT|**not maintained** Linux|
 
-Note that the Alpha, MIPS, ARM big-endian and HPPA architectures are community-supported and may not be as complete as the other architectures.
-
-Support for SPARC64 works in older versions of Mono, but not in the recent versions.
+Note that the MIPS, and ARM big-endian are community-supported and may not be as complete as the other architectures.
 
  Packages for most platforms are available from the [Downloads](/download/) page.
 
 ### Embedded systems
 
 To make mono more suitable for some architectures used as embedded systems have a look at the [Small footprint](/docs/compiling-mono/small-footprint/) page.
+
+### Deprecated Platforms
+
+Support for the following platforms is only available for older versions of Mono (that you can retrieve from the Git history, or via licensing from Novell) but are not up-to-date and are no longer maintained:
+
+- [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/)
+- [Nintendo Wii](/docs/about-mono/supported-platforms/wii/)
+- HPPA architecture on HP-UX.
+- Alpha architecutre on Linux.
+- S390 architecture on Linux (the 32-bit version)
+- [IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit) on Linux
+- SPARC64 a community effort that was not merged.
