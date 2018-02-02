@@ -3,7 +3,7 @@ layout: docpage
 ---
 {% if page.releasedate and page.releasedate != '' %}
 <div class="meta">
-  <span class="date"> Release date: {{ page.releasedate | date_to_string }}</span>
+  <span class="date"> Release date: {% if page.releasedate == 'skipped' %}skipped{% else %}{{ page.releasedate | date_to_string }}{% endif %}</span>
 </div>
 {% else %}
 <div class="row">
