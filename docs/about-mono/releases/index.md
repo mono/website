@@ -66,8 +66,8 @@ redirect_from:
 This page contains a list of all Mono releases. The latest release is {{ site.data.latestrelease.version }}.<br/>
 Mono version numbers follow a specific policy, learn more [here](/docs/about-mono/versioning/).
 
-{% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "releasedate" | reverse %}
-{% assign upcoming = site.pages | where: "layout", "releasenotes" | sort: "version" | reverse %}
+{% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "version" | reverse %}
+{% assign upcoming = site.pages | where: "layout", "releasenotes" | where: "releasedate", null | sort: "version" | reverse %}
 
 Mono 5.x
 --------
