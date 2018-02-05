@@ -35,6 +35,7 @@ redirect_from:
           <dd><a href="#download-lin-debian"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" />&nbsp;&nbsp;Debian</a></dd>
           <dd><a href="#download-lin-raspbian"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" />&nbsp;&nbsp;Raspbian</a></dd>
           <dd><a href="#download-lin-centos"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" />&nbsp;&nbsp;CentOS</a></dd>
+          <dd><a href="#download-lin-docker"><img src="/images/docker-logo.svg" height="20px" width="20px" alt="Docker Logo" />&nbsp;&nbsp;Docker</a></dd>
         </dl>
         <div class="tabs-content horizontal">
           <div class="panel content active" id="download-lin-ubuntu" style="padding: 10px">
@@ -180,6 +181,24 @@ yum-config-manager --add-repo http://download.mono-project.com/repo/centos6/</co
               Verify Installation
             </h2>
             <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+          </div>
+          <div class="panel content" id="download-lin-docker" style="padding: 20px 10px 10px 10px">
+            <h3>Mono is available on <a href="https://hub.docker.com/_/mono/">Docker Hub</a></h3>
+            <p>The simplest way to get started is:</p>
+            <pre><code class="language-bash">$ docker run -it mono:latest bash</code></pre>
+            <p>This will download the latest Mono Docker image, create a container and put you into an interactive shell.</p>
+            <h3>Available tags</h3>
+            <p>There are several tags for selecting the desired Mono version:</p>
+            <ul>
+              <li><code>latest</code> - Always points to the latest release</li>
+              <li><code>X.X.X.X</code> - points to a specific version, e.g. 5.8.0.108</li>
+              <li><code>X.X.X</code> - points to the latest version in the X.X.X series, e.g. 5.8.0</li>
+              <li><code>X.X</code> - points to the latest version in the X.X series, e.g. 5.8</li>
+              <li><code>X</code> - points to the latest version in the X series, e.g. 5</li>
+            </ul>
+            <p>The latest version, one minor version before that and the last version before a major version bump are periodically rebuilt by Docker Hub to pull in updates from the base Debian image.</p>
+            <p>All other version tags are still available, but won't get those updates so you need to keep your images up to date by running apt-get update yourself. We encourage you to move to latest Mono releases as soon as they're available.</p>
+            <p>Starting with Mono 5.2 we provide a slim variant (e.g. <code>latest-slim</code>) which only contains the bare minimum to run a simple console app. You can use this as a base and add just what you need.</p>
           </div>
         </div>
       </div>
