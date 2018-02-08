@@ -95,7 +95,7 @@ To make mono more suitable for some architectures used as embedded systems have 
 Compilation Engine
 ------------------
 
-Paolo Molaro did a presentation on the current JIT engine and the new JIT engine. You can find his slides [here](http://primates.ximian.com/~lupus/slides/jit).
+Paolo Molaro did a presentation on the current JIT engine and the new JIT engine. You can find his slides [here](/docs/advanced/runtime/jitslides/).
 
 We have re-written our JIT compiler. We wanted to support a number of features that were missing: Ahead of Time compilation, simplify porting and have a solid foundation for compiler optimizations.
 
