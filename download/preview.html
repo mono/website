@@ -1,17 +1,23 @@
 ---
 layout: base
-title: Download
+title: Download - Preview
 navgroup: download
 redirect_from:
-  - /downloads/
-  - /Downloads/
-  - /Download/
+  - /alpha/
+  - /Alpha/
+  - /download/alpha/
+  - /beta/
+  - /Beta/
+  - /download/beta/
 ---
+
 <div class="row">
   <div class="small-12 columns">
     <h1>Download</h1>
 
-    <h5>The latest Mono release is: <strong>{{ site.data.latestrelease.version }}</strong></h5>
+    <p><b>Release channels:</b>&nbsp;<span><a href="/download/preview/">Preview</a> - <a href="/download/stable/">Stable</a> - <a href="/download/vs/">VS</a></span></p>
+
+    <h5>The latest Preview Mono release is: <strong>{{ site.data.previewrelease.version }}</strong></h5>
     <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/">Tarball</a>.</p>
 
     <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
@@ -25,7 +31,7 @@ redirect_from:
         <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
-          <a href="{{ site.data.latestrelease.mono_mac_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
+          <a href="{{ site.data.previewrelease.mono_mac_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
           <p>Supported on Mac OS X 10.7 and later.</p>
         </div>
       </div>
@@ -35,7 +41,6 @@ redirect_from:
           <dd><a href="#download-lin-debian"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" />&nbsp;&nbsp;Debian</a></dd>
           <dd><a href="#download-lin-raspbian"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" />&nbsp;&nbsp;Raspbian</a></dd>
           <dd><a href="#download-lin-centos"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" />&nbsp;&nbsp;CentOS</a></dd>
-          <dd><a href="#download-lin-docker"><img src="/images/docker-logo.svg" height="20px" width="20px" alt="Docker Logo" />&nbsp;&nbsp;Docker</a></dd>
         </dl>
         <div class="tabs-content horizontal">
           <div class="panel content active" id="download-lin-ubuntu" style="padding: 10px">
@@ -46,15 +51,15 @@ redirect_from:
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <h3>Ubuntu 16.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/ubuntu preview-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Ubuntu 14.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu trusty main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/ubuntu preview-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Ubuntu 12.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu precise main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/ubuntu preview-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <hr />
             <h2>
@@ -85,15 +90,15 @@ sudo apt-get update</code></pre>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <h3>Debian 9</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian stretch main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/debian preview-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Debian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian jessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/debian preview-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Debian 7</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/debian preview-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <hr />
             <h2>
@@ -124,11 +129,11 @@ sudo apt-get update</code></pre>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <h3>Raspbian 9</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/debian preview-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Raspbian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+echo "deb http://download.mono-project.com/repo/debian preview-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <hr />
             <h2>
@@ -160,11 +165,11 @@ sudo apt-get update</code></pre>
             <h3>CentOS 7</h3>
             <pre><code class="language-bash">yum install yum-utils
 rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos7/</code></pre>
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-preview/</code></pre>
             <h3>CentOS 6</h3>
             <pre><code class="language-bash">yum install yum-utils
 rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos6/</code></pre>
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-preview/</code></pre>
             <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
@@ -182,39 +187,21 @@ yum-config-manager --add-repo http://download.mono-project.com/repo/centos6/</co
             </h2>
             <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
           </div>
-          <div class="panel content" id="download-lin-docker" style="padding: 20px 10px 10px 10px">
-            <h3>Mono is available on <a href="https://hub.docker.com/_/mono/">Docker Hub</a></h3>
-            <p>The simplest way to get started is:</p>
-            <pre><code class="language-bash">$ docker run -it mono:latest bash</code></pre>
-            <p>This will download the latest Mono Docker image, create a container and put you into an interactive shell.</p>
-            <h3>Available tags</h3>
-            <p>There are several tags for selecting the desired Mono version:</p>
-            <ul>
-              <li><code>latest</code> - Always points to the latest release</li>
-              <li><code>X.X.X.X</code> - points to a specific version, e.g. 5.8.0.108</li>
-              <li><code>X.X.X</code> - points to the latest version in the X.X.X series, e.g. 5.8.0</li>
-              <li><code>X.X</code> - points to the latest version in the X.X series, e.g. 5.8</li>
-              <li><code>X</code> - points to the latest version in the X series, e.g. 5</li>
-            </ul>
-            <p>The latest version, one minor version before that and the last version before a major version bump are periodically rebuilt by Docker Hub to pull in updates from the base Debian image.</p>
-            <p>All other version tags are still available, but won't get those updates so you need to keep your images up to date by running apt-get update yourself. We encourage you to move to latest Mono releases as soon as they're available.</p>
-            <p>Starting with Mono 5.2 we provide a slim variant (e.g. <code>latest-slim</code>) which only contains the bare minimum to run a simple console app. You can use this as a base and add just what you need.</p>
-          </div>
         </div>
       </div>
       <div class="panel content" id="download-win" style="padding: 20px 10px 10px 10px">
         <h3>Mono for Windows is available as a Windows Installer file</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
-          <a href="{{ site.data.latestrelease.mono_windows_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 32-bit</a>
-          <a href="{{ site.data.latestrelease.mono_windows64_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (no GTK#)</a>
+          <a href="{{ site.data.previewrelease.mono_windows_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 32-bit</a>
+          <a href="{{ site.data.previewrelease.mono_windows64_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (no GTK#)</a>
         </div>
         <p>Supported on Windows 7, 8, 10 or later.</p>
         <hr />
         <h5>GTK# for .NET</h5>
         <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
         <div>
-          <a href="{{ site.data.latestrelease.gtksharp_windows_url }}" class="button radius small"><i class="fa fa-download"></i> Download Gtk#</a>
+          <a href="{{ site.data.previewrelease.gtksharp_windows_url }}" class="button radius small"><i class="fa fa-download"></i> Download Gtk#</a>
         </div>
       </div>
     </div>
@@ -223,13 +210,10 @@ yum-config-manager --add-repo http://download.mono-project.com/repo/centos6/</co
     <p>Check out the release notes of all Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
 
     <h2>MonoDevelop IDE</h2>
-    <p>Please visit the <a href="http://www.monodevelop.com/">MonoDevelop website</a> for more details about our cross-platform IDE.</p> 
+    <p>Please visit the <a href="http://www.monodevelop.com/">MonoDevelop website</a> for more details about our cross-platform IDE.</p>
 
     <h2>Older releases</h2>
     <p>To access older Mono releases for OS X and Windows, check the <a href="https://download.mono-project.com/archive/">archive</a> on the download server. For Linux, please check the "Accessing older releases" section in the <a href="/docs/getting-started/install/linux/#accessing-older-releases">installation guide</a>.</p>
-
-    <h2>Alpha and Beta updates</h2>
-    <p>To try pre-release packages, check the <a href="/download/alpha/">alpha</a> or <a href="/download/beta/">beta</a> download pages.</p>
 
     <h2>Nightly updates</h2>
     <p>To try the latest planned changes, check the <a href="/download/nightly/">nightly packages</a> download page.</p>

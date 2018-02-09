@@ -39,7 +39,7 @@ And here's the new one:
 
 The compatibility repositories will no longer be needed on recent Ubuntu or Debian – just use the right repository for your system. If your distribution isn't listed... sorry, but we need to draw a line somewhere on support, and the distributions listed here are based on heavy analysis of our web server logs and bug requests.
 
-You'll want to change your package manager repositories to reflect your system more accurately, once Mono 5.0 is published (__*Update:*__ Mono 5.0 is now live, please check out the new instructions on the [download page](/download/#download-lin)).
+You'll want to change your package manager repositories to reflect your system more accurately, once Mono 5.0 is published (__*Update:*__ Mono 5.0 is now live, please check out the new instructions on the [download page](/download/stable#download-lin)).
 
 We're debating some kind of automated handling of this, but I'm loathe to touch users' sources.list without their knowledge.
 CentOS builds are going to be late – I've been doing all my prototyping against the Debian builds, as I have better command of the tooling. Hopefully no worse than a week or two.

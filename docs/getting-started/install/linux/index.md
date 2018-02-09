@@ -7,7 +7,7 @@ redirect_from:
   - /docs/getting-started/install/linux/debian/
 ---
 
-Follow the instructions on the [download page](/download#download-lin) for the latest stable release. Alternatively, you can also try to [alpha](/download/alpha#download-lin) or [beta](/download/beta#download-lin) versions.
+Follow the instructions on the [download page](/download/stable#download-lin) for the latest stable release. Alternatively, you can also try to [preview](/download/preview#download-lin) versions.
 
 Accessing older releases
 ------------------------
