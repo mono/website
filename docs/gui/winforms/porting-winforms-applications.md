@@ -15,7 +15,7 @@ For this guide, the open source application NClass has been chosen. It is a UML 
 
 -   NClass homepage - [http://nclass.sourceforge.net/index.html](http://nclass.sourceforge.net/index.html)
 -   NClass download - [http://nclass.sourceforge.net/downloads.html](http://nclass.sourceforge.net/downloads.html) (this guide uses the "source" version)
--   [Mono 1.2.4](/download/)
+-   [Mono 1.2.4](/download/stable/)
 -   [Mono Migration Analyzer (MoMA)](/docs/tools+libraries/tools/moma/)
 
 NClass running on .Net with included example file: [![Msnclass.png](/archived/images/1/1c/Msnclass.png)](/archived/images/1/1c/Msnclass.png)
@@ -335,12 +335,12 @@ Running on Linux
 
 Ultimately, the goal is to run the application on Linux, so let's look at running NClass on Linux. If you already have a Linux installation, you can look for Mono packages in your distro's package repositories.
 
-If they are not there or are out of date, there are packages for many popular distros on Mono's [Downloads](/download/) page. If you cannot find pre-made packages, you can also compile from the source code. Instructions are available [here](/docs/compiling-mono/).
+If they are not there or are out of date, there are packages for many popular distros on Mono's [Downloads](/download/stable/) page. If you cannot find pre-made packages, you can also compile from the source code. Instructions are available [here](/docs/compiling-mono/).
 
 If you do not have a Linux installation, another option is to run the openSUSE/Mono VMWare image. This is the method we will use, which requires the following:
 
 -   Free VMWare Player - [http://www.vmware.com/products/player/](http://www.vmware.com/products/player/)
--   Mono 1.2.4 on openSUSE 10.2 VMWare image - [Downloads](/download/)
+-   Mono 1.2.4 on openSUSE 10.2 VMWare image - [Downloads](/download/stable/)
 
 After installing the VMWare player and unzipping the VMWare image, start the Mono image. It should bring you to the openSUSE desktop:
 

@@ -32,7 +32,7 @@ Requirements
 
 You will need [apache](http://httpd.apache.org) , the web server, installed.
 
-From [Downloads](/download/) you will need **mono**, **xsp** and **mod_mono**.
+From [Downloads](/download/stable/) you will need **mono**, **xsp** and **mod_mono**.
 
 Distribution-Specific Documentation
 ===================================

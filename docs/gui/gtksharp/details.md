@@ -30,7 +30,7 @@ Availability
 
 Gtk# is available for both Unix and Windows.
 
--   For Unix, go [Downloads](/download/).
+-   For Unix, go [Downloads](/download/stable/).
 -   For Windows go [here](http://forge.novell.com/modules/xfmod/project/?gtks-inst4win).
 
 Tutorials

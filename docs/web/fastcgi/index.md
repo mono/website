@@ -31,7 +31,7 @@ in many web servers. A web server will receive and respond to a request in the f
 Installation Basics
 -------------------
 
-Download and install the "xsp" package from [our downloads page](/download/) or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
+Download and install the "xsp" package from [our downloads page](/download/stable/) or get the source code for xsp from [the source repository](http://go-mono.com/sources-stable/).
 
 If you obtained packages, you already have everything you need, otherwise you need to use the usual Linux source code configuration setup:
 

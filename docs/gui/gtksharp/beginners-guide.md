@@ -30,9 +30,9 @@ Download/Install GTK#
 
 First thing you will want to do is get your GTK# install up and running.
 
-**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK# development packages as well as any Mono packages first. If not, check out [Downloads](/download/) to find a package that works for you. In the worst case, you may be forced to build yourself from source.
+**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK# development packages as well as any Mono packages first. If not, check out [Downloads](/download/stable/) to find a package that works for you. In the worst case, you may be forced to build yourself from source.
 
-**Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads](/download/) page. You might also like to grab a copy of the Gtk# integration package for Visual Studio which will allow you to use GTK# with Microsoft's Visual Studio without installing the rest of Mono.
+**Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads](/download/stable/) page. You might also like to grab a copy of the Gtk# integration package for Visual Studio which will allow you to use GTK# with Microsoft's Visual Studio without installing the rest of Mono.
 
 Inside the GTK# libraries
 --------------------------

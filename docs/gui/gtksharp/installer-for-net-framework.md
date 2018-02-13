@@ -13,7 +13,7 @@ Applications developed with Gtk# on .NET do not require Mono to run.
 
 If the application is a 100% .NET, without using P/Invoke to call into Win32 functions or using some Windows-specific assemblies, the code will run out of the box on Unix and Linux systems with Mono.
 
-The Gtk# installer for .NET can be downloaded from the [Downloads](/download/stable#download-win) page.
+The Gtk# installer for .NET can be downloaded from the [Downloads](/download/stable/#download-win) page.
 
 Gtk# Runtime/Redistributable Installer
 ---------------------------------------
@@ -32,5 +32,5 @@ One major difference between the Gtk# installer for .NET and the Mono Combined I
 Obtaining the Installers
 ========================
 
-The installer for Gtk# is available on the Windows platform section of the [Downloads](/download/stable#download-win) page.
+The installer for Gtk# is available on the Windows platform section of the [Downloads](/download/stable/#download-win) page.
 

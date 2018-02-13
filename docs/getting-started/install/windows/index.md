@@ -7,7 +7,7 @@ redirect_from:
 
 Mono runs on Windows, this page describes the various features available for users who want to use Mono on Windows as well as using Mono-based technologies on Windows without Mono (like Gtk#).
 
-1.  Download the latest Windows installer from the [download](/download/) page.
+1.  Download the latest Windows installer from the [download](/download/stable/) page.
 2.  Run the installer and accept the terms of the license. Mono is now installing:
 
     [![windows-install-mono.png](/images/windows-install-mono.png)](/images/windows-install-mono.png)
