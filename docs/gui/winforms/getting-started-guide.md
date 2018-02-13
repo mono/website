@@ -6,19 +6,9 @@ redirect_from:
 
 ### Installation
 
-Windows.Forms is part of a standard Mono installation. Since Windows.Forms is under active development you might be interested in using the latest version available from the git repository to test.
+System.Windows.Forms is part of a standard Mono installation.
 
-To use the very latest version, you have to build mcs from git. You can get the latest sources from our git repository: [https://github.com/mono/mono/tree/master/mcs](https://github.com/mono/mono/tree/master/mcs).
-
-To build Windows.Forms from source, you need:
-
--   The latest [Mono](http://www.go-mono.com/download.html) package.
-
--   The latest [libgdiplus](http://www.go-mono.com/download.html) library. Not needed on Windows XP since it includes gdiplus.dll and for Windows 2000 it can be downloaded from MSDN.
-
-[Paul Johnson provides a nice writup on how to build from source [here](http://www.all-the-johnsons.co.uk/mono/mono-compiling.html)]
-
-### Winforms Example
+### WinForms Example
 
 As there are plenty of great articles and books on Windows Forms programming, the topic will not be covered in-depth. The following is just a simple Winforms program to test with.
 
@@ -51,19 +41,15 @@ public class HelloWorld : Form
 
 If you save this code as hello.cs, you would compile it like this:
 
-    mcs -pkg:dotnet hello.cs
+    mcs hello.cs -pkg:dotnet
 
-Using mcs to compile produces a .Net 1.1 assembly. To create a .Net 2.0 assembly, use gmcs:
-
-    gmcs -pkg:dotnet hello.cs
-
-Either compiler will create "hello.exe", which you can run using:
+The compiler will create "hello.exe", which you can run using:
 
     mono hello.exe
+
+NOTE: on Mac OS X you’ll have to wait around a minute the very first time you run this command.
 
 [![Helloworld.png](/archived/images/f/f5/Helloworld.png)](/archived/images/f/f5/Helloworld.png)
 
 Results running on openSUSE 10.2
-
-And this will be the results.
 
