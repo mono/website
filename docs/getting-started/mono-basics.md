@@ -49,10 +49,10 @@ mono tlstest.exe https://www.nuget.org
 
 The program prints an error if something is wrong.
 
-Winforms Hello World
+WinForms Hello World
 --------------------
 
-The following program tests writing a Winforms application.
+The following program tests writing a System.Windows.Forms application.
 
 ``` csharp
 using System;
@@ -72,7 +72,7 @@ public class HelloWorld : Form
 }
 ```
 
-To compile, use mcs with the -pkg option to tell the compiler to pull in the Winforms libraries:
+To compile, use mcs with the -pkg option to tell the compiler to pull in the WinForms libraries:
 
     mcs hello.cs -pkg:dotnet
 
@@ -82,7 +82,7 @@ The compiler will create "hello.exe", which you can run using:
 
 NOTE: on Mac OS X you'll have to wait around a minute the very first time you run this command.
 
-ASP.Net Hello World
+ASP.NET Hello World
 -------------------
 
 Create a text file with the name hello.aspx and the content:
