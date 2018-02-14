@@ -37,11 +37,11 @@ Installation
 
 ### From Packages
 
-Starting with Mono 1.2.3, packages of the Mono Visual Basic Compiler and Visual Basic Runtime are available at our [Downloads](/download/) page.
+Starting with Mono 1.2.3, packages of the Mono Visual Basic Compiler and Visual Basic Runtime are available at our [Downloads](/download/stable/) page.
 
 ### From Source Code
 
-The code is currently available from git from the module **mono-basic**, alternatively a source code package is available from our [Downloads](/download/) page.
+The code is currently available from git from the module **mono-basic**, alternatively a source code package is available from our [Downloads](/download/stable/) page.
 
 To install Mono Basic, use the usual:
 
@@ -73,7 +73,7 @@ It allows:
 
 ### For which version of Visual Basic will this compiler work and when is it available?
 
-The new Visual Basic compiler is an implementation of Visual Basic.NET version 8, so it has support for new features in the language such as generics. The current Mono 2.6 release (available from our [Downloads](/download/) page) includes the Visual Basic 8 compiler written in Visual Basic 8, and Mainsoft's Visual Basic runtime for 2.0. The compiler only targets the 2.0 framework API, while the runtime supports both 1.0 and 2.0 profiles.
+The new Visual Basic compiler is an implementation of Visual Basic.NET version 8, so it has support for new features in the language such as generics. The current Mono 2.6 release (available from our [Downloads](/download/stable/) page) includes the Visual Basic 8 compiler written in Visual Basic 8, and Mainsoft's Visual Basic runtime for 2.0. The compiler only targets the 2.0 framework API, while the runtime supports both 1.0 and 2.0 profiles.
 
 ### If someone is using .NET 3.0, will this work?
 

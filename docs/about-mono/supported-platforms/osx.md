@@ -19,7 +19,7 @@ Installing Mono on MacOS X
 
 You can use Mono either as a runtime to run existing application, or as an SDK to develop new applications with Mono.
 
-Visit the [download page](/download/) to find the latest MacOS X package. Run it and follow the instructions there, you can either get a basic runtime, or a complete runtime plus a software development kit.
+Visit the [download page](/download/stable/) to find the latest MacOS X package. Run it and follow the instructions there, you can either get a basic runtime, or a complete runtime plus a software development kit.
 
 If you plan on developing applications with Mono, we suggest that you also [install the MonoDevelop IDE](http://monodevelop.com/download) after you install Mono.
 

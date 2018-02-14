@@ -116,7 +116,7 @@ The specification shipped with Monodoc, and available on our web downloads is ba
 
 #### Obtaining MCS
 
-The Mono C# compiler is part of the \`mono' module in the Mono Git you can get it from our [source code](/community/contributing/source-code-repository/) server, or you can get nightly [download page](/download/).
+The Mono C# compiler is part of the \`mono' module in the Mono Git you can get it from our [source code](/community/contributing/source-code-repository/) server, or you can get [nightly download page](/download/nightly/).
 
 You can also browse or download a snapshot of the compiler alone:
 

@@ -12,7 +12,7 @@ Viewing The Documentation
 The Gtk# Documentation Browser
 -------------------------------
 
-The doc browser is part of the mono-tools package, avaliable from the [Downloads](/download/) page.
+The doc browser is part of the mono-tools package, avaliable from the [Downloads](/download/stable/) page.
 
 Once installed, you can launch it from the "Programing" section of the Applications menu, as shown in the image below, or by typing *monodoc* in a terminal window.
 

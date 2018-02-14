@@ -61,7 +61,7 @@ Current Source Releases:
 -   [gnome-sharp](https://ftp.gnome.org/pub/gnome/sources/gnome-sharp/2.24/)
 -   [gnome-desktop-sharp](https://ftp.gnome.org/pub/gnome/sources/gnome-desktop-sharp/2.26/)
 
-[Packages and installers](/download/)
+[Packages and installers](/download/stable/)
 
 Sources for releases up to 2.12.10 are available from [GNOME FTP](https://ftp.gnome.org/pub/gnome/sources/gtk-sharp),
 while later 2.12.x releases are only available from [MONO DOWNLOAD](https://download.mono-project.com/sources/gtk-sharp212/).

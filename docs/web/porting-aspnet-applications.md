@@ -24,7 +24,7 @@ Getting started
 
 No assumptions as to the experience level of the developer porting an ASP.NET application are made throughout the guide. The information presented here should be useful both to a Windows developer and a Unix developer porting the application to run on a Unix platform.
 
-> **Windows developers**. If you are a working in the Windows environment, it is advised that you download the [VMWare Virtual Image](/download/) to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled.
+> **Windows developers**. If you are a working in the Windows environment, it is advised that you download the [VMWare Virtual Image](/download/stable/) to have it handy when you get to the testing phase of your porting effort. The VMware virtual machine comes with the latest release of Mono preinstalled.
 
 If your application uses MS SQL then on your Unix system you will need to install the [PostgreSQL](http://postgresql.org/) RDBMS, as this is the product which will be used to port MS SQL databases to. It is recommended that you use PostgreSQL 8.0 or newer.
 

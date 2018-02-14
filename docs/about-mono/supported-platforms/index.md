@@ -36,7 +36,7 @@ Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime
 
 Note that the MIPS, and ARM big-endian are community-supported and may not be as complete as the other architectures.
 
- Packages for most platforms are available from the [Downloads](/download/) page.
+ Packages for most platforms are available from the [Downloads](/download/stable/) page.
 
 ### Embedded systems
 

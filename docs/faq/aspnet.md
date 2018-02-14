@@ -31,7 +31,7 @@ Additionally, this is a very good guide on porting an ASP.NET MVC WebSite to Mon
 
 Novell: [From .NET to Linux in 5 Easy Steps](http://www.novell.com/connectionmagazine/2010/02/mono_tools.html)
 
- You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi) or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/) page).
+ You need the Mono runtime and use one of Apache with [mod_mono](/docs/web/mod_mono/), a [CGI](/archived/cgi) or FastCGI-aware web server with Mono's [FastCGI](/docs/web/fastcgi/) support or the [xsp](/docs/web/aspnet/) standalone server (all available from our [downloads](/download/stable/) page).
 
 To run ASP.NET 1.1 applications use mod-mono-server (for Apache), fastcgi-mono-server (for FastCGI servers) or xsp (for testing).
 

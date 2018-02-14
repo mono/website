@@ -86,7 +86,7 @@ Note that the Alpha, MIPS, ARM big-endian and HPPA architectures are community-s
 
 Support for SPARC64 works in older versions of Mono, but not in the recent versions.
 
- Packages for most platforms are available from the [Downloads](/download/) page.
+ Packages for most platforms are available from the [Downloads](/download/stable/) page.
 
 ### Embedded systems
 

@@ -46,7 +46,7 @@ The [mod_mono](/docs/web/mod_mono/) Apache module is used to run ASP.NET applica
 
 The mod_mono module runs within an Apache process and passes all the requests to ASP.NET applications to an external Mono process that actually hosts your ASP.NET applications. The external ASP.NET host is called "mod-mono-server" and is part of the XSP module.
 
-To use this, you must download and install the mod_mono and xsp components of Mono. mod_mono contains the actual Apache module, and xsp contains the actual ASP.NET hosting engine, both are available from our [download page](/download/).
+To use this, you must download and install the mod_mono and xsp components of Mono. mod_mono contains the actual Apache module, and xsp contains the actual ASP.NET hosting engine, both are available from our [download page](/download/stable/).
 
 See the [mod_mono](/docs/web/mod_mono/) page for details on installation and configuration.
 
@@ -58,7 +58,7 @@ ASP.NET hosting with Nginx
 ASP.NET hosting with XSP
 ------------------------
 
-XSP is a standalone web server written in C# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page](/download/) (look for XSP web server) or from the [git](/community/contributing/source-code-repository/) repository (module name: xsp).
+XSP is a standalone web server written in C# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page](/download/stable/) (look for XSP web server) or from the [git](/community/contributing/source-code-repository/) repository (module name: xsp).
 
 The easiest way to start XSP is to run it from within the root directory of your application. It will serve requests on port 8080. Place additional assemblies in the bin directory. Other XSP options can be set on the command line, such as the application directory and the port to listen on.
 

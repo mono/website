@@ -9,7 +9,7 @@ Track our various [Development Plans](/docs/about-mono/plans/)
 **Resources**
 
 Users:<br/>
-  [Downloads](/download/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)<br/>
+  [Downloads](/download/stable/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)<br/>
  Developers:<br/>
   [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books) | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
  Contributors:<br/>

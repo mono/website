@@ -640,7 +640,7 @@ Please see the [Supported Platforms](/docs/about-mono/supported-platforms/) page
 
 ### Does Mono run on Windows?
 
-Yes. You can get pre-compiled binaries from the [download](/download/) page.
+Yes. You can get pre-compiled binaries from the [download](/download/stable/) page.
 
 ### What is WAPI?
 
