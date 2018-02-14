@@ -6,7 +6,7 @@ redirect_from:
   - /XSP/
 ---
 
-Mono has an implementation of ASP.NET Core 2.0, ASP.NET MVC and ASP.NET AJAX.
+Mono has an implementation of ASP.NET, ASP.NET MVC and ASP.NET AJAX.
 
 Quick Resources:
 
