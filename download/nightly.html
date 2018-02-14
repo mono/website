@@ -1,13 +1,16 @@
 ---
 layout: base
-title: Nightly Packages
+title: Download - Nightly
+navgroup: download
 redirect_from:
   - /docs/getting-started/install/weekly-packages/
 ---
 
 <div class="row">
   <div class="small-12 columns">
-    <h1>Nightly Packages</h1>
+    <h1>Download</h1>
+
+    <p><b>Release channels:</b>&nbsp;<span><b>Nighly</b> - <a href="/download/preview/">Preview</a> - <a href="/download/stable/">Stable</a> - <a href="/download/vs/">VS</a></span></p>
 
     <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/nightly/">Tarball</a>.</p>
 
@@ -42,17 +45,17 @@ redirect_from:
             <h3>Ubuntu 16.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu nightly-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/ubuntu alpha-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/ubuntu preview-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Ubuntu 14.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu nightly-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/ubuntu alpha-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/ubuntu preview-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Ubuntu 12.04</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu nightly-precise main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/ubuntu alpha-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/ubuntu preview-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <hr />
             <h2>
@@ -84,17 +87,17 @@ sudo apt-get update</code></pre>
             <h3>Debian 9</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian nightly-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/debian alpha-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian preview-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Debian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian nightly-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/debian alpha-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian preview-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Debian 7</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian nightly-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/debian alpha-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian preview-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <hr />
             <h2>
@@ -126,12 +129,12 @@ sudo apt-get update</code></pre>
             <h3>Raspbian 9</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian nightly-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/debian alpha-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian preview-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <h3>Raspbian 8</h3>
             <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian nightly-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
-echo "deb http://download.mono-project.com/repo/debian alpha-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-alpha.list
+echo "deb http://download.mono-project.com/repo/debian preview-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt-get update</code></pre>
             <hr />
             <h2>
@@ -164,12 +167,12 @@ sudo apt-get update</code></pre>
             <pre><code class="language-bash">yum install yum-utils
 rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-nightly/
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-alpha/</code></pre>
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-preview/</code></pre>
             <h3>CentOS 6</h3>
             <pre><code class="language-bash">yum install yum-utils
 rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-nightly/
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-alpha/</code></pre>
+yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-preview/</code></pre>
             <hr />
             <h2>
               <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
@@ -190,6 +193,15 @@ yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-alph
         </div>
       </div>
     </div>
+
+    <h2>Release Notes</h2>
+    <p>Check out the release notes of all Mono versions <a href="/docs/about-mono/releases/">here</a>.</p>
+
+    <h2>MonoDevelop IDE</h2>
+    <p>Please visit the <a href="http://www.monodevelop.com/">MonoDevelop website</a> for more details about our cross-platform IDE.</p>
+
+    <h2>Older releases</h2>
+    <p>To access older Mono releases for OS X and Windows, check the <a href="https://download.mono-project.com/archive/">archive</a> on the download server. For Linux, please check the "Accessing older releases" section in the <a href="/docs/getting-started/install/linux/#accessing-older-releases">installation guide</a>.</p>
   </div>
 </div>
 
