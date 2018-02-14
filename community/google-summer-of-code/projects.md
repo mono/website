@@ -38,8 +38,8 @@ Help developers build applications by improving the cross-platform MonoDevelop /
 
 Work on Mono's tools and compilers
 
-* [Bring IronPython to Android and iOS.](#bring-ironpython-to-android-and-ios)
-* [Port ilasm to use IKVM.Reflection instead of PEAPI.](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
+* [Bring IronPython to Android and iOS](#bring-ironpython-to-android-and-ios)
+* [Port ilasm to use IKVM.Reflection instead of PEAPI](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
 * [Replace mono-cil-strip](#replace-mono-cil-strip)
 
 **[Mono Runtime](#mono-runtime)**
@@ -47,10 +47,11 @@ Work on Mono's tools and compilers
 Improve the core Mono runtime and JIT
 
 * [Add platform specific backends for the ThreadPool](#add-platform-specific-backends-for-the-threadpool)
+* [Add RISC-V Backend](#add-risc-v-backend)
 * [Allocator for sgen blocks](#allocator-for-sgen-blocks)
 * [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
 * [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
-* [Implement https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics](#implement-httpsgithubcomdotnetcorefxtreemastersrcsystemruntimeintrinsics)
+* [Implement System.Runtime.Intrinsics from CoreFX](#implement-systemruntimeintrinsics-from-corefx)
 * [Improve our dynamic checking mode](#improve-our-dynamic-checking-mode)
 * [Improve sgen debugging](#improve-sgen-debugging)
 * [JIT optimizations](#jit-optimizations)
@@ -90,8 +91,8 @@ The goal of this project is to add Code COntracts support to Mono using the open
 
 For more information, see:
 
-* https://msdn.microsoft.com/en-us/library/dd264808%28v=vs.110%29.aspx
-* http://research.microsoft.com/en-us/projects/contracts/
+* [Code Contracts docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts)
+* [MS Research Project page](https://www.microsoft.com/en-us/research/project/code-contracts/)
 
 This is a technology that is made of four components:
 
@@ -124,9 +125,11 @@ A code lens is an adornment drawn above lines in the source editor to provide am
 This task is to create an infrastructure for code lenses in MonoDevelop that can be extended by extension packages, and to implement several built-in code lenses using this infrastructure.
 
 Many of the underpinnings are already present, so this project is partly a UX task. Prior to the implementation, you will need to do user research and testing to provide support for the design:
-- What information is useful to show in a code editor, and how should it be displayed?
-- How do developers interact with the code lenses?
-- How do we make them unobtrusive, and make the experience smooth and subtle?
+
+* What information is useful to show in a code editor, and how should it be displayed?
+* How do developers interact with the code lenses?
+* How do we make them unobtrusive, and make the experience smooth and subtle?
+
 You will learn how to find a tradeoff between optimal user experience and technical complications.
 
 **Mentors:** maryannexe
@@ -287,7 +290,7 @@ Optional:
 
 ## Compilers and Tools
 
-### Bring IronPython to Android and iOS.
+### Bring IronPython to Android and iOS
 
 **Complexity:** Medium
 
@@ -299,7 +302,7 @@ You will need to define the workflow and project/build system for working with I
 
 **Mentors:** Miguel de Icaza, Mikayla Hutchinson
 
-### Port ilasm to use IKVM.Reflection instead of PEAPI.
+### Port ilasm to use IKVM.Reflection instead of PEAPI
 
 **Complexity:** Medium
 
@@ -338,6 +341,21 @@ The ThreadPool supports the concept of workers backend which is responsible for 
 **Deliverables:** Add backend for `dispatch_async` on macOS/iOS and for the Win32 threadpool on Windows.
 
 **Mentors:** Ludovic Henry
+
+### Add RISC-V Backend
+
+**Complexity:** Hard
+
+I believe that it is within scope to add an LLVM-based backend for RISC-V within a summer.
+
+Quad-core consumer RISC-V boards are going to be available by this summer, so it seems time to put some effort into RISC-V. We want a student to write the architecture-specific code necessary for our LLVM backend to compile source for RISC-V.
+
+Steps:
+1) Add build infrastructure for RISC-V (look at what our autogen stuff and source tree does for arm or mips, copy that)
+2) Write LLVM aot support for RISC-V (use existing backend in LLVM project, it's mostly just configuration in C)
+3) Write runtime support for RISC-V (requires some platform ABI knowledge)
+
+**Mentors:** Alexander Kyte
 
 ### Allocator for sgen blocks
 
@@ -389,11 +407,11 @@ Together with the clang work, this project should annotate the runtime to verify
 
 **Mentors:** Bernhard Urban
 
-### Implement https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics
+### Implement System.Runtime.Intrinsics from CoreFX
 
 **Complexity:** Medium
 
-
+See code on [CoreFX GitHub](https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics)
 
 **Mentors:** Miguel de Icaza, Zoltan Varga
 
@@ -498,9 +516,9 @@ Mono has its own implementation of the System.Web assemblies. Microsoft has open
 
 `System.IO.FileStream` is the main class that allow users to read and write to files, pipes and consoles. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
 
-The goal is to replace our BCL implementation of `System.IO.FileStream` (https://github.com/mono/mono/blob/master/mcs/class/corlib/System.IO/FileStream.cs), with the CoreFX one (https://github.com/dotnet/corefx/blob/master/src/System.IO.FileSystem/src/System/IO/FileStream.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+The goal is to replace our BCL implementation of [`System.IO.FileStream`](https://github.com/mono/mono/blob/master/mcs/class/corlib/System.IO/FileStream.cs), with the [CoreFX one](https://github.com/dotnet/corefx/blob/master/src/System.IO.FileSystem/src/System/IO/FileStream.cs). This would allow us to get closer to .NET Core code quality and behaviour.
 
-All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation CoreFx repo (https://github.com/dotnet/corefx)
+All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation [CoreFx repo](https://github.com/dotnet/corefx)
 
 **Deliverables**: Integrate `FileStream` from CoreFX into Mono and upstream any necessary changes.
 
@@ -516,10 +534,10 @@ Our BCL has a lot of pieces that require a new implementation for WebAssembly.
 
 The deliverables of this project is implement WASM specific versions of the following bits:
 
-- System.Threading.Timer
-- HttpClient handler
-- TimeZone
-- Locale
+* System.Threading.Timer
+* HttpClient handler
+* TimeZone
+* Locale
 
 A student proposal should pick a few of those items.
 
@@ -599,10 +617,10 @@ For any questions you may have about the program itself and to talk to the Mono 
 
 ### Mailing Lists
 
-[https://lists.dot.net/mailman/listinfo/mono-devel-list](https://lists.dot.net/mailman/listinfo/mono-devel-list)  
+[https://lists.dot.net/mailman/listinfo/mono-devel-list](https://lists.dot.net/mailman/listinfo/mono-devel-list)
 A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
 
-[https://lists.dot.net/mailman/listinfo/monodevelop-devel-list](https://lists.dot.net/mailman/listinfo/monodevelop-devel-list)  
+[https://lists.dot.net/mailman/listinfo/monodevelop-devel-list](https://lists.dot.net/mailman/listinfo/monodevelop-devel-list)
 Discussion on the development/implementation of MonoDevelop.
 
 A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).

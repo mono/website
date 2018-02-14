@@ -30,8 +30,7 @@ an `index.wasm` file containing the WebAssembly code for your
 assemblies as well as all other dependencies (the Mono runtime, the C
 library and the `mscorlib.dll` library).
 
-
-    $ cat hello.cs 
+    $ cat hello.cs
     class Hello {
       static int Main(string[] args) {
         System.Console.WriteLine("hello world!");
@@ -70,9 +69,7 @@ required, and in our testing builds now complete in less than a second
 once the dependencies (runtime bits and `mscorlib.dll`) have already
 been compiled into WebAssembly.
 
-
 ![mono-wasm's new linking phase](https://d2mxuefqeaa7sj.cloudfront.net/s_1B65124B0073CE294C70729B88F773366C5989AFAC363CB3C99279E1C86FF6C0_1516019734731_Untitled+Diagram+2.png)
-
 
 Additionally, `mono-wasm` used to use the LLVM WebAssembly target to
 create source files that would then be passed to the
@@ -88,7 +85,6 @@ slight decrease in build time.
 | ---------------------- | ------------- | --------------------------- | --------------------- |
 | Full application build | ~40s          | ~30s                        | <1s                   |
 | Hello World program    | ~40s          | <1s                         | <1s                   |
-
 
 There is still a lot of work to do on bringing C# to WebAssembly, but
 we are happy with this new approach and the progresses we are

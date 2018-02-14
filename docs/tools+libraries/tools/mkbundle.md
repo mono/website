@@ -7,7 +7,7 @@ executables that do not rely on Mono being installed on the system to simplify d
 of.NET Applications.
 
 This is done with the `mkbundle` tool, a cross-compiler tool which produces a native executable
-for any of the Mono supported platforms from an initial assembly entry point, its .NET dependencies 
+for any of the Mono supported platforms from an initial assembly entry point, its .NET dependencies
 and any additional assemblies that your application requires.
 
 # Walkthrough
@@ -37,7 +37,7 @@ machineconfig: /etc/mono/4.5/machine.config
 Generated CacheServer
 ```
 
-The above will generate a native executable that has no dependencies on Mono being 
+The above will generate a native executable that has no dependencies on Mono being
 installed on the system and is a native executable:
 
 ```bash
@@ -48,20 +48,20 @@ CacheServer: Mach-O 64-bit executable x86_64
 ```
 
 This is excellent, we now have an x86-64 binary for MacOS available.   But what
-if you wanted to cross-compile the result for another platform, say Ubuntu 
+if you wanted to cross-compile the result for another platform, say Ubuntu
 running on AMD64 or the Raspberri Pi?
 
 First, let us check if we have the necessary runtime installed in our machine:
 
 ```bash
 $ mkbundle --list-targets
-	default	- Current System Mono
-	4.8.0-linux-libc2.12-amd64.zip
+  default - Current System Mono
+  4.8.0-linux-libc2.12-amd64.zip
 ```
 
 It looks like we do not, so we are going to need to get it.
 
-We maintain a collection of Mono runtimes for various platforms that you can 
+We maintain a collection of Mono runtimes for various platforms that you can
 bundle, to get this list, run:
 
 ```bash
@@ -84,7 +84,7 @@ $ mkbundle --fetch-target mono-5.8.0-ubuntu-16.04-x64
 $
 ```
 
-The quite response means that the tool succeeded.   Unix tools do not like to 
+The quite response means that the tool succeeded.   Unix tools do not like to
 chat a lot, and `mkbundle` is not about to break this tradition.
 
 Let us check that we have it installed:
@@ -92,9 +92,9 @@ Let us check that we have it installed:
 ```bash
 $ mkbundle --local-targets
 Available targets locally:
-	default	- Current System Mono
-	4.8.0-linux-libc2.12-amd64.zip
-	mono-5.8.0-ubuntu-16.04-x64
+  default - Current System Mono
+  4.8.0-linux-libc2.12-amd64.zip
+  mono-5.8.0-ubuntu-16.04-x64
 ```
 
 Now, cross compile the result, change the invocation of `mkbundle` to use the
@@ -122,7 +122,8 @@ Generated CacheServer
 ```
 
 That was easy, let us check the results:
-```
+
+```bash
 $ ls -l CacheServer
 -rwxr-xr-x  1 miguel  wheel  15790588 Jan 26 10:36 CacheServer
 $ file CacheServer
@@ -135,7 +136,7 @@ dependencies need to be installed.
 
 # Configuring Your Executable
 
-Some users configure the command line options, and the environment variables that 
+Some users configure the command line options, and the environment variables that
 impact the Mono runtime at execution time.   You can bake those options into your
 executable via a couple of configuration options.
 
@@ -145,6 +146,7 @@ line option to the embedded executable:
 
 ```bash
 $ mkbundle -o CacheServer --options -O=-inline --simple CacheServer.exe --machine-config /etc/mono/4.5/machine.config
+...
 ```
 
 Or say that you want to bake into the executable an environment variable,
@@ -152,23 +154,25 @@ Or say that you want to bake into the executable an environment variable,
 
 ```bash
 $ mkbundle -o CacheServer --env CACHE_SERVERPORT=9000 --simple CacheServer.exe --machine-config /etc/mono/4.5/machine.config
+...
 ```
 
-You can also customize the .NET runtime configuration file `machine.config` that is used by passing a different 
+You can also customize the .NET runtime configuration file `machine.config` that is used by passing a different
 path to the `--machine-config` file.
 
 Mono also supports a global mapping tool to drive how dynamic libraries are resolved (described in more
-detail on the `mono-config(5)` man page), you can specify your custom mapping file by using the 
+detail on the `mono-config(5)` man page), you can specify your custom mapping file by using the
 `--config` command line option.
 
 # Distributing Native Libraries
 
-Sometimes your application will need more than pure managed libraries, you will want to distribute 
+Sometimes your application will need more than pure managed libraries, you will want to distribute
 native shared libraries - those consumed by P/Invoke (`DllImport` libraries).   To bundle those into your
 application use the `--library` option, like this:
 
 ```bash
 $ mkbundle -o CacheServer --simple CacheServer.exe --library fastdecoder,/usr/lib/libfastdecoder.so --machine-config /etc/mono/4.5/machine.config
+...
 ```
 
 What the above command does it register the P/Invoke target "fastdecoder", which in your source code
@@ -190,6 +194,7 @@ To reference the specified file, in this case `/usr/lib/libfastdecoder.so`. It d
 
 ```bash
 $ mkbundle -o CacheServer --simple CacheServer.exe --library /usr/lib/libfastdecoder.so --library /usr/lib/libfastencoder.so --machine-config /etc/mono/4.5/machine.config --config mydllmap.config
+...
 ```
 
 At its most extreme, this would allow you to bundle an entire GUI framework and its dependencies, to make a bundled application which works on a machine with zero useful dependencies pre-assumed:
@@ -244,14 +249,14 @@ At its most extreme, this would allow you to bundle an entire GUI framework and 
 ```
 
 ```bash
-mkbundle -o gtktest --simple gtktest.exe --library /lib/x86_64-linux-gnu/libglib-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libffi.so.6 --library /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libdatrie.so.1 --library /usr/lib/x86_64-linux-gnu/libthai.so.0 --library /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libpixman-1.so.0 --library /lib/x86_64-linux-gnu/libz.so.1 --library /usr/lib/x86_64-linux-gnu/libpng16.so.16 --library /usr/lib/x86_64-linux-gnu/libfreetype.so.6 --library /lib/x86_64-linux-gnu/libexpat.so.1 --library /usr/lib/x86_64-linux-gnu/libfontconfig.so.1 --library /usr/lib/x86_64-linux-gnu/libXau.so.6 --library /lib/x86_64-linux-gnu/libbsd.so.0 --library /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 --library /usr/lib/x86_64-linux-gnu/libxcb.so.1 --library /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0 --library /usr/lib/x86_64-linux-gnu/libxcb-render.so.0 --library /usr/lib/x86_64-linux-gnu/libX11.so.6 --library /usr/lib/x86_64-linux-gnu/libXrender.so.1 --library /usr/lib/x86_64-linux-gnu/libXext.so.6 --library /usr/lib/x86_64-linux-gnu/libcairo.so.2 --library /usr/lib/x86_64-linux-gnu/libgraphite2.so.3 --library /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0 --library /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libXinerama.so.1 --library /usr/lib/x86_64-linux-gnu/libXi.so.6 --library /usr/lib/x86_64-linux-gnu/libXrandr.so.2 --library /usr/lib/x86_64-linux-gnu/libXfixes.so.3 --library /usr/lib/x86_64-linux-gnu/libXcursor.so.1 --library /usr/lib/x86_64-linux-gnu/libXcomposite.so.1 --library /usr/lib/x86_64-linux-gnu/libXdamage.so.1 --library /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0 --library /usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so  --library /usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so --library /usr/lib/libMonoPosixHelper.so --machine-config /etc/mono/4.5/machine.config --config custom.config 
+mkbundle -o gtktest --simple gtktest.exe --library /lib/x86_64-linux-gnu/libglib-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libffi.so.6 --library /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libdatrie.so.1 --library /usr/lib/x86_64-linux-gnu/libthai.so.0 --library /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libpixman-1.so.0 --library /lib/x86_64-linux-gnu/libz.so.1 --library /usr/lib/x86_64-linux-gnu/libpng16.so.16 --library /usr/lib/x86_64-linux-gnu/libfreetype.so.6 --library /lib/x86_64-linux-gnu/libexpat.so.1 --library /usr/lib/x86_64-linux-gnu/libfontconfig.so.1 --library /usr/lib/x86_64-linux-gnu/libXau.so.6 --library /lib/x86_64-linux-gnu/libbsd.so.0 --library /usr/lib/x86_64-linux-gnu/libXdmcp.so.6 --library /usr/lib/x86_64-linux-gnu/libxcb.so.1 --library /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0 --library /usr/lib/x86_64-linux-gnu/libxcb-render.so.0 --library /usr/lib/x86_64-linux-gnu/libX11.so.6 --library /usr/lib/x86_64-linux-gnu/libXrender.so.1 --library /usr/lib/x86_64-linux-gnu/libXext.so.6 --library /usr/lib/x86_64-linux-gnu/libcairo.so.2 --library /usr/lib/x86_64-linux-gnu/libgraphite2.so.3 --library /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0 --library /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libXinerama.so.1 --library /usr/lib/x86_64-linux-gnu/libXi.so.6 --library /usr/lib/x86_64-linux-gnu/libXrandr.so.2 --library /usr/lib/x86_64-linux-gnu/libXfixes.so.3 --library /usr/lib/x86_64-linux-gnu/libXcursor.so.1 --library /usr/lib/x86_64-linux-gnu/libXcomposite.so.1 --library /usr/lib/x86_64-linux-gnu/libXdamage.so.1 --library /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0 --library /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0 --library /usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so  --library /usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so --library /usr/lib/libMonoPosixHelper.so --machine-config /etc/mono/4.5/machine.config --config custom.config
 ```
 
 How far overboard you feel the need to go with bundled libraries is largely down to your specific target environment. Most of the custom config comes from /etc/mono/config, which contains entries needed by Gtk# (and you can only specify a single `--config` entry)
 
 # Advanced Scenarios
 
-The `mkbundle` tool supports other options that are not covered in this page, 
-like using your own local server for runtimes, C compiler-driven embedding and 
+The `mkbundle` tool supports other options that are not covered in this page,
+like using your own local server for runtimes, C compiler-driven embedding and
 more.  Those are covered in the `mkbundle(1)` man page, please refer to it for
 more details.
