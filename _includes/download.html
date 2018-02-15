@@ -40,7 +40,7 @@
     <h5>The latest {{ include.releasename }} Mono release is: <strong>{{ include.releasedata.version }}</strong></h5>
     {% endif %}
 
-    <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/">Tarball</a>.</p>
+    <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/{% if include.releasename == "Nightly" %}nightly/{% endif %}">Tarball</a>.</p>
 
     <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
       <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
@@ -56,18 +56,13 @@
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           {% if include.releasename == "Nightly" %}
-          <a href="https://download.mono-project.com/archive/nightly/macos-10-universal/" class="button radius">
-            <i class="fa fa-download"></i> Download Mono
-          </a>
+          {% assign mono_mac_url = 'https://download.mono-project.com/archive/nightly/macos-10-universal/' %}
           {% elsif include.releasename == "Stable" %}
-          <a href="{{ site.data.vsrelease.mono_mac_url }}" class="button radius">
-            <i class="fa fa-download"></i> Download Mono
-          </a>
+          {% assign mono_mac_url = site.data.vsrelease.mono_mac_url %}
           {% else %}
-          <a href="{{ include.releasedata.mono_mac_url }}" class="button radius">
-            <i class="fa fa-download"></i> Download Mono
-          </a>
+          {% assign mono_mac_url = include.releasedata.mono_mac_url %}
           {% endif %}
+          <a href="{{mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
           <p>Supported on Mac OS X 10.7 and later.</p>
         </div>
         {% if include.releasename == "Stable" %}
@@ -368,12 +363,13 @@ function runScripts() {
     else {
       if (window.navigator.appVersion.search('Linux') >= 0 || window.navigator.platform.search('Linux') >= 0) {
         activate('lin');
-      }
-      {% if include.releasename != "Nightly" %}
-      else if (window.navigator.appVersion.search('Windows') >= 0 || window.navigator.platform.search('Windows') >= 0) {
+      } else if (window.navigator.appVersion.search('Windows') >= 0 || window.navigator.platform.search('Windows') >= 0) {
+        {% if include.releasename != "Nightly" %}
         activate('win');
+        {% else %}
+        // no Windows nightly yet
+        {% endif %}
       }
-      {% endif %}
     }
   });
 }
