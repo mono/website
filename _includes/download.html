@@ -257,25 +257,21 @@ sudo apt-get update</code></pre>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <h3>CentOS 7</h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">yum install yum-utils
-rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}/
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-preview/</code></pre>
+<pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | sudo tee /etc/yum.repos.d/centos7-{{ include.releasename | downcase }}.repo
+curl https://download.mono-project.com/repo/centos7-preview.repo | sudo tee /etc/yum.repos.d/centos7-preview.repo</code></pre>
 {% else %}
-<pre><code class="language-bash">yum install yum-utils
-rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}/</code></pre>
+<pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | sudo tee /etc/yum.repos.d/centos7-{{ include.releasename | downcase }}.repo</code></pre>
 {% endif %}
             <h3>CentOS 6</h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">yum install yum-utils
-rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}/
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-preview/</code></pre>
+<pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | sudo tee /etc/yum.repos.d/centos6-{{ include.releasename | downcase }}.repo
+curl https://download.mono-project.com/repo/centos6-preview.repo | sudo tee /etc/yum.repos.d/centos6-preview.repo</code></pre>
 {% else %}
-<pre><code class="language-bash">yum install yum-utils
-rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
-yum-config-manager --add-repo http://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}/</code></pre>
+<pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | sudo tee /etc/yum.repos.d/centos6-{{ include.releasename | downcase }}.repo</code></pre>
 {% endif %}
             <hr />
             <h2>
