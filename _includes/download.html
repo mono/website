@@ -75,6 +75,7 @@
           <dd><a href="#download-lin-debian"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" />&nbsp;&nbsp;Debian</a></dd>
           <dd><a href="#download-lin-raspbian"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" />&nbsp;&nbsp;Raspbian</a></dd>
           <dd><a href="#download-lin-centos"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" />&nbsp;&nbsp;CentOS</a></dd>
+          <dd><a href="#download-lin-fedora"><img src="/images/fedora-logo.svg" height="20px" width="20px" alt="Fedora Logo" />&nbsp;&nbsp;Fedora</a></dd>
           {% if include.releasename == "Stable" %}
           <dd><a href="#download-lin-docker"><img src="/images/docker-logo.svg" height="20px" width="20px" alt="Docker Logo" />&nbsp;&nbsp;Docker</a></dd>
           {% endif %}
@@ -279,6 +280,41 @@ su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasenam
               Install Mono
             </h2>
             <pre style="margin-top: 20px"><code class="language-bash">yum install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>xsp</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+          </div>
+          <div class="panel content" id="download-lin-fedora" style="padding: 10px">
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
+            <p><i>Note:</i> we're using the CentOS repositories on Fedora.</p>
+            <h3>Fedora 27</h3>
+{% if include.releasename == "Nightly" %}
+<pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
+su -c 'curl https://download.mono-project.com/repo/centos7-preview.repo | tee /etc/yum.repos.d/mono-centos7-preview.repo'
+dnf update</code></pre>
+{% else %}
+<pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
+dnf update</code></pre>
+{% endif %}
+            <hr />
+            <h2>
+              <span style="color: #999;border-radius: 50%;border: 2px solid #999;width: 30px;height: 30px;text-align: center;line-height: 24px;display: block;float: left;margin-right: 7px;font-size: 20px">2</span>
+              Install Mono
+            </h2>
+            <pre style="margin-top: 20px"><code class="language-bash">dnf install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
