@@ -1,6 +1,7 @@
 ---
 title: Class Status
 redirect_from:
+  - /docs/about-mono/class-status/
   - /Class_Status/
 ---
 
