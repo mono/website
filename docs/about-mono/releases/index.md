@@ -67,6 +67,7 @@ This page contains a list of all Mono releases. The latest stable release is {{ 
 Mono version numbers follow a specific policy, learn more [here](/docs/about-mono/versioning/).
 
 {% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "version" | reverse %}
+{% assign date_sorted_release_notes = release_notes | sort: "releasedate" | reverse %}
 
 Mono 5.x
 --------
@@ -87,9 +88,9 @@ Mono 5.x
 Mono 4.x
 --------
 
-{% for p in release_notes %}
+{% for p in date_sorted_release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
-{% if major_ver == '4' and p.releasedate and p.releasedate != '' %}
+{% if major_ver == '4' %}
   - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
 {% endif %}
 {% endfor %}
@@ -97,9 +98,9 @@ Mono 4.x
 Mono 3.x
 --------
 
-{% for p in release_notes %}
+{% for p in date_sorted_release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
-{% if major_ver == '3' and p.releasedate and p.releasedate != '' %}
+{% if major_ver == '3' %}
   - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
 {% endif %}
 {% endfor %}
@@ -107,9 +108,9 @@ Mono 3.x
 Mono 2.x
 --------
 
-{% for p in release_notes %}
+{% for p in date_sorted_release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
-{% if major_ver == '2' and p.releasedate and p.releasedate != '' %}
+{% if major_ver == '2' %}
   - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
 {% endif %}
 {% endfor %}
@@ -117,9 +118,19 @@ Mono 2.x
 Mono 1.x
 --------
 
-{% for p in release_notes %}
+{% for p in date_sorted_release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
-{% if major_ver == '1' and p.releasedate and p.releasedate != '' %}
+{% if major_ver == '1' %}
+  - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
+{% endif %}
+{% endfor %}
+
+Mono 0.x
+--------
+
+{% for p in date_sorted_release_notes %}
+{% assign major_ver = p.version | split: '.' | first %}
+{% if major_ver == '0' %}
   - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
 {% endif %}
 {% endfor %}
