@@ -655,3 +655,7 @@ Samples
 
 See the sample programs in [mono/samples/embed](https://github.com/mono/mono/tree/master/samples/embed) for examples of embedding the Mono runtime in your application.
 
+
+Outdated Presentation
+=====================
+Paolo Molaro did a presentation on [embedding the Mono Runtime](/docs/advanced/embedding/embedslides/).
