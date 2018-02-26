@@ -25,7 +25,7 @@ public class HelloWorld
 
 To compile, use mcs:
 
-    mcs hello.cs
+    csc hello.cs
 
 The compiler will create "hello.exe", which you can run using:
 
@@ -43,7 +43,7 @@ HTTPS connections
 To make sure HTTPS connections work, download and run the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0).
 
 ``` bash
-mcs tlstest.cs /r:System.dll /r:Mono.Security.dll
+csc tlstest.cs /r:System.dll /r:Mono.Security.dll
 mono tlstest.exe https://www.nuget.org
 ```
 
@@ -72,15 +72,15 @@ public class HelloWorld : Form
 }
 ```
 
-To compile, use mcs with the -pkg option to tell the compiler to pull in the WinForms libraries:
+To compile, use csc with the -r option to tell the compiler to pull in the WinForms libraries:
 
-    mcs hello.cs -pkg:dotnet
+    csc hello.cs -r:System.Windows.Forms.dll
 
 The compiler will create "hello.exe", which you can run using:
 
     mono hello.exe
 
-NOTE: on Mac OS X you'll have to wait around a minute the very first time you run this command.
+NOTE: on Mac OS X you'll have to wait around a minute the very first time you run this command. You also need to use `mono32` since WinForms isn't supported on 64bit yet.
 
 ASP.NET Hello World
 -------------------

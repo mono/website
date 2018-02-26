@@ -108,7 +108,7 @@ gacutil -i MySql.Data.dll
 <!-- -->
 
 ``` bash
-mcs TestExample.cs -r:System.Data.dll -r:/path/to/MySql.Data.dll
+csc TestExample.cs -r:System.Data.dll -r:/path/to/MySql.Data.dll
 ```
 
 -   Running the Example:

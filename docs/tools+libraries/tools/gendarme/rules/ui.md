@@ -15,11 +15,11 @@ An executable assembly, i.e. an .exe, refers to the gtk-sharp assembly but isn't
 
 **Bad** example:
 
-    gmcs gtk.cs -pkg:gtk-sharp
+    mcs gtk.cs -pkg:gtk-sharp
 
 **Good** example:
 
-    gmcs gtk.cs -pkg:gtk-sharp -target:winexe
+    mcs gtk.cs -pkg:gtk-sharp -target:winexe
 
 ### SystemWindowsFormsExecutableTargetRule
 
@@ -27,11 +27,11 @@ An executable assembly, i.e. an .exe, refers to the System.Windows.Forms assembl
 
 **Bad** example:
 
-    gmcs swf.cs -pkg:dotnet
+    mcs swf.cs -pkg:dotnet
 
 **Good** example:
 
-    gmcs swf.cs -pkg:dotnet -target:winexe
+    mcs swf.cs -pkg:dotnet -target:winexe
 
 ### UseSTAThreadAttributeOnSWFEntryPointsRule
 

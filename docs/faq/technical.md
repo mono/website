@@ -299,15 +299,13 @@ Currently the Mono Debugger only supports Linux on x86 and x86-64 platforms.
 
 ### How can I debug my programs?
 
-You must have the Mono Debugger installed (mdb), and compile your code with debugging information, this is done by passing the -debug flag to the compiler:
+You must have the Mono Soft Debugger installed (sdb), and compile your code with debugging information, this is done by passing the -debug flag to the compiler:
 
 ``` bash
-$ mcs -debug sample.cs
-$ mdb sample.exe
-(mdb) run
+$ csc -debug sample.cs
+$ sdb sample.exe
+(sdb) run
 ```
-
-Mono-aware compilers generate debugging information in a file with the extension .mdb.
 
 ### Can I convert Microsoft PDB files to Mono MDB files?
 
@@ -429,9 +427,9 @@ It is up to you, but we use NUnit for testing our own class libraries as a choic
 You can use:
 
 ``` bash
-mcs /target:library file1.cs
-mcs /target:library file2.cs
-mcs /target:exe file1.dll file2.dll /out:mybin.exe
+csc /target:library file1.cs
+csc /target:library file2.cs
+csc /target:exe file1.dll file2.dll /out:mybin.exe
 ```
 
 It is not worth doing the above for individual files. The C# compiler is so fast that usually the cost of compiling a few hundred source files is smaller than the cost of creating the separate dll files.

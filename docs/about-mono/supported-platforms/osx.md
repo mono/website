@@ -47,7 +47,7 @@ From a Terminal shell, you can try it out:
 
 ``` bash
 $ vi hello.cs
-$ mcs hello.cs
+$ csc hello.cs
 $ mono hello.exe
 Hello, World
 $

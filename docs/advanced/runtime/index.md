@@ -138,7 +138,7 @@ To do this, you use the "mkbundle" command (see the man page distributed with Mo
 For example, to create a fully static and bundled version of Mono for "hello world", you would:
 
 ``` bash
-bash$ mcs hello.cs
+bash$ csc hello.cs
 bash$ mkbundle --simple hello.exe -o hello
 Done
 bash$ ./hello
@@ -157,7 +157,7 @@ uses.   This is similar to what a native linker does, except that we retain the 
 For example:
 
 ``` bash
-bash$ mcs hello.cs
+bash$ csc hello.cs
 bash$ monolinker -c link -a hello.exe -out minimal
 bash$ ls -l minimal
 -rwxr-xr-x  1 miguel  wheel   683008 Jun  2 15:16 I18N.CJK.dll

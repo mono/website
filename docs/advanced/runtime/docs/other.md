@@ -83,7 +83,7 @@ public class Fib {
                 return 0;
         }
 }
-$ mcs fib.cs
+$ csc fib.cs
 $ MONO_JIT_DUMP_METHOD=Fib::fib mono fib.exe
 cfg_dump: create context for "Fib::fib"
 ```

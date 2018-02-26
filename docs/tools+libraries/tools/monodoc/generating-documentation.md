@@ -63,7 +63,7 @@ namespace B {
 compiled in a library *lib.dll*:
 
 ``` bash
-mcs -t:library -out:lib.dll A.cs B.cs
+csc -t:library -out:lib.dll A.cs B.cs
 ```
 
 running monodocer:
@@ -279,7 +279,7 @@ namespace MyLibrary {
 Compiling this with:
 
 ``` bash
-mcs test.cs /doc:doc.xml -t:library
+csc test.cs /doc:doc.xml -t:library
 ```
 
 Yields a file named "doc.xml" that contains:

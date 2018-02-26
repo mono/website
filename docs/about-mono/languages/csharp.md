@@ -30,7 +30,7 @@ The compiler is also fairly fast. On a IBM ThinkPad t40 it compiles 18,000 lines
 
 Starting with Mono 2.2 it supports a [Compiler Service](/docs/tools+libraries/tools/repl/) that applications can consume.
 
-The compiler can be used as a service by using the Mono.CSharp.Evaluator class in the Mono.Sharp.dll assembly.
+The compiler can be used as a service by using the Mono.CSharp.Evaluator class in the Mono.CSharp.dll assembly.
 
 Both a console and GUI [read-eval-print](/docs/tools+libraries/tools/repl/) shells are distributed as part of Mono 2.2 and are both built on top of the above service.
 
