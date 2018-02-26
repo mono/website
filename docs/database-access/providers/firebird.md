@@ -99,7 +99,7 @@ public class Test {
 <!-- -->
 
 ``` bash
-mcs TestExample.cs -r System.Data.dll -r FirebirdSql.Data.Firebird.dll
+csc TestExample.cs -r System.Data.dll -r FirebirdSql.Data.Firebird.dll
 ```
 
 -   Running the Example:

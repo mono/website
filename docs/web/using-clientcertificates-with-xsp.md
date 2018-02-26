@@ -265,7 +265,7 @@ public class HttpWebRequestClientCertificateTest : ICertificatePolicy {
 
 Compile and execute the sample like this:
 
-    % gmcs hwr2.cs
+    % csc hwr2.cs
 
     % mono hwr2.exe https://localhost:4433/cctest.aspx poupou.p12 s3kr3t
 

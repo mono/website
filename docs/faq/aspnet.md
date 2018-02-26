@@ -254,7 +254,7 @@ bash$ install /home/myself/GraphControls.dll bin
 The compiler takes care of this for you automatically, so you can integrate this directly into your build system:
 
 ``` bash
-mcs -target:library -output:dll/GraphControls.dll GraphControls.cs
+csc -target:library -output:dll/GraphControls.dll GraphControls.cs
 ```
 
 ### How can I set the encoding of my files?
@@ -323,7 +323,7 @@ To reference private libraries, just place the libraries in the "bin" directory 
 
 ``` bash
 mkdir bin
-mcs -out:bin/library.dll -target:library mylibrary.cs
+csc -out:bin/library.dll -target:library mylibrary.cs
 ```
 
 For GAC-installed libraries to be installed, you need to add the assembly to the Web.config file, the file should look like this:

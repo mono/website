@@ -146,7 +146,7 @@ Building C# Example
 Save the example to a file, such as, TestExample.cs, then to build on Linux, do:
 
 ``` bash
-mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SybaseClient.dll
+csc TestExample.cs -r:System.Data.dll -r:Mono.Data.SybaseClient.dll
 ```
 
 To run the example:

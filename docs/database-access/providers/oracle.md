@@ -727,7 +727,7 @@ Save the example to a file, such as, TestExample.cs
 <!-- -->
 
 ``` bash
-mcs TestExample.cs /r:System.Data.dll /r:System.Data.OracleClient.dll
+csc TestExample.cs /r:System.Data.dll /r:System.Data.OracleClient.dll
 ```
 
 -   Running the Example:

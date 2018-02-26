@@ -172,7 +172,7 @@ To build the example:
 <!-- -->
 
 ``` bash
-mcs TestExample.cs -r:System.Data.dll -r:Mono.Data.SqliteClient.dll
+csc TestExample.cs -r:System.Data.dll -r:Mono.Data.SqliteClient.dll
 ```
 
 To run the example:

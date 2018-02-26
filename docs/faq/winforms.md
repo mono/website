@@ -33,7 +33,7 @@ Note this only applies to creation. You can still write multithreaded applicatio
 You need to compile you application with -target:winexe, like this:
 
 ``` bash
-mcs -target:winexe myapp.cs
+csc -target:winexe myapp.cs
 ```
 
 ### How can I use Visual Styles?

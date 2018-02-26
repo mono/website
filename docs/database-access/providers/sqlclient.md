@@ -382,7 +382,7 @@ namespace TestSqlClientAdapter {
 <!-- -->
 
 ``` bash
-mcs TestExample.cs -r:System.Data.dll
+csc TestExample.cs -r:System.Data.dll
 ```
 
 -   Running the Example:

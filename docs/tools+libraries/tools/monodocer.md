@@ -90,7 +90,7 @@ Importing XML Documentation
 If you use inline XML documentation, you'll first need to extract it:
 
 ``` bash
-gmcs -doc:MyDocs.xml MySources.cs -t:library -out:MyAssembly.dll
+csc -doc:MyDocs.xml MySources.cs -t:library -out:MyAssembly.dll
 ```
 
 Next you import 'MyDocs.xml' with monodocer:
