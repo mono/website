@@ -88,7 +88,7 @@
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Ubuntu versions too but we only test the ones listed below.</p>
-            <h3>Ubuntu 16.04</h3>
+            <h3>Ubuntu 16.04 (i386, amd64, armhf, arm64, ppc64el)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -99,7 +99,7 @@ sudo apt-get update</code></pre>
 echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
-            <h3>Ubuntu 14.04</h3>
+            <h3>Ubuntu 14.04 (i386, amd64, armhf, arm64, ppc64el)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -110,7 +110,7 @@ sudo apt-get update</code></pre>
 echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
-            <h3>Ubuntu 12.04</h3>
+            <h3>Ubuntu 12.04 (i386, amd64, armhf)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -149,7 +149,7 @@ sudo apt-get update</code></pre>
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Debian versions too but we only test the ones listed below.</p>
-            <h3>Debian 9</h3>
+            <h3>Debian 9 (i386, amd64, armhf, arm64, armel, ppc64el)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -160,7 +160,7 @@ sudo apt-get update</code></pre>
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
-            <h3>Debian 8</h3>
+            <h3>Debian 8 (i386, amd64, armhf, arm64, armel, ppc64el)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -171,7 +171,7 @@ sudo apt-get update</code></pre>
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
-            <h3>Debian 7</h3>
+            <h3>Debian 7 (i386, amd64, armhf, armel)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -210,7 +210,7 @@ sudo apt-get update</code></pre>
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Raspbian versions too but we only test the ones listed below.</p>
-            <h3>Raspbian 9</h3>
+            <h3>Raspbian 9 (armhf)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -221,7 +221,7 @@ sudo apt-get update</code></pre>
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
-            <h3>Raspbian 8</h3>
+            <h3>Raspbian 8 (armhf)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
@@ -260,7 +260,7 @@ sudo apt-get update</code></pre>
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <p><i>Note:</i> the packages should work on newer CentOS versions too but we only test the ones listed below.</p>
-            <h3>CentOS 7</h3>
+            <h3>CentOS 7 (x86_64)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
@@ -269,7 +269,7 @@ su -c 'curl https://download.mono-project.com/repo/centos7-preview.repo | tee /e
 <pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
-            <h3>CentOS 6</h3>
+            <h3>CentOS 6 (x86_64, i686)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos6-{{ include.releasename | downcase }}.repo'
@@ -302,7 +302,7 @@ su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasenam
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <p><i>Note:</i> we're using the CentOS repositories on Fedora.</p>
-            <h3>Fedora 27</h3>
+            <h3>Fedora 27 (x86_64)</h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "http://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
