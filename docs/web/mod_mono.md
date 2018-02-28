@@ -51,7 +51,7 @@ If your needs are not very complicated, all you need is to use [AutoHosting](/do
 
     Include /etc/apache2/mod_mono.conf
 
-And applications will start to be served. To try it out, copy the /usr/lib/xsp/test directory to your Apache home (in openSUSE this is /srv/www/hdtocs).
+And applications will start to be served. To try it out, copy the /usr/lib/xsp/test directory to your Apache home (in openSUSE this is /srv/www/htdocs).
 
 It is recommended that you create a directory per application that you want served. This will allow you to xcopy deploy your applications from Windows to Linux if you want to.
 
