@@ -91,16 +91,6 @@ Configuring Mod_Mono
 
 When [AutoHosting](/docs/web/mod_mono-autoconfiguration/) does not fit your needs, you will need to include several mod_mono Apache directives in your main Apache configuration file (often /etc/httpd/conf/httpd.conf, or the like in /etc/apache2) to get the site running.
 
-### Mod_Mono Configuration Tool
-
-The [Apache mod_mono configuration tool](http://go-mono.com/config-mod-mono/) can generate a configuration for name-based Virtual Hosts (i.e., how this site is configured to traffic to mono-project.com, www.mono-project.com, etc), and configurations for ASP.NET Applications (what IIS traditionally referred to as a Virtual Directory), such as the mod_mono configuration application served at [http://go-mono.com/config-mod-mono/](http://go-mono.com/config-mod-mono/)
-
-In the simplest case, you shouldn’t have to supply the tool with anything more than a server or application name; the tool will suggest a path where you can deploy your application. With the intention of making developing and porting applications as painless as possible, the default configuration will set mod_mono to run with both mono debugging and platform abstraction enabled. These may not be the best options for production web sites, so consider disabling those features if/when you no longer need them.
-
-Once you’ve completed the form, the tool will generate a configuration you can save to disk (/etc/apache2/conf.d/ on SUSE/openSUSE). To begin serving your newly configured application, simply restart apache:
-
-            sudo /sbin/service apache2 restart
-
 ### Manual Mod_Mono Configuration
 
 The following assumes you have included mod_mono.conf in your main configuration file as described above. Further, it is important (as of Mono 1.2.5) to place the remaining mod_mono directives after the User and Group directives. They can just go at the end, or inside VirtualHost sections.
