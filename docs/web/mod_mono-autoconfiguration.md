@@ -103,7 +103,7 @@ will just work.
 ASP.NET MVC and AutoConfiguration
 ---------------------------------
 
-Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions. For simple configuration of Apache [mod_mono](/docs/web/mod_mono/), consider using the [Apache mod_mono configuration tool](http://go-mono.com/config-mod-mono/).
+Because ASP.NET MVC’s routing URLs avoid file name extensions, AutoConfiguration is not a good solution for hosting ASP.NET MVC solutions.
 
 That said, if you absolutely must use AutoConfiguration, you could add the following to your mod_mono.conf file to set all content for the server to be served as x-asp-net content:
 
