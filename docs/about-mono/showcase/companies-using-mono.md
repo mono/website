@@ -178,5 +178,5 @@ Web Projects Using Mono
     but an upgrade is planned). The interesting thing is we do not use ASP.NET or
     Apache. The site is using a custom web server which was written in C# and also
     the web application is using a custom C# framework. The performance of the
-    whole system (including full-text indexing) is really good when comparing to a
+    whole system (including full-text indexing) is really good when comparing to
     "standard" LAMP solutions.
