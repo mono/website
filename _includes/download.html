@@ -25,18 +25,20 @@
         {% endif %}
         -
         {% if include.releasename == "VS" %}
-        <b>VS</b>
+        <b>Visual Studio</b>
         {% else %}
-        <a href="/download/vs/">VS</a>
+        <a href="/download/vs/">Visual Studio</a>
         {% endif %}
       </span>
     </p>
 
     {% if include.releasename == "VS" %}
-    <div data-alert class="alert-box secondary"><h6><i class="fa fa-info-circle"></i> The VS release channel contains packages which are shipped as part of a Visual Studio for Mac release. They are the most stable but also the least frequently updated packages.</h6></div>
+    <div data-alert class="alert-box secondary"><h6><i class="fa fa-info-circle"></i> The Visual Studio release channel contains packages which are shipped as part of a Visual Studio for Mac release. They are the most stable but also the least frequently updated packages.</h6></div>
     {% endif %}
 
-    {% if include.releasename != "Nightly" %}
+    {% if include.releasename == "VS" %}
+    <h5>The latest Mono release in Visual Studio for Mac is: <strong>{{ include.releasedata.version }}</strong></h5>
+    {% elsif include.releasename != "Nightly" %}
     <h5>The latest {{ include.releasename }} Mono release is: <strong>{{ include.releasedata.version }}</strong></h5>
     {% endif %}
 
@@ -66,7 +68,7 @@
           <p>Supported on Mac OS X 10.7 and later.</p>
         </div>
         {% if include.releasename == "Stable" %}
-        <p><i>The Stable channel on Mac OS X defaults to the VS release channel packages to avoid confusion with the Visual Studio for Mac releases of Mono. If you really want the stable version, you can find it <a href="{{ include.releasedata.mono_mac_url }}">here</a>, but be aware that the stability of Visual Studio for Mac is only guaranteed with the VS channel releases.</i></p>
+        <p><i>The Stable channel on Mac OS X defaults to the Visual Studio release channel packages to avoid confusion with the Visual Studio for Mac releases of Mono. If you really want the stable version, you can find it <a href="{{ include.releasedata.mono_mac_url }}">here</a>, but be aware that the stability of Visual Studio for Mac is only guaranteed with the Visual Studio channel releases.</i></p>
         {% endif %}
       </div>
       <div class="panel content" id="download-lin" style="padding: 10px 10px 10px 10px">
