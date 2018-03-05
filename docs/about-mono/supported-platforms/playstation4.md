@@ -2,10 +2,12 @@
 title: PlayStation4
 ---
 
-The Mono runtime runs on the PLAYSTATION®4.
+Mono for PlayStation®4 allows developers to build native applications and
+games in C# utilizing the comprehensive set of .NET APIs including support for
+.NET Standard 2. Thanks to Mono's embedding API managed .NET code can easily
+be linked into native C/C++ games, e.g. as a scripting engine for game logic.
 
-For users interested in using Mono on the PLAYSTATION®4, they can
-contact the Mono team via Sony's SceDev to request a copy of the port.
-
-In July 2016, we integrated the new GC engine and completed the new
-static compiler for PlayStation 4.
+The Mono for PlayStation®4 port is a free product but only accessible to
+registered PlayStation®4 developer. To obtain a copy please submit a post in
+[this PS4 DevNet forum thread](https://ps4.siedev.net/forums/thread/16145),
+detailing your GitLab username and email address.
