@@ -27,7 +27,7 @@ To use Cairo in Gdk/Gtk applications, a `Context` with a `Gdk.Drawable` target s
 
 -   A second choice (recommended for older versions of Gtk) is to use a function provided in the [Mono.Cairo samples](https://github.com/mono/mono/tree/master/mcs/class/Mono.Cairo/Samples). This will work on all platforms and with older Gdk versions. The code in question resides in [sysdraw.cs](https://github.com/mono/mono/blob/master/mcs/class/Mono.Cairo/Samples/gtk/sysdraw.cs) and you can simply download & use this file in your project.
 
-The best place to create and use the `Context` is the [ExposeEvent](http://www.go-mono.com/docs/monodoc.ashx?tlink=5@ecma%3a1351%23Widget%2fE%2f26) for the given widget. Usually you'll want to use the [Gtk.DrawingArea](http://www.go-mono.com/docs/monodoc.ashx?tlink=5@ecma%3a838%23DrawingArea%2f) for this task. An example implementation of the Expose event method:
+The best place to create and use the `Context` is the [ExposeEvent](http://docs.go-mono.com/monodoc.ashx?tlink=5@ecma%3a1351%23Widget%2fE%2f26) for the given widget. Usually you'll want to use the [Gtk.DrawingArea](http://docs.go-mono.com/monodoc.ashx?tlink=5@ecma%3a838%23DrawingArea%2f) for this task. An example implementation of the Expose event method:
 
 ``` csharp
 void OnDrawingAreaExposed (object o, ExposeEventArgs args)
@@ -46,7 +46,7 @@ Notice that `Surface` (the target the `Context` is actually drawing to), as well
 
 ### Drawing simple primitives
 
-Cairo drawing model works very much like a plotting machine. An abstract pen moves around the `Surface` area drawing lines and curves. The basic functions to handle the "plotting" are: [MoveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f7), [LineTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f8), [CurveTo](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f9). These functions take [PointD](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a26%23PointD%2f) objects as the arguments. `PointD` is a two-dimensional coordinate where `X` and `Y` are expressed as `double`.
+Cairo drawing model works very much like a plotting machine. An abstract pen moves around the `Surface` area drawing lines and curves. The basic functions to handle the "plotting" are: [MoveTo](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f7), [LineTo](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f8), [CurveTo](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f9). These functions take [PointD](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a26%23PointD%2f) objects as the arguments. `PointD` is a two-dimensional coordinate where `X` and `Y` are expressed as `double`.
 
 -   `Context.MoveTo (PointD coordinate)` will position the cursor/pen at the given coordinate
 -   `Context.LineTo (PointD coordinate)` will make a straight line from the current pen position to the given coordinate. After calling this function the pen is located at the given coordinate.
@@ -109,19 +109,19 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 
 I used `FillPreserve` method instead of `Fill` because the latter destroys the current path. If you want to keep the path use `StrokePreserve` and `FillPreserve`.
 
-Take a look at the [Graphics class members](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2f%2a) for other functions used to outline paths (ie. `ArcTo`, `Rectangle`).
+Take a look at the [Graphics class members](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2f%2a) for other functions used to outline paths (ie. `ArcTo`, `Rectangle`).
 
 ### Saving and restoring the Cairo state
 
 As you have already noticed, most of the drawing parameters are controlled in a state-based manner. Various `Graphics` properties you can set include:
 
--   [Color](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f3) -- to set the stroke/fill color. Color values (Red, Green, Blue, Alpha) are expressed in a 0 - 1 range (as `double`).
--   [LineWidth](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f7) -- to control the width of the stroke line.
--   [LineCap](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f8) -- controls the line capping (round, square, etc.)
+-   [Color](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f3) -- to set the stroke/fill color. Color values (Red, Green, Blue, Alpha) are expressed in a 0 - 1 range (as `double`).
+-   [LineWidth](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f7) -- to control the width of the stroke line.
+-   [LineCap](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fP%2f8) -- controls the line capping (round, square, etc.)
 
 This state-based approach is far more convenient than specifying all drawing parameters in a single function call (like it's done ie. in the low-level Gdk drawing methods). However, once you started creating your own custom drawing functions, you'll notice that it's hard to control all the state modifications spanned across multiple methods. In most cases you will not want to care about certain state modifiers assuming they're unset.
 
-Cairo provides us with methods to control the state stack. The respective `Graphics` members are [Save](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f2) and [Restore](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f3).
+Cairo provides us with methods to control the state stack. The respective `Graphics` members are [Save](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f2) and [Restore](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a15%23Graphics%2fM%2f3).
 
 `Context.Save` will copy the current state and push the copy on the top of the stack. `Context.Restore` will pop one state back from the stack. Clearly all the state-altering calls placed inside `Save`/`Restore` parenthesis are local.
 

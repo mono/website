@@ -126,7 +126,7 @@ MonoMac mirrors in C# the hierarchy of classes from Objective-C. For example, th
 
 Although this namespace provides bindings for the underlying Objective-C Foundation types, in a few cases we have mapped the underlying types to .NET types. For example:
 
-1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String) and strongly typed [" array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
+1.  Instead of dealing with [NSString](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html#//apple_ref/doc/uid/TP40003744) and [NSArray](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html#//apple_ref/doc/uid/TP40003620) the runtime instead exposes these as C# [string](http://docs.go-mono.com/index.aspx?link=T:System.String) and strongly typed [" array](http://docs.go-mono.com/index.aspx?link=T:System.Array)s throughout the API.
 2.  Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other OS X APIs or APIs that are not currently bound by MonoMac.
 
 For more details on binding APIs see the [MonoMac Binding Generator](/MonoMac/Documentation/Binding_New_Objective-C_Types) section.

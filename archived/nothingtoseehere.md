@@ -44,7 +44,7 @@ Quick Links
 -   [Screenshots](/Screenshots)
 -   [Success Stories](/Companies_Using_Mono)
 -   [Articles](/Articles)
--   [API Docs](http://www.go-mono.com/docs/)
+-   [API Docs](http://docs.go-mono.com/)
 -   [Plans](/Plans)
 -   [Report Bugs](/Bugs)
 

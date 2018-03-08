@@ -45,13 +45,13 @@ Suppose you want to invoke the [-[NSString sizeWithFont:forWidth:lineBreakMode:]
 
 - (CGSize)sizeWithFont:(UIFont \*)font forWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
 
-The return type, GSize, is a [System.Drawing.SizeF](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Drawing.SizeF) in managed code (which is a value type).
+The return type, GSize, is a [System.Drawing.SizeF](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Drawing.SizeF) in managed code (which is a value type).
 
-The *font* parameter is a [UIFont](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.UIKit.UIFont) (and a type (indirectly) derived from [NSObject](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.Foundation.NSObject)), and is thus mapped to [System.IntPtr](http://www.go-mono.com/docs/monodoc.ashx?link=T:System.IntPtr).
+The *font* parameter is a [UIFont](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.UIKit.UIFont) (and a type (indirectly) derived from [NSObject](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.Foundation.NSObject)), and is thus mapped to [System.IntPtr](http://docs.go-mono.com/monodoc.ashx?link=T:System.IntPtr).
 
-The width parameter, a CGFloat, is mapped to [System.Single](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Single).
+The width parameter, a CGFloat, is mapped to [System.Single](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Single).
 
-The lineBreakMode parameter, a UILineBreakMode, has already been bound in MonoTouch as the [UILineBreakMode](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.UIKit.UILineBreakMode) enumeration.
+The lineBreakMode parameter, a UILineBreakMode, has already been bound in MonoTouch as the [UILineBreakMode](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.UIKit.UILineBreakMode) enumeration.
 
 Put it all together, and we want an objc_msgSend declaration that matches:
 
@@ -59,7 +59,7 @@ Put it all together, and we want an objc_msgSend declaration that matches:
 SizeF objc_msgSend(IntPtr target, IntPtr selector, IntPtr font, float width, UILineBreakMode mode);
 ```
 
-Checking the [MonoTouch.ObjCRuntime.Messaging](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Messaging%2f*) members, we don't see a match for this prototype. Consequently, we will need to declare it ourself:
+Checking the [MonoTouch.ObjCRuntime.Messaging](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Messaging%2f*) members, we don't see a match for this prototype. Consequently, we will need to declare it ourself:
 
 ``` csharp
 [DllImport (MonoTouch.Constants.ObjectiveCLibrary)]
@@ -97,15 +97,15 @@ Invoking a selector has three steps:
 
 ### Selector Targets
 
-A selector target is either an object instance or an Objective-C class. If the target is an instance and came from a bound MonoTouch type, use the [MonoTouch.ObjCRuntime.INativeObject.Handle](http://www.go-mono.com/docs/monodoc.ashx?link=P%3aMonoTouch.ObjCRuntime.INativeObject.Handle) property.
+A selector target is either an object instance or an Objective-C class. If the target is an instance and came from a bound MonoTouch type, use the [MonoTouch.ObjCRuntime.INativeObject.Handle](http://docs.go-mono.com/monodoc.ashx?link=P%3aMonoTouch.ObjCRuntime.INativeObject.Handle) property.
 
-If the target is a class, use [MonoTouch.ObjCRuntime.Class](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Class) to get a reference to the class instance, then use the [Class.Handle](http://www.go-mono.com/docs/monodoc.ashx?link=P%3aMonoTouch.ObjCRuntime.Class.Handle) property.
+If the target is a class, use [MonoTouch.ObjCRuntime.Class](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Class) to get a reference to the class instance, then use the [Class.Handle](http://docs.go-mono.com/monodoc.ashx?link=P%3aMonoTouch.ObjCRuntime.Class.Handle) property.
 
 ### Selector Names
 
 Selector names are listed within Apple's documentation. For example, the [http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html) UIKit NSString extension methods] include [sizeWithFont:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:) and [sizeWithFont:forWidth:lineBreakMode:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:). The embedded and trailing colons are important, and are part of the selector name.
 
-Once you have a selector name, you can create a [MonoTouch.ObjCRuntime.Selector](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Selector) instance for it.
+Once you have a selector name, you can create a [MonoTouch.ObjCRuntime.Selector](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Selector) instance for it.
 
 ### Calling objc_msgSend()
 
@@ -113,5 +113,5 @@ When invoking objc_msgSend(), you must pass the selector target (an instance or 
 
 Objective-C types (e.g. NSString, NSDictionary, UIView, anything that has NSObject as an eventual base type) are passed as System.IntPtr.
 
-A set of pre-made objc_msgSend() declarations can be found in [MonoTouch.ObjCRuntime.Messaging](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Messaging%2f*).
+A set of pre-made objc_msgSend() declarations can be found in [MonoTouch.ObjCRuntime.Messaging](http://docs.go-mono.com/monodoc.ashx?link=T%3aMonoTouch.ObjCRuntime.Messaging%2f*).
 

@@ -39,17 +39,17 @@ Previously supported (released as of 1.1.10) features includes:
 -   Cross-AppDomain support enabling appdomain based sandboxes (limited by #74411);
 -   Unification (policies, permissions) between framework version numbers;
 -   more security permissions present in `mscorlib.dll` (still unaudited);
--   `Demand` for unmanaged code for P/Invoke including support for [SuppressUnmanagedCodeSecurity](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.SuppressUnmanagedCodeSecurityAttribute) attribute;
+-   `Demand` for unmanaged code for P/Invoke including support for [SuppressUnmanagedCodeSecurity](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Security.SuppressUnmanagedCodeSecurityAttribute) attribute;
 -   `LinkDemand` (JIT time) and it's special cases:
     -   internal calls (into the runtime);
     -   P/Invoke to unmanaged libraries; and
-    -   [AllowPartiallyTrustedCallers](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.AllowPartiallyTrustedCallersAttribute) attribute;
+    -   [AllowPartiallyTrustedCallers](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Security.AllowPartiallyTrustedCallersAttribute) attribute;
 -   `InheritanceDemand` (load time) for class inheritance, method overriding and interface implementations;
 -   Support for the new 2.0 security actions. Note that the Mono runtime doesn't (yet) encode them properly.
     -   `DemandChoice`;
     -   `LinkDemandChoice`; and
     -   `InheritanceDemandChoice`.
--   Policy resolution - including `RequestMinimum`, `RequestOptional` and `RequestRefuse` [SecurityAction](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.SecurityAction)s;
+-   Policy resolution - including `RequestMinimum`, `RequestOptional` and `RequestRefuse` [SecurityAction](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Security.Permissions.SecurityAction)s;
 -   Declarative/Imperative demands;
 -   Declarative stack modifiers (`Assert`, `Deny` and `PermitOnly`);
 
@@ -136,7 +136,7 @@ Caspol is a tool to manage security policy files that affects the security manag
 
 All but the last one (AppDomain) keeps it's configuration in an XML file that can be configured using `caspol`.
 
-The tool itself is a thin wrapper on top of the security classes in both [System.Security.Permissions](http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.Security.Permissions) and [System.Security.Policy](http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.Security.Policy) namespaces.
+The tool itself is a thin wrapper on top of the security classes in both [System.Security.Permissions](http://docs.go-mono.com/monodoc.ashx?link=N%3aSystem.Security.Permissions) and [System.Security.Policy](http://docs.go-mono.com/monodoc.ashx?link=N%3aSystem.Security.Policy) namespaces.
 
 **Status**
 
@@ -154,7 +154,7 @@ Permview is a tool that can extract the declarative security permission sets fro
 
 ### storeadm
 
-Storeadm is a tool to manage isolated storage on a computer. It's handly for sysadmins to manage (and reclaim) disk space used for isolated storage. The tool is mainly built on top of the [System.IO.IsolatedStorage](http://www.go-mono.com/docs/monodoc.ashx?link=N%3aSystem.IO.IsolatedStorage) classes;
+Storeadm is a tool to manage isolated storage on a computer. It's handly for sysadmins to manage (and reclaim) disk space used for isolated storage. The tool is mainly built on top of the [System.IO.IsolatedStorage](http://docs.go-mono.com/monodoc.ashx?link=N%3aSystem.IO.IsolatedStorage) classes;
 
 **Status**
 

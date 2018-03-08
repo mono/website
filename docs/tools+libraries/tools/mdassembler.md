@@ -4,7 +4,7 @@ redirect_from:
   - /Assembler/
 ---
 
-The **assembler** is a tool to merge mdoc/monodocer output into three files. Since [mdoc](/docs/tools+libraries/tools/mdoc/) and [monodocer](/docs/tools+libraries/tools/monodocer/) produces tons of output files this is very unhandy to redistribute. Additionally, the documentation can not be shown in [monodoc](/docs/tools+libraries/tools/monodoc/) by just clicking it's icon you have to type *monodoc mydocs-folder* into your console. The **assembler** can be invoked by using [mdoc-assemble](http://www.go-mono.org/docs/index.aspx?link=man:mdoc-assemble(1)) or (for older Mono versions) with the **mdassembler** command.
+The **assembler** is a tool to merge mdoc/monodocer output into three files. Since [mdoc](/docs/tools+libraries/tools/mdoc/) and [monodocer](/docs/tools+libraries/tools/monodocer/) produces tons of output files this is very unhandy to redistribute. Additionally, the documentation can not be shown in [monodoc](/docs/tools+libraries/tools/monodoc/) by just clicking it's icon you have to type *monodoc mydocs-folder* into your console. The **assembler** can be invoked by using [mdoc-assemble](http://docs.go-mono.com/index.aspx?link=man:mdoc-assemble(1)) or (for older Mono versions) with the **mdassembler** command.
 
 Usage
 =====

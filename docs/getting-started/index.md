@@ -42,7 +42,7 @@ Working with Mono
 <p><a href="http://www.monodevelop.com/Stetic_GUI_Designer">Writing a Gtk# Application</a> <br /> Tutorial that shows how to write a Gtk# application using MonoDevelop and its visual Gtk# designer.</p>
 <p><a href="/docs/gui/winforms/porting-winforms-applications/">Porting Winforms Applications</a> <br /> Guide to porting a Winforms application to run on Mono.</p>
 <p><a href="/docs/gui/winforms/debugging-with-mwf/">Debugging Winforms Applications with VS</a> <br /> Guide to setting up the Winforms project in your application solution to enable debugging in Visual Studio.</p></td>
-<td align="left"><p><a href="http://www.go-mono.com/docs/">API Reference</a> <br /> Mono Documentation Library</p>
+<td align="left"><p><a href="http://docs.go-mono.com/">API Reference</a> <br /> Mono Documentation Library</p>
 <p><a href="/docs/getting-started/application-portability/">Portability Guidelines</a> <br /> How to write your application to work on multiple platforms.</p>
 <p><a href="/docs/getting-started/application-deployment/">Deployment Guidelines</a> <br /> How to package and deploy your application to various platforms.</p>
 <p><a href="/archived/howto" title="Howto">HowTo Guides</a> <br /> Short, specific guides for various topics.</p>

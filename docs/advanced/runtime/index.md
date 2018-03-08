@@ -23,7 +23,7 @@ The runtime offers the following services:
     -   Backend engines:
         -   Mono's own engine
         -   [LLVM optimizing compiler backend engine](/docs/advanced/mono-llvm/)
-    -   [First-class SIMD datatypes (Mono.Simd)](http://go-mono.com/docs/index.aspx?link=N%3aMono.Simd)
+    -   [First-class SIMD datatypes (Mono.Simd)](http://docs.go-mono.com/index.aspx?link=N%3aMono.Simd)
 -   Exception Handling
     -   Software-triggered exceptions
     -   Hardware-triggered exceptions like Floating point exceptions, null reference exceptions
@@ -31,7 +31,7 @@ The runtime offers the following services:
     -   File system IO
     -   Networking IO
     -   Access to operating system properties and features
-    -   On Unix systems, [Mono.Posix APIs](http://go-mono.com/docs/index.aspx?link=N%3aMono.Posix)
+    -   On Unix systems, [Mono.Posix APIs](http://docs.go-mono.com/index.aspx?link=N%3aMono.Posix)
 -   Program isolation using Application Domains (AppDomain)
 -   Thread management:
     -   Threadpool for user code

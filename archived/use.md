@@ -13,7 +13,7 @@ Use
 Users:<br/>
   [Downloads](/Downloads) | [Bug Reporting](/Bugs) | [Software](/Software)<br/>
  Developers:<br/>
-  [API Docs](http://www.go-mono.com/docs/) | [Languages](/Languages) | [Books](/Books) | [Roadmap](/Mono_Project_Roadmap) | [Plans](/Plans)<br/>
+  [API Docs](http://docs.go-mono.com/) | [Languages](/Languages) | [Books](/Books) | [Roadmap](/Mono_Project_Roadmap) | [Plans](/Plans)<br/>
  Contributors:<br/>
   [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/SourceCodeRepository)<br/>
  Community:<br/>
@@ -26,7 +26,7 @@ Mono is positioned to be the leading platform for development of Gnome applicati
 -   [Downloads](/Downloads)
 -   [The Monkeyguide tutorial](/Monkeyguide)
 -   [How-To pages](/Howto)
--   [API Documentation](http://www.go-mono.com/docs/)
+-   [API Documentation](http://docs.go-mono.com/)
 -   [Mailing Lists](/Mailing_Lists) to get help
 -   [Bug reporting](/Bugs) to help us improve the software
 -   Commercial [Support](/Support)

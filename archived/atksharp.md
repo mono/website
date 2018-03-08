@@ -8,5 +8,5 @@ redirect_from:
 AtkSharp
 ========
 
-Go to the [MonoDoc API page](http://go-mono.org/docs/index.aspx?tlink=5@N%3aAtk) for reference.
+Go to the [MonoDoc API page](http://docs.go-mono.com/index.aspx?tlink=5@N%3aAtk) for reference.
 

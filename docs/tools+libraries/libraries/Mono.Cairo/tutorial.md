@@ -142,7 +142,7 @@ In order to create an image you desire, you have to prepare the [context](http:/
 
 ### Preparing and Selecting a Source
 
-There are three main kinds of sources in cairo: colors, gradients, and images. Colors are the simplest; they use a uniform hue and opacity for the entire source. You can select these without any preparation by setting the [Color](http://www.go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.Color) property.
+There are three main kinds of sources in cairo: colors, gradients, and images. Colors are the simplest; they use a uniform hue and opacity for the entire source. You can select these without any preparation by setting the [Color](http://docs.go-mono.com/monodoc.ashx?link=P%3aCairo.Context.Color) property.
 
 [![Cairo_setsourcergba.png](/archived/images/c/cb/Cairo_setsourcergba.png)](/archived/images/c/cb/Cairo_setsourcergba.png)
 
@@ -205,7 +205,7 @@ Cairo always has an active path. If you call [Stroke](#stroke) it will draw the 
 
 What if you want to do multiple things with the same path? For instance to draw a red rectangle with a black border, you would want to fill the rectangle path with a red source, then stroke the same path with a black source. A rectangle path is easy to create multiple times, but a lot of paths are more complex.
 
-Cairo supports easily reusing paths by having alternate versions of its operations. Both draw the same thing, but the alternate doesn't reset the path. For stroking, alongside [Stroke](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f14) there is [Stroke Preserve](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f28); for filling, [FillPreserve](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f16) joins [Fill](http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15). Even setting the clip has a preserve variant. Apart from choosing when to preserve your path, there are only a couple common operations.
+Cairo supports easily reusing paths by having alternate versions of its operations. Both draw the same thing, but the alternate doesn't reset the path. For stroking, alongside [Stroke](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f14) there is [Stroke Preserve](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f28); for filling, [FillPreserve](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fM%2f16) joins [Fill](http://docs.go-mono.com/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15). Even setting the clip has a preserve variant. Apart from choosing when to preserve your path, there are only a couple common operations.
 
 #### Moving
 
@@ -252,7 +252,7 @@ Cairo can also close the path by drawing a straight line to the beginning of the
 
 #### Text
 
-Finally text can be turned into a path with [TextPath](http://docs.go-mono.com/?link=M%3aCairo.Context.TextPath). Paths created from text are like any other path, supporting stroke or fill operations. This path is placed anchored to the current reference point, so [MoveTo](#moving) your desired location before turning text into a path. However there are performance concerns to doing this if you are working with a lot of text; when possible you should prefer using the verb [ShowText](#show-text--glyphs) over TextPath and [Fill](http://www.go-mono.com/docs/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15).
+Finally text can be turned into a path with [TextPath](http://docs.go-mono.com/?link=M%3aCairo.Context.TextPath). Paths created from text are like any other path, supporting stroke or fill operations. This path is placed anchored to the current reference point, so [MoveTo](#moving) your desired location before turning text into a path. However there are performance concerns to doing this if you are working with a lot of text; when possible you should prefer using the verb [ShowText](#show-text--glyphs) over TextPath and [Fill](http://docs.go-mono.com/index.aspx?tlink=0@ecma%3a4%23Context%2fM%2f15).
 
 Understanding Text
 ------------------
@@ -261,13 +261,13 @@ Understanding Text
 
 [View Source](http://mgsloan.nfshost.com/cairo_tut/textextents.cs)
 
-To use text effectively you need to know where it will go. The methods [FontExtents](http://www.go-mono.com/docs/monodoc.ashx?link=P%3aCairo.Context.FontExtents) and [TextExtents](http://www.go-mono.com/docs/monodoc.ashx?link=M%3aCairo.Context.TextExtents(System.String)) get you this information. Since this diagram is hard to see so small, I suggest getting its [source](http://mgsloan.nfshost.com/cairo_tut/textextents.cs) and bump the size up to 600. It shows the relation between the reference point (red dot); suggested next reference point (blue dot); bounding box (dashed blue lines); bearing displacement (solid blue line); and height, ascent, baseline, and descent lines (dashed green).
+To use text effectively you need to know where it will go. The methods [FontExtents](http://docs.go-mono.com/monodoc.ashx?link=P%3aCairo.Context.FontExtents) and [TextExtents](http://docs.go-mono.com/monodoc.ashx?link=M%3aCairo.Context.TextExtents(System.String)) get you this information. Since this diagram is hard to see so small, I suggest getting its [source](http://mgsloan.nfshost.com/cairo_tut/textextents.cs) and bump the size up to 600. It shows the relation between the reference point (red dot); suggested next reference point (blue dot); bounding box (dashed blue lines); bearing displacement (solid blue line); and height, ascent, baseline, and descent lines (dashed green).
 
 The reference point is always on the baseline. The descent line is below that, and reflects a rough bounding box for all characters in the font. However it is an artistic choice intended to indicate alignment rather than a true bounding box. The same is true for the ascent line above. Next above that is the height line, the artist-recommended spacing between subsequent baselines. All three of these are reported as distances from the baseline, and expected to be positive despite their differing directions.
 
 The bearing is the displacement from the reference point to the upper-left corner of the bounding box. It is often zero or a small positive value for x displacement, but can be negative x for characters like j as shown; it's almost always a negative value for y displacement. The width and height then describe the size of the bounding box. The advance takes you to the suggested reference point for the next letter. Note that bounding boxes for subsequent blocks of text can overlap if the bearing is negative, or the advance is smaller than the width would suggest.
 
-In addition to placement, you also need to specify a face, style, and size. Set the face and style together with [SelectFontFace](http://docs.go-mono.com/?link=M%3aCairo.Context.SelectFontFace), and the size with [SetFontSize](http://docs.go-mono.com/?link=M%3aCairo.Context.SetFontSize). If you need even finer control, try modifying a [FontOptions struct](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aCairo.FontOptions) with [FontOptions property](http://www.go-mono.com/docs/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fP%2f19).
+In addition to placement, you also need to specify a face, style, and size. Set the face and style together with [SelectFontFace](http://docs.go-mono.com/?link=M%3aCairo.Context.SelectFontFace), and the size with [SetFontSize](http://docs.go-mono.com/?link=M%3aCairo.Context.SetFontSize). If you need even finer control, try modifying a [FontOptions struct](http://docs.go-mono.com/monodoc.ashx?link=T%3aCairo.FontOptions) with [FontOptions property](http://docs.go-mono.com/monodoc.ashx?tlink=0@ecma%3a4%23Context%2fP%2f19).
 
 Working with Transforms
 -----------------------

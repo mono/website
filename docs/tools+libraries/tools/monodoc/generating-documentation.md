@@ -90,7 +90,7 @@ will give us the following directory content:
      |- ImportantBClass.xml
      |- AnotherBClass.xml
 
-As the documentation is an [XML format](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc](/docs/tools+libraries/tools/monodoc/) browser. Just after creating the documentation with [monodocer](/docs/tools+libraries/tools/monodocer/), you can start navigating or [editing](#edit-and-write-documentation) it by typing:
+As the documentation is an [XML format](http://docs.go-mono.com/monodoc.ashx?link=man:mdoc(5)), you can edit it directly, though it is easier to use the [Monodoc](/docs/tools+libraries/tools/monodoc/) browser. Just after creating the documentation with [monodocer](/docs/tools+libraries/tools/monodocer/), you can start navigating or [editing](#edit-and-write-documentation) it by typing:
 
 ``` bash
 monodoc --edit docfiles
@@ -124,7 +124,7 @@ will insert a `<since version="2.0" />` element for *every* type and member that
 
 This is useful when you need to distinguish which members were added in later versions of an assembly.
 
-Both [monodocer](/docs/tools+libraries/tools/monodocer/) and [mdoc-update](/docs/tools+libraries/tools/mdoc/) insert the assembly versions that each member was found in, and the list of assembly versions is also displayed within [monodoc](/docs/tools+libraries/tools/monodoc/) and [http://www.go-mono.com/docs](http://www.go-mono.com/docs), for example the **Requirements** section at the [System.Environment documentation](http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Environment).
+Both [monodocer](/docs/tools+libraries/tools/monodocer/) and [mdoc-update](/docs/tools+libraries/tools/mdoc/) insert the assembly versions that each member was found in, and the list of assembly versions is also displayed within [monodoc](/docs/tools+libraries/tools/monodoc/) and [http://docs.go-mono.com/](http://docs.go-mono.com/), for example the **Requirements** section at the [System.Environment documentation](http://docs.go-mono.com/monodoc.ashx?link=T:System.Environment).
 
 Assemble the generated Documentation
 ------------------------------------
@@ -157,7 +157,7 @@ The above two commands will create the files *lib.tree* and *lib.zip*. Now, we c
 
 The *provider* attribute tells the browser which kind of documentation is within the *lib.zip* file. When editing library documentation it should always be *ecma*. The *provider* attribute MUST match the format provided to [mdassembler](/docs/tools+libraries/tools/mdassembler/) or [mdoc-assemble](/docs/tools+libraries/tools/mdoc/).
 
-Other documentation formats are supported as well; see [mdoc-assemble(1)](http://www.go-mono.com/docs/monodoc.ashx?link=man:mdoc-assemble(1)) for details.
+Other documentation formats are supported as well; see [mdoc-assemble(1)](http://docs.go-mono.com/monodoc.ashx?link=man:mdoc-assemble(1)) for details.
 
 The *basefile* attribute tells the browser where to find that documentation; it is the base name of your .zip and .tree files.
 

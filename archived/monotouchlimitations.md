@@ -89,7 +89,7 @@ Using a value type as a Dictionary\<TKey, TValue\> key is problematic, as the de
 
 This works for reference types (as the reflection+create a new type step is skipped), but for value types it crashes and burns rather quickly once you attempt to use it on the device.
 
-**Workaround**: Manually implement the [IEqualityComparer\<TKey\>](http://www.go-mono.com/docs/index.aspx?link=T%3aSystem.Collections.Generic.IEqualityComparer%601) interface in a new type and provide an instance of that type to the [Dictionary\<TKey, TValue\>(IEqualityComparer\<TKey\>) constructor](http://www.go-mono.com/docs/monodoc.ashx?link=C%3aSystem.Collections.Generic.Dictionary%602(System.Collections.Generic.IEqualityComparer%7b%600%7d)).
+**Workaround**: Manually implement the [IEqualityComparer\<TKey\>](http://docs.go-mono.com/index.aspx?link=T%3aSystem.Collections.Generic.IEqualityComparer%601) interface in a new type and provide an instance of that type to the [Dictionary\<TKey, TValue\>(IEqualityComparer\<TKey\>) constructor](http://docs.go-mono.com/monodoc.ashx?link=C%3aSystem.Collections.Generic.Dictionary%602(System.Collections.Generic.IEqualityComparer%7b%600%7d)).
 
 No Dynamic Code Generation
 ==========================

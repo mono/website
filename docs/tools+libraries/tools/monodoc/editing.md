@@ -7,7 +7,7 @@ redirect_from:
 Writing XML Documentation
 =========================
 
-See the [mdoc(5)](http://www.go-mono.org/docs/monodoc.ashx?link=man:mdoc(5)) man page for more details about monodoc XML file format and document markup.
+See the [mdoc(5)](http://docs.go-mono.com/monodoc.ashx?link=man:mdoc(5)) man page for more details about monodoc XML file format and document markup.
 
 The following tags can be used inside the \<summary\> and \<remarks\> sections of your documentation.
 

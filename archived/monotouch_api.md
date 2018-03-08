@@ -67,43 +67,43 @@ Major Namespaces
 MonoTouch.ObjCRuntime
 ---------------------
 
-The [MonoTouch.ObjCRuntime](http://www.go-mono.com/docs/index.aspx?tlink=20@N:MonoTouch.ObjCRuntime) namespace allows developers to bridge the worlds between C# and Objective-C. This is a new binding designed specifically for the iPhone based on the experience from Cocoa# and Gtk#.
+The [MonoTouch.ObjCRuntime](http://docs.go-mono.com/index.aspx?tlink=20@N:MonoTouch.ObjCRuntime) namespace allows developers to bridge the worlds between C# and Objective-C. This is a new binding designed specifically for the iPhone based on the experience from Cocoa# and Gtk#.
 
 MonoTouch.Foundation
 --------------------
 
-The [MonoTouch.Foundation](http://www.go-mono.com/docs/index.aspx?link=N:MonoTouch.Foundation) namespace provides the basic data types designed to interoperate with the Objective-C Foundation framework that is part of the iPhone and it is the base for object oriented programming in Objective-C.
+The [MonoTouch.Foundation](http://docs.go-mono.com/index.aspx?link=N:MonoTouch.Foundation) namespace provides the basic data types designed to interoperate with the Objective-C Foundation framework that is part of the iPhone and it is the base for object oriented programming in Objective-C.
 
-MonoTouch mirrors in C# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) is usable from C# via [MonoTouch.Foundation.NSObject](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.NSObject).
+MonoTouch mirrors in C# the hierarchy of classes from Objective-C. For example, the Objective-C base class [NSObject](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html) is usable from C# via [MonoTouch.Foundation.NSObject](http://docs.go-mono.com/index.aspx?link=T:MonoTouch.Foundation.NSObject).
 
 Although this namespace provides bindings for the underlying Objective-C Foundation types, in a few cases we have mapped the underlying types to .NET types. For example:
 
--   Instead of dealing with [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) and [NSArray](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference.html) the runtime instead exposes these as C# [string](http://www.go-mono.com/docs/index.aspx?link=T:System.String)s and strongly typed [array](http://www.go-mono.com/docs/index.aspx?link=T:System.Array)s throughout the API.
+-   Instead of dealing with [NSString](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) and [NSArray](http://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/Reference/Reference.html) the runtime instead exposes these as C# [string](http://docs.go-mono.com/index.aspx?link=T:System.String)s and strongly typed [array](http://docs.go-mono.com/index.aspx?link=T:System.Array)s throughout the API.
 -   Various helper APIs are exposed here to allow developers to bind third party Objective-C APIs, other iPhone APIs or APIs that are not currently bound by MonoTouch.
 
 For more details on binding APIs see the MonoTouch Binding Generator section.
 
 ### NSObject
 
-The [NSObject](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.NSObject) type is the foundation for all the Objective-C bindings.
+The [NSObject](http://docs.go-mono.com/index.aspx?link=T:MonoTouch.Foundation.NSObject) type is the foundation for all the Objective-C bindings.
 
-While Mono will provide garbage collection for all of your objects, we made the `MonoTouch.Foundation.NSObject` implement the [http:/monodoc/T:System.IDisposable System.IDisposable] interface. If your type needs to perform deterministic finalization, override the [NSObject.Dispose(bool) method](http://www.go-mono.com/docs/index.aspx?link=M:MonoTouch.Foundation.NSObject.Dispose(System.Boolean)).
+While Mono will provide garbage collection for all of your objects, we made the `MonoTouch.Foundation.NSObject` implement the [http:/monodoc/T:System.IDisposable System.IDisposable] interface. If your type needs to perform deterministic finalization, override the [NSObject.Dispose(bool) method](http://docs.go-mono.com/index.aspx?link=M:MonoTouch.Foundation.NSObject.Dispose(System.Boolean)).
 
 MonoTouch.UIKit
 ---------------
 
-The [MonoTouch.UIKit](http://www.go-mono.com/docs/index.aspx?link=N:MonoTouch.UIKit) namespace contains a 1 to 1 mapping to all of the UI components that make up CocoaTouch in the form of C# classes. The API has been modified to follow the conventions used in the C# language.
+The [MonoTouch.UIKit](http://docs.go-mono.com/index.aspx?link=N:MonoTouch.UIKit) namespace contains a 1 to 1 mapping to all of the UI components that make up CocoaTouch in the form of C# classes. The API has been modified to follow the conventions used in the C# language.
 
 C# delegates are provided for common operations. See the [delegates](#delegates) section for more information.
 
 OpenGLES
 --------
 
-For OpenGLES we distribute a [modified version](http://www.go-mono.com/docs/index.aspx?link=N:OpenTK) of the [OpenTK](http://www.opentk.com) API, an object-oriented binding to OpenGL that has been modified to use CoreGraphics data types and structures as well as only exposing the functionality that is available on the iPhone.
+For OpenGLES we distribute a [modified version](http://docs.go-mono.com/index.aspx?link=N:OpenTK) of the [OpenTK](http://www.opentk.com) API, an object-oriented binding to OpenGL that has been modified to use CoreGraphics data types and structures as well as only exposing the functionality that is available on the iPhone.
 
-OpenGLES 1.1 functionality is available through the [ES](http://www.go-mono.com/docs/index.aspx?link=T:OpenTK.Graphics.ES11.ES) type.
+OpenGLES 1.1 functionality is available through the [ES](http://docs.go-mono.com/index.aspx?link=T:OpenTK.Graphics.ES11.ES) type.
 
-OpenGLES 2.0 functionality is available through the [ES](http://www.go-mono.com/docs/index.aspx?link=T:OpenTK.Graphics.ES20.ES) type.
+OpenGLES 2.0 functionality is available through the [ES](http://docs.go-mono.com/index.aspx?link=T:OpenTK.Graphics.ES20.ES) type.
 
 Binding Design
 ==============
@@ -150,9 +150,9 @@ For example, consider the [UIWebView](http://developer.apple.com/iphone/library/
 
 For many types, MonoTouch will automatically create an appropriate delegate which will forward the UIWebViewDelegate calls onto C# events. For UIWebView:
 
--   The [webViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) method is mapped to the [UIWebView.LoadStarted](http://www.go-mono.com/docs/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadStarted) event.
--   The [webViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) method is mapped to the [UIWebView.LoadFinished](http://www.go-mono.com/docs/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadFinished) event.
--   The [webView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) method is mapped to the [UIWebView.LoadError](http://www.go-mono.com/docs/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadError) event.
+-   The [webViewDidStartLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:) method is mapped to the [UIWebView.LoadStarted](http://docs.go-mono.com/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadStarted) event.
+-   The [webViewDidFinishLoad](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:) method is mapped to the [UIWebView.LoadFinished](http://docs.go-mono.com/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadFinished) event.
+-   The [webView:didFailLoadWithError](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:) method is mapped to the [UIWebView.LoadError](http://docs.go-mono.com/index.aspx?link=E:MonoTouch.UIKit.UIWebView.LoadError) event.
 
 For example, this simple program times the time it takes to load a web view:
 
@@ -165,7 +165,7 @@ web.LoadFinished += (o, e) => endTime = DateTime.Now;
 
 ### Strongly typed via a Delegate property
 
-If you would prefer not to use events, you can provide your own [UIWebViewDelegate](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.UIKit.UIWebViewDelegate) subclass and assign it to the [UIWebView.Delegate](http://www.go-mono.com/docs/index.aspx?link=P:MonoTouch.UIKit.UIWebView.Delegate) property. Once UIWebView.Delegate has been assigned, the UIWebView event dispatch mechanism will no longer function, and the UIWebViewDelegate methods will be invoked when the corresponding events occur.
+If you would prefer not to use events, you can provide your own [UIWebViewDelegate](http://docs.go-mono.com/index.aspx?link=T:MonoTouch.UIKit.UIWebViewDelegate) subclass and assign it to the [UIWebView.Delegate](http://docs.go-mono.com/index.aspx?link=P:MonoTouch.UIKit.UIWebView.Delegate) property. Once UIWebView.Delegate has been assigned, the UIWebView event dispatch mechanism will no longer function, and the UIWebViewDelegate methods will be invoked when the corresponding events occur.
 
 For example, this simple type records the time it takes to load a web view:
 
@@ -194,15 +194,15 @@ The above is used in code like this:
 
 The above will create a UIWebViewer and it will instruct it to send messages to an instance of Notifier, a class that we created to respond to messages.
 
-This pattern is also used to control behavior for certain controls, for example in the UIWebView case, the [UIWebView.ShouldStartLoad](http://www.go-mono.com/docs/index.aspx?link=P:MonoTouch.UIKit.UIWebView.ShouldStartLoad) property allows the UIWebView instance to control whether the UIWebView will load a page or not.
+This pattern is also used to control behavior for certain controls, for example in the UIWebView case, the [UIWebView.ShouldStartLoad](http://docs.go-mono.com/index.aspx?link=P:MonoTouch.UIKit.UIWebView.ShouldStartLoad) property allows the UIWebView instance to control whether the UIWebView will load a page or not.
 
-The pattern is also used to provide the data on demand for a few controls. For example the [UITableView](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.UIKit.UITableView) control is a powerful table rendering control and both the look and the contents are driven by an instace of a [UITableViewDataSource](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.UIKit.UITableViewDataSource).
+The pattern is also used to provide the data on demand for a few controls. For example the [UITableView](http://docs.go-mono.com/index.aspx?link=T:MonoTouch.UIKit.UITableView) control is a powerful table rendering control and both the look and the contents are driven by an instace of a [UITableViewDataSource](http://docs.go-mono.com/index.aspx?link=T:MonoTouch.UIKit.UITableViewDataSource).
 
 ### Loosely typed via the WeakDelegate property
 
 In addition to the strongly typed property, there is also a weak typed delegate that allows the developer to bind things differently if desired. Everywhere where a strongly typed `Delegate` property is exposed in MonoTouch's binding a corresponding `WeakDelegate` property is also exposed.
 
-When using the `WeakDelegate` you are responsible for properly decorating your class using the [Export](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.ExportAttribute) attribute to specify the selector. For example:
+When using the `WeakDelegate` you are responsible for properly decorating your class using the [Export](http://docs.go-mono.com/index.aspx?link=T:MonoTouch.Foundation.ExportAttribute) attribute to specify the selector. For example:
 
 ``` csharp
 class Notifier : NSObject  {

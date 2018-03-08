@@ -37,7 +37,7 @@ Of course, more documentation sources can be added from installed libraries or f
 Online Documentation
 --------------------
 
-You can view the complete documentation library online (only API documentation) at [http://www.go-mono.com/docs/](http://www.go-mono.com/docs/).
+You can view the complete documentation library online (only API documentation) at [http://docs.go-mono.com/](http://docs.go-mono.com/).
 
 Mod (Command-Line Documentation Viewer)
 ---------------------------------------

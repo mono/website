@@ -11,7 +11,7 @@ Track our various [Development Plans](/docs/about-mono/plans/)
 Users:<br/>
   [Downloads](/download/stable/) | [Bug Reporting](/community/bugs/) | [Software](/docs/about-mono/showcase/software/)<br/>
  Developers:<br/>
-  [API Docs](http://www.go-mono.com/docs/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books) | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
+  [API Docs](http://docs.go-mono.com/) | [Languages](/docs/about-mono/languages/) | [Books](/archived/books) | [Roadmap](/docs/about-mono/roadmap/) | [Plans](/docs/about-mono/plans/)<br/>
  Contributors:<br/>
   [Class Status](/archived/resources#api-completion-status-pages) | [Build Status](https://jenkins.mono-project.com/) | [Source Code](/community/contributing/source-code-repository/)<br/>
  Community:<br/>

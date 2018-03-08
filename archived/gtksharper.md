@@ -20,7 +20,7 @@ Gtk# is a Graphical User Interface Toolkit for mono and .Net. The project binds 
 References
 ----------
 
--   [Online API Documentation](http://www.go-mono.com/docs/monodoc.ashx?tlink=root:/classlib-gnome)
+-   [Online API Documentation](http://docs.go-mono.com/monodoc.ashx?tlink=root:/classlib-gnome)
 -   [What's New?](/GtkSharpNewInVersion2x)
 -   [Release Plans](/GtkSharpPlan)
 -   [Articles and Tutorials](/Articles) on Gtk#.

@@ -9,7 +9,7 @@ Getting Documentation
 
 ### Where can I find Mono documentation?
 
-Mono documentation can either be viewed [on line](http://www.go-mono.com/docs/) or off line using the [GTK#](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser) or [console based](/docs/tools+libraries/tools/monodoc/#mod-command-line-documentation-viewer) documentation browsers.
+Mono documentation can either be viewed [on line](http://docs.go-mono.com/) or off line using the [GTK#](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser) or [console based](/docs/tools+libraries/tools/monodoc/#mod-command-line-documentation-viewer) documentation browsers.
 
 ### Why do I read "Documentation for this section has not yet been entered." everywhere?
 

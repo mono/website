@@ -395,7 +395,7 @@ MonoDoc
 
 MonoDoc is a graphical documentation browser for the Mono documentation: class libraries, tutorials and manual pages. Currently, monodoc has a GUI front-end written in Gtk# and a Web front-end using ASP.NET
 
-The contents of Monodoc today are visible on the web [here](http://www.go-mono.com/docs/)
+The contents of Monodoc today are visible on the web [here](http://docs.go-mono.com/)
 
 More information about the Mono documentation can be found on the [Documentation](/docs/) page.
 

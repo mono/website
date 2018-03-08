@@ -223,7 +223,7 @@ Security related compilation issues
 
 ### Compiling Mono's mscorlib.dll with CSC 7.x (Fx 1.x)
 
-With the CLR 1.x a security permission object (implementing [IPermission](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.IPermission)) must be created, from its security attribute (inherited from [SecurityAttribute](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.SecurityAttribute)), to generate the XML output that is embedded in the assembly. This means that the compiler cannot accept the use of *PermissionX* if *PermissionX* is defined in the assembly being compiled. This cause a problem for some assemblies, like `mscorlib.dll` which consume its own permission.
+With the CLR 1.x a security permission object (implementing [IPermission](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Security.IPermission)) must be created, from its security attribute (inherited from [SecurityAttribute](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Security.Permissions.SecurityAttribute)), to generate the XML output that is embedded in the assembly. This means that the compiler cannot accept the use of *PermissionX* if *PermissionX* is defined in the assembly being compiled. This cause a problem for some assemblies, like `mscorlib.dll` which consume its own permission.
 
 In order to bootstrap such assemblies CSC 7.x looks for the environment variable `__SECURITY_BOOTSTRAP_DB` to create a security database. The information within (format unknown) enables CSC to compile them.
 
@@ -238,7 +238,7 @@ From the [/mcs/class/corlib/Makefile](https://github.com/mono/mono/blob/master/m
 
 ### System.Security.SecurityException : Failure decoding embedded permission set object
 
-This exception can occurs when using a path/file in a declarative [FileIOPermission](http://www.go-mono.com/docs/monodoc.ashx?link=T%3aSystem.Security.Permissions.FileIOPermissionAttribute) attribute (or any other security attribute accepting filenames). The Mono runtime supports UNIX-style filename when compiling (e.g. MCS) but the Microsoft runtime won't be able to decode them. The solution is to use imperative security when dealing with filenames.
+This exception can occurs when using a path/file in a declarative [FileIOPermission](http://docs.go-mono.com/monodoc.ashx?link=T%3aSystem.Security.Permissions.FileIOPermissionAttribute) attribute (or any other security attribute accepting filenames). The Mono runtime supports UNIX-style filename when compiling (e.g. MCS) but the Microsoft runtime won't be able to decode them. The solution is to use imperative security when dealing with filenames.
 
  **Note**: You can see this problem if you compile corlib's unit tests under Linux then try to execute the tests under the MS runtime.
 

@@ -73,7 +73,7 @@ Most nontrivial applications will need to store user preferences. Traditionally,
 
 What are we going to do in this tutorial?:
 
--   Create a [checkbox](http://www.go-mono.com/docs/monodoc.ashx?tlink=6@ecma%3a877%23CheckButton%2f) and an [editbox](http://www.go-mono.com/docs/monodoc.ashx?tlink=6@ecma%3a980%23Entry%2f)
+-   Create a [checkbox](http://docs.go-mono.com/monodoc.ashx?tlink=6@ecma%3a877%23CheckButton%2f) and an [editbox](http://docs.go-mono.com/monodoc.ashx?tlink=6@ecma%3a980%23Entry%2f)
 -   Link them with [GConf](http://www.gnome.org/projects/gconf/)
 -   Test live notification with [GConf-Editor](http://cvs.gnome.org/viewcvs/gconf-editor/)
 
@@ -272,7 +272,7 @@ References
 ==========
 
 -   [GConf Web Site](http://www.gnome.org/projects/gconf/)
--   [GConf# Documentation](http://www.go-mono.com/docs/index.aspx?link=N:GConf)
+-   [GConf# Documentation](http://docs.go-mono.com/index.aspx?link=N:GConf)
 -   [GNOME HIG](http://developer.gnome.org/projects/gup/hig/)
 
 

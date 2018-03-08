@@ -17,7 +17,7 @@ Mono is a platform for running and developing modern applications, based on the 
 Mono is an open source effort led by Novell and is the foundation for many new applications. [more...](/About_Mono)
 
 Users: [Downloads](/Downloads) | [Bug Reporting](/Bugs) | [Software](/Software) | [Support](/Support)
- Developers: [Source Code](/SourceCodeRepository) | [Books](/Books) | [Languages](/Languages) | [Forge](/Novell_Forge) | [API Docs](http://www.go-mono.com/docs/)
+ Developers: [Source Code](/SourceCodeRepository) | [Books](/Books) | [Languages](/Languages) | [Forge](/Novell_Forge) | [API Docs](http://docs.go-mono.com/)
  Contributors: [Resources](/Resources) | [Development Plans](/Plans) | [Tasks](/Todo) | [Bug Tracking](/Bugs)
  Community: [Mailing Lists](/Mailing_Lists) | [IRC](/IRC) | [Related Sites](/Related_Mono_Sites) | [User Groups](/User_Groups) | [Blogs](http://www.go-mono.com/monologue/)
  FAQ: [General](/FAQ:_General) | [Technical](/FAQ:_Technical) | [Licensing](/FAQ:_Licensing) | [Asp.net](/FAQ:_ASP.NET) | [Security](/FAQ:_Security)
