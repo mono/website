@@ -297,8 +297,8 @@ The following table shows how you should map types from the Objective-C and Coco
 > |CGPoint|System.Drawing.PointF|
 > |CGSize|System.Drawing.SizeF|
 > |CGFloat|float|
-> |CoreFoundation types (CF\*)|[MonoMac.CoreFoundation](http://docs.go-mono.com/MonoMac.CoreFoundation).CF\*|
-> |Foundation Types (NS\*)|[MonoMac.Foundation](http://docs.go-mono.com/MonoMac.Foundation).NS\*|
+> |CoreFoundation types (CF\*)|[MonoMac.CoreFoundation](http://docs.go-mono.com/?link=N:MonoMac.CoreFoundation).CF\*|
+> |Foundation Types (NS\*)|[MonoMac.Foundation](http://docs.go-mono.com/?link=N:MonoMac.Foundation).NS\*|
 >
 
 ### Arrays

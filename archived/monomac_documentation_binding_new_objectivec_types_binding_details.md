@@ -13,11 +13,11 @@ Binding Details
 
 These are the details of how the binding takes place.
 
-It is possible to use the [[Register](http://docs.go-mono.com/MonoMac.Foundation.RegisterAttribute)] attribute, [[Export](http://docs.go-mono.com/MonoMac.Foundation.ExportAttribute)] attribute, and manual Objective-C selector invocation together to manually bind new (previously unbound) Objective-C types.
+It is possible to use the [[Register](http://docs.go-mono.com/?link=T:MonoMac.Foundation.RegisterAttribute)] attribute, [[Export](http://docs.go-mono.com/?link=T:MonoMac.Foundation.ExportAttribute)] attribute, and manual Objective-C selector invocation together to manually bind new (previously unbound) Objective-C types.
 
-First, find a type that you wish to bind. For discussion purposes (and simplicity), we'll bind the [NSEnumerator](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003654) type (which has already been bound in [MonoMac.Foundation.NSEnumerator](http://docs.go-mono.com/MonoMac.Foundation.NSEnumerator); the implementation below is just for example purposes).
+First, find a type that you wish to bind. For discussion purposes (and simplicity), we'll bind the [NSEnumerator](http://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html#//apple_ref/doc/uid/TP40003654) type (which has already been bound in [MonoMac.Foundation.NSEnumerator](http://docs.go-mono.com/?link=T:MonoMac.Foundation.NSEnumerator); the implementation below is just for example purposes).
 
-Second, we need to create the C# type. We'll likely want to place this into a namespace; since Objective-C doesn't support namespaces, we'll need to use the [Register] attribute to change the type name that MonoTouch will register with the Objective-C runtime. The C# type must also inherit from [MonoMac.Foundation.NSObject](http://docs.go-mono.com/MonoMac.Foundation.NSObject):
+Second, we need to create the C# type. We'll likely want to place this into a namespace; since Objective-C doesn't support namespaces, we'll need to use the [Register] attribute to change the type name that MonoTouch will register with the Objective-C runtime. The C# type must also inherit from [MonoMac.Foundation.NSObject](http://docs.go-mono.com/?link=T:MonoMac.Foundation.NSObject):
 
 ``` csharp
 namespace MonoMac.Example.Binding {
@@ -29,7 +29,7 @@ namespace MonoMac.Example.Binding {
 }
 ```
 
-Third, review the Objective-C documentation and create [MonoMac.ObjCRuntime.Selector](http://docs.go-mono.com/MonoMac.ObjCRuntime.Selector) instances for each selector you wish to use. Place these within the class body:
+Third, review the Objective-C documentation and create [MonoMac.ObjCRuntime.Selector](http://docs.go-mono.com/?link=T:MonoMac.ObjCRuntime.Selector) instances for each selector you wish to use. Place these within the class body:
 
 ``` csharp
 static Selector selInit       = new Selector("init");
@@ -55,7 +55,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-Fifth, provide methods for each of the Selectors declared in Step 3. These will use objc_msgSend() to invoke the selector on the native object. Note the use of [Runtime.GetNSObject()](http://docs.go-mono.com/MonoMac.ObjCRuntime.Runtime.GetNSObject%20(System.IntPtr)) to convert an IntPtr into an appropriately typed NSObject (sub-)type. If you want the method to be callable from Objective-C code, the member *must* be **virtual**.
+Fifth, provide methods for each of the Selectors declared in Step 3. These will use objc_msgSend() to invoke the selector on the native object. Note the use of [Runtime.GetNSObject()](http://docs.go-mono.com/?link=M:MonoMac.ObjCRuntime.Runtime.GetNSObject%20(System.IntPtr)) to convert an IntPtr into an appropriately typed NSObject (sub-)type. If you want the method to be callable from Objective-C code, the member *must* be **virtual**.
 
 ``` csharp
 [Export("nextObject")]

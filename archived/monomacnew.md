@@ -12,7 +12,7 @@ MonoMacNew
 
 Getting Started
 
-[API Documentation](http://docs.go-mono.com/N:MonoMac)
+[API Documentation](http://docs.go-mono.com/?link=N:MonoMac)
 
 \<div style="clear: both;"/\>
 

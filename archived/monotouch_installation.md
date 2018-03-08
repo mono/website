@@ -73,7 +73,7 @@ Downloads
 Documentation
 =============
 
-In addition to the tutorials on this site, our web site at [www.go-mono.com/docs](http://www.go-mono.com/docs) contains the API documentation for the libraries shipped with MonoTouch. Look for the MonoTouch namespace.
+In addition to the tutorials on this site, our web site at [docs.go-mono.com](http://docs.go-mono.com/) contains the API documentation for the libraries shipped with MonoTouch. Look for the MonoTouch namespace.
 
 The API design for the CIL/Objective-C binding is covered in our [MonoTouch_API](/MonoTouch_API) document.
 

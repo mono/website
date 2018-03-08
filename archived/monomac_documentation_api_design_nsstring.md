@@ -11,7 +11,7 @@ MonoMac/Documentation/API Design/NSString
 NSString
 ========
 
-The design of MonoMac calls for the use of the native .NET string type for string manipulation in C# and other .NET programming languages and to expose *string* as the data type exposed by the API instead of the [NSString](http://docs.go-mono.com/MonoMac.Foundation.NSString) data type.
+The design of MonoMac calls for the use of the native .NET string type for string manipulation in C# and other .NET programming languages and to expose *string* as the data type exposed by the API instead of the [NSString](http://docs.go-mono.com/?link=T:MonoMac.Foundation.NSString) data type.
 
 This means that developers should not have to keep strings that are intended to be used for calling into the MonoMac API in special types, they can keep using Mono's *System.String* for all of the operations, and whenever an API in MonoMac requires a string, our API binding takes care of marshalling the information.
 
@@ -19,7 +19,7 @@ For example, the Objective-C *PlaceholderString* property on a NSTextFieldCell i
 
     - (NSString *)placeholderString
 
-This is [exposed in MonoMac as](http://docs.go-mono.com/MonoMac.AppKit.NSTextFieldCell.PlaceholderString):
+This is [exposed in MonoMac as](http://docs.go-mono.com/?link=P:MonoMac.AppKit.NSTextFieldCell.PlaceholderString):
 
 ``` csharp
 class NSTextFieldCell {

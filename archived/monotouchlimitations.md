@@ -118,7 +118,7 @@ In standard Mono it is possible to pass C# delegate instances to unmanaged code 
 
 In Mono these bridges are implemented by the Just-in-Time compiler. When using the ahead-of-time compiler required by the iPhone there are two important limitations at this point:
 
--   You must flag all of your callback methods with the [MonoPInvokeCallbackAttribute](http://go-mono.com/docs/monodoc.ashx?tlink=20@ecma%3a1%23MonoPInvokeCallbackAttribute%2f).
+-   You must flag all of your callback methods with the [MonoPInvokeCallbackAttribute](http://docs.go-mono.com/monodoc.ashx?tlink=20@ecma%3a1%23MonoPInvokeCallbackAttribute%2f).
 -   The methods have to be static methods, there is no support for instance methods (this limitation will be removed in the future).
 
 No Remoting

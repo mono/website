@@ -45,7 +45,7 @@ Nokia / Maemo
 Snapshots
 ---------
 
-[Daily test tarballs](http://www.go-mono.com/daily/) of the SVN repository are made almost daily. These are not guaranteed to build, but have undergone a minimum sanity check in that the snapshot of the SVN repository from which they were generated was buildable on the test machine. The time when they become available is not predictable, and there are sometimes gaps of several days.
+Daily test tarballs of the SVN repository are made almost daily. These are not guaranteed to build, but have undergone a minimum sanity check in that the snapshot of the SVN repository from which they were generated was buildable on the test machine. The time when they become available is not predictable, and there are sometimes gaps of several days.
 
 The [AnonSVN](/AnonSVN) mirrors are updated in real time.
 
