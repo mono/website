@@ -17,7 +17,7 @@ Users:<br/>
  Contributors:<br/>
   [Build Status](http://wrench.mono-project.com/builds) | [Source Code](/SourceCodeRepository)<br/>
  Community:<br/>
-  [Mailing Lists](/Mailing_Lists) | [Forums](http://www.go-mono.com/forums/) | [Chat](/IRC) | [Blogs](http://www.go-mono.com/monologue/)<br/>
+  [Mailing Lists](/Mailing_Lists) | [Chat](/IRC) | [Blogs](http://www.go-mono.com/monologue/)<br/>
  FAQ:<br/>
   [General](/FAQ:_General) | [Technical](/FAQ:_Technical) | [Licensing](/FAQ:_Licensing) | [Asp.net](/FAQ:_ASP.NET) | [Security](/FAQ:_Security) | [WinForms](/FAQ:_Winforms)
 

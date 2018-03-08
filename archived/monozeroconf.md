@@ -73,7 +73,7 @@ Mono.Zeroconf is available in both source and binary tarball/zip form as "upstre
 
 ### Sources and Windows Binaries
 
-Currently the releases are being managed by the [Banshee Project](http://banshee-project.org), but will soon be moved to the same location as all other [Mono sources](http://go-mono.com/sources-stable/).
+Currently the releases are being managed by the [Banshee Project](http://banshee-project.org), but will soon be moved to the same location as all other Mono sources.
 
 -   [Source code for Linux/OS X (tar.bz2)](http://download.banshee-project.org/mono-zeroconf/mono-zeroconf-0.9.0.tar.bz2)
 -   [Source code for Windows (zip)](http://download.banshee-project.org/mono-zeroconf/mono-zeroconf-0.9.0.zip) - includes Visual Studio 2005 solution
