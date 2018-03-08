@@ -27,8 +27,6 @@ Summary
 
 We continue to fill missing functionality if they are for essential stack such as HTTP channels. There are tons of cosmetic features that were left not-implemented. For other stack such as P2P bindings, we may work on them from time to time, but they are not priority.
 
-For the status details, check out our [class staus pages](http://go-mono.com/status/). System.Runtime.Serialization.dll, System.IdentityModel.dll, System.IdentityModel.Selectors.dll, System.ServiceModel.dll, System.ServiceModel.Web.dll, System.ServiceModel.Routing.dll and System.ServiceModel.Discovery.dll are there. (Other WCF assemblies are not there, mostly because the assemblies are not in our source repository or not supported in any sense.)
-
 Tasks remaining
 ---------------
 

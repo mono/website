@@ -60,8 +60,6 @@ You might want to look at the project [To-Do](/archived/todo) list, there are va
 
 Those are just broad things that need to be worked on, but something that would help tremendously would be to help with small duties in the project that need to be addressed.
 
-You can see what needs to be done in the class libraries [here](http://www.go-mono.com/status/)
-
 You can help write documentation, please see [Mono Documentation Improvement Project](/archived/mono_documentation_improvement_project).
 
 After you have commited your patches to our [git](/community/contributing/source-code-repository/) repository, please use the [build status page](https://jenkins.mono-project.com/) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
