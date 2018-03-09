@@ -19,7 +19,7 @@ Another diagnostics mechanism is exploring which exceptions are being thrown (yo
 Debugging information
 ---------------------
 
-To debug applications or obtain line number information in stack traces, it is necessary to compile your programs with debugging information. This is achieved using the -debug command line option to the C# compiler. In Mono 1.0.x this embeds the debugging information in the resulting assembly, in Mono 1.1.x a separate file with the extension .mdb is produced.
+To debug applications or obtain line number information in stack traces, it is necessary to compile your programs with debugging information. This is achieved using the -debug command line option of the C# compiler. In Mono 1.0.x this embeds the debugging information in the resulting assembly, in Mono 1.1.x a separate file with the extension .mdb is produced.
 
 To get stack traces with line number information, you need to run your program like this:
 
@@ -36,7 +36,7 @@ First and foremost, Mono support libraries use a couple of signals internally th
 
     handle SIGXCPU SIG33 SIG35 SIG36 SIGPWR nostop noprint
 
-If you use GDB to debug your mono process, you can use the function `mono_print_method_from_ip` (which takes an address) to obtain the name of a method given an address. This is particularly useful when examining stack traces. The function was renamed to `mono_pmip` in the Mono 1.1.x serie s (For a while the function was called `mono_print_method_from_ip`).
+If you use GDB to debug your mono process, you can use the function `mono_print_method_from_ip` (which takes an address) to obtain the name of a method given an address. This is particularly useful when examining stack traces. The function was renamed to `mono_pmip` in the Mono 1.1.x series (For a while the function was called `mono_print_method_from_ip`).
 
 For example, when faced with a stack trace, like this:
 
@@ -56,7 +56,7 @@ You can find out what methods are at each address using the mono_print_method_fr
     IP 0x817f42a at offset 0x52 of method System.Collections.Hashtable:GetHash (object) (0x817f3d8 0x817f43b)
     $2 = void
 
-Sometimes you will want to produce a complete dump of all the managed names from within gdb, this can be achieved with a gdb macro, put this in your .gdbinit file in your HOME directory:
+Sometimes you will want to produce a complete dump of all the managed names from within gdb, this can be achieved with a gdb macro. Put this in your .gdbinit file in your HOME directory:
 
     define mono_backtrace
      select-frame 0
