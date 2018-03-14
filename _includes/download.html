@@ -47,9 +47,7 @@
     <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
       <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
       <dd><a href="#download-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
-      {% if include.releasename != "Nightly" %}
       <dd><a href="#download-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
-      {% endif %}
     </dl>
 
     <div class="tabs-content" id="mono-download-panel">
@@ -354,23 +352,30 @@ dnf update</code></pre>
           {% endif %}
         </div>
       </div>
-      {% if include.releasename != "Nightly" %}
       <div class="panel content" id="download-win">
         <h3>Mono for Windows is available as a Windows Installer file</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
-          <a href="{{ include.releasedata.mono_windows_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 32-bit</a>
-          <a href="{{ include.releasedata.mono_windows64_url }}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (no GTK#)</a>
+          {% if include.releasename == "Nightly" %}
+          {% assign mono_windows_url = 'https://download.mono-project.com/archive/nightly/windows-installer/' %}
+          {% assign mono_windows64_url = mono_windows_url %}
+          {% else %}
+          {% assign mono_windows_url = include.releasedata.mono_windows_url %}
+          {% assign mono_windows64_url = include.releasedata.mono_windows64_url %}
+          {% endif %}
+          <a href="{{mono_windows_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono 32-bit</a>
+          <a href="{{mono_windows64_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (no GTK#)</a>
         </div>
         <p>Supported on Windows 7, 8, 10 or later.</p>
+        {% if include.releasename != "Nightly" %}
         <hr />
         <h5>GTK# for .NET</h5>
         <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
         <div>
           <a href="{{ include.releasedata.gtksharp_windows_url }}" class="button radius small"><i class="fa fa-download"></i> Download Gtk#</a>
         </div>
+        {% endif %}
       </div>
-      {% endif %}
     </div>
 
     <h2>Release Notes</h2>
