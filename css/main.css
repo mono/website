@@ -208,7 +208,45 @@ footer h6 a {
 }
 
 #download-mac, #download-lin, #download-win {
+  padding: 20px 10px 10px 10px;
+}
+
+#download-lin {
   padding-top: 10px;
+}
+
+#download-lin-docker {
+  padding-top: 20px;
+}
+
+a.button-less-important {
+  background-color: #999;
+}
+
+a.button-less-important:hover, a.button-less-important:focus {
+  background-color: #666;
+}
+
+span.number-circle {
+  color: #999;
+  border-radius: 50%;
+  border: 2px solid #999;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 24px;
+  display: block;
+  float: left;
+  margin-right: 7px;
+  font-size: 20px;
+}
+
+pre.install-example {
+  margin-top: 20px;
+}
+
+.panel .panel-subcontainer {
+  padding: 10px;
 }
 
 /* --- --- */
