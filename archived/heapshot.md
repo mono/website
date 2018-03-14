@@ -2,6 +2,7 @@
 title: HeapShot
 redirect_from:
   - /HeapShot/
+  - /docs/debug+profile/profile/heapshot/
 ---
 
 [![Heapshot.png](/archived/images/6/69/Heapshot.png)](/archived/images/6/69/Heapshot.png)

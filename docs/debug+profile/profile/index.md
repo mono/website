@@ -10,6 +10,5 @@ See the pages:
 
 -   [Profiler](/docs/debug+profile/profile/profiler/) the new profiler available in git and with mono 2.9+
 -   [Code Coverage](/docs/debug+profile/profile/code-coverage/)
--   [HeapShot](/docs/debug+profile/profile/heapshot/)
 
 For more information.
