@@ -56,8 +56,8 @@
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           {% if include.releasename == "Stable" %}
-          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono (Visual Studio channel*)</a>
-          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fa fa-download"></i> Download Mono (Stable channel)</a>
+          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono {{ site.data.vsrelease.version | split: ' ' | first }} (Visual Studio channel*)</a>
+          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fa fa-download"></i> Download Mono {{ site.data.stablerelease.version | split: ' ' | first }} (Stable channel)</a>
           {% else %}
           {% if include.releasename == "Nightly" %}
           {% assign mono_mac_url = 'https://download.mono-project.com/archive/nightly/macos-10-universal/' %}
