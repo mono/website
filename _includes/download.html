@@ -55,18 +55,23 @@
         <h3>Mono for Mac OS X is available as a Mac Package (.pkg)</h3>
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
+          {% if include.releasename == "Stable" %}
+          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono (Visual Studio channel*)</a>
+          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fa fa-download"></i> Download Mono (Stable channel)</a>
+          {% else %}
           {% if include.releasename == "Nightly" %}
           {% assign mono_mac_url = 'https://download.mono-project.com/archive/nightly/macos-10-universal/' %}
-          {% elsif include.releasename == "Stable" %}
+          {% elsif include.releasename == "VS" %}
           {% assign mono_mac_url = site.data.vsrelease.mono_mac_url %}
           {% else %}
           {% assign mono_mac_url = include.releasedata.mono_mac_url %}
           {% endif %}
           <a href="{{mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
+          {% endif %}
           <p>Supported on Mac OS X 10.7 and later.</p>
         </div>
         {% if include.releasename == "Stable" %}
-        <p><i>The Stable channel on Mac OS X defaults to the Visual Studio release channel packages to avoid confusion with the Visual Studio for Mac releases of Mono. If you really want the stable version, you can find it <a href="{{ include.releasedata.mono_mac_url }}">here</a>, but be aware that the stability of Visual Studio for Mac is only guaranteed with the Visual Studio channel releases.</i></p>
+        <p><i>* We recommend this package if you're using Visual Studio for Mac since the stability of Visual Studio for Mac is only guaranteed with the Visual Studio channel releases.</i></p>
         {% endif %}
       </div>
       <div class="panel content" id="download-lin">
