@@ -43,7 +43,7 @@ This can be done easily by using *apt-get*:
   $ sudo apt-get install git autoconf libtool automake build-essential mono-devel gettext cmake python
 ```
 
-Note: if you are using Ubuntu 15.04 or later, you also need to install the `libtool-bin` package. Without it, you will get the following error: `**Error**: You must have 'libtool' installed to compile Mono.`
+Note: if you are using Ubuntu 15.04/Debian 8 or later, you also need to install the `libtool-bin` package. Without it, you will get the following error: `**Error**: You must have 'libtool' installed to compile Mono.`
 
 Building Mono from a Release Package
 ------------------------------------
