@@ -1,5 +1,5 @@
-version: 5.10.1 Preview (5.10.1.2)
-mono_mac_url: https://download.mono-project.com/archive/5.10.1/macos-10-universal/MonoFramework-MDK-5.10.1.2.macos10.xamarin.universal.pkg
-mono_windows_url: https://download.mono-project.com/archive/5.10.1/windows-installer/mono-5.10.1.2-gtksharp-2.12.45-win32-0.msi
-mono_windows64_url: https://download.mono-project.com/archive/5.10.1/windows-installer/mono-5.10.1.2-x64-0.msi
+version: 5.10.1 Preview (5.10.1.4)
+mono_mac_url: https://download.mono-project.com/archive/5.10.1/macos-10-universal/MonoFramework-MDK-5.10.1.4.macos10.xamarin.universal.pkg
+mono_windows_url: https://download.mono-project.com/archive/5.10.1/windows-installer/mono-5.10.1.4-gtksharp-2.12.45-win32-0.msi
+mono_windows64_url: https://download.mono-project.com/archive/5.10.1/windows-installer/mono-5.10.1.4-x64-0.msi
 gtksharp_windows_url: https://dl.xamarin.com/GTKforWindows/Windows/gtk-sharp-2.12.45.msi
