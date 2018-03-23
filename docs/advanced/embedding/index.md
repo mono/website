@@ -84,8 +84,8 @@ gcc sample.c `pkg-config --cflags --libs mono-2 glib-2.0`
 You can separate the compilation flags from the linking flags, for instance, you can use the following macros in your makefile:
 
 ``` bash
-CFLAGS=`pkg-config --cflags mono-2`
-LDFLAGS=`pkg-config --libs mono-2`
+CFLAGS=`pkg-config --cflags mono-2 glib-2.0`
+LDFLAGS=`pkg-config --libs mono-2 glib-2.0`
 ```
 
 For mono versions before 2.8, use "**mono**" instead of "**mono-2**" in the above commands: the ABI version of the libmono library has changed.
