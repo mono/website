@@ -412,11 +412,7 @@ function runScripts() {
       if (window.navigator.appVersion.search('Linux') >= 0 || window.navigator.platform.search('Linux') >= 0) {
         activate('lin');
       } else if (window.navigator.appVersion.search('Windows') >= 0 || window.navigator.platform.search('Windows') >= 0) {
-        {% if include.releasename != "Nightly" %}
         activate('win');
-        {% else %}
-        // no Windows nightly yet
-        {% endif %}
       }
     }
   });
