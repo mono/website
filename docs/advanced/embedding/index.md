@@ -70,7 +70,7 @@ These are discussed in detail next.
 To embed the runtime, you have to link your code against the Mono runtime libraries. To do this, you want to pass the flags returned by pkg-config to your compiler:
 
 ``` bash
-pkg-config --cflags --libs mono-2 glib-2.0
+pkg-config --cflags --libs mono-2
 ```
 
 is used to get the flags for the JIT runtime.
@@ -78,14 +78,14 @@ is used to get the flags for the JIT runtime.
 Like this:
 
 ``` bash
-gcc sample.c `pkg-config --cflags --libs mono-2 glib-2.0`
+gcc sample.c `pkg-config --cflags --libs mono-2`
 ```
 
 You can separate the compilation flags from the linking flags, for instance, you can use the following macros in your makefile:
 
 ``` bash
-CFLAGS=`pkg-config --cflags mono-2 glib-2.0`
-LDFLAGS=`pkg-config --libs mono-2 glib-2.0`
+CFLAGS=`pkg-config --cflags mono-2`
+LDFLAGS=`pkg-config --libs mono-2`
 ```
 
 For mono versions before 2.8, use "**mono**" instead of "**mono-2**" in the above commands: the ABI version of the libmono library has changed.
@@ -97,7 +97,6 @@ On Windows, depending on the GC implementation to be used (Boehm or [SGen](/docs
 To initialize the JIT runtime, call `mono_jit_init`, like this:
 
 ``` c
-#include <glib-2.0/glib.h>
 #include <mono/jit/jit.h>
 #include <mono/metadata/assembly.h>
 
