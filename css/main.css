@@ -205,16 +205,12 @@ footer h6 a {
   line-height: 0.9em;
 }
 
-#download-mac, #download-lin, #download-win {
+#download-mac, #download-lin, #download-win, #download-docker {
   padding: 20px 10px 10px 10px;
 }
 
 #download-lin {
   padding-top: 10px;
-}
-
-#download-lin-docker {
-  padding-top: 20px;
 }
 
 a.button-less-important {
