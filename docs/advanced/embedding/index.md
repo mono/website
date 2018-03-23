@@ -97,7 +97,6 @@ On Windows, depending on the GC implementation to be used (Boehm or [SGen](/docs
 To initialize the JIT runtime, call `mono_jit_init`, like this:
 
 ``` c
-#include <glib/glib.h>
 #include <mono/jit/jit.h>
 #include <mono/metadata/assembly.h>
 
