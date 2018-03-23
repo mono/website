@@ -107,8 +107,6 @@ footer h6 a {
 
 #header-nav {
   margin-bottom: 5px;
-  webkit-box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6);
-  moz-box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6);
   box-shadow: 0 1px 6px rgba(34, 25, 25, 0.6);
 }
 
