@@ -33,7 +33,7 @@
     </p>
 
     {% if include.releasename == "VS" %}
-    <div data-alert class="alert-box secondary"><h6><i class="fa fa-info-circle"></i> The Visual Studio release channel contains packages which are shipped as part of a Visual Studio for Mac release. They are the most tested but also the least frequently updated packages.</h6></div>
+    <div data-alert class="alert-box secondary"><h6><i class="fas fa-info-circle"></i> The Visual Studio release channel contains packages which are shipped as part of a Visual Studio for Mac release. They are the most tested but also the least frequently updated packages.</h6></div>
     {% endif %}
 
     {% if include.releasename == "VS" %}
@@ -45,11 +45,11 @@
     <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/{% if include.releasename == "Nightly" %}nightly/{% endif %}">Tarball</a>.</p>
 
     <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
-      <dd class="active"><a href="#download-mac"><i class="fa fa-apple"></i>&nbsp;Mac OS X</a></dd>
-      <dd><a href="#download-lin"><i class="fa fa-linux"></i>&nbsp;Linux</a></dd>
-      <dd><a href="#download-win"><i class="fa fa-windows"></i>&nbsp;Windows</a></dd>
+      <dd class="active"><a href="#download-mac"><i class="fab fa-apple"></i>&nbsp;Mac OS X</a></dd>
+      <dd><a href="#download-lin"><i class="fab fa-linux"></i>&nbsp;Linux</a></dd>
+      <dd><a href="#download-win"><i class="fab fa-windows"></i>&nbsp;Windows</a></dd>
       {% if include.releasename == "Stable" %}
-      <dd><a href="#download-docker"><i class="fa fa-docker" />&nbsp;Docker</a></dd>
+      <dd><a href="#download-docker"><i class="fab fa-docker"></i>&nbsp;Docker</a></dd>
       {% endif %}
     </dl>
 
@@ -59,8 +59,8 @@
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           {% if include.releasename == "Stable" %}
-          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono {{ site.data.vsrelease.version | split: ' ' | first }} (Visual Studio channel*)</a>
-          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fa fa-download"></i> Download Mono {{ site.data.stablerelease.version | split: ' ' | first }} (Stable channel)</a>
+          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono {{ site.data.vsrelease.version | split: ' ' | first }} (Visual Studio channel*)</a>
+          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fas fa-download"></i> Download Mono {{ site.data.stablerelease.version | split: ' ' | first }} (Stable channel)</a>
           {% else %}
           {% if include.releasename == "Nightly" %}
           {% assign mono_mac_url = 'https://download.mono-project.com/archive/nightly/macos-10-universal/' %}
@@ -69,7 +69,7 @@
           {% else %}
           {% assign mono_mac_url = include.releasedata.mono_mac_url %}
           {% endif %}
-          <a href="{{mono_mac_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono</a>
+          <a href="{{mono_mac_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono</a>
           {% endif %}
           <p>Supported on Mac OS X 10.7 and later.</p>
         </div>
@@ -348,8 +348,8 @@ dnf update</code></pre>
           {% assign mono_windows_url = include.releasedata.mono_windows_url %}
           {% assign mono_windows64_url = include.releasedata.mono_windows64_url %}
           {% endif %}
-          <a href="{{mono_windows_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono 32-bit</a>
-          <a href="{{mono_windows64_url}}" class="button radius"><i class="fa fa-download"></i> Download Mono 64-bit (no GTK#)</a>
+          <a href="{{mono_windows_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono 32-bit</a>
+          <a href="{{mono_windows64_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono 64-bit (no GTK#)</a>
         </div>
         <p>Supported on Windows 7, 8, 10 or later.</p>
         {% if include.releasename != "Nightly" %}
@@ -357,7 +357,7 @@ dnf update</code></pre>
         <h5>GTK# for .NET</h5>
         <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
         <div>
-          <a href="{{ include.releasedata.gtksharp_windows_url }}" class="button radius small"><i class="fa fa-download"></i> Download Gtk#</a>
+          <a href="{{ include.releasedata.gtksharp_windows_url }}" class="button radius small"><i class="fas fa-download"></i> Download Gtk#</a>
         </div>
         {% endif %}
       </div>

@@ -182,7 +182,7 @@ footer h6 a {
 #index-teaser {
   background: #EBEBEB;
   color: #222;
-  margin-top: 10px;
+  margin-top: 20px;
   padding-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -261,17 +261,17 @@ pre.install-example {
 }
 
 .meta .author:before { 
-  font: 1.0em FontAwesome;
+  font: 0.9em "Font Awesome 5 Free";
   content: "\f007"
 }
 
 .meta .date:before { 
-  font: 1.0em FontAwesome;
+  font: 0.9em "Font Awesome 5 Free";
   content: "\f073"
 }
 
 .meta .tags:before { 
-  font: 1.0em FontAwesome;
+  font: 0.9em "Font Awesome 5 Free";
   content: "\f02c"
 }
 
