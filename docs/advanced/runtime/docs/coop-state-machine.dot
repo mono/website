@@ -73,13 +73,6 @@ digraph GC {
 		Blocking -> Blocking_and_Suspended [ label = "done_B\n(susp > 0)"];
 	}
 
-	// request_self_suspension
-	{
-		edge [label = "req_S_s"];
-		Running -> Self_Suspend_Requested;
-		Async_Suspend_Requested:n -> Async_Suspend_Requested:n;
-	}
-	
 	// request_async_suspension
 	{
 		edge [label = "req_A_s", color="grey", fontcolor="grey"];
