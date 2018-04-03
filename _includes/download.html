@@ -115,17 +115,6 @@ sudo apt-get update</code></pre>
 echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
-            <h3>Ubuntu 12.04 <small>(i386, amd64, armhf)</small></h3>
-{% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb http://download.mono-project.com/repo/ubuntu preview-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
-sudo apt-get update</code></pre>
-{% else %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-precise main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-sudo apt-get update</code></pre>
-{% endif %}
             <hr />
             <h2>
               <span class="number-circle">2</span>
@@ -174,17 +163,6 @@ sudo apt-get update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-sudo apt-get update</code></pre>
-{% endif %}
-            <h3>Debian 7 <small>(i386, amd64, armhf, armel)</small></h3>
-{% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb http://download.mono-project.com/repo/debian preview-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
-sudo apt-get update</code></pre>
-{% else %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb http://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-wheezy main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt-get update</code></pre>
 {% endif %}
             <hr />
