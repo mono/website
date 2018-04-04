@@ -14,8 +14,8 @@ That's probably because you do not trust the site you are connecting to. Note th
 You can confirm this by using the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0). It prints an error if something is wrong.
 
 ``` bash
-csc tlstest.cs /r:System.dll /r:Mono.Security.dll
-mono tlstest.exe https://www.anywhere.com
+csc tlstest.cs -r:System.dll
+mono tlstest.exe https://www.nuget.org
 ```
 
 There are four alternatives to solve this problem:
