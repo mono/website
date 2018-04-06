@@ -368,7 +368,7 @@ dnf update</code></pre>
           <li><code>X</code> - points to the latest version in the X series, e.g. 5</li>
         </ul>
         <p>The latest version, one minor version before that and the last version before a major version bump are periodically rebuilt by Docker Hub to pull in updates from the base Debian image.</p>
-        <p>All other version tags are still available, but won't get those updates so you need to keep your images up to date by running apt-get update yourself. We encourage you to move to latest Mono releases as soon as they're available.</p>
+        <p>All other version tags are still available, but won't get those updates so you need to keep your images up to date by running <code>apt update</code> yourself. We encourage you to move to latest Mono releases as soon as they're available.</p>
         <p>Starting with Mono 5.2 we provide a slim variant (e.g. <code>latest-slim</code>) which only contains the bare minimum to run a simple console app. You can use this as a base and add just what you need.</p>
       </div>
       {% endif %}
