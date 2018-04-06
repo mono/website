@@ -4,35 +4,54 @@ digraph GC {
 	remincross = true;
 	
 	// Thread states
-	Starting [shape=diamond];
+	subgraph {
+		rank = "min";
+		Starting [shape=diamond];
+	};
 	subgraph cluster_Unsafe {
 		label = "Unsafe (for GC to run)" ;
-		labelloc = "b";
+		labelloc = "t";
+		labeljust = "l";
 		node [color = red];
 		color = maroon;
 		style = solid;
 		Running ;
 		Async_Suspend_Requested ;
 	} ;
-	subgraph cluster_Safe {
-		labelloc = "b";
-		label = "Safe (for GC to run)" ;
+	subgraph Safe {
 		node [color = blue];
 		color = blue;
 		style = solid;
-		Blocking ;
-		subgraph cluster_Suspended {
-			label = "" ;
-			style = invis;
-			node [shape = "rectangle", style = "filled", fillcolor = "grey95"];
-			
-			Async_Suspended ;
-			Self_Suspended ;
-			Blocking_and_Suspended;
+		subgraph cluster_SafeRunning {
+			label = "Safe (for GC to run). Executing";
+			labelloc = "t";
+
+			Blocking ;
+			Blocking_Suspend_Requested ;
 		};
-	} ;
+		subgraph {
+			node [shape = "rectangle", style = "filled", fillcolor = "grey95"];
+			subgraph cluster_SafeSuspendedFromRunning {
+				label = "Safe (for GC to run). Suspended";
+				labelloc = "b";
+			
+				Async_Suspended ;
+				Self_Suspended ;
+			};
+			subgraph cluster_SafeSuspenedFromBlocking {
+				label = "Safe (for GC to run)\nSuspended";
+				labelloc = "b";
+
+				Blocking_Self_Suspended;
+				Blocking_Async_Suspended;
+			};
+		};
+	};
 		
-	Detached [shape=diamond] ;
+	subgraph {
+		rank = "max";
+		Detached [shape=diamond] ;
+	}
 
 	// attach
 	{
@@ -49,65 +68,72 @@ digraph GC {
 
 	// do blocking
 	{
-		edge [label = "do_B", color = "green", fontcolor="darkgreen"];
-		Running:ne -> Blocking:nw;
+		edge [label = "do_B", color = "darkgreen", fontcolor="darkgreen"];
+		Running:ne -> Blocking:nw [constraint = false];
 		Async_Suspend_Requested:w -> Async_Suspend_Requested:w [label = "do_B(poll)"];
 	}
 	
 	// abort blocking
 	{
 		edge [label = "abort_B", color = "goldenrod", fontcolor="goldenrod"];
-		Running:w -> Running:w [label="abort_B(ignore)"];
+		Running:s -> Running:s [label="abort_B(ignore)"];
 		Async_Suspend_Requested:w -> Async_Suspend_Requested:w [label="abort_B(poll+ignore)"];
-		Blocking -> Running [label = "abort_B (susp=0)", constraint = false];
-		Blocking -> Blocking_and_Suspended [label = "abort_B\n(susp>0)"];
+		Blocking -> Running [label = "abort_B", constraint = false];
+		Blocking_Suspend_Requested -> Blocking_Self_Suspended [label = "abort_B(notifyPreempt)" ];
 	}
 
 	// done blocking
 	{
 		edge [label = "done_B", color = "blue", fontcolor="blue"];
-		Blocking -> Running [label = "done_B (susp = 0)", constraint = false]
-		Blocking -> Blocking_and_Suspended [ label = "done_B\n(susp > 0)"];
+		Blocking -> Running [label = "done_B", constraint = false]
+		Blocking_Suspend_Requested -> Blocking_Self_Suspended [ label = "done_B(notifyPreempt)" ];
 	}
 
-	// request_async_suspension
+	// request_suspension
 	{
-		edge [label = "req_A_s", color="plum", fontcolor="plum"];
-		{ Running } -> Async_Suspend_Requested;
-		Async_Suspended:s -> Async_Suspended:s;
-		Self_Suspended:s -> Self_Suspended:s;
-		Blocking_and_Suspended:s -> Blocking_and_Suspended:s;
-		Blocking:s -> Blocking:s;
+		edge [label = "req_s", color="tomato", fontcolor="tomato"];
+		Running -> Async_Suspend_Requested;
+		Async_Suspended -> Async_Suspended;
+		Self_Suspended -> Self_Suspended;
+		Blocking_Self_Suspended -> Blocking_Self_Suspended;
+		Blocking -> Blocking_Suspend_Requested;
+		Blocking_Async_Suspended -> Blocking_Async_Suspended;
+		Blocking_Suspend_Requested -> Blocking_Suspend_Requested [label="req_s(onlyCoop)"];
 	}
-	
+
 	// poll
 	{
 		edge [label = "poll", color="indigo", fontcolor="indigo"];
-		Running:s -> Running:s;
+		Running:w -> Running:w;
 		Async_Suspend_Requested -> Self_Suspended;
 	}
 
+
+	// finish_async_suspend
+	{
+		edge [label = "fin_A_s", color="plum", fontcolor="plum"];
+		Self_Suspended -> Self_Suspended;
+		Blocking_Self_Suspended -> Blocking_Self_Suspended;
+		Async_Suspend_Requested -> Async_Suspended;
+		Blocking_Suspend_Requested -> Blocking_Async_Suspended;
+        }
+
 	// resume, just the non-error cases that don't alter the suspend count.
 	{
-		edge [label ="resume\n(susp=0)" style = "dotted"];
-		{ Async_Suspended Self_Suspended Blocking_and_Suspended } -> Running;
+		edge [label ="resume\n(susp=0)" style = "dotted", constraint = false];
+		Blocking_Async_Suspended -> Blocking [constraint = true];
+		{ Async_Suspended Self_Suspended } -> Running;
+		Blocking_Self_Suspended -> Running;
+		Blocking_Suspend_Requested -> Blocking;
 	}
 
 	// resume, decrement susp
 	{
 		edge [label = "resume(decr(susp>1))", style = "dotted", color="slategrey"]
-		Async_Suspended -> Async_Suspended;
-		Self_Suspended -> Self_Suspended;
-		Blocking_and_Suspended -> Blocking_and_Suspended;
-		Blocking -> Blocking [ label = "resume(decr(susp>0))"  ];
-	}
-
-	// finish_async_suspend
-	{
-		edge [label = "fin_A_s", color="violet", fontcolor="purple"];
+		Async_Suspended:s -> Async_Suspended:s;
 		Self_Suspended:s -> Self_Suspended:s;
-		Blocking_and_Suspended:s -> Blocking_and_Suspended:s;
-		Async_Suspend_Requested -> Async_Suspended;
-        }
-
+		Blocking_Self_Suspended:s -> Blocking_Self_Suspended:s;
+		Blocking_Suspend_Requested -> Blocking_Suspend_Requested [ label = "resume(decr(susp>0))"  ];
+		Blocking_Async_Suspended:s -> Blocking_Async_Suspended:s;
+	}
 }

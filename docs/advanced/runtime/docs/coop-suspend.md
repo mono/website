@@ -58,15 +58,16 @@ of how we access managed memory once we save the thread state.
 The current implementation is a state machine that tells what's the current status of a thread. These are the
 states:
 
-- Starting: Initial state of a thread, nothing interesting should happen while in this state
-- Running: Running managed or runtime code
-- Detached: Thread is shuting down, it won't touch managed memory or do any runtime work
-- AsyncSuspended: Thread was async suspended, so it's on a signal handler or thread_suspend was called on it. (This state never happens on coop)
-- SelfSuspended: Thread suspended by itself
-- AsyncSuspendRequested: Another thread requested that the current thread be suspended
-- SelfSuspendRequested: The current thread requested itself to self suspend (this exists due to race conditions and deadlocks in threads.c)
-- Blocking: The current thread is executing code that won't touch managed memory, so it can be assumed to be suspended
-- Blocking and Suspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed
+- Starting: Initial state of a thread, nothing interesting should happen while in this state.
+- Detached: Thread is shuting down, it won't touch managed memory or do any runtime work.
+- Running: The thread is running managed or runtime code.  There are no pending suspend requests.
+- AsyncSuspendRequested: The thread is running managed or runtime code and another thread requested that the current thread be suspended.
+- SelfSuspended: Thread suspended by itself.  This happens if a thread tried to switch to blocking, but there was a pending suspend requested and the thread suspended itself instead.  It will go back to running and the switch to blocking will be retried.
+- AsyncSuspended: Thread was async suspended, so it's on a signal handler or thread_suspend was called on it. (This state never happens when running threads are cooperatively suspended)
+- Blocking: The current thread is executing code that won't touch managed memory.  There are no pending suspend requests.
+- BlockingSuspendRequested: The current thread is executing code that won't touch managed memory, and someone requested it to suspend.  In full cooperative mode, the thread is assumed to still be suspended.
+- BlockingSelfSuspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed.
+- BlockingAsyncSuspended: The current thread was executing in blocking code, but it was preemptively suspended.  This is done in "hybrid" suspend mode.  When the thread resumes, it will go back to executing blocking code.
 
 ![Coop state machine transition diagram](/docs/advanced/runtime/docs/coop-state-machine.png)
 
