@@ -10,7 +10,7 @@ redirect_from:
 Introduction
 ------------
 
-The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0, C# 4.0, C# 5.0 and C# 6.0 ([ECMA](/docs/about-mono/languages/ecma/)) and it has partial support for C# 7.0.
+The Mono C# compiler is considered feature complete for C# 1.0, C# 2.0, C# 3.0, C# 4.0, C# 5.0 and C# 6.0 ([ECMA](/docs/about-mono/languages/ecma/)) and it has partial support for C# 7.
 
 Historically, various version of same compiler existed.
 
@@ -91,16 +91,24 @@ All C# 6.0 features are supported including:
 -   String interpolation
 -   Using static
 
-Following C# 7.0 features are supported:
+Following C# 7 features are supported:
 
 - Tuples
+- Discards
 - Out variables declaration
 - Ref returns and locals
 - Expression-bodied constructors, finalizers and accessors
 - Throw expression
+- Binary Literals
+- Digit Separators
+- Generalized async return types
+- Default literal expressions
+- Non-trailing named arguments
+- ref struct
+- Readonly struct
 - Pattern matching (limited to simple usage)
 
-If you want to limit the mcs compiler to be a strict 2.0 compiler, use the -langversion:ISO-2 flag, further options are available for each language version.
+If you want to limit the mcs compiler to be a strict 2.0 compiler, use the -langversion:ISO-2 flag, further options are available for each language version, inlcuding minor version starting with version 7.1.
 
 Experimental features that are being brainstormed for future versions of C# when using `-langversion: experimental` are also available
 
