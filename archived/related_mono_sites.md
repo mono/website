@@ -39,8 +39,6 @@ International sites
 
 -   [Mono Brasil](http://monobrasil.softwarelivre.org): Mono discussion site for brazilian users.
 
--   [mono-project.de](http://www.mono-project.de/): German Mono site, forum and mailing lists in German.
-
 -   French Mono site: [http://monofrance.tuxfamily.org](http://monofrance.tuxfamily.org/)
     -   [Forums](http://monofrance.tuxfamily.org/modules/newbb/)
     -   IRC Channel: #monofrance @EpikNet (irc.epiknet.org)
