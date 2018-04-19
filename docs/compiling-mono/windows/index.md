@@ -8,6 +8,7 @@ To build Mono on Windows, a Cygwin setup is required since it provides some tool
 
 ## Install prerequisites
 
+* Enable `Developer Mode` in the Windows 10 Settings app (Update & Security -> For developers tab)
 * Download and install 64 bit Cygwin from [www.cygwin.com](http://www.cygwin.com).
 * Install [Visual Studio 2015 or later](https://www.visualstudio.com) - Community Edition works fine.
 * Download and install [Mono for Windows](/docs/getting-started/install/windows/) or use `monolite` build step as described below.
@@ -96,13 +97,15 @@ It is possible to parallelize the cygwin build passing in for example `-j8`,  wh
 If you run `make V=1` and see this after a successful BCL build:
 
 ```
-make[8]: Entering directory '/home/lewurm/work/mono/mcs/class/corlib'
-CYGWIN=winsymlinks:nativestrict ln -s /home/lewurm/work/mono/mcs/class/lib/build-win32 /home/lewurm/work/mono/mcs/class/lib/build
-ln: failed to create symbolic link '/home/lewurm/work/mono/mcs/class/lib/build': Operation not permitted
+make[8]: Entering directory '/home/user/work/mono/mcs/class/corlib'
+CYGWIN=winsymlinks:nativestrict ln -s /home/user/work/mono/mcs/class/lib/build-win32 /home/lewurm/work/mono/mcs/class/lib/build
+ln: failed to create symbolic link '/home/user/work/mono/mcs/class/lib/build': Operation not permitted
 make[8]: *** [../../build/library.make:336: ../../class/lib/build/.stamp] Error 1
 ```
 
-you need to enable `Developer Mode` in the windows settings, which will allow your user to create symbolic links without administrator privileges.
+you need to enable `Developer Mode` in the Windows 10 Settings app (Update & Security -> For developers tab) which will allow your user to create symbolic links without administrator privileges.
+
+If you use an earlier Windows versions you need to run the build as administrator.
 
 
 ### Building with Windows Subsystem for Linux (WSL)
