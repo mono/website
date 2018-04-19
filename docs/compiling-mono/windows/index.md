@@ -91,6 +91,20 @@ make install
 
 It is possible to parallelize the cygwin build passing in for example `-j8`,  where 8 in this case is the number of parallel builders to run.
 
+#### Known Issue: "failed to create symbolic link"
+
+If you run `make V=1` and see this after a successful BCL build:
+
+```
+make[8]: Entering directory '/home/lewurm/work/mono/mcs/class/corlib'
+CYGWIN=winsymlinks:nativestrict ln -s /home/lewurm/work/mono/mcs/class/lib/build-win32 /home/lewurm/work/mono/mcs/class/lib/build
+ln: failed to create symbolic link '/home/lewurm/work/mono/mcs/class/lib/build': Operation not permitted
+make[8]: *** [../../build/library.make:336: ../../class/lib/build/.stamp] Error 1
+```
+
+you need to enable `Developer Mode` in the windows settings, which will allow your user to create symbolic links without administrator privileges.
+
+
 ### Building with Windows Subsystem for Linux (WSL)
 
 Normally you should be able to just use the [Linux instructions](/docs/compiling-mono/linux/). Currently your `autogen`/`configure` invocations must include `--with-csc=mcs`, as building with Roslyn triggers as severe (system-crashing) [known issue](https://github.com/Microsoft/WSL/issues/2697).
