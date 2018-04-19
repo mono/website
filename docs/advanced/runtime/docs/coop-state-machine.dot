@@ -23,7 +23,7 @@ digraph GC {
 		color = blue;
 		style = solid;
 		subgraph cluster_SafeRunning {
-			label = "Safe (for GC to run). Executing";
+			label = "Safe (for GC to run, if full coop). Executing";
 			labelloc = "t";
 
 			Blocking ;
@@ -32,7 +32,7 @@ digraph GC {
 		subgraph {
 			node [shape = "rectangle", style = "filled", fillcolor = "grey95"];
 			subgraph cluster_SafeSuspendedFromRunning {
-				label = "Safe (for GC to run). Suspended";
+				label = "Safe (for GC to run)\nSuspended";
 				labelloc = "b";
 			
 				Async_Suspended ;
@@ -41,6 +41,7 @@ digraph GC {
 			subgraph cluster_SafeSuspenedFromBlocking {
 				label = "Safe (for GC to run)\nSuspended";
 				labelloc = "b";
+				labeljust = "r";
 
 				Blocking_Self_Suspended;
 				Blocking_Async_Suspended;
@@ -79,14 +80,14 @@ digraph GC {
 		Running:s -> Running:s [label="abort_B(ignore)"];
 		Async_Suspend_Requested:w -> Async_Suspend_Requested:w [label="abort_B(poll+ignore)"];
 		Blocking -> Running [label = "abort_B", constraint = false];
-		Blocking_Suspend_Requested -> Blocking_Self_Suspended [label = "abort_B(notifyPreempt)" ];
+		Blocking_Suspend_Requested -> Blocking_Self_Suspended;
 	}
 
 	// done blocking
 	{
 		edge [label = "done_B", color = "blue", fontcolor="blue"];
 		Blocking -> Running [label = "done_B", constraint = false]
-		Blocking_Suspend_Requested -> Blocking_Self_Suspended [ label = "done_B(notifyPreempt)" ];
+		Blocking_Suspend_Requested -> Blocking_Self_Suspended;
 	}
 
 	// request_suspension
@@ -113,7 +114,7 @@ digraph GC {
 	{
 		edge [label = "fin_A_s", color="plum", fontcolor="plum"];
 		Self_Suspended -> Self_Suspended;
-		Blocking_Self_Suspended -> Blocking_Self_Suspended;
+		Blocking_Self_Suspended -> Blocking_Self_Suspended [label = "fin_A_s(onlyHybrid)"];
 		Async_Suspend_Requested -> Async_Suspended;
 		Blocking_Suspend_Requested -> Blocking_Async_Suspended;
         }
