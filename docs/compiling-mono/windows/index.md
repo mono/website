@@ -98,7 +98,7 @@ If you run `make V=1` and see this after a successful BCL build:
 
 ```
 make[8]: Entering directory '/home/user/work/mono/mcs/class/corlib'
-CYGWIN=winsymlinks:nativestrict ln -s /home/user/work/mono/mcs/class/lib/build-win32 /home/lewurm/work/mono/mcs/class/lib/build
+CYGWIN=winsymlinks:nativestrict ln -s /home/user/work/mono/mcs/class/lib/build-win32 /home/user/work/mono/mcs/class/lib/build
 ln: failed to create symbolic link '/home/user/work/mono/mcs/class/lib/build': Operation not permitted
 make[8]: *** [../../build/library.make:336: ../../class/lib/build/.stamp] Error 1
 ```
