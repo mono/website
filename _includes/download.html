@@ -139,6 +139,9 @@ sudo apt update</code></pre>
             </h2>
             <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            {% if include.releasename == "Nightly" %}
+            <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
+            {% endif %}
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
@@ -193,6 +196,9 @@ sudo apt update</code></pre>
             </h2>
             <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            {% if include.releasename == "Nightly" %}
+            <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
+            {% endif %}
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
@@ -247,6 +253,9 @@ sudo apt update</code></pre>
             </h2>
             <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            {% if include.releasename == "Nightly" %}
+            <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
+            {% endif %}
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
             <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
             <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
