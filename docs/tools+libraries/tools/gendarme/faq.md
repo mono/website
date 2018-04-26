@@ -27,7 +27,7 @@ When should I use Gendarme ?
 
 Some of [Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules are better suited in early stage of projects (e.g. design rules). Others can be useful anytime (e.g. bad practice) and some are better suited when the project is stable enough to be released. So you'll gain more if you start using [Gendarme](/docs/tools+libraries/tools/gendarme/) early but you can still benefit from it anytime.
 
-I maintain of old code base. Is it too late to start using Gendarme ?
+I maintain an old code base. Is it too late to start using Gendarme ?
 ---------------------------------------------------------------------
 
 No, but at this stage you might want to consider using a subset of the rules that won't break binary compatibility of your assemblies.
@@ -55,7 +55,7 @@ No, debugging symbols are not required to use [Gendarme](/docs/tools+libraries/t
 
 A few rules (e.g. `RemoveUnusedLocalVariables`) might turn themselves off if debugging symbols are not available. Others will use the extra information provided (e.g. variable names) and, in a few cases, it could also affect the number of false positives.
 
-Which symbols format are supported ?
+Which symbol formats are supported ?
 ------------------------------------
 
 [Gendarme](/docs/tools+libraries/tools/gendarme/) will read and use the MDB (mono debug) format when available (either when executed on Mono or MS runtime). The PDB (MS debug) format can also be used when executed on the MS runtime. The format selection and loading of symbols is transparent to [Gendarme](/docs/tools+libraries/tools/gendarme/)'s end users.
