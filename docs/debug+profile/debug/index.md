@@ -30,7 +30,7 @@ Notice that the program will need to be compiled with the -debug flag and that r
 Debugging with GDB
 ------------------
 
-Until the Mono Debugger is ready for production, GDB can be used to obtain some information about your application and debug some problems. This section covers the details on debugging your Mono application with GDB.
+GDB can be used to obtain some information about your application and debug some problems. This section covers the details on debugging your Mono application with GDB.
 
 First and foremost, Mono support libraries use a couple of signals internally that confuse gdb, to work around this, put this in your .gdbinit file (in your \$HOME path):
 
