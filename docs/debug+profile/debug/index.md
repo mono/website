@@ -34,7 +34,7 @@ GDB can be used to obtain some information about your application and debug some
 
 First and foremost, Mono support libraries use a couple of signals internally that confuse gdb, to work around this, put this in your .gdbinit file (in your \$HOME path):
 
-    handle SIGXCPU SIG33 SIG35 SIG36 SIGPWR nostop noprint
+    handle SIGXCPU SIG33 SIG35 SIG36 SIG37 SIG38 SIGPWR nostop noprint
 
 If you use GDB to debug your mono process, you can use the function `mono_print_method_from_ip` (which takes an address) to obtain the name of a method given an address. This is particularly useful when examining stack traces. The function was renamed to `mono_pmip` in the Mono 1.1.x series (For a while the function was called `mono_print_method_from_ip`).
 
