@@ -165,14 +165,14 @@ sudo apt update</code></pre>
             <p><i>Note:</i> the packages should work on newer Debian versions too but we only test the ones listed below.</p>
             <h3>Debian 9 <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/debian preview-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
