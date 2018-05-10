@@ -1,4 +1,4 @@
-version: 5.12.0 (5.12.0.226)
+version: 5.12.0 Stable (5.12.0.226)
 mono_mac_url: https://download.mono-project.com/archive/5.12.0/macos-10-universal/MonoFramework-MDK-5.12.0.226.macos10.xamarin.universal.pkg
 mono_windows_url: https://download.mono-project.com/archive/5.12.0/windows-installer/mono-5.12.0.226-gtksharp-2.12.45-win32-0.msi
 mono_windows64_url: https://download.mono-project.com/archive/5.12.0/windows-installer/mono-5.12.0.226-x64-0.msi
