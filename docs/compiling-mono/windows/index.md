@@ -96,7 +96,7 @@ It is possible to parallelize the cygwin build passing in for example `-j8`,  wh
 
 If you run `make V=1` and see this after a successful BCL build:
 
-```
+```bash
 make[8]: Entering directory '/home/user/work/mono/mcs/class/corlib'
 CYGWIN=winsymlinks:nativestrict ln -s /home/user/work/mono/mcs/class/lib/build-win32 /home/user/work/mono/mcs/class/lib/build
 ln: failed to create symbolic link '/home/user/work/mono/mcs/class/lib/build': Operation not permitted
@@ -106,7 +106,6 @@ make[8]: *** [../../build/library.make:336: ../../class/lib/build/.stamp] Error 
 you need to enable `Developer Mode` in the Windows 10 Settings app (Update & Security -> For developers tab) which will allow your user to create symbolic links without administrator privileges.
 
 If you use an earlier Windows versions you need to run the build as administrator.
-
 
 ### Building with Windows Subsystem for Linux (WSL)
 
