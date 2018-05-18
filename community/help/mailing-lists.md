@@ -9,6 +9,8 @@ redirect_from:
 
 <p><strong>The Mono mailing lists were disabled in May 2018.</strong> For new and ongoing discussions, please see the <a href="/community/">Community</a> page.</p>
 
+Archives of the mailing lists are available from <a href="https://www.mail-archive.com/">mail-archive.com</a>
+
 <table>
 <tbody>
 <tr>
@@ -131,9 +133,3 @@ redirect_from:
 </tr>
 </tbody>
 </table>
-
-Alternative archive sites
--------------------------
-
-[Gmane](http://dir.gmane.org/index.php?prefix=gmane.comp.gnome.mono) archives some of them.
-
