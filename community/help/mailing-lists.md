@@ -76,7 +76,7 @@ Archives of the mailing lists are available from <a href="https://www.mail-archi
   <td>Discussion on the <a href="/archived/monoaddins" title="Mono.Addins">Mono.Addins</a> Framework.</td>
 </tr>
 <tr>
-  <td>monodevelop-list/td>
+  <td>monodevelop-list</td>
   <td>Discussion on the <a href="/archived/monodevelop" title="MonoDevelop">MonoDevelop</a> IDE.</td>
 </tr>
 <tr>
