@@ -7,7 +7,7 @@ redirect_from:
   - /Forums/
 ---
 
-To subscribe to a mailing list, click the mailing list name in the left column and follow the directions.
+<p><strong>The Mono mailing lists were disabled in May 2018.</strong> The archives are available below.  For new and ongoing discussions, please see the <a href="/community/">Community</a> page.</p>
 
 <table>
 <tbody>
