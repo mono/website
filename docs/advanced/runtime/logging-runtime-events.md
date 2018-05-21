@@ -4,7 +4,7 @@ redirect_from:
   - /Logging_Runtime_Events/
 ---
 
-The event logging functionality in Mono displays information on runtime operations such as loading libraries, and configuration files. Logging is useful for debugging applications and trouble shooting installation issues. When logging is enabled extra debug info is printed to both stdout and stdin while an application is running.
+The event logging functionality in Mono displays information on runtime operations such as loading libraries, and configuration files. Logging is useful for debugging applications and trouble shooting installation issues. When logging is enabled extra debug info is printed to both stdout and stderr while an application is running.
 
 Trace levels
 ============
