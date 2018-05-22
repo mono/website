@@ -11,7 +11,7 @@ We do not have any plans because the project is too large and there has not been
 
 Some bits have been implemented for WindowsBase and they are distributed with Mono (mostly because System.IO.Packaging is part of WindowsBase). Various classes and stubs were developed and live in the [Olive](/archived/olive) module.
 
-Anyone interested in contributing should follow the guidelines in the [Contributing](/community/contributing/) page and post their patches to the mono-devel-list@lists.dot.net mailing list.
+Anyone interested in contributing should follow the guidelines in the [Contributing](/community/contributing/) page.
 
 At this point, we strongly suggest that users interested in WPF adopt Silverlight instead as it can now be used outside of the browser and offers a rich set of cross platform APIs and features.
 

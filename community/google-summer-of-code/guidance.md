@@ -8,7 +8,7 @@ redirect_from:
 Introduction
 ------------
 
-First of all, please engage with the mentors and other community members on [our mailing lists and IRC](#contacting-the-mono-team)! Participating in a community is an essential part of open-source development. We understand that it can be intimidating if you are not experienced, but we've all been there and will do our best to welcome you and show you the ropes.
+First of all, please engage with the mentors and other community members on [our chat channels](#contacting-the-mono-team)! Participating in a community is an essential part of open-source development. We understand that it can be intimidating if you are not experienced, but we've all been there and will do our best to welcome you and show you the ropes.
 
 Project Ideas
 -------------

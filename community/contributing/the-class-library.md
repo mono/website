@@ -11,11 +11,7 @@ Contributing
 
 We welcome contributions to the the Class Library. To get started, check the status page for information about which APIs are being worked on, and how to get in touch with individual maintainers.
 
-If you want to work on a class, first check the [Classes Distribution](/download/stable/) to see if it is not implemented yet, if not, check the class status pages to see if someone is already working on it, and maybe contact them.
-
-If nobody is working on it, mail [mono-list@ximian.com](mailto:mono-list@ximian.com) with the class you want to implement and CC [miguel@ximian.com](mailto:miguel@ximian.com).
-
-You can also track live the activities of the Mono git module by subscribing to the [mono-cvs-list](https://lists.dot.net/mailman/listinfo/mono-cvs-list)
+If you want to work on a class, first check the master branch to see if it is not implemented yet.
 
 Layout
 ------

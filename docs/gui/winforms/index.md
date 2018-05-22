@@ -48,7 +48,7 @@ Please note there are a few rules for contributing to Winforms:
 -   Drawing code must be tied into the theming interface.
 -   If your method can be tested by an automated NUnit test, please include a test as well.
 
-If you are working on a large feature, you may wish to post your intent on the mailing list to prevent duplication of effort.
+If you are working on a large feature, you may wish to post your intent on GitHub to prevent duplication of effort.
 
 ### Drivers
 

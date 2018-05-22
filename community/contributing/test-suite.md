@@ -133,7 +133,7 @@ Excellent:
      Assert.AreEqual(compare[2], i1[2], "#A03");
      Assert.AreEqual(compare[3], i1[3], "#A04");
 
-Once you used such a number in an Assert(), don't change it later on - people might use it it identify the test in bug reports or in mailing lists.
+Once you used such a number in an Assert(), don't change it later on - people might use it it identify the test in bug reports.
 
 ### Use Assert.AreEqual() to compare things, not Assert.IsTrue ()
 

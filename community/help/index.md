@@ -11,12 +11,10 @@ redirect_from:
     1.  [Can not compile my source](#can-not-compile-my-source)
     2.  [Works under .Net but not on Mono](#works-under-net-but-not-on-mono)
 
-If your issue has not been listed please read the [Problems of a different kind](#problems-of-a-different-kind)-Section.
-
 Issues compiling Mono itself
 ----------------------------
 
-Since Mono is a large piece of software you must strictly follow the [Compiling Mono](/docs/compiling-mono/)-Article as it contains a good compiling-howto. Especially keep a close look at the requirements of mono and if they are met (e.g. [libgdiplus](/docs/gui/libgdiplus/)). If the problems still remain please send a mail to the [mono-devel-list](https://lists.dot.net/mailman/listinfo/mono-devel-list).
+Since Mono is a large piece of software you must strictly follow the [Compiling Mono](/docs/compiling-mono/)-Article as it contains a good compiling-howto. Especially keep a close look at the requirements of mono and if they are met (e.g. [libgdiplus](/docs/gui/libgdiplus/)).
 
 Can not compile my source
 -------------------------

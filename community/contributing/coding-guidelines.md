@@ -802,7 +802,7 @@ We will add more tags as time goes by.
 -   Always add a brief description of the commit to the first line of the commit and terminate by two newlines (it will work without the second newline, but that is not nice for the interfaces).
 -   First line (the brief description) must only be one sentence and should start with a capital letter unless it starts with a lowercase symbol or identifier. Don't use a trailing period either. Don't exceed 72 characters.
 -   You can prefix the first line with one tag, to make it easier to know to which part of the module the commit applies. For example, a commit with "[monodoc] Improve the formatting" in the mono-tools module clearly applies to the monodoc tool.
--   The main description (the body) is normal prose and should use normal punctuation and capital letters where appropriate. Normally, for patches sent to a mailing list it's copied from there. This main description can be empty if the change is self-explanatory (eg: "Add DOAP file").
+-   The main description (the body) is normal prose and should use normal punctuation and capital letters where appropriate. This main description can be empty if the change is self-explanatory (eg: "Add DOAP file").
 
 When committing code on behalf of others use the --author option, for example:
 

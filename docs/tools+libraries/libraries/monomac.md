@@ -19,8 +19,6 @@ Community
 
 A chat room to discuss Xamarin.Mac exists at [https://gitter.im/xamarin/xamarin-macios](https://gitter.im/xamarin/xamarin-macios).
 
-We are using the [macios-devel@lists.dot.net mailing list](https://lists.dot.net/mailman/listinfo/macios-devel) to discuss.
-
 Obtaining Xamarin.Mac
 =====================
 

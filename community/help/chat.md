@@ -5,7 +5,7 @@ redirect_from:
   - /community/help/irc/
 ---
 
-Mono is a distributed effort with developers scattered around the globe, although a lot of discussion happens on the public mailing lists, some interactive discussion happen on chat.
+Mono is a distributed effort with developers scattered around the globe, although a lot of discussion happens on GitHub, some interactive discussion happen on chat.
 
 We have several Gitter channels:
 

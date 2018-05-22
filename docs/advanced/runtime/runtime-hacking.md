@@ -111,7 +111,7 @@ Memory allocations in the runtime should be tracked too from time to time and sp
 Runtime areas and their maintainers
 -----------------------------------
 
-Here is a list of each different chunk of code in the runtime with its respective maintainer or maintainers. Make sure you consult with the appropriate maintainer before making and especially committing changes to an area that you don't maintain directly (and try always to use the mailing list for communications, so we have a record of decisions and arguments and more people can partecipate and provide their feedback).
+Here is a list of each different chunk of code in the runtime with its respective maintainer or maintainers. Make sure you consult with the appropriate maintainer before making and especially committing changes to an area that you don't maintain directly (and try always to use an archived medium for communications, so we have a record of decisions and arguments and more people can partecipate and provide their feedback).
 
 JIT:
 

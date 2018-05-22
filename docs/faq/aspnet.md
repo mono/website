@@ -155,7 +155,7 @@ Common Problems
 
 ### Performance is disappointing
 
-Please consult [Mod_mono](/docs/web/mod_mono/) for possible performance improvements. If your site still doesn't perform well, ask on the mono mailing lists for advice.
+Please consult [Mod_mono](/docs/web/mod_mono/) for possible performance improvements.
 
 ### Compilation fails with the CS0169 error message
 

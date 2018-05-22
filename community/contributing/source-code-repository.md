@@ -38,7 +38,7 @@ We have our own [coding guidelines](/community/contributing/coding-guidelines/).
 
 If you are about to commit code to a module, the code that is being committed should be released under the MIT license.
 
-If in doubt, check with the maintainers of the module, or send mail to mono-devel-list@lists.dot.net.
+If in doubt, check with the maintainers of the module.
 
 ### Changing Code
 
@@ -48,7 +48,7 @@ Even if you have write access to the official Mono Project GitHub repositories, 
 
 Now, how do you get to be the owner of a chunk of code? The answer is simple. You wrote the code, so you're the unofficial owner. There is also another way. After sending a few patches for the code, the owner (or the core developers of Mono, if the owner somehow disappeared) trusts you and tells you you're free to commit without getting his review first.
 
-You can most likely find ownership by reading git history or by using `git blame`. The entries are with emails, so feel free to ask them. If you are still unsure, post your question to the mailing list (mono-devel-list).
+You can most likely find ownership by reading git history or by using `git blame`. The entries are with emails, so feel free to ask them.
 
 ### Pull Request Rules
 
@@ -64,7 +64,7 @@ There are a few rules to follow before making a pull request on GitHub:
 
 -   Don't do reformatting commits, unless you're the original author of the code
 
--   When fixing bugs, don't follow the documentation blindly, it may well be wrong. Test the behavior on the MS runtime or ask on the mailing list for discussion if unsure. Don't be afraid of having your changes reviewed.
+-   When fixing bugs, don't follow the documentation blindly, it may well be wrong. Test the behavior on the MS runtime or ask for discussion if unsure. Don't be afraid of having your changes reviewed.
 
 -   Never remove copyright notices from the code
 
