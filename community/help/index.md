@@ -40,9 +40,3 @@ Works under .Net but not on Mono
 --------------------------------
 
 Naturally this question is very hard to answer since it relies on the specific application trying to run on Mono. Please read [Guide: Porting Winforms Applications](/docs/gui/winforms/porting-winforms-applications/) or [Guide: Porting ASP.NET Applications](/docs/web/porting-aspnet-applications/) as they provide a good overview on how to run windows applications on Mono.
-
-Problems of a different kind
-----------------------------
-
-In general users can always turn to the [Mailing Lists](/community/help/mailing-lists/) when having problems.
-

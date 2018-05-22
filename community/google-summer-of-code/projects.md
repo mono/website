@@ -614,13 +614,3 @@ feedback about ideas and proposals. Community engagement is essential for a succ
 
 For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use
 [soc@xamarin.com](mailto:soc@xamarin.com).
-
-### Mailing Lists
-
-[https://lists.dot.net/mailman/listinfo/mono-devel-list](https://lists.dot.net/mailman/listinfo/mono-devel-list)
-A mailing list dedicated to discussions about developing Mono itself, such as development of the runtime, class libraries, and related Mono projects.
-
-[https://lists.dot.net/mailman/listinfo/monodevelop-devel-list](https://lists.dot.net/mailman/listinfo/monodevelop-devel-list)
-Discussion on the development/implementation of MonoDevelop.
-
-A complete breakdown of all Mono mailing lists is available at [Mailing Lists](/community/help/mailing-lists/).

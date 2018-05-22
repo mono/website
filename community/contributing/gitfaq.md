@@ -22,7 +22,7 @@ Workflow
 
 Since "git push" can have unintended consequences, only core developers will be given "git push" access to the repositories at GitHub.
 
-Contributors are encouraged to either fork their trees on GitHub and send a "pull request" to the maintainer of a given module, or to post their patches to the mono-devel-list@lists.dot.net mailing list (or the appropriate [mailing list](/community/help/mailing-lists/)).
+Contributors are encouraged to fork their trees on GitHub and send a "pull request" to the maintainer of a given module.
 
 We might have missed some core contributors on the first batch that granted push access to the Mono repositories. If we missed you, please contact us to get this fixed.
 

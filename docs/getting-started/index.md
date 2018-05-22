@@ -77,7 +77,6 @@ Working with Mono
 <li><a href="/community/bugs/">Bugs</a></li>
 <li><a href="/archived/books" title="Books">Books</a></li>
 <li><a href="/archived/articles" title="Articles">Articles</a></li>
-<li><a href="/community/help/mailing-lists/">Mailing Lists</a></li>
 <li><a href="/community/help/chat/">Chat Rooms</a></li>
 <li><a href="/archived/related_mono_sites" title="Related Mono Sites">Related Sites</a></li>
 <li><a href="/archived/user_groups" title="User Groups">User Groups</a></li>

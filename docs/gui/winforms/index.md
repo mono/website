@@ -34,8 +34,6 @@ In terms of integrating visually with the desktop, we currently ship with a clas
 
 ### Contributing
 
-The Winforms effort is being coordinated on the Mono-Winforms-List mailing list. If you would like to contribute, or need help using Winforms, it is suggested that you subscribe to this mailing list. (See [Mailing Lists](/community/help/mailing-lists/) for details.)
-
 Currently, all of the controls are pretty much complete. We are now mainly fixing bugs in our implementation. See [Bugs](/community/bugs/).
 
 If you would like to contribute, you can:

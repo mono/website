@@ -15,7 +15,7 @@ Users:<br/>
  Contributors:<br/>
   [Class Status](/archived/resources#api-completion-status-pages) | [Build Status](https://jenkins.mono-project.com/) | [Source Code](/community/contributing/source-code-repository/)<br/>
  Community:<br/>
-  [Mailing Lists](/community/help/mailing-lists/) | [Chat](/community/help/chat/)<br/>
+  [GitHub issues](https://github.com/mono/mono/issues) | [Chat](/community/help/chat/)<br/>
  FAQ:<br/>
   [General](/docs/faq/general/) | [Technical](/docs/faq/technical/) | [Licensing](/docs/faq/licensing/) | [Asp.net](/docs/faq/aspnet/) | [Security](/docs/faq/security/) | [WinForms](/docs/faq/winforms/)
 
