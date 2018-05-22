@@ -5,6 +5,7 @@ redirect_from:
   - /Mailing_lists/
   - /MailingLists/
   - /Forums/
+  - /community/help/mailing-lists/
 ---
 
 <p><strong>The Mono mailing lists were disabled in May 2018.</strong> For new and ongoing discussions, please see the <a href="/community/">Community</a> page.</p>
