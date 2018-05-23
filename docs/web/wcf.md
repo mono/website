@@ -71,7 +71,7 @@ Items listed here are with no plan to support. Though anyone should feel free to
 Known issues
 ============
 
-In general, we keep fixing bugs and bugfixes are (very) often not in the latest release yet. Especially, for Mono 2.8, the branching was done much earlier than the actual release, and even if you reported bugs earlier than the release, it is often not fixed in it. The actual fixes would be available in the future release or you can grab the latest code in our [daily builds](http://mono.ximian.com/daily/).
+In general, we keep fixing bugs and bugfixes are (very) often not in the latest release yet. Especially, for Mono 2.8, the branching was done much earlier than the actual release, and even if you reported bugs earlier than the release, it is often not fixed in it. The actual fixes would be available in the future release.
 
 Based on the premise above, here I list some known issues and workarounds that we don't give priority beyond ongoing work.
 

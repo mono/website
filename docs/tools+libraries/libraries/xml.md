@@ -34,7 +34,7 @@ XmlUrlResolver is implemented. XmlSecureResolver, which is introduced in MS .NET
 
 ### XmlNameTable
 
-NameTable is implemented, but also needs performance improvement. Optimization hackings are welcome. There is also a [bugzilla entry](http://bugzilla.ximian.com/show_bug.cgi?id=59537) for this matter.
+NameTable is implemented, but also needs performance improvement. Optimization hackings are welcome.
 
 ### XML Reader
 
@@ -131,11 +131,6 @@ System.Xml 2.0 contains several features such as:
 -   Well-documented and improved XmlSerializer.
 
 -   Compiled XSLT transformer
-
-Current Status
---------------
-
-[Here](http://mono.ximian.com/class-status/mono-HEAD-vs-fx-2/class-status-System.Xml.html) is the latest status of mono's System.Xml 2.0. In general, System.Xml 2.0 bits are mostly implemented, except for upcoming XslCompiledTransform. However, they are highly untested. MonoTODO classes mostly means "waiting for tests".
 
 System.Xml 2.0
 --------------

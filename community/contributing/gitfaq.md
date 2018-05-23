@@ -201,7 +201,7 @@ The mcs module is now part of the mono module.
 My commits are not linked to my GitHub Account
 ----------------------------------------------
 
-If your commits to Mono are not linked from your GitHub account, you probably have not registered a public email address with GitHub. In such a case, if you are a Novell employee, we used your `@novell.com` address for the import. If not, the fallback author address was `<your-mono-svn-account>@mono-cvs.ximian.com`.
+If your commits to Mono are not linked from your GitHub account, you probably have not registered a public email address with GitHub.
 
 Use `git show <commit-id>` on a commit which you know belongs to you. Now, the e-mail id in the "author" field is the one that GitHub uses to identify committers. So, you need to add that e-mail id as an alternative address to your GitHub account, and eventually your commits will be linked to you.
 

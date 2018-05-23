@@ -620,7 +620,7 @@ Optionally:
 
 -   SIGUSR2: this is used when --trace=disable is passed on the command line and its used to turn on/off the output of trace.
 
-Currently Mono does not provide a mechanism for signal chaining, but one might be available in the future, see [Bug #75990](http://bugzilla.ximian.com/show_bug.cgi?id=75990) for information on the current status of this feature.
+Currently Mono does not provide a mechanism for signal chaining, but one might be available in the future.
 
 API Documentation
 =================
