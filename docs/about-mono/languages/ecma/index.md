@@ -28,7 +28,7 @@ The following official Ecma documents are available for [C#](http://www.ecma-int
 
  A reference implementation for TR-89 can be found [here](http://www.ecma-international.org/publications/techreports/E-TR-089.htm); a reference implementation for the Parallel API can be found [here](http://sourceforge.net/projects/cli-parallel).
 
-The official ISO/IEC documennts are available from the ISO/IEC Freely Available Standards page. These links are direct from that page:
+The official ISO/IEC documents are available from the ISO/IEC Freely Available Standards page. These links are direct from that page:
 
 <table>
 <col width="50%" />
