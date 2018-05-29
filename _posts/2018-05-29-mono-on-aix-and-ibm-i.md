@@ -247,7 +247,7 @@ I had an issue with I/O getting some spurious and strange issues with
 threading. Threads would complain that they had an unexpected errno of 0.
 (indicating success) What happened was that AIX does not assume that all
 programs are thread-safe by default, so errno was not thread-local. One small
-#define later, and that was fixed. (Miguel de Icaza was amused that some
+`#define` later, and that was fixed. (Miguel de Icaza was amused that some
 operating systems still consider thread safety to be an advanced feature. 🙂)
 
 We also found a cosmetic issue with uname. Most Unices put their version in the
