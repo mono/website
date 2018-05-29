@@ -24,7 +24,7 @@ yet manageable codebase due to a low number of dependencies, use of plain C99,
 and an emphasis on portability. Most common processor architectures in use are
 supported by the code generator, though more obscure ISAs will have some caveats.
 
-Pretty much all of the work you do will be twiddling #ifdefs to accommodate for
+Pretty much all of the work you do will be twiddling `#ifdefs` to accommodate for
 the target platform’s quirks; such as missing or different preprocessor
 definitions and functions, adding the platform to definitions so it is
 supported by core functionality, and occasionally having to tweak the runtime
@@ -82,12 +82,12 @@ AIX ABI, within the IBM i. But Unix and IBM i are totally different; Unix has
 files and per-process address spaces, and IBM i normally does not, so how do
 you make these incongruent systems work?
 
-To try to bridge the gap, IBM i also has an “Integrated File System,” that
+To try to bridge the gap, IBM i also has an “Integrated File System” that
 supports byte-stream file objects in a true hierarchical file system directory
 hierarchy. For running Unix programs that expect their own address space, IBM i
 provides something called "teraspace" that provides a large private address
 space per process or job. This requires IBM i to completely changes the MMU
-mode and does a cache flush every time it enters and exits the Unix world,
+mode and does a cache/TLB flush every time it enters and exits the Unix world,
 making system calls somewhat expensive; in particular, forking and I/O. While
 some system calls are not implemented, there are more than enough to port
 non-trivial AIX programs to the PASE environment, even with its quirks and
@@ -135,7 +135,7 @@ to AIX.
 ## What needed to change?
 
 There are some unique aspects of AIX and the subset that PASE provides, beyond
-the usual #ifdef handling.
+the usual `#ifdef` handling.
 
 ### What did we start with?
 
@@ -151,7 +151,7 @@ in libraries. (Sometimes they were in libc, but never defined in the headers in
 the first place!)
 
 Improper use of function pointers was sometimes a problem. Based on the advice
-of Bernhard, there was a problem with the function descriptors #ifdefs, which
+of Bernhard, there was a problem with the function descriptors `#ifdefs`, which
 had caused a mix-up interpreting function pointers as code. Once that had been
 fixed, Mono was running generated code on AIX for the first time – quite a
 sight to behold!
