@@ -253,7 +253,7 @@ operating systems still consider thread safety to be an advanced feature. 🙂)
 We also found a cosmetic issue with uname. Most Unices put their version in the
 release field of the uname structure, and things like the kernel type in the
 version field. AIX and PASE however, put the major version in the version field,
-and the minor version in the release field. A simple sprintf for the AIX case
+and the minor version in the release field. A simple `sprintf` for the AIX case
 was enough to fix this.
 
 PASE has many quirks – this necessitated some patches to work around
