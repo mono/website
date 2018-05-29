@@ -25,7 +25,7 @@ public class HelloWorld
 
 To compile, use csc:
 
-    csc hello.cs
+    mcs hello.cs
 
 The compiler will create "hello.exe", which you can run using:
 
@@ -74,7 +74,7 @@ public class HelloWorld : Form
 
 To compile, use csc with the -r option to tell the compiler to pull in the WinForms libraries:
 
-    csc hello.cs -r:System.Windows.Forms.dll
+    mcs hello.cs -r:System.Windows.Forms.dll
 
 The compiler will create "hello.exe", which you can run using:
 
