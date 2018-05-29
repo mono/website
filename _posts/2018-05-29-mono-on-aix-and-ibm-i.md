@@ -265,7 +265,7 @@ A lot of this I cleaned up with some more preprocessor definitions.
 
 Now that Mono runs on these platforms, there’s still a lot of work left to be
 done. The ahead of time compiler needs to be reworked to emit XCOFF-compatible
-code, libgdiplus needs to be ported, Roslyn is broken on PowerPC, continuous
+code, libgdiplus needs to be ported, Roslyn is broken on ppc64be, continuous
 integration would be useful to detect build failures, the build system is still
 a bit weird regarding AIX libraries, and plenty more where that came from.
 Despite all this, the fact the port works well enough already in its current
