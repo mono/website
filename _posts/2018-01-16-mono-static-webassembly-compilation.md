@@ -80,8 +80,7 @@ to generate `.wasm` object files directly (with the
 enough that we changed `mono-wasm` accordingly. We also noticed a
 slight decrease in build time.
 
-|                        | Old toolchain | New toolchain | New toolchain
-|                        |               | First Compile | Rebuild
+|                        | Old toolchain | New toolchain (First Compile) | New toolchain (Rebuild)
 | ---------------------- | ------------- | --------------------------- | --------------------- |
 | Full application build | ~40s          | ~30s                        | <1s                   |
 | Hello World program    | ~40s          | <1s                         | <1s                   |
