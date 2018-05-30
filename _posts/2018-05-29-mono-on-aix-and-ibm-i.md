@@ -158,7 +158,7 @@ sight to behold!
 
 ### What’s a “naidnE?”
 
-One particularly nerve-wracking issue that bugged me while trying to bootstrap
+One particularly nerve-racking issue that bugged me while trying to bootstrap
 was with the Decimal type returning a completely bogus value when dividing,
 causing a non-sense overflow condition. Because of constant inlining, this
 occurred when building the BCL, so it was hard to put off. With some careful
