@@ -98,6 +98,12 @@ non-trivial AIX programs to the PASE environment, even with its quirks and
 performance limitations. You could even build them entirely inside of the PASE
 environment.
 
+A port to the native IBM i environment outputting MI code with the ahead of
+time compiler has been considered, but would take a lot of work to write an MI
+backend for the JIT, use the native APIs in the runtime, and handle how the
+environment is different from anything else Mono runs on. As such, I instead
+PASE and AIX for the ease of porting existing POSIX compatible code.
+
 ## What happened to port it?
 
 The port came out of some IBM i users expressing an interest in wanting to run
