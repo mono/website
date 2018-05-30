@@ -6,4 +6,6 @@ As of the 5.12 release, Mono now supports the IBM [AIX](https://en.wikipedia.org
 
 The port, while incomplete, is mostly fully functional and capable of bootstrapping the runtime, C# compiler, and core libraries using mcs. Currently unsupported for AIX-specific reasons is the AOT compiler, and for general PPC reasons, the interpreter and Roslyn.
 
+The effort to port to these platforms is documented in a [blog post](/news/2018/05/29/mono-on-aix-and-ibm-i/).
+
 This port is maintained by Calvin Buckley.
