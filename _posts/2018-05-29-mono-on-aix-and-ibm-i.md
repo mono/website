@@ -7,12 +7,16 @@ tags: [porting]
 
 <!-- Edited by Mark Waterbury -->
 
+*Note: This is a guest post by Calvin Buckley (@NattyNarwhal on GitHub)
+introducing the community port of Mono to IBM AIX and IBM i. If you'd like to
+help with this community port please contact the maintainers on Gitter.*
+
 [![C# REPL running under IBM i](/images/mono-os400.png)](/images/mono-os400.png)
 
 You might have noticed this in the
 [Mono 5.12 release notes](http://www.mono-project.com/docs/about-mono/releases/5.12.0/),
 Mono now includes support for
-[IBM AIX and IBM i](/docs/about-mono/supported-platforms/aix); two very
+[IBM AIX and IBM i](/docs/about-mono/supported-platforms/aix/); two very
 different yet (mostly!) compatible operating systems. This post should serve as
 an introduction to this port.
 
@@ -37,7 +41,7 @@ For some background on what needed to happen, we can start by giving some
 background on our target platforms.
 
 Both of our targets run on 64-bit PowerPC processors in big endian mode.
-[Mono does support PowerPC](/docs/about-mono/supported-platforms/powerpc),
+[Mono does support PowerPC](/docs/about-mono/supported-platforms/powerpc/),
 and Bernhard Urban maintains it. What is odd about the calling conventions on
 AIX (shared occasionally by Linux) is the use of *function descriptors*, which
 means that pointers to functions do not point to code, but instead point to
@@ -139,7 +143,7 @@ the usual `#ifdef` handling.
 
 ### What did we start with?
 
-One annoyance I was how deficient the GNU tools are on AIX. GNU binutils are
+One annoyance I had was how poor the GNU tools are on AIX. GNU binutils are
 effectively useless on AIX, so I had to explicitly use IBM's binutils, and deal
 with some small problems related to autotools with environment variables and
 assumption of GNU ld features in makefiles. I had also dealt with some issues
