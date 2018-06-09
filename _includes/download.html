@@ -137,7 +137,7 @@ sudo apt update</code></pre>
             </h2>
             <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
-            {% if include.releasename == "Nightly" %}
+            {% if include.releasename == "Nightly" or include.releasename == "Preview" %}
             <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
             {% endif %}
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
@@ -194,7 +194,7 @@ sudo apt update</code></pre>
             </h2>
             <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
-            {% if include.releasename == "Nightly" %}
+            {% if include.releasename == "Nightly" or include.releasename == "Preview" %}
             <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
             {% endif %}
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
@@ -251,7 +251,7 @@ sudo apt update</code></pre>
             </h2>
             <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
             <p>The package <b>mono-devel</b> should be installed to compile code.</p>
-            {% if include.releasename == "Nightly" %}
+            {% if include.releasename == "Nightly" or include.releasename == "Preview" %}
             <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
             {% endif %}
             <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
