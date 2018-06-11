@@ -54,7 +54,8 @@ running on AMD64 or the Raspberri Pi?
 First, let us check if we have the necessary runtime installed in our machine:
 
 ```bash
-$ mkbundle --list-targets
+$ mkbundle --local-targets
+Available targets locally:
   default - Current System Mono
   4.8.0-linux-libc2.12-amd64.zip
 ```
@@ -84,7 +85,7 @@ $ mkbundle --fetch-target mono-5.8.0-ubuntu-16.04-x64
 $
 ```
 
-The quite response means that the tool succeeded.   Unix tools do not like to
+The quiet response means that the tool succeeded.   Unix tools do not like to
 chat a lot, and `mkbundle` is not about to break this tradition.
 
 Let us check that we have it installed:
