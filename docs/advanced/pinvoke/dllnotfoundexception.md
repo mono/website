@@ -27,13 +27,13 @@ Fortunately there is hope. This error means that mono was unable to locate a lib
 Background Information & Possible Questions
 -------------------------------------------
 
-**I am using Linux or OSX, why is mono looking for libraries with "win32" in their name and ending with "dll" instead of "so"/"dylib"?**
+**I am using Linux or macOS, why is mono looking for libraries with "win32" in their name and ending with "dll" instead of "so"/"dylib"?**
 
 To preserve compatibility with the .NET Framework, mono uses the same library names as windows. These names are mapped to linux library names using [DllMaps](/docs/advanced/pinvoke/dllmap/).
 
     <dllmap dll="libgtk-win32-2.0-0.dll" target="libgtk-x11-2.0.so.0"/>
 
-(Substitute ".so" with "dylib" for MacOS X)
+(Substitute ".so" with "dylib" for macOS)
 
 Troubleshooting DllNotFoundExceptions
 -------------------------------------

@@ -83,7 +83,7 @@ Archives of the mailing lists are still available.
 </tr>
 <tr>
   <td><a href="https://lists.dot.net/pipermail/mono-osx/">mono-osx</a></td>
-  <td>Discuss Mono on <a href="/docs/about-mono/supported-platforms/osx/" title="Mono:OSX">Mac OS X</a>.</td>
+  <td>Discuss Mono on <a href="/docs/about-mono/supported-platforms/macos/" title="Mono:OSX">Mac OS X</a>.</td>
 </tr>
 <tr>
   <td><a href="https://lists.dot.net/pipermail/monotouch/">monotouch</a></td>

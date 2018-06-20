@@ -18,7 +18,7 @@ At this point, we strongly suggest that users interested in WPF adopt Silverligh
 Alternatives
 ============
 
-Silverlight implement a subset of the WPF APIs and is available on Windows, MacOS X and through our own open source effort [Moonlight](/docs/web/moonlight/) it is available on Linux and other Unix systems.
+Silverlight implement a subset of the WPF APIs and is available on Windows, macOS and through our own open source effort [Moonlight](/docs/web/moonlight/) it is available on Linux and other Unix systems.
 
 Silverlight does not have all the capabilities of WPF, but both technologies are converging API-wise.
 

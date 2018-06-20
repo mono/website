@@ -16,7 +16,7 @@ Info
 -   Works on Windows via the native Windows odbc32.dll
 
 -   Works on Linux/Unix via:
-    -   [Devart ODBC](http://www.devart.com/odbc/) works via Windows and Mac OS X too. Support from [Devart](http://www.devart.com) and free versions available.
+    -   [Devart ODBC](http://www.devart.com/odbc/) works via Windows and macOS too. Support from [Devart](http://www.devart.com) and free versions available.
     -   [unixODBC](http://www.unixodbc.org/) which has commercial support from [Easysoft](http://www.easysoft.com/)
     -   [iODBC](http://www.iodbc.org/) which has commercial support from [OpenLink Software](http://oplweb.openlinksw.com:8080/download/)
 

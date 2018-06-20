@@ -116,5 +116,5 @@ You can learn more about the debugging options for SGen from Mono's manual page:
 Profiling
 =========
 
-On systems that have DTrace (Solaris, MacOS X), Mono is able to report the SGen Garbage Collector events to Dtrace. See the [SGen_DTrace](/docs/advanced/garbage-collector/sgen/dtrace) page for details on how to use DTrace with Sgen to profile your application.
+On systems that have DTrace (Solaris, macOS), Mono is able to report the SGen Garbage Collector events to Dtrace. See the [SGen_DTrace](/docs/advanced/garbage-collector/sgen/dtrace) page for details on how to use DTrace with Sgen to profile your application.
 

@@ -46,7 +46,7 @@ Project conversion & deployment
 
 -   prj2make: Convert Microsoft Visual Studio 2002 and 2003 solution and project files to makefiles to ease the transition to Mono
 -   mkbundle: Packages an exe and all assemblies with libmono into a single binary package.
--   macpak: Packages mono and assemblies together so they may run on Mac OS X
+-   macpak: Packages mono and assemblies together so they may run on macOS
 
 Security
 ========

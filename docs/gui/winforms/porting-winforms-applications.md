@@ -370,7 +370,7 @@ On the Mono image desktop, double click your NClass folder, and navigate to your
 
 ### Linux Platform Differences
 
-There are two classes of issues you may run into during your port. The first class are issues stemming from differences between the .Net and Mono runtime. These can be worked out while still on Windows as shown above. However, there is a second class of issues that you may come across. These are issues stemming from differences between Windows and Linux (or OSX, etc.).
+There are two classes of issues you may run into during your port. The first class are issues stemming from differences between the .Net and Mono runtime. These can be worked out while still on Windows as shown above. However, there is a second class of issues that you may come across. These are issues stemming from differences between Windows and Linux (or macOS, etc.).
 
 Common OS Porting Issues
 

@@ -124,7 +124,7 @@ JIT:
 -   trampolines: zoltan, lupus
 -   local register allocator: zoltan, lupus
 -   global register allocator: zoltan, lupus, massi
--   OSX support: lupus
+-   macOS support: lupus
 -   solaris/windows support: zoltan
 -   exception support: zoltan, lupus
 -   genmdesc: lupus

@@ -5,6 +5,6 @@ redirect_from:
   - /archived/mono_installation/
 ---
 
-- [Mac OS X](/docs/getting-started/install/mac/)
+- [macOS](/docs/getting-started/install/mac/)
 - [Linux](/docs/getting-started/install/linux/)
 - [Windows](/docs/getting-started/install/windows/)

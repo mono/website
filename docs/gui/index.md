@@ -26,7 +26,7 @@ GTK# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for spe
 
 In general, GTK# applications are written using [MonoDevelop](http://www.monodevelop.com/Main_Page), which provides a visual designer for creating GTK# GUIs.
 
-Platforms: Unix, Windows, OSX
+Platforms: Unix, Windows, macOS
 
 Pros:
 
@@ -41,7 +41,7 @@ Pros:
 
 Cons:
 
--   Gtk+ apps run like foreign applications on MacOS X.
+-   Gtk+ apps run like foreign applications on macOS.
 -   Incomplete documentation.
 
 [MonoMac](/docs/tools+libraries/libraries/monomac/)
@@ -49,20 +49,20 @@ Cons:
 
 Homepage: [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
-MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native Mac OS X application experience. MonoMac allows developers to access the whole range of MacOS X APIs from C#, it is not limited to the AppKit GUI APIs.
+MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native macOS application experience. MonoMac allows developers to access the whole range of macOS APIs from C#, it is not limited to the AppKit GUI APIs.
 
 The MonoMac APIs replaced the old CocoaSharp binding, which is now deprecated.
 
-Platforms: OSX
+Platforms: macOS
 
 Pros:
 
--   Native look and feel on MacOS X.
+-   Native look and feel on macOS.
 -   Substrate is well documented.
 
 Cons:
 
--   Not portable outside of MacOS X.
+-   Not portable outside of macOS.
 
 [Windows.Forms](/docs/gui/winforms/)
 ------------------------------------
@@ -83,7 +83,7 @@ Whereas the .Net implementation is a binding to the Win32 toolkit, the Mono impl
 
 In general, Winforms applications are written using Microsoft's Visual Studio or [SharpDevelop](http://www.icsharpcode.net/opensource/sd/), which both provide a visual designer for creating Winforms GUIs.
 
-Platforms: Windows, Unix, OSX
+Platforms: Windows, Unix, macOS
 
 Pros:
 

@@ -17,7 +17,7 @@ iFolder, a [GTK#](/docs/gui/gtksharp/) application
 
 Gtk#, a [GUI Toolkit](/docs/gui/gui-toolkits/), is a set of .NET bindings for the [gtk+](http://www.gtk.org/) toolkit and assorted [GNOME](http://www.gnome.org/) libraries. This library allows you to build fully native graphical Gnome application using Mono. GTK# is an event-driven system like any other modern windowing library. Every widget in an application has handler methods that get called when particular events happen.
 
-Applications built using Gtk# will run on many platforms including Linux, Windows and MacOS X. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk# and the native theme to make your applications look like native Windows applications. At this point, running Gtk# applications on MacOS requires the user to run the X11 server.
+Applications built using Gtk# will run on many platforms including Linux, Windows and macOS. Gtk is the native toolkit for the Linux desktop running GNOME, so applications will look and function best on here. The Mono packages for Windows include Gtk, Gtk# and the native theme to make your applications look like native Windows applications. At this point, running Gtk# applications on MacOS requires the user to run the X11 server.
 
 You can use [Glade](http://glade.gnome.org/) along with the Glade# bindings to easily design GUI applications. A new GUI designer called [Stetic](/archived/stetic) is being built which will be integrated with the MonoDevelop IDE.
 

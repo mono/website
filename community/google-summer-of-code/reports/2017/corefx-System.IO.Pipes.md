@@ -8,7 +8,7 @@ This is a report for my contribution to [Mono Project](http://www.mono-project.c
 
 # Description
 
-Mono is a open source development platform based on the `.Net Framework` and allows developers to build cross-platform applications. Mono's .NET implementation is based on the ECMA standards for `C#` and the `Common Language Infrastructure`. It includes both developer tools and the infrastructure needed to run .NET client and server applications on `Linux, Microsoft Windows, Mac OS X, BSD, Sun Solaris, Nintendo Wii, Sony PlayStation 3, Apple iPhone and Android`.
+Mono is a open source development platform based on the `.Net Framework` and allows developers to build cross-platform applications. Mono's .NET implementation is based on the ECMA standards for `C#` and the `Common Language Infrastructure`. It includes both developer tools and the infrastructure needed to run .NET client and server applications on `Linux, Microsoft Windows, macOS, BSD, Sun Solaris, Nintendo Wii, Sony PlayStation 3, Apple iPhone and Android`.
 
 Mono is supported by Microsoft and .Net Foundation and consisted by:
 * [`C# Compiler`](http://www.mono-project.com/docs/about-mono/languages/csharp/)

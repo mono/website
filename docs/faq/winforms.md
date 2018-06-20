@@ -42,7 +42,7 @@ Beginning in Mono 2.2, we have a VisualStyles theme for Windows XP/Vista/7 that 
 
 It is enabled by calling Application.EnableVisualStyles () before calling Application.Run (), just like in .Net.
 
-Visual Styles are not currently supported on Linux/OSX. It is fine to call EnableVisualStyles () on these platforms, it just won't have any effect.
+Visual Styles are not currently supported on Linux/macOS. It is fine to call EnableVisualStyles () on these platforms, it just won't have any effect.
 
 ### How can I make my windows alpha blended? (transparent)
 
@@ -62,15 +62,15 @@ A small driver is required for each operating system supported. Currently we hav
 
 -   X Window System
 -   Win32 Window System
--   Mac OSX Window System
+-   macOS Window System
 
 ### Will I be able to run my smart clients on systems powered by Mono?
 
 As long as your applications are 100% .NET and do not make use of P/Invoke to call Win32 functions, your smart client applications will run on Mono platforms.
 
-### Does Winforms run on OSX?
+### Does Winforms run on macOS?
 
-Yes, as of Mono 1.9, Winforms has a native OSX driver that it uses by default.
+Yes, as of Mono 1.9, Winforms has a native macOS driver that it uses by default.
 
 ### Do you have a comparison chart about the various toolkit offerings?
 

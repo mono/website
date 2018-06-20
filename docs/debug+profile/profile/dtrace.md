@@ -7,7 +7,7 @@ redirect_from:
 Using DTrace with Mono
 ----------------------
 
-Mono 2.0 includes DTrace probes when configured with `--enable-dtrace`. This currently works on Solaris 10, OpenSolaris and Mac OS X v10.5.
+Mono 2.0 includes DTrace probes when configured with `--enable-dtrace`. This currently works on Solaris 10, OpenSolaris and macOS v10.5.
 
 The idea behind DTrace is that production copies of software are traceable in case problems arise, without needing to compile a debug version first. Both the kernel and many daemons or applications allow tracing in a scripted, event-oriented way.
 
@@ -21,7 +21,7 @@ To check if DTrace is enabled in your copy of Mono, run the following command:
 
 This will list all probes of the "mono" provider in the executable "mono" or display an error when no probes were found.
 
-Note that using the dtrace command may require additional priviledges. On Mac OS X use `sudo`. On OpenSolaris use `pfexec` or adjust the user's priviledges (/etc/user_attr) to include `dtrace_user` and `dtrace_proc`, e.g., (as root) `usermod -K defaultpriv=basic,dtrace_user,dtrace_proc youruser`.
+Note that using the dtrace command may require additional priviledges. On macOS use `sudo`. On OpenSolaris use `pfexec` or adjust the user's priviledges (/etc/user_attr) to include `dtrace_user` and `dtrace_proc`, e.g., (as root) `usermod -K defaultpriv=basic,dtrace_user,dtrace_proc youruser`.
 
 The mono provider
 -----------------

@@ -113,9 +113,9 @@ Here we are tracking some plans to particular pieces of technology that are part
     </ul>
 
     <ul>
-      <li>MacOS X
+      <li>macOS
         <ul>
-          <li><a href="/docs/tools+libraries/libraries/monomac/">MonoMac</a> comprehensive MacOS X bindings.</li>
+          <li><a href="/docs/tools+libraries/libraries/monomac/">MonoMac</a> comprehensive macOS bindings.</li>
           <li><a href="http://xamarin.com/platform">MonoTouch</a> Mono on iPhone/iPad/iOS</li>
         </ul>
       </li>

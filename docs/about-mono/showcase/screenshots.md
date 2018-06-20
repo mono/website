@@ -109,14 +109,14 @@ Winforms Applications
 <table>
   <tbody>
     <tr>
-      <td><a href="http://www.plasticscm.com/xpfront.aspx">Plastic SCM</a> <br /> Codice Plastic SCM - Commercial, Cross-Platform Source Control Management system for Windows (not pictured), Linux, and Mac OS X.</td>
+      <td><a href="http://www.plasticscm.com/xpfront.aspx">Plastic SCM</a> <br /> Codice Plastic SCM - Commercial, Cross-Platform Source Control Management system for Windows (not pictured), Linux, and macOS.</td>
       <td><a class="image-link" title="Plastic on Linux" href="/archived/images/b/b5/CodicePlasticLinux1.png"><img alt="Plastic on Linux" src="/archived/images/b/b5/CodicePlasticLinux1.png" width="180" /></a></td>
-      <td><a class="image-link" title="Plastic on OS X" href="/archived/images/8/87/CodicePlasticMac1.png"><img alt="Plastic on OS X" src="/archived/images/8/87/CodicePlasticMac1.png" width="180" /></a></td>
+      <td><a class="image-link" title="Plastic on macOS" href="/archived/images/8/87/CodicePlasticMac1.png"><img alt="Plastic on macOS" src="/archived/images/8/87/CodicePlasticMac1.png" width="180" /></a></td>
     </tr>
     <tr>
-      <td><a href="http://www.likewisesoftware.com/">Likewise</a> <br /> Likewise Administrative Console (LAC) - ﻿commercial, cross-platform ﻿graphical administration console for Windows (not pictured), Linux, and Mac OS X.</td>
+      <td><a href="http://www.likewisesoftware.com/">Likewise</a> <br /> Likewise Administrative Console (LAC) - ﻿commercial, cross-platform ﻿graphical administration console for Windows (not pictured), Linux, and macOS.</td>
       <td><a class="image-link" title="Likewise on Linux" href="/archived/images/b/bb/LikewiseLinux.png"><img alt="Likewise on Linux" src="/archived/images/b/bb/LikewiseLinux.png" width="180" /></a></td>
-      <td><a class="image-link" title="Likewise on OS X" href="/archived/images/8/8c/LikewiseMac.png"><img alt="Likewise on OS X" src="/archived/images/8/8c/LikewiseMac.png" width="180" /></a></td>
+      <td><a class="image-link" title="Likewise on macOS" href="/archived/images/8/8c/LikewiseMac.png"><img alt="Likewise on macOS" src="/archived/images/8/8c/LikewiseMac.png" width="180" /></a></td>
     </tr>
     <tr>
       <td><a href="http://www.nutech.com/">Nu Tech Software Solutions</a> <br /> <a href="http://www.nutech.com/forums/12.html">A virtual keypad and graphical status for Ademco Honeywell alarms</a>.
@@ -134,7 +134,7 @@ ASP.NET
 <table>
   <tbody>
     <tr>
-      <td><a href="http://www.mojoportal.com/">mojoPortal</a> <br /> mojoPortal is an open source content management system and web site framework portal for .NET on Windows or Mono on Linux and Mac OS X. <br /><br /> <a href="http://www.dotnetblogengine.net/">BlogEngine.NET</a> <br /> An innovative open source blogging platform developed with ASP.NET 2.0.</td>
+      <td><a href="http://www.mojoportal.com/">mojoPortal</a> <br /> mojoPortal is an open source content management system and web site framework portal for .NET on Windows or Mono on Linux and macOS. <br /><br /> <a href="http://www.dotnetblogengine.net/">BlogEngine.NET</a> <br /> An innovative open source blogging platform developed with ASP.NET 2.0.</td>
       <td><a class="image-link" title="mojoPortal" href="/archived/images/2/2f/Mojoportal.png"><img alt="mojoPortal" src="/archived/images/2/2f/Mojoportal.png" width="180" /></a></td>
       <td><a class="image-link" title="BlogEngine.NET" href="/archived/images/0/08/Blogengine.png"><img alt="BlogEngine.NET" src="/archived/images/0/08/Blogengine.png" width="180" /></a></td>
     </tr>
@@ -153,7 +153,7 @@ Other Mono Applications
   <tbody>
     <tr>
       <td><a href="http://unity3d.com/">Unity</a> <br /> Game Development Tool implemented using Mono.</td>
-      <td><a class="image-link" title="Unity3d on OS X" href="/archived/images/6/68/Editorshot.jpg"><img alt="Unity3d on OS X" src="/archived/images/6/68/Editorshot.jpg" width="180" /></a></td>
+      <td><a class="image-link" title="Unity3d on macOS" href="/archived/images/6/68/Editorshot.jpg"><img alt="Unity3d on macOS" src="/archived/images/6/68/Editorshot.jpg" width="180" /></a></td>
     </tr>
     <tr>
       <td><a href="/Maemo">Maemo</a> <br /> Mono can be run on embedded devices like the Nokia 770. A video of the Nokia 770 running Gtk# is available <a href="http://www.go-mono.com/nokia/nokia-gtksharp.mov">here</a>.</td>

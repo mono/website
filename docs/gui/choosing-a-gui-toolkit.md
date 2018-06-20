@@ -4,11 +4,11 @@ title: Choosing a GUI Toolkit
 
 One of the hardest and most important decision to make when starting a new desktop application is which GUI "toolkit" to choose. The toolkit is the set of API's that produce the graphical user interface your users will interact with.
 
-There are a number of factors to consider when choosing the toolkit. Different toolkits support different platforms (Linux, Windows, OSX) and have different features such as accessibility, layout engines, and looks.
+There are a number of factors to consider when choosing the toolkit. Different toolkits support different platforms (Linux, Windows, macOS) and have different features such as accessibility, layout engines, and looks.
 
 The two main toolkits offered by Mono are GTK# and Winforms, however there are several other toolkits offered by the community which may suit your needs. You can see all of them in the [GUI page](/docs/gui/).
 
-Both GTK# and Winforms, while being cross-platform, have clear roots in their original platforms. Gtk+ (the root of GTK#) began life on the Linux platform, and has since been ported to Windows and OSX. Likewise, Winforms started on Windows, and the Mono project has ported it to run on Linux and OSX. If the majority of your users will be on one platform, likely the best choice will be the toolkit native to that platform. Although steps can be taken to make your application blend on all platforms, the native toolkit will probably do the best on each platform, and will feel familiar to the majority of your users. If you do not have a platform preference, your toolkit choice will have to rely on other factors.
+Both GTK# and Winforms, while being cross-platform, have clear roots in their original platforms. Gtk+ (the root of GTK#) began life on the Linux platform, and has since been ported to Windows and macOS. Likewise, Winforms started on Windows, and the Mono project has ported it to run on Linux and macOS. If the majority of your users will be on one platform, likely the best choice will be the toolkit native to that platform. Although steps can be taken to make your application blend on all platforms, the native toolkit will probably do the best on each platform, and will feel familiar to the majority of your users. If you do not have a platform preference, your toolkit choice will have to rely on other factors.
 
 Alternative Implementation Approaches
 =====================================
@@ -42,7 +42,7 @@ On Linux with Gnome:
 
 [![Tangerine-properties.png](/archived/images/e/e3/Tangerine-properties.png)](/archived/images/e/e3/Tangerine-properties.png)
 
-On MacOS X:
+On macOS:
 
 [![Tangerine-preferences-mac.png](/archived/images/a/a6/Tangerine-preferences-mac.png)](/archived/images/a/a6/Tangerine-preferences-mac.png)
 

@@ -14,7 +14,7 @@ Feature Mono Success Stories
 
 [![Stylizer-both-platforms.png](/archived/images/b/b3/Stylizer-both-platforms.png)](/archived/images/b/b3/Stylizer-both-platforms.png)
 
-[Skybound Software](http://www.skybound.ca/), based out of Waterloo in Ontario, Canada, is the creator of Stylizer, a powerful CSS editor designed to help web designers of all skill levels produce higher quality CSS in less time. Stylizer has a loyal user base, with many thousands of users spanning the entire range of web designer skill levels. The product is heavily focused on using interface in clever ways to automate and abstract the trivial technical details of the Cascading Style Sheet language. For a cross-platform application running from a single code base, the UI delivers a surprising level of native operating system look and feel, on both Mac OS X and Windows.
+[Skybound Software](http://www.skybound.ca/), based out of Waterloo in Ontario, Canada, is the creator of Stylizer, a powerful CSS editor designed to help web designers of all skill levels produce higher quality CSS in less time. Stylizer has a loyal user base, with many thousands of users spanning the entire range of web designer skill levels. The product is heavily focused on using interface in clever ways to automate and abstract the trivial technical details of the Cascading Style Sheet language. For a cross-platform application running from a single code base, the UI delivers a surprising level of native operating system look and feel, on both macOS and Windows.
 
 [Read more...](http://www.go-mono.com/pdfs/SkyboundSoftware_Stylizer_v2.pdf)
 
@@ -22,9 +22,9 @@ Feature Mono Success Stories
 
 [![Editorshot.jpg](/archived/images/6/68/Editorshot.jpg)](/archived/images/6/68/Editorshot.jpg)
 
-[Unity Technologies](http://unity3d.com/), based in Copenhagen, Denmark, is the creator of the product Unity, a game development system built around their own powerful 3D engine. Unity is used by leading game development studios worldwide, and was recently awarded a runner-up Apple Design Award for "Best Use of Mac OS X Graphics" at Apple's World Wide Developer Conference. This is the first time that a game development tool has reached the level of quality and ease of use required to win this prestigious award. Unity developers used Mono to achieve their cross-platform requirement of having Unity run on Windows and Mac OSx.
+[Unity Technologies](http://unity3d.com/), based in Copenhagen, Denmark, is the creator of the product Unity, a game development system built around their own powerful 3D engine. Unity is used by leading game development studios worldwide, and was recently awarded a runner-up Apple Design Award for "Best Use of macOS Graphics" at Apple's World Wide Developer Conference. This is the first time that a game development tool has reached the level of quality and ease of use required to win this prestigious award. Unity developers used Mono to achieve their cross-platform requirement of having Unity run on Windows and macOS.
 
-Find out how Mono is helping Unity build a rapidly growing user base on both Windows and Mac OSX, and making Unity the standard for many types of game development, architecture visualization, advertising and educational solutions.
+Find out how Mono is helping Unity build a rapidly growing user base on both Windows and macOS, and making Unity the standard for many types of game development, architecture visualization, advertising and educational solutions.
 
 [Read more...](http://www.go-mono.com/pdfs/Otee_v21.pdf)
 
@@ -48,7 +48,7 @@ Who uses Mono?
 If your company uses Mono and would like to get it listed here, please contact [support@xamarin.com](mailto:support@xamarin.com)
 
 -   [Novell](http://www.novell.com): Novell uses Mono for both client and server applications:
-    -   [iFolder](http://ifolder.com) (client and server on Linux and OSX),
+    -   [iFolder](http://ifolder.com) (client and server on Linux and macOS),
     -   [ZenWorks Linux Management](http://www.novell.com/products/zenworks/linuxmanagement/),
     -   its Desktop search product ([Beagle](http://beaglewiki.org)),
     -   photo management ([F-Spot](http://f-spot.org)),
@@ -58,7 +58,7 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [MedTronic](http://www.medtronic.com/) uses MonoTouch and MonoDroid to power their mobile applications from a [single C# codebase](http://vagabondrev.org/2011/04/07/ipad-in-business-apple-features-medtronic/) and they are also featured in [Apple's Business web site](http://www.apple.com/ipad/business/profiles/medtronic/?aosid=p204&siteid=1503186&program_id=2554&cid=OAS-EMEA-AFF&tduid=7bbc283c72a33cc8329fa72a04e2e542).
 
--   [FuturePrice](https://secure.futureprice.com/) is using Mono to provide cross-platform access to complete market-wide data feeds for shares and other instruments listed on NYSE, NASDAQ, and AMEX. Their Data API provides request/response mechanisms capable of handling thousands of simultaneous requests, as well as market-wide streaming feeds delivering quotes and trades across all (approx. 8,000) shares listed on NYSE, NASDAQ, and AMEX. The Data API receives institutional-quality market data from the NYSE Technologies Group's SuperFeed(tm) platform. Mono enables FuturePrice to provide simple, cross platform access to these complete feeds, on Windows, Linux, and OS X.
+-   [FuturePrice](https://secure.futureprice.com/) is using Mono to provide cross-platform access to complete market-wide data feeds for shares and other instruments listed on NYSE, NASDAQ, and AMEX. Their Data API provides request/response mechanisms capable of handling thousands of simultaneous requests, as well as market-wide streaming feeds delivering quotes and trades across all (approx. 8,000) shares listed on NYSE, NASDAQ, and AMEX. The Data API receives institutional-quality market data from the NYSE Technologies Group's SuperFeed(tm) platform. Mono enables FuturePrice to provide simple, cross platform access to these complete feeds, on Windows, Linux, and macOS.
 
 -   [LindenLab](http://www.lindenlab.com/) runs user-created scripts in the SecondLife world under a mono virtual machine.
 
@@ -78,7 +78,7 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Slingshot Software](http://www.slingshotsoftware.com/) uses Mono and PostgreSQL to [offer their .NET-based ERP software on Linux](http://www.slingshotsoftware.com/news/slingshot-adds-support-linux-os-and-postgressql-database-management-system).
 
--   [Metrosharp Corporation](http://www.metrosharp.net) is a specialist in complex record keeping requirements and uses Mono and Cocoa# for its Identity Management System line of software. Metrosharp OpenIMF (Identity Management Framework) released under Mozilla Public License and Metrosharp IMS 2007 (Identity Management System) bring advanced USC 2257 record keeping compliancy to Novell SUSE Linux and MacOS X.
+-   [Metrosharp Corporation](http://www.metrosharp.net) is a specialist in complex record keeping requirements and uses Mono and Cocoa# for its Identity Management System line of software. Metrosharp OpenIMF (Identity Management Framework) released under Mozilla Public License and Metrosharp IMS 2007 (Identity Management System) bring advanced USC 2257 record keeping compliancy to Novell SUSE Linux and macOS.
 
 -   [Codice Software](http://www.codicesoftware.com/): they develop a commercial Source Code Management product called [Plastic](http://www.codicesoftware.com/opproducts.aspx). Read the [Codice success story](http://www.go-mono.com/pdfs/Codice_v1.pdf) here.
 
@@ -124,7 +124,7 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Coversant](http://www.coversant.net/): they build SoapBox, a Jabber server
 
--   [A&D Solutions](http://www.aedsol.com/) based in Curitiba, Brazil just released version 3.2 of their [Maximus Security product](http://www.aedsol.com/solucoes/maximus), cross-platform security monitoring software that uses embedded Mono for alarm event processing. Available on Windows, Linux and Mac OS X.
+-   [A&D Solutions](http://www.aedsol.com/) based in Curitiba, Brazil just released version 3.2 of their [Maximus Security product](http://www.aedsol.com/solucoes/maximus), cross-platform security monitoring software that uses embedded Mono for alarm event processing. Available on Windows, Linux and macOS.
 
 -   [Zing](http://www.zing.net): their portable MP3/Wifi player uses Mono to drive their application stack. You can see various pictures of the player on this [hands-on review](http://www.engadget.com/2007/01/08/hands-on-with-sandisks-new-zune-bestin-sansa-connect/) at Engadget.
 

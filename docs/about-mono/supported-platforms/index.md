@@ -13,7 +13,7 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 **Operating Systems**
 
 -   [Linux](/docs/about-mono/supported-platforms/linux/)
--   [Mac OS X](/docs/about-mono/supported-platforms/osx/), [iOS, tvOS, watchOS](/docs/about-mono/supported-platforms/apple/)
+-   [macOS](/docs/about-mono/supported-platforms/macos/), [iOS, tvOS, watchOS](/docs/about-mono/supported-platforms/apple/)
 -   [Sun Solaris](/docs/about-mono/supported-platforms/solaris/)
 -   [IBM AIX and i](/docs/about-mono/supported-platforms/aix/)
 -   [BSD](/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
@@ -29,9 +29,9 @@ Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime
 |:----------------------|:------|:---------------|
 |[s390x (64 bits)](/docs/about-mono/supported-platforms/s390/)|JIT|Linux|
 |[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|JIT|Solaris, Linux|
-|[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|JIT|Linux, AIX, i, Mac OSX, Wii, PlayStation 3|
-|[x86](/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, OS X, Android|
-|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT, Interpreter|Linux, FreeBSD, OpenBSD, Solaris, OS X|
+|[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|JIT|Linux, AIX, i, macOS, Wii, PlayStation 3|
+|[x86](/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, macOS, Android|
+|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT, Interpreter|Linux, FreeBSD, OpenBSD, Solaris, macOS|
 |[ARM](/docs/about-mono/supported-platforms/arm/): little and big endian|JIT, Interpreter (arm64 only)|Linux (both old and new ABI), iPhone, Android|
 |[MIPS](/docs/about-mono/supported-platforms/mips/)|JIT|Linux|
 

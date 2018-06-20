@@ -18,7 +18,7 @@ Hompepage: [http://gtk-sharp.sf.net](http://gtk-sharp.sf.net)
 
 Wiki: [GtkSharp](/docs/gui/gtksharp/)
 
-This toolkit is a .NET binding for the Gtk+ toolkit. It is in active development, and there are various applications in the Mono world that use it (Monodoc, Monocov, Mono's Debugger and various smaller applications, a more complete list is available on the Gtk# Wiki. Platforms: Unix, Windows, GPE, MacOS X (using the X server).
+This toolkit is a .NET binding for the Gtk+ toolkit. It is in active development, and there are various applications in the Mono world that use it (Monodoc, Monocov, Mono's Debugger and various smaller applications, a more complete list is available on the Gtk# Wiki. Platforms: Unix, Windows, GPE, macOS (using the X server).
 
 Pros:
 
@@ -33,7 +33,7 @@ Pros:
 
 Cons:
 
--   Gtk+ apps run like foreign applications on MacOS X.
+-   Gtk+ apps run like foreign applications on macOS.
 -   Incomplete documentation.
 
 ### Complementary Libraries
@@ -179,7 +179,7 @@ Native MacOS toolkit.
 
 Pros:
 
--   Native look and feel on MacOS X
+-   Native look and feel on macOS
 -   Extensive API and core documentation
 -   Samples
 -   Active, vibrant community.
@@ -187,25 +187,25 @@ Pros:
 
 Cons:
 
--   Not portable outside of MacOS X
+-   Not portable outside of macOS
 
 MonObjc
 -------
 
 Homepage: [http://www.monobjc.net](http://www.monobjc.net)
 
-Native MacOS X toolkit.
+Native macOS toolkit.
 
 Pros:
 
--   Native look and feel on MacOS X
+-   Native look and feel on macOS
 -   Extensive API and core documentation
 -   Samples
 -   Active, vibrant community.
 
 Cons:
 
--   Not portable outside of MacOS X
+-   Not portable outside of macOS
 
 Clutter
 -------

@@ -170,7 +170,7 @@ Well, those were some glimpses of the accomplished work. However, I'd be glad if
 
 I also tried my hands on a few tasks which I couldn't accomplish. For example,
 * A user was getting expection with boost::signals2 [here](https://github.com/mono/CppSharp/issues/861). I tried fixing this but with little luck. So, finally I just compiled all my efforts for this issue in a doc and left it as a comment there on the issue. I would like to work on this again in future.
-* Publishing the Linux and macOS binaries from Travis to GitHub : I gave this a try in my initial days and this is almost done. Just there were some issues with osx dylibs which needs to be resolved before I can get this working. But, since this wasn't much high on the priority list then, so I left it for later. And, would try to do it later on.
+* Publishing the Linux and macOS binaries from Travis to GitHub : I gave this a try in my initial days and this is almost done. Just there were some issues with macOS dylibs which needs to be resolved before I can get this working. But, since this wasn't much high on the priority list then, so I left it for later. And, would try to do it later on.
 * [Bind delegates with higher-level managed types](https://github.com/mono/CppSharp/issues/511) : I attempted this one for a while, but  then wasn't confident enough about my knowledge of delegates so I left it and moved on to solve other issues. But, now I since I've already solved few issues that concern delegates, I feel much more confident. I'd love to give this a shot again after the summer. I just hope I get it right this time.
 * I'd love to ask the maintainers for more work that I could do and keep learning this way, whenever I get enough time.
 

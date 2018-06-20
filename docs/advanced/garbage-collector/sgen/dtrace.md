@@ -4,7 +4,7 @@ redirect_from:
   - /SGen_DTrace/
 ---
 
-On MacOS X Mono's [Generational GC](/docs/advanced/garbage-collector/sgen/) is instrumented with several [DTrace](/docs/debug+profile/profile/dtrace/) probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
+On macOS Mono's [Generational GC](/docs/advanced/garbage-collector/sgen/) is instrumented with several [DTrace](/docs/debug+profile/profile/dtrace/) probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
 
 The Probes
 ==========

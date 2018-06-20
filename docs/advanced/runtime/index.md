@@ -56,7 +56,7 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 -   [Android](https://developer.xamarin.com/guides/android/)
 -   [Apple iOS](https://developer.xamarin.com/guides/ios), [iOS](/docs/about-mono/supported-platforms/iphone/)
--   [Apple macOS](/docs/about-mono/supported-platforms/osx/),
+-   [Apple macOS](/docs/about-mono/supported-platforms/macos/),
 -   [Apple tvOS](https://developer.xamarin.com/guides/ios/tvos/)
 -   [Apple watchOS](https://developer.xamarin.com/guides/ios/watch/)
 -   [BSD](/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
@@ -73,9 +73,9 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 |:----------------------|:---------------|
 |[s390, s390x (32 and 64 bits)](/docs/about-mono/supported-platforms/s390/)|Linux|
 |[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|Solaris, Linux|
-|[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|Linux, Mac OSX, Wii, PlayStation 3|
-|[x86](/docs/about-mono/supported-platforms/x86/)|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, OS X, Android|
-|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|Linux, FreeBSD, OpenBSD, Solaris, OS X|
+|[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|Linux, macOS, Wii, PlayStation 3|
+|[x86](/docs/about-mono/supported-platforms/x86/)|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, macOS, Android|
+|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|Linux, FreeBSD, OpenBSD, Solaris, macOS|
 |[IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit)|Linux|
 |[ARM](/docs/about-mono/supported-platforms/arm/): little and big endian|Linux (both old and new ABI), iPhone, Android|
 |Alpha|**not maintained**. Linux|
@@ -200,7 +200,7 @@ See the [Performance Tips](/docs/advanced/performance-tips/) page for details on
 
 ### DTrace
 
-Mono's [support for DTrace](/docs/debug+profile/profile/dtrace/) is available on Solaris and MacOS X.
+Mono's [support for DTrace](/docs/debug+profile/profile/dtrace/) is available on Solaris and macOS.
 
 ### Logging runtime events
 

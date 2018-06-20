@@ -65,7 +65,7 @@ As a Mono extension, if the library being loaded is `__Internal`, then the main 
 
 See also: the **dlopen**(3) man page, the **ld.so**(8) man page, [Dissecting shared libraries](http://www-106.ibm.com/developerworks/linux/library/l-shlibs.html?ca=dgr-lnxw07SharedLib).
 
-Mac OS X Framework and .dylib Search Path
+macOS Framework and .dylib Search Path
 -----------------------------------------
 
 The Framework and library search path is:
@@ -84,7 +84,7 @@ The Framework and library search path is:
     -   `/lib`
     -   `/usr/lib`
 
-Note: Mono uses GLib to load libraries, and GLib has a bug on Mac OS X where it doesn't use a `.dylib` extension, but instead uses the Unix `.so` extension. While this should eventually be fixed, the current workaround is to [write a `.config` file which maps to the `.dylib` file](#library-names), e.g.
+Note: Mono uses GLib to load libraries, and GLib has a bug on macOS where it doesn't use a `.dylib` extension, but instead uses the Unix `.so` extension. While this should eventually be fixed, the current workaround is to [write a `.config` file which maps to the `.dylib` file](#library-names), e.g.
 
 ``` xml
  <configuration>
@@ -101,7 +101,7 @@ Library Names
 
 Knowing where to look for the library is only half of the problem. Knowing what library to load is the other half.
 
-Different platforms have different naming conventions. Windows platforms append `.DLL` to the library name, such as `OLE32.DLL`. Linux platforms use a `lib` prefix and a `.so` suffix<sup>(see Note 1)</sup>. Mac OS X platforms have a `lib` prefix and a `.dylib` suffix, unless they're a Framework, in which case they're a directory and things get more complicated.
+Different platforms have different naming conventions. Windows platforms append `.DLL` to the library name, such as `OLE32.DLL`. Linux platforms use a `lib` prefix and a `.so` suffix<sup>(see Note 1)</sup>. macOS platforms have a `lib` prefix and a `.dylib` suffix, unless they're a Framework, in which case they're a directory and things get more complicated.
 
 Note 1: Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/\> mechanism; see below for details.
 
@@ -112,7 +112,7 @@ If you have control over the library name, keep the above naming conventions in 
  private static extern void Frobnicate ();
 ```
 
-Then, you just need to provide `MyLibrary.dll` for Windows platforms, `libMyLibrary.so` for Unix platforms, and `libMyLibrary.dylib` for Mac OS X platforms.
+Then, you just need to provide `MyLibrary.dll` for Windows platforms, `libMyLibrary.so` for Unix platforms, and `libMyLibrary.dylib` for macOS platforms.
 
 Note: Windows will not automatically append a `.dll` extension to library names that already have a period (.) in their name, such as `libgtk-win32-2.0-0.dll`. If you try to use `libgtk-win32-2.0-0` as the library name, Windows won't automatically append `.dll`, resulting in a **DllNotFoundException**. Consequently you should either avoid periods in library names or always use the full filename (including the `.dll` extension) and rely on Mono's \<dllmap/\> mechanism.
 

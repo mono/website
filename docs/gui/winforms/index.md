@@ -28,7 +28,7 @@ About System.Windows.Forms
 
 System.Windows.Forms (aka Managed.Windows.Forms, MWF, Winforms) is one of the many [GUI Toolkits](/docs/gui/gui-toolkits/) for use with Mono and is compatible with Microsoft's System.Windows.Forms. Support for Winforms 1.1 and 2.0 has been completed, and is now in a maintenance/bug fixing state.
 
-System.Windows.Forms in Mono is implemented using System.Drawing. All controls are natively drawn through [System.Drawing](/docs/gui/drawing/). System.Windows.Forms implements its own driver interface to communicate with the host OS windowing system. Currently, we have drivers for X11, Win32, and OSX. These drivers translate the native window messages into WndProc compatible messages, to provide as much compatibility with native .Net as possible.
+System.Windows.Forms in Mono is implemented using System.Drawing. All controls are natively drawn through [System.Drawing](/docs/gui/drawing/). System.Windows.Forms implements its own driver interface to communicate with the host OS windowing system. Currently, we have drivers for X11, Win32, and macOS. These drivers translate the native window messages into WndProc compatible messages, to provide as much compatibility with native .Net as possible.
 
 In terms of integrating visually with the desktop, we currently ship with a classic Win32 theme.
 
@@ -76,7 +76,7 @@ This section discusses the theming issues in Mono's implementation of Windows Fo
 
 ### Why Not Use Native Widgets?
 
-It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in OS X. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects). A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as [Gtk#](/docs/gui/gtksharp/).
+It is not feasible to use native widgets on all operating systems. Each OS/Windowing system has different behavior/properties/features for what on the surface looks like the same widget. A RadioButton in Gnome is different from a RadioButton in Win32, which is different from a RadioButton in macOS. To use the native widgets means to reduce the functionality of MWF to the least common denominator of all supported operating systems. If we were designing our own GUI toolkit, this might even be acceptable, however we are implementing an already defined API with defined behavior (and even with application relied-upon side-effects). A RadioButton has to behave exactly like it behaves on Win32 with MS.Net, or else applications written for it may not work properly anymore. And that's the whole point of Winforms: to allow existing .Net SWF apps to run on Mono. For other uses, there are other choices that may be more appropriate, such as [Gtk#](/docs/gui/gtksharp/).
 
 ### Fitting In
 
@@ -84,9 +84,9 @@ Although we cannot use native widgets, we still would like to make a reasonable 
 
 ### Maturity of the Theming Interface
 
-Currently, we have the default managed Win32 Classic theme and a native Windows VisualStyles theme. We would like to have native theming on Linux and OSX.
+Currently, we have the default managed Win32 Classic theme and a native Windows VisualStyles theme. We would like to have native theming on Linux and macOS.
 
-The best option we currently have for theming is the VisualStyles theme. On Windows, this calls the native Windows API and allows it to draw natively for us. Unfortunately, the System.Windows.Forms.VisualStyles namespace is not currently implemented on Linux or OSX. The best way forward would be to implement this namespace on those platforms. (Alternatively, one could port Wine's uxtheme.dll and we could ship Clearlooks and Aqua themes that people have done.)
+The best option we currently have for theming is the VisualStyles theme. On Windows, this calls the native Windows API and allows it to draw natively for us. Unfortunately, the System.Windows.Forms.VisualStyles namespace is not currently implemented on Linux or macOS. The best way forward would be to implement this namespace on those platforms. (Alternatively, one could port Wine's uxtheme.dll and we could ship Clearlooks and Aqua themes that people have done.)
 
 The VisualStyles namespace allows you to focus simply on drawing one element, like a "selected button" instead of having to try to sift through the theming code to find out how it draws a button.
 
@@ -100,7 +100,7 @@ The Gtk effort had the following problems:
 -   Mapping one toolkit's semantics to another was very hard.
 -   It would be very cumbersome to map all events into WndProc events, the messaging system at the core of Windows.Forms.
 -   The development effort happened early in the Mono life, with this very sporadic development effort, the code quickly became obsolete or bit-rotted.
--   Using this on other systems required a Gtk+ installation on the target system (OS X and embedded devices would have suffered the most).
+-   Using this on other systems required a Gtk+ installation on the target system (macOS and embedded devices would have suffered the most).
 
 The Wine effort could have been a successful approach, however there were several technical obstacles:
 

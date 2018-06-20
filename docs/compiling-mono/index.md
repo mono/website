@@ -12,6 +12,6 @@ This describes how to compile and install Mono from its source code. If you are 
 
 Take a look at these guides for compiling Mono on different platforms:
 
-- [Compiling Mono on Mac OS X](/docs/compiling-mono/mac/)
+- [Compiling Mono on macOS](/docs/compiling-mono/mac/)
 - [Compiling Mono on Linux](/docs/compiling-mono/linux/)
 - [Compiling Mono on Windows](/docs/compiling-mono/windows/)

@@ -116,7 +116,7 @@ Another user comments:
 
 ### How to detect the execution platform ?
 
-The execution platform can be detected by using the `System.Environment.OSVersion.Platform` value. However correctly detecting Unix platforms, in every cases, requires a little more work. The first versions of the framework (1.0 and 1.1) didn't include any `PlatformID` value for Unix, so Mono used the value 128. The newer framework 2.0 added Unix to the `PlatformID` enum but, sadly, with a different value: 4 and newer versions of .NET distinguished between Unix and MacOS X, introducing yet another value 6 for MacOS X.
+The execution platform can be detected by using the `System.Environment.OSVersion.Platform` value. However correctly detecting Unix platforms, in every cases, requires a little more work. The first versions of the framework (1.0 and 1.1) didn't include any `PlatformID` value for Unix, so Mono used the value 128. The newer framework 2.0 added Unix to the `PlatformID` enum but, sadly, with a different value: 4 and newer versions of .NET distinguished between Unix and macOS, introducing yet another value 6 for macOS.
 
 This means that in order to detect properly code running on Unix platforms you must check the three values (4, 6 and 128). This ensure that the detection code will work as expected when executed on Mono CLR 1.x runtime and with both Mono and Microsoft CLR 2.x runtimes.
 
@@ -137,7 +137,7 @@ class Program {
 }
 ```
 
-Notice that as of Mono 2.2 the version returned on MacOS X is still 4 for legacy reasons, too much code was written between the time that the MacOSX value was introduced and the time that we wrote this text which has lead to a lot of user code in the wild to not cope with the newly introduced value.
+Notice that as of Mono 2.2 the version returned on macOS is still 4 for legacy reasons, too much code was written between the time that the macOS value was introduced and the time that we wrote this text which has lead to a lot of user code in the wild to not cope with the newly introduced value.
 
 A better way of testing for Unixness is to make tests that are feature specific instead of dividing the code in Unix vs Windows. For example, for file system operations, it is better to use the path character separator and compare it for '/' or '\\' as that would not depend on the actual enumeration value.
 
@@ -226,7 +226,7 @@ No. Currently you can use the [Gtk-Sharp Installer for .NET Framework](/docs/gui
 
 ### What is a 100% .NET application?
 
-A '100% .NET application' is one that only uses the APIs defined under the System namespace and does not use P/Invoke. These applications would in theory run unmodified on Windows, Linux, Solaris, MacOS X and others. Note that this requirement also holds for all assemblies used by the application. If one of them is Windows-specific, then the entire program is not a 100% .NET application. Furthermore, a 100% .NET application must not contain non-standard data streams in the assembly. For example, Visual Studio .NET will insert a `#-` stream into assemblies built under the "Debug" target. This stream contains debugging information for use by Visual Studio .NET; however, this stream can not be interpreted by Mono (unless you're willing to donate support). Thus, it is recommended that all Visual Studio .NET-compiled code be compiled under the Release target before it is executed under Mono.
+A '100% .NET application' is one that only uses the APIs defined under the System namespace and does not use P/Invoke. These applications would in theory run unmodified on Windows, Linux, Solaris, macOS and others. Note that this requirement also holds for all assemblies used by the application. If one of them is Windows-specific, then the entire program is not a 100% .NET application. Furthermore, a 100% .NET application must not contain non-standard data streams in the assembly. For example, Visual Studio .NET will insert a `#-` stream into assemblies built under the "Debug" target. This stream contains debugging information for use by Visual Studio .NET; however, this stream can not be interpreted by Mono (unless you're willing to donate support). Thus, it is recommended that all Visual Studio .NET-compiled code be compiled under the Release target before it is executed under Mono.
 
 ### Can I execute my Visual Studio .NET program (Visual Basic .NET, Visual C#, Managed Extensions for C++, C++/CLI, etc.) under Mono?
 

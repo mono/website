@@ -47,7 +47,7 @@ The compiler will create "hello.exe", which you can run using:
 
     mono hello.exe
 
-NOTE: on Mac OS X you’ll have to wait around a minute the very first time you run this command.
+NOTE: on macOS you’ll have to wait around a minute the very first time you run this command.
 
 [![Helloworld.png](/archived/images/f/f5/Helloworld.png)](/archived/images/f/f5/Helloworld.png)
 

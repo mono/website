@@ -7,9 +7,9 @@ The Mono runtime is written in C which cannot benefit from automated garbage col
 * Table of contents
 {:toc}
 
-# OS X leaks tool
+# macOS leaks tool
 
-OS X provides very handy memory debugging facilities which can be used to detect memory leaks in the runtime in many cases. Of particular interest is the `leaks` tool that scans the process's memory and makes sure that all memory allocations are "reachable", that is, there is at least one value within the process memory referencing that allocation.
+macOS provides very handy memory debugging facilities which can be used to detect memory leaks in the runtime in many cases. Of particular interest is the `leaks` tool that scans the process's memory and makes sure that all memory allocations are "reachable", that is, there is at least one value within the process memory referencing that allocation.
 
 ## Usage
 

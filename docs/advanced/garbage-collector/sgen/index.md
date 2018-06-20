@@ -11,7 +11,7 @@ For a few releases, Mono has shipped with a new garbage collector, we call this 
 
 The [Benchmark Suite](/docs/advanced/garbage-collector/benchmark-suite/) continuously runs benchmarks for each Mono revision to track performance regressions using CI.
 
-On MacOS X SGen provides several DTrace probes, described in the document [SGen DTrace](/docs/advanced/garbage-collector/sgen/dtrace/).
+On macOS SGen provides several DTrace probes, described in the document [SGen DTrace](/docs/advanced/garbage-collector/sgen/dtrace/).
 
 Garbage Collection
 ==================
@@ -321,7 +321,7 @@ Another important side effect of suspending the threads with a signal handler is
 
 The dark areas represent the blocks of memory that the SgenThreadInfo will track for each thread in the running application and contain the live data on each of the thread stacks, in addition to the register values.
 
-On some operating systems like OSX and Windows, a different mechanism is used to stop the threads (typically with a native call that suspends the threads).
+On some operating systems like macOS and Windows, a different mechanism is used to stop the threads (typically with a native call that suspends the threads).
 
 Roots
 -----
@@ -594,9 +594,9 @@ MonoGHashTable
 Precise Stack Marking
 =====================
 
-By default SGen scan the stack precisely on most platforms (OSX is a notable exception). You can control whether SGen uses precise or conservative scanning by setting the `stack-mark=<code> flag in the <code>MONO_GC_PARAMS` variable.
+By default SGen scan the stack precisely on most platforms (macOS is a notable exception). You can control whether SGen uses precise or conservative scanning by setting the `stack-mark=<code> flag in the <code>MONO_GC_PARAMS` variable.
 
-Both Boehm GC, and SGen on OSX scan threads stacks conservatively. This means that they treated every value found on a stack as a potential pointer. This is problematic for several reasons:
+Both Boehm GC, and SGen on macOS scan threads stacks conservatively. This means that they treated every value found on a stack as a potential pointer. This is problematic for several reasons:
 
 -   The possibility that some objects remain alive by mistake, because a value which points to them is found on the stack.
 -   For SGen, objects pointed to by stack values will remain pinned, fragmenting the nursery and hurting collector performance.

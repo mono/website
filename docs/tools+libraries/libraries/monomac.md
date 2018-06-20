@@ -5,7 +5,7 @@ redirect_from:
   - /CocoaSharp/
 ---
 
-Xamarin.Mac is a new foundation for building Cocoa applications on OSX using Mono.
+Xamarin.Mac is a new foundation for building Cocoa applications on macOS using Mono.
 
 Details about Xamarin.Mac are covered at [http://xamarin.com/mac](http://xamarin.com/mac)
 

@@ -1,10 +1,10 @@
 ---
-title: Install Mono on Mac OS X
+title: Install Mono on macOS
 ---
 
-Mono runs on Mac, this page describes the various features available for users who want to use Mono or Mono-based technologies on Mac OS X.
+Mono runs on Mac, this page describes the various features available for users who want to use Mono or Mono-based technologies on macOS.
 
-Installing Mono on Mac OS X is very simple:
+Installing Mono on macOS is very simple:
 
 1.  [Download](/download/stable/) the latest Mono release for Mac
 2.  Run the .pkg file and accept the terms of the license. Mono is now installing:

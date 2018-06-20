@@ -130,4 +130,4 @@ To enable lock tracer support define LOCK_TRACER in mono/mono/metadata/lock-trac
 
 The lock tracer produces a file in the same directory of the application, it's named 'lock.ZZZ' where ZZZ is the pid of the mono process.
 
-After producing such lock file, run the trace decoder that can be found in mono/data/lock-decoder. It currently only works on linux and OSX, it requires binutils to be installed. The decoder will report locking errors specifying the functions that caused it.
+After producing such lock file, run the trace decoder that can be found in mono/data/lock-decoder. It currently only works on linux and macOS, it requires binutils to be installed. The decoder will report locking errors specifying the functions that caused it.

@@ -57,7 +57,7 @@ This new feature appeared in Mono 1.1.18 and is available in all new Mono 1.2.x 
 
 The downside is that Mono will have to do some extra work when coping with your file system, to search for case insensitive file names. So if your application is still a portable application, you will be much better off without this switch.
 
-[1] Some Linux file systems are case insensitive, and some folks have used a combination of hacks, including doing loopback CIFS mounts to get case sensitivity issues out of the way; OS X does not have this particular problem, but it still has the others.
+[1] Some Linux file systems are case insensitive, and some folks have used a combination of hacks, including doing loopback CIFS mounts to get case sensitivity issues out of the way; macOS does not have this particular problem, but it still has the others.
 
 IOMAP reporting utility
 -----------------------

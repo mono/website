@@ -46,7 +46,7 @@ Both the `<dllmap>` and `<dllentry>` elements allow the following attributes whi
 -   `cpu` This is the name of the architecture for which the mapping should be applied. Allowed values are: x86, x86-64, sparc, ppc, s390, s390x, arm, armv8 (AArch64), mips, alpha, hppa, ia64.
 -   `wordsize` you can use this to differentiate between 32 and 64 bit systems. The possible values are : 32 and 64.
 
-The attribute value for both attributes can be a comma-separated list of the allowed values. Additionally, the first character may be a '!' to reverse the meaning. An attribute value of `!windows,osx`, for example, would mean that the entry is considered on all operating systems, except on Windows and OS X.
+The attribute value for both attributes can be a comma-separated list of the allowed values. Additionally, the first character may be a '!' to reverse the meaning. An attribute value of `!windows,osx`, for example, would mean that the entry is considered on all operating systems, except on Windows and macOS.
 
 No spaces are allowed in any part of the value.
 

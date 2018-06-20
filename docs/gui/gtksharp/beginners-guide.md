@@ -18,7 +18,7 @@ Adapted from the [gtk+ website](http://www.gtk.org/): *gtk+ is a multi-platform 
 
 Currently gtk+ works natively on any X server, Direct Framebuffer system and Microsoft Windows NT derivitives. The library originates from Linux where it provides a basis for the popular [GNOME](http://www.gnome.org/) desktop environment. gtk+ is routinely included in most Linux distributions, and has been stable on Windows NT derivitives for quite a while now (probably roughly around 2000, if my memory serves me correctly).
 
-A native port to Mac OSX is planned but needs warm bodies. This is a call for participation.
+A native port to macOS is planned but needs warm bodies. This is a call for participation.
 
 One common misconception is that GTK# requires Mono to work. This is far from the truth. GTK# will run on any .NET compatible runtime. GTK# is regularly tested on MS.NET and Mono but should run on any fully compliant runtime. This means if you write your applications in GTK# and wished to run on Windows as well, you can choose to deploy with just GTK# and use Microsoft's runtime, or alternately deploy with Mono's runtime for Windows.
 
@@ -30,7 +30,7 @@ Download/Install GTK#
 
 First thing you will want to do is get your GTK# install up and running.
 
-**Linux, MacOSX, FreeBSD, and others:** See if your distribution has GTK# development packages as well as any Mono packages first. If not, check out [Downloads](/download/stable/) to find a package that works for you. In the worst case, you may be forced to build yourself from source.
+**Linux, macOS, FreeBSD, and others:** See if your distribution has GTK# development packages as well as any Mono packages first. If not, check out [Downloads](/download/stable/) to find a package that works for you. In the worst case, you may be forced to build yourself from source.
 
 **Windows:** If you are using Windows, pick yourself up a copy of the integrated installer from that [Downloads](/download/stable/) page. You might also like to grab a copy of the Gtk# integration package for Visual Studio which will allow you to use GTK# with Microsoft's Visual Studio without installing the rest of Mono.
 

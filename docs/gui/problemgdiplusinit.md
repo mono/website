@@ -68,8 +68,8 @@ Or you can try:
 MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono glue.exe
 ```
 
-MacOS X
-=======
+macOS
+=====
 
 Make sure that the file libgdiplus.dylib exists and that the directory containing it is listed in the DYLD_LIBRARY_PATH environment variable.
 

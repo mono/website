@@ -38,7 +38,7 @@ Info
 
 -   Exists in namespace System.Data.OracleClient and assembly System.Data.OracleClient.dll
 
--   Works on Windows, Linux x86, and Solaris x86. Can you help us get it to work on other systems, such as, Solaris SPARC and Mac OS X?
+-   Works on Windows, Linux x86, and Solaris x86. Can you help us get it to work on other systems, such as, Solaris SPARC and macOS?
 
 -   Works with Oracle 8i, 9i, 10g, and 11g databases
 
@@ -73,7 +73,7 @@ Current Status for System.Data.OracleClient
 
 -   Data Adapter exists, and a DataSet can be filled using it.
 
--   May not work on non-X86 platforms such as Mac OS X nor Solaris SPARC. Does not work due to byte-ordering or alignment issues with different processors. We accept patches to get these platforms working.
+-   May not work on non-X86 platforms such as macOS nor Solaris SPARC. Does not work due to byte-ordering or alignment issues with different processors. We accept patches to get these platforms working.
 
 Action plan
 -----------
@@ -86,7 +86,7 @@ Action plan
 
 -   Support for Oracle 10g on Linux and Windows (WORKING. Still need to add features for 10g)
 
--   Support for Oracle 10g on Mac OS X. This requires resolving byte-ordering and alignment issues (TODO).
+-   Support for Oracle 10g on macOS. This requires resolving byte-ordering and alignment issues (TODO).
 
 -   Support for Oracle 10g on Solaris x86. (WORKING on Solaris 10 x86 and Solaris Express x86)
 

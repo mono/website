@@ -198,7 +198,7 @@ $ mkbundle -o CacheServer --simple CacheServer.exe --library /usr/lib/libfastdec
 ...
 ```
 
-At its most extreme, this would allow you to bundle an entire GUI framework and its dependencies, to make a bundled application which works on a machine with zero useful dependencies pre-assumed:
+At its most extreme, this would allow you to bundle an entire GUI framework and its dependencies, to make a bundled application which works on a machine with zero useful dependencies pre-assumed (note the below example might not be complete for the current Mono version, check /etc/mono/config):
 
 ```xml
 <configuration>

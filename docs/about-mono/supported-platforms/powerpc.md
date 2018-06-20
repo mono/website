@@ -7,7 +7,7 @@ redirect_from:
 
 The PowerPC port is complete, although less supported than other architectures.
 
-It works on [Mac OS X](/docs/about-mono/supported-platforms/osx/), [Linux](/docs/about-mono/supported-platforms/linux/), [IBM AIX](/docs/about-mono/supported-platforms/aix/), [IBM i](/docs/about-mono/supported-platforms/aix/), [Nintendo Wii](/docs/about-mono/supported-platforms/wii/) and [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/).
+It works on [macOS](/docs/about-mono/supported-platforms/macos/), [Linux](/docs/about-mono/supported-platforms/linux/), [IBM AIX](/docs/about-mono/supported-platforms/aix/), [IBM i](/docs/about-mono/supported-platforms/aix/), [Nintendo Wii](/docs/about-mono/supported-platforms/wii/) and [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/).
 
 The port owner is Bernhard Urban.
 
@@ -24,7 +24,7 @@ A nice introduction to PowerPC assembly language at [http://www.ibm.com/develope
 
 ## Calling conventions
 
--   On Mac OS X, the conventions are documented in the [Mach-O Runtime Architecture](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/MachORuntime/).
+-   On macOS, the conventions are documented in the [Mach-O Runtime Architecture](https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/MachORuntime/).
 -   On AIX and i, the conventions are documented in the [AIX assembler language reference](https://www.ibm.com/support/knowledgecenter/en/ssw_aix_61/com.ibm.aix.alangref/idalangref_subrutine_link_conv.htm).
 
 ### Linux

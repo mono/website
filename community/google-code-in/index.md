@@ -72,7 +72,7 @@ We'll provide a tool (gui-compare) that allow people to spot all different names
 Port and fix existing libraries and applications to Linux
 ---------------------------------------------------------
 
-There are a number of popular libraries as well as applications that could be ported trivially to Linux. For the port to be useful, we need both the patches as well as the packaging in RPM form (or DEB form) to easily distribute them to Linux and OSX users.
+There are a number of popular libraries as well as applications that could be ported trivially to Linux. For the port to be useful, we need both the patches as well as the packaging in RPM form (or DEB form) to easily distribute them to Linux and macOS users.
 
 The task is to port the libraries to Linux by making enough changes to them that they will run out of the box. We can keep the changes as patches to create both RPM and DEB packages and we should also submit them upstream to make sure that future releases of those packages run out of the box on Linux.
 

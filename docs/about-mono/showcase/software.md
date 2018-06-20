@@ -36,7 +36,7 @@ Commercial Applications
 -   [Winfessor SoapBox Framework Mono Edition](http://www.winfessor.com/portal/DesktopDefault.aspx?tabid=57) enables developers to build .NET-based IM solutions that run on any Mono-supported platform
 -   [Zamples](http://www.zamples.com) enables software developers to quickly learn new programming languages and APIs (C# and VB.NET) by playing with live code examples [using Mono](http://zamples.com/news/mono.jsp).
 -   [GMOVIL](http://www.aspl.es/gmovil/us/index.html) is a complete tool to manage common processes for Vodaphone sales points. It includes a Gtk# (shown here) and SWF GUI ([Technical details](http://www.aspl.es/fact/index.php?id=39)).
--   Novell [ZENworks Linux Management](http://www.novell.com/products/zenworks/linuxmanagement/) and [iFolder 3.0](http://www.novell.com/products/ifolder/index.html) (On Linux and Mac OS X) are built using Mono.
+-   Novell [ZENworks Linux Management](http://www.novell.com/products/zenworks/linuxmanagement/) and [iFolder 3.0](http://www.novell.com/products/ifolder/index.html) (On Linux and macOS) are built using Mono.
 -   [DocManager](http://www.nbfactory.com/SolServizi/Software/NBFeMono/DocManager.html) from [NBFactory](http://www.nbfactory.com) its a document management system.
 -   [Ice](http://www.zeroc.com/ice.html) from ZeroC, a middleware stack.
 -   [SwfDotNet](http://www.swfdotnet.com/) a library to produce flash movies.
@@ -105,7 +105,7 @@ Open Source applications
 -   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation](/archived/nant_installation) guide.
 -   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme](/docs/tools+libraries/tools/gendarme/). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
 -   [Moonwalker](http://wwwhome.cs.utwente.nl/~ruys/moonwalker/): is a program to automatically detect errors in CIL bytecode programs, i.e. applications written for the .NET platform. The current version of Moonwalker is able to find deadlocks and assertion violations in CIL programs, generated with Mono's C# compiler.
--   [BuildAMation](http://buildamation.com/) is an open source (BSD 3-clause) build system and project generator that runs on Windows, Linux and OSX, using Mono on the latter two platforms. Requires at least Mono 4. Build scripts are written in C#, and compiled at runtime. C, C++ and Objective C code are the main build targets. The current version of BuildAMation supports a multithreaded command line build, or generation of Visual Studio or Xcode projects, or MakeFiles.
+-   [BuildAMation](http://buildamation.com/) is an open source (BSD 3-clause) build system and project generator that runs on Windows, Linux and macOS, using Mono on the latter two platforms. Requires at least Mono 4. Build scripts are written in C#, and compiled at runtime. C, C++ and Objective C code are the main build targets. The current version of BuildAMation supports a multithreaded command line build, or generation of Visual Studio or Xcode projects, or MakeFiles.
 
 ### Server Applications
 
@@ -113,7 +113,7 @@ Open Source applications
 -   [Landell](http://tapioca-voip.sourceforge.net/wiki/index.php/Landell): VOIP application based on the Tapioca framework.
 -   [vmx-manager](http://www.snorp.net/log/2006/12/08/im-in-ur-virtual-machines-managing-them/) a tool to manage virtual machines.
 -   [SunUO](http://www.sunuo.org) a free server for running Ultima Online.
--   \* [OmniPortal](http://www.zigamorph.com/) is an object oriented website framework, written in C# for ASP.NET, it runs under Windows 2000/2003/XP or under the Mono Framework which runs on Linux and Mac OS X.
+-   \* [OmniPortal](http://www.zigamorph.com/) is an object oriented website framework, written in C# for ASP.NET, it runs under Windows 2000/2003/XP or under the Mono Framework which runs on Linux and macOS.
 -   [SharpKnocking](http://code.google.com/p/sharpknocking/) an implementation of the port knocking principles with mono (c#) and iptables.
 -   [OpenSimulator](http://opensimulator.org/wiki/Main_Page): An open source simulator for the SecondLife client written in C# and that works on both .NET and Mono.
 -   [Yet Another Forum - YAF](http://forum.yetanotherforum.net/): software to power your forums, it is used for example in [http://forums.monotouch.net](http://forums.monotouch.net)
