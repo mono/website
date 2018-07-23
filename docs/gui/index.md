@@ -97,6 +97,22 @@ Cons:
 -   Looks alien on non-Windows platforms.
 -   Code that calls the Win32 API is not portable.
 
+[Qml.Net](https://github.com/pauldotknopf/Qml.Net)
+--------------------------------------------------
+
+Qml.Net is cross-platform integration of Qml/QtQuick for Mono/.NET/.NET Core. It is a binding that brings .NET types into JavaScript with full interoperability.
+
+Pros:
+
+-   Leverage the power of an existing GUI framework with an existing track record.
+-   Cross-platform (Windows/Linux/OSX) for various .NET runtimes.
+-   Support for language specific features, such as ```async``` and ```await```, and Qt's signals.
+-   Extensive unit tests. Extra care is taken to ensure memory safety and that there are no memory leaks.
+
+Cons:
+
+-   Documentation is lacking.
+
 Work in Progress
 ===================
 
