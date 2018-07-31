@@ -6,7 +6,7 @@ With the recent open sourcing of parts of .NET, we want to bring the best pieces
 
 This document describes the strategies that we will employ.
 
-We will be [tracking the efforts on Trello](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono).
+We are tracking the most recent development at [GitHub task](https://github.com/mono/mono/projects/9).
 
 Background
 ==========
