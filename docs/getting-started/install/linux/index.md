@@ -12,7 +12,7 @@ Follow the instructions on the [download page](/download/stable/#download-lin) f
 Accessing older releases
 ------------------------
 
-If for some reason you want to pin an older version of Mono rather than updating to the latest, you can modify the Debian repository to "wheezy/snapshots/X.XX.X" instead of "wheezy". For example, "wheezy/snapshots/3.10.0" will lock you to that version.
+If for some reason you want to pin an older version of Mono rather than updating to the latest, you can modify the Debian repository to "stable-jessie/snapshots/X.XX.X" instead of "stable-jessie". For example, "stable-jessie/snapshots/3.10.0" will lock you to that version.
 
 These snapshots will cease receiving updates as soon as the next major Mono version gets uploaded - for example, as soon as Mono 3.12 gets uploaded, 3.10 will never receive updates.
 
