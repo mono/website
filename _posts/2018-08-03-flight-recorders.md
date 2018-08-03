@@ -20,16 +20,16 @@ critical regions to check when the bug has happened.
 
 ### Prototyping a Solution ###
 
-This type of problem very often complained about with respect to the mono
+This type of problem is very often complained about with respect to the mono
 debugger. It can be hard to isolate whether a mono bug, a C# application bug,
-or debugger misuse were the cause of a failure. People find themselves trying 
+or debugger misuse was the cause of a failure. People find themselves trying 
 to understand what mono’s view of the world is, based on the output they see
 in their debuggers. Submitting a bug is hard work, as is arguing that the
 error is not between the keyboard and the chair. 
 
 It was this that motivated the creation of the debugger flight recorder. 
-A flight recorder, in software engineering, is a system that takes messages
-without overhead or waits and can print out the last hundred retained messages
+A flight recorder, in software engineering, is a system that stores log messages
+without added latency and can print out the last hundred retained messages
 or so. The main use of it is to avoid filling up your disk, slowing down your
 application, or paying other costs associated with logging incredibly 
 verbosely around a problem. 
@@ -37,9 +37,8 @@ verbosely around a problem.
 The debugger’s existing logging was extracted into a number of functions that 
 created a global state machine for the debugger. These transitions were logged
 into the ring buffer of the flight recorder. While being rather mundane, it 
-proved useful for catching bugs that otherwise involved fear, uncertainty, 
-doubt, and code that is pushed to master to assert with good error messages 
-when a known bug is hit. 
+proved useful for catching bugs that otherwise had to be debugged through speculation
+and crash reports.
 
 ### Generalized Logging with the Flight Recorder ###
 
@@ -63,10 +62,11 @@ conditions reproducing.
 ### Impact on You ###
 
 To use the flight recorder in your application today, export 
-`MONO_LOG_DEST=flight-recorder` and you will see the log suffix on crash or on
-shutdown. It’s really rather exciting, to have an application-level view of all
-of the steps that one would usually have to mentally trace while debugging. It’s
-freeing to no longer choose between logging and performance, between verbosity 
+`MONO_LOG_DEST=flight-recorder` and you will see the last few hundred 
+logged messages on crash or on shutdown. It’s really rather exciting, 
+to have an application-level view of all of the steps that one would 
+usually have to mentally trace while debugging. It’s freeing to no
+longer choose between logging and performance, between verbosity 
 and bug reproduction.
 
 
