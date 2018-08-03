@@ -18,7 +18,7 @@ shipped software are reported, studied, reproduced, and then debugged. A signifi
 portion of the time it takes to fix a bug can be spent in discovering that it exists. 
 Often this discovery includes finding the ways that the customer’s environment differs 
 from the developer’s testing environment. A back-and-forth conversation can give a 
-developer a lot of information, but it’s not something that every bug filer is 
+developer a lot of information, but it’s not the case that every bug filer is 
 motivated enough to keep returning and responding. 
 
 ### Trust and Privacy ###
@@ -47,8 +47,8 @@ Any telemetry system can be separated into a number of components.
 
 Now the concerns in the various parts are rather contradictory. Part 3 should be private,
 as information about bugs may pose security risks. Making Part 3 private often means that making
-Part 2 proprietary and close-source is important. I don’t think that many people disagree with
-these two. The information being sent (and how it was collected in Part 1) is the part that is 
+Part 2 proprietary and closed-source is important. I don’t think that many people disagree with
+these two points. The information being sent (and how it was collected in Part 1) is the part that is 
 subject to the most scrutiny. 
 
 All of the source code that creates the files that are created during a crash to control Part 2
@@ -77,8 +77,9 @@ reference with the main stack trace. What this means is that if two crashes have
 different information otherwise, they are the same crash. This preserves privacy while letting you 
 count how often each bug is hit. 
 
-To make this concrete, this is what we send for each managed frame:
+To make this concrete, this is an example of what we send for a managed frame:
 
+```
     {
     "is_managed" : "true",
     "guid" : "0845998F-6B70-4AA8-9214-6731378926A0",
@@ -86,6 +87,7 @@ To make this concrete, this is what we send for each managed frame:
     "native_offset" : "0x1fd",
     "il_offset" : "0x00071"
     }
+```
 
 ### Bigger Impacts ###
 
