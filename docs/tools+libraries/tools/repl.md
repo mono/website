@@ -221,7 +221,7 @@ interactive mode that is invalid on batch mode:
 
 ``` bash
 csharp> 1 == 2;
-False
+false
 csharp>
 ```
 
