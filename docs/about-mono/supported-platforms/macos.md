@@ -9,7 +9,7 @@ redirect_from:
 Introduction to Mono on macOS
 -----------------------------
 
-Mono supports macOS version 10.7 (Lion) and later.
+Mono supports macOS version 10.9 (Mavericks) and later.
 
 You can use Mono on macOS to build server, console and GUI applications. Read below for the options available for GUI application development.
 
@@ -35,7 +35,7 @@ The Mono package includes:
 
 This package installs as a framework to /Library/Framework (the same way the Java packages are installed). Symlinks are created for the executables in /usr/bin. If you'd like to access the mono *manpages* you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your *manpath*. The macOS Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
 
-Our packages currently require Mono macOS 10.7 or better, for older versions, you will need to build from source code.
+Our packages currently require Mono macOS 10.9 or better, for older versions, you will need to build from source code.
 
 Using Mono on macOS
 -------------------
