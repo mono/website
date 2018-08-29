@@ -35,7 +35,7 @@ The Mono package includes:
 
 This package installs as a framework to /Library/Framework (the same way the Java packages are installed). Symlinks are created for the executables in /usr/bin. If you'd like to access the mono *manpages* you'll have to add /Library/Frameworks/Mono.framework/Versions/Current/man to your *manpath*. The macOS Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
 
-Our packages currently require Mono macOS 10.9 or better, for older versions, you will need to build from source code.
+Our packages currently require macOS 10.9 or better, for older versions, you will need to build from source code.
 
 Using Mono on macOS
 -------------------
