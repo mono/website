@@ -4,13 +4,15 @@ redirect_from:
   - /Compiling_Mono_on_Windows/
 ---
 
-To build Mono on Windows, a Cygwin setup is required since it provides some tools required by Mono at build time. You'll also need Visual Studio 2015 or later installed.
+To build Mono on Windows, a Cygwin setup is required since it provides some tools required by Mono at build time. You'll also need Visual Studio 2017 or later installed.
+
+[Experimental instructions are available for building without the use of Cygwin.](/docs/compiling-mono/windows/no-cygwin.md)
 
 ## Install prerequisites
 
 * Enable `Developer Mode` in the Windows 10 Settings app (Update & Security -> For developers tab)
 * Download and install 64 bit Cygwin from [www.cygwin.com](http://www.cygwin.com).
-* Install [Visual Studio 2015 or later](https://www.visualstudio.com) - Community Edition works fine.
+* Install [Visual Studio 2017 or later](https://www.visualstudio.com) - Community Edition works fine.
 * Download and install [Mono for Windows](/docs/getting-started/install/windows/) or use `monolite` build step as described below.
 * Run the following command in cmd.exe to install the required packages:
 
