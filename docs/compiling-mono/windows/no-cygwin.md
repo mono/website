@@ -23,13 +23,13 @@ Make sure that the following GIT setting is set to avoid issues with line ending
 The mono runtime, standard library and tools can all currently be built using Visual Studio. Building and running tests will still require the use of Cygwin and Bash, which you can see described in the [Cygwin build documentation](/docs/compiling-mono/windows/index.md).
 
 You will need to run the build commands inside a Visual Studio command prompt - the shortcut to open one for VS2017 is called `x64 Native Tools Command Prompt for VS 2017`, and you can find it in your `Visual Studio Tools` folder in the start menu (or by typing `Native Tools` into Cortana).
-Note that in the commands below we explicitly specify the `net_4_x` platform when building the standard library. This is because the standard library can be built for multiple platforms (like Android or OS X) so there is no universal default option. We also specify the use of the SGEN garbage collector instead of Boehm, because Boehm is not supported on 64-bit Windows.
+Note that in the commands below we explicitly specify the `net_4_x` platform when building the standard library. This is because the standard library can be built for multiple platforms (like Android or OS X) so there is no universal default option. We also specify the use of the SGEN garbage collector instead of Boehm, because Boehm is not supported on 64-bit Windows. `/restore` is used when building the standard library because of a dependency on a NuGet package.
 ```cmd
 git clone https://github.com/mono/mono.git
 cd mono
 git submodule update --init --recursive
 msbuild msvc\mono.sln /p:MONO_TARGET_GC=sgen
-msbuild bcl.sln /p:Platform="net_4_x"
+msbuild bcl.sln /p:Platform="net_4_x" /restore
 ```
 
 Multiprocess builds can be performed by passing the `/m` switch to msbuild, but in practice they may not be much faster than a single-process build.
@@ -38,3 +38,5 @@ Multiprocess builds can be performed by passing the `/m` switch to msbuild, but 
 
 Follow the git commands above, then open `msvc\mono.sln` in Visual Studio 2017. Ensure you do not open it in an older version you might have installed, like 2013 or 2015. Select the platform and configuration you prefer (x86, x64, etc.) and then build.
 After this, open bcl.sln in VS2017, select the `net_4_x` platform, and build.
+
+Please be aware that current builds of Visual Studio 2017 are prone to crashing while bcl.sln is open.
