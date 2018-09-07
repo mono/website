@@ -4,11 +4,11 @@ redirect_from:
   - /Compiling_Mono_on_Windows_without_Cygwin/
 ---
 
-Mono on Windows can be built using an experimental Visual Studio only process. You will need the latest version of Visual Studio 2017.
+Mono on Windows can be built using Visual Studio only toolchain. You will need the latest version of Visual Studio 2017.
 
 If you encounter issues you may want to build using [the older Cygwin+Visual Studio process](/docs/compiling-mono/windows/index.md).
 
-## Install prerequisites
+## Prerequisites
 
 * Enable `Developer Mode` in the Windows 10 Settings app (Update & Security -> For developers tab)
 * Install [Visual Studio 2017 or later](https://www.visualstudio.com) - Community Edition works fine. If it is already installed, use the `Visual Studio Installer` to ensure you have the latest updates.
