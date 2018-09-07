@@ -6,7 +6,7 @@ redirect_from:
 
 To build Mono on Windows, a Cygwin setup is required since it provides some tools required by Mono at build time. You'll also need Visual Studio 2017 or later installed.
 
-[Experimental instructions are available for building without the use of Cygwin.](/docs/compiling-mono/windows/no-cygwin.md)
+[Instructions are available for building without the use of Cygwin.](/docs/compiling-mono/windows/no-cygwin/)
 
 ## Install prerequisites
 
