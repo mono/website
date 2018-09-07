@@ -6,7 +6,7 @@ redirect_from:
 
 Mono on Windows can be built using Visual Studio only toolchain. You will need the latest version of Visual Studio 2017.
 
-If you encounter issues you may want to build using [the older Cygwin+Visual Studio process](/docs/compiling-mono/windows/index.md).
+If you encounter issues you may want to build using [the older Cygwin+Visual Studio process](/docs/compiling-mono/windows/).
 
 ## Prerequisites
 
