@@ -32,11 +32,11 @@ msbuild msvc\mono.sln /p:MONO_TARGET_GC=sgen
 msbuild bcl.sln /p:Platform="net_4_x" /restore
 ```
 
-Multiprocess builds can be performed by passing the `/m` switch to msbuild, but in practice they may not be much faster than a single-process build.
+*Parallel builds can be performed by passing the `/m` switch to msbuild*
 
 ## Build Mono 64-bit using Visual Studio
 
 Follow the git commands above, then open `msvc\mono.sln` in Visual Studio 2017. Ensure you do not open it in an older version you might have installed, like 2013 or 2015. Select the platform and configuration you prefer (x86, x64, etc.) and then build.
-After this, open bcl.sln in VS2017, select the `net_4_x` platform, and build.
+After this, open `bcl.sln` in VS2017, select the `net_4_x` platform, and build.
 
-Please be aware that current builds of Visual Studio 2017 are prone to crashing while bcl.sln is open.
+*Please be aware that current builds of Visual Studio 2017 are prone to crashing while bcl.sln is open.*
