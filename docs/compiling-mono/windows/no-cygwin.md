@@ -20,7 +20,7 @@ Make sure that the following GIT setting is set to avoid issues with line ending
 
 ## Build Mono 64-bit using Visual Studio Command Prompt
 
-The mono runtime, standard library and tools can all currently be built using Visual Studio. Building and running tests will still require the use of Cygwin and Bash, which you can see described in the [Cygwin build documentation](/docs/compiling-mono/windows/index.md).
+The mono runtime, standard library and tools can all currently be built using Visual Studio. Building and running tests will still require the use of Cygwin and Bash, which you can see described in the [Cygwin build documentation](/docs/compiling-mono/windows/).
 
 You will need to run the build commands inside a Visual Studio command prompt - the shortcut to open one for VS2017 is called `x64 Native Tools Command Prompt for VS 2017`, and you can find it in your `Visual Studio Tools` folder in the start menu (or by typing `Native Tools` into Cortana).
 Note that in the commands below we explicitly specify the `net_4_x` platform when building the standard library. This is because the standard library can be built for multiple platforms (like Android or OS X) so there is no universal default option. We also specify the use of the SGEN garbage collector instead of Boehm, because Boehm is not supported on 64-bit Windows. `/restore` is used when building the standard library because of a dependency on a NuGet package.
