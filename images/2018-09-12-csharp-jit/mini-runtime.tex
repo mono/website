@@ -1,0 +1,67 @@
+\documentclass[border=10pt]{standalone}
+\usepackage{verbatim}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+
+\tikzset{
+    >={Latex[width=2mm,length=2mm]},
+    base/.style      = {rectangle, rounded corners, draw=black,
+                        minimum width=4cm, minimum height=1cm,
+                        text centered, font=\sffamily},
+    cloud/.style     = {base, text depth=10cm, minimum width=6cm},
+    native/.style    = {base, fill=orange!15, font=\ttfamily},
+    managed/.style   = {base, fill=green!20},
+    interface/.style = {base, align=left, minimum width=5cm, fill=red!20, font=\ttfamily},
+}
+
+\pgfmathsetmacro{\v}{##VERSION##}
+
+\begin{document}    
+\begin{tikzpicture}[node distance=7.0cm,
+                    every node/.style={fill=white,
+                    font=\sffamily},
+                    align=center]
+
+    \node (cloudnative) [cloud] {\Large Native / \texttt{C}};
+    \draw [-] ($ (cloudnative.west) + (0.0,4.5)$) -- ($ (cloudnative.east) + (0.0,4.5) $);
+
+    \node (miniruntime) [native, above of=cloudnative, yshift=-4.2cm] {Mini Runtime};
+    \node (minijit) [native, below of=miniruntime] {Mini JIT};
+
+    \ifnum \v>0
+        \node (cloudinterface) [cloud, right of=cloudnative] {\Large Interface};
+        \draw [-] ($ (cloudinterface.west) + (0.0,4.5)$) -- ($ (cloudinterface.east) + (0.0,4.5) $);
+        \node (cloudmanaged) [cloud, right of=cloudinterface] {\Large Managed / \texttt{C\#}};
+        \draw [-] ($ (cloudmanaged.west) + (0.0,4.5)$) -- ($ (cloudmanaged.east) + (0.0,4.5) $);
+
+		\node (iruntimeinformation) [interface, right of=miniruntime] {IRuntimeInformation\\\quad::GetMethodInfoFor()\\\quad::GetFieldInfoForToken()\\\quad::ComputeFieldAddress()\\\quad\dots\\\quad::InstallCompilationResult()\\\quad::ExecuteInstalledMethod()};
+        \node (icompilemethod) [interface, below of=iruntimeinformation, yshift=+2cm] {ICompiler\\\quad::CompileMethod};
+
+        \node (bigstep) [managed, right of=iruntimeinformation] {BigStep Compiler};
+    \fi
+
+    \ifnum \v>1
+        \node (minicompiler) [managed, below of=bigstep] {Mini Compiler};
+    \fi
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \draw[->] (miniruntime) to[out=-120, in=120] node [yshift=1cm] {Compilation request} (minijit);
+    \draw[->] (minijit) to[out=60, in=-60] node [yshift=-1cm] {Runtime Info} (miniruntime);
+
+
+    \ifnum \v>0
+		\draw[->] (iruntimeinformation) -- (miniruntime);
+		\draw[->] (bigstep) -- (iruntimeinformation);
+		\draw[->] (miniruntime) -- node [yshift=0.30cm, xshift=0.50cm, sloped, text opacity=1, opacity=0.5] {Compilation request} (icompilemethod);
+		\draw[->] (icompilemethod) -- (bigstep);
+    \fi
+
+	\ifnum \v>1
+		\draw[->] (icompilemethod) -- (minicompiler);
+		\draw[->] (minicompiler) -- (minijit);
+	\fi
+  \end{tikzpicture}
+\end{document}
