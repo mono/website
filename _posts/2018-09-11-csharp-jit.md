@@ -7,7 +7,7 @@ tags: [runtime]
 
 During the 2018 Microsoft Hack Week, members of the Mono team explored the idea
 of replacing the Mono's code generation engine written in C with a code
-generation engine written in C#.   
+generation engine written in C#.
 
 In this blog post we describe our motivation, the interface between the native
 Mono runtime and the managed compiler and how we implemented the new managed
@@ -19,11 +19,10 @@ Mono's runtime and JIT compiler are entirely written in C, a highly portable
 language that has served the project well.
 Yet, we feel jealous of our own users that get to write code in a high-level
 language and enjoy the safety, the luxury and reap the benefits of writing code
-in a high-level language, while the Mono runtime continues to be written in C.   
-
+in a high-level language, while the Mono runtime continues to be written in C.
 
 We decided to explore whether we could make Mono's compilation engine pluggable
-and then plug a code generator written entirely in C#. 
+and then plug a code generator written entirely in C#.
 If this were to work, we could more easily prototype, write new optimizations
 and make it simpler for developers to safely try changes in the JIT.
 
@@ -64,7 +63,17 @@ which must be implemented by your compilation engine, and it is invoked on
 demand when a specific method needs to be compiled.
 
 This is the interface that you must implement:
-<script src="https://gist.github.com/lewurm/311eab4850e87b2f7d9aee90338df52a.js"></script>
+
+```csharp
+interface ICompiler {
+    CompilationResult CompileMethod (IRuntimeInformation runtimeInfo,
+                                     MethodInfo methodInfo,
+                                     CompilationFlags flags,
+                                     out NativeCodeHandle nativeCode);
+
+    string Name { get; }
+}
+```
 
 The `CompileMethod ()` receives a `IRuntimeInformation` reference, which
 provides services for the compiler as well as a `MethodInfo` that represents
@@ -75,7 +84,28 @@ The `NativeCodeHandle` merely represents the generated code address and its leng
 
 This is the `IRuntimeInformation` definition, which shows the methods available
 to the `CompileMethod` to perform its work:
-<script src="https://gist.github.com/lewurm/58a19a92d100fafe9edf330183a7499c.js"></script>
+
+```csharp
+interface IRuntimeInformation {
+    InstalledRuntimeCode InstallCompilationResult (CompilationResult result,
+                                                   MethodInfo methodInfo,
+                                                  NativeCodeHandle codeHandle);
+
+    object ExecuteInstalledMethod (InstalledRuntimeCode irc,
+                                   params object[] args);
+
+    ClassInfo GetClassInfoFor (string className);
+
+    MethodInfo GetMethodInfoFor (ClassInfo classInfo, string methodName);
+
+    FieldInfo GetFieldInfoForToken (MethodInfo mi, int token);
+
+    IntPtr ComputeFieldAddress (FieldInfo fi);
+
+    /// For a given array type, get the offset of the vector relative to the base address.
+    uint GetArrayBaseOffset(ClrType type);
+}
+```
 
 We currently have one implementation of `ICompiler`, we call it the the "`BigStep`" compiler.
 When wired up, this is what the process looks like when we compile a method with it:
@@ -88,14 +118,14 @@ For the code generator to do its work, it needs to obtain some information
 about the current environment.
 This information is surfaced by the `IRuntimeInformation` interface.
 Once the compilation is done, it will return a blob of native instructions to
-the runtime. 
+the runtime.
 The returned code is then "installed" in your application.
 
 Now there is a trick question: Who is going to compile the compiler?
 
 The compiler written in C# is initially executed with one of the built-in
 engines (either the
-[interpreter](https://www.mono-project.com/news/2017/11/13/mono-interpreter/),
+[interpreter](/news/2017/11/13/mono-interpreter/),
 or the JIT engine).
 
 ## The BigStep Compiler
@@ -113,7 +143,7 @@ interacting with the runtime internals.
 The BigStep compiler implements an IL to LLVM compiler.
 This was convenient to build the proof of concept and ensure that the design
 was sound, while delegating all the hard compilation work to the LLVM compiler
-engine.   
+engine.
 
 A lot can be said when it comes to the design and architecture of a compiler,
 but our main point here is to emphasize how easy it can be, with what we have
@@ -128,17 +158,41 @@ See below for more details about the prototype.
 
 Another beauty of moving parts of the runtime to the managed side is that we
 can test the JIT compiler _without_ recompiling the native runtime, so
-essentially developing a normal C# application. 
+essentially developing a normal C# application.
 
 The `InstallCompilationResult ()` can be used to register compiled method with
 the runtime and the `ExecuteInstalledMethod ()` are can be used to invoke a
 method with the provided arguments.
 
 Here is an example how this is used code:
-<script src="https://gist.github.com/lewurm/ccf39780faeede1a370be3acc02b41ba.js"></script>
+
+```csharp
+public static int AddMethod (int a, int b) {
+  return a + b;
+}
+
+[Test]
+public void TestAddMethod ()
+{
+  ClassInfo ci = runtimeInfo.GetClassInfoFor (typeof (ICompilerTests).AssemblyQualifiedName);
+  MethodInfo mi = runtimeInfo.GetMethodInfoFor (ci, "AddMethod");
+  NativeCodeHandle nativeCode;
+
+  CompilationResult result = compiler.CompileMethod (runtimeInfo, mi, CompilationFlags.None, out nativeCode);
+  InstalledRuntimeCode irc = runtimeInfo.InstallCompilationResult (result, mi, nativeCode);
+
+  int addition = (int) runtimeInfo.ExecuteInstalledMethod (irc, 1, 2);
+  Assert.AreEqual (addition, 3);
+}
+```
 
 We can ask the host VM for the actual result, assuming it's our gold standard:
-<script src="https://gist.github.com/lewurm/e971d69eb586bbcaac54329eeeec5a5c.js"></script>
+
+```csharp
+int mjitResult = (int) runtimeInfo.ExecuteInstalledMethod (irc, 666, 1337);
+int hostedResult = AddMethod (666, 1337);
+Assert.AreEqual (mjitResult, hostedResult);
+```
 
 This eases development of a compiler tremendously.
 
@@ -163,15 +217,16 @@ parts, add them to `IRuntimeInformation` and change Mini JIT so that it uses
 the new API.
 
 ## Conclusion
+
 We strongly believe in a long-term value of this project.
 A code base in managed code is more approachable for developers and thus easier
 to extend and maintain.
 Even if we never see this work upstream, it helped us to better understand the
 boundary between runtime and JIT compiler, and who knows, it might will help us
-to integrate RyuJIT into Mono one day 😉 
+to integrate RyuJIT into Mono one day 😉
 
 We should also note that `IRuntimeInformation` can be implemented by any other
-.NET VM: Hello `CoreCLR` folks 👋 
+.NET VM: Hello `CoreCLR` folks 👋
 
 If you are curious about this project, ping us on our [Gitter
 channel](https://gitter.im/mono/mono-mjit).
@@ -187,19 +242,19 @@ of LLVM.
 Since many potential target are register based, we decided to design a
 framework to make it reusable of the part where we interpret the IL logic. To
 this goal, we implemented an engine to turn the stack-based operations into the
-register operations. 
+register operations.
 
 Consider the `ADD` operation in IL.
 This operation pops two operands from the stack, performing addition and pushing back the result to the stack. This is documented in ECMA 335 as follows:
 
-```
-  Stack Transition: 
-      ..., value1, value2 -> ..., result 
+```text
+  Stack Transition:
+      ..., value1, value2 -> ..., result
 ```
 
 The actual kind of addition that is performed depends on the types of the
-values in the stack. 
-If the values are integers, the addition is an integer addition. 
+values in the stack.
+If the values are integers, the addition is an integer addition.
 If the values are floating point values, then the operation is a floating point
 addition.
 
@@ -212,7 +267,7 @@ Each temporary value is assigned a unique name.
 Then an IL instruction can be unambiguously presented in a form using temporary names instead of stack changes.
 For example, the `ADD` operation becomes
 
-```
+```text
 Temp3 := ADD Temp1 Temp2
 ```
 
@@ -241,8 +296,15 @@ Comparing to the instruction received from `ICompiler`, the presentation here,
 `OperationInfo`, is much more consumable:
 In addition to the op codes, it has an array of the input operands, and a result operand:
 
-<script src="https://gist.github.com/lewurm/c47ef7eb8dd6270e1d0e84787e41c485.js"></script>
-
+```csharp
+public class OperationInfo
+{
+  ... ...
+  internal IOperand[] Operands { get; set; }
+  internal TempOperand Result { get; set; }
+  ... ...
+}
+```
 
 There are several types of the operands: `ArgumentOperand`, `LocalOperand`,
 `ConstOperand`, `TempOperand`, `BranchTargetOperand`, etc.
@@ -273,4 +335,3 @@ If a temp operand is reused, however, the very same register must as well.
 
 We use [LLVMSharp](https://github.com/Microsoft/LLVMSharp/) binding to
 communicate with LLVM.
-
