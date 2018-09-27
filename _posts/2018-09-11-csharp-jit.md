@@ -113,7 +113,7 @@ When wired up, this is what the process looks like when we compile a method with
 [![Managed JIT overview](/images/2018-09-12-csharp-jit/mini-runtime.1.svg)](/images/2018-09-12-csharp-jit/mini-runtime.1.svg)
 
 The `mini` runtime can call into managed code via `CompileMethod` upon a
-compilation request.  
+compilation request.
 For the code generator to do its work, it needs to obtain some information
 about the current environment.
 This information is surfaced by the `IRuntimeInformation` interface.
@@ -132,7 +132,7 @@ or the JIT engine).
 
 Our first `ICompiler` implementation is called the
 [BigStep](https://github.com/lambdageek/mono/tree/mjit/mcs/class/Mono.Compiler/Mono.Compiler.BigStep)
-compiler.  
+compiler.
 
 This compiler was designed and implemented by a developer (Ming Zhou) not
 affiliated with Mono Runtime Team.
@@ -231,13 +231,13 @@ We should also note that `IRuntimeInformation` can be implemented by any other
 If you are curious about this project, ping us on our [Gitter
 channel](https://gitter.im/mono/mono-mjit).
 
--------------------------------------------------
+---
 
 ### Appendix: Converting Stack-Based OpCodes into Register Operations
 
 Since the target language was LLVM IR, we had to build a translator that
 converted the stack-based operations from IL into the register-based operations
-of LLVM.  
+of LLVM.
 
 Since many potential target are register based, we decided to design a
 framework to make it reusable of the part where we interpret the IL logic. To
