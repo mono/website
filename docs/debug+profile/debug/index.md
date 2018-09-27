@@ -168,7 +168,6 @@ If a segmentation fault occurs (`EXC_BAD_ACCESS`) [LLDB can't resume to the sign
 1. Run mono with `MONO_DEBUG=explicit-null-checks`, so the runtime won't use mentioned technique. Performance-wise this is a bit slower, but for debugging purposes that's fine.
 2. Use `gdb`. Unfortunately this requires some work on macOS these days.
 
-
 Debugging With Visual Studio on Windows
 ---------------------------------------
 

@@ -24,6 +24,7 @@ The mono runtime, standard library and tools can all currently be built using Vi
 
 You will need to run the build commands inside a Visual Studio command prompt - the shortcut to open one for VS2017 is called `x64 Native Tools Command Prompt for VS 2017`, and you can find it in your `Visual Studio Tools` folder in the start menu (or by typing `Native Tools` into Cortana).
 Note that in the commands below we explicitly specify the `net_4_x` platform when building the standard library. This is because the standard library can be built for multiple platforms (like Android or OS X) so there is no universal default option. We also specify the use of the SGEN garbage collector instead of Boehm, because Boehm is not supported on 64-bit Windows. `/restore` is used when building the standard library because of a dependency on a NuGet package.
+
 ```cmd
 git clone https://github.com/mono/mono.git
 cd mono

@@ -126,7 +126,7 @@ Winforms Applications
       <td><a class="image-link" title="NuTech on Linux" href="/archived/images/9/9a/Nutech-monogui1.png"><img alt="NuTech on Linux" src="/archived/images/9/9a/Nutech-monogui1.png" width="180" /></a></td>
     </tr>
     <tr>
-    <td><a href="http://microinvestlatino.com/">Point of Sale solution from Microinvest</a> <br /> 
+    <td><a href="http://microinvestlatino.com/">Point of Sale solution from Microinvest</a> <br />
           <p>Microinvest Neo is a commercial cross-platform Point of Sale developed with Mono and Gtk Sharp</p>
       </td>
       <td><a class="image-link" title="Retail" href="http://microinvestlatino.com/wp-content/uploads/2017/11/Retail-1200x800.png"><img alt="Retail interface" src="http://microinvestlatino.com/wp-content/uploads/2017/11/Retail-1200x800.png" width="180" /></a></td>
