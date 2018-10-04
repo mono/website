@@ -29,32 +29,31 @@ All classes in Mono libraries should have comprehensive unit test suites to go w
 
 In some classes, we might also provide standalone tests because of some reasons such as too huge testcases, another downloading and so on. (For example, managed XSLT has a standalone test which downloads and expands several megabytes of the OASIS test suite.)
 
-### Running Class Library Tests
+### Running NUnit/xunit Class Library Tests
 
-To run the class library tests for a particular class library, go into the directory for the class library, and run make with \`run-test' argument. For example, to run the mscorlib tests do this:
-
-``` bash
-cd mcs/class/corlib
-make run-test && make run-test PROFILE=net_2_0
-```
-
-This will run the mscorlib tests for the default profile and then 2.0, if you only want to run the 2.0 tests, run:
+To run the NUnit class library tests for a particular class library, go into the directory for the class library, and run make with the `run-test` argument. For example, to run the mscorlib tests do this:
 
 ``` bash
 cd mcs/class/corlib
-make run-test PROFILE=net_2_0
+make run-test
 ```
 
-The PROFILE variable controls which profile will be used to run the tests, if you do not specify it, it will be limited to 4.5.
+This will run the mscorlib NUnit tests.
 
-If you want to run a single fixture, you can use the convenience parameter FIXTURE which assumes that your test is in the MonoTests namespace, like this:
+To run the xunit class library tests do this:
+
+``` bash
+make run-xunit-test
+```
+
+If you want to run a single fixture, you can use the convenience parameter FIXTURE like this:
 
 ``` bash
 cd mcs/class/corlib
-make run-test FIXTURE=System.DecimalTest
+make run-test FIXTURE=MonoTests.System.DecimalTest
 ```
 
-That will run the fixture for MonoTests.System.DecimalTest
+That will run the fixture for MonoTests.System.DecimalTest.
 
 You can pass arbitrary command line options to nunit-console, like this:
 
@@ -67,7 +66,7 @@ If you think you're getting failures related to l10n/i18n of your system, run th
 
 ``` bash
 cd mcs/class/corlib
-LANG=en make run-test && make run-test
+LANG=en make run-test
 ```
 
 ### Other Class Library Tests
@@ -113,7 +112,7 @@ Once all of that is done, you can do a 'make test' from the top mcs directory. Y
 Tips on writing Unit tests
 --------------------------
 
-You should look at the [NUnit documentation](http://nunit.org), as it is a fantastic product, and includes fantastic documentation, but here are some tips for those of you who are already reading this web page.
+You should look at the [NUnit documentation](https://nunit.org), as it is a fantastic product, and includes fantastic documentation, but here are some tips for those of you who are already reading this web page.
 
 ### Provide an unique error message for Assert()
 
