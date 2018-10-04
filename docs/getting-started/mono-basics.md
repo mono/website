@@ -23,7 +23,7 @@ public class HelloWorld
 }
 ```
 
-To compile, use csc:
+To compile, use csc (or mono-csc on Linux):
 
     csc hello.cs
 
