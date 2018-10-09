@@ -170,19 +170,19 @@ footer h6 a {
   color: #E2E8EB;
   text-align: center;
   margin-top: -5px;
-  padding-top: 15px;
+  padding-top: 85px;
 }
 
 #index-hero h1 {
   color: #E2E8EB;
-  margin-bottom: 15px;
+  margin: 15px 0 40px;
   font-weight: bold;
 }
 
 #index-teaser {
   background: #EBEBEB;
   color: #222;
-  margin-top: 20px;
+  margin-top: 100px;
   padding-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 10px;
