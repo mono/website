@@ -45,14 +45,14 @@ Pre-configured build instructions, building a default Visual Studio Mono runtime
 
 64-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
 ```bash
-./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --with-msvc --disable-boehm
+./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --enable-msvc --disable-boehm
 make -j4
 make install
 ```
 
 32-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
 ```bash
-./autogen.sh --prefix=$PREFIX --host=i686_64-w64-mingw32 --with-msvc --disable-boehm
+./autogen.sh --prefix=$PREFIX --host=i686_64-w64-mingw32 --enable-msvc --disable-boehm
 make -j4
 make install
 ```
