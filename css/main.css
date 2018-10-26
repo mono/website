@@ -126,8 +126,12 @@ footer h6 a {
 
 .top-bar .name h1 a {
   width: 100%;
+  animation: pulse 0.3;
+  animation-fill-mode: forwards;
 }
-
+@keyframes pulse{
+  100%{color:orange;}
+}
 .top-bar-section > ul { 
   margin-top: 8px;
 }
