@@ -317,7 +317,7 @@ mono_assembly_name_free (aname);
 
 -   The MonoMethodHeader object is now transient: you need to free it when you're done to avoid leaking by calling the (already existing and safe to call) function `mono_metadata_free_mh ()`.
 
--   Array API changes: the integer types that represent arry lengths and array boundaries has changed to `uintptr_t` and `intptr_t`. This allows us to transparently provide a mono build that supports 64 bit indices on 64 bit systems. The affected APIs are:
+-   Array API changes: the integer types that represent array lengths and array boundaries has changed to `uintptr_t` and `intptr_t`. This allows us to transparently provide a mono build that supports 64 bit indices on 64 bit systems. The affected APIs are:
 
 ``` c
 mono_array_new ()
