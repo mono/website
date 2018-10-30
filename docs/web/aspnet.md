@@ -37,7 +37,7 @@ For deploying applications, we recommend the use of the [mod_mono](/docs/web/mod
 
 For quickly getting started, get familiar with Mono and ASP.NET, XSP is the ideal solution. Keep in mind that XSP is a very limited server and is only useful to get acquainted with ASP.NET and Mono, it only support HTTP 1.0 and does not provide much extensibility or configuration.
 
-More advaned users can use the HttpListener and the ASP.NET hosting to create their own hosts for ASP.NET applications.
+More advanced users can use the HttpListener and the ASP.NET hosting to create their own hosts for ASP.NET applications.
 
 ASP.NET hosting with Apache
 ---------------------------
