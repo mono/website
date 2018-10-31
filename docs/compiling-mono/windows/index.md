@@ -120,11 +120,11 @@ The native runtime libraries can be built using Visual Studio and msbuild. Howev
 
 ### Build 64-bit Mono using Visual Studio
 
-Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solution using Release|x64 solution configuration. For command line build, see below.
+Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solution using Release and x64 platform configurations. For command line build, see below.
 
 ### Build 32-bit Mono using Visual Studio
 
-Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solution using Release|Win32 solution configuration. For command line build, see below.
+Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solution using Release and x64 platform configurations. For command line build, see below.
 
 ### Build Mono from Visual Studio command line
 
