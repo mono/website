@@ -23,9 +23,9 @@ public class HelloWorld
 }
 ```
 
-To compile, use csc:
+To compile, use msc:
 
-    csc hello.cs
+    msc hello.cs
 
 The compiler will create "hello.exe", which you can run using:
 
