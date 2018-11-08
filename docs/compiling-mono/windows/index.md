@@ -52,7 +52,7 @@ make install
 
 32-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
 ```bash
-./autogen.sh --prefix=$PREFIX --host=i686_64-w64-mingw32 --enable-msvc --disable-boehm
+./autogen.sh --prefix=$PREFIX --host=i686-w64-mingw32 --enable-msvc --disable-boehm
 make -j4
 make install
 ```
@@ -124,7 +124,7 @@ Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solutio
 
 ### Build 32-bit Mono using Visual Studio
 
-Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solution using Release and x64 platform configurations. For command line build, see below.
+Open the Mono solution `msvc\mono.sln` in Visual Studio IDE. Rebuild the solution using Release and Win32 platform configurations. For command line build, see below.
 
 ### Build Mono from Visual Studio command line
 
