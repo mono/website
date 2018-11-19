@@ -172,6 +172,16 @@ That should look pretty familiar to you. Just so we can get used to using the co
 
 To some of you that have used the csc compiler on windows may notice the "-pkg:" as a little odd. This doesn't exist in csc because Mono comes from the world of Linux. What that does is lookup for a package config file under that name. In the package config folder exists a file name "gtk-sharp-2.0.pc" which contains (amongst other information) on the location of the libraries for that package. That way we don't have to type out "-r:gtk-sharp-2.0.dll -r:atk-sharp-2.0.dll -r:pango-sharp-2.0.dll ...." all by hand.
 
+When the size of your projects grows, you may start using multiple ".cs" files to organize your projects better. To compile all of the files in a given project at once, run something like:
+
+    mcs -pkg:gtk-sharp-2.0 helloword.cs helloworld2.cs helloworld3.cs
+
+MCS does all of the behind the scenes work to compile everything in the right order, so it can be in any order, like:
+
+    mcs -pkg:gtk-sharp-2.0 helloword2.cs helloworld1.cs helloworld3.cs
+    
+If you were so inclined, you can also write all of this in a Bash script so you don't have to run the same command repeatedly and can just make edits as needed.
+   
 Step 4: Adding the GUI
 ----------------------
 
