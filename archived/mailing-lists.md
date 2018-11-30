@@ -50,10 +50,6 @@ Archives of the mailing lists are still available.
   <td>Discussion on the GC system of Mono.</td>
 </tr>
 <tr>
-  <td><a href="https://lists.dot.net/pipermail/mono-patches/">mono-patches</a></td>
-  <td><p>Track the git activity of Mono on this mailing list (patches are sent to recipients).</p></td>
-</tr>
-<tr>
   <td><a href="https://lists.dot.net/pipermail/mono-docs-list/">mono-docs-list</a></td>
   <td>Discussion on the documentation of Mono.</td>
 </tr>
