@@ -53,6 +53,7 @@ Starting with Mono 5.0 regular bi-monthly branching started and the version is n
 
 | Mono version    | GitHub branch name
 |-----------------|-------------------
+| 5.22            | [2018-10](https://github.com/mono/mono/tree/2018-12)
 | 5.20            | [2018-10](https://github.com/mono/mono/tree/2018-10)
 | 5.18            | [2018-08](https://github.com/mono/mono/tree/2018-08)
 | 5.16            | [2018-06](https://github.com/mono/mono/tree/2018-06)
