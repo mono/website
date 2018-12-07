@@ -58,6 +58,8 @@ You can either link LLVM into your mono executable, or you can split
 it in a separate shared library (for example for Linux distributions
 that might want to ship both a slim Mono by default).
 
+NOTE, `--enable-loadedllvm` configuration is not supported for Windows hosted builds.
+
 ``` bash
 ./autogen.sh --prefix=/mono --enable-llvm=yes
 make && make install
@@ -81,3 +83,9 @@ in those cases the JIT compiler will still fall back to Mono's JIT
 engine (methods that contain try/catch clauses or methods that do
 interface calls).
 
+When building LLVM for regular Windows builds (**not** building Windows
+hosted cross compilers), only x64 Visual Studio builds support LLVM
+powered Mono runtime. Mono runtime build using mingw only supports
+LLVM for Windows hosted cross compilers. For more details around
+regular Mono Windows LLVM builds (**not** building Windows hosted cross
+compilers), see [Compiling Mono On Windows](/docs/compiling-mono/windows/)
