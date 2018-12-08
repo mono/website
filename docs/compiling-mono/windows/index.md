@@ -91,7 +91,7 @@ The following configure steps shows different supported Mono build configuration
 
 ### Enable BTLS as cryptographic backend for Windows builds.
 
-Mono on Windows supports BTLS library as an alternative cryptographic backend for SSL/TLS. It is not the default alternative and must be enabled to build and be used by Mono runtime. To enable BTLS, pass `--enable-btls` to the `./autogen.sh` step above.
+Mono on Windows supports BTLS library as an alternative cryptographic backend for SSL/TLS. It is not the default alternative and must be enabled to build and be used by Mono runtime. To enable BTLS, pass `--enable-btls` to the `autogen.sh` step above.
 
 BTLS build will add a couple of additional prerequisites for Visual Studio builds. The easiest way to get additional needed packages is to install and use [Chocolatey](https://chocolatey.org/) package manager. See https://chocolatey.org/install for instructions on how to install Chocolatey package manager into the build system.
 
@@ -99,9 +99,53 @@ Once Chocolatey has been installed, add the following packages to the build syst
 
 ```cmd
 choco install cmake
-choco install strawberryperl
+```
+
+Optional, in order to build BTLS with assembler optimization support, additional packages needs to be installed. It is still possible to build without these packages using Visual Studio as cmake build generator, but that configuration won't be able to build assembler optimized cryptographic functions.
+
+```cmd
+choco install activeperl
 choco install ninja
 choco install yasm
+```
+
+Make sure they are all visible to the build environment used by Visual Studio (restart any command prompts or Visual Studio IDE's used in the build).
+
+### Enable LLVM for Windows builds.
+
+Mono on Windows supports LLVM in several different build combinations. When doing Windows cross compiler builds, host == Win32 but target != Win32, standard LLVM build instructions can be used.
+
+For regular Windows builds, host == Win32, target == Win32 (described in this page), only x64 Visual Studio build supports LLVM. To enable LLVM, pass `--enable-llvm` to the `autogen.sh` step above.
+
+Windows build supports most of the LLVM configuration flags, except `--enable-loadedllvm`. If configured with `--with-llvm`, Visual Studio build will use pre-build LLVM version pointed to by `llvm-config.exe` instead of building internal LLVM version as part of Visual Studio build.
+
+NOTE, since only x64 Visual Studio build supports LLVM for regular Windows builds, a warning will be generated in the `autogen.sh` output indicating that LLVM will be disabled for mingw builds. Similar warning will be generated when building an unsupported build configuration from within Visual Studio (using the Win32 build configurations).
+
+There is also a couple of MSBuild properties directly controlling the use of LLVM from Visual Studio builds (in case `autogen.sh` is not used or needs to be overridden).
+
+MONO_ENABLE_LLVM
+
+When set to true, enable Visual Studio LLVM build. Could be explicitly passed to MSBuild or set in `mono.props` in order to force LLVM build.
+
+MONO_EXTERNAL_LLVM_CONFIG
+
+When set to a path pointing to a pre-build version of `llvm-config.exe`, specified LLVM build will be used instead of doing local internal LLVM build as part of regular Visual Studio Mono runtime build. Could be explicitly passed to MSBuild or set in `mono.props` in order to force LLVM build.
+
+Additional prerequisites only applies when building LLVM as part of Visual Studio Mono runtime build. If using `--with-llvm` configuration option or MONO_EXTERNAL_LLVM_CONFIG MSBuild property, no additional prerequisites are needed.
+
+LLVM build will add a couple of additional prerequisites for Visual Studio builds. The easiest way to get additional needed packages is to install and use [Chocolatey](https://chocolatey.org/) package manager. See https://chocolatey.org/install for instructions on how to install Chocolatey package manager into the build system.
+
+Once Chocolatey has been installed, add the following packages to the build system:
+
+```cmd
+choco install cmake
+choco install python2
+```
+
+Optional, by default LLVM build will use Visual Studio as cmake build generator. Build also support ninja as cmake build generator. In order to use ninja, install the following packages to the build system:
+
+```cmd
+choco install ninja
 ```
 
 Make sure they are all visible to the build environment used by Visual Studio (restart any command prompts or Visual Studio IDE's used in the build).
@@ -177,6 +221,46 @@ msvc\run-msbuild.bat "/p:Configuration=Release /p:Platform=x64 /p:MONO_TARGET_GC
 ```
 
 **NOTE**, while it is possible to run `msbuild.exe` from Cygwin environment it is not recommended since the build might pick up build tools and dependencies from Cygwin instead of Windows environment. There is however a build script `msvc/run-msbuild.sh` that can be called from Cygwin that will try to setup original Windows environment before running `msbuild.exe`.
+
+### Visual Studio MSBuild build properties.
+
+Building Mono runtime using Visual Studio offers a number of additional options compared to regular `autogen.sh`configuration steps. These properties can be explicitly passed to MBuild or set in `mono.props` property file, read by Mono Visual Studio build.
+
+It is also possible to change property values within Visual Studio IDE through "Property Manager", "View" -> "Other Windows" -> "Property Manager", open Mono property sheet under Mono project (any configuration will do), and select "Common Properties" -> "User Macros". When a value has been changed, select OK and all Visual Studio build configurations should be updated accordingly. If property values are changed directly in `mono.props`, while solution is loaded in Visual Studio, changes will not take place until after solution has been reloaded. If property values are change using IDE's "Property Manager" dialog, changes applies directly to loaded solution.
+
+MONO_BUILD_DIR_PREFIX
+
+Build tree location. Change to enable out of source tree builds, example `c:\mono-build\`. Default value is `.\build\` meaning build will end up in `mono-root\msvc\build`
+
+MONO_TARGET_GC
+
+GC used in build, sgen or boehm. NOTE, boehm is only supported on 32-bit build configurations. Default is sgen for all build configuration.
+
+MONO_USE_STATIC_C_RUNTIME
+
+Link Mono binaries using static c-runtime. When false, all binaries and libraries will link using dynamic c-runtime. Default value is false.
+
+MONO_USE_STATIC_LIBMONO
+
+Link Mono binaries using static libmono. When false, Mono binaries will link using dynamic libmono. Default value is false.
+
+MONO_ENABLE_LLVM
+
+Mono runtime will link and include LLVM. If MONO_EXTERNAL_LLVM_CONFIG is not set, this will also build Mono LLVM repository as part of regular Mono runtime build. When false, Mono runtime will not link and include llvm libraries. Default value is false.
+
+NOTE, this options can also be set through standard configuration, using `--enable-llvm`.
+
+MONO_EXTERNAL_LLVM_CONFIG
+
+Use an external pre-build LLVM library instead of internal build. NOTE, this requires MONO_ENABLE_LLVM to be set or won't have effect. Default value is empty.
+
+NOTE, this options can also be set through standard configuration, using `--with-llvm=full-path-to-llvm-config.exe`.
+
+MONO_ENABLE_BTLS
+
+Mono runtime will link and include BTLS. Setting this value to true will also build Mono BTLS repository as part of regular Mono runtime build. When false, Mono runtime will not link and include BTLS. Default value is false.
+
+NOTE, since BTLS support is part of BCL build, just setting this when doing Mono runtime build will not include needed BTLS support in BCL build. It is recommended to use `--enable-btls` as part of configuration step since that will make sure BTLS support is included in both BCL as well as Mono runtime build.
 
 ### Configure `make` to use Visual Studio build Mono runtime.
 
