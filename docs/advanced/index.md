@@ -15,8 +15,6 @@ title: Advanced
 * [CAS](/docs/advanced/cas/)
 * [COM](/docs/advanced/com/)
     * [COM-Interop](/docs/advanced/com-interop/)
-* [CoreCLR](/docs/advanced/coreclr/)
-    * [CoreCLR HowTo](/docs/advanced/coreclr-howto/)
 * [Performance Tips](/docs/advanced/performance-tips/)
 * [SafeHandles](/docs/advanced/safehandles/)
 * [Sandbox](/docs/advanced/sandbox/)

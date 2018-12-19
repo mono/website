@@ -2,9 +2,10 @@
 title: CoreCLR HowTo
 redirect_from:
   - /CoreClrHowTo/
+  - /docs/advanced/coreclr-howto/
 ---
 
-This *how to* is intended for people who have read about **coreclr** on [MSDN](/docs/advanced/coreclr/#references), [MS employees blogs](/docs/advanced/coreclr/#references), Mono's [wiki](/docs/advanced/coreclr/) and how this applies to [Moonlight](/docs/web/moonlight/). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
+This *how to* is intended for people who have read about **coreclr** on MSDN, MS employees blogs, Mono's wiki and how this applies to [Moonlight](/docs/web/moonlight/). Once the concepts are understood then you're ready to learn *how to* enable this feature for your own needs.
 
 So what's needed ? Simply a host (full trusted), some platform assemblies (partially trusted code) and applications (untrusted).
 

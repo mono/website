@@ -14,7 +14,7 @@ Originally Mono did not have a sandbox, but Moonlight required us to create a sa
 
 For more information on the Mono sandbox, see:
 
--   [CoreCLR](/docs/advanced/coreclr/): The CoreCLR security system, as used in Silverlight.
+-   [CoreCLR](/archived/coreclr/): The CoreCLR security system, as used in Silverlight.
 -   [SecurityValidation](/archived/securityvalidation): The process we used to secure the sandbox.
 
 Security Issues
@@ -38,7 +38,7 @@ Metadata integrity ensures that assemblies (.exe or .dll) programs are well form
 CIL Verification and CoreCLR Security
 -------------------------------------
 
-Mono implements the [CoreCLR](/docs/advanced/coreclr/) security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
+Mono implements the [CoreCLR](/archived/coreclr/) security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
 
 For example, trusted code (the code that implements the core libraries, like the String class) get access to both pointer arithmetic operations from the CIL as well as getting full access to any APIs that the system provides.
 
@@ -49,5 +49,5 @@ For example, the System.IO.File.Open() routine can be called by trusted code (th
 Audit of the codebase
 ---------------------
 
-The [SecurityValidation](/archived/securityvalidation) page describes how the [Moonlight](/docs/web/moonlight/) managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR](/docs/advanced/coreclr/).
+The [SecurityValidation](/archived/securityvalidation) page describes how the [Moonlight](/docs/web/moonlight/) managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR](/archived/coreclr/).
 

@@ -39,7 +39,6 @@ The runtime offers the following services:
     -   Asynchronous method invocation
 -   Console access
 -   Security System
-    -   [CoreCLR/Transparent Security Sandbox](/docs/advanced/coreclr-howto/)
 
 The Mono runtime can be used as a stand-alone process, or it can be [embedded into applications](/docs/advanced/embedding/)
 
