@@ -11,12 +11,22 @@ superior code.
 
 For example the SciMark score goes from 609 to 851.
 
-This extra performance comes at a cost: it consumes more time and more
+This extra performance comes at a cost: It consumes more time and more
 memory to JIT compile using LLVM than using Mono's built-in JIT, so it
 is not a solution for everyone.
 
-Compiling LLVM support for Mono
-===============================
+Compiling LLVM support for Mono 5.18 and newer
+==============================================
+
+Since Mono 5.18 the build system supports building with LLVM support out of the
+box by providing `--enable-llvm` to `autogen.sh`/`configure` when building from
+source.
+
+Also note that most packages are shipped with an LLVM enabled Mono runtime.
+
+
+Compiling LLVM support for older versions of Mono
+=================================================
 
 You need to install both LLVM and Mono from git, as follows:
 
