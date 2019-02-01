@@ -36,9 +36,7 @@ But to make the system more interesting than just load some managed code and hav
 
 Managed code can invoke unmanaged code in two ways, using [P/Invoke](/docs/advanced/pinvoke/) or using the low-level Mono embedding API.
 
-The result looks like this:
-
-[Image:exposing.png] Now your existing C code can trigger methods in the managed world, and the managed world can react and notify of any interesting changes to the C code:
+Now your existing C code can trigger methods in the managed world, and the managed world can react and notify of any interesting changes to the C code:
 
 The loaded assembly can be as simple as you want, some common things that developers have done:
 
