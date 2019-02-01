@@ -7,15 +7,15 @@ redirect_from:
 Introduction
 ============
 
-Mono 1.0 and Mono 1.1.xx do not have support for COM, it is a known missing feature of Mono. Initial work has begun on supporting MS COM on Windows. The long term goal is to support a variety of unmanaged component technologies including [MS COM](http://www.microsoft.com/com), [XPCOM](http://www.mozilla.org/projects/xpcom/), and [UNO](http://udk.openoffice.org/).
+Mono 1.0 and Mono 1.1.xx do not have support for COM, it is a known missing feature of Mono. Initial work has begun on supporting MS COM on Windows. The long term goal is to support a variety of unmanaged component technologies including [MS COM](https://docs.microsoft.com/en-us/windows/desktop/com/component-object-model--com--portal), [XPCOM](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM), and [UNO](http://www.openoffice.org/udk/).
 
 Roadmap
 =======
 
-The first goal is to get COM Interop working on Windows. This can be broken down into two stages, corresponding to the two types of [COM Wrappers](http://msdn2.microsoft.com/en-us/library/5dxz80y2(vs.80).aspx).
+The first goal is to get COM Interop working on Windows. This can be broken down into two stages, corresponding to the two types of [COM Wrappers](https://docs.microsoft.com/en-us/dotnet/framework/interop/com-wrappers).
 
-1.  Exposing a COM object as a [Runtime Callable Wrapper (RCW)](http://msdn2.microsoft.com/en-us/library/8bwh56xe.aspx) is the first step.
-2.  The opposite is next, exposing a managed object as a [COM Callable Wrapper (CCW)](http://msdn2.microsoft.com/en-us/library/f07c8z1c.aspx). Marshalling logic for additional types must be implemented for COM Interop including BSTRs, VARIANTs, SAFEARRAYs, and most importantly interface pointers.
+1.  Exposing a COM object as a [Runtime Callable Wrapper (RCW)](https://docs.microsoft.com/en-us/dotnet/framework/interop/runtime-callable-wrapper) is the first step.
+2.  The opposite is next, exposing a managed object as a [COM Callable Wrapper (CCW)](https://docs.microsoft.com/en-us/dotnet/framework/interop/com-callable-wrapper). Marshalling logic for additional types must be implemented for COM Interop including BSTRs, VARIANTs, SAFEARRAYs, and most importantly interface pointers.
 
 After COM Interop is working on Windows, the next step is to extend the mechanism for other component systems. The current idea is to reuse the COM Interop paradigm, providing extension points to handle the differences in component systems. A current prototype exists for XPCOM.
 
@@ -30,7 +30,7 @@ Creation of COM objects via Runtime Callable Wrappers.
  MyCOMObject com_object_wrapper = new MyCOMObject();
 ```
 
-where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.comimportattribute.aspx) and a [GuidAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.guidattribute.aspx) with the CLSID of the COM class.
+where MyCOMObject is a class marked with the [COMImportAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.comimportattribute) and a [GuidAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.guidattribute) with the CLSID of the COM class.
 
 ``` csharp
  [ComImport ()]
@@ -41,7 +41,7 @@ where MyCOMObject is a class marked with the [COMImportAttribute](http://msdn2.m
  }
 ```
 
-COM objects can be marshalled into managed code, and managed objects can be marshalled into unmanaged code using the [MarshalAsAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshalasattribute.aspx). Also, VARIANT and BSTR marshalling is supported.
+COM objects can be marshalled into managed code, and managed objects can be marshalled into unmanaged code using the [MarshalAsAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.marshalasattribute). Also, VARIANT and BSTR marshalling is supported.
 
 ``` csharp
  [ComImport ()]
@@ -55,7 +55,7 @@ COM objects can be marshalled into managed code, and managed objects can be mars
  }
 ```
 
-A large number of methods in the [Marshal Class](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.marshal.aspx) related to COM Interop have also been implemented. Methods like:
+A large number of methods in the [Marshal Class](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.marshal) related to COM Interop have also been implemented. Methods like:
 
 ``` csharp
  public class Marshal
@@ -89,7 +89,7 @@ I have run a large number of test apps. You should be able to interact with stan
 Non-Windows Platform Support
 ============================
 
-Note that there is very little that ties COM Interop to Windows. COM is a binary standard, so anyone who follows that standard can use the COM Interop functionality in mono. XPCOM can easily be supported if anyone is interested in putting in a little work to support marshalling strings. This is [MainWin](http://www.mainsoft.com/products/mainwin.aspx) ported COM objects can also use mono COM Interop, with few minor adjustments.
+Note that there is very little that ties COM Interop to Windows. COM is a binary standard, so anyone who follows that standard can use the COM Interop functionality in mono. XPCOM can easily be supported if anyone is interested in putting in a little work to support marshalling strings.
 
 XPCOM Support
 -------------
@@ -216,8 +216,8 @@ In the future, we will have a tool **xptimport** that will be able to import typ
 TODO
 ====
 
-1.  [IDispatch](http://msdn2.microsoft.com/en-us/library/ms221608.aspx) support, both for RCWs and for CCWs
-2.  [LCIDConversionAttribute](http://msdn2.microsoft.com/en-us/library/system.runtime.interopservices.lcidconversionattribute.aspx) Unfortunately, this nasty little guy is used by Office Interop Assemblies.
-3.  Better [aggregation](http://msdn2.microsoft.com/en-us/library/ms686558.aspx) support
+1.  [IDispatch](https://docs.microsoft.com/en-us/windows/desktop/api/oaidl/nn-oaidl-idispatch) support, both for RCWs and for CCWs
+2.  [LCIDConversionAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.lcidconversionattribute) Unfortunately, this nasty little guy is used by Office Interop Assemblies.
+3.  Better [aggregation](https://docs.microsoft.com/en-us/windows/desktop/com/aggregation) support
 
 
