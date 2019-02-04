@@ -53,6 +53,7 @@ Starting with Mono 5.0 regular bi-monthly branching started and the version is n
 
 | Mono version    | GitHub branch name   | MSBuild version
 |-----------------|----------------------|-------------------
+| 6.0             | [2019-02](https://github.com/mono/mono/tree/2019-02) | 16.0
 | 5.22            | [2018-12](https://github.com/mono/mono/tree/2018-12) | 16.0
 | 5.20            | [2018-10](https://github.com/mono/mono/tree/2018-10) | 16.0
 | 5.18            | [2018-08](https://github.com/mono/mono/tree/2018-08) | 16.0
