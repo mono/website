@@ -59,10 +59,12 @@ We would rather have a maintainable, clean and incomplete piece of code that we 
 Contacting the Mono Team
 ------------------------
 
-If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and students from past years are usually there and can answer some quick questions about the program and about Mono.
+If you have questions or suggestions, or would like feedback on your idea, please join us
+in [our Gitter channels](https://www.mono-project.com/community/help/chat). Various mentors and
+students from past years are usually there and can answer questions about the program and about Mono.
+Community engagement is essential for a successful Summer of Code, so get involved!
 
-Our Gitter IM channels for [mono](https://gitter.im/mono/mono) and [monodevelop](https://gitter.im/mono/monodevelop) are also a great place to chat to developers and students.
+Feel free to file an issue in the relevant GitHub repo if you want to discuss something, even if it's not a bug.
 
-The mailing lists are a very important communication channel, students should use them to get more information and feedback about ideas and proposals. Community engagement is essential for a successful Summer of Code, so get involved!
-
-For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use [soc@xamarin.com](mailto:soc@xamarin.com).
+For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use
+[soc@xamarin.com](mailto:soc@xamarin.com).
