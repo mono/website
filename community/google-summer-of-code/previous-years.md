@@ -8,8 +8,9 @@ The Mono Project has been an active participant in previous years of [Google Sum
 
 For inspiration, here are the accepted projects from previous years:
 
+- 2018 (did not participate)
 - [2017 Projects](https://summerofcode.withgoogle.com/archive/2017/organizations/4814565460148224/), see also the [reports](/community/google-summer-of-code/reports/2017/) from our participants
-- 2016 (not participated)
+- 2016 (did not participate)
 - [2015 Projects](https://www.google-melange.com/archive/gsoc/2015/orgs/mono)
 - [2014 Projects](https://www.google-melange.com/archive/gsoc/2014/orgs/mono)
 - [2013 Projects](https://www.google-melange.com/archive/gsoc/2013/orgs/mono)
