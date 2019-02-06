@@ -35,7 +35,8 @@ Work on Mono's tools and compilers
 * [Add integration to use LLVM Superoptimizer](#add-integration-to-use-llvm-superoptimizer)
 * [Bring IronPython to Android and iOS](#bring-ironpython-to-android-and-ios)
 * [Flatpak support for Mono apps](#flatpak-support-for-mono-apps)
-* [Polish LLVM C backend for Cono](#polish-llvm-c-backend-for-cono)
+* [Polish LLVM C backend for Mono](#polish-llvm-c-backend-for-mono)
+* [Port ilasm to use IKVM.Reflection instead of PEAPI](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
 * [Replace mono-cil-strip](#replace-mono-cil-strip)
 
 **[Mono Runtime](#mono-runtime)**
@@ -225,17 +226,27 @@ Ideas for Flatpak + Mono tools:
 
 **Mentors:** Hylke Bons
 
-### Polish LLVM C backend for Cono
+### Polish LLVM C backend for Mono
 
 **Complexity:** Hard
 
-A proof of concept has demonstrated using the LLVM C Backend with Mono to generate C code from a managed executable. This would allow using Mono on many older/limited/exotic platforms where it cannot currently be used.
+A proof of concept has been demonstrated using Julia's [LLVM C Backend](https://github.com/JuliaComputing/llvm-cbe) with Mono to generate C code from a managed executable. This would allow using Mono on older/limited/exotic platforms where it cannot currently be used.
 
 For details, see https://github.com/mono/mono/issues/11940
 
 The project is to make this more complete and stable. A key part of this would be to make the backend use Mono's intrinsics instead of LLVM-CBE's Julia-specific intrinsics.
 
 **Mentors:** Alexander Kyte
+
+### Port ilasm to use IKVM.Reflection instead of PEAPI
+
+**Complexity:** Medium
+
+Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
+
+**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
+
+**Mentors:** Marek Safar, Zoltan Varga
 
 ### Replace mono-cil-strip
 
