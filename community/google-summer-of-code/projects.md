@@ -16,18 +16,12 @@ so you can submit your own ideas as well as apply for one from this list - but o
 
 You can use the following links to jump to sections that you're interested in:
 
-**[MonoDevelop / Xamarin Studio IDE](#monodevelop--xamarin-studio-ide)**
+**[MonoDevelop IDE](#monodevelop-ide)**
 
-Help developers build applications by improving the cross-platform MonoDevelop / Xamarin Studio IDE
+Help developers build applications by improving the cross-platform MonoDevelop IDE (also used as the core of Visual Studio for Mac)
 
-* [Code Contracts Support](#code-contracts-support)
-* [CodeLens for MonoDevelop](#codelens-for-monodevelop)
 * [Debugging disassembled code could use C# decompiler to generate source](#debugging-disassembled-code-could-use-c-decompiler-to-generate-source)
-* [Improve Auto-Documentation System](#improve-auto-documentation-system)
 * [Overhaul MonoDevelop C/C++ support](#overhaul-monodevelop-cc-support)
-* [Resurrect MonoDevelop database support](#resurrect-monodevelop-database-support)
-* [Reuse MonoDevelop Roslyn compilation to perform compile](#reuse-monodevelop-roslyn-compilation-to-perform-compile)
-* [Support creation of sandboxed Linux apps](#support-creation-of-sandboxed-linux-apps)
 * [Support for Symbol Servers](#support-for-symbol-servers)
 * [Unit tests code coverage visualised inside MonoDevelop editor](#unit-tests-code-coverage-visualised-inside-monodevelop-editor)
 * [Urho3D Material Editor for MonoDevelop](#urho3d-material-editor-for-monodevelop)
@@ -38,40 +32,37 @@ Help developers build applications by improving the cross-platform MonoDevelop /
 
 Work on Mono's tools and compilers
 
+* [Add integration to use LLVM Superoptimizer](#add-integration-to-use-llvm-superoptimizer)
 * [Bring IronPython to Android and iOS](#bring-ironpython-to-android-and-ios)
-* [Port ilasm to use IKVM.Reflection instead of PEAPI](#port-ilasm-to-use-ikvmreflection-instead-of-peapi)
+* [Flatpak support for Mono apps](#flatpak-support-for-mono-apps)
+* [Polish LLVM C backend for Cono](#polish-llvm-c-backend-for-cono)
 * [Replace mono-cil-strip](#replace-mono-cil-strip)
 
 **[Mono Runtime](#mono-runtime)**
 
 Improve the core Mono runtime and JIT
 
-* [Add platform specific backends for the ThreadPool](#add-platform-specific-backends-for-the-threadpool)
 * [Add RISC-V Backend](#add-risc-v-backend)
 * [Allocator for sgen blocks](#allocator-for-sgen-blocks)
-* [Implement a LLDB plugin that can understands the mono runtime](#implement-a-lldb-plugin-that-can-understands-the-mono-runtime)
-* [Implement Clang static analyser checkers that would verify runtime invariants](#implement-clang-static-analyser-checkers-that-would-verify-runtime-invariants)
-* [Implement System.Runtime.Intrinsics from CoreFX](#implement-systemruntimeintrinsics-from-corefx)
+* [Implement Clang static analyser checkers that verify runtime invariants](#implement-clang-static-analyser-checkers-that-verify-runtime-invariants)
 * [Improve our dynamic checking mode](#improve-our-dynamic-checking-mode)
 * [Improve sgen debugging](#improve-sgen-debugging)
 * [JIT optimizations](#jit-optimizations)
 * [Make sgen's binary protocol a general purpose runtime tool](#make-sgens-binary-protocol-a-general-purpose-runtime-tool)
-
-**[Microsoft .NET and Mono integration](#microsoft-net-and-mono-integration)**
-
-Work on blending the worlds of open source .NET and Mono projects together
-
-* [Import reference source System.Web* assemblies](#import-reference-source-systemweb-assemblies)
-* [Import System.IO.FileStream from CoreFX](#import-systemiofilestream-from-corefx)
+* [MJIT - Mini.Compiler ongoing work](#mjit---minicompiler-ongoing-work)
+* [Persistence for the Mono class loader](#persistence-for-the-mono-class-loader)
+* [RR integration](#rr-integration)
+* [Succinct data structure implementations to replace glib dependencies](#succinct-data-structure-implementations-to-replace-glib-dependencies)
 
 **[Platforms and Bindings](#platforms-and-bindings)**
 
 Bindings to native toolkits and libraries, including GTK#, Xamarin.Android, Xamarin.iOS, Xamarin.Mac and UrhoSharp
 
-* [Implement WebAssembly versions of class library missing bits](#implement-webassembly-versions-of-class-library-missing-bits)
-* [Port Go's HTTP client/server to .NET](#port-gos-http-clientserver-to-net)
-* [Test & fix remaining profile assemblies under WASM](#test--fix-remaining-profile-assemblies-under-wasm)
+* [.NET Bindings for Flutter](#net-bindings-for-flutter)
+* [Continue SEALsharp bindings](#continue-sealsharp-bindings)
+* [Extend Xamarin.Analysis support](#extend-xamarinanalysis-support)
 * [Urho3d Game Engine Improvements](#urho3d-game-engine-improvements)
+* [Xamarin.iOS/Xamarin.Mac Roslyn Analyzers](#xamariniosxamarinmac-roslyn-analyzers)
 
 **[Other Ideas](#other-ideas)**
 
@@ -81,58 +72,7 @@ Suggest your own ideas for a project
 
 How to get in touch with us and ask questions
 
-## MonoDevelop / Xamarin Studio IDE
-
-### Code Contracts Support
-
-**Complexity:** Medium
-
-The goal of this project is to add Code COntracts support to Mono using the open-source [.NET Code Code Contracts support](https://github.com/Microsoft/CodeContracts).
-
-For more information, see:
-
-* [Code Contracts docs](https://docs.microsoft.com/en-us/dotnet/framework/debug-trace-profile/code-contracts)
-* [MS Research Project page](https://www.microsoft.com/en-us/research/project/code-contracts/)
-
-This is a technology that is made of four components:
-
-* APIs in mscorlib that are used to specify things like preconditions and post conditions
-* The use of these APIs in user code
-* Tools to modify binaries to insert/remove code contracts instrumentation
-* IDE support for the tools.
-
-We have already done the first step, and as we import more code from .NET, the second step will be done for us in the core libraries.
-
-This task focuses on two things:
-
-* Porting the tools to modify binaries to insert/remove code
-* IDE support for the tools
-
-The first step should be relatively simple.   The code is open source, and might require some minimal changes to run on Unix with Mono.
-
-The second step includes extending the MonoDevelop IDE to add the configuration options to use Code Contracts and call the code contract tools at the appropriate times. The UI looks like the attached screenshot, and under the hood it works using MSBuild targets.
-
-**Deliverables**: Code contracts tools working on Mono and integrated into MonoDevelop.
-
-**Mentors:** Aleksey Kliger
-
-### CodeLens for MonoDevelop
-
-**Complexity:** Medium
-
-A code lens is an adornment drawn above lines in the source editor to provide ambient contextual information, such as when a method was last modified, or the number of places it is referenced. They can be seen in action in Visual Studio and Visual Studio Code.
-
-This task is to create an infrastructure for code lenses in MonoDevelop that can be extended by extension packages, and to implement several built-in code lenses using this infrastructure.
-
-Many of the underpinnings are already present, so this project is partly a UX task. Prior to the implementation, you will need to do user research and testing to provide support for the design:
-
-* What information is useful to show in a code editor, and how should it be displayed?
-* How do developers interact with the code lenses?
-* How do we make them unobtrusive, and make the experience smooth and subtle?
-
-You will learn how to find a tradeoff between optimal user experience and technical complications.
-
-**Mentors:** maryannexe
+## MonoDevelop IDE
 
 ### Debugging disassembled code could use C# decompiler to generate source
 
@@ -143,22 +83,6 @@ MonoDevelop already has IL->C# logic, and the debugger already supports stepping
 **Deliverables:** Ability to see C# instead of IL when debugging methods without source code.
 
 **Mentors:** David Karlas
-
-### Improve Auto-Documentation System
-
-**Complexity:** Medium
-
-MonoDevelop has an addin that automatically generates documentation comments based on the member types and  naming conventions. This is very useful, as it gets the boilerplate out the way leaving more time for the developer to add meaningful details.
-
-However, sometimes its assumptions do not hold and the resulting docs  do not make sense. Although this is funny, we would like to fix it.
-
-This is an ideal project for a student interested in linguistics, parsing & understanding natural language.
-
-Your proposal should describe the approaches you intend to use to fix the issue, and a number of cases where the generated docs could be improved.
-
-**Deliverables:** Fix the docs generation for the cases covered in your proposal.
-
-**Mentors:** Mike Krüger
 
 ### Overhaul MonoDevelop C/C++ support
 
@@ -180,40 +104,6 @@ There's far more than could be done in a single Summer of Code, so feel free to 
 **Deliverables:** a set of improvements to the C/C++ addin, as specified in your proposal
 
 **Mentors:** Mikayla Hutchinson
-
-### Resurrect MonoDevelop database support
-
-**Complexity:** Medium
-
-MonoDevelop used to have database support, but it was abandoned and eventually bitrotted away. This task is to bring it back!
-
-The recommended approach is to start with the old database extensions and update them to MonoDevelop 7.0 API. Remove all the backends except Sqlite, MySQL and PostgreSQL, and ship the remaining extensions as standalone extensions. You should also add a unit test suite, fix bugs (check bugzilla) and add general polish and features (to be proposed by student).
-
-**Deliverables**: Working database support in MonoDevelop, with details to be specified in the proposal
-
-**Mentors:** Marius Ungureanu
-
-### Reuse MonoDevelop Roslyn compilation to perform compile
-
-**Complexity:** Medium
-
-MonoDevelop now uses the Roslyn compiler for its type system, and keeps fully updated Roslyn compilations in memory. It should be possible when building for the build engine to connect back the the IDE and use the existing Roslyn compilations for code generation, in the same way that Visual Studio does. This will greatly improve compile time during development.
-
-This will require implementing the MSBuild ICscHostObject interface in the MonoDevelop build system and having the Csc build task delegate the code generation to the in-process compiler.
-
-**Deliverables**: Fully implement ICscHostObject in the MonoDevelop build system, including tests.
-
-**Mentors:** Marius Ungureanu
-
-### Support creation of sandboxed Linux apps
-
-**Complexity:** Medium
-
-When creating new C or Vala apps in the GNOME Builder IDE, projects are created with a manifest file for building a sandboxed version of the application for distribution. MonoDevelop's current Linux package creation support should be enhanced to make it easy to create sandboxed applications, in line with GNOME Builder's feature
-
-**Deliverables**: New projects on Linux should offer to create a flatpak-builder manifest file, and build/run should integrate sufficiently with flatpak-builder that its use should be transparent.
-
-**Mentors:** Jo Shields
 
 ### Support for Symbol Servers
 
@@ -247,7 +137,7 @@ It would be very useful for developers using MonoDevelop to be able to edit Urho
 
 **Deliverables**: An Urho3D material editor embedded into MonoDevelop that allows developers to preview and edit materials that are in their projects.
 
-**Mentors:** Mikayla Hutchinson, Miguel de Icaza
+**Mentors:** Mikayla Hutchinson
 
 ### Urho3D Scene Editor for MonoDevelop
 
@@ -290,6 +180,22 @@ Optional:
 
 ## Compilers and Tools
 
+### Add integration to use LLVM Superoptimizer
+
+**Complexity:** Hard
+
+Superoptimization is a method for generating provably-optimal code for short segments of logical operations. The process of stitching these together had classically been seen as intractable, but modern optimizations of the process makes it doable, if a bit slow. 
+
+Production applications sometimes would benefit from much faster code, even at the cost of compilation time and the audibility of compilation. 
+
+This project would see the student do further build and automation work to enable us to use Souper out-of-the box. Creation of some diagrams and benchmarks showing the cost and improvements with Souper would be one deliverable as well. 
+
+This student can hope to gain some familiarity with binding LLVM and working with the LLVM tooling ecosystem.
+
+https://www.mono-project.com/news/2018/12/06/souper/
+
+**Mentors:** Alexander Kyte
+
 ### Bring IronPython to Android and iOS
 
 **Complexity:** Medium
@@ -300,17 +206,36 @@ You will need to define the workflow and project/build system for working with I
 
 **Deliverables**: end-to-end IronPython support on iOS and/or Android
 
-**Mentors:** Miguel de Icaza, Mikayla Hutchinson
+**Mentors:** Miguel de Icaza, Mikayla Hutchinson, Larry O'Brien
 
-### Port ilasm to use IKVM.Reflection instead of PEAPI
+### Flatpak support for Mono apps
 
 **Complexity:** Medium
 
-Port ilasm, the IL assembler, to use IKVM.Reflection as its code emission backend instead of PEAPI. This will require extending IKVM.Reflection to support the advanced metadata that ilasm supports.
+Flatpak is all the rage these days in the Open Source and GNOME community. It's still a bit of work to create a Flatpak with Mono (the whole runtime needs to be included, dependency resolution, including nugets, and total bundle size is large).
 
-**Deliverables:** ilasm emitting code using IKVM.Reflection instead of PEAPI, and passing all tests.
+Ideas for Flatpak + Mono tools:
 
-**Mentors:** Marek Safar, Zoltan Varga
+- An extension for MonoDevelop that turns any C# project into a Flatpak
+- A flatpak-builder extension that includes the Mono runtime to save time/space when compiling a bundle
+- A tool that uses mkbundle to statically link the entire app and keep mono based flatpak bundles small
+- Templates for easy inclusion of open source NuGets
+
+**Deliverables**: An end-to-end experience for creating a Flatpak from a  MonoDevelop project
+
+**Mentors:** Hylke Bons
+
+### Polish LLVM C backend for Cono
+
+**Complexity:** Hard
+
+A proof of concept has demonstrated using the LLVM C Backend with Mono to generate C code from a managed executable. This would allow using Mono on many older/limited/exotic platforms where it cannot currently be used.
+
+For details, see https://github.com/mono/mono/issues/11940
+
+The project is to make this more complete and stable. A key part of this would be to make the backend use Mono's intrinsics instead of LLVM-CBE's Julia-specific intrinsics.
+
+**Mentors:** Alexander Kyte
 
 ### Replace mono-cil-strip
 
@@ -332,30 +257,23 @@ Notes: it does not have to use (or hack around) the latest Cecil, e.g. it could 
 
 ## Mono Runtime
 
-### Add platform specific backends for the ThreadPool
-
-**Complexity:** Medium
-
-The ThreadPool supports the concept of workers backend which is responsible for allocating the appropriate number of threads. This allows for platform-specific implementations. For example, we can use  `dispatch_async` on macOS/iOS, the Win32 threadpool on Windows, and the existing - hand rolled - implementation on the other platforms.
-
-**Deliverables:** Add backend for `dispatch_async` on macOS/iOS and for the Win32 threadpool on Windows.
-
-**Mentors:** Ludovic Henry
-
 ### Add RISC-V Backend
 
 **Complexity:** Hard
 
-I believe that it is within scope to add an LLVM-based backend for RISC-V within a summer.
+There was some initial bootstrapping done for RISC-V:
+https://github.com/mono/mono/pull/11593
 
-Quad-core consumer RISC-V boards are going to be available by this summer, so it seems time to put some effort into RISC-V. We want a student to write the architecture-specific code necessary for our LLVM backend to compile source for RISC-V.
+I see two projects possible around this area:
 
-Steps:
-1) Add build infrastructure for RISC-V (look at what our autogen stuff and source tree does for arm or mips, copy that)
-2) Write LLVM aot support for RISC-V (use existing backend in LLVM project, it's mostly just configuration in C)
-3) Write runtime support for RISC-V (requires some platform ABI knowledge)
+- (1) continue implementing the JIT backend. I wouldn't expect a student to get it to a "complete" state after two months, but the delivery can be reduced to "make the mini regression test suite work", which is a huge achievement, but not a fully working runtime.
+- (2) get the interpreter working on this target. This needs some low-level hacking in terms of writing RISC-V assembly. However, it's a fairly contained work item and as a reward it should be able to run almost anything (as the interpreter itself is pretty complete).
 
-**Mentors:** Alexander Kyte
+Note1: I would not recommend using the LLVM backend, because it needs the regular JIT backend as a fallback.
+
+Note2: Real hardware, aka. a development board is *not* needed, the simulator tooling is quite good. In fact, I think it's much easier to develop with the simulator than on real (slow) hardware. The only fast hardware available is >$1000.
+
+**Mentors:** Bernhard Urban
 
 ### Allocator for sgen blocks
 
@@ -369,25 +287,7 @@ We need to allocate blocks in well determined contiguous regions that we can kee
 
 **Mentors:** Vlad Brezae
 
-### Implement a LLDB plugin that can understands the mono runtime
-
-**Complexity:** Hard
-
-LLDB support plugins and we should write one that exposes as much as possible of the runtime. A few ideas:
-
-* object layout, introspection and heap walking
-* unwinding and symbolifying managed methods
-* lookup line information for managed methods
-* pretty print all runtime structs
-* threadpool introspection?
-
-Note that some work on this has been done already and can be found [here](https://github.com/mono/lldb) and [here](https://github.com/mono/lldb-binaries).
-
-**Deliverables:** One or more of the above bullet points, as listed in your proposals.
-
-**Mentors:** Alexis Christoforides
-
-### Implement Clang static analyser checkers that would verify runtime invariants
+### Implement Clang static analyser checkers that verify runtime invariants
 
 **Complexity:** Medium
 
@@ -406,14 +306,6 @@ Together with the clang work, this project should annotate the runtime to verify
 **Deliverables:** One or more of the above bullet points.
 
 **Mentors:** Bernhard Urban
-
-### Implement System.Runtime.Intrinsics from CoreFX
-
-**Complexity:** Medium
-
-See code on [CoreFX GitHub](https://github.com/dotnet/corefx/tree/master/src/System.Runtime.Intrinsics)
-
-**Mentors:** Miguel de Icaza, Zoltan Varga
 
 ### Improve our dynamic checking mode
 
@@ -488,84 +380,111 @@ Additionally, improving the tooling around processing binprot files can be part 
 
 **Mentors:** Ludovic Henry
 
-## Microsoft .NET and Mono integration
+### MJIT - Mini.Compiler ongoing work
 
-Microsoft open sourced large chunks of code the past couple of years:
+**Complexity:** Hard
 
-* ReferenceSource: the source code for the class libraries of .NET as it ships on Windows
-* CoreFX: a fresh take on the distribution of the class libraries for a new, slimmer, smaller runtime
-* CoreCLR: their C/C++ based runtime, JIT, GC for running on Mac, Linux and Windows
-* Roslyn: Microsoft's C# and VB compiler as a service
-* CodeContracts: the tools needed to instrument your code
+The [MJIT](https://www.mono-project.com/news/2018/09/11/csharp-jit/) Mini.Compiler is a managed interface that lets you interpose some managed code every time that the Mono "mini" JIT needs to compile some IL to native code. The project would be to flesh out the interface and get it working in more scenarios. Then explore moving more of the guts of "mini" to managed code.
 
-We are tracking various ideas in the [.NET Integration in Mono](https://trello.com/b/vRPTMfdz/net-framework-integration-into-mono) trello board.
+**Mentors:** Aleksey Kliger, Bernhard Urban
 
-### Import reference source System.Web* assemblies
+### Persistence for the Mono class loader
 
 **Complexity:** Medium
 
-Mono has its own implementation of the System.Web assemblies. Microsoft has open-sourced their Reference Source implementation. We would like to replace Mono's existing implementation with Reference Source in order to increase compatibility, and fix bugs and missing features..
+What if we used a database (such as SQLlite or [LMDB](https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/intro.doc))  to persist Mono's class initialization results. The idea is that all the computation that mono does over a MonoClass in order to initialize it (computing sizes and layouts, etc) could be stored in a robust DB backend and recalled (concurrently, if necessary) on the next run of Mono. If we persisted the initialization of corlib and Roslyn, would that help us decrease startup times?
 
-**Deliverables**: integrate the Reference Source System.Web.* assemblies into Mono, passing Mono test suite on Windows and Unix.
+**Mentors:** Aleksey Kliger
 
-**Mentors:** Marek Safar
-
-### Import System.IO.FileStream from CoreFX
+### RR integration
 
 **Complexity:** Medium
 
-`System.IO.FileStream` is the main class that allow users to read and write to files, pipes and consoles. It's a core component of Mono and the .NET platform. Its quality and reliability is key to a stable and fast development platform.
+RR is a debugger that allows for recording of execution in a way that can be replayed later in a debugger. The results of syscalls are fed back into the program to replicate the environment the program saw over time.
 
-The goal is to replace our BCL implementation of [`System.IO.FileStream`](https://github.com/mono/mono/blob/master/mcs/class/corlib/System.IO/FileStream.cs), with the [CoreFX one](https://github.com/dotnet/corefx/blob/master/src/System.IO.FileSystem/src/System/IO/FileStream.cs). This would allow us to get closer to .NET Core code quality and behaviour.
+The runtime can be debugged with RR on linux, but this is mostly useful for low-level debugging. 
 
-All changes made to adapt `System.IO.FileStream` to Mono would then be upstreamed to the .NET foundation [CoreFx repo](https://github.com/dotnet/corefx)
+We have two options here: We can expose managed logging and heap/stack snapshotting to the debugger-agent and do this is a managed way. This allows us to work on ARM, linux, windows, ios, etc. The downside is that we don't get to replay state changes in unmanaged code.
 
-**Deliverables**: Integrate `FileStream` from CoreFX into Mono and upstream any necessary changes.
+Alternatively, we can have the student create glue code for using rr to debug the entire runtime remotely, and add in the hooks to get the information on managed methods from the runtime. Someone can then record a crash on their machine as it is happening, and submit it with a bug report. 
 
-**Mentors:** Marek Safar
+I believe that the latter idea would make bug reports an order of magnitude more useful. By removing the difficulty of reproducing crashes, we may save our own developers a lot of time. 
+
+Deliverables:
+
+- Get RR debugging of mono working interactively
+- Create automated RR client that records and replays mono
+- Create infrastructure to use RR client and create self contained "debug me" blob
+
+**Mentors:** Bernhard Urban
+
+### Succinct data structure implementations to replace glib dependencies
+
+**Complexity:** Medium
+
+Bitmask-driven data structures allow for SIMD operations on the data structure's top-level structure schema. They're space-efficient, cache-efficient, and they're easy to debug after a crash because the bitmask and the data structure have a minimal number of pointers. 
+
+Offering succinct arrays (no nulls) and other data structures as drop-in replacements might be ways to significantly reduce memory footprint for some specific use cases.
+
+Benchmarking is necessary to find those use-cases.
+
+Deliverables:
+
+- Implement full replacement for GArray and ensure passes GLib GArray tests.
+
+- Benchmark high-allocation places and see if the succinct replacement helps
+
+- (Optional) Implement replacement for ghashtable which supports bare minimum of operations, using CTries
+
+- (Optional) Use CTries in high-contention environments or high-allocation environments and benchmark uses that have savings
+
+**Mentors:** Alexander Kyte
 
 ## Platforms and Bindings
 
-### Implement WebAssembly versions of class library missing bits
+### .NET Bindings for Flutter
 
 **Complexity:** Medium
 
-Our BCL has a lot of pieces that require a new implementation for WebAssembly.
+This project will treat Flutter as a platform, and produce a 1:1 mapping of Darts APIs into .NET.   This will allow C# and F# developers to access this library.
 
-The deliverables of this project is implement WASM specific versions of the following bits:
+This effort would include:
 
-* System.Threading.Timer
-* HttpClient handler
-* TimeZone
-* Locale
+* Create C# bindings for each public type, method and property in Flutter.
+* Turn the Flutter library into a loadable module that can be initialized after startup.
 
-A student proposal should pick a few of those items.
-
-**Deliverables**: Pull requests with implementations of the features specified in your proposal.
+This effort would use the Dart compiler to process the Flutter API and output the C# bindings for it, producing a 1:1 mapping.
 
 **Mentors:** Miguel de Icaza
 
-### Port Go's HTTP client/server to .NET
+### Continue SEALsharp bindings
 
 **Complexity:** Medium
 
-[Go's HTTP client/server stack](https://github.com/golang/go/tree/master/src/net/http) is fast and elegant. This project is to make it available to C# developers by porting it line by line to C#.
+We have a C# binding for the SEAL homomorphic encryption library.
+https://www.microsoft.com/en-us/research/project/simple-encrypted-arithmetic-library/
 
-**Deliverables**:  a working port of the Go client/server stack in C#, with tests
+The current status is that we can work with 64-bit ints and we have the beginnings of a Linq Expression analyzer to automate creating encrypted computations.
 
-**Mentors:** Miguel de Icaza
+https://github.com/lambdageek/sealsharp/tree
 
-### Test & fix remaining profile assemblies under WASM
+Next steps would be to add more bindings (for example, support for floats and matrices), and to work on automating some of the entropy and relinearization key management by taking advantage of the analyzability of Linq expressions.
 
-**Complexity:** Medium
+**Mentors:** Aleksey Kliger
 
-Today only mscorlib, System and System.Core have being tested under WebAssembly.
+### Extend Xamarin.Analysis support
 
-Test the remaining assemblies and fix issues found.
+**Complexity:** Easy
 
-**Deliverables**: pull requests that fix issues found during testing.
+Xamarin.Analysis is a set of rules for finding common problems in Xamarin apps by inspecting the project, code and/or package.
 
-**Mentors:** Rodrigo Kumpera
+You can see them at `/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/msbuild/iOS/Xamarin.iOS.Analysis.targets`.
+
+The goal would be to add more rules in `xamarin-macios` based on our existing list or new ideas.
+
+We'd also like to add an automated way to fix the encountered problem.
+
+**Mentors:** Vincent Dondain
 
 ### Urho3d Game Engine Improvements
 
@@ -587,7 +506,25 @@ NOTE: Contributions must follow the Urho3D contribution rules, and you should co
 
 **Deliverables**: Add a feature of your choice to the Urho3D engine, as specified in your proposal.
 
-**Mentors:** Mikayla Hutchinson, Miguel de Icaza
+**Mentors:** Mikayla Hutchinson
+
+### Xamarin.iOS/Xamarin.Mac Roslyn Analyzers
+
+**Complexity:** Medium
+
+Xamarin.iOS and Xamarin.Mac APIs often have custom attributes (you can see some of them [here](https://developer.xamarin.com/guides/cross-platform/macios/binding/binding-types-reference/)).
+
+The idea of this project would be to make new Roslyn Analyzer that would be shipped as Nuggets (hosted in the [xamarin-macios](https://github.com/xamarin/xamarin-macios) repo).
+
+What's especially interesting is the ability to automatically offer code fixes which would greatly help our users.
+
+Example 1: The `[RequiresSuper]` attribute means that you must call the base method when overriding. An analyzer could alert you when an override is missing that base call and offer to add it for you.
+
+Example 2: We use `[Advice]` or `[Obsolete]` to recommend the usage of a better API. Maybe we'd need to create a new attribute in the SDK but it'd be great to have one that has a generic message like "Use '{0}' instead."(translated) and based on {0} (the better API) we could refactor the user's code to indeed use the better API
+
+There are a lot of other things we could do with attributes and we can always include new ones.
+
+**Mentors:** Vincent Dondain
 
 ## Other Ideas
 
@@ -606,11 +543,11 @@ Tomboy, GBrainy, Mistelix, F-Spot, ChronoJump, SparkleShare, LongoMatch).
 ## Contacting the Mono Team
 
 If you have questions or suggestions that you want to make in real-time and talk to a member of the team, please join us
-on IRC on the server "irc.gnome.org" in channel "#monosoc", "#monodev" or the "#mono" channel. Various mentors and
+in [our Gitter channels](ttps://www.mono-project.com/community/help/chat). Various mentors and
 students from past years are usually there and can answer some quick questions about the program and about Mono.
+Community engagement is essential for a successful Summer of Code, so get involved!
 
-The mailing lists are a very important communication channel, students should use them to get more information and
-feedback about ideas and proposals. Community engagement is essential for a successful summer of code, so get involved!
+Feel free to file an issue [on GitHub](https://github.com/mono/mono/issues) if you want to discuss something, even if it's not a bug.
 
 For any questions you may have about the program itself and to talk to the Mono GSoC admin, you can use
 [soc@xamarin.com](mailto:soc@xamarin.com).
