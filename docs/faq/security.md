@@ -9,13 +9,12 @@ Secure Socket Layer (SSL) / Transport Layer Security (TLS)
 
 ### WebRequest.Create ("[https://www.anywhere.com](https://www.anywhere.com)"); throws an exception
 
-That's probably because you do not trust the site you are connecting to. Note that a default installation of Mono doesn't trust anyone!
+That's probably because you do not trust the site you are connecting to. Note that a default installation of Mono from source doesn't trust anyone!
 
-You can confirm this by using the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0). It prints an error if something is wrong.
+You can confirm this by checking whether you can connect to nuget.org which should be trusted:
 
 ``` bash
-csc tlstest.cs -r:System.dll
-mono tlstest.exe https://www.nuget.org
+csharp -e 'new System.Net.WebClient ().DownloadString ("https://www.nuget.org")'
 ```
 
 There are four alternatives to solve this problem:

@@ -40,14 +40,13 @@ Hello Mono World
 HTTPS connections
 -----------------
 
-To make sure HTTPS connections work, download and run the [tlstest](https://raw.github.com/mono/mono/master/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0).
+To make sure HTTPS connections work, run the following command to check whether you can connect to nuget.org:
 
 ``` bash
-csc tlstest.cs -r:System.dll
-mono tlstest.exe https://www.nuget.org
+csharp -e 'new System.Net.WebClient ().DownloadString ("https://www.nuget.org")'
 ```
 
-The program prints an error if something is wrong.
+The program prints the website contents if everything works or throws an exception if it doesn't.
 
 WinForms Hello World
 --------------------
