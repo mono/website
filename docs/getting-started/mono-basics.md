@@ -40,7 +40,7 @@ Hello Mono World
 HTTPS connections
 -----------------
 
-To make sure HTTPS connections work, download and run the [tlstest](https://raw.githubusercontent.com/mono/mono/86c3c50c8d21c544f4cb1b10bb32d4aa0f9d0d8d/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0).
+To make sure HTTPS connections work, download and run the [tlstest](https://raw.githubusercontent.com/mono/mono/2aeb4afa26c4c5f578a3e46643b22f6bfe106a00/mcs/class/Mono.Security/Test/tools/tlstest/tlstest.cs) tool (needs Mono >= 3.4.0).
 
 ``` bash
 csc tlstest.cs -r:System.dll -r:Mono.Security.dll
