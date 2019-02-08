@@ -594,7 +594,7 @@ MonoGHashTable
 Precise Stack Marking
 =====================
 
-By default SGen scan the stack precisely on most platforms (macOS is a notable exception). You can control whether SGen uses precise or conservative scanning by setting the `stack-mark=<code> flag in the <code>MONO_GC_PARAMS` variable.
+By default SGen scan the stack precisely on most platforms (macOS is a notable exception). You can control whether SGen uses precise or conservative scanning by setting the `stack-mark=<mark-mode>` flag in the `MONO_GC_PARAMS` variable.
 
 Both Boehm GC, and SGen on macOS scan threads stacks conservatively. This means that they treated every value found on a stack as a potential pointer. This is problematic for several reasons:
 
