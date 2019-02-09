@@ -1252,9 +1252,18 @@ Here is an example adapted from Chris Brumme's blog:
     [DllImport ("...")]
     static extern void DeleteHandle (IntPtr h);
  
+    // Creates Resource
+    [DllImport ("...")]
+    static extern IntPtr CreateHandle ();
+ 
+    public C()
+    {
+       _handle = CreateHandle();
+    }
+ 
     ~C()
     {
-       DeleteHandle(h);
+       DeleteHandle(_handle);
     }
  
     public void m()
@@ -1319,7 +1328,7 @@ This allows us to write the safe code:
  
     ~C()
     {
-       DeleteHandle(h);
+       DeleteHandle(_handle);
     }
  
     public void m ()
