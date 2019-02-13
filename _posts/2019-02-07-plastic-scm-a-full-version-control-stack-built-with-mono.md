@@ -15,11 +15,11 @@ plugins, integrations with the major Continuous Integration systems,
 IDEs and issue trackers.
 
 Plastic SCM was first released in 2006 and didn\'t stop evolving in the
-last 13+ years, with 2-3 new public versions every week for the last 2.
+last 13+ years, with 2-3 new public versions every week for the last 2 years.
 
 Overall Plastic SCM sums more than 1.5 million lines of code and 95% of
-them written in C\#. It means had extensively used Mono for everything
-non-Windows since the very early days now almost a decade and a half
+them written in C\#. This means we have extensively used Mono for everything
+non-Windows since the very early days, now almost a decade and a half
 ago.
 
 And here goes the story.
@@ -34,9 +34,9 @@ was truly cross-platform. Windows-only was not a choice.
 
 Why then, we decided to go for .NET/C\# instead of something more
 portable like Java, or C/C++? The reason was clear: because Mono
-existed. We had never decided to use C\# if Mono weren\'t there already.
+existed. We had never decided to use C\# if Mono hadn\'t been there already.
 It promised a way to have cross-platform .NET and we invested heavily on
-it. How did all this go, read along fellow monkeys!
+it. How did it work out? Read along fellow monkeys!
 
 Fun with cross-platform WinForms
 --------------------------------
