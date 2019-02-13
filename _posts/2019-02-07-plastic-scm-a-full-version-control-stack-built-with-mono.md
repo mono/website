@@ -5,6 +5,8 @@ author: Jordi Mon Companys
 tags: [version control, semantic merge]
 ---
 
+*Note: This is a guest post by Jordi Mon Companys from Códice Software, a long-time Mono user, about how they used Mono to develop their flagship product.*
+
 [Plastic SCM](https://www.plasticscm.com?utm_source=Mono%20Blog&utm_medium=post&utm_campaign=Mono%20success%20story&utm_term=DotNet&utm_content=Open%20Source)
 is a full version control stack. This means Plastic SCM
 comprises a full repo management core, command line (until here it would
