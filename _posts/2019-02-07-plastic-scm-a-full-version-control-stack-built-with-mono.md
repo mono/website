@@ -44,18 +44,15 @@ Fun with cross-platform WinForms
 Code once, run everywhere. That\'s what we embraced when we started
 doing our first tests with WinForms on Linux.
 
-![](/images/2019-02-07-plastic-scm-mono/plastic-1-on-linux.jpg){width="5.901388888888889in"
-height="4.436111111111111in"}
+![Plastic 1 on Linux](/images/2019-02-07-plastic-scm-mono/plastic-1-on-linux.jpg)
 
 With very minor changes, the full Windows version was able to run on
 Linux and macOS (through X11). We later rewrote most of the controls we
 were using on WinForms to give them a more consistent look and feel:
 
-![](/images/2019-02-07-plastic-scm-mono/plastic-2-on-linux.jpg){width="5.901388888888889in"
-height="4.142361111111111in"}
+![Plastic 2 on Linux](/images/2019-02-07-plastic-scm-mono/plastic-2-on-linux.jpg)
 
-![](/images/2019-02-07-plastic-scm-mono/plastic-2-on-linux-2.jpg){width="5.901388888888889in"
-height="4.064583333333333in"}
+![Plastic 2 on Linux](/images/2019-02-07-plastic-scm-mono/plastic-2-on-linux-2.jpg)
 
 We also did this as a workaround to basically skip some well-known
 issues with some standard controls. Obviously, desktop GUIs were not a
@@ -78,13 +75,11 @@ challenge on its own.
 
 You can see how Plastic SCM running on Solaris looked like:
 
-![](/images/2019-02-07-plastic-scm-mono/plastic-2.7-on-solaris-cde.jpg){width="5.901388888888889in"
-height="4.415972222222222in"}
+![Plastic 2.7 on Solaris](/images/2019-02-07-plastic-scm-mono/plastic-2.7-on-solaris-cde.jpg)
 
 And:
 
-![](/images/2019-02-07-plastic-scm-mono/plastic-on-solaris-sparc.png){width="5.901388888888889in"
-height="4.728472222222222in"}
+![Plastic on Solaris SPARC](/images/2019-02-07-plastic-scm-mono/plastic-on-solaris-sparc.png)
 
 We were super excited about it because it allowed us to run Plastic SCM
 on some old Sun workstations we had around. And they featured SPARC
@@ -151,14 +146,11 @@ Some takeaways from this new approach:
 
 This is how Plastic SCM looks now, enjoy:
 
-![](/images/2019-02-07-plastic-scm-mono/macplastic-brex.png){width="5.901388888888889in"
-height="3.4631944444444445in"}
+![Mac Branch Explorer](/images/2019-02-07-plastic-scm-mono/macplastic-brex.png)
 
-![](/images/2019-02-07-plastic-scm-mono/windows-diff-window.png){width="5.901388888888889in"
-height="3.5243055555555554in"}
+![Windows Diff Window](/images/2019-02-07-plastic-scm-mono/windows-diff-window.png)
 
-![](/images/2019-02-07-plastic-scm-mono/windows-brex.png){width="5.901388888888889in"
-height="3.5243055555555554in"}
+![Windows Branch Explorer](/images/2019-02-07-plastic-scm-mono/windows-brex.png)
 
 But wait! Wouldn't Mono affect performance? Baby, we are built for speed!
 -------------------------------------------------------------------------
@@ -181,8 +173,7 @@ Below you can see how a 2019 version of Plastic SCM compares to Git and
 a major commercial version control competitor performing quite common
 operations:
 
-![](/images/2019-02-07-plastic-scm-mono/performance-benchmark.png){width="5.901388888888889in"
-height="3.915277777777778in"}
+![Performance Benchmark](/images/2019-02-07-plastic-scm-mono/performance-benchmark.png)
 
 As you can see, Plastic SCM consistently beats Git, which we believe is
 quite an achievement considering it is written in .NET/Mono/C\# instead
@@ -194,8 +185,7 @@ Heavy loaded servers
 In terms of pure scalability, we also achieve quite good results
 compared to commercial version controls:
 
-![](/images/2019-02-07-plastic-scm-mono/scalability-benchmark.png){width="5.901388888888889in"
-height="5.263888888888889in"}
+![Scalability Benchmark](/images/2019-02-07-plastic-scm-mono/scalability-benchmark.png)
 
 We don\'t compare to Git here since what we are running are pure
 centralized operations (direct checkin or commit if you prefer)
