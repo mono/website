@@ -95,38 +95,40 @@
             <p><i>Note:</i> the packages should work on newer Ubuntu versions too but we only test the ones listed below.</p>
             <h3>Ubuntu 18.04 <small>(i386, amd64, armhf, arm64, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+<pre><code class="language-bash">sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/ubuntu preview-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+<pre><code class="language-bash">sudo apt install gnupg ca-certificates
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <h3>Ubuntu 16.04 <small>(i386, amd64, armhf, arm64, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/ubuntu preview-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <h3>Ubuntu 14.04 <small>(i386, amd64, armhf, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/ubuntu preview-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
@@ -163,13 +165,13 @@ sudo apt update</code></pre>
             <p><i>Note:</i> the packages should work on newer Debian versions too but we only test the ones listed below.</p>
             <h3>Debian 9 <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr
+<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/debian preview-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr
+<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
@@ -177,13 +179,13 @@ sudo apt update</code></pre>
             <h3>Debian 8 <small>(i386, amd64, armhf, armel, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/debian preview-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-jessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
@@ -220,13 +222,13 @@ sudo apt update</code></pre>
             <p><i>Note:</i> the packages should work on newer Raspbian versions too but we only test the ones listed below.</p>
             <h3>Raspbian 9 <small>(armhf)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr
+<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/debian preview-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr
+<pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
@@ -234,13 +236,13 @@ sudo apt update</code></pre>
             <h3>Raspbian 8 <small>(armhf)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 echo "deb https://download.mono-project.com/repo/debian preview-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https
+sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
