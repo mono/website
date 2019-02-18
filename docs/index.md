@@ -114,9 +114,10 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 
 # [Tools](/docs/tools+libraries/tools/)
 
+* [Linker](/docs/tools+libraries/tools/linker/)
+* [mkbundle](/docs/tools+libraries/tools/mkbundle/)
 * [Gendarme](/docs/tools+libraries/tools/gendarme/)
 * [MoMA](/docs/tools+libraries/tools/moma/)
-* [XBuild](/docs/tools+libraries/tools/xbuild/)
 
 # [Libraries](/docs/tools+libraries/libraries/)
 

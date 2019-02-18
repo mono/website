@@ -105,7 +105,6 @@ Here we are tracking some plans to particular pieces of technology that are part
           <li><a href="/docs/gui/winforms/">WinForms</a></li>
           <li><a href="/archived/systemmessaging">SystemMessaging</a></li>
           <li><a href="/archived/olive" title="Olive">Olive</a> - Beyond 2.0</li>
-          <li><a href="/docs/tools+libraries/tools/xbuild/">Microsoft.Build</a></li>
           <li><a href="/archived/systemquery" title="System.Query">System.Query</a></li>
           <li><a href="/docs/web/moonlight/">Silverlight</a> and <a href="/docs/gui/wpf/">WPF</a></li>
         </ul>
