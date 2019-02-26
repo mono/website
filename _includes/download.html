@@ -82,7 +82,7 @@
           <dd class="active"><a href="#download-lin-ubuntu"><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" />&nbsp;&nbsp;Ubuntu</a></dd>
           <dd><a href="#download-lin-debian"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" />&nbsp;&nbsp;Debian</a></dd>
           <dd><a href="#download-lin-raspbian"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" />&nbsp;&nbsp;Raspbian</a></dd>
-          <dd><a href="#download-lin-centos"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" />&nbsp;&nbsp;CentOS</a></dd>
+          <dd><a href="#download-lin-centos"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" />&nbsp;&nbsp;CentOS/RHEL</a></dd>
           <dd><a href="#download-lin-fedora"><img src="/images/fedora-logo.svg" height="20px" width="20px" alt="Fedora Logo" />&nbsp;&nbsp;Fedora</a></dd>
         </dl>
         <div class="tabs-content horizontal">
@@ -276,9 +276,9 @@ sudo apt update</code></pre>
               Add the Mono repository to your system
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
-            <p><i>Note:</i> the packages should work on newer CentOS versions too but we only test the ones listed below.</p>
+            <p><i>Note:</i> the packages should work on newer CentOS/RHEL versions too but we only test the ones listed below.</p>
 {% if include.releasename == "Nightly" or include.releasename == "Preview" %}
-            <h3>CentOS 8 <small>(x86_64)</small></h3>
+            <h3>CentOS/RHEL 8 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos8-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos8-{{ include.releasename | downcase }}.repo'
@@ -288,7 +288,7 @@ su -c 'curl https://download.mono-project.com/repo/centos8-preview.repo | tee /e
 su -c 'curl https://download.mono-project.com/repo/centos8-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos8-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
 {% endif %}
-            <h3>CentOS 7 <small>(x86_64)</small></h3>
+            <h3>CentOS/RHEL 7 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
@@ -297,7 +297,7 @@ su -c 'curl https://download.mono-project.com/repo/centos7-preview.repo | tee /e
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
-            <h3>CentOS 6 <small>(x86_64, i686)</small></h3>
+            <h3>CentOS/RHEL 6 <small>(x86_64, i686)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos6-{{ include.releasename | downcase }}.repo'
@@ -329,7 +329,7 @@ su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasenam
               Add the Mono repository to your system
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
-            <p><i>Note:</i> we're using the CentOS repositories on Fedora.</p>
+            <p><i>Note:</i> we're using the CentOS/RHEL repositories on Fedora.</p>
             <h3>Fedora 27 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
