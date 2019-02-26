@@ -330,7 +330,20 @@ su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasenam
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <p><i>Note:</i> we're using the CentOS/RHEL repositories on Fedora.</p>
-            <h3>Fedora 27 <small>(x86_64)</small></h3>
+{% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+            <h3>Fedora 29 <small>(x86_64)</small></h3>
+{% if include.releasename == "Nightly" %}
+<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+su -c 'curl https://download.mono-project.com/repo/centos8-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos8-{{ include.releasename | downcase }}.repo'
+su -c 'curl https://download.mono-project.com/repo/centos8-preview.repo | tee /etc/yum.repos.d/mono-centos8-preview.repo'
+dnf update</code></pre>
+{% else %}
+<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+su -c 'curl https://download.mono-project.com/repo/centos8-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos8-{{ include.releasename | downcase }}.repo'
+dnf update</code></pre>
+{% endif %}
+{% endif %}
+            <h3>Fedora 28 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
