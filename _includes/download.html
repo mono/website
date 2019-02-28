@@ -277,7 +277,7 @@ sudo apt update</code></pre>
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <p><i>Note:</i> the packages should work on newer CentOS/RHEL versions too but we only test the ones listed below.</p>
-{% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+{% if include.releasename == "Nightly" or include.releasename == "Preview" or include.releasename == "Stable" %}
             <h3>CentOS/RHEL 8 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
@@ -330,7 +330,7 @@ su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasenam
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands <b>in a root shell</b>.</p>
             <p><i>Note:</i> we're using the CentOS/RHEL repositories on Fedora.</p>
-{% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+{% if include.releasename == "Nightly" or include.releasename == "Preview" or include.releasename == "Stable" %}
             <h3>Fedora 29 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
