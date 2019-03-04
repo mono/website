@@ -54,7 +54,7 @@ Starting with Mono 5.0 regular bi-monthly branching started and the version is n
 | Mono version    | GitHub branch name   | MSBuild version
 |-----------------|----------------------|-------------------
 | 6.0             | [2019-02](https://github.com/mono/mono/tree/2019-02) | 16.0
-| 5.22            | [2018-12](https://github.com/mono/mono/tree/2018-12) | 16.0
+| ~~5.22~~        | ~~[2018-12](https://github.com/mono/mono/tree/2018-12)~~ (skipped)
 | 5.20            | [2018-10](https://github.com/mono/mono/tree/2018-10) | 16.0
 | 5.18            | [2018-08](https://github.com/mono/mono/tree/2018-08) | 16.0
 | 5.16            | [2018-06](https://github.com/mono/mono/tree/2018-06) | 16.0
@@ -62,7 +62,7 @@ Starting with Mono 5.0 regular bi-monthly branching started and the version is n
 | 5.12            | [2018-02](https://github.com/mono/mono/tree/2018-02) | 15.7
 | 5.10            | [2017-12](https://github.com/mono/mono/tree/2017-12)
 | 5.8             | [2017-10](https://github.com/mono/mono/tree/2017-10)
-| ~~5.6~~           | ~~[2017-08](https://github.com/mono/mono/tree/2017-08)~~ (skipped)
+| ~~5.6~~         | ~~[2017-08](https://github.com/mono/mono/tree/2017-08)~~ (skipped)
 | 5.4             | [2017-06](https://github.com/mono/mono/tree/2017-06)
 | 5.2             | [d15-3](https://github.com/mono/mono/tree/d15-3) (special branch based on 2017-04)
 | 5.0             | [2017-02](https://github.com/mono/mono/tree/2017-02)
