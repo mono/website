@@ -51,18 +51,18 @@ Before Mono version 5.0 each release had its own matching branch using the follo
 
 Starting with Mono 5.0 regular bi-monthly branching started and the version is no longer included in the branch name. For easier decoding which version matched to which branch the following table can be used:
 
-| Mono version    | GitHub branch name   | MSBuild version
-|-----------------|----------------------|-------------------
-| 6.0             | [2019-02](https://github.com/mono/mono/tree/2019-02) | 16.0
+| Mono version    | GitHub branch name   | MSBuild version | Roslyn version
+|-----------------|----------------------|-----------------|---------------
+| 6.0             | [2019-02](https://github.com/mono/mono/tree/2019-02) | 16.0 | 2.8.2
 | ~~5.22~~        | ~~[2018-12](https://github.com/mono/mono/tree/2018-12)~~ (skipped)
-| 5.20            | [2018-10](https://github.com/mono/mono/tree/2018-10) | 16.0
-| 5.18            | [2018-08](https://github.com/mono/mono/tree/2018-08) | 16.0
-| 5.16            | [2018-06](https://github.com/mono/mono/tree/2018-06) | 16.0
-| 5.14            | [2018-04](https://github.com/mono/mono/tree/2018-04) | 15.8
-| 5.12            | [2018-02](https://github.com/mono/mono/tree/2018-02) | 15.7
-| 5.10            | [2017-12](https://github.com/mono/mono/tree/2017-12)
-| 5.8             | [2017-10](https://github.com/mono/mono/tree/2017-10)
+| 5.20            | [2018-10](https://github.com/mono/mono/tree/2018-10) | 16.0 | 2.8.2
+| 5.18            | [2018-08](https://github.com/mono/mono/tree/2018-08) | 16.0 | 2.8.2
+| 5.16            | [2018-06](https://github.com/mono/mono/tree/2018-06) | 16.0 | 2.8.2
+| 5.14            | [2018-04](https://github.com/mono/mono/tree/2018-04) | 15.8 | 2.7.0
+| 5.12            | [2018-02](https://github.com/mono/mono/tree/2018-02) | 15.7 | 2.6.0
+| 5.10            | [2017-12](https://github.com/mono/mono/tree/2017-12) |      | 2.6.0
+| 5.8             | [2017-10](https://github.com/mono/mono/tree/2017-10) |      | 2.3.2
 | ~~5.6~~         | ~~[2017-08](https://github.com/mono/mono/tree/2017-08)~~ (skipped)
-| 5.4             | [2017-06](https://github.com/mono/mono/tree/2017-06)
-| 5.2             | [d15-3](https://github.com/mono/mono/tree/d15-3) (special branch based on 2017-04)
-| 5.0             | [2017-02](https://github.com/mono/mono/tree/2017-02)
+| 5.4             | [2017-06](https://github.com/mono/mono/tree/2017-06) |      | 2.3.1
+| 5.2             | [d15-3](https://github.com/mono/mono/tree/d15-3) (special branch based on 2017-04) | | 2.3.0
+| 5.0             | [2017-02](https://github.com/mono/mono/tree/2017-02) |      | 2.0.0
