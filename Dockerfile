@@ -8,6 +8,7 @@ EXPOSE 4000
 ADD Gemfile .
 ADD Gemfile.lock .
 
+RUN gem install bundler
 RUN bundle config build.nokogiri --use-system-libraries
 RUN bundle install
 
