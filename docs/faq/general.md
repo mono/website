@@ -103,7 +103,7 @@ Please see the [Mono Roadmap](/docs/about-mono/roadmap/) for more details on the
 
 ### How can I contribute?
 
-Check the [contributing](/community/contributing/) section. You will also have to sign the [.NET Foundation CLA](https://cla2.dotnetfoundation.org).
+Check the [contributing](/community/contributing/) section. You will also have to sign the [.NET Foundation CLA](https://cla.dotnetfoundation.org).
 
 ### Aren't you just copying someone else's work?
 
