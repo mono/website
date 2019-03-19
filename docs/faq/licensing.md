@@ -24,7 +24,7 @@ Note that as of March 31st, 2016 the Mono runtime and tools have been relicensed
 
 ### I would like to contribute code to Mono under a particular license. What licenses will you accept?
 
-Contributions are now taken under the [.NET Foundation CLA](https://cla2.dotnetfoundation.org).
+Contributions are now taken under the [.NET Foundation CLA](https://cla.dotnetfoundation.org).
 
 Patents
 -------
