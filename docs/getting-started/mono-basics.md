@@ -16,7 +16,8 @@ using System;
  
 public class HelloWorld
 {
-    static public void Main ()
+    
+    public static void Main(string[] args)
     {
         Console.WriteLine ("Hello Mono World");
     }
