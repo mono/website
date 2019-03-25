@@ -116,7 +116,9 @@ Another user comments:
 
 ### How to detect the execution platform ?
 
-The execution platform can be detected by using the `System.Environment.OSVersion.Platform` value. However correctly detecting Unix platforms, in every cases, requires a little more work. The first versions of the framework (1.0 and 1.1) didn't include any `PlatformID` value for Unix, so Mono used the value 128. The newer framework 2.0 added Unix to the `PlatformID` enum but, sadly, with a different value: 4 and newer versions of .NET distinguished between Unix and macOS, introducing yet another value 6 for macOS.
+Newer code should use the `System.Runtime.InteropServices.RuntimeInformation` APIs.
+
+Historically, the execution platform could be detected by using the `System.Environment.OSVersion.Platform` value. However correctly detecting Unix platforms, in every cases, requires a little more work. The first versions of the framework (1.0 and 1.1) didn't include any `PlatformID` value for Unix, so Mono used the value 128. The newer framework 2.0 added Unix to the `PlatformID` enum but, sadly, with a different value: 4 and newer versions of .NET distinguished between Unix and macOS, introducing yet another value 6 for macOS.
 
 This means that in order to detect properly code running on Unix platforms you must check the three values (4, 6 and 128). This ensure that the detection code will work as expected when executed on Mono CLR 1.x runtime and with both Mono and Microsoft CLR 2.x runtimes.
 
