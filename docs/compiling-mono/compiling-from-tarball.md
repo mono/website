@@ -12,7 +12,7 @@ This applies to the officially [released packages](https://download.mono-project
 
 Unpack the Mono runtime distribution:
 
-    tar -xjvf mono-X.XX.tar.bz2; cd mono-X.XX
+    tar -xJvf mono-X.XX.tar.xz; cd mono-X.XX
 
 Then configure, compile and install:
 

@@ -48,12 +48,12 @@ Note: if you are using Ubuntu 15.04/Debian 8 or later, you also need to install 
 Building Mono from a Release Package
 ------------------------------------
 
-Mono releases are distributed as .tar.bz2 packages from the [Mono web site](https://download.mono-project.com/sources/mono/). Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
+Mono releases are distributed as .tar.xz packages from the [Mono web site](https://download.mono-project.com/sources/mono/). Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
 ``` bash
 PREFIX=/usr/local
 VERSION=4.2.1
-tar xvf mono-$VERSION.tar.bz2
+tar xvf mono-$VERSION.tar.xz
 cd mono-$VERSION
 ./configure --prefix=$PREFIX
 make
