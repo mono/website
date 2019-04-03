@@ -57,21 +57,21 @@ To build Mono from a Git Source Code checkout, you will want to have the officia
 PATH=$PREFIX/bin:$PATH
 git clone https://github.com/mono/mono.git
 cd mono
-CC='cc -m32' ./autogen.sh --prefix=$PREFIX --disable-nls --build=i386-apple-darwin11.2.0
+./autogen.sh --prefix=$PREFIX --disable-nls 
 make
 make install
 ```
 
-To build Mono in 64 bit mode instead use this to configure the build:
+To build Mono in 32 bit mode instead use this to configure the build:
 
 ``` bash
-./autogen.sh --prefix=$PREFIX --disable-nls
+CFLAGS="-m32 -arch i386" LDFLAGS="-m32 -arch i386" ./autogen.sh --host=i386-apple-darwin13.0.0 --build=i386-apple-darwin13.0.0 --prefix=$PREFIX --disable-nls
 ```
 
-One Stop Shop Build Script (32-bit)
------------------------------------
+One Stop Shop Build Script
+--------------------------
 
-If you are on Mavericks and you just want to install Mono without thinking too much, just copy and paste the following script, and enter your root password when requested:
+If you just want to install Mono without thinking too much, just copy and paste the following script, and enter your root password when requested:
 
 ``` bash
 PREFIX=/usr/local
@@ -95,7 +95,7 @@ for i in */configure; do (cd `dirname $i`; ./configure --prefix=$PREFIX && make 
 
 git clone https://github.com/mono/mono.git
 cd mono
-CC='cc -m32' ./autogen.sh --prefix=$PREFIX --disable-nls --build=i386-apple-darwin11.2.0
+./autogen.sh --prefix=$PREFIX --disable-nls
 make
 make install
 ```
