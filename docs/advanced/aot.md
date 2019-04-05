@@ -77,21 +77,6 @@ This testing is required because some of Mono's class libraries generate code dy
 
 Full AOT currently only works on AMD64/ARM.
 
-#### Limitation: Generic Interface Instantiation
-
-While generics are supported, there are some rare cases that are not supported.
-
-The following class of interface dispatch is not supported in FullAOT mode:
-
-``` csharp
-interface IFoo<T> {
-...
-    void SomeMethod ();
-}
-```
-
-Since Mono has no way of determining from the static analysis what method will implement the interface `IFoo<int>.SomeMethod` this particular pattern is not supported.
-
 #### Generic ValueType Sharing
 
 This version of AOT compilation extends the AOT compiler to support generic code generation for value types. This can be either an optimization (generate fewer versions of `Foo<X>` where X is a value type) to filling holes where previously you would get a runtime failure due to a `Foo<X>` where X is value type from not being implemented.
