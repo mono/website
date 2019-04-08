@@ -35,8 +35,7 @@ Although the JIT mode is very fast, and the default optimizations in Mono have b
 <li><a href="#known-limitations">1.1 Known Limitations</a>
 <ul>
 <li><a href="#limitation-platform">1.1.1 Limitation: Platform</a></li>
-<li><a href="#limitation-generic-interface-instantiation">1.1.2 Limitation: Generic Interface Instantiation</a></li>
-<li><a href="#generic-valuetype-sharing">1.1.3 Generic ValueType Sharing</a></li>
+<li><a href="#generic-valuetype-sharing">1.1.2 Generic ValueType Sharing</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#supported-platforms">2 Supported Platforms</a></li>
