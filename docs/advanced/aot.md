@@ -35,8 +35,7 @@ Although the JIT mode is very fast, and the default optimizations in Mono have b
 <li><a href="#known-limitations">1.1 Known Limitations</a>
 <ul>
 <li><a href="#limitation-platform">1.1.1 Limitation: Platform</a></li>
-<li><a href="#limitation-generic-interface-instantiation">1.1.2 Limitation: Generic Interface Instantiation</a></li>
-<li><a href="#generic-valuetype-sharing">1.1.3 Generic ValueType Sharing</a></li>
+<li><a href="#generic-valuetype-sharing">1.1.2 Generic ValueType Sharing</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#supported-platforms">2 Supported Platforms</a></li>
@@ -76,21 +75,6 @@ This testing is required because some of Mono's class libraries generate code dy
 #### Limitation: Platform
 
 Full AOT currently only works on AMD64/ARM.
-
-#### Limitation: Generic Interface Instantiation
-
-While generics are supported, there are some rare cases that are not supported.
-
-The following class of interface dispatch is not supported in FullAOT mode:
-
-``` csharp
-interface IFoo<T> {
-...
-    void SomeMethod ();
-}
-```
-
-Since Mono has no way of determining from the static analysis what method will implement the interface `IFoo<int>.SomeMethod` this particular pattern is not supported.
 
 #### Generic ValueType Sharing
 
