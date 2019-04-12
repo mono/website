@@ -119,19 +119,6 @@ sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
-            <h3>Ubuntu 14.04 <small>(i386, amd64, armhf, ppc64el)</small></h3>
-{% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https ca-certificates
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/ubuntu preview-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
-sudo apt update</code></pre>
-{% else %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https ca-certificates
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-sudo apt update</code></pre>
-{% endif %}
             <hr />
             <h2>
               <span class="number-circle">2</span>
