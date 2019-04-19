@@ -162,6 +162,10 @@ Assuming the above script is saved in `~/Library/lldb/monobt.py`, you can load i
 
 Once the script is loaded, you can type `monobt` to get a backtrace of the currently selected thread with managed frames symbolicated.
 
+Usually you will debug Mono after building it yourself, but it is possible to
+[debug a prebuilt Mono package](lldb-source-map/), using LLDB's
+`target.source-map` facility.
+
 ### Known limitiations
 
 If a segmentation fault occurs (`EXC_BAD_ACCESS`) [LLDB can't resume to the signal handler](https://bugs.llvm.org/show_bug.cgi?id=22868#c1). Unfortunately this conflicts with implicit null checks used by Mono. Workarounds until this is fixed:
