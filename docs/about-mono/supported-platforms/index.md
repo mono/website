@@ -14,6 +14,7 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 
 -   [Linux](/docs/about-mono/supported-platforms/linux/)
 -   [macOS](/docs/about-mono/supported-platforms/macos/), [iOS, tvOS, watchOS](/docs/about-mono/supported-platforms/apple/)
+-   [Android](/docs/about-mono/supported-platforms/android/)
 -   [Sun Solaris](/docs/about-mono/supported-platforms/solaris/)
 -   [IBM AIX and i](/docs/about-mono/supported-platforms/aix/)
 -   [BSD](/docs/about-mono/supported-platforms/bsd/) - OpenBSD, FreeBSD, NetBSD
