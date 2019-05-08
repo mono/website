@@ -31,7 +31,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Supported Platforms](/docs/about-mono/supported-platforms/)
 * [Languages](/docs/about-mono/languages/)
 * [Compatibility](/docs/about-mono/compatibility/)
-* [Class Status](/docs/about-mono/class-status/)
 * [Releases](/docs/about-mono/releases/)
 * [Versioning](/docs/about-mono/versioning/)
 * [Maintainers](/docs/about-mono/maintainers/)
