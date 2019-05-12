@@ -40,7 +40,7 @@ On Debian based distribution you should guarantee that some packages are install
 This can be done easily by using *apt-get*:
 
 ```bash
-  $ sudo apt-get install git autoconf libtool automake build-essential gettext cmake python
+  $ sudo apt-get install git autoconf libtool automake build-essential gettext cmake python curl
 ```
 
 Note: if you are using Ubuntu 15.04/Debian 8 or later, you also need to install the `libtool-bin` package. Without it, you will get the following error: `**Error**: You must have 'libtool' installed to compile Mono.`
