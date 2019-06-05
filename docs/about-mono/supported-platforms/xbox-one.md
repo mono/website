@@ -9,7 +9,7 @@ Xamarin for Xbox One leverages Mono’s JIT compiler during development, allowin
 when working on your game code.  Release builds of your game will be fully statically compiled using
 Mono’s Full Ahead of Time Compilation engine as JIT compilation is not allowed in published games.
 
-The Xamarin SDK for Xbox One bundles the MonoGame Xbone One backend and associated tooling as well as a
+The Xamarin SDK for Xbox One bundles the MonoGame Xbox One backend and associated tooling as well as a
 MonoGame Xbox One Visual Studio template to help you get started.
 
 This will be useful to developers using the MonoGame framework, or embedding Mono as a high-level
