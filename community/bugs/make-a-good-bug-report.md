@@ -11,6 +11,6 @@ title: How to make a good bug report
 7.  Provide info about the version of the software you're using (both Mono and the operating system or relevant libraries).
 8.  Provide the output you expect the test case to produce.
 9.  Provide the actual output **you** get from the test case.
-10. Do not expect us to debug your software. We can not debug every application that is submitted to us, to improve the response time, you should create a self-contained test case that isolates the problem.
+10. Do not expect us to debug your software. We cannot debug every application that is submitted to us. To improve the response time, you should create a self-contained test case that isolates the problem.
 
 Please include at least 6 items from the list in your bug report. Incomplete bug reports are very hard to understand, reproduce and fix.
