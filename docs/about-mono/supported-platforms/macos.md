@@ -33,7 +33,7 @@ The Mono package includes:
 -   XSP ASP.NET server
 -   Manual pages.
 
-This package installs as a framework to /Library/Framework (the same way the Java packages are installed). The executable binaries can be found in `/Library/Frameworks/Mono.framework/Versions/Current/bin`. If you'd like to access the mono *manpages* you'll have to add `/Library/Frameworks/Mono.framework/Versions/Current/man` to your *manpath*. The macOS Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
+This package installs as a framework into `/Library/Frameworks/Mono.framework` (the same way the Java packages are installed). The executable binaries can be found in `/Library/Frameworks/Mono.framework/Versions/Current/bin`. If you'd like to access the mono *manpages* you'll have to add `/Library/Frameworks/Mono.framework/Versions/Current/man` to your *manpath*. The macOS Mono package does not include [Gtk#](/GtkSharp), XSP or mod_mono. These will have to be compiled from source.
 
 Our packages currently require macOS 10.9 or better, for older versions, you will need to build from source code.
 
