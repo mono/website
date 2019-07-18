@@ -150,7 +150,7 @@ sudo apt update</code></pre>
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Debian versions too but we only test the ones listed below.</p>
-{% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+{% if include.releasename == "Nightly" or include.releasename == "Preview" or include.releasename == "Stable" %}
             <h3>Debian 10 <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
@@ -209,7 +209,7 @@ sudo apt update</code></pre>
             </h2>
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Raspbian versions too but we only test the ones listed below.</p>
-{% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+{% if include.releasename == "Nightly" or include.releasename == "Preview" or include.releasename == "Preview" %}
             <h3>Raspbian 10 <small>(armhf)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
