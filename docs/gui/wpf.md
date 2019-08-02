@@ -18,6 +18,8 @@ At this point, we strongly suggest that users interested in WPF adopt Silverligh
 Alternatives
 ============
 
+Currently [AvaloniaUI](https://avaloniaui.net/) is an initiative that is focused to mirror the WPF project but is multi-platform and a dialect.
+
 Silverlight implement a subset of the WPF APIs and is available on Windows, macOS and through our own open source effort [Moonlight](/docs/web/moonlight/) it is available on Linux and other Unix systems.
 
 Silverlight does not have all the capabilities of WPF, but both technologies are converging API-wise.
