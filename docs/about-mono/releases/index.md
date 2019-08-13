@@ -87,7 +87,6 @@ Mono 6.x
 {% for p in release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
 {% if major_ver == '6' and p.releasedate == 'skipped' %}
-{% if p.releasedate == 'skipped' %}
   - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(skipped)*
 {% endif %}
 {% endfor %}
