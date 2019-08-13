@@ -85,6 +85,8 @@ Mono 6.x
 {% endfor %}
 
 {% for p in release_notes %}
+{% assign major_ver = p.version | split: '.' | first %}
+{% if major_ver == '6' and p.releasedate == 'skipped' %}
 {% if p.releasedate == 'skipped' %}
   - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(skipped)*
 {% endif %}
@@ -94,12 +96,6 @@ Mono 5.x
 --------
 
 {% for p in release_notes %}
-{% if p.releasedate == null or p.releasedate == '' %}
-  - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(not released yet)*
-{% endif %}
-{% endfor %}
-
-{% for p in release_notes %}
 {% assign major_ver = p.version | split: '.' | first %}
 {% if major_ver == '5' and p.releasedate and p.releasedate != '' and p.releasedate != 'skipped' %}
   - [Mono {{ p.version }}](/docs/about-mono/releases/{{ p.version }}) *({{ p.releasedate | date_to_string }})*
@@ -107,7 +103,8 @@ Mono 5.x
 {% endfor %}
 
 {% for p in release_notes %}
-{% if p.releasedate == 'skipped' %}
+{% assign major_ver = p.version | split: '.' | first %}
+{% if major_ver == '5' and p.releasedate == 'skipped' %}
   - [_Mono {{ p.version }}_](/docs/about-mono/releases/{{ p.version }}) *(skipped)*
 {% endif %}
 {% endfor %}
