@@ -266,29 +266,29 @@ sudo apt update</code></pre>
             <p><i>Note:</i> the packages should work on newer CentOS/RHEL versions too but we only test the ones listed below.</p>
             <h3>CentOS/RHEL 8 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos8-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos8-{{ include.releasename | downcase }}.repo'
 su -c 'curl https://download.mono-project.com/repo/centos8-preview.repo | tee /etc/yum.repos.d/mono-centos8-preview.repo'</code></pre>
 {% else %}
-<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos8-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos8-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
             <h3>CentOS/RHEL 7 <small>(x86_64)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'
 su -c 'curl https://download.mono-project.com/repo/centos7-preview.repo | tee /etc/yum.repos.d/mono-centos7-preview.repo'</code></pre>
 {% else %}
-<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos7-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
             <h3>CentOS/RHEL 6 <small>(x86_64, i686)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos6-{{ include.releasename | downcase }}.repo'
 su -c 'curl https://download.mono-project.com/repo/centos6-preview.repo | tee /etc/yum.repos.d/mono-centos6-preview.repo'</code></pre>
 {% else %}
-<pre><code class="language-bash">rpm --import "https://keyserver.ubuntu.com/pks/lookup?op=get&amp;search=0x3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF"
+<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos6-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
             <hr />
