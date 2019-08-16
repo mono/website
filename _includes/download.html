@@ -284,11 +284,11 @@ su -c 'curl https://download.mono-project.com/repo/centos7-{{ include.releasenam
 {% endif %}
             <h3>CentOS/RHEL 6 <small>(x86_64, i686)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
+<pre><code class="language-bash">rpm --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos6-{{ include.releasename | downcase }}.repo'
 su -c 'curl https://download.mono-project.com/repo/centos6-preview.repo | tee /etc/yum.repos.d/mono-centos6-preview.repo'</code></pre>
 {% else %}
-<pre><code class="language-bash">rpmkeys --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
+<pre><code class="language-bash">rpm --import "http://pool.sks-keyservers.net/pks/lookup?op=get&search=0x3fa7e0328081bff6a14da29aa6a19b38d3d831ef"
 su -c 'curl https://download.mono-project.com/repo/centos6-{{ include.releasename | downcase }}.repo | tee /etc/yum.repos.d/mono-centos6-{{ include.releasename | downcase }}.repo'</code></pre>
 {% endif %}
             <hr />
