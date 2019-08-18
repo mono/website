@@ -24,9 +24,9 @@ public class HelloWorld
 }
 ```
 
-To compile, use [msc](/docs/about-mono/languages/csharp/):
+To compile, use [mcs](/docs/about-mono/languages/csharp/):
 
-    msc hello.cs
+    mcs hello.cs
 
 The compiler will create "hello.exe", which you can run using:
 
