@@ -26,11 +26,17 @@ public class HelloWorld
 
 To compile, use csc:
 
+```bash
     csc hello.cs
+```
+
+*Note: csc compiler is not available on all platforms or in very old Mono versions, in such cases use `mcs` instead.*
 
 The compiler will create "hello.exe", which you can run using:
 
+``` bash
     mono hello.exe
+``` 
 
 The program should run and output:
 
@@ -74,11 +80,15 @@ public class HelloWorld : Form
 
 To compile, use csc with the -r option to tell the compiler to pull in the WinForms libraries:
 
+```bash
     csc hello.cs -r:System.Windows.Forms.dll
+```
 
 The compiler will create "hello.exe", which you can run using:
 
+```bash
     mono hello.exe
+```
 
 NOTE: on macOS you'll have to wait around a minute the very first time you run this command. You also need to use `mono32` since WinForms isn't supported on 64bit yet.
 
