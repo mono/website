@@ -27,6 +27,10 @@ exclude_rule 'MD036'
 # Justification: there's nothing terribly wrong with doing that
 exclude_rule 'MD039'
 
+# MD046: Code block style
+# Justification: we don't care about mixing indented and fenced code blocks
+exclude_rule 'MD046'
+
 rule 'MD026', :punctuation =>  '.,;:!'   # Trailing punctuation in header
 rule 'MD029', :style => 'ordered'        # Ordered list item prefix
 
