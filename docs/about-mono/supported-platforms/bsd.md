@@ -7,7 +7,7 @@ redirect_from:
 Mono support for BSD based operating systems.
 
 Packaging for BSD operating systems
-===================================
+-----------------------------------
 
 Running Mono on BSD operating systems is supported independently by the respective system's maintainers through their ports. All users should check their ports tree, typically located under lang/mono, in order to install the latest runtime version supported by their specific version of the OS.
 
@@ -19,7 +19,7 @@ For more information regarding specific BSD flavors:
 - [Debian GNU/kFreeBSD](http://www.debian.org/ports/kfreebsd-gnu/) [(Package)](https://packages.debian.org/unstable/interpreters/mono-runtime)
 
 Using Mono under BSD
-======================
+--------------------
 
 It is typically recommended that BSD users **DO NOT** download the standard source tarball from the project's and attempt to build it themselves but instead use the ports system available for their platform. These Mono ports typically contain platform specific patches which have either not been merged upstream or may not work outside their target system.
 
