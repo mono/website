@@ -14,7 +14,7 @@ Running Mono on BSD operating systems is supported independently by the respecti
 For more information regarding specific BSD flavors:
 - FreeBSD [(Port)](http://www.freebsd.org/cgi/cvsweb.cgi/ports/lang/mono/) [(Maintainer)](http://code.google.com/p/bsd-sharp/)
 - NetBSD [(Port)](http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/lang/mono/)
-- OpenBSD [(Port)](http://www.openbsd.org/cgi-bin/cvsweb/ports/lang/mono/))
+- OpenBSD [(Port)](http://www.openbsd.org/cgi-bin/cvsweb/ports/lang/mono/)
 - [Debian GNU/kFreeBSD](http://www.debian.org/ports/kfreebsd-gnu/) [(Package)](https://packages.debian.org/unstable/interpreters/mono-runtime)
 
 Using Mono under BSD
