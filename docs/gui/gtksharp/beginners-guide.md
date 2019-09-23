@@ -156,13 +156,13 @@ I'm assuming that you are familiar with C#, so most of this will look normal. We
 ``` csharp
  using System;
  using Gtk;
- 
+
  public class GtkHelloWorld {
- 
+
    public static void Main() {
      Console.WriteLine("HelloWorld");
    }
- 
+
  }
 ```
 
@@ -179,9 +179,9 @@ When the size of your projects grows, you may start using multiple ".cs" files t
 MCS does all of the behind the scenes work to compile everything in the right order, so it can be in any order, like:
 
     mcs -pkg:gtk-sharp-2.0 helloword2.cs helloworld1.cs helloworld3.cs
-    
+
 If you were so inclined, you can also write all of this in a Bash script so you don't have to run the same command repeatedly and can just make edits as needed.
-   
+
 Step 4: Adding the GUI
 ----------------------
 
@@ -190,26 +190,26 @@ Now lets jump back to our code. Go ahead and remove the "Console.WriteLine" stat
 ``` csharp
  using System;
  using Gtk;
- 
+
  public class GtkHelloWorld {
- 
+
    public static void Main() {
      Application.Init();
- 
+
      //Create the Window
      Window myWin = new Window("My first GTK# Application! ");
      myWin.Resize(200,200);
- 
+
      //Create a label and put some text in it.
      Label myLabel = new Label();
      myLabel.Text = "Hello World!!!!";
- 
+
      //Add the label to the form
      myWin.Add(myLabel);
- 
+
      //Show Everything
      myWin.ShowAll();
- 
+
      Application.Run();
    }
  }
@@ -332,7 +332,7 @@ using Gdk;
         if (args.Event.Type == EventType.TwoButtonPress) {
             ...
         }
- 
+
         // the left button was used
         if (args.Event.Button == 1) {
             ...
@@ -361,9 +361,9 @@ file: gui.glade
 ``` xml
 <?xml version="1.0" standalone="no"?> <!--*- mode: xml -*-->
 <!DOCTYPE glade-interface SYSTEM "http://glade.gnome.org/glade-2.0.dtd">
- 
+
 <glade-interface>
- 
+
 <widget class="GtkWindow" id="window1">
   <property name="visible">True</property>
   <property name="title" translatable="yes">Glade Window</property>
@@ -380,7 +380,7 @@ file: gui.glade
   <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
   <property name="gravity">GDK_GRAVITY_NORTH_WEST</property>
   <property name="focus_on_map">True</property>
- 
+
   <child>
     <widget class="GtkScrolledWindow" id="scrolledwindow1">
       <property name="visible">True</property>
@@ -389,7 +389,7 @@ file: gui.glade
       <property name="vscrollbar_policy">GTK_POLICY_ALWAYS</property>
       <property name="shadow_type">GTK_SHADOW_IN</property>
       <property name="window_placement">GTK_CORNER_TOP_LEFT</property>
- 
+
       <child>
     <widget class="GtkLayout" id="layout1">
       <property name="visible">True</property>
@@ -397,7 +397,7 @@ file: gui.glade
       <property name="height">400</property>
       <property name="hadjustment">0 0 400 10 212.4 236</property>
       <property name="vadjustment">0 0 400 10 212.4 236</property>
- 
+
       <child>
         <widget class="GtkLabel" id="label1">
           <property name="width_request">38</property>
@@ -423,7 +423,7 @@ file: gui.glade
           <property name="y">88</property>
         </packing>
       </child>
- 
+
       <child>
         <widget class="GtkButton" id="button1">
           <property name="width_request">60</property>
@@ -445,7 +445,7 @@ file: gui.glade
     </widget>
   </child>
 </widget>
- 
+
 </glade-interface>
 ```
 
@@ -471,11 +471,11 @@ public class GladeApp
         {
                 new GladeApp (args);
         }
- 
+
         public GladeApp (string[] args)
         {
                 Application.Init();
- 
+
                 Glade.XML gxml = new Glade.XML (null, "gui.glade", "window1", null);
                 gxml.Autoconnect (this);
                 Application.Run();
@@ -526,19 +526,19 @@ public class GladeApp
         {
                 new GladeApp (args);
         }
- 
+
         public GladeApp (string[] args)
         {
                 Application.Init();
- 
+
                 Glade.XML gxml = new Glade.XML (null, "gui.glade", "window1", null);
                 gxml.Autoconnect (this);
                 Application.Run();
         }
- 
+
        [Widget]
        Button button1;
- 
+
        [Widget]
        Label label1;
 }
@@ -559,25 +559,25 @@ public class GladeApp
         {
                 new GladeApp (args);
         }
- 
+
         public GladeApp (string[] args)
         {
                 Application.Init();
- 
+
                 Glade.XML gxml = new Glade.XML (null, "gui.glade", "window1", null);
                 gxml.Autoconnect (this);
- 
+
                 button1.Clicked += OnPressButtonEvent;
- 
+
                 Application.Run();
         }
- 
+
        [Glade.Widget]
        Button button1;
- 
+
        [Glade.Widget]
        Label label1;
- 
+
        public void OnPressButtonEvent( object o, EventArgs e)
         {
            Console.WriteLine("Button press");

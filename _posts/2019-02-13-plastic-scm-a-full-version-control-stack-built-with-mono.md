@@ -154,8 +154,8 @@ This is how Plastic SCM looks now, enjoy:
 
 ![Windows Branch Explorer](/images/2019-02-13-plastic-scm-mono/windows-brex.png)
 
-But wait! Wouldn't Mono affect performance? Baby, we are built for speed!
--------------------------------------------------------------------------
+But wait! Wouldn't Mono affect performance?
+-------------------------------------------
 
 Many of you might think: how can a version control be written in
 Mono/C\# and expect to compete against Git or Subversion or even

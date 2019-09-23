@@ -26,7 +26,7 @@ Mono uses GNU autoconf, automake and libtool. You need to install those in your 
 brew install autoconf automake libtool pkg-config cmake
 ```
 
-------------------------------------
+---
 
 Mono releases are distributed as .tar.xz packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
@@ -57,7 +57,7 @@ To build Mono from a Git Source Code checkout, you will want to have the officia
 PATH=$PREFIX/bin:$PATH
 git clone https://github.com/mono/mono.git
 cd mono
-./autogen.sh --prefix=$PREFIX --disable-nls 
+./autogen.sh --prefix=$PREFIX --disable-nls
 make
 make install
 ```

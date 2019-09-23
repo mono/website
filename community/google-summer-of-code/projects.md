@@ -185,15 +185,15 @@ Optional:
 
 **Complexity:** Hard
 
-Superoptimization is a method for generating provably-optimal code for short segments of logical operations. The process of stitching these together had classically been seen as intractable, but modern optimizations of the process makes it doable, if a bit slow. 
+Superoptimization is a method for generating provably-optimal code for short segments of logical operations. The process of stitching these together had classically been seen as intractable, but modern optimizations of the process makes it doable, if a bit slow.
 
-Production applications sometimes would benefit from much faster code, even at the cost of compilation time and the audibility of compilation. 
+Production applications sometimes would benefit from much faster code, even at the cost of compilation time and the audibility of compilation.
 
-This project would see the student do further build and automation work to enable us to use Souper out-of-the box. Creation of some diagrams and benchmarks showing the cost and improvements with Souper would be one deliverable as well. 
+This project would see the student do further build and automation work to enable us to use Souper out-of-the box. Creation of some diagrams and benchmarks showing the cost and improvements with Souper would be one deliverable as well.
 
 This student can hope to gain some familiarity with binding LLVM and working with the LLVM tooling ecosystem.
 
-https://www.mono-project.com/news/2018/12/06/souper/
+<https://www.mono-project.com/news/2018/12/06/souper/>
 
 **Mentors:** Alexander Kyte
 
@@ -217,10 +217,10 @@ Flatpak is all the rage these days in the Open Source and GNOME community. It's 
 
 Ideas for Flatpak + Mono tools:
 
-- An extension for MonoDevelop that turns any C# project into a Flatpak
-- A flatpak-builder extension that includes the Mono runtime to save time/space when compiling a bundle
-- A tool that uses mkbundle to statically link the entire app and keep mono based flatpak bundles small
-- Templates for easy inclusion of open source NuGets
+* *An extension for MonoDevelop that turns any C# project into a Flatpak
+* *A flatpak-builder extension that includes the Mono runtime to save time/space when compiling a bundle
+* *A tool that uses mkbundle to statically link the entire app and keep mono based flatpak bundles small
+* *Templates for easy inclusion of open source NuGets
 
 **Deliverables**: An end-to-end experience for creating a Flatpak from a  MonoDevelop project
 
@@ -232,7 +232,7 @@ Ideas for Flatpak + Mono tools:
 
 A proof of concept has been demonstrated using Julia's [LLVM C Backend](https://github.com/JuliaComputing/llvm-cbe) with Mono to generate C code from a managed executable. This would allow using Mono on older/limited/exotic platforms where it cannot currently be used.
 
-For details, see https://github.com/mono/mono/issues/11940
+For details, see <https://github.com/mono/mono/issues/11940>
 
 The project is to make this more complete and stable. A key part of this would be to make the backend use Mono's intrinsics instead of LLVM-CBE's Julia-specific intrinsics.
 
@@ -273,12 +273,12 @@ Notes: it does not have to use (or hack around) the latest Cecil, e.g. it could 
 **Complexity:** Hard
 
 There was some initial bootstrapping done for RISC-V:
-https://github.com/mono/mono/pull/11593
+<https://github.com/mono/mono/pull/11593>
 
 I see two projects possible around this area:
 
-- (1) continue implementing the JIT backend. I wouldn't expect a student to get it to a "complete" state after two months, but the delivery can be reduced to "make the mini regression test suite work", which is a huge achievement, but not a fully working runtime.
-- (2) get the interpreter working on this target. This needs some low-level hacking in terms of writing RISC-V assembly. However, it's a fairly contained work item and as a reward it should be able to run almost anything (as the interpreter itself is pretty complete).
+* (1) continue implementing the JIT backend. I wouldn't expect a student to get it to a "complete" state after two months, but the delivery can be reduced to "make the mini regression test suite work", which is a huge achievement, but not a fully working runtime.
+* (2) get the interpreter working on this target. This needs some low-level hacking in terms of writing RISC-V assembly. However, it's a fairly contained work item and as a reward it should be able to run almost anything (as the interpreter itself is pretty complete).
 
 Note1: I would not recommend using the LLVM backend, because it needs the regular JIT backend as a fallback.
 
@@ -413,19 +413,19 @@ What if we used a database (such as SQLlite or [LMDB](https://github.com/LMDB/lm
 
 RR is a debugger that allows for recording of execution in a way that can be replayed later in a debugger. The results of syscalls are fed back into the program to replicate the environment the program saw over time.
 
-The runtime can be debugged with RR on linux, but this is mostly useful for low-level debugging. 
+The runtime can be debugged with RR on linux, but this is mostly useful for low-level debugging.
 
 We have two options here: We can expose managed logging and heap/stack snapshotting to the debugger-agent and do this is a managed way. This allows us to work on ARM, linux, windows, ios, etc. The downside is that we don't get to replay state changes in unmanaged code.
 
-Alternatively, we can have the student create glue code for using rr to debug the entire runtime remotely, and add in the hooks to get the information on managed methods from the runtime. Someone can then record a crash on their machine as it is happening, and submit it with a bug report. 
+Alternatively, we can have the student create glue code for using rr to debug the entire runtime remotely, and add in the hooks to get the information on managed methods from the runtime. Someone can then record a crash on their machine as it is happening, and submit it with a bug report.
 
-I believe that the latter idea would make bug reports an order of magnitude more useful. By removing the difficulty of reproducing crashes, we may save our own developers a lot of time. 
+I believe that the latter idea would make bug reports an order of magnitude more useful. By removing the difficulty of reproducing crashes, we may save our own developers a lot of time.
 
 Deliverables:
 
-- Get RR debugging of mono working interactively
-- Create automated RR client that records and replays mono
-- Create infrastructure to use RR client and create self contained "debug me" blob
+* Get RR debugging of mono working interactively
+* Create automated RR client that records and replays mono
+* Create infrastructure to use RR client and create self contained "debug me" blob
 
 **Mentors:** Bernhard Urban
 
@@ -433,7 +433,7 @@ Deliverables:
 
 **Complexity:** Medium
 
-Bitmask-driven data structures allow for SIMD operations on the data structure's top-level structure schema. They're space-efficient, cache-efficient, and they're easy to debug after a crash because the bitmask and the data structure have a minimal number of pointers. 
+Bitmask-driven data structures allow for SIMD operations on the data structure's top-level structure schema. They're space-efficient, cache-efficient, and they're easy to debug after a crash because the bitmask and the data structure have a minimal number of pointers.
 
 Offering succinct arrays (no nulls) and other data structures as drop-in replacements might be ways to significantly reduce memory footprint for some specific use cases.
 
@@ -441,13 +441,13 @@ Benchmarking is necessary to find those use-cases.
 
 Deliverables:
 
-- Implement full replacement for GArray and ensure passes GLib GArray tests.
+* Implement full replacement for GArray and ensure passes GLib GArray tests.
 
-- Benchmark high-allocation places and see if the succinct replacement helps
+* Benchmark high-allocation places and see if the succinct replacement helps
 
-- (Optional) Implement replacement for ghashtable which supports bare minimum of operations, using CTries
+* (Optional) Implement replacement for ghashtable which supports bare minimum of operations, using CTries
 
-- (Optional) Use CTries in high-contention environments or high-allocation environments and benchmark uses that have savings
+* (Optional) Use CTries in high-contention environments or high-allocation environments and benchmark uses that have savings
 
 **Mentors:** Alexander Kyte
 
@@ -473,11 +473,11 @@ This effort would use the Dart compiler to process the Flutter API and output th
 **Complexity:** Medium
 
 We have a C# binding for the SEAL homomorphic encryption library.
-https://www.microsoft.com/en-us/research/project/simple-encrypted-arithmetic-library/
+<https://www.microsoft.com/en-us/research/project/simple-encrypted-arithmetic-library/>
 
 The current status is that we can work with 64-bit ints and we have the beginnings of a Linq Expression analyzer to automate creating encrypted computations.
 
-https://github.com/lambdageek/sealsharp/tree
+<https://github.com/lambdageek/sealsharp/tree>
 
 Next steps would be to add more bindings (for example, support for floats and matrices), and to work on automating some of the entropy and relinearization key management by taking advantage of the analyzability of Linq expressions.
 

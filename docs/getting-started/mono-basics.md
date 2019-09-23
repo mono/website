@@ -13,10 +13,9 @@ To test the most basic functionality available, copy the following code into a f
 
 ``` csharp
 using System;
- 
+
 public class HelloWorld
 {
-    
     public static void Main(string[] args)
     {
         Console.WriteLine ("Hello Mono World");
@@ -36,7 +35,7 @@ The compiler will create "hello.exe", which you can run using:
 
 ``` bash
     mono hello.exe
-``` 
+```
 
 The program should run and output:
 

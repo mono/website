@@ -44,6 +44,7 @@ cd mono
 Pre-configured build instructions, building a default Visual Studio Mono runtime, mingw Mono runtime, Mono BCL and install into `PREFIX`. For further detailed build configurations and instructions, see next section. Run one of the following set of commands from a Cygwin command prompt after all steps in section above have been completed.
 
 64-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
+
 ```bash
 ./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --enable-msvc --disable-boehm
 make -j4
@@ -51,6 +52,7 @@ make install
 ```
 
 32-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
+
 ```bash
 ./autogen.sh --prefix=$PREFIX --host=i686-w64-mingw32 --enable-msvc --disable-boehm
 make -j4
@@ -89,11 +91,11 @@ The following configure steps shows different supported Mono build configuration
 
 **NOTE**, 32-bit Mono runtime supports both SGEN and Boehm GC. Boehm GC is still available for legacy reasons but not supported on 64-bit Windows builds. It is recommended to use SGEN GC for both 32 and 64-bit Windows builds.
 
-### Enable BTLS as cryptographic backend for Windows builds.
+### Enable BTLS as cryptographic backend for Windows builds
 
 Mono on Windows supports BTLS library as an alternative cryptographic backend for SSL/TLS. It is not the default alternative and must be enabled to build and be used by Mono runtime. To enable BTLS, pass `--enable-btls` to the `autogen.sh` step above.
 
-BTLS build will add a couple of additional prerequisites for Visual Studio builds. The easiest way to get additional needed packages is to install and use [Chocolatey](https://chocolatey.org/) package manager. See https://chocolatey.org/install for instructions on how to install Chocolatey package manager into the build system.
+BTLS build will add a couple of additional prerequisites for Visual Studio builds. The easiest way to get additional needed packages is to install and use [Chocolatey](https://chocolatey.org/) package manager. See <https://chocolatey.org/install> for instructions on how to install Chocolatey package manager into the build system.
 
 Once Chocolatey has been installed, add the following packages to the build system:
 
@@ -111,7 +113,7 @@ choco install yasm
 
 Make sure they are all visible to the build environment used by Visual Studio (restart any command prompts or Visual Studio IDE's used in the build).
 
-### Enable LLVM for Windows builds.
+### Enable LLVM for Windows builds
 
 Mono on Windows supports LLVM in several different build combinations. When doing Windows cross compiler builds, host == Win32 but target != Win32, standard LLVM build instructions can be used.
 
@@ -133,7 +135,7 @@ When set to a path pointing to a pre-build version of `llvm-config.exe`, specifi
 
 Additional prerequisites only applies when building LLVM as part of Visual Studio Mono runtime build. If using `--with-llvm` configuration option or MONO_EXTERNAL_LLVM_CONFIG MSBuild property, no additional prerequisites are needed.
 
-LLVM build will add a couple of additional prerequisites for Visual Studio builds. The easiest way to get additional needed packages is to install and use [Chocolatey](https://chocolatey.org/) package manager. See https://chocolatey.org/install for instructions on how to install Chocolatey package manager into the build system.
+LLVM build will add a couple of additional prerequisites for Visual Studio builds. The easiest way to get additional needed packages is to install and use [Chocolatey](https://chocolatey.org/) package manager. See <https://chocolatey.org/install> for instructions on how to install Chocolatey package manager into the build system.
 
 Once Chocolatey has been installed, add the following packages to the build system:
 
@@ -150,7 +152,7 @@ choco install ninja
 
 Make sure they are all visible to the build environment used by Visual Studio (restart any command prompts or Visual Studio IDE's used in the build).
 
-### Use monolite instead of pre-installed Mono distribution.
+### Use monolite instead of pre-installed Mono distribution
 
 If no Mono distribution is available, you can build using `monolite`. Just run the command below before running `make`:
 
@@ -204,7 +206,7 @@ Example of a Visual Studio 2017 64-bit Mono runtime release build using sgen GC:
 msbuild.exe /p:PlatformToolset=v141 /p:Platform=x64 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
 ```
 
-There is also a build script that can be used to run `msbuild.exe` from a Visual Studio build environment, `msvc\run-msbuild.bat`. The script selects Visual Studio version toolchain based on `VisualStudioVersion` environment variable. 
+There is also a build script that can be used to run `msbuild.exe` from a Visual Studio build environment, `msvc\run-msbuild.bat`. The script selects Visual Studio version toolchain based on `VisualStudioVersion` environment variable.
 
 For Visual Studio 2015 64-bit Mono Runtime build:
 
@@ -222,7 +224,7 @@ msvc\run-msbuild.bat "/p:Configuration=Release /p:Platform=x64 /p:MONO_TARGET_GC
 
 **NOTE**, while it is possible to run `msbuild.exe` from Cygwin environment it is not recommended since the build might pick up build tools and dependencies from Cygwin instead of Windows environment. There is however a build script `msvc/run-msbuild.sh` that can be called from Cygwin that will try to setup original Windows environment before running `msbuild.exe`.
 
-### Visual Studio MSBuild build properties.
+### Visual Studio MSBuild build properties
 
 Building Mono runtime using Visual Studio offers a number of additional options compared to regular `autogen.sh`configuration steps. These properties can be explicitly passed to MBuild or set in `mono.props` property file, read by Mono Visual Studio build.
 
@@ -262,7 +264,7 @@ Mono runtime will link and include BTLS. Setting this value to true will also bu
 
 NOTE, since BTLS support is part of BCL build, just setting this when doing Mono runtime build will not include needed BTLS support in BCL build. It is recommended to use `--enable-btls` as part of configuration step since that will make sure BTLS support is included in both BCL as well as Mono runtime build.
 
-### Configure `make` to use Visual Studio build Mono runtime.
+### Configure `make` to use Visual Studio build Mono runtime
 
 For make to use Visual Studio build Mono runtime when building BCL and test, set `MONO_EXECUTABLE` environment variable to Visual Studio build Mono runtime. Switch to the Cygwin shell previously used and run:
 
@@ -272,7 +274,7 @@ export MONO_EXECUTABLE=/cygdrive/c/mono-source-location/msvc/build/sgen/x64/bin/
 
 **NOTE**, above path will change depending on source location, build location, 32/64-bit build configuration and used GC. The example above uses the default build location for a 64-bit release build Mono runtime configured to use SGEN GC.
 
-## Build Mono mingw runtime, BCL and Tests.
+## Build Mono mingw runtime, BCL and Tests
 
 Switch to the Cygwin shell previously used and run:
 
@@ -299,7 +301,7 @@ If you use an earlier Windows versions, you need to run the build as administrat
 
 ## Run all tests
 
-Make sure `MONO_EXECUTABLE` has been setup to use Visual Studio build Mono runtime, see above for instructions. For all tests to run and pass, the Cygwin shell will need elevated permissions. Without additional permissions, some test failures will be identified. 
+Make sure `MONO_EXECUTABLE` has been setup to use Visual Studio build Mono runtime, see above for instructions. For all tests to run and pass, the Cygwin shell will need elevated permissions. Without additional permissions, some test failures will be identified.
 
 ```bash
 make check

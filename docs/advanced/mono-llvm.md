@@ -24,7 +24,6 @@ source.
 
 Also note that most packages are shipped with an LLVM enabled Mono runtime.
 
-
 Compiling LLVM support for older versions of Mono
 =================================================
 
