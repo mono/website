@@ -89,7 +89,7 @@ The compiler will create "hello.exe", which you can run using:
     mono hello.exe
 ```
 
-NOTE: on macOS you'll have to wait around a minute the very first time you run this command. You also need to use `mono32` since WinForms isn't supported on 64bit yet.
+NOTE: on macOS you'll have to wait around a minute the very first time you run this command. You also need to use `mono32` since WinForms isn't supported on 64bit yet. As of macOS 10.15 Catalina there's no 64bit support anymore so WinForms doesn't work there at the moment.
 
 ASP.NET Hello World
 -------------------
