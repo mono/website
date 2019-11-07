@@ -42,13 +42,9 @@ The LLVM Mono Branch
 
 We maintain a fork/branch of LLVM with various changes to enable better integration with mono. The repo is at:
 
-[https://github.com/mono/llvm](https://github.com/mono/llvm)
+[https://github.com/dotnet/llvm-project](https://github.com/dotnet/llvm-project)
 
 The LLVM backend is currently only supported when using this version of LLVM. When using this version, it can compile about 99% of mscorlib methods.
-
-The GIT repo is forked from the unofficial LLVM git mirror at:
-
-[https://github.com/earl/llvm-mirror](https://github.com/earl/llvm-mirror)
 
 ### Changes relative to stock LLVM
 
@@ -65,25 +61,18 @@ The branch currently contains the following changes:
 
 The changes consist of about 1.5k lines of code. The majority of this is the EH table emission.
 
-To view all changes, use:
-
-``` bash
-git diff `git merge-base mirror/master master`..master
-```
-
 ### Branches
 
--   'master' is branched off mirror/master and contains our changes
--   'mono-\<VER\>' is a branch which work with mono version \<VER\>, i.e. 'mono-2.10' is a version which works with mono-2.10.
+-   'release/6.x' and 'release/9.x' contain our changes
 
 ### Maintaining the repository
 
-The master branch is maintained by regularly rebasing it on top of 'mirror/master'. This makes examining our changes easier. To merge changes from llvm-mirror to this repo, do:
+The `release/*` branches are maintained by regularly rebasing them on top of upstream. This makes examining our changes easier. To merge changes from upstream to this repo, do:
 
 ``` bash
-git remote add mirror https://github.com/earl/llvm-mirror.git
-git fetch mirror
-git rebase mirror/master
+git remote add upstream https://github.com/earl/llvm-mirror.git
+git fetch upstream
+git rebase upstream/master
 <fix conflicts/commit>
 git push origin
 ```
@@ -233,8 +222,3 @@ to:
       }
 
 LLVM has a LoopUnswitch pass which can do something like this for constant expressions, it needs to be extended to handle the ABC checks too. Unfortunately, this cannot be done currently because the arr.Length instruction is converted to a volatile load by mono's LLVM backend, since it can fault if arr is null. This means that the load is not loop invariant, so it cannot be hoisted out of the loop.
-
-An experimental version of this optimization which can only handle simple cases is now in mono's llvm repository:
-
-[https://github.com/mono/llvm/tree/mono-abcrem](https://github.com/mono/llvm/tree/mono-abcrem)
-
