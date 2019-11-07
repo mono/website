@@ -63,14 +63,14 @@ The changes consist of about 1.5k lines of code. The majority of this is the EH 
 
 ### Branches
 
--   'release/6.x' and 'release/9.x' contain our changes
+-   `release/6.x` and `release/9.x` contain our changes
 
 ### Maintaining the repository
 
 The `release/*` branches are maintained by regularly rebasing them on top of upstream. This makes examining our changes easier. To merge changes from upstream to this repo, do:
 
 ``` bash
-git remote add upstream https://github.com/earl/llvm-mirror.git
+git remote add upstream https://github.com/llvm/llvm-project.git
 git fetch upstream
 git rebase upstream/master
 <fix conflicts/commit>
