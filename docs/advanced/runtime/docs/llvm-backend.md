@@ -72,7 +72,7 @@ The `release/*` branches are maintained by regularly rebasing them on top of ups
 ``` bash
 git remote add upstream https://github.com/llvm/llvm-project.git
 git fetch upstream
-git rebase upstream/master
+git rebase upstream/<target branch>
 <fix conflicts/commit>
 git push origin
 ```
