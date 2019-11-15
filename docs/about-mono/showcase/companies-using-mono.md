@@ -140,6 +140,8 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [Vladster](https://vladster.net) Created IncoPOS - a desktop point of sale and inventory management system for Windows, Linux and macOS running on Mono. Their cloud service [IncoCloud](https://incocloud.com) runs on Linux using Mono and connects hundreds of branches in real-time. Their Android app [IncoDroid](http://incodroid.com) uses Xamarin and Mono and reuses most of the logic from IncoPOS.
 
+-   [MaxSoft](https://maxsoft.bg) is using Mono and .NET to develop Viber chat bots for Windows, Mac OS and Linux servers. They also develop [mobile apps](https://maxsoft.bg/apps) using Xamarin.
+
 MindTouch Based Projects
 ========================
 
