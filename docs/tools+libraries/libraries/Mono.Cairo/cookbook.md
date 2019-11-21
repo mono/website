@@ -6,7 +6,7 @@ redirect_from:
 
 Some fun recipes to spice up your Cairo based drawing!
 
-C# version created by Or Dvory.
+C# version created by Or Dvory ([@gnudles](https://github.com/gnudles))
 
 ### Simple Working with a Cairo Context
 
