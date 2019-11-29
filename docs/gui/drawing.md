@@ -4,7 +4,7 @@ redirect_from:
   - /Drawing/
 ---
 
-Mono provides two mechanism to draw. The first exposes the Microsoft System.Drawing API and the second exposes the [Cairo](http://www.cairographics.org) API:
+Mono provides two mechanisms to draw. The first exposes the Microsoft System.Drawing API and the second exposes the [Cairo](http://www.cairographics.org) API:
 
 -   System.Drawing
 
