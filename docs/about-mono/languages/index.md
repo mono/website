@@ -74,9 +74,7 @@ Check out [Oberon for .NET](http://www.oberon.ethz.ch/archives/systemsarchive/do
 PHP
 ---
 
-Thanks to the work of Raphael Romeikat, the encouragement of Thomas Uhl and the funding from Google's Summer of Code 2005 a PHP compiler has been developed, for more information see:
-
-[PHP4Mono Project](http://php4mono.sourceforge.net/)
+[PeachPie](https://www.peachpie.io/) is almost complete implementation of PHP based on Roslyn compiler platform, supported by .NET Foundation. It covers compilation to CLI, runtime and extension libraries allowing to run entire PHP applications as native .NET programs or libraries. See [compatibility status](https://docs.peachpie.io/compatibility-status/) for details.
 
 Object Pascal
 -------------
@@ -152,11 +150,9 @@ A# is an ADA compiler for the CIL platform, it can be downloaded from: [here](ht
 Other PHP Efforts
 -----------------
 
-[PHP for Mono](http://php4mono.sourceforge.net/) an effort that was funded by the Google Summer of Code and continues moving forward.
+[Phalanger](https://github.com/devsense/phalanger/) is a fairly complete PHP 5.4 to CLI compiler that can even integrate with VS 2010.
 
-#### Old PHP efforts
-
-[Phalanger](http://www.php-compiler.net/) is a fairly complete PHP to CLI compiler that can even integrate with VS 2010 for console PHP applications.
+[PHP4Mono Project](http://php4mono.sourceforge.net/) an effort that was funded by the Google Summer of Code 2005.
 
 There is an older effort by Sterling to allow PHP developers to use Mono code, see this [site](http://pecl.php.net/package/mono/).
 
