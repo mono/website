@@ -23,7 +23,7 @@ Building Mono Dependencies
 Mono uses GNU autoconf, automake and libtool. You need to install those in your path, e.g. through [Homebrew](https://brew.sh)
 
 ``` bash
-brew install autoconf automake libtool pkg-config cmake
+brew install autoconf automake libtool pkg-config cmake python3
 ```
 
 ---
