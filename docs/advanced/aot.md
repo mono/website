@@ -74,7 +74,7 @@ This testing is required because some of Mono's class libraries generate code dy
 
 #### Limitation: Platform
 
-Full AOT currently only works on AMD64/ARM.
+Full AOT currently only works on X86/AMD64/ARM.
 
 #### Generic ValueType Sharing
 
