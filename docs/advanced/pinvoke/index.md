@@ -63,7 +63,7 @@ From the **dlopen**(3) man page, the necessary shared libraries needed by the pr
 
 As a Mono extension, if the library being loaded is `__Internal`, then the main program is searched for method symbols. This is equivalent to calling **dlopen**(3) with a *filename* of `NULL`. This allows you to P/Invoke methods that are within an application that is embedding Mono.
 
-See also: the **dlopen**(3) man page, the **ld.so**(8) man page, [Dissecting shared libraries](http://www-106.ibm.com/developerworks/linux/library/l-shlibs.html?ca=dgr-lnxw07SharedLib).
+See also: the **dlopen**(3) man page, the **ld.so**(8) man page, [Dissecting shared libraries](http://ibm.com/developerworks/linux/library/l-shlibs.html?ca=dgr-lnxw07SharedLib).
 
 macOS Framework and .dylib Search Path
 -----------------------------------------
