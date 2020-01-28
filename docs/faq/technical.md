@@ -7,7 +7,7 @@ redirect_from:
 Mono Runtime
 ------------
 
-### Where can I find the Technical Documentation to the Mono Runtime?
+### Where can I find the technical documentation to the Mono Runtime?
 
 The documentation that used to be available on the mono/docs directory is now being moved into this web site and is available in the [Runtime Documentation](/docs/advanced/runtime/docs/) section.
 
@@ -18,7 +18,7 @@ Mono Platforms
 
 Mono runs on Linux, UNIX and Windows systems. For a more detailed list, see the [Supported Platforms](/docs/about-mono/supported-platforms/) page.
 
-### Is Mono Binary Compatible with Windows?
+### Is Mono binary compatible with Windows?
 
 Yes, Mono is binary compatible with Windows. Which means that you can run binaries produced by .NET compilers from Microsoft and other vendors.
 
@@ -114,7 +114,7 @@ Another user comments:
     application total 14MB so fit easily
     on even the smallest memory sticks.
 
-### How to detect the execution platform ?
+### How can I detect the execution platform?
 
 Newer code should use the `System.Runtime.InteropServices.RuntimeInformation` APIs.
 
@@ -183,7 +183,7 @@ class Program {
 }
 ```
 
-### Does Mono run on very small systems
+### Does Mono run on very small systems?
 
 The current default minimal mono install requires less than 4 MB of disk space and 4 MB of memory (plus disk and memory required by the operating system and programs running on mono). Mono plus basic Gtk# support requires less than 8 MB of disk space. To reduce further the footprint of Mono, see the [Small footprint](/docs/compiling-mono/small-footprint/) page.
 
@@ -222,7 +222,7 @@ The above command will list all of the invocations that the application has.
 
 [Gendarme](/docs/tools+libraries/tools/gendarme/) also gives you some interoperability warnings.
 
-### Must I have mono to create or run Gtk# applications in Windows?
+### Must I have Mono to create or run Gtk# applications in Windows?
 
 No. Currently you can use the [Gtk-Sharp Installer for .NET Framework](/docs/gui/gtksharp/installer-for-net-framework/) which when coupled with the Microsoft .NET Framework, will allow you to build .NET applications that use Gtk# as their graphical user interface.
 
@@ -331,7 +331,7 @@ Mono has several memory profilers: a built-in one (see manual page), [HeapShot](
 
 See the [Profile](/docs/debug+profile/profile/) page for more information.
 
-### Does Mono have Code Coverage Tools?
+### Does Mono have code coverage tools?
 
 Mono has a bundled code coverage tool that you can use with your applications. Use the "coverage" profiler, like this:
 
@@ -356,7 +356,7 @@ MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono program.exe
 Web Services
 ------------
 
-### How is Mono related to Web Services?
+### How is Mono related to Web services?
 
 Mono is only related to Web Services in that it will implement the same set of classes that have been authored in the .NET Framework to simplify and streamline the process of building Web Services.
 
@@ -366,7 +366,7 @@ But most importantly, Mono is an Open Source implementation of the .NET Framewor
 
 You will be able to write Web Services on .NET that run on Mono and vice-versa.
 
-### What does Mono support for Web Services?
+### What does Mono support for Web services?
 
 As of today, Mono support Web services in a couple of forms:
 
@@ -507,7 +507,7 @@ For the \*BSD family, there's a Kqueue based implementation that will be used wh
 
 If none of the above work, Mono falls back to polling the directories for changes, which far from optimal.
 
-### Am using Mono with FakeRoot an my application hangs, what can I do?
+### I am using Mono with FakeRoot and my application hangs. What can I do?
 
 Try this:
 
@@ -538,7 +538,7 @@ We are implementing all the classes in Microsoft .NET's System.Data, so you can 
 
 Yes. use Mono.Data.SybaseClient. First of all you have to create a SybaseConnection, and then, from it, use it as any other IDbConnection-based class. See [here](/docs/database-access/providers/sybase/) for more info.
 
-### Has the MySQL Connector/Net replaced ByteFX.Data
+### Has the MySQL Connector/Net replaced ByteFX.Data?
 
 Yes it has. MySQL Connector/Net is made by MySQL AB and are the best people who would know how to access their databases. The author of ByteFX.Data no longer develops ByteFX.Data because he is employed by MySQL AB now. See [here](/docs/database-access/providers/mysql/) for more info.
 
@@ -578,11 +578,11 @@ Yes, Java could target the CLI, Microsoft's J# compiler did that. The [IKVM](htt
 
 Yes, this is what [IKVM](http://www.ikvm.net/) does.
 
-### Could mono become a hybrid CIL/java platform?
+### Could mono become a hybrid CIL/Java platform?
 
 This can be obtained easily with IKVM.
 
-### Can Mono or .NET share system classes (loaded from mscore.dll and other libs) or will it behave like Sun's Java VM?
+### Can Mono or .NET share system classes (loaded from mscore.dll and other libraries) or will it behave like Sun's Java VM?
 
 What you can do with mono is to load different applications in their own application domain: this is a feature of the CLR that allows sandboxing applications inside a single process space. This is usually exploited to compartmentalize different parts of the same app, but it can also be effectively used to reduce the startup and memory overhead. Using different appdomains the runtime representation of types and methods is shared across applications.
 
@@ -593,7 +593,7 @@ Extending Mono
 
 Yes. The Microsoft class collection is very big, but it is by no means complete.
 
-### Do you plan to Embrace and Extend .NET?
+### Do you plan to embrace and extend .NET?
 
 Embracing a good technology is good. Extending technologies in incompatible ways is bad for the users, so we do not plan on making incompatible changes to the technologies.
 
@@ -810,11 +810,11 @@ There is no active work on this area, but Mono already provides pre-compilation 
 Mono and the Basic Language
 ---------------------------
 
-### Does Mono implement the Basic language?
+### Does Mono implement the BASIC language?
 
 An implementation of the VB.NET language is now available, to find out more about the current state of the compiler see the page on [Basic](/docs/about-mono/languages/visualbasic/).
 
-### What about VB6
+### What about Visual Basic 6.0 (VB6)?
 
 Mono does not have current plans to implement VB6 at this point.
 
