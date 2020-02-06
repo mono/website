@@ -17,7 +17,7 @@ The mono documentation is just like the rest of mono very much based on the cont
 
 ### Where is the documentation for System.X.Y namespace?
 
-Some assemblies which are currently shipped with mono are missing in the documentation due to some limitations in the build process of monodoc. We are trying to include them to and hopefully these assemblies can be documented in future releases of monodoc and mono.
+You can find them on the [.NET Framework API reference](https://docs.microsoft.com/dotnet/api?view=netframework-4.8) website.
 
 Writing Documentation
 ---------------------
