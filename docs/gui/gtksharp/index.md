@@ -46,7 +46,6 @@ Check out [some screenshots](/docs/about-mono/showcase/screenshots/) of Gtk# App
 
 -   [Banshee](http://banshee.fm/)
 -   [Smuxi](https://www.smuxi.org/)
--   [F-spot](http://f-spot.org/Main_Page)
 -   [MonoDevelop](http://www.monodevelop.com/Main_Page)
 -   [Tomboy](http://www.gnome.org/projects/tomboy)
 
