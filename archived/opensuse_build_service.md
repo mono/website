@@ -39,7 +39,7 @@ Linked Packages
 These are packages linked from other OBS projects. We do not make modifications to these packages.
 
 -   [Banshee](http://banshee-project.org/)
--   [F-Spot](http://f-spot.org/)
+-   F-Spot
 -   [Monsoon](http://monotorrent.blogspot.com/)
 -   [Tomboy](http://www.gnome.org/projects/tomboy/)
 

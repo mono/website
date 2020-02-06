@@ -51,7 +51,7 @@ If your company uses Mono and would like to get it listed here, please contact [
     -   [iFolder](http://ifolder.com) (client and server on Linux and macOS),
     -   [ZenWorks Linux Management](http://www.novell.com/products/zenworks/linuxmanagement/),
     -   its Desktop search product ([Beagle](http://beaglewiki.org)),
-    -   photo management ([F-Spot](http://f-spot.org)),
+    -   photo management (F-Spot),
     -   Groupware Server ([Hula](http://hula-project.com)),
     -   media player software ([Banshee](http://banshee-project.org)), and its
     -   secret store manager (CASA).

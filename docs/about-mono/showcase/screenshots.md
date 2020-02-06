@@ -32,7 +32,7 @@ Gtk# Applications
       <td><a class="image-link" title="Banshee" href="/archived/images/9/9b/Banshee2.png"><img alt="Banshee" src="/archived/images/9/9b/Banshee2.png" width="180"/></a></td>
     </tr>
     <tr>
-      <td><a href="http://f-spot.org/Main_Page">F-Spot</a> <br /> F-Spot is a photo management application for the GNOME desktop.</td>
+      <td>F-Spot<br /> F-Spot is a photo management application for the GNOME desktop.</td>
       <td><a class="image-link" title="F-Spot" href="/archived/images/9/92/Fspot1.png"><img alt="F-Spot" src="/archived/images/9/92/Fspot1.png" width="180" /></a></td>
       <td><a class="image-link" title="F-Spot" href="/archived/images/a/aa/Fspot2.png"><img alt="F-Spot" src="/archived/images/a/aa/Fspot2.png" width="180" /></a></td>
     </tr>

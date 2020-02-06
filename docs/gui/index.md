@@ -18,11 +18,11 @@ If you need help to know which one is the best for your project, please have a l
 
 [![Fspot1.png](/archived/images/9/92/Fspot1.png)](/archived/images/9/92/Fspot1.png)
 
-[F-Spot](http://f-spot.org/Main_Page), a GTK# app
+F-Spot, a GTK# app
 
 Homepage: [GtkSharp](/docs/gui/gtksharp/)
 
-GTK# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), [F-Spot](http://f-spot.org/Main_Page), [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
+GTK# is a .NET binding for the Gtk+ toolkit. The toolkit is written in C for speed and compatibility, while the GTK# binding provides an easy to use, object oriented API for managed use. It is in active development by the Mono project, and there are various real-world applications available that use it ([Banshee](http://banshee-project.org/Main_Page), F-Spot, [Beagle](http://beagle-project.org/Main_Page), [MonoDevelop](http://www.monodevelop.com/Main_Page)).
 
 In general, GTK# applications are written using [MonoDevelop](http://www.monodevelop.com/Main_Page), which provides a visual designer for creating GTK# GUIs.
 

@@ -47,7 +47,7 @@ Check out [some screenshots](/Screenshots) of Gtk# Applications. Some of our mor
 
 -   [Banshee](http://banshee-project.org/Main_Page)
 -   [Beagle](http://beagle-project.org/Main_Page)
--   [F-spot](http://f-spot.org/Main_Page)
+-   F-spot
 -   [MonoDevelop](http://www.monodevelop.com/Main_Page)
 -   [Tomboy](http://www.gnome.org/projects/tomboy)
 
