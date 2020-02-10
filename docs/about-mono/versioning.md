@@ -53,6 +53,8 @@ Starting with Mono 5.0 regular bi-monthly branching started and the version is n
 
 | Mono version    | GitHub branch name   | MSBuild version | Roslyn version
 |-----------------|----------------------|-----------------|---------------
+| 6.10            | [2019-12](https://github.com/mono/mono/tree/2019-12) | 16.5 | 3.5.0 (d2bd58c6)
+| 6.8             | [2019-10](https://github.com/mono/mono/tree/2019-10) | 16.4 | 3.5.0 (d2bd58c6)
 | 6.6             | [2019-08](https://github.com/mono/mono/tree/2019-08) | 16.3 | 3.1.0 (9d80dea7)
 | 6.4             | [2019-06](https://github.com/mono/mono/tree/2019-06) | 16.2 | 3.1.0 (9d80dea7)
 | ~~6.2~~         | ~~[2019-04](https://github.com/mono/mono/tree/2019-04)~~ (skipped)
