@@ -7,7 +7,7 @@ redirect_from:
 
 One of the most common problems that people face when porting applications from Windows to Linux using Mono are paths.
 
-The IOMap feature is available in Mono versions higher than 1.1.18
+The IOMap feature is available in Mono versions higher than 1.1.18, **but has been deprecated in Mono versions higher than 6.0.0**
 
 The Problem
 ===========
