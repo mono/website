@@ -96,7 +96,7 @@ The Runtime static class, located at WebAssembly namespace, provides some handy 
 
 You may ask why document, body and button are scoped with usings: there is actually two references for each one of them running at the same  time in the browser: the one in pure JavaScript, and the one in .NET,  and it is a good practice to not keep the second one alive more time  than it is needed —it is indeed stored at the Emscripten layer, and can be gathered through BINDING.mono_wasm_object_registry at the browser’s Console. The less elements such contains, the better for performance. 
 
-![](/images/2020-03-05-wave-engine-runs-on-the-web-thanks-to-mono-wasm/WasmApp1Demo.gif) 
+![WasmApp1 running](/images/2020-03-05-wave-engine-runs-on-the-web-thanks-to-mono-wasm/WasmApp1Demo.gif) 
 
 *WasmApp1 running in Firefox* 
 
@@ -142,7 +142,7 @@ A few weeks ago, we made public our first experiment with Wave Engine targeting 
 
 http://gltf.waveengine.net/ 
 
-![](/images/2020-03-05-wave-engine-runs-on-the-web-thanks-to-mono-wasm/FlightHelmetDemoOptimized.gif) 
+![glTF viewer showing the flight helmet model](/images/2020-03-05-wave-engine-runs-on-the-web-thanks-to-mono-wasm/FlightHelmetDemoOptimized.gif) 
 
 *Wave Engine’s* *glTF* *viewer showing a loaded model* 
 
