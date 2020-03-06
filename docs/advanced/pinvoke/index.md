@@ -217,7 +217,7 @@ See also:
 
 -   [SWIG](http://www.swig.org/), a code generation program that easily wraps existing C and C++ code for use by a multitude of languages, including CLI languages. This makes it easier to invoke C++ code from a CLI application.
 -   [Structured Exception Handling Topics at MSDN](http://msdn.microsoft.com/en-us/library/aa269603(v=vs.60).aspx)
--   [The .NET Exception Model](http://blogs.msdn.com/b/cbrumme/archive/2003/10/01/51524.aspx): Another one of Chris Brumme's excellent blog entries. More information than you ever wanted to know about .NET exception handling.
+-   [The .NET Exception Model](https://devblogs.microsoft.com/cbrumme/the-exception-model/): Another one of Chris Brumme's excellent blog entries. More information than you ever wanted to know about .NET exception handling.
 
 Marshaling
 ==========
