@@ -13,7 +13,7 @@ The following blog entries contain some important background on what SafeHandles
 
 [Chris Brumme](https://devblogs.microsoft.com/cbrumme/finalization/)
 
-[On implementing SafeHandles](http://blogs.msdn.com/bclteam/archive/2005/03/15/396335.aspx)
+[On implementing SafeHandles](https://docs.microsoft.com/en-us/archive/blogs/bclteam/safehandles-the-best-v2-0-feature-of-the-net-framework-ravi-krishnaswamy)
 
 SafeHandle
 ==========
