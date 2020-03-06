@@ -11,7 +11,7 @@ Resources
 
 The following blog entries contain some important background on what SafeHandles are and what is their exposed behavior to programmers:
 
-[Chris Brumme](http://blogs.msdn.com/cbrumme/archive/2004/02/20/77460.aspx)
+[Chris Brumme](https://devblogs.microsoft.com/cbrumme/finalization/)
 
 [On implementing SafeHandles](http://blogs.msdn.com/bclteam/archive/2005/03/15/396335.aspx)
 
