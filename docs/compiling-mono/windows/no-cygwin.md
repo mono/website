@@ -14,10 +14,6 @@ If you encounter issues you may want to build using [the older Cygwin+Visual Stu
 * Install [Visual Studio 2017 or later](https://www.visualstudio.com) - Community Edition works fine. If it is already installed, use the `Visual Studio Installer` to ensure you have the latest updates.
 * Install [Git for Windows](https://git-scm.com/download/win) and enable use of it from cmd with the `Use Git from the Windows Command Prompt` option in the installer.
 
-Make sure that the following GIT setting is set to avoid issues with line endings:
-
-`git config --global core.autocrlf input`
-
 ## Build Mono 64-bit using Visual Studio Command Prompt
 
 The mono runtime, standard library and tools can all currently be built using Visual Studio. Building and running tests will still require the use of Cygwin and Bash, which you can see described in the [Cygwin build documentation](/docs/compiling-mono/windows/).
