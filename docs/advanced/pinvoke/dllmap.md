@@ -85,7 +85,7 @@ Starting with Mono 4.8.0, you can also specify a different dll target on a per-`
 <configuration>
   <dllmap os="!windows" dll="SolarSystem">
     <dllentry dll="libearth.so" name="get_Animals" />
-    <dllentry dll="libmars.so" nane="get_Plants" />
+    <dllentry dll="libmars.so" name="get_Plants" />
   </dllmap>
 </configuration>
 ```
