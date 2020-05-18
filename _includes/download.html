@@ -98,7 +98,7 @@
 <pre><code class="language-bash">sudo apt install gnupg ca-certificates
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/ubuntu preview-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb https://download.mono-project.com/repo/ubuntu preview-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt install gnupg ca-certificates
