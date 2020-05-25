@@ -109,7 +109,6 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [mod_mono](/docs/web/mod_mono/)
 * [Moonlight](/docs/web/moonlight/)
 * [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/)
-* [Using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/)
 
 # [Tools](/docs/tools+libraries/tools/)
 

@@ -371,8 +371,6 @@ Instead of Location="Server", use "ServerAndClient".
 
 If you are using the Apache module, https support is handled directly by Apache and all the variables are available using the System.Web APIs.
 
-If you are using XSP, read the [using client certificates with XSP](/docs/web/using-clientcertificates-with-xsp/) article which details the process.
-
 ### I write pages that contain non-ASCII characters, and they appear garbled in the browser. What's wrong?
 
 Check if your aspx/ascx/etc.. files were saved in the Windows-1252 encoding, if possible, so that no further action is needed. If they are in utf-8 (default nowadays in Linux) or any other encoding you will need to tell the compiler for the language your page will be translated into to expect this other encoding. There are two forms:

@@ -72,8 +72,6 @@ To correct this you must enabled MD2 support in your `machine.config` file. This
 
 Both SslClientStream and SslServerStream, in Mono.Security.dll, support client certificates, however HttpWebRequest doesn't due to a strange design/relationship between the 1.x framework and Windows/CryptoAPI (i.e. there is no managed API to associate a certificate with a private key). This should be fixed in the 2.0 profile as the X509Certificate class has been extended to provide this association.
 
-Also recent versions of [XSP](/docs/web/aspnet/) do support SSL/TLS and client certificates. See the [UsingClientCertificatesWithXSP](/docs/web/using-clientcertificates-with-xsp/) article for more details.
-
 ### Does SSL work for SMTP, like GMail ?
 
 Yes it does. First you must import the root certificates using the `mozroots` tool:

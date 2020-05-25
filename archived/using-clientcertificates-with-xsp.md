@@ -2,7 +2,13 @@
 title: UsingClientCertificatesWithXSP
 redirect_from:
   - /UsingClientCertificatesWithXSP/
+  - /docs/web/using-clientcertificates-with-xsp/
 ---
+
+DEPRECATION NOTICE
+==================
+
+This article is now outdated and no longer works on recent Mono versions.
 
 Introduction
 ============

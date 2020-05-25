@@ -77,10 +77,6 @@ For example, once you install XSP, you can try some samples like this:
 
 You can now browse to <http://localhost:8080> and see various sample programs
 
-### SSL support in XSP
-
-XSP supports SSL and TLS Client Certificates. For further details about setting it up, see the [UsingClientCertificatesWithXSP](/docs/web/using-clientcertificates-with-xsp/) document.
-
 ### Configuration
 
 Applications can be configured through the web.config file, the full documentation is available from [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), and also a Mono-specific version is available on this site [here](/archived/config_systemweb).
