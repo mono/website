@@ -28,7 +28,7 @@ The execution time profiling will instrument your code and record entry and leav
 
 For other uses we have a better profiler in development that is documented [here](/docs/debug+profile/profile/profiler/).
 
-Memory usage is a major driver in performance in managed applications: the more memory you use, the more work the GC has to do. Also it is a very noticeable to users when applications consume a lot of memory. To profile you application only with memory profilng (and skip the default that also does execution time) do:
+Memory usage is a major driver in performance in managed applications: the more memory you use, the more work the GC has to do. Also, it is a very noticeable to users when applications consume a lot of memory. To profile your application only with memory profiling (and skip the default that also does execution time) do:
 
 ``` bash
  $ mono --profile=default:alloc program.exe
@@ -66,7 +66,7 @@ Heap Profiling
 
 Performance in Mono-based applications often is linked to memory usage patterns. To better understand the memory allocation patterns of your application, you should use the [HeapShot](/docs/debug+profile/profile/heapshot/) memory profiler.
 
-HeapShot includes both visual and command line tools to explore the memory allocation patterns and live objects in an application over time and helps developers pin point memory consumption and.
+HeapShot includes both visual and command line tools to explore the memory allocation patterns and live objects in an application over time and helps developers pinpoint memory consumption and.
 
 See the separate page on [HeapShot](/docs/debug+profile/profile/heapshot/) for details on using the HeapShot memory profiler for Mono.
 
@@ -115,7 +115,7 @@ Boxing
 ------
 
 The .NET framework provides a rich hierarchy of object types. Each object not only has value information, but also type information associated with it. This type information makes many types of programs easier to write. It also has a cost associated with it. The type information takes up space.<br/>
- In order to reduce the cost of type information, almost every Object Oriented language has the concept of \`primitives'. They usually map to types such as integers and booleans. These types do not have any type information associated with them.<br/>
+ In order to reduce the cost of type information, almost every Object-oriented language has the concept of \`primitives'. They usually map to types such as integers and booleans. These types do not have any type information associated with them.<br/>
  However, the language also must be able to treat primitives as first class datums -- in the class with objects. Languages handle this issue in different ways. Some choose to make a special class for each primitive, and force the user to do an operation such as:
 
 ``` shell
@@ -139,7 +139,7 @@ You should look out for code that does "string arithmetic" as this tends to crea
 
 These are observed with the "--profile=default:alloc" profiler.
 
-Although the compiler will try to reduce the number of strings created durng string "building" you might want to consider a few appproaches:
+Although the compiler will try to reduce the number of strings created during string "building" you might want to consider a few approaches:
 
 -   Use the [StringBuilder](http://docs.go-mono.com/index.aspx?link=T:System.Text.StringBuilder) class as this class will minimize the number of temporary strings created.
 -   If you are writing data out, you might consider just calling Write multiple times, or if this is a bottleneck, use [String.Format](http://docs.go-mono.com/index.aspx?link=M:System.String.Format).
@@ -190,9 +190,8 @@ Other problems
 Common problems with `foreach`
 ------------------------------
 
-The `foreach` C# statement handles various kinds of different constructs (about seven different code patterns are generated). Typically foreach generates more efficient code than loops constructed manually, and also ensures that objects which implement IDispose are properly released.
+The `foreach` C# statement handles various kinds of different constructs (about seven different code patterns are generated). Typically, foreach generates more efficient code than loops constructed manually, and also ensures that objects which implement IDispose are properly released.
 
 But foreach sometimes might generate code that under stress performs badly. Foreach performs badly when its used in tight loops, and its use leads to the creation of many enumerators. Although technically obtaining an enumerator for some objects like ArrayList is more efficient than using the ArrayList indexer, the pressure introduced due to the extra memory requirements and the demands on the garbage collector make it more inefficient.
 
 There is no straight-forward rule on when to use foreach, and when to use a manual loop. The best thing to do is to always use foreach, and only when profile shows a problem, replace foreach with for loops.
-
