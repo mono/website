@@ -39,6 +39,22 @@ code {
   padding-right: 5px;
 }
 
+button, .button {
+  background-color: #007EA8;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  background-color: #006385;
+}
+
+a {
+  color: #007EA8;
+}
+
+a:hover, a:focus {
+  color: #006B8F;
+}
+
 #main-wrapper {
   min-height: 100%;
   margin: 0 auto -100px;
@@ -72,7 +88,7 @@ code {
 
 footer {
   background-color: #EBEBEB;
-  color: #707070;
+  color: #696969;
   border-top: 1px solid #D9D8D7;
   height: 100px;
   padding: 25px 0;
@@ -84,7 +100,7 @@ footer {
 }
 
 #footer-notes a {
-  color: #969696;
+  color: #6A6A6A;
 }
 
 footer ul {
@@ -130,6 +146,14 @@ footer h6 a {
 
 .top-bar-section > ul { 
   margin-top: 8px;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+  background: #007EA8;
+}
+
+.top-bar-section li.active:not(.has-form) a:not(.button):hover {
+  background: #006385;
 }
 
 .top-bar .toggle-topbar {
@@ -188,6 +212,11 @@ footer h6 a {
   padding-bottom: 10px;
   border-bottom: 1px solid #D9D8D7;
 }
+
+#index-teaser a {
+  color: #007399;
+}
+
 /* --- --- */
 
 /* --- Download page --- */

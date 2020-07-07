@@ -46,4 +46,5 @@ exclude:
   - CNAME
   - README.md
   - CONTRIBUTING.md
+  - LICENSE
   - Gemfile*
