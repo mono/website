@@ -72,7 +72,7 @@ On Windows, the directory path separator is "\\" while on Linux it is "/", it is
 
 For quickly porting applications, starting with Mono 1.1.18, you can set the MONO_IOMAP environment variable to "all" and it will take care of it. See [IOMap](/docs/advanced/iomap/) for more details.
 
-To write portable software, you must make sure that you use the [http:/monodoc/P:System.IO.Path.DirectorySeparatorChar System.IO.Path.DirectorySeparatorChar] character when you must concatenate paths, or even better, use the [http:/monodoc/M:System.IO.Path.Combine(string,string) System.IO.Path.Combine] method to combine pathnames.
+To write portable software, you must make sure that you use the [System.IO.Path.DirectorySeparatorChar](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.directoryseparatorchar?view=netcore-3.1) character when you must concatenate paths, or even better, use the [System.IO.Path.Combine](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.combine?view=netcore-3.1#System_IO_Path_Combine_System_String_System_String_) method to combine pathnames.
 
 In addition, code that manually scans for path separators must be changed, for example:
 
