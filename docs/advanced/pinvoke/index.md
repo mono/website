@@ -1474,7 +1474,7 @@ Implementing the **IDisposable** interface isn't a complete solution, as it requ
 
 See also:
 
--   [Rico Mariani's Blog: Two things to avoid for better memory usage](http://blogs.msdn.com/ricom/archive/2003/12/02/40780.aspx).
+-   [Rico Mariani's Blog: Two things to avoid for better memory usage](https://docs.microsoft.com/en-us/archive/blogs/ricom/two-things-to-avoid-for-better-memory-usage).
 
 Miscellaneous Topics
 ====================
