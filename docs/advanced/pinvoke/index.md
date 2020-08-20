@@ -318,7 +318,7 @@ Many types require minimal copying into native memory. Blittable types are types
 <td align="left"><code>gint64</code></td>
 </tr>
 <tr class="even">
-<td align="left"><code>long</code></td>
+<td align="left"><code>ulong</code></td>
 <td align="left"><code>unsigned long</code> <em>64-bit platforms only</em>
 <p><code>unsigned __int64</code> <em>MSVC</em></p>
 <p><code>unsigned long long</code> <em>GCC</em></p></td>
