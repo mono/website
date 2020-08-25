@@ -7,12 +7,13 @@ redirect_from:
 
 Mono is a distributed effort with developers scattered around the globe, although a lot of discussion happens on GitHub, some interactive discussion happen on chat.
 
-We have several Gitter channels:
+We have several Discord channels on the [DotNetEvolution server](https://aka.ms/dotnet-discord):
 
-- Mono: [#mono/mono](https://gitter.im/mono/mono)
-- MonoDevelop (Xamarin Studio / Visual Studio for Mac): [#mono/monodevelop](https://gitter.im/mono/monodevelop)
-- Xamarin.iOS + Xamarin.Mac: [#xamarin/xamarin-macios](https://gitter.im/xamarin/xamarin-macios)
-- Xamarin.Android: [#xamarin/xamarin-android](https://gitter.im/xamarin/xamarin-android)
-- Xamarin.Forms:  [#xamarin/xamarin.forms](https://gitter.im/xamarin/xamarin.forms)
+<a href="https://aka.ms/dotnet-discord">
+  <img src="https://img.shields.io/discord/732297728826277939?style=flat-square&label=Discord&logo=discord&logoColor=white&color=7289DA">
+</a>
 
-You can access those channels through IRC as well, check [irc.gitter.im](https://irc.gitter.im) for more details.
+- `#monovm` for Mono
+- `#apple` for Xamarin.iOS + Xamarin.Mac
+- `#android` for Xamarin.Android
+- `#xamarin-forms` for Xamarin.Forms

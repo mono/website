@@ -60,7 +60,7 @@ Contacting the Mono Team
 ------------------------
 
 If you have questions or suggestions, or would like feedback on your idea, please join us
-in [our Gitter channels](https://www.mono-project.com/community/help/chat). Various mentors and
+in [our Discord channels](https://www.mono-project.com/community/help/chat). Various mentors and
 students from past years are usually there and can answer questions about the program and about Mono.
 Community engagement is essential for a successful Summer of Code, so get involved!
 

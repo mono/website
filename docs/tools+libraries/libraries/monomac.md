@@ -17,7 +17,7 @@ There are plenty of [Xamarin.Mac examples](https://developer.xamarin.com/samples
 Community
 =========
 
-A chat room to discuss Xamarin.Mac exists at [https://gitter.im/xamarin/xamarin-macios](https://gitter.im/xamarin/xamarin-macios).
+A chat room to discuss Xamarin.Mac exists on [Discord](https://www.mono-project.com/community/help/chat).
 
 Obtaining Xamarin.Mac
 =====================
