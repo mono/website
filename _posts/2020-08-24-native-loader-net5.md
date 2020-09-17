@@ -35,7 +35,7 @@ We recognize that this does not sufficiently cover some existing mono/mono scena
 A more subtle, yet no less impactful change is that native library loading now defaults to `RTLD_LOCAL` to be consistent with CoreCLR and Windows, as opposed to our historical behavior of `RTLD_GLOBAL`. What this means in practice is that on Unix-like platforms, libraries are no longer loaded into a single global namespace and when looking up symbols, the library *must* be correctly specified. This change prevents symbol collision, and will both break and enable various scenarios and libraries. For more information on the difference, see [the dlopen man page](https://linux.die.net/man/3/dlopen).
 
 For an example: historically in Mono on Linux, it was possible to load library `foo` containing symbol `bar`, and then invoke `bar` with a P/Invoke like so: 
-```
+```c#
 // note the incorrect library name
 [DllImport("asdf")]
 public static extern int bar();
