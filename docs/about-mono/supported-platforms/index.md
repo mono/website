@@ -21,6 +21,7 @@ Mono has support for both 32 and 64 bit systems on a number of architectures as 
 -   [Microsoft Windows](/docs/getting-started/install/windows/)
 -   [Sony PlayStation 4](/docs/about-mono/supported-platforms/playstation4/)
 -   [XboxOne](/docs/about-mono/supported-platforms/xbox-one/)
+-   [Xbox Series X and Xbox Series S](/docs/about-mono/supported-platforms/xbox-series-x-s/)
 
 ### Supported Architectures
 
@@ -32,7 +33,7 @@ Mono has both an optimizing just-in-time (JIT) runtime and a interpreter runtime
 |[SPARC (32)](/docs/about-mono/supported-platforms/sparc/)|JIT|Solaris, Linux|
 |[PowerPC](/docs/about-mono/supported-platforms/powerpc/)|JIT|Linux, AIX, i, macOS, Wii, PlayStation 3|
 |[x86](/docs/about-mono/supported-platforms/x86/)|JIT|Linux, FreeBSD, OpenBSD, NetBSD, Microsoft Windows, Solaris, macOS, Android|
-|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT, Interpreter|Linux, FreeBSD, OpenBSD, Solaris, macOS|
+|[x86-64](/docs/about-mono/supported-platforms/amd64/): AMD64 and EM64T (64 bit)|JIT, Interpreter|Linux, FreeBSD, OpenBSD, Microsoft Windows, Solaris, macOS|
 |[ARM](/docs/about-mono/supported-platforms/arm/): little and big endian|JIT, Interpreter (arm64 only)|Linux (both old and new ABI), iPhone, Android|
 |[MIPS](/docs/about-mono/supported-platforms/mips/)|JIT|Linux|
 
