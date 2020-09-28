@@ -16,4 +16,4 @@ This will be useful to developers using the MonoGame framework, or embedding Mon
 framework into their game code.
 
 For users interested in using Mono on XboxOne, fill [this form](https://aka.ms/xamarin-xbox-sign-up)
-to receive access to the SDK.
+to request access to the SDK. NOTE, to be eligible you need to be a licensed Xbox developer and enrolled in the ID@Xbox program or have an assigned Xbox Account Manager. For more details please visit, https://www.xbox.com/developers/id.
