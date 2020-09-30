@@ -1,36 +1,36 @@
-/* ### GLOBAL STYLES ### */
+/* ### AMAZING GLOBAL STYLES ### */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', 'Open Sans Condensed',sans-serif;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
 }
 
 h4 {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 h5 {
-  font-size: 1.05rem;
+  font-size: 1.06rem;
 }
 
 h6 {
-  font-size: 1.0rem;
+  font-size: 1.2rem;
 }
 
 code {
   font-weight: normal;
-  font-size: 0.95em;
+  font-size: 0.96em;
   line-height: 1.5;
   margin-bottom: 10px;
   border: 1px solid #bbb;
@@ -40,15 +40,15 @@ code {
 }
 
 button, .button {
-  background-color: #007EA8;
+  background-color: #007EA7;
 }
 
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: #006385;
+  background-color: #006386;
 }
 
 a {
-  color: #007EA8;
+  color: #007EA7;
 }
 
 a:hover, a:focus {
@@ -117,8 +117,8 @@ footer h6 a {
 #header-logo {
   width: 50px;
   height: 50px;
-  margin-top: -6px;
-  margin-right: 10px;
+  margin-top: -5px;
+  margin-right: 9px;
 }
 
 #header-nav {
@@ -145,7 +145,7 @@ footer h6 a {
 }
 
 .top-bar-section > ul { 
-  margin-top: 8px;
+  margin-top: 8.2px;
 }
 
 .top-bar-section li.active:not(.has-form) a:not(.button) {
