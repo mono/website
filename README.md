@@ -35,7 +35,7 @@ After you've forked and cloned the repository, run the following commands:
  1. `bundle install` - downloads the required libraries
  2. `bundle exec jekyll serve` - builds the website and runs a local webserver on port 4000
 
-**Note:** you can add the `--watch` option when running `jekyll serve` to let Jekyll watch for file changes, which means the site will be rebuilt when a file is modified.
+**Note 1:** you can add the `--watch` option when running `jekyll serve` to let Jekyll watch for file changes, which means the site will be rebuilt when a file is modified.
 
 **Note 2:** on case-insensitive file systems like on Windows and macOS you'll run into redirect loops for some URLs. The workaround is to disable redirects locally by removing the `gems: jekyll-redirect-from` entry from `_config.yml`.
 
