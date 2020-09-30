@@ -3,7 +3,7 @@ Mono Project Website [![Build Status](https://travis-ci.org/mono/website.svg)](h
 
 This repository contains the files used for generating the [Mono website](http://www.mono-project.com).
 
-The site uses [Jekyll](http://jekyllrb.com), a static site generator. GitHub Pages, where the site is hosted, natively supports Jekyll so every time someone pushes to this repository, the website will be built and updated. For hosting it yourself, see [Setting up a local copy of the website](#setting-up-a-local-copy-of-the-website).
+The site uses [Jekyll](http://jekyllrb.com), a static site generator. GitHub Pages, where the site is hosted, natively supports Jekyll so every time someone pushes to this repository, the website will be built and updated within few days.. For hosting it yourself, see [Setting up a local copy of the website](#setting-up-a-local-copy-of-the-website).
 
 Contributing to the website
 ---------------------------
