@@ -26,7 +26,7 @@ Setting up a local copy of the website
 
 For larger changes, using the web-based editor on GitHub is not really convenient. A better way is to setup a local copy of the website where you can experiment.
 
-### Dependencies
+### Dependencies of this website
 
  - [Ruby](https://www.ruby-lang.org/) - Jekyll is written in Ruby
  - [Bundler](http://bundler.io/) - a package manager for Ruby. Install it by running `gem install bundler`
