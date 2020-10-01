@@ -28,8 +28,8 @@ For larger changes, using the web-based editor on GitHub is not really convenien
 
 ### Dependencies
 
- - [Ruby](https://www.ruby-lang.org/) - Jekyll is written in Ruby
- - [Bundler](http://bundler.io/) - a package manager for Ruby. Install it by running `gem install bundler`
+ 1. [Ruby](https://www.ruby-lang.org/) - Jekyll is written in Ruby
+ 2. [Bundler](http://bundler.io/) - a package manager for Ruby. Install it by running `gem install bundler`
 
 After you've forked and cloned the repository, run the following commands:
  1. `bundle install` - downloads the required libraries
@@ -45,18 +45,18 @@ The site should now be running locally:
 Repository structure
 --------------------
 
- - `_includes` - *special folder* contains snippets that can be included via `{% include file.html %}` in other pages
- - `_layouts` - *special folder* contains the layouts that are shared between pages. Layouts can be inherited, the root layout is `base.html`.
- - `_posts` - *special folder*, contains the source pages for the blog section, see [Writing a blog post](#writing-a-blog-post)
- - `_site` - the output of the generated site is stored here by default, this folder only exists after Jekyll built the site
- - `archived` - content that is no longer relevant but kept to keep external links working
- - `community` - contains the source pages for the `/community` website section
- - `css` - contains the main stylesheet
- - `docs` - contains the source pages for the `/docs` website section
- - `download` - contains the source pages for the `/download` website section
- - `files` - stores binary files used in pages
- - `images` - stores the images used in pages
- - `news` - lists the blog pages from the `_posts` directory
+ 1 `_includes` - *special folder* contains snippets that can be included via `{% include file.html %}` in other pages
+ 2 `_layouts` - *special folder* contains the layouts that are shared between pages. Layouts can be inherited, the root layout is `base.html`.
+ 3 `_posts` - *special folder*, contains the source pages for the blog section, see [Writing a blog post](#writing-a-blog-post)
+ 4 `_site` - the output of the generated site is stored here by default, this folder only exists after Jekyll built the site
+ 5 `archived` - content that is no longer relevant but kept to keep external links working
+ 6 `community` - contains the source pages for the `/community` website section
+ 7 `css` - contains the main stylesheet
+ 8 `docs` - contains the source pages for the `/docs` website section
+ 9 `download` - contains the source pages for the `/download` website section
+ 10 `files` - stores binary files used in pages
+ 11 `images` - stores the images used in pages
+ 12 `news` - lists the blog pages from the `_posts` directory
 
 Writing a blog post
 -------------------
