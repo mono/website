@@ -2,6 +2,7 @@
 title: Monolite
 redirect_from:
   - /Monolite/
+  - /docs/advanced/monolite/
 ---
 
 Monolite is a minimal binary distribution of mcs.

@@ -10,7 +10,6 @@ title: Advanced
 * [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/)
 * [P/Invoke](/docs/advanced/pinvoke/)
 * [IOMap](/docs/advanced/iomap/)
-* [monolite](/docs/advanced/monolite/)
 * [Mono LLVM](/docs/advanced/mono-llvm/)
 * [CAS](/docs/advanced/cas/)
 * [COM](/docs/advanced/com/)
