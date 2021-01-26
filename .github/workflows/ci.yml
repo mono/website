@@ -18,8 +18,7 @@ jobs:
         ruby-version: '2.5'
     - name: Install dependencies
       run: |
-        gem install bundler pkg-config
-        bundle config build.nokogiri --use-system-libraries
+        gem install bundler
         bundle install --jobs 4 --retry 3
     - name: Build Jekyll
       run: bundle exec jekyll build
