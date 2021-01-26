@@ -1,0 +1,28 @@
+name: build
+
+on:
+  push:
+    branches: [ gh-pages ]
+  pull_request:
+    branches: [ gh-pages ]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.5'
+    - name: Install dependencies
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+    - name: Build Jekyll
+      run: bundle exec jekyll build
+    - name: Markdownlint
+      run: bundle exec mdl -s markdownlint-config.rb . || true  # markdownlint errors shouldn't fail the build for now
+    - name: HTMLProofer
+      run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --check-html
