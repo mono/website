@@ -216,7 +216,7 @@ GEM
       mixlib-config (>= 2.2.1, < 4)
       mixlib-shellout
     mercenary (0.3.6)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.0)
     minima (2.5.1)
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
@@ -228,8 +228,9 @@ GEM
     mixlib-shellout (3.1.2)
       chef-utils
     multipart-post (2.1.1)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
     octokit (4.18.0)
@@ -239,6 +240,7 @@ GEM
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
+    racc (1.5.2)
     rainbow (3.0.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
