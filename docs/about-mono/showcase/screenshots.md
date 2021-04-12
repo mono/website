@@ -52,7 +52,7 @@ Gtk# Applications
       <td><a class="image-link" title="OpenVPN-Admin" href="/archived/images/3/37/Openvpn-admin.png"><img alt="OpenVPN-Admin" src="/archived/images/3/37/Openvpn-admin.png" width="180" /></a></td>
     </tr>
     <tr>
-      <td><a href="http://pinta-project.com/">Pinta</a> <br /> Pinta is a paint program designed for simplicity and ease of use. It is modeled after <a href="http://getpaint.net/">Paint.Net</a>.</td>
+      <td><a href="http://pinta-project.com/">Pinta</a> <br /> Pinta is a paint program designed for simplicity and ease of use. It is modeled after <a href="http://getpaint.net/">Paint.NET</a>.</td>
       <td><a class="image-link" title="Pinta" href="/archived/images/5/59/Pinta1.jpg"><img alt="Pinta" src="/archived/images/5/59/Pinta1.jpg" width="180" /></a></td>
       <td><a class="image-link" title="Pinta" href="/archived/images/d/d8/Pinta2.jpg"><img alt="Pinta" src="/archived/images/d/d8/Pinta2.jpg" width="180" /></a></td>
     </tr>
@@ -77,7 +77,7 @@ Winforms Applications
 <table>
   <tbody>
     <tr>
-      <td><a href="http://nclass.sourceforge.net/">NClass</a> <br /> NClass is a UML modeling application written in C#. <br /><br /> <a href="http://www.getpaint.net/">Paint.NET</a> <br /> Paint.Net hasn't been fully ported to Mono yet (due to p/invokes), but we can still see it using the new 2.0 controls.</td>
+      <td><a href="http://nclass.sourceforge.net/">NClass</a> <br /> NClass is a UML modeling application written in C#. <br /><br /> <a href="http://www.getpaint.net/">Paint.NET</a> <br /> Paint.NET hasn't been fully ported to Mono yet (due to p/invokes), but we can still see it using the new 2.0 controls.</td>
       <td><a class="image-link" title="NClass" href="/archived/images/a/aa/Nclass.png"><img alt="NClass" src="/archived/images/a/aa/Nclass.png" width="180" /></a></td>
       <td><a class="image-link" title="Paint.NET" href="/archived/images/b/b9/Monopaint.png"><img alt="Paint.NET" src="/archived/images/b/b9/Monopaint.png" width="180" /></a></td>
     </tr>
@@ -97,7 +97,7 @@ Winforms Applications
       <td><a class="image-link" title="NUnit" href="/archived/images/3/35/Nunit2.png"><img alt="NUnit" src="/archived/images/3/35/Nunit2.png" width="180" /></a></td>
     </tr>
     <tr>
-      <td><a href="/MoMA">MoMA</a> <br /> MoMA is a tool that helps you identify issues you may have when porting your .Net application to Mono.</td>
+      <td><a href="/MoMA">MoMA</a> <br /> MoMA is a tool that helps you identify issues you may have when porting your .NET application to Mono.</td>
       <td><a class="image-link" title="MoMA" href="/archived/images/8/89/Linmoma1.png"><img alt="MoMA" src="/archived/images/8/89/Linmoma1.png" width="180" /></a></td>
       <td><a class="image-link" title="MoMA" href="/archived/images/c/c6/Linmoma2.png"><img alt="MoMA" src="/archived/images/c/c6/Linmoma2.png" width="180" /></a></td>
     </tr>
@@ -167,7 +167,7 @@ Other Mono Applications
       <td><a class="image-link" title="Maemo" href="/archived/images/b/bd/Nokia.jpg"><img alt="Maemo" src="/archived/images/b/bd/Nokia.jpg" width="180" /></a></td>
     </tr>
     <tr>
-      <td><a href="http://www.eclipse.org/">Eclipse</a> <br /> Eclipse is an IDE written in Java. It can run on Mono using <a href="http://www.ikvm.net/">IKVM</a>, the Java VM for .Net.</td>
+      <td><a href="http://www.eclipse.org/">Eclipse</a> <br /> Eclipse is an IDE written in Java. It can run on Mono using <a href="http://www.ikvm.net/">IKVM</a>, the Java VM for .NET.</td>
       <td>Eclipse on IKVM</td>
     </tr>
     <tr>
