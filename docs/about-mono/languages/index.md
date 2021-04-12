@@ -21,7 +21,7 @@ C# is specified in the ISO/IEC 23271:2006 and ECMA 334 standards. Microsoft has 
 F#
 ---
 
-[F#](http://fsharp.org/) is a hybrid language that brings flavors of functional languages and imperative languages, developed by Microsoft. They release compiler that targets mono in [some releases](http://blogs.msdn.com/b/dsyme/archive/2010/04/12/f-2-0-released-as-part-of-visual-studio-2010.aspx).
+[F#](http://fsharp.org/) is a hybrid language that brings flavors of functional languages and imperative languages, developed by Microsoft. They release compiler that targets Mono in [some releases](http://blogs.msdn.com/b/dsyme/archive/2010/04/12/f-2-0-released-as-part-of-visual-studio-2010.aspx).
 
 Java
 ----
@@ -31,7 +31,7 @@ Java applications can run in Mono, see the [Java](/docs/about-mono/languages/jav
 Scala
 -----
 
-Scala is a modern language primarily targeting Java, and it's ported to .NET as [Scala.NET](http://www.scala-lang.org/node/168), which is also [known to run on mono](http://davidsiegel.org/scala-on-mono/).
+Scala is a modern language primarily targeting Java, and it's ported to .NET as [Scala.NET](http://www.scala-lang.org/node/168), which is also known to run on Mono.
 
 Boo
 ---
@@ -41,7 +41,7 @@ Boo
 Nemerle
 -------
 
-Nemerle is a new hybrid (functional, object-oriented and imperative) programming language for the .NET platform. It is available from [www.nemerle.org](http://www.nemerle.org).
+[Nemerle](http://www.nemerle.org) is a new hybrid (functional, object-oriented and imperative) programming language for the .NET platform.
 
 Visual Basic.NET
 ----------------
@@ -60,9 +60,9 @@ There are two possible choices here: PythonNet and IronPython.
 JavaScript
 ----------
 
-[IronJS](https://github.com/fholm/IronJS) is a DLR-based Javascript implementation that targets mono as well as .NET.
+[IronJS](https://github.com/fholm/IronJS) is a DLR-based Javascript implementation that targets Mono as well as .NET.
 
-Historically mono used to ship 'mjs', an implementation of the JavaScript language as part of its distribution, the main author behind this effort is César Natarén.
+Historically Mono used to ship 'mjs', an implementation of the JavaScript language as part of its distribution, the main author behind this effort is César Natarén.
 
 For more details see [JScript](/archived/jscript)
 
@@ -145,7 +145,7 @@ The compiler can be used to statically compile a Ruby source file into a verifia
 ADA
 ---
 
-A# is an ADA compiler for the CIL platform, it can be downloaded from: [here](http://asharp.martincarlisle.com/)
+A# is an ADA compiler for the CIL platform, it can be downloaded from: [here](http://asharp.martincarlisle.com/).
 
 Other PHP Efforts
 -----------------
@@ -164,7 +164,7 @@ Languages which are believed to work, but have not had a complete run of all the
 Tachy
 -----
 
-A subset of Scheme language called [Tachy](https://github.com/jeffdik/tachy/tree/master/src)
+A subset of Scheme language called [Tachy](https://github.com/jeffdik/tachy/tree/master/src).
 
 Mixing with other languages
 ---------------------------
@@ -176,4 +176,4 @@ See [Mixing with other languages](/docs/about-mono/languages/mixing-with-other-l
 
 [Brian Ritchie](https://bitbucket.org/brianritchie/wiki/wiki/.NET%20Languages) have a list of a lot of .NET languages.
 
-[Language Comparison](http://bean.wikidot.com/comparecsharpironpythonboo) - A simple comparison of some languages can be used with the Mono platform
+[Language Comparison](http://bean.wikidot.com/comparecsharpironpythonboo) - A simple comparison of some languages can be used with the Mono platform.
