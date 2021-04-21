@@ -22,7 +22,7 @@ There are several components that make up Mono:
 
 **[Mono Runtime](/docs/advanced/runtime/)** - The runtime implements the ECMA Common Language Infrastructure (CLI). The runtime provides a Just-in-Time (JIT) compiler, an Ahead-of-Time compiler (AOT), a library loader, the garbage collector, a threading system and interoperability functionality.
 
-**.NET Framework Class Library** - The Mono platform provides a comprehensive set of classes that provide a solid foundation to build applications on. These classes are compatible with Microsoft's .Net Framework classes.
+**.NET Framework Class Library** - The Mono platform provides a comprehensive set of classes that provide a solid foundation to build applications on. These classes are compatible with Microsoft's .NET Framework classes.
 
 **Mono Class Library** - Mono also provides many classes that go above and beyond the Base Class Library provided by Microsoft. These provide additional functionality that are useful, especially in building Linux applications. Some examples are classes for Gtk+, Zip files, LDAP, OpenGL, Cairo, POSIX, etc.
 
@@ -52,7 +52,7 @@ The Benefits
 
 There are many benefits to choosing Mono for application development:
 
-**Popularity** - Built on the success of .Net, there are millions of developers that have experience building applications in C#. There are also tens of thousands of books, websites, tutorials, and example source code to help with any imaginable problem.
+**Popularity** - Built on the success of .NET, there are millions of developers that have experience building applications in C#. There are also tens of thousands of books, websites, tutorials, and example source code to help with any imaginable problem.
 
 **Higher-Level Programming** - All Mono languages benefit from many features of the runtime, like automatic memory management, reflection, generics, and threading. These features allow you to concentrate on writing your application instead of writing system infrastructure code.
 
@@ -60,7 +60,7 @@ There are many benefits to choosing Mono for application development:
 
 **Cross Platform** - Mono is built to be cross platform. Mono runs on [Linux](/docs/about-mono/supported-platforms/linux/), [Microsoft Windows](/docs/getting-started/install/windows/), [macOS](/docs/about-mono/supported-platforms/macos/), [BSD](/docs/about-mono/supported-platforms/bsd/), and [Sun Solaris](/docs/about-mono/supported-platforms/solaris/), [Nintendo Wii](/docs/about-mono/supported-platforms/wii/), [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/), [Apple iPhone](/docs/about-mono/supported-platforms/iphone/) and [Android](/docs/about-mono/supported-platforms/android/). It also runs on [x86](/docs/about-mono/supported-platforms/x86/), [x86-64](/docs/about-mono/supported-platforms/amd64/), [IA64](/docs/about-mono/supported-platforms/ia64/), [PowerPC](/docs/about-mono/supported-platforms/powerpc/), [SPARC (32)](/docs/about-mono/supported-platforms/sparc/), [ARM](/docs/about-mono/supported-platforms/arm/), Alpha, [s390, s390x (32 and 64 bits)](/docs/about-mono/supported-platforms/s390/) and more. Developing your application with Mono allows you to run on nearly any computer in existence.
 
-**Common Language Runtime (CLR)** - The CLR allows you to choose the programming language you like best to work with, and it can interoperate with code written in any other CLR language. For example, you can write a class in C#, inherit from it in VB.Net, and use it in Eiffel. You can choose to write code in Mono in a [variety of programming languages](/docs/about-mono/languages/).
+**Common Language Runtime (CLR)** - The CLR allows you to choose the programming language you like best to work with, and it can interoperate with code written in any other CLR language. For example, you can write a class in C#, inherit from it in VB.NET, and use it in Eiffel. You can choose to write code in Mono in a [variety of programming languages](/docs/about-mono/languages/).
 
 Other Uses
 ----------
