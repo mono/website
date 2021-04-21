@@ -18,7 +18,7 @@ For this guide, the open source application NClass has been chosen. It is a UML 
 -   [Mono 1.2.4](/download/stable/)
 -   [Mono Migration Analyzer (MoMA)](/docs/tools+libraries/tools/moma/)
 
-NClass running on .Net with included example file: [![Msnclass.png](/archived/images/1/1c/Msnclass.png)](/archived/images/1/1c/Msnclass.png)
+NClass running on .NET with included example file: [![Msnclass.png](/archived/images/1/1c/Msnclass.png)](/archived/images/1/1c/Msnclass.png)
 
 Getting Started
 ---------------
@@ -93,8 +93,8 @@ Porting Strategies
 There are several approaches to porting code, depending on your goals.
 
 -   The unsupported code can simply be removed or commented out if it is not needed.
--   Compiler conditional directives (#if) can be used to create separate executables for .Net and Mono.
--   The runtime (.Net or Mono) can be detected and use different code.
+-   Compiler conditional directives (#if) can be used to create separate executables for .NET and Mono.
+-   The runtime (.NET or Mono) can be detected and use different code.
 -   The code can be rewritten to use supported methods in Mono.
 
 Here is the section of code that is setting PrintDialog.UseEXDialog in MainForm.Designer.cs:
@@ -132,7 +132,7 @@ However, there will be plenty of cases when this is not feasible.
 
 ### Compiler Conditionals
 
-Another strategy is to create different assemblies for .Net and Mono. This can be done by wrapping all code that is not supported by Mono in conditional directives and compiling with and without the directive.
+Another strategy is to create different assemblies for .NET and Mono. This can be done by wrapping all code that is not supported by Mono in conditional directives and compiling with and without the directive.
 
 ``` csharp
   //
@@ -152,7 +152,7 @@ The downside of this approach is that we must ship separate assemblies for diffe
 
 ### Runtime Conditionals
 
-In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .Net. First, create a function to detect if the assembly is running on Mono (from the [Technical FAQ](/docs/faq/technical/)):
+In order to have only one assembly for all platforms, but run different code on different platforms, we can detect at runtime whether we are using Mono or .NET. First, create a function to detect if the assembly is running on Mono (from the [Technical FAQ](/docs/faq/technical/)):
 
 ``` csharp
   public static bool IsRunningOnMono ()
@@ -221,7 +221,7 @@ To:
   }
 ```
 
-When possible (which isn't always the case), this method is the cleanest, as it uses the same code and provides the same functionality on both the Mono and .Net runtime.
+When possible (which isn't always the case), this method is the cleanest, as it uses the same code and provides the same functionality on both the Mono and .NET runtime.
 
 Porting NClass
 --------------
@@ -370,7 +370,7 @@ On the Mono image desktop, double click your NClass folder, and navigate to your
 
 ### Linux Platform Differences
 
-There are two classes of issues you may run into during your port. The first class are issues stemming from differences between the .Net and Mono runtime. These can be worked out while still on Windows as shown above. However, there is a second class of issues that you may come across. These are issues stemming from differences between Windows and Linux (or macOS, etc.).
+There are two classes of issues you may run into during your port. The first class are issues stemming from differences between the .NET and Mono runtime. These can be worked out while still on Windows as shown above. However, there is a second class of issues that you may come across. These are issues stemming from differences between Windows and Linux (or macOS, etc.).
 
 Common OS Porting Issues
 
@@ -460,6 +460,6 @@ Using this guide, we have managed to port a non-trivial winforms app to start up
 Advanced Guides
 ---------------
 
--   [Guide: Debugging With MWF](/docs/gui/winforms/debugging-with-mwf/) - Shows how to use the MWF project file from git to debug issues.
+-   [Guide: Debugging With MWF](/docs/gui/winforms/debugging-with-mwf/) - Shows how to use the MWF project file from Git to debug issues.
 
 
