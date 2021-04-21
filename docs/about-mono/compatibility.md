@@ -37,8 +37,8 @@ Here is a slightly more detailed view, by .NET framework version:
 --------
 
 |<i class="fas fa-check"/>|C# 4.0|
-|<i class="fas fa-check"/>|ASP.Net 4.0|
-|<i class="fas fa-check"/>|ASP.Net MVC 1, MVC 2 and MVC3|
+|<i class="fas fa-check"/>|ASP.NET 4.0|
+|<i class="fas fa-check"/>|ASP.NET MVC 1, MVC 2 and MVC3|
 |<i class="fas fa-check"/>|System.Numerics|
 |<i class="fas fa-check"/>|Managed Extensibily Framework *- Shared with .NET via MS-PL license*|
 |<i class="fas fa-check"/>|Dynamic Language Runtime *- Shared with .NET via MS-PL license*|
@@ -54,8 +54,8 @@ Here is a slightly more detailed view, by .NET framework version:
 |<i class="fas fa-check"/>|C# 3.0|
 |<i class="fas fa-check"/>|System.Core|
 |<i class="fas fa-check"/>|LINQ|
-|<i class="fas fa-check"/>|ASP.Net 3.5|
-|<i class="fas fa-check"/>|ASP.Net MVC|
+|<i class="fas fa-check"/>|ASP.NET 3.5|
+|<i class="fas fa-check"/>|ASP.NET MVC|
 |<i class="fas fa-check"/>|LINQ to SQL *- Mostly done, but a few features missing*|
 
 .NET 3.0
@@ -70,8 +70,8 @@ Here is a slightly more detailed view, by .NET framework version:
 
 |<i class="fas fa-check"/>|C# 2.0 (generics)|
 |<i class="fas fa-check"/>|Core Libraries 2.0: mscorlib, System, System.Xml|
-|<i class="fas fa-check"/>|ASP.Net 2.0 *- Except WebParts*|
-|<i class="fas fa-check"/>|ADO.Net 2.0|
+|<i class="fas fa-check"/>|ASP.NET 2.0 *- Except WebParts*|
+|<i class="fas fa-check"/>|ADO.NET 2.0|
 |<i class="fas fa-check"/>|Winforms/System.Drawing 2.0 *- Does not support right-to-left*|
 
 .NET 1.1
@@ -79,8 +79,8 @@ Here is a slightly more detailed view, by .NET framework version:
 
 |<i class="fas fa-check"/>|C# 1.0|
 |<i class="fas fa-check"/>|Core Libraries 1.1: mscorlib, System, System.Xml|
-|<i class="fas fa-check"/>|ASP.Net 1.1|
-|<i class="fas fa-check"/>|ADO.Net 1.1|
+|<i class="fas fa-check"/>|ASP.NET 1.1|
+|<i class="fas fa-check"/>|ADO.NET 1.1|
 |<i class="fas fa-check"/>|Winforms/System.Drawing 1.1|
 |<i class="fas fa-check"/>|System.Transactions|
 |<i class="fas fa-ban"/>|System.Management *- Does not map to Linux*|
