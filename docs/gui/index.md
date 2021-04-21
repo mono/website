@@ -49,7 +49,7 @@ Cons:
 
 Homepage: [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
-MonoMac is aimed at .Net/Mono developers that want to allow their users to have a native macOS application experience. MonoMac allows developers to access the whole range of macOS APIs from C#, it is not limited to the AppKit GUI APIs.
+MonoMac is aimed at .NET/Mono developers that want to allow their users to have a native macOS application experience. MonoMac allows developers to access the whole range of macOS APIs from C#, it is not limited to the AppKit GUI APIs.
 
 The MonoMac APIs replaced the old CocoaSharp binding, which is now deprecated.
 
@@ -79,7 +79,7 @@ Homepage: [Winforms](/docs/gui/winforms/)
 
 Windows.Forms is a binding developed by Microsoft to the Win32 toolkit. As a popular toolkit used by millions of Windows developers (especially for internal enterprise applications), the Mono project decided to produce a compatible implementation (Winforms) to allow these developers to easily port their applications to run on Linux and other Mono platforms.
 
-Whereas the .Net implementation is a binding to the Win32 toolkit, the Mono implementation is written in C# to allow it to work on multiple platforms. Most of the Windows.Forms API will work on Mono, however some applications (and especially third party controls) occasionally bypass the API and P/Invoke straight to the Win32 API. These calls will likely have to be changed to work on Mono.
+Whereas the .NET implementation is a binding to the Win32 toolkit, the Mono implementation is written in C# to allow it to work on multiple platforms. Most of the Windows.Forms API will work on Mono, however some applications (and especially third party controls) occasionally bypass the API and P/Invoke straight to the Win32 API. These calls will likely have to be changed to work on Mono.
 
 In general, Winforms applications are written using Microsoft's Visual Studio or [SharpDevelop](http://www.icsharpcode.net/opensource/sd/), which both provide a visual designer for creating Winforms GUIs.
 
