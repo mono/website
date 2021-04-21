@@ -11,7 +11,7 @@ Gendarme uses the [Cecil](/docs/tools+libraries/libraries/Mono.Cecil/) library t
 Why ?
 =====
 
-1.  Because we often repeat our mistakes. The biggest one being not to review things we *know*;
+1.  Because we often repeat our mistakes. The biggest one being not to review things we *know*.
 2.  Because it's a lot funnier (and safer) to write a rule than to review millions of source lines of code (SLOC) to ensure it's being followed.
 
 History
@@ -19,7 +19,7 @@ History
 
 Gendarme was originally created by Sebastien Pouliot to assist in the security auditing process in Mono. Aaron Tomb later integrated his .NET bug-finding code (supported by the 2005 Google Summer of Code, GSoC) into the same framework. Since then the number of [contributors](https://github.com/mono/mono-tools/blob/master/gendarme/AUTHORS) and rules has been growing.
 
-Many Gendarme tasks have been realized in [Google Summer Of Code](http://code.google.com/soc/2008/) (GSoC): three projects in 2007, one in 2008 - and in the [Google Highly Open Participation](http://code.google.com/opensource/ghop/2007-8/) (GHOP): 17 tasks providing 40 rules (2007/2008), renamed [Google Code In](http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono) (2010/2011) : 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the [StudentProjects](/community/google-summer-of-code/projects/) page.
+Many Gendarme tasks have been realized in [Google Summer Of Code](http://code.google.com/soc/2008/) (GSoC): three projects in 2007, one in 2008 - and in the [Google Highly Open Participation](https://developers.google.com/open-source/ghop) (GHOP): 17 tasks providing 40 rules (2007/2008), renamed [Google Code In](http://www.google-melange.com/gci/task/list_org_tasks/google/gci2010/mono) (2010/2011) : 30 tasks providing 30 rules and a few tools/templates. If you are interested in such tasks please see the [StudentProjects](/community/google-summer-of-code/projects/) page.
 
 Runners
 =======
@@ -43,12 +43,12 @@ A System.Windows.Forms-based GUI runner is also part of the Gendarme distributio
 CruiseControl.NET
 -----------------
 
-[Daniel Nauck](http://www.mono-project.de/) (dna on [Chat](/community/help/chat/)) contributed Gendarme support for [CC.NET](http://confluence.public.thoughtworks.org/display/CCNET/Welcome+to+CruiseControl.NET). You can find the documentation [here](http://confluence.public.thoughtworks.org/display/CCNET/Using+CruiseControl.NET+with+Gendarme). Note: The Gendarme task is available since CC.NET version 1.4.3.
+Daniel Nauck (dna on [Chat](/community/help/chat/)) contributed Gendarme support for [CC.NET](https://sourceforge.net/projects/ccnet/). Note: The Gendarme task is available since CC.NET version 1.4.3. CC.NET has not been updated since 2014.
 
 NAnt
 ----
 
-[Néstor Salceda](http://nestor.babuine.net/), a long time Gendarme contributor, has released a first preview version of a [NAnt](http://nant.sourceforge.net/) task-based runner. A [screencast](http://nestor.babuine.net/wp-content/uploads/2008/10/gendarme-nant.ogg) showing it in action is available. The preview can be downloaded from Gendarme's Google Group [files section](http://groups.google.com/group/gendarme/files).
+[Néstor Salceda](https://nestorsalceda.com/), a long time Gendarme contributor, has released a first preview version of a [NAnt](http://nant.sourceforge.net/) task-based runner. Gendarme has a Google Group which can be found [here](https://groups.google.com/g/gendarme).
 
 Daniel Nauck (dna) also created a NAnt task for Gendarme. Unlike the previous one this is not a runner itself but calls the console runner, which reduce the build dependencies.
 
@@ -91,18 +91,18 @@ Linux
 Windows
 -------
 
--   Win32 installers (msi) are available on [github](https://github.com/spouliot/gendarme/downloads) web site. The .NET framework version 3.5 (or later) needs to be installed prior to running the setup.
+-   Win32 installers (msi) are available on [GitHub](https://github.com/spouliot/gendarme/downloads) web site. The .NET framework version 3.5 (or later) needs to be installed prior to running the setup.
 
 Binaries only (multi-platform)
 ------------------------------
 
--   ZIP files that contains Gendarme's binaries and configuration files are also available on the [github](https://github.com/spouliot/gendarme/downloads) web site. They requires Mono 2.8 or the .NET framework 3.5 to be installed to execute properly.
+-   ZIP files that contains Gendarme's binaries and configuration files are also available on the [GitHub](https://github.com/spouliot/gendarme/downloads) web site. They requires Mono 2.8 or the .NET framework 3.5 to be installed to execute properly.
 
 Source Code
 -----------
 
--   From GIT (master): `git clone https://github.com/mono/mono-tools.git`
--   Browse [GIT](https://github.com/mono/mono-tools/tree/master/gendarme) for individual files
+-   From Git (master): `git clone https://github.com/mono/mono-tools.git`
+-   Browse [Git](https://github.com/mono/mono-tools/tree/master/gendarme) for individual files
 
 Other Cool Stuff
 ----------------
