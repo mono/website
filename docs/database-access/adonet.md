@@ -27,7 +27,7 @@ Generic Database access in Mono ADO.NET
 
 An ADO.NET [Provider Factory](/archived/provider_factory) was created by Brian Ritchie. The Provider Factory is a way to dynamically create connections, commands, parameters, and data adapters based on configuration information. This implmentation is based on the interfaces exposed in ADO.NET provider classes.
 
-[Another Provider Factory](/archived/baseclass_provider_factory) implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
+[Another Provider Factory](/archived/baseclass_provider_factory) implementation is being developed in 1.1 branch supporting Microsoft's new API for generic database access. This is based on the common provider base classes available in Mono 1.1 development version. This implementation is based on the released beta API's and are subject to change. The providers that can be accessed currently are
 
 -   System.Data.SqlClient
 -   System.Data.Odbc
@@ -63,7 +63,7 @@ Testing
 |Oracle<br/> (Mono)|System.Data.OracleClient /<br/> System.Data.OracleClient|TestOracleClient.cs at<br/> System.Data.OracleClient/Test|
 |ODBC<br/> (Mono)|System.Data.Odbc /<br/> System.Data|OdbcTest.cs (to connect to MS SQL Server)at<br/> System.Data/Test|
 
--   [Testing non-connection classes](/community/contributing/test-suite/) are done via mono's modified version of NUnit.
+-   [Testing non-connection classes](/community/contributing/test-suite/) are done via Mono's modified version of NUnit.
 
 -   To run all the NUnit tests for Mono, you need the mcs source. cd to the root of the mcs source. To run it:
 
