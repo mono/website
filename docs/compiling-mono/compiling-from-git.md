@@ -14,11 +14,11 @@ If you are checking out Mono from Git for the first time, you can use anonymous 
 
       $ git clone git://github.com/mono/mono.git
 
-If you are interested in contributing back submitting changes, create an account on github, add a public key (the content of your ~/.ssh/id_rsa.pub with any title) and fork the relevant project, and clone it:
+If you are interested in contributing back submitting changes, create an account on GitHub, add a public key (the content of your ~/.ssh/id_rsa.pub with any title) and fork the relevant project, and clone it:
 
      $ git clone git@github.com:username/mono.git
 
-After committing and pushing your changes, you can send a pull request from github so we can consider your changes.
+After committing and pushing your changes, you can send a pull request from GitHub so we can consider your changes.
 
 ### Switching to a branch
 
@@ -26,7 +26,7 @@ If you want to work with a branch instead of HEAD (master), you still need to cl
 
       $ (cd mono; git checkout mono-2-6)
 
-Beware! If you wanted to work from a branch in your fork of the mono repository, you should do:
+Beware! If you wanted to work from a branch in your fork of the Mono repository, you should do:
 
       $ (cd mono; git checkout -t origin/mono-2-6)
 
@@ -36,7 +36,7 @@ Beware! If you wanted to work from a branch in your fork of the mono repository,
 
 ### Building the source
 
-Then, go into the mono directory, and configure:
+Then, go into the Mono directory, and configure:
 
 ``` bash
   $ cd mono
@@ -45,13 +45,13 @@ Then, go into the mono directory, and configure:
   $ make install
 ```
 
-In order to use mcs and mono binaries during the build process which do not reside in your PATH, you can set two make variables, EXTERNAL_MCS and EXTERNAL_RUNTIME:
+In order to use mcs and Mono binaries during the build process which do not reside in your PATH, you can set two make variables, EXTERNAL_MCS and EXTERNAL_RUNTIME:
 
 ``` bash
 make EXTERNAL_MCS=/foo/bar/mcs EXTERNAL_RUNTIME=/somewhere/else/mono
 ```
 
-If you do not currently have mono installed, build and install mono from a recently released tarball or run:
+If you do not currently have Mono installed, build and install Mono from a recently released tarball or run:
 
 ``` bash
 # ./autogen.sh must be run prior to this
