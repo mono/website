@@ -9,7 +9,8 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    chef-utils (16.3.45)
+    chef-utils (17.0.242)
+      concurrent-ruby
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -217,7 +218,7 @@ GEM
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    mdl (0.10.0)
+    mdl (0.11.0)
       kramdown (~> 2.3)
       kramdown-parser-gfm (~> 1.1)
       mixlib-cli (~> 2.1, >= 2.1.1)
@@ -230,10 +231,10 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.14.4)
-    mixlib-cli (2.1.6)
-    mixlib-config (3.0.6)
+    mixlib-cli (2.1.8)
+    mixlib-config (3.0.9)
       tomlrb
-    mixlib-shellout (3.1.2)
+    mixlib-shellout (3.2.5)
       chef-utils
     multipart-post (2.1.1)
     nokogiri (1.11.3)
@@ -273,7 +274,7 @@ GEM
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thread_safe (0.3.6)
-    tomlrb (1.3.0)
+    tomlrb (2.0.1)
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
     tzinfo (1.2.9)
