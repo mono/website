@@ -237,7 +237,7 @@ GEM
     mixlib-shellout (3.2.5)
       chef-utils
     multipart-post (2.1.1)
-    nokogiri (1.11.3)
+    nokogiri (1.11.4)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     nokogumbo (2.0.5)
