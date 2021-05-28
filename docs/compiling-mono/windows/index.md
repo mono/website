@@ -43,7 +43,7 @@ cd mono
 
 Pre-configured build instructions, building a default Visual Studio Mono runtime, mingw Mono runtime, Mono BCL and install into `PREFIX`. For further detailed build configurations and instructions, see next section. Run one of the following set of commands from a Cygwin command prompt after all steps in section above have been completed.
 
-64-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
+64-bit Mono runtime using SGen GC and default BCL profile (net_4_x):
 
 ```bash
 ./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --enable-msvc --disable-boehm
@@ -51,7 +51,7 @@ make -j4
 make install
 ```
 
-32-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
+32-bit Mono runtime using SGen GC and default BCL profile (net_4_x):
 
 ```bash
 ./autogen.sh --prefix=$PREFIX --host=i686-w64-mingw32 --enable-msvc --disable-boehm
@@ -71,13 +71,13 @@ Another option is to build without an existing pre-installed Mono distribution, 
 
 The following configure steps shows different supported Mono build configurations.
 
-64-bit Mono runtime using SGEN GC and default BCL profile (net_4_x). The Boehm GC is not supported on 64-bit Windows build:
+64-bit Mono runtime using SGen GC and default BCL profile (net_4_x). The Boehm GC is not supported on 64-bit Windows build:
 
 ```bash
 ./autogen.sh --prefix=$PREFIX --host=x86_64-w64-mingw32 --disable-boehm
 ```
 
-32-bit Mono runtime using SGEN GC and default BCL profile (net_4_x):
+32-bit Mono runtime using SGen GC and default BCL profile (net_4_x):
 
 ```bash
 ./autogen.sh --prefix=$PREFIX --host=i686-w64-mingw32 --disable-boehm
@@ -89,7 +89,7 @@ The following configure steps shows different supported Mono build configuration
 ./autogen.sh --prefix=$PREFIX --host=i686-w64-mingw32
 ```
 
-**NOTE**, 32-bit Mono runtime supports both SGEN and Boehm GC. Boehm GC is still available for legacy reasons but not supported on 64-bit Windows builds. It is recommended to use SGEN GC for both 32 and 64-bit Windows builds.
+**NOTE**, 32-bit Mono runtime supports both SGen and Boehm GC. Boehm GC is still available for legacy reasons but not supported on 64-bit Windows builds. It is recommended to use SGen GC for both 32 and 64-bit Windows builds.
 
 ### Enable BTLS as cryptographic backend for Windows builds
 
@@ -182,25 +182,25 @@ For Visual Studio 2017: Run `"%ProgramFiles(x86)%\Microsoft Visual Studio\2017\C
 
 **NOTE**, paths to installed Visual Studio files could be different depending on install location and Visual Studio edition.
 
-Example of a Visual Studio 2015 32-bit Mono runtime release build using SGEN GC:
+Example of a Visual Studio 2015 32-bit Mono runtime release build using SGen GC:
 
 ```cmd
 msbuild.exe /p:PlatformToolset=v140 /p:Platform=Win32 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
 ```
 
-Example of a Visual Studio 2015 64-bit Mono runtime release build using SGEN GC:
+Example of a Visual Studio 2015 64-bit Mono runtime release build using SGen GC:
 
 ```cmd
 msbuild.exe /p:PlatformToolset=v140 /p:Platform=x64 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
 ```
 
-Example of a Visual Studio 2017 32-bit Mono runtime release build using SGEN GC:
+Example of a Visual Studio 2017 32-bit Mono runtime release build using SGen GC:
 
 ```cmd
 msbuild.exe /p:PlatformToolset=v141 /p:Platform=Win32 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
 ```
 
-Example of a Visual Studio 2017 64-bit Mono runtime release build using sgen GC:
+Example of a Visual Studio 2017 64-bit Mono runtime release build using SGen GC:
 
 ```cmd
 msbuild.exe /p:PlatformToolset=v141 /p:Platform=x64 /p:Configuration=Release /p:MONO_TARGET_GC=sgen msvc/mono.sln
@@ -272,7 +272,7 @@ For make to use Visual Studio build Mono runtime when building BCL and test, set
 export MONO_EXECUTABLE=/cygdrive/c/mono-source-location/msvc/build/sgen/x64/bin/Release/mono-sgen.exe
 ```
 
-**NOTE**, above path will change depending on source location, build location, 32/64-bit build configuration and used GC. The example above uses the default build location for a 64-bit release build Mono runtime configured to use SGEN GC.
+**NOTE**, above path will change depending on source location, build location, 32/64-bit build configuration and used GC. The example above uses the default build location for a 64-bit release build Mono runtime configured to use SGen GC.
 
 ## Build Mono mingw runtime, BCL and Tests
 
@@ -282,7 +282,7 @@ Switch to the Cygwin shell previously used and run:
 make -j4
 ```
 
-**NOTE**, the mingw build Mono runtime will still be built even if a Visual Studio build Mono runtime has been build and configured. The mingw runtime will however not be used as part of the BCL or test builds since `MONO_EXECUTABLE` has been configured.
+**NOTE**, the mingw build Mono runtime will still be built even if a Visual Studio build Mono runtime has been built and configured. The mingw runtime will however not be used as part of the BCL or test builds since `MONO_EXECUTABLE` has been configured.
 
 #### Known Issue: "failed to create symbolic link"
 
