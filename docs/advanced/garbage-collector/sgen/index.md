@@ -23,12 +23,12 @@ Here are some of its features:
 -   Two generations.
 -   Multi-threaded
 -   Mostly precise scanning (stacks and registers are scanned conservatively).
-    -   Upcoming versions of Mono remove this limitation, see the *[Precise Stack Marking](#precise-stack-marking)* section for more information.
 -   Two major collectors:
     -   Copying for nursery/minor collections
     -   Mark and Sweep for the old generation and major collector
 -   Per-thread fragments for fast per-thread allocation.
 -   Uses write barriers to minimize the work done on minor collections.
+-   Concurrent garbage collection
 -   Multi-core garbage collection
 -   Stop the world, meaning that during garbage collection, the program is stopped.
 
@@ -62,11 +62,11 @@ Copying Collection
 
 Mono uses different strategies to perform garbage collection on the new generation (what we call the nursery) and the old generations.
 
-Copying collection is used for the minor colletions in the nursery.
+Copying collection is used for the minor collections in the nursery.
 
 A copying garbage collector improves data locality and helps reducing the memory fragmentation of long-running applications or applications whose allocation patterns might lead to memory fragmentation in non-moving collectors.
 
- The copying major collector is a very simple copying garbage collector. Instead of using one big consecutive region of memory, however, it uses fixed-size blocks (of 128 KB) that are allocated and freed on demand. Within those blocks allocation is done by pointer bumping
+ The copying major collector is a very simple copying garbage collector. Instead of using one big consecutive region of memory, however, it uses fixed-size blocks (of 16 KB) that are allocated and freed on demand. Within those blocks allocation is done by pointer bumping
 
 Mono has historically used the [Boehm-Demers-Wiser Conservative Garbage Collector](http://www.hpl.hp.com/personal/Hans_Boehm/gc/) which provides a very simple and non-intrusive interface for providing applications with garbage collection.
 
@@ -123,7 +123,7 @@ One of the central data structures in this process, then, is the “gray set”,
 
 ### Forwarding
 
-In a copying collector like SGen’s nursery collector, which copies reachable objects from the nursery to the major heap, coloring an object also implies copying it, which in turn requires that all references to it must be updated. To that end we must keep track of where each object has been copied to. The easiest way to do this is to use a forwarding pointer. In Mono, the first pointer-sized word of each object is a pointer to the object’s vtable, which is aligned to at least 4 bytes. This alignment leaves the two least significant bits for SGen to play with during a collection, so we use one of them to indicate whether that particular object is forwarded, i.e. has already been copied to the major heap. If it is set, the rest of the word doesn’t actually point to the vtable anymore, but to the object’s new location on the major heap. The second bit is used for pinning, which I will discuss further down.
+In a copying collector like SGen’s nursery collector, which copies reachable objects from the nursery to the major heap, coloring an object also implies copying it, which in turn requires that all references to it must be updated. To that end we must keep track of where each object has been copied to. The easiest way to do this is to use a forwarding pointer. In Mono, the first pointer-sized word of each object is a pointer to the object’s vtable, which is aligned to 8 bytes. This alignment leaves the three least significant bits for SGen to play with during a collection, so we use one of them to indicate whether that particular object is forwarded, i.e. has already been copied to the major heap. If it is set, the rest of the word doesn’t actually point to the vtable anymore, but to the object’s new location on the major heap. The second and third bits are used for pinning, which I will discuss further down.
 
 ### The Loop
 
@@ -159,9 +159,11 @@ Since the purpose of a nursery collection is to avoid scanning all the allocated
 
 ### Pinning
 
-Either because the programmer has manually pinned an object (by using the fixed statement in C#) or because we implicitly pinned an object because it is referenced in a managed to unmanaged transition or because the platform does not support precise stack scanning some object might be pinned down in memory.
+Either because the programmer has manually pinned an object (by using the fixed statement in C#) or because we implicitly pinned an object because it is referenced from the stack or registers some object might be pinned down in memory.
 
-Pinned objects are a bit of a complication since it is not possible to completely clean out the nursery, so it can become fragmented. This also requires an additional check in the central loop.
+Pinned objects are a bit of a complication since it is not possible to completely clean out the nursery, so it can become fragmented. This also requires an additional check in the central loop. Before the scan loop, the set of pinned objects must be detected. All these objects will have their vtable pointer tagged, so the scan code knows not to copy them.
+
+Another problem with pinned objects is that, after the collection is finished, we can end up with object in the major heap pointing to objects in nursery. These pinned objects will have to remain a root in the next collection and we will also have to scan again all the objects from the major heap, in case the objects become unpinned and we need to update the refs. This means that every reference from the major heap to a pinned object will require marking in the card table (a description on write barriers can be found below). Since every marked card represents an overhead to the GC at the next collection, pinned objects that are referenced a lot of times from different major objects, will be cemented. Cemented objects will be pinned until the next major collection and they will no longer require card table marking. We track candidate objects for cementing in a hash set and objects are cemented by having another vtable bit tagged.
 
 ### Finishing Up
 
@@ -197,25 +199,14 @@ Of course it is not feasible to support blocks with slots of every conceivable o
 
 Since we only have a limited number of different slot sizes, we can also keep free lists, so allocation is more efficient because it doesn’t involve search.
 
-During garbage collection it is necessary to get from an object to its block in order to access its mark bit. The size of each block is 16 KB, and they are allocated on 16 KB boundaries, so to get from an object that is inside a block to the address of its containing block a simple logical AND is sufficient. Unfortunately, large objects live outside of blocks and for them this operation would yield a bogus block address. To determine whether an object is large we need to examine its class metadata which is referenced from its VTable, requiring three loads (the “fixed heap” variant of the collector solves this problem and is described below.)
+During garbage collection it is necessary to get from an object to its block in order to access its mark bit. The size of each block is 16 KB, and they are allocated on 16 KB boundaries, so to get from an object that is inside a block to the address of its containing block a simple logical AND is sufficient. Unfortunately, large objects live outside of blocks and for them this operation would yield a bogus block address. To determine whether an object is large we need to examine its class metadata which is referenced from its VTable, requiring three loads.
 
 Each block has a “block info” data structure that contains metadata about the block. Apart from the size of the object slots and several other pieces of data it also contains the mark bits.
-
-Fixed Heap
-----------
-
-In the standard Mark-and-Sweep collector the blocks are allocated on demand, so they are potentially scattered all over the process’s address space. The fixed heap variant, on the other hand, allocates (using mmap) a heap of a fixed size (excluding the large object space) on startup and then assigns blocks out of that space. The advantage here is that we can check whether a pointer is within a block simply by checking whether it falls within the bounds of the allocated space, so no loads are necessary to get to its mark bit.
-
-In standard Mark-and-Sweep the first word of each block links to its block info. Fixed heap can forego this load as well because the block infos are also allocated sequentially, so all that is needed to get to a block info is its index which is the same as its block’s index, which can be determined from the block address.
-
-The obvious disadvantage of fixed heap Mark-and-Sweep is that the heap cannot grow beyond its fixed size. On some workloads fixed heap yields significant performance improvements. I will try to give some benchmarking results in a later post.
 
 Non-Reference Objects
 ---------------------
 
 Objects that don’t contain references don’t have to be scanned, which implies that they also don’t have to be put on the gray stack. To handle this special case more efficiently Mark-and-Sweep uses separate blocks for objects with versus without references. The block info contains a flag that says which type the block is.
-
-For the fixed heap collector this separation means that we don’t even have to load a single word of an object or its metadata if it doesn’t contain references
 
 Evacuation
 ----------
@@ -232,23 +223,32 @@ Note that the occupancy situation might change between a sweep and the following
 
 As a side-note: Sun’s Garbage-First collector solves this problem by running the mark phase concurrently with the mutator, so it is actually able to tell at the start of a garbage collection pause which blocks will contain mostly garbage.
 
+Concurrent Mark
+-------------
+
+Most of the mark phase can be done concurrently with the mutator. When a concurrent collection is triggered, a GC pause will occur. During this pause the full set of roots will be detected and a separate worker thread will start draining the gray stack. When the worker finishes scanning the heap, a new GC pause will occur. The GC will once again scan the roots and drain the whole stack again, this time not scanning objects that were already scanned by the concurrent mark.
+
+Since the nursery space is very volatile, it wouldn't make much sense to scan it, adding also a layer of complexity by racing with the minor collector. Instead, when the concurrent mark encounters an object that resides in the nursery, it will instead mark the card table for the major object referencing the nursery object. During the finishing pause, the card table will be checked, resulting in rescanning of all those refs that were pointing to the nursery. In order to make sure we are not missing any objects, the mutator will also have to mark cards whenever a reference to a major object is stored in another major object.
+
+A optimization that we do in order to reduce the time spent traversing the card table during the finish pause is to preclean the cardtable concurrently. After the concurrent worker drains the gray stack, it will additionally scan the card table. Cards for objects that are not pointing to objects in the nursery will end up being cleared, reducing the finishing pause duration.
+
 Parallel Mark
 -------------
 
-The mark phase can be parallelized with reasonable effort. Essentially, a number of threads each start with a set of root objects independently. Each thread has its own gray stack, but care must be taken that work is not repeated. Two threads can compete for marking the same object, and if they both put the object into their gray stacks, the object will be scanned twice, which is to be avoided.
+The mark phase can be parallelized with reasonable effort. Essentially, a number of threads each start with a set of root objects independently. Each thread has its own gray stack, but care must be taken that work is not repeated. Two threads can compete for marking the same object, and if they both put the object into their gray stacks, the object will be scanned twice, which is to be avoided. This is implemented by marking an object using a CAS and only the worker that marks the object first will end up enqueueing it on its gray stack.
 
 Some care must also be taken with handling objects that still reside in the nursery. They have to be copied to the major heap and a forwarding pointer must be installed. The forwarding pointer can only be installed after the space on the major heap has been allocated (otherwise where would it point to?), so two threads might do that independently but only one will win out and the other will have done the allocation in vain.
 
-It is not actually sufficient to just partition the set of root objects between the worker threads – some threads might end up having a far smaller share of the live object graph to work with. SGen currently uses a shared gray stack section buffer where worker threads deposit parts of their gray queues for the others to take.
+It is not actually sufficient to just partition the set of root objects between the worker threads – some threads might end up having a far smaller share of the live object graph to work with. Once a worker is finished with its part of the live object graph, it can steal sections from other workers.
 
-Parallel mark achieves quite impressive performance gains on some workloads, but on most the gains are still somewhat disappointing. I suspect the work distribution needs improvement.
+The card table scanning jobs scale best with parallelization and they also produce a better distribution of the live object graph between the workers. Because of this reason, the parallel mark is only supported with the concurrent collector, during the finishing phase. The parallel mark tends to be more useful for applications with large heaps.
 
-Concurrent Sweeps
------------------
+Concurrent Sweep
+----------------
 
 The sweep phase goes through all blocks in the system, resets the mark bits, zeroes the object slots that were freed and rebuilds the free lists.
 
-None of those data structures are actually needed until the next nursery collection, so the sweep lends itself to be done in the background while the mutator is running, which is what Mark-and-Sweep can do optionally. The next nursery collection will in that case wait for the sweep thread to finish until it proceeds.
+None of those data structures are actually needed until the next nursery collection, so the sweep lends itself to be done in the background while the mutator is running, which is what Mark-and-Sweep can do optionally. For very large heaps, the sweep job could take a long time, which would make the first minor collection following a major collection take an unusually long time since it would need to wait for sweep to finish. In order to avoid this, the minor collector will sweep all unswept blocks that it needs to access, in parallel with concurrent sweep.
 
 Internal mono GC interface
 ==========================
@@ -290,7 +290,7 @@ During a major collection, the following steps take place:
 -   A new section of memory for the generation is allocated.
 -   Pinned objects are scanned for references to other objects.
 -   All roots are traversed and scanned for references to other objects.
--   Objects referenced by the roots and pinned objects are now copied
+-   As objects are reached, they are copied if necessary (if they are in nursery or evacuating major blocks)
 -   Sweep of large objects is performed.
 -   Sweep of pinned objects is performed.
 -   Any unused sections are released.
@@ -307,21 +307,15 @@ To perform the garbage collection, it is important that all the running threads 
 
 The dark grey areas are scanned conservatively
 
-Stopping threads and resuming execution is done by the `stop_world()` and `restart_world()` routines, which are invoked before a major collection or a nursery collection are performed.
+Stopping threads and resuming execution is done by the `sgen_stop_world()` and `sgen_restart_world()` routines, which are invoked before a major collection or a nursery collection are performed.
 
-To actually implement the stop and restore, a couple of Unix signals are used: one signal is used to to notify a thread that it should stop, and another is used to notify a thread that it can resume execution. These signals are setup when the GC is initialized.
-
-Stopping is done by calling the `thread_handshake` routine, which sends the stop signal to all known threads (using `pthread_kill`). The signal handler for the thread will in turn sleep until a signal is received to resume execution.
+Suspending a thread can be done either cooperatively or preemptively. In the cooperative case, every thread reports whether it is in a GC safe/unsafe region. If a thread is in a GC safe region, the suspend machinery will consider it as being suspended and if it is in a GC unsafe region, it will get suspended cooperatively at the next checkpoint. In the preemptive case, the runtime will use platform specific features in order to asynchronously suspend a thread. On Linux we use signals, while other operating systems offer direct API for suspending a thread.
 
 The Mono runtime will automatically register all threads that are created from the managed world with the garbage collector. For developers embedding Mono it is important that they register with the runtime any additional thread they create that manipulates managed objects with `mono_thread_attach`.
 
-The information about each registered thread is tracked in the `thread_table` hash table, a hash table that contains nodes of type `SgenThreadInfo`. The `SgenThreadInfo` contains among other things the RememberedSet for the thread as well as the end of the stack.
-
-Another important side effect of suspending the threads with a signal handler is that the values held on the registers are stored on the stack of each thread. The signal handler will update the stack_start value in the current thread information. The GC will use this to conservatively scan the memory between `stack_start` and `stack_end`.
+The information about each registered thread is tracked in the `thread_table` hash table, a hash table that contains nodes of type `SgenThreadInfo`. The `SgenThreadInfo` contains among other things, the register context of the thread. This register context is populated by the suspend machinery. The GC will use this to conservatively scan the registers and the thread stack.
 
 The dark areas represent the blocks of memory that the SgenThreadInfo will track for each thread in the running application and contain the live data on each of the thread stacks, in addition to the register values.
-
-On some operating systems like macOS and Windows, a different mechanism is used to stop the threads (typically with a native call that suspends the threads).
 
 Roots
 -----
@@ -362,19 +356,9 @@ There are a number of complications over a simple copy collection:
 -   Pinned objects.
 -   Large objects (these are too expensive to handle with a garbage collection).
 
-The nursery is a contiguous region of memory where all new objects are allocated, the region is delimited by two global variables `nursery_start` and `nursery_real_end`, the `nursery_next` pointer points to the location where the next object will be allocated.
+The nursery is a contiguous region of memory where all new objects are allocated, the region is delimited by two global variables `sgen_nursery_start` and `sgen_nursery_end`. The nursery is built as a list of segments (`SgenFragment`). Each fragment represents a contiguous area from which allocation can happen. The splitting of the nursery space into fragments is determined by the pinned objects. From this set of fragments, memory can be allocated in a lock free fashion, using CAS operations.
 
-#### Nursery Implementation Details
-
-Segments of the nursery memory are delimited by the `nursery_next` and `nursery_temp_end`. This serves a number of purposes:
-
--   It allows allocations to be done inside fragmented areas of the nursery (due to pinned objects).
--   FIXME: scan starts
--   Allows for fast, per-thread allocation without any locking to take place.
-
-In the implementation as of May 2006, the `nursery_next` and `nursery_temp_end` are global, but we will eventually turn them into per-thread variables to allow thread to do allocations without having to take the GC-lock.
-
-TODO: Pinned objects in the nursery.
+In order to reduce concurrency and further speed up allocation, each thread will first do a bulk allocation, of a thread local allocation buffer (TLAB). This is currently set at 4KB. Further object allocations only require pointer bumping without any synchronization, which is implemented in managed code as a fast path. Once the space provided by a TLAB is consumed, the managed allocator will fallback to the runtime, doing another TLAB allocation from the nursery. 
 
 Write Barriers
 --------------
@@ -386,21 +370,9 @@ But for this to work we need to keep track of any references from the old genera
 -   During code execution when a field is set.
 -   During the copy phase, when an object that might contain a pointer to the new generation is moved to the old generation.
 
- To do this, Mono implements write-barriers. These are little bits of code that are injected by the JIT whose job is to update a structure that keeps track of these changes.
+To do this, Mono implements write-barriers. These are little bits of code that are injected by the JIT whose job is to update a structure that keeps track of these changes. Mono implements write barriers via cardtables. The card table holds a byte for every 512 byte section in the memory space. If a card is marked, then the GC will have to scan the entire 512 byte section in memory that corresponds to that card.
 
-Mono supports two data structures to keep track of this, card tables (the default on most platforms) and remembered sets (this can be configured by setting the `wbarrier` flag to `cardtable` or `remset` in the `MONO_GC_PARAMS` variable)
-
-When using remebered sets, the JIT uses a per-thread `RememberedSet` which is stored in the thread-local `remembered_set` variable, this is done in cooperation with the JIT which instruments all object stores to call some helper routines in the GC that implement the write barrier, the `mono_gc_wbarrier_*` functions.
-
-The second kind, the ones generated during object copying, are tracked in the global `RememberedSet`, in the `global_remset` variable.
-
-The per-thread remembered set is maintained as code executes and by being a per-thread variable, it is lock-free. The global remembered set is maintained when the world is stopped and the GC lock is held.
-
-When we collect the whole heap the root set is basically thread stacks and static fields.
-
-When we collect the young generation we use the remembered sets as roots so that objects in the young generation that are referenced from objects in the old one are kept alive.
-
-Card tables barriers are faster, but are less precise and are only supported for the mark and sweep colletor on 32 bit platforms
+When we collect the whole heap, the root set is basically thread stacks and static fields. When we collect the young generation, we scan the card table, detecting all objects in the old generation that are referencing objects in the young one.
 
 Flagging Objects
 ----------------
@@ -416,7 +388,7 @@ To avoid creating new lists or scanning arrays, during the collection the two lo
     } MonoObject;
 ```
 
-As the vtable is a pointer, it is guaranteed to always be aligned to 4-bytes the two lower bits of the vtable are always zero. During the collection the collector uses these two bits to store two flags: `PINNED` and `FORWARDED`. When the collection is complete these bits are cleared to restore the original value of the vtable pointer.
+As the vtable is a runtime allocated pointer, it is guaranteed to always be aligned to 8-bytes and the three lower bits of the vtable are always zero. During the collection the collector uses these bits to store three flags: `PINNED`, `FORWARDED` and `CEMENTED`. When the collection is complete these bits are cleared to restore the original value of the vtable pointer.
 
 Conservative Scanning
 ---------------------
@@ -459,7 +431,7 @@ The contents of the `scan_starts` array is maintained in the `mono_gc_alloc_obj`
 Scanning Objects
 ----------------
 
-TODO: describe scanning.
+When a type is initialized, the GC creates a gc descriptor for it. The gc descriptor is a pointer sized integer that stores information about which slots in the objects of this type contain references. For more complex object types, the gc descriptor will instead point to an index into a table, where an unlimited bitmap can be stored. The first word in any object is the vtable pointer and the gc descriptor will be stored in this structure.
 
 The compacting collector needs a mechanism to move objects (from the nursery to the old generation for example). When an object is copied, it is important that all references pointing to it are updated to point to the new location.
 
@@ -516,12 +488,12 @@ Low-level Memory Allocation
 
 Memory inside the GC is allocated from two sources:
 
--   `get_internal_mem(size_t size)`
--   `get_os_memory(size_t size, int activate)`
+-   `sgen_alloc_internal`
+-   `sgen_alloc_os_memory`
 
-`get_internal_mem` is used for small allocations, and is very similar to `malloc`, but memory is obtained from the internal chunks created by the GC.
+`sgen_alloc_internal` is used for small allocations, and is very similar to `malloc`, but memory is obtained from the internal chunks created by the GC. Aside from the optimization aspect, the GC must not use malloc otherwise it could deadlock if any of the suspended threads are currently owning an internal lock used by malloc.
 
-For large allocations, memory is obtained from the operating system using the `get_os_memory`. The returned blocks of memory returned from `get_os_memory` are aligned to the operating system page alignment. `get_os_memory` allocates memory directly from the operating system circumventing the C runtime `malloc`-based system and it is implemented in Unix using `mmap(2)` over `/dev/zero`.
+For large allocations, memory is obtained from the operating system using the `sgen_alloc_os_memory`. The returned blocks of memory returned from `sgen_alloc_os_memory` are aligned to the operating system page alignment. `sgen_alloc_os_memory` allocates memory directly from the operating system circumventing the C runtime `malloc`-based system and it is implemented in Unix using `mmap(2)` over `/dev/zero`.
 
 GCMemSections
 -------------
@@ -541,13 +513,11 @@ When a nursery collection happens, the live and movable objects from the nursery
 Large Object Allocation
 -----------------------
 
-Note: SGen-GC's Large Object Allocation strategy is an evolving one. The description in this paragraph reflects the implementation as of Mono 2.12 and will likely change as the GC is tuned to cope with most common usage patterns.
+Since moving large objects is an expensive operation, the GC treats any objects above 8KB (`MAX_SMALL_OBJ_SIZE`) specially. Large objects are allocated in `LOSSection` structures. A section is 1MB in size and it is divided in 4KB chunks. Allocating an object will reserve a number of consecutive chunks from a section. Objects that are larger than a section are allocated directly from the OS using `sgen_alloc_os_memory`.
 
-Since moving large objects is an expensive operation, the GC treats any objects above 64k specially (the actual size is MAX_SMALL_OBJ_SIZE, a value defined in the `sgen-gc.c` file). These objects are allocated using the `get_os_memory` routine.
+These objects do not participate in the copying/compacting process and are not stored in the memory managed by `GCMemSection`. Instead these objects are managed by a mark and sweep algorithm during a major collection and are kept track in a global list of large objects (in `sgen_los_object_array_list`).
 
-These objects do not participate in the copying/compacting process and are not stored in the memory managed by `GCMemSection`. Instead these objects are managed by a mark and sweep algorithm during a major collection and are kept track in a global list of large objects (in the structure `LOSObject` and the `los_object_list` linked list).
-
-When an object has been determined to be unused, the memory is returned to the operating system immediately (this is possible because the memory is allocated using `get_os_memory` as opposed to the regular `malloc` from the C runtime).
+When an object has been determined to be unused, the memory is either returned to the operating system immediately (if it was allocated using `sgen_alloc_os_memory`), or the newly freed chunks are saved for reuse in a freelist. Sections will be deallocated once all the containing chunks become unused. No compacting is done to achieve this.
 
 Fragments
 ---------
@@ -590,79 +560,4 @@ MonoMList is a single linked list that can store references to managed objects. 
 
 MonoGHashTable
 --------------
-
-Precise Stack Marking
-=====================
-
-By default SGen scan the stack precisely on most platforms (macOS is a notable exception). You can control whether SGen uses precise or conservative scanning by setting the `stack-mark=<mark-mode>` flag in the `MONO_GC_PARAMS` variable.
-
-Both Boehm GC, and SGen on macOS scan threads stacks conservatively. This means that they treated every value found on a stack as a potential pointer. This is problematic for several reasons:
-
--   The possibility that some objects remain alive by mistake, because a value which points to them is found on the stack.
--   For SGen, objects pointed to by stack values will remain pinned, fragmenting the nursery and hurting collector performance.
--   Handling pinning pointers is somewhat slow, requiring a linear search through parts of the nursery.
-
-SGen now has the ability to scan most of a threads stack precisely on Linux. This is done by the creation of GC Maps, which describe which stack locations/registers contain references at every point inside a managed method where a GC could occur. While running the Mono's corlib test suite the number of pinned objects went from 90k to 45k when using the new Precise Stack Marking.
-
-Currently SGen still needs to scan the native frames conservatively as those could contain pointers to live objects (for example inside internal calls).
-
-Sources
--------
-
-The source code for the stack marking code is in mini/mini-gc.c, it communicates with sgen through a set of callbacks registered during startup.
-
-GC Maps
--------
-
-A GC Map consists of 'slots'. A slot can describe either a stack slot, or a register. A slot can have three types:
-
--   NOREF - This means the slot doesn't contain a GC reference, either because it has a type which needs no GC tracking, i.e. 'int', or it once contained a GC reference, but the reference is no longer live.
--   REF - This mean the slot definitely contains a live object reference.
--   PIN - This means that either the slot contains a managed pointer, or we have no information for the slot. This slot will be treated conservatively.
-
-During a GC, there is a set of stack frames on the stack. All but the last frame is guaranteed to be at a call site. To simplify things, we treat the last frame conservatively. This means we only have to create GC Maps for each call site, not for each native offset through a method's code.
-
-GC Map slots are encoded using 2 bitmaps. The first bitmap is called 'ref' and contains a bit at an (x, y) position if the stack slot/register 'x' has type REF at the callsite 'y'. The other bitmap is called 'pin', and contains the same info for type PIN. If none of the bits are set at a given (x, y) position, then the slot has type NOREF. There are 2 bitmaps for stack slots, and 2 for registers.
-
-GC Maps can take up a lot of memory, so they are stored in an encoded form, and only decoded during stack marking.
-
-Stack Frames
-------------
-
-A frame on a stack consists of stack slots. Currently, we handle the following types of stack slots:
-
--   Slots used by the prolog/epilog. This includes the slot storing the return address, saved registers, padding slots used for aligning the stack etc. The arch specific code in mono_arch_emit_prolog () notifies the GC Map creation code about these slots using internal API calls.
--   Slots holding arguments/locals. We have precise type information for these. We do a GC specific liveness pass to determine which of these slots are alive at each call site. There are many subtypes of these slots, i.e. ones holding refs/non refs/byval variables, volatile variables, vtypes, etc. Since stack slots are shared, it is possible for one to hold a REF at one call site, and a NOREF at another.
--   Spill slots used by the local register allocator.
--   Param area slots which are used for passing arguments to called methods on the stack.
-
-Each frame has a frame pointer register, which is either sp or an arch specific dedicated frame pointer register. All stack slots are stored at positive or negative offsets relative to the frame pointer.
-
-Stack Marking
--------------
-
-Stack marking is done in two passes, a conservative pass and a precise pass. This is required because of the way sgen works. The conservative pass does a stack walk using the JIT stack walking infrastructure, and processes slots which have type PIN, while the precise pass processes slots which have type REF. To avoid doing a stack walk twice, information needed by the precise pass is saved during the conservative pass in TLS, and the precise pass uses this information to perform its work.
-
-Registers needs special handling, because register values belonging to the current frame are not saved by the current frame, they are saved by a child frame when it uses the same register. This is handled by keeping track of where each register was last saved during the stack walk, and marking this save location based on the information in the GC Maps. I.e., if the GC Map tells us that %rbx contains a REF in the current frame, we find out where %rbx was saved by a child frame and mark that location precisely.
-
-Some parts of the stack are still scanned conservatively, these include the native frames below the last managed frame, the last managed frame, frames belonging to managed-\>native transitions, and all native frames above the first managed frame.
-
-Testing
--------
-
-There are some tests for the stack marking code in mini/gc-tests.cs. Stack marking is very hard to test, because a missed reference might not cause a problem since the object pointed to by the reference might be kept pinned by another stack location etc.
-
-Efficiency
-----------
-
-The efficiency of the code can be measured by the number of objects pinned during collections. Running `mono --stats` prints this information:
-
-``` bash
-Number of pinned objects            : 2
-```
-
-When running the test suite in Mono's mscorlib (`make check` in `mono/mcs/class/corlib`), the precise stack marking code reduces the number of pinned objects from 96k to 40k. The remaining pinned objects are mostly:
-
--   objects which really need pinning, i.e. ones pointed to by managed pointers etc.
--   objects pinned by native code, particularly `MonoInternalThread` objects and `ThreadStart` delegates, which are referenced by the thread startup native code.
 

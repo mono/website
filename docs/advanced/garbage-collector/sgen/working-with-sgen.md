@@ -35,39 +35,37 @@ As the objects are evacuated, they are moved into the major heap. If there is no
 
 SGen considers any objects using more than than 8,000 bytes to be large objects (`SGEN_MAX_SMALL_OBJ_SIZE`). Large objects are not actually allocated on the nursery, instead they are tracked by the Large Object Space (LOS) manager.
 
-Major Heap Collectors
-=====================
+Major Heap Collector
+====================
 
-SGen implements two algorithms for collecting the major heap. You can pick between the copying collector and the mark and sweep/copying collector. The mark and sweep/copying collector is the default.
-
-The copying collector is the same technique used by the nursery where live objects are copied from their current location to a new place, tightly packing objects in the process. The problem with using the copying collector for the major heap is that most of the objects in the major heap are actually aged objects, so they tend to stay alive for a long period of time and much time is spent moving objects which might bring very small gains in memory usage at the cost of CPU usage.
-
-The mark and sweep collector does not move the objects, but instead keeps the objects where they are. To avoid fragmentation, objects are distributed in buckets of different sizes and if these buckets reach a 66% of fragmentation then this automatically performs a copying evacuation. The mark and sweep collector basically provides the best of both worlds: fast execution and if the memory becomes fragmented, it automatically performs a copying collection.
+For collecting the major heap, SGen implements the mark and sweep/copying collector. The mark and sweep collector does not move the objects, but instead keeps the objects where they are. To avoid fragmentation, objects are distributed in buckets of different sizes and if these buckets reach a 66% of fragmentation then this automatically performs a copying evacuation. The mark and sweep collector basically provides the best of both worlds: fast execution and if the memory becomes fragmented, it automatically performs a copying collection.
 
 The evacuation threshold for fragmented blocks is set to 66%, but you can change that by setting the `evacuation-threshold` option to a value between 0 and 100 (the default is 66).
 
 You can also disable evacuation completely, even if the blocks become fragmented, by setting the value to zero.
 
+Serial vs Concurrent Garbage Collection
+=======================================
+
+By default, the garbage collector will try to do most of the work concurrently with the mutator. Both the mark and the sweep phases can be run concurrently.
+
+When concurrent mark is enabled, the GC will scan all the roots in the initial pause and it will kick off a worker to mark all the major heap. The mutator will resume execution and once the worker finishes scanning the heap, another pause will occur during which the collection is finished. The mode for the mark phase is controlled by setting the `major` variable in `MONO_GC_PARAMS` environment variable.
+
+When concurrent sweep is enabled, once the marking phase is finished, the mutator will be resumed and the sweep phase will run concurrently with the user application. The GC will not be able to allocate from major blocks that are not swept, but this is not a problem since, following the collection, allocation will mostly happen inside the emptied nursery. This can explicitly configured using `concurrent-sweep` / `no-concurrent-sweep` option.
+
 Single CPU vs Multiple CPU Garbage Collection
 =============================================
 
-When you use the mark and sweep collector, Mono can distribute the mark phase across multiple CPUs. The default is to only use a single CPU.
+Both the minor and major collector can make use of multiple worker threads to scan the heap.
 
-To enable the multi-processor garbage collection, set the `major` variable to `marksweep-par` or `marksweep-par-fixed`
+For the major collector, parallel collection is only supported during the finishing pause of a concurrent collection. This mode can be enabled by setting `major=marskweep-conc-par`. This mode can be useful for application that have very large heaps.
 
-When using the mark and sweep collector, you can also instruct SGen to perform a parallel sweep. When this is enabled a parallel thread runs side-by-side with your application performing sweeps in the background. To enable this feature set the `concurrent-sweep` flag. Fixed vs Variable Major Heaps
+The minor collector also supports a parallel mode. By default, minor collections are single threaded (`minor=simple`). Parallel collection can be enabled with `minor=simple-par`. Since minor collections are very short, the parallel mode is usually not necessary. Applications with large memory usage, with large nursery size or that trigger a lot of object reference writes in the major heap can particularly benefit from a parallel minor.
 
-Unlike some other virtual machines, the major heap in Mono does not have to be fixed. Mono can grow its major heap on demand to satisfy the memory usage requirements of the application.
+Low pause time
+==============
 
-Having the major heap grow on demand comes with a minimal CPU cost. This cost might not be something that you want to incur for high-performance computing workloads or for server applications where memory usage is not a problem.
-
-By default Mono will use variable size major heaps, to adjust the memory usage to the need of your application. But you can configure the collector use a fixed amount of memory. You must set the `major` collector to be `marksweep-fixed` or `marksweep-par-fixed`. If you do not specify the size of the heap, Mono will default to 512 megabytes. If you want a different value, set the `major-heap-size` parameter to the number of desired bytes for the heap.
-
-For example:
-
-    major=marksweep-fixed,major-heap-size=2g
-
-The above uses a fixed heap size with 2 gigabytes in size. Other common suffixes include “k” for kilobyte, and “m” for megabyte in addition to “g” which stands for gigabytes.
+SGen supports a few predefined modes which can be selected using the `mode` variable. These modes are `balanced`, `throughput` and `pause`. The low pause mode receives an argument, in milliseconds, which indicates the desired maximum duration for a minor collection. The GC will attempt to respect this constraint, by using a dynamic nursery size coupled with the parallel mode in order to reduce the likelihood of long minor collections. For example, in order to select a maximum pause time of 20ms the following environment configuration can be used `MONO_GC_PARAMS=mode=pause:20`
 
 Controlling Collections
 =======================
@@ -96,13 +94,6 @@ Since being in control of the nursery collection is important to some interactiv
 You might want to make it smaller, to make nursery collections take place more often, or for the nursery collections to be done in a smaller amount of time, or you might want to make it larger, to allow a player for example to go through an entire game level without ever hitting the garbage collector.
 
 To change the nursery size, set the `nursery-size` flag to the size in bytes that you want for the nursery. The nursery size must be a power of two and specified in bytes. Just like the major heap size configuration, you can use the “k”, “m” and “g” suffixes as shortcuts for kilobyte, megabyte and gigabyte respectively.
-
-Stack Scanning
-==============
-
-On some platforms, SGen can scan your stacks precisely (Linux), in other platforms, it can only scan the stack conservatively.
-
-Precise stack scanning removes false positives when it comes to determining whether an object is alive or not, but it requires more memory to be used at runtime for bookkeeping purposes.
 
 Configuring SGen
 ================
