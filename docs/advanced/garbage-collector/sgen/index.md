@@ -358,7 +358,7 @@ There are a number of complications over a simple copy collection:
 
 The nursery is a contiguous region of memory where all new objects are allocated, the region is delimited by two global variables `sgen_nursery_start` and `sgen_nursery_end`. The nursery is built as a list of segments (`SgenFragment`). Each fragment represents a contiguous area from which allocation can happen. The splitting of the nursery space into fragments is determined by the pinned objects. From this set of fragments, memory can be allocated in a lock free fashion, using CAS operations.
 
-In order to reduce concurrency and further speed up allocation, each thread will first do a bulk allocation, of a thread local allocation buffer (TLAB). This is currently set at 4KB. Further object allocations only require pointer bumping without any synchronization, which is implemented in managed code as a fast path. Once the space provided by a TLAB is consumed, the managed allocator will fallback to the runtime, doing another TLAB allocation from the nursery. 
+In order to reduce concurrency and further speed up allocation, each thread will first do a bulk allocation, of a thread local allocation buffer (TLAB). This is currently set at 4KB. Further object allocations only require pointer bumping without any synchronization, which is implemented in managed code as a fast path. Once the space provided by a TLAB is consumed, the managed allocator will fallback to the runtime, doing another TLAB allocation from the nursery.
 
 Write Barriers
 --------------

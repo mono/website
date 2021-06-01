@@ -15,4 +15,4 @@ giving developers ability to extend existing native application/game using C#. S
 used to integrate C# code into native code bases.
 
 For users interested in using Mono on Xbox Series X and Xbox Series S, fill [this form](https://aka.ms/xamarin-xbox-sign-up)
-to request access to the SDK. NOTE, to be eligible you need to be a licensed Xbox developer and enrolled in the ID@Xbox program or have an assigned Xbox Account Manager. For more details please visit, https://www.xbox.com/developers/id.
+to request access to the SDK. NOTE, to be eligible you need to be a licensed Xbox developer and enrolled in the ID@Xbox program or have an assigned Xbox Account Manager. For more details please visit, <https://www.xbox.com/developers/id>.

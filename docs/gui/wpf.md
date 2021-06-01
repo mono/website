@@ -18,7 +18,7 @@ Alternatives
 
 Currently [AvaloniaUI](https://avaloniaui.net/) is an initiative that is focused to mirror the WPF project but is multi-platform and a dialect.
 
-In addition, Uno Platform (https://github.com/unoplatform/uno) is an open source initiative focused on bringing UWP / WinUI to run multi-platform on Web, mobile and non-Windows desktops, as well as Windows 7.
+In addition, [Uno Platform](https://github.com/unoplatform/uno) is an open source initiative focused on bringing UWP / WinUI to run multi-platform on Web, mobile and non-Windows desktops, as well as Windows 7.
 
 Silverlight implemented a subset of the WPF APIs and was available on Windows, macOS; and through our own open source effort [Moonlight](/docs/web/moonlight/) it was available on Linux and other Unix systems. Silverlight does not have all the capabilities of WPF, but both technologies are converging API-wise. Silverlight could be used outside of the browser, and Moonlight can be configured to be used with the full .NET API outside of the browser. These days, there's a project that is trying to resurrect Silverlight using WebAssembly: it's called [OpenSilver](https://opensilver.net/).
 

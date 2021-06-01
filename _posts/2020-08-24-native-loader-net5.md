@@ -11,7 +11,7 @@ One area with multiple highly impactful changes to the runtime internals is libr
 
 The managed loading changes are fairly clear and well documented, but unmanaged library loading has changed in numerous ways, some of them far more subtle.
 
-# Summary of changes:
+# Summary of changes
 
 * [New P/Invoke resolution algorithm](https://docs.microsoft.com/en-us/dotnet/core/dependency-loading/loading-unmanaged)
 * Dropped support for DllMap
@@ -34,7 +34,8 @@ We recognize that this does not sufficiently cover some existing mono/mono scena
 
 A more subtle, yet no less impactful change is that native library loading now defaults to `RTLD_LOCAL` to be consistent with CoreCLR and Windows, as opposed to our historical behavior of `RTLD_GLOBAL`. What this means in practice is that on Unix-like platforms, libraries are no longer loaded into a single global namespace and when looking up symbols, the library *must* be correctly specified. This change prevents symbol collision, and will both break and enable various scenarios and libraries. For more information on the difference, see [the dlopen man page](https://linux.die.net/man/3/dlopen).
 
-For an example: historically in Mono on Linux, it was possible to load library `foo` containing symbol `bar`, and then invoke `bar` with a P/Invoke like so: 
+For an example: historically in Mono on Linux, it was possible to load library `foo` containing symbol `bar`, and then invoke `bar` with a P/Invoke like so:
+
 ```c#
 // note the incorrect library name
 [DllImport("asdf")]
@@ -48,6 +49,7 @@ There have been some embedding API changes as part of this. `MONO_DL_MASK` is no
 This also means that dynamically linking libmonosgen and attempting to resolve Mono symbols from `dlopen(NULL, ...)` will no longer work. `__Internal` has been preserved as a Mono-specific extension, but its meaning has been expanded. When P/Invoking into `__Internal`, the runtime will check both `dlopen(NULL)` and the runtime library in the case that they differ, so that users attempting to call Mono APIs with `__Internal` will not have those calls break.
 
 ## Added support for `DefaultDllImportSearchPathsAttribute`
+
 Mono now supports the `DefaultDllImportSearchPathsAttribute` attribute, which can be found in `System.Runtime.InteropServices`. In particular, passing `DllImportSearchPath.AssemblyDirectory` is now required to have the loader search the executing assembly's directory for native libraries, and the other Windows-specific loader options should be passed down when appropriate.
 
 # Fin
