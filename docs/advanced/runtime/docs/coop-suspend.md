@@ -4,23 +4,29 @@ title: Cooperative Suspend
 
 # Runtime Cooperative Suspend
 
-## Intro
+## Intro: Preemptive, Cooperative and Hybrid Suspend
 
 The runtime needs to be able to suspend threads to perform all sorts of tasks, the main one being garbage collection.
 Those threads need to be suspended from another and historically Mono used signals (or similar APIs) to do it.
 
-The problem of using signals is that threads are suspended at arbitrary points in time, which requires the suspender
+The basic problem is that when the runtime needs to stop threads (for example at some steps during GC) there are two general approaches:
+* Preemptive - the runtime sends a signal to the thread and the signal handler for the thread puts it to sleep until it gets a resume signal. (or on Windows or Apple OSes, it uses a kernel calls to stop the thread).
+   The problem of using signals is that threads are suspended at arbitrary points in time, which requires the suspender
 thread to run in the equivalent of signal context - a very very restrictive setup. Not only that, but the fact that
 threads could be suspended while holding runtime and libc locks meant that not even basic things like printf were available.
-
-The technical challenge of dealing with signal context makes this model impractical, plus the fact that it's not
-easy to port.
-
-The alternative is to use cooperative suspend, where threads suspend themselves when the runtime requests it. To make
+   Also on some platforms (watchOS, WebAssembly) we don't have enough OS facilities to examine the context when a thread is suspended - we can't see the contents of their registers, or their stack, and thus preemptive suspend on those systems wouldn't be useful for GC and other runtime operations that need to examine the state of suspended threads.
+* Cooperative - The alternative is to use cooperative suspend, where threads suspend themselves when the runtime requests it. To make
 this possible, frequent polling and checkpointing are required. This is a well understood model that goes along what
 the industry does.
+   With this, as long as the thread is running managed code, it will eventually reach a safepoint and suspend itself.  The advantage is that it will always be in a "nice" place.
+   There is more to keep track of in cooperative mode when a thread calls native code - while it's in native it won't have safepoints and it might block for arbitrary amounts of time.  So the runtime marks all the places where a thread goes from managed code ("GC Unsafe" - because it can manipulate managed memory) to native code ("GC Safe" - because it's not supposed to access managed memory).  When the thread is in GC Safe mode instead of trying to suspend it, we just let it run until it tries to come back to GC Unsafe mode.
+   The problem with cooperative suspend is that it relies on nice (cooperating) behavior from embedders and from native code - if the native code calls back into Mono suddenly it might be running managed code again when the GC thinks that it is not.  And that can cause problems.   So to use preemptive mode, the native code has to be explicitly annotated with GC transitions - telling the runtime when the thread is switching between GC Safe and GC Unsafe modes.
+* Hybrid suspend - a combination of the previous two approaches.  While the thread is in managed code or in the Mono runtime itself, it is in GC Unsafe mode.  In GC Unsafe mode we will try to suspend it cooperatively by expecting the thread to reach a safepoint and suspend itself.   But when the thread calls out to native code we switch it to GC Safe mode and start preemptively suspending it.  That way no matter what kind of native code it is running, we will stop it and it won't be able to invalidate our assumptions by touching managed memory or calling runtime functions.
+   Hybrid suspend requires even more bookkeeping (every embedding API function needs to switch from GC Safe mode to GC Unsafe on entry and back on exit), but all the bookkeeping is done by the runtime, not by the user code.
+  So hybrid suspend is a good approach because the embedder code doesn't need to be aware of it - it behaves just like preemptive.  But at the same time it is less likely to suspend the thread in a state that is inconvenient for the runtime, unlike preemptive suspend.
 
-## How cooperative suspend works
+
+## How cooperative and hybrid suspend works
 
 Cooperative suspend limits what a suspender thread can do to simply request that the target thread suspends itself.
 The target thread can serve a suspend in two manners, by frequently polling its state or checkpointing its state
