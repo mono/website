@@ -58,7 +58,7 @@ Single CPU vs Multiple CPU Garbage Collection
 
 Both the minor and major collector can make use of multiple worker threads to scan the heap.
 
-For the major collector, parallel collection is only supported during the finishing pause of a concurrent collection. This mode can be enabled by setting `major=marskweep-conc-par`. This mode can be useful for application that have very large heaps.
+For the major collector, parallel collection is only supported during the finishing pause of a concurrent collection. This mode can be enabled by setting `major=marksweep-conc-par`. This mode can be useful for application that have very large heaps.
 
 The minor collector also supports a parallel mode. By default, minor collections are single threaded (`minor=simple`). Parallel collection can be enabled with `minor=simple-par`. Since minor collections are very short, the parallel mode is usually not necessary. Applications with large memory usage, with large nursery size or that trigger a lot of object reference writes in the major heap can particularly benefit from a parallel minor.
 
