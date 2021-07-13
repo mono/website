@@ -41,7 +41,7 @@ public class HelloWorld : Form
 
 If you save this code as hello.cs, you would compile it like this:
 
-    csc hello.cs -r:System.Windows.Forms.dll
+    csc hello.cs -r:System.Windows.Forms.dll -r:System.Drawing.dll
 
 The compiler will create "hello.exe", which you can run using:
 
