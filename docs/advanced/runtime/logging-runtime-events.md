@@ -16,12 +16,18 @@ Trace Filters
 
 There are a number of different types of trace information the runtime can display. To filter the data so it can be interpreted more easily the MONO_LOG_MASK environment variable should be used. The mask should be set before the application is run and can not be altered while the application is running. Setting the mask will enable logging for only certain runtime functions. Possible values for the log mask are:
 
--   "asm" - The assembly loader
--   "dll" - The native library (pinvoke) loader
--   "cfg" - The configuration file loader
 -   "all" - Display all messages regardless of type
--   "type" - Type load information
+-   "aot" - the Ahead Of Time precompiler
+-   "asm" - The assembly loader
+-   "cfg" - The configuration file loader
+-   "dll" - The native library (pinvoke) loader
 -   "gc" - Garbage collector information
+-   "io-layer" - I/O layer: processes, files, sockets, events, semaphores, mutexes and handles. I/O layers subsystems can be selected with the following categories instead of "io-layer":
+    - "io-layer-process", "io-layer-file", "io-layer-socket", "io-layer-event", "io-layer-semaphore", "io-layer-mutex", "io-layer-handle"
+-   "io-selector" - async socket operations
+-   "security" - e.g. Moonlight CoreCLR support
+-   "threadpool" - thread pool generic
+-   "type" - Type load information
 
 The MONO_LOG_MASK can be set to one or more values. Values are separated by a comma. To display only messages for native library loading and config file loading the log mask would look like this: MONO_LOG_MASK="dll,cfg".
 
