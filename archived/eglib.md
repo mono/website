@@ -12,5 +12,5 @@ eglib is an embedded glib library available in the [mono repo](https://github.co
 
 eglib is not present in tarballs before version 2.7.
 
-For more information, read the [README](https://github.com/mono/mono/blob/master/eglib/README).
+For more information, read the [README](https://github.com/mono/mono/blob/main/eglib/README).
 

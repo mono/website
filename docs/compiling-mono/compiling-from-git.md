@@ -59,7 +59,7 @@ make get-monolite-latest
 make
 ```
 
-The file [README.md](https://github.com/mono/mono/blob/master/README.md) contains more information about ways to compile Mono from the repository, consult it if you need more details.
+The file [README.md](https://github.com/mono/mono/blob/main/README.md) contains more information about ways to compile Mono from the repository, consult it if you need more details.
 
 Also to get the latest changes in System.Drawing.dll and System.Windows.Forms.dll you also need configure, build and install libgdiplus.
 

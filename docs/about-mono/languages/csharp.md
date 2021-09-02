@@ -151,7 +151,7 @@ When you report a bug, try to provide a small test case that would show the erro
 Implementation details
 ----------------------
 
-The compiler is documented in the file [mcs/docs/compiler](https://github.com/mono/mono/blob/master/mcs/docs/compiler.txt)
+The compiler is documented in the file [mcs/docs/compiler](https://github.com/mono/mono/blob/main/mcs/docs/compiler.txt)
 
 ### CIL Optimizations
 

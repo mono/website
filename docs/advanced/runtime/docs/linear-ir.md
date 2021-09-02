@@ -22,7 +22,7 @@ Here dreg, sreg1, sreg2 are virtual registers (vregs). OP is an opcode. For exam
 
 ### Opcodes
 
-The opcodes used by the JIT are defined in the [mini-ops.h](https://github.com/mono/mono/blob/master/mono/mini/mini-ops.h) file. Each opcode has a value which is a C constant, a name, and some metadata containing information about the opcode like the type of its arguments and its return value. An example:
+The opcodes used by the JIT are defined in the [mini-ops.h](https://github.com/mono/mono/blob/main/mono/mini/mini-ops.h) file. Each opcode has a value which is a C constant, a name, and some metadata containing information about the opcode like the type of its arguments and its return value. An example:
 
     MINI_OP(OP_IADD, "int_add", IREG, IREG, IREG)
 

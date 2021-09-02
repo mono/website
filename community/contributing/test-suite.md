@@ -101,9 +101,9 @@ there are some standalone tests. See the bottom of [ADO.NET page](/docs/database
 
 If you are new to writing NUnit tests, there is a template you may use to help get started. The file is:
 
-[**mcs/class/doc/TemplateTest.cs**](https://github.com/mono/mono/blob/master/mcs/class/doc/TemplateTest.cs)
+[**mcs/class/doc/TemplateTest.cs**](https://github.com/mono/mono/blob/main/mcs/class/doc/TemplateTest.cs)
 
-Save a copy of this file in the appropriate test sub-directory (see below), and replace all the {text} markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them. [StringTest.cs](https://github.com/mono/mono/blob/master/mcs/class/corlib/Test/System/StringTest.cs) is a good example that might help you get started.
+Save a copy of this file in the appropriate test sub-directory (see below), and replace all the {text} markers with appropriate code. Comments in the template are there to guide you. You should also look at existing tests to see how other people have written them. [StringTest.cs](https://github.com/mono/mono/blob/main/mcs/class/corlib/Test/System/StringTest.cs) is a good example that might help you get started.
 
 The directory that will contain your new file depends on the assembly/namespace of the class for which you are creating the tests. Under mcs/class there is a directory for each assembly. In each assembly there is a Test directory, e.g. mcs/class/corlib/Test. In the Test directory there are sub-directories for each namespace in the assembly, e.g. mcs/class/corlib/Test/Sytem. Put your new test file in the appropriate sub-directory under Test for the class you are testing.
 

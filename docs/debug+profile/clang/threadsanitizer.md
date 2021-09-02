@@ -20,7 +20,7 @@ Dynamic Blacklisting
 
 Many of these 150 races are harmless &ndash; among them are hazard pointers and less important logging counters, to name a few examples. A convenient way to (de)activate the report of specific races quickly is to work with blacklists. Please have a look at [this article](/docs/debug+profile/clang/blacklists/) to find out how to work with blacklists in combination with Mono.
 
-Furthermore, the [blacklist](https://github.com/mono/mono/blob/master/scripts/ci/clang-thread-sanitizer-blacklist) in `scripts/ci/` can be a good starting point when exploring Mono with the ThreadSanitizer.
+Furthermore, the [blacklist](https://github.com/mono/mono/blob/main/scripts/ci/clang-thread-sanitizer-blacklist) in `scripts/ci/` can be a good starting point when exploring Mono with the ThreadSanitizer.
 
 Permanent Blacklisting
 ----------------------
@@ -29,7 +29,7 @@ While blacklist files are handy when it comes to debugging, they are less conven
 
 ### Function Annotation
 
-Functions that are flagged with [`MONO_NO_SANITIZE_THREAD`](https://github.com/mono/mono/blob/master/mono/utils/mono-compiler.h) behave exactly as if their name was found in a blacklist file. If, for example, `foo ()` contains a known race that should be ignored, the following code could be used:
+Functions that are flagged with [`MONO_NO_SANITIZE_THREAD`](https://github.com/mono/mono/blob/main/mono/utils/mono-compiler.h) behave exactly as if their name was found in a blacklist file. If, for example, `foo ()` contains a known race that should be ignored, the following code could be used:
 
 ``` c
 MONO_NO_SANITIZE_THREAD
@@ -44,7 +44,7 @@ Please note that these annotations should be used with **great caution**! Many f
 
 ### Unlocked Operations
 
-Closely related to [`atomic.h`](https://github.com/mono/mono/blob/master/mono/utils/atomic.h), [`unlocked.h`](https://github.com/mono/mono/blob/master/mono/utils/unlocked.h) provides a set of functions that can be used to blacklist simple load / store operations. Unlike `Interlocked* ()` functions, the `Unlocked* ()` functions do not guarantee atomicity but speed: due to inlining, they execute as fast as `x ++`, `x += y`, ... if the ThreadSanitizer is not active. Additionally, the signature of the `Unlocked* ()` functions should always match the signature of the `Interlocked* ()` functions (where interlocked functions exist) to make switching between `Interlocked* ()` and `Unlocked* ()` as easy as possible.
+Closely related to [`atomic.h`](https://github.com/mono/mono/blob/main/mono/utils/atomic.h), [`unlocked.h`](https://github.com/mono/mono/blob/main/mono/utils/unlocked.h) provides a set of functions that can be used to blacklist simple load / store operations. Unlike `Interlocked* ()` functions, the `Unlocked* ()` functions do not guarantee atomicity but speed: due to inlining, they execute as fast as `x ++`, `x += y`, ... if the ThreadSanitizer is not active. Additionally, the signature of the `Unlocked* ()` functions should always match the signature of the `Interlocked* ()` functions (where interlocked functions exist) to make switching between `Interlocked* ()` and `Unlocked* ()` as easy as possible.
 
 Compile Time Options
 --------------------
@@ -53,7 +53,7 @@ The ThreadSanitizer can be personalised in many ways. [This article](/docs/debug
 
 ### (Stop) The Instrumentation of Atomic Operations
 
-[atomic.h](https://github.com/mono/mono/blob/master/mono/utils/atomic.h) in `mono/utils/` contains atomic functions that are mostly harmless; however, they are rightfully detected as data races. Some examples are `InterlockedCompareExchange`, `InterlockedIncrement` or `InterlockedExchangePointer`. If all atomic instructions should be blacklisted at once, the easiest and cleanest solution is to use `-mllvm -tsan-instrument-atomics=false`.
+[atomic.h](https://github.com/mono/mono/blob/main/mono/utils/atomic.h) in `mono/utils/` contains atomic functions that are mostly harmless; however, they are rightfully detected as data races. Some examples are `InterlockedCompareExchange`, `InterlockedIncrement` or `InterlockedExchangePointer`. If all atomic instructions should be blacklisted at once, the easiest and cleanest solution is to use `-mllvm -tsan-instrument-atomics=false`.
 
 Runtime Options
 ---------------

@@ -34,7 +34,7 @@ This document captures all the good ideas people have had about writing NUnit te
 Getting Started
 ---------------
 
--   If you are new to writing NUnit tests, there is a template you may use to help get started. The file is: [TemplateTest.cs](https://github.com/mono/mono/blob/master/mcs/class/doc/TemplateTest.cs)
+-   If you are new to writing NUnit tests, there is a template you may use to help get started. The file is: [TemplateTest.cs](https://github.com/mono/mono/blob/main/mcs/class/doc/TemplateTest.cs)
 
 -   Just a reminder to copy/paste this file it in another buffer. And keep reading. You can get it here or at the end of the guidelines in the Testing Tips section)
 

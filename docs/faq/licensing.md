@@ -18,7 +18,7 @@ Yes. The licensing scheme is planned to allow proprietary developers to write ap
 
 The Mono runtime, compilers and tools and most of the class libraries are licensed under the [MIT](http://www.opensource.org/licenses/mit-license.html) license.
 
-The Mono runtime include some bits of code licensed under the BSD license and some class libraries are under the Apache 2 license.   The exact list is [available here](https://github.com/mono/mono/blob/master/LICENSE)
+The Mono runtime include some bits of code licensed under the BSD license and some class libraries are under the Apache 2 license.   The exact list is [available here](https://github.com/mono/mono/blob/main/LICENSE)
 
 Note that as of March 31st, 2016 the Mono runtime and tools have been relicensed to the MIT license.
 
@@ -31,7 +31,7 @@ Patents
 
 ### What kind of patent coverage exists for Mono?
 
-Microsoft has issued a [patent promise for Mono](https://github.com/mono/mono/blob/master/PATENTS.TXT), as follows:
+Microsoft has issued a [patent promise for Mono](https://github.com/mono/mono/blob/main/PATENTS.TXT), as follows:
 
      Microsoft Patent Promise for Mono
 

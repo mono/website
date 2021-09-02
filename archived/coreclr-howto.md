@@ -43,7 +43,7 @@ You can find both a very (i.e. too) simple and very (i.e. totally) complete samp
 
 ### Mono
 
-If you look at **mono** command-line options (i.e. 'man mono') you'll notice a **--security** option that accept a **core-clr** parameter. So it's there (feature wise) and it's not (what you likely want). Still you can see **coreclr** being enabled in [driver.c](https://github.com/mono/mono/raw/master/mono/mini/driver.c) and the default platform code detection, allowing only **mscorlib.dll**, in [security-core-clr.c](https://github.com/mono/mono/blob/master/mono/metadata/security-core-clr.c).
+If you look at **mono** command-line options (i.e. 'man mono') you'll notice a **--security** option that accept a **core-clr** parameter. So it's there (feature wise) and it's not (what you likely want). Still you can see **coreclr** being enabled in [driver.c](https://github.com/mono/mono/raw/main/mono/mini/driver.c) and the default platform code detection, allowing only **mscorlib.dll**, in [security-core-clr.c](https://github.com/mono/mono/blob/main/mono/metadata/security-core-clr.c).
 
 This means **mscorlib.dll** is the only assembly that can do **critical** stuff (and that includes defining **safe critical** methods). You can guess that this is severely limited with the default framework profiles. Remember that no FX profile, even 4.0, is designed to work with **only** coreclr/transparency.
 

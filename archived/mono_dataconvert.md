@@ -374,7 +374,7 @@ The Mono.DataConvert class by default is internal, but you can change this by de
 
 At this point we do not have plans of shipping an independent assembly.
 
-Download the source code from [[1]](https://github.com/mono/mono/raw/master/mcs/class/corlib/Mono/DataConverter.cs).
+Download the source code from [[1]](https://github.com/mono/mono/raw/main/mcs/class/corlib/Mono/DataConverter.cs).
 
 A full history of this file is available [here](https://github.com/mono/mono/commits/master/mcs/class/corlib/Mono/DataConverter.cs)
 

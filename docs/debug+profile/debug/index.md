@@ -154,7 +154,7 @@ Here is an example session:
 Debugging with LLDB
 -------------------
 
-You can use the following LLDB python script to get backtraces in lldb: [monobt.py]( https://github.com/mono/mono/blob/master/data/lldb/monobt.py)
+You can use the following LLDB python script to get backtraces in lldb: [monobt.py]( https://github.com/mono/mono/blob/main/data/lldb/monobt.py)
 
 Assuming the above script is saved in `~/Library/lldb/monobt.py`, you can load it automatically in every lldb session by putting the following into .lldbinit (in your \$HOME directory):
 

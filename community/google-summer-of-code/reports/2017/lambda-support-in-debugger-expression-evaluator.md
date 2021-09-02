@@ -108,7 +108,7 @@ Currently, only public type access is supported. A tentative plan is following.
 * when compiling:
     Skip roslyn's visibility check: [source](https://github.com/dotnet/roslyn/issues/15557#issuecomment-263560079)
 * when invoking:
-    Create a new command in the Soft Debugger Protocol to invoke lambda with skipping visibility: [here?](https://github.com/mono/mono/blob/master/mono/metadata/class-internals.h#L87)
+    Create a new command in the Soft Debugger Protocol to invoke lambda with skipping visibility: [here?](https://github.com/mono/mono/blob/main/mono/metadata/class-internals.h#L87)
 
 ### Detailed error message
 
