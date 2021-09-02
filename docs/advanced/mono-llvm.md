@@ -34,7 +34,7 @@ Get and install Mono and LLVM like this:
 Alternatively, you can try our LLVM branch which removes some restrictions so more methods can be compiled with LLVM:
 
 ``` bash
-git clone git://github.com/mono/llvm.git
+git clone https://github.com/mono/llvm.git
 cd llvm
 ./configure --prefix=/mono --enable-optimized --enable-targets="x86 x86_64"
 make && make install
@@ -45,7 +45,7 @@ Use 'git checkout mono' when compiling against mono HEAD.
 Then get Mono as usual:
 
 ``` bash
-git clone git://github.com/mono/mono
+git clone https://github.com/mono/mono
 cd mono
 ```
 

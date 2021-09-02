@@ -170,7 +170,7 @@ If you actually wanted a bugfix from 'master', just skip the last step, while ke
 
 If you want to publish the long-lived topic without integrating it into 'master', you should use a personal fork.
 
-This process is fairly efficient on Github. Go to the repository webpage and create a fork in your personal workspace. For instance, you take an origin repository `git://github.com/mono/mono.git` and fork it into `git@github.com:myrepos/mono.git` by going to `https://github.com/mono/mono` and clicking on the button marked "Fork".
+This process is fairly efficient on Github. Go to the repository webpage and create a fork in your personal workspace. For instance, you take an origin repository `https://github.com/mono/mono.git` and fork it into `git@github.com:myrepos/mono.git` by going to `https://github.com/mono/mono` and clicking on the button marked "Fork".
 
 You can add your personal fork as an additional remote with
 
@@ -346,17 +346,6 @@ git pull --rebase
 ```
 
 before trying to push again.
-
-I can't checkout the required submodules because the git:// protocol is blocked by a firewall
----------------------------------------------------------------------------------------------
-
-You can replace `git://` with `https://` globally in your user preference:
-
-``` bash
-git config --global url."https://".insteadOf git://
-```
-
-Source: [http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634](http://stackoverflow.com/questions/4891527/git-protocol-blocked-by-company-how-can-i-get-around-that/10729634#10729634)
 
 Links
 =====

@@ -12,7 +12,7 @@ For full details about checking out your source code, see the [Mono page on GitH
 
 If you are checking out Mono from Git for the first time, you can use anonymous access:
 
-      $ git clone git://github.com/mono/mono.git
+      $ git clone https://github.com/mono/mono.git
 
 If you are interested in contributing back submitting changes, create an account on GitHub, add a public key (the content of your ~/.ssh/id_rsa.pub with any title) and fork the relevant project, and clone it:
 
