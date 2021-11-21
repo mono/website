@@ -52,7 +52,7 @@ Support for the following platforms is only available for older versions of Mono
 - [Sony PlayStation 3](/docs/about-mono/supported-platforms/playstation3/)
 - [Nintendo Wii](/docs/about-mono/supported-platforms/wii/)
 - HPPA architecture on HP-UX.
-- Alpha architecutre on Linux.
+- Alpha architecture on Linux.
 - S390 architecture on Linux (the 32-bit version)
 - [IA64](/docs/about-mono/supported-platforms/ia64/) Itanium2 (64 bit) on Linux
 - SPARC64 a community effort that was not merged.
