@@ -1,5 +1,7 @@
 Mono Project Website ![build](https://github.com/mono/website/workflows/build/badge.svg)
 ========================================================================================
+**About**
+Mono project website is an official website for **Mono software** used for developing  cross platform apllications with ease and little time is incurred.
 
 This repository contains the files used for generating the [Mono website](http://www.mono-project.com).
 
