@@ -94,42 +94,42 @@
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Ubuntu versions too but we only test the ones listed below.</p>
             <h3>Ubuntu 20.04 <small>(amd64, armhf, arm64, ppc64el)</small></h3>
-{% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt install gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/ubuntu preview-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+            {% if include.releasename == "Nightly" %}
+<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates gnupg
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu preview-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt install gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates gnupg
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <h3>Ubuntu 18.04 <small>(i386, amd64, armhf, arm64, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt install gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/ubuntu preview-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates gnupg
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu preview-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt install gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates gnupg
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-bionic main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <h3>Ubuntu 16.04 <small>(i386, amd64, armhf, arm64, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https ca-certificates
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/ubuntu preview-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates gnupg
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu preview-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
-<pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-sudo apt install apt-transport-https ca-certificates
-echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+<pre><code class="language-bash">sudo apt install apt-transport-https ca-certificates gnupg
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <hr />
@@ -166,27 +166,27 @@ sudo apt update</code></pre>
             <h3>Debian 10 <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/debian preview-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian preview-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <h3>Debian 9 <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/debian preview-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian preview-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-stretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <hr />
@@ -223,27 +223,27 @@ sudo apt update</code></pre>
             <h3>Raspbian 10 <small>(armhf)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/debian preview-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian preview-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <h3>Raspbian 9 <small>(armhf)</small></h3>
 {% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
-echo "deb https://download.mono-project.com/repo/debian preview-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian preview-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
 sudo apt update</code></pre>
 {% else %}
 <pre><code class="language-bash">sudo apt install apt-transport-https dirmngr gnupg ca-certificates
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-echo "deb https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+sudo gpg --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianstretch main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <hr />
