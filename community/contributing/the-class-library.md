@@ -69,7 +69,7 @@ If there is a bug in your implementation tag the problem by using the word "FIXM
 Tagging Incomplete Specifications
 ---------------------------------
 
-Sometimes the specification will be lame (consider Version.ToString (fieldCount) where there is no way of knowing how many fields are available, making the API not only stupid, but leading to unreliable code). In those cases, use the keyword "LAMESPEC".
+Sometimes the specification will be bad (consider Version.ToString (fieldCount) where there is no way of knowing how many fields are available, making the API not only stupid, but leading to unreliable code). In those cases, use the keyword "LAMESPEC".
 
 FAQ
 ---

@@ -14,7 +14,7 @@ Veracruz Ver, MÉXICO
 
 **About**
 
-He's a sofware engineering freak, [mono-hispano](http://www.monohispano.org) contributor, [monouml](http://www.monouml.org) and mono active developer.
+He's a sofware engineer, [mono-hispano](http://www.monohispano.org) contributor, [monouml](http://www.monouml.org) and mono active developer.
 
 Meet him in #monouml - irc.gimp.net
 

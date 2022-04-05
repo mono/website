@@ -42,7 +42,7 @@ Accessibility: GitSVN: Workflow
 <li><a href="#using-git-gui">1.7.4.1 Using git gui</a></li>
 <li><a href="#using-the-command-line">1.7.4.2 Using the command line</a></li>
 </ul></li>
-<li><a href="#for-those-oh-crap-moments-undoing-a-git-commit">1.7.5 For those &quot;oh crap&quot; moments: undoing a git commit</a></li>
+<li><a href="#for-those-oh-no-moments-undoing-a-git-commit">1.7.5 For those &quot;oh no&quot; moments: undoing a git commit</a></li>
 <li><a href="#dcommitting-your-change-to-svn">1.7.6 DCommitting Your Change to SVN</a></li>
 </ul></li>
 <li><a href="#appendix-a-branches-of-branches-of-branches-of-branches-why-git-cherry-pick-is-your-friend">1.8 Appendix A: Branches of branches of branches of branches (why git-cherry-pick is your friend)</a>
@@ -245,7 +245,7 @@ From the root of your git repo:
 -   Uncomment lines that you want to appear in the commit message by deleting the leading "#" (delete any extra blank lines, too)
 -   Type escape then "ZZ" to save your message, exit vim, and complete the commit
 
-### For those "oh crap" moments: undoing a git commit
+### For those "oh no" moments: undoing a git commit
 
 Uh oh, you accidentally made a commit to the wrong git branch! Or, you realized at the last minute that this change you were about to dcommit to SVN is not correct. Or you accidentally did a git-style commit directly to master, because you forgot to checkout your feature branch. Let's fix that!
 

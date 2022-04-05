@@ -150,7 +150,7 @@ Accessibility: Team Meetings 2008 Sep 03
     07:22
     I'll be sending an email out later this week with some ideas, looking for feedbackand as usual, if you have any comments or questions, my electronic door is always openthat's all I havekeep up the good work, all
     ****
-    <@knocte> oh bummer, is the at-spi bug filed? just to mention the number for the sake of the log
+    <@knocte> oh, is the at-spi bug filed? just to mention the number for the sake of the log
     ****
     <@brad> yes, let me find it while someone else gives their report
     07:23****

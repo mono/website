@@ -493,7 +493,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Duncan Mak'+'<\/'+'a'+'>')
 </tr>
 <tr class="even">
 <td align="left"><p>Location:</p></td>
-<td align="left">Boston / Hong Kong</td>
+<td align="left">Boston / Hong Kong SAR, People's Republic of China</td>
 </tr>
 <tr class="odd">
 <td align="left">Description:</td>
@@ -1020,7 +1020,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'K Satyasudha'+'<\/'+'a'+'>
 </tr>
 <tr class="even">
 <td align="left"><p>Location:</p></td>
-<td align="left">Bangalore, India</td>
+<td align="left">Bengaluru, India</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Description:</p></td>
@@ -1144,7 +1144,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Manjula GHM'+'<\/'+'a'+'>'
 </tr>
 <tr class="even">
 <td align="left">Location:</td>
-<td align="left">Bangalore, India</td>
+<td align="left">Bengaluru, India</td>
 </tr>
 <tr class="odd">
 <td align="left">Description:</td>
@@ -1153,7 +1153,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Manjula GHM'+'<\/'+'a'+'>'
 <tr class="even">
 <td align="left">Tasks:</td>
 <td align="left"><ul>
-<li>Engg. Manager for Bangalore Mono team</li>
+<li>Engg. Manager for Bengaluru Mono team</li>
 <li>VB Compiler</li>
 </ul></td>
 </tr>
@@ -1742,7 +1742,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Raja R Harinath'+'<\/'+'a'
 </tr>
 <tr class="even">
 <td align="left">Location:</td>
-<td align="left">Bangalore, India</td>
+<td align="left">Bengaluru, India</td>
 </tr>
 <tr class="odd">
 <td align="left">Description:</td>
@@ -1834,7 +1834,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Ritvik Mayank'+'<\/'+'a'+'
 </tr>
 <tr class="even">
 <td align="left"><p>Location:</p></td>
-<td align="left">Bangalore, India</td>
+<td align="left">Bengaluru, India</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Description:</p></td>
@@ -1865,7 +1865,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'S Umadevi'+'<\/'+'a'+'>');
 </tr>
 <tr class="even">
 <td align="left">Location:</td>
-<td align="left">Bangalore, India</td>
+<td align="left">Bengaluru, India</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>Description:</p></td>
@@ -1913,7 +1913,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Sebastien Pouliot'+'<\/'+'
 
 ||
 |[![Suresh.jpg](/archived/images/9/95/Suresh.jpg)](/archived/images/9/95/Suresh.jpg)|**[Sureshkumar T](mailto:tsureshkumar@novell.com)**|
-|Location:|Bangalore, India|
+|Location:|Bengaluru, India|
 |Description:|Mono Hacker|
 |Tasks:|\*ADO.NET|
 

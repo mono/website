@@ -28,7 +28,6 @@ Commercial Applications
     -   SheepStacker for the iPhone
     -   [FEIST](http://gd08.ch/FEIST) - Independent Game Festival Nominee.
     -   [Global Conflict](http://globalconflicts.eu)
-    -   [Voo Dude](http://http://www.aspyr.com/product/info/99) iPhone Voodoo app.
 -   [Medsphere OpenVista](http://www.medsphere.com) a cross-platform, real-time, point-of-care, patient-centric information resource for clinicians.
 -   [Vault](http://www.sourcegear.com/vault/index.html), from [SourceGear](http://www.sourcegear.com/), relies on Mono to run on Unix systems.
 -   [Virtuoso Universal Server](http://virtuoso.openlinksw.com/), from [OpenLink Software](http://www.openlinksw.com/), is a cross-platform hosting environment for Mono/.NET/C#.

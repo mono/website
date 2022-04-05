@@ -153,7 +153,7 @@ sub convert_line_body($) {
   #$line =~ s@([-.,!;?\#]+)(\">)@$2@gs;
   #$line =~ s@([-.,!;?\#]+)(</A>)@$2$1@gs;
  
-  # if we inserted any non-breaking spaces inside URLs, just nuke them.
+  # if we inserted any non-breaking spaces inside URLs, just remove them.
   #1 while ($line =~ s@(<A HREF=\"[^\"\240]*)\240([^\"]*\">)@$1$2@gi);
  
   # convert remaining non-breaking spaces to real spaces.

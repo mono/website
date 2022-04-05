@@ -29,7 +29,7 @@ Accessibility: Team Meetings 2008 Jul 16
     but hit a roadblock that monocov, the code coverage tool I use to tell me how good my tests are, no longer works with mono from svn
     so I patched monocov, and that got committed today actually
     06:07
-    Miguel has been out of the country, so still waiting on that Olive patch :-)
+    Miguel has been away, so still waiting on that Olive patch :-)
     **< knocte> **
     mm great idea the monocov use
     **<@sandy> **

@@ -32,7 +32,7 @@ Our Objectives are
 ------------------
 
 -   Promote Mono in events about free software or of the software in general
--   Share knowledge through the Colombian Mono Conference which is carried out each 6 months in different cities of the country
+-   Share knowledge through the Colombian Mono Conference which is carried out each 6 months in different cities
 -   Integrate all the people that are working in Mono in Colombia to know who we are, in which we are working, which are our strong points, etc.
 
 Members

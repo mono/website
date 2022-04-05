@@ -98,7 +98,7 @@ Pros
 
 Cons
 
--   Application is unusable until the end-user figures out how to add the required certificate to its trusted list. Depending on the hints available (e.g. stacktrace) it may be impossible for the user to reach that conclusion. It's a good way to royally piss off a potential user about your application.
+-   Application is unusable until the end-user figures out how to add the required certificate to its trusted list. Depending on the hints available (e.g. stacktrace) it may be impossible for the user to reach that conclusion. It's a good way to annoy a potential user about your application.
 
     Unhandled Exception: System.Net.WebException: Error getting response stream (Trust failure): TrustFailure
     ---> System.IO.IOException: The authentication or decryption has failed.

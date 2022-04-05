@@ -36,7 +36,7 @@ Upon starting the Abyss Web Server, a control center web server starts up as wel
     -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like `fastcgi-mono-server2 /socket=tcp:8002`<br/>
         If using this option, simply set "Remote server IP Address" to the IP address of the machine running the Mono server, and "Port" to the port you used in the command line. For the command line shown above, this would be 8002.
 
-5.  Uncheck "Check for file existence before execution". This option improves performance but can cripple ASP.NET 2.0 as it sometimes uses paths that don't necessarily exist like WebResource.axd.
+5.  Uncheck "Check for file existence before execution". This option improves performance but can disturb ASP.NET 2.0 as it sometimes uses paths that don't necessarily exist like WebResource.axd.
 6.  Uncheck "Use the associated extensions to automatically update the Script Paths".
 7.  Add "\*" to "Extensions". It is not a real, but it'll be used to make sure all requests are directed at the FastCGI Mono Server.
 8.  Click "OK".
@@ -72,7 +72,7 @@ Upon starting the Abyss Web Server, a control center web server starts up as wel
     -   **FastCGI (Remote - TCP/IP sockets)** - Abyss will look for the Mono server at a specified IP address and port. You can use this to run the server on another machine and redistribute the processor load. The only caveat is that you will need to start the Mono server on the other computer manually, using a command like `fastcgi-mono-server2 /socket=tcp:8002`<br/>
          If using this option, simply set "Remote server IP Address" to the IP address of the machine running the Mono server, and "Port" to the port you used in the command line. For the command line shown above, this would be 8002.
 
-5.  Uncheck "Check for file existence before execution". This option improves performance but can cripple ASP.NET 2.0 as it sometimes uses paths that don't necessarily exist like WebResource.axd.
+5.  Uncheck "Check for file existence before execution". This option improves performance but can disturb ASP.NET 2.0 as it sometimes uses paths that don't necessarily exist like WebResource.axd.
 6.  Add the following extensions:
     -   aspx
     -   asmx

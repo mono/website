@@ -35,7 +35,7 @@ Meeting Summary
     (03:51:09 PM) sandy: knocte: wow, I had no idea it didn't have conflict warnings in place!
     (03:51:41 PM) knocte: sandy: I made a little test the other day and I found it out
     (03:51:47 PM) sandy: MarioC: okay, cool, then no worries...I was thinking of taking listbox or combobox depending on what knocte and calvin want
-    (03:52:09 PM) sandy: knocte: that *really* sucks...can you bring that up with miguel?
+    (03:52:09 PM) sandy: knocte: that's *really* bad...can you bring that up with miguel?
     (03:52:13 PM) knocte: I would prefer combobox :)
     (03:52:23 PM) knocte: yeah I will talk to him
     (03:52:34 PM) sandy: an upgrade would be nice for other reasons, too

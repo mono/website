@@ -123,7 +123,7 @@ Accessibility: Team Meetings 2008 Aug 13
     now let's talk about my "dev" part
     I've been catching up with a lot of things after my FTO, and figuring out about all my new tasks for the new role, however also looked at some tests I was lacking
     07:21
-    had a bad time figuring out a misleading/confusing implementation in gail about the difference between menuitem and menu (it turns out a submenuitem can take the "menu" role, which is crazy) so
+    had a bad time figuring out a misleading/confusing implementation in gail about the difference between menuitem and menu (it turns out a submenuitem can take the "menu" role, which is weird) so
     I fixed some tests and now I was going to commit more
     07:22
     I hope to finish all these bits by the end of the week and have the Menu finally finished

@@ -291,7 +291,7 @@ Accessibility: Team Meetings 2008 Nov 12
     ****
     < knocte> ok, moving
     ****
-    <@brad> mario: damn, you took that one...
+    <@brad> mario: oh, you took that one...
     ****
     <@mario> brad: what what!?
     ****

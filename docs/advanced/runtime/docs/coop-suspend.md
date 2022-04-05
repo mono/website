@@ -229,7 +229,7 @@ appropriate state.
 Second, the embedding API allows for raw object access, which is incompatible with coop. We need to figure out how to expose
 coop to embedders.
 
-### Thread start/finish still shit
+### Thread start/finish still bad
 
 There are a lot of hacks around how we handle threads starting and finishing. If a suspend hits a thread while it's
 starting/finishing we fail every now and then.

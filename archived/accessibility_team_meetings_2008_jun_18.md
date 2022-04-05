@@ -41,7 +41,7 @@ Meeting Log
     finally, I've been working on makefiles to help decriptor et al get started on packages
     UIAutomationWinforms has makefiles that I think are in good shape, with good integration to the MD projects
     07:05
-    however, I had to turn off reference synchronization, so if you're working in that project and need to modify references, you'll have to do it in the MD project and also in the makefiles (bummer, but it's due to a known MD bug)
+    however, I had to turn off reference synchronization, so if you're working in that project and need to modify references, you'll have to do it in the MD project and also in the makefiles (unfortunate, but it's due to a known MD bug)
     I still need to finish the makefiles
     next iteration...
     I plan to get all of this infrastructure stuff done and also finish the testing and new providers I was supposed to do this iteration
