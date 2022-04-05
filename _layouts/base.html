@@ -9,16 +9,17 @@
     <title>{{ page.title }} | Mono</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     {% feed_meta %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/normalize.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/foundation.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/magnific-popup.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="stylesheet" href="/css/main.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+    <link rel="stylesheet" href="/assets/normalize.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/foundation.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/github.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/magnific-popup.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+
+    <link rel="stylesheet" href="/assets/fontawesome/css/solid.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/brands.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+
+    <link rel="stylesheet" href="/assets/main.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <script src="/assets/modernizr.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
     <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
     <script>
       // redirect to the real domain in case someone visits the GitHub Pages domain
@@ -95,10 +96,10 @@
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/js/foundation.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.9.9/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/jquery.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
+    <script src="/assets/foundation.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
+    <script src="/assets/highlight.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
+    <script src="/assets/jquery.magnific-popup.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
 
     <script>
       // allow sub pages to run custom code

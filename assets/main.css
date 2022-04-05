@@ -1,9 +1,5 @@
 /* ### GLOBAL STYLES ### */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', 'Open Sans Condensed',sans-serif;
-}
-
 h1 {
   font-size: 2rem;
 }
@@ -290,17 +286,17 @@ pre.install-example {
 }
 
 .meta .author:before { 
-  font: 0.9em "Font Awesome 5 Free";
+  font: 0.9em "Font Awesome 6 Free";
   content: "\f007"
 }
 
 .meta .date:before { 
-  font: 0.9em "Font Awesome 5 Free";
+  font: 0.9em "Font Awesome 6 Free";
   content: "\f073"
 }
 
 .meta .tags:before { 
-  font: 0.9em "Font Awesome 5 Free";
+  font: 0.9em "Font Awesome 6 Free";
   content: "\f02c"
 }
 

@@ -1,3 +1,4 @@
 _site/
 .vagrant
 .jekyll-metadata
+.DS_Store
