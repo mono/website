@@ -42,9 +42,10 @@
     <h5>The latest {{ include.releasename }} Mono release is: <strong>{{ include.releasedata.version }}</strong></h5>
     {% endif %}
 
-    <p>Please choose your operating system to view the available packages. Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/{% if include.releasename == "Nightly" %}nightly/{% endif %}">Tarball</a>.</p>
+    <p>Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/{% if include.releasename == "Nightly" %}nightly/{% endif %}">Tarball</a>.</p>
 
     <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
+      <dt>Please choose your operating system to view the available packages</dt>
       <dd class="active"><a href="#download-mac"><i class="fab fa-apple"></i>&nbsp;macOS</a></dd>
       <dd><a href="#download-lin"><i class="fab fa-linux"></i>&nbsp;Linux</a></dd>
       <dd><a href="#download-win"><i class="fab fa-windows"></i>&nbsp;Windows</a></dd>
@@ -79,6 +80,7 @@
       </div>
       <div class="panel content" id="download-lin">
         <dl id="mono-download-linux" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
+          <dt>Linux distribution</dt>
           <dd class="active"><a href="#download-lin-ubuntu"><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" />&nbsp;&nbsp;Ubuntu</a></dd>
           <dd><a href="#download-lin-debian"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" />&nbsp;&nbsp;Debian</a></dd>
           <dd><a href="#download-lin-raspbian"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" />&nbsp;&nbsp;Raspbian</a></dd>

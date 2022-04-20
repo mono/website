@@ -63,7 +63,10 @@ function addToc() {
     var $el = $(el);
     var id = $el.attr('id');
     if (id) {
-      toc.append($("<li />").addClass("toc-indent-" + $el.get(0).localName).append($("<a />").attr("href", "#" + id).html($el.contents()[0].wholeText)));
+      var elIndentation = el.localName; // h1, h2, h3, ...
+      var elText = el.innerText;
+
+      toc.append($("<li />").addClass("toc-indent-" + elIndentation).append($("<a />").attr("href", "#" + id).html(elText)));
     }
   });
   

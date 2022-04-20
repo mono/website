@@ -56,22 +56,42 @@ a:hover, a:focus {
   margin: 0 auto -100px;
 }
 
+.breadcrumbs>* a {
+  color: #02779e;
+}
+
 .panel.info {
   background: #F2FAFC;
   border-left-color: #258FAF;
-  border-left-width: 5px;  
+  border-left-width: 5px;
+}
+
+.panel.info>* a {
+  color: #017aa3;
 }
 
 .panel.success {
   background: #E0FFE6;
   border-left-color: #43AC6A;
-  border-left-width: 5px;  
+  border-left-width: 5px;
+}
+
+.panel.success>* a {
+  color: #017aa3;
 }
 
 .panel.alert {
   background: #F0D6C4;
   border-left-color: #F04124;
   border-left-width: 5px;
+}
+
+.panel.alert>* a {
+  color: #00678a;
+}
+
+.alert-box.warning>* a {
+  color: #1b3181;
 }
 
 .mfp-figure > figure {
@@ -230,6 +250,18 @@ footer h6 a {
   line-height: 0.9em;
 }
 
+#mono-download-panel .panel.content>p a, #mono-download-panel .panel.content>*>p a {
+  color: #02779e;
+}
+
+#mono-download-panel .panel.content>h3 a {
+  color: #02779e;
+}
+
+#mono-download-panel h3 small {
+  color: #6e6e6e;
+}
+
 #download-mac, #download-lin, #download-win, #download-docker {
   padding: 20px 10px 10px 10px;
 }
@@ -239,7 +271,7 @@ footer h6 a {
 }
 
 a.button-less-important {
-  background-color: #999;
+  background-color: #767676;
 }
 
 a.button-less-important:hover, a.button-less-important:focus {
