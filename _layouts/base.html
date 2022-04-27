@@ -36,7 +36,7 @@
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="/"><img alt="Mono Logo" src="/images/mono-gorilla.svg" onerror="this.src='/images/mono-gorilla.png'; this.onerror=null;" id="header-logo"/>Mono</a></h1>
+              <h1><a href="/" tabindex="-1"><img alt="Mono Logo" src="/images/mono-gorilla.svg" onerror="this.src='/images/mono-gorilla.png'; this.onerror=null;" id="header-logo"/>Mono</a></h1>
             </li>
             <li class="toggle-topbar"><a href="#">Menu</a></li>
           </ul>
@@ -44,7 +44,7 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li {% if page.navgroup == "home" or layout.navgroup == "home" %}class="active"{% endif %}><a href="/"><i class="fas fa-home"></i> Home</a></li>
+              <li {% if page.navgroup == "home" or layout.navgroup == "home" %}class="active"{% endif %}><a href="/" tabindex="0"><i class="fas fa-home"></i> Home</a></li>
               <li {% if page.navgroup == "download" or layout.navgroup == "download" %}class="active"{% endif %}><a href="/download/stable/"><i class="fas fa-download"></i> Download</a></li>
               <li {% if page.navgroup == "docs" or layout.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fas fa-book"></i> Documentation</a></li>
               <li {% if page.navgroup == "news" or layout.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fas fa-bullhorn"></i> News</a></li>
