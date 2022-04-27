@@ -11,7 +11,7 @@
     {% feed_meta %}
     <link rel="stylesheet" href="/assets/normalize.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
     <link rel="stylesheet" href="/assets/foundation.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <link rel="stylesheet" href="/assets/highlightjs/default.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/highlightjs/a11y-dark.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
     <link rel="stylesheet" href="/assets/magnific-popup.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
 
     <link rel="stylesheet" href="/assets/fontawesome/css/solid.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
@@ -108,7 +108,7 @@
       }
 
       $(document).foundation();
-      hljs.initHighlightingOnLoad();
+      hljs.highlightAll();
       $(document).ready(function() {
         $('.image-link').magnificPopup({
           disableOn: 400,
