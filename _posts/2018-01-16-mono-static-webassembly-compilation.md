@@ -6,7 +6,7 @@ tags: [runtime]
 ---
 
 As you may know we have been working on [bringing Mono to the
-WebAssembly platform](http://www.mono-project.com/news/2017/08/09/hello-webassembly).
+WebAssembly platform](/news/2017/08/09/hello-webassembly).
 As part of the effort we have been pursuing two strategies; one that
 uses the new Mono IL interpreter to run managed code at runtime, and
 one that uses full static (AOT) compilation to create one `.wasm` file
@@ -21,7 +21,7 @@ port and tune the managed libraries to work on WebAssembly.
 This post is about the progress that we have been making on doing
 static compilation of .NET code to run on WebAssembly.
 
-![mono-wasm in action](https://d2mxuefqeaa7sj.cloudfront.net/s_1B65124B0073CE294C70729B88F773366C5989AFAC363CB3C99279E1C86FF6C0_1516019889874_Untitled+Diagram+3.png)
+![mono-wasm in action](/images/2018-01-16-mono-static-webassembly-compilation/diagram1.png)
 
 WebAssembly static compilation in Mono is orchestrated with the
 `mono-wasm` command-line tool. This program takes IL assemblies as
@@ -69,7 +69,7 @@ required, and in our testing builds now complete in less than a second
 once the dependencies (runtime bits and `mscorlib.dll`) have already
 been compiled into WebAssembly.
 
-![mono-wasm's new linking phase](https://d2mxuefqeaa7sj.cloudfront.net/s_1B65124B0073CE294C70729B88F773366C5989AFAC363CB3C99279E1C86FF6C0_1516019734731_Untitled+Diagram+2.png)
+![mono-wasm's new linking phase](/images/2018-01-16-mono-static-webassembly-compilation/diagram2.png)
 
 Additionally, `mono-wasm` used to use the LLVM WebAssembly target to
 create source files that would then be passed to the
