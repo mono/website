@@ -109,6 +109,9 @@
 
       $(document).foundation();
       hljs.highlightAll();
+      // add tabindex=0 to all code blocks for keyboard accessibility
+      $("code[class^='language']").attr("tabindex", 0);
+
       $(document).ready(function() {
         $('.image-link').magnificPopup({
           disableOn: 400,
