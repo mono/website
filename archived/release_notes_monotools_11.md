@@ -43,4 +43,3 @@ Note this creates a snapshot copy. If you later make changes and want to package
 ### Bugfixes and Enhancements
 
 There are also many bugfixes and small enhancements that should provide a better experience when using MonoTools.
-

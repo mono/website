@@ -150,4 +150,3 @@ GetAge was called
 You can download the examples used in this FAQ [here](http://evain.net/public/cecil_faq_samples.zip)
 
 Author: Fabien Reinle, f.reinle_at_evaluant.com
-

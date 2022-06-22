@@ -129,4 +129,3 @@ Both MonoDevelop and the MonoMac SDK allow you to use Interface Builder to creat
 We take Interface Builder one step further than XCode does by making MonoMac automatically bind any outlets you define on your interface and any methods that you define in your interface to your C# code.
 
 You will never have to manually bind any outlets from Interface Builder to your code as MonoMac takes care of this.
-

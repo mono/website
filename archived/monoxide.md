@@ -28,4 +28,3 @@ Warning
 =======
 
 Carefully review any license agreements before using Monoxide on any assembly that you have not written yourself. In many cases using Monoxide could be interpreted as some kind of reverse engineering.
-

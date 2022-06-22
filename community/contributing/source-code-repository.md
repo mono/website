@@ -8,25 +8,21 @@ redirect_from:
 
 The Mono source code is hosted on [GitHub](https://github.com) using the [Git](https://git-scm.com/) source code control system for all of its source code. Although only active contributors get write access to the modules on Git, third party developers can easily fork the code on GitHub or download full copies of the repositories to their own systems.
 
-Browsing the Sources
---------------------
+## Browsing the Sources
 
 If all you need is to browse the sources, you can go to [Mono Organization page on GitHub](https://github.com/mono).
 
-Building Mono from source
--------------------------
+## Building Mono from source
 
 Once you've obtained the source code for different modules of the Mono project, you'll want to [build Mono from source](/docs/compiling-mono/).
 
-Contributing Patches
-====================
+## Contributing Patches
 
 Now that Mono is hosted on GitHub, contributing patches has never been easier. If you aren't yet familiar with GitHub, you may wish to read GitHub's guide on [getting started](https://help.github.com/articles/set-up-git/).
 
 Once you've gotten a GitHub account and gotten set up, you should read GitHub's guide to [forking a repository](https://help.github.com/articles/fork-a-repo/). Once you feel that your patch is finished and you've tested that everything still builds and works as expected, you can then issue a [pull request](https://help.github.com/articles/using-pull-requests/) which alerts the active maintainers that they should examine and review your patch, merging it into the mainline source repository.
 
-Policies
-========
+## Policies
 
 It is important that everyone follow these policies:
 
@@ -84,8 +80,7 @@ There are a few rules to follow before making a pull request on GitHub:
 
 Also, remember to pat yourself on the back after the commit, smile and think we're a step closer to a better free software world.
 
-Getting Help With Git
-=====================
+## Getting Help With Git
 
 GitHub maintains some great resources for developers here:
 

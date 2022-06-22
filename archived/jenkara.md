@@ -44,4 +44,3 @@ Source
 ------
 
 Ah, old, crufty source: [git://karma.colliertech.org/colliertech/jenkara.git](git://karma.colliertech.org/colliertech/jenkara.git)
-

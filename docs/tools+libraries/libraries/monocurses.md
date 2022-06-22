@@ -13,13 +13,11 @@ This API is still under development, and hence the library is not installed into
 
 In addition to the low-level curses bindings, currently MonoCurses ships with a minimal GUI toolkit for creating console applications.
 
-Obtaining mono-curses
-=====================
+## Obtaining mono-curses
 
-The source code of mono-curses is available in the [GitHub repository](https://github.com/mono/mono-curses/). Packaged tarballs are available from [http://tirania.org/software/mono-curses](http://tirania.org/software/mono-curses)
+The source code of mono-curses is available in the [GitHub repository](https://github.com/mono/mono-curses/). Packaged tarballs are available from [<http://tirania.org/software/mono-curses>](http://tirania.org/software/mono-curses)
 
-gui.cs
-======
+## gui.cs
 
 This is a minimal toolkit and is still under construction.
 
@@ -37,8 +35,7 @@ Class hierarchy:
            Frame
            Dialog
 
-Programming with gui.cs
------------------------
+### Programming with gui.cs
 
 To run an application, you must first initialize the toolkit and create a container. Pick from one of the existing containers (Container, Dialog, Frame). Add your widgets to the container calling the Container.Add (Widget) method. Once your dialog is ready, you can call `Application.Run(Container)` method to start the main loop.
 
@@ -78,13 +75,13 @@ Buttons are a convenient way of stopping a dialog from running once they have do
      Application.Run (d);
 ```
 
-### The Main Loop
+#### The Main Loop
 
 When the application is initialized, the curses timeout function will be set to the value of `Application.Timeout` which defaults to -1, which is used to block until data is available on the keyboard. Usually you would set Timeout to the number of milliseconds that you want before the main loop is executed again.
 
 For example, if you want the main loop to iterate every second, you set Timeout to 1000 (1000 milliseconds) and then call `Application.Run`. This will raise the `Application.Iteration` event which you can hook up into and update the screen display as necessary.
 
-### Containers
+#### Containers
 
 There are a number of containers in gui.cs, these are:
 
@@ -94,13 +91,13 @@ There are a number of containers in gui.cs, these are:
 
 **Dialog** this is a container that has a thicker border, uses a different color scheme (and any widgets inserted into it will by default, because they inherit the colors from it), has support for automatically laying out buttons that are added with the `AddButton (Button b)` method and will automatically be centered on the screen (even during a screen resize).
 
-### Input
+#### Input
 
 When a character is read, the main loop passes the character to all the containers and widgets using the `Widget.ProcessHotKey` method. This gives a chance to certain widgets to capture the data before other widgets do, it is used to implement hot keys (for example buttons automatically create a hot-key for the combination Alt-letter for their highlighter letter).
 
 If no widget consumes the event (by returning true from the ProcessHotKey event) the key is sent to the focused widget. If the event is not consumed (by returning true from the routine) then the default behavior is applied: tab and down-cursor are used to switch the focus to the next widget that can accept the focus, Control-c is used to terminate the current main loop and control-z suspends the application.
 
-### Rendering
+#### Rendering
 
 Widgets are responsible for filling the entire space that they own. The space is determined by the area delimited by Widget.x, Widget.y, Widget.w and Widget.h . These are public fields in every widget.
 
@@ -139,7 +136,7 @@ For example, the Button.Render method looks like this:
     }
 ```
 
-### Cursor Positioning
+#### Cursor Positioning
 
 Not all terminals support hiding the cursor, for those terminals it is important to place the cursor in a place that would not distract the user attention.
 
@@ -156,7 +153,7 @@ This is the Button implementation:
     }
 ```
 
-### Resizing
+#### Resizing
 
 When the window size changes, the event SizeChangedEvent will be raised in the toplevel container, and the virtual method DoSizeChanged will be invoked in the toplevel container as well. The default behavior for containers is to propagage the DoSizeChanged event to children.
 
@@ -173,12 +170,10 @@ In the sample MonoTorrent application, the layout of the toplevel dialogs and th
     };
 ```
 
-Missing things
---------------
+### Missing things
 
 Mouse support, should be easy to add.
 
 More widgets
 
 Idle and timeout handles, instead of depending on the hack that is setting Application.Timeout
-

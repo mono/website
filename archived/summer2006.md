@@ -266,4 +266,3 @@ Mentor: Massimiliano Mantione
 Bindings to allow developers to create Compiz extensions with Mono, C# and Tao.
 
 Deliverables should include a sample plugin that hooks up to all the Compiz events and does something interesting (it does not have to be useful, it has to work).
-

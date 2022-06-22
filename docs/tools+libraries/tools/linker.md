@@ -9,8 +9,7 @@ The linker is a tool one can use to only ship the minimal possible set of functi
 
 [Jb Evain](http://evain.net/) started to work on the linker during the [Summer Of Code 2006](/archived/summer2006).
 
-Why would one use the linker ?
-==============================
+## Why would one use the linker ?
 
 There are a couple of scenarios for the linker:
 
@@ -19,29 +18,24 @@ There are a couple of scenarios for the linker:
 
 Because you don't always use every feature of the libraries you are using for your program. By using the linker, you can reduce the size of what you have to distribute to your users.
 
-Usage
------
+### Usage
 
-mkbundle, the linker's best friend
-----------------------------------
+### mkbundle, the linker's best friend
 
 The linker operates only at the assemblies level. By using the [mkbundle](/docs/tools+libraries/tools/#project-conversion--deployment) program, you can create a single executable which will contain the strict minimum it needs to run.
 
 See the man page for mkbundle for details on its operation.
 
-Download
-========
+## Download
 
 For the moment, no versions has been released, but you can download the code from [Git](/community/contributing/source-code-repository/), in the module [/mcs/tools/linker](https://github.com/mono/mono/tree/master/mcs/tools/linker)
 
-Links
-=====
+## Links
 
 -   [Sample use of the linker](http://evain.net/blog/articles/2006/08/21/link-to-link)
 -   [Sample use of the Linker and mkbundle](http://evain.net/blog/articles/2006/08/22/linking-all-the-way-down)
 
-Linker 2.0 Requirements
-=======================
+## Linker 2.0 Requirements
 
 We would like to use the linker to generate multiple assemblies from the same code base. Instead of using an increasingly large number of ifdefs in the source code to add or remove features we would like to use the linker in this situation.
 
@@ -55,7 +49,7 @@ The linker should have a list of types whose fields must not be removed or reord
 
 -   The linker should turn any public types and members that are pulled by the mark process that are absent from the source profile into "internal" types or members to ensure that the public API does not expose more than it should.
 
--   Handle base-classes that are not present. In a few cases (System.AppDomain) classes are made public because they are exposed by the inheritance chain should either be removed (_AppDomain interface) or we should decide on a case-by-case basis if it is worth exposing them.
+-   Handle base-classes that are not present. In a few cases (System.AppDomain) classes are made public because they are exposed by the inheritance chain should either be removed (\_AppDomain interface) or we should decide on a case-by-case basis if it is worth exposing them.
 
 For example, the following should be possible:
 
@@ -63,4 +57,3 @@ For example, the following should be possible:
 mkdir silverlight
 monolinker -profile:mscorlib.silver.info /usr/lib/mono/full/mscorlib.dll -out:silverlight/mscorlib.dll
 ```
-

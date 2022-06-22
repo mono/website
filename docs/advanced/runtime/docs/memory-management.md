@@ -50,5 +50,3 @@ The runtime contains the following code managers:
 -   There is a global code manager declared in mini.c which is used to manage code memory whose lifetime is equal to the lifetime of the runtime. Memory for trampolines is allocated from the global code manager.
 -   Every domain has a code manager which is used for allocating memory used by JITted code belonging to that domain.
 -   Every 'dynamic' method, i.e. a method whose lifetime is not equal to the runtime or a domain, has its own code manager.
-
-

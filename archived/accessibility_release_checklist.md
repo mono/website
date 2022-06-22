@@ -36,5 +36,3 @@ Release Checklist
 
 14. Email [mono-a11y list](mailto:mono-a11y@forge.novell.com), [mono-announce list](mailto:mono-announce-list@lists.dot.net) and [gnome-announce list](mailto:gnome-announce-list@lists.gnome.org)
 15. Change #mono-a11y's topic
-
-

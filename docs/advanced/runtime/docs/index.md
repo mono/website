@@ -46,4 +46,3 @@ Additionally, Jambunathan K has a very interesting blog that talks about [Mono R
 For information on project planning see [Runtime_Projects](/docs/advanced/runtime/runtime-projects/).
 
 For runtime hacking see [Runtime Hacking](/docs/advanced/runtime/runtime-hacking/).
-

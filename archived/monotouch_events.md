@@ -75,4 +75,3 @@ void MyObjectiveCHandler ()
  
 button.AddTarget (this, new Selector ("MySelector"), UIControlEvent.TouchDown);
 ```
-

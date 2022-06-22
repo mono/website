@@ -9,4 +9,3 @@ Category:WinForms
 =================
 
 This category contains articles about the Windows Forms GUI Toolkit. Please see [WinForms](/WinForms) for a general overview.
-

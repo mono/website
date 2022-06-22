@@ -8,8 +8,7 @@ In this article we will discuss how you can use Mono to increase your productivi
 
 This technique has many names: application scripting, runtime hosting, runtime embedding. They are all the same thing.
 
-Scripting
-=========
+## Scripting
 
 In the past, software used to be written entirely in a single programming language. Developers had to strike a balance between high performance and having to pick a low-level language or slower execution speed but using a high level language.
 
@@ -69,8 +68,7 @@ Scripting languages also offer a secure execution sandbox that allows high-level
 
 By splitting the responsibilities between the engine developer and the scripting developer, it is possible to reduce the complexity in a software project and it allows developers to focus on the bigger picture instead of having to learn all the details of the underlying core engine implementation for your software and the various rules for resource management that you might have.
 
-The Mono Offering
-=================
+## The Mono Offering
 
 Mono offers the same functionality that developers have used to extend their application with a safe environment for scripting language with Just-in-Time compiled code.
 
@@ -92,18 +90,15 @@ Mono offers:
     -   C function pointer to scripting language transitions (a function pointer provided by Mono when invoked would trigger a transition to Mono-controlled code for execution of any scripting capability, very useful for callbacks or notifications).
 -   Access to a large body of [libraries](/docs/tools+libraries/libraries/) and reusable components.
 
-Scripting an Application
-========================
+## Scripting an Application
 
 Scripting an application usually exposes some of the internals of the low-level code in one way or another. Usually there are handles or object systems that are surfaced for the scripting developer to consume. The developer of the binding will typically have to design the system to allow for the scripting language to consume it.
 
-Game Developers
-===============
+## Game Developers
 
 Game developers are some of the major users of scripting technologies, they develop the performance sensitive code in C and assembler and they take advantage of graphics-accelerated hardware, physics libraries, physics accelerated hardware and multi-cpu processing to increase the performance of a game.
 
-Performance
------------
+### Performance
 
 Higher-level constructs and game play are typically implemented in a scripting language. The problem that game developers face with scripting languages is that they are usually the major performance bottleneck in a game. After spending years fine-tuning their C, C++ and assembly language code and taking advantage of every little trick in their GPUs, the game play ends up running very slow because the scripting language is just not as fast as it could be.
 
@@ -113,8 +108,7 @@ The early results of switching showed that there was a 50 to 150 times performan
 
 The [Unity3D](http://unity3d.com) game design engine uses Mono to provide scripting capabilities to the applications and games built with it by supporting Boo, C# and UnityScript (a strongly-typed version of Javascript which helps make the code faster).
 
-Language Support
-----------------
+### Language Support
 
 By using Mono as a scripting engine, you get to pick the language that better suits your needs. Mono's extensive [language support](/docs/about-mono/languages/) allows developers to pick the best language or the best languages for their particular problem.
 
@@ -126,20 +120,16 @@ C#'s support for yielding execution is also very convenient for writing clear co
 
 The [Boo programming language](http://boo.codehaus.org/) is also a popular choice. This language is an extensible programming language which allows developers to create new language constructs that can be applied to the particular scenarios that are necessary for your game.
 
-Licensing
----------
+### Licensing
 
 Mono is an open source technology that can be used freely under the terms of the MIT license (as of March 31st 2016, prior versions were available under GNU LGPL license).
 
-Continued Performance Increase
-==============================
+## Continued Performance Increase
 
 We are committed to improving Mono's JIT performance and code generation quality. In the last year plenty of optimizations have been done to the runtime in many areas and applications run as much as twice as fast just by upgrading to a newer version of the Mono runtime.
 
 As Mono matures, and its JIT compiler evolves you can expect bigger performance improvements becoming available for your software.
 
-Using Mono in your Application
-==============================
+## Using Mono in your Application
 
 Now that you have seen a high-level overview of what scripting with Mono can do, you can take a look at the [Embedding Mono](/docs/advanced/embedding/) page for the actual technical details of how you consume the Mono runtime in your application: how you compile against it, and the APIs that your application can use.
-

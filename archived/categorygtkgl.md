@@ -9,4 +9,3 @@ Category:GtkGL
 ==============
 
 (n/a)
-

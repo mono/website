@@ -148,4 +148,3 @@ Automatic hosting and virtual hosts
 -----------------------------------
 
 As of today, all the virtual hosts hosted in the server share the same instance of mod-mono-server. You can enable/disable automatic hosting for every virtual host.
-

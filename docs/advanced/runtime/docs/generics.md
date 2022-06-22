@@ -60,5 +60,3 @@ These problems are currently handled by a hierarchy of C# classes which inherit 
 
 -   `MonoGenericClass` represents an instantiation of a generic TypeBuilder. MS.NET calls this `TypeBuilderInstantiation`, a much better name.
 -   `Method/Field/Event/PropertyOnTypeBuilderInst` represents a method/field etc. of a `MonoGenericClass`.
-
-

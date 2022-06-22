@@ -35,4 +35,3 @@ Documentation and Downloads
 ---------------------------
 
 Documentation and downloads are available in the [Mono.Addins project](http://monoaddins.codeplex.com) site at CodePlex.
-

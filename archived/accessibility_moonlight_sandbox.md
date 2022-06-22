@@ -166,5 +166,3 @@ Running the Moonlight 2.0 unit test suite
 
 -   cd moon/test/2.0/moon-unit
 -   make test
-
-

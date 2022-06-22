@@ -90,5 +90,3 @@ References
 ==========
 
 -   [http:/monodoc/N:System.Diagnostics Documentation]
-
-

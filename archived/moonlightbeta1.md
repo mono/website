@@ -69,4 +69,3 @@ Windowless mouse event problems
 Firefox 3.0 shipped with faulty mouse motion compression, which leads to moonlight windowless plugins getting events out of order. It is impossible to diagnose and correct this problem from within moonlight. This has been fixed upstream in Firefox and should be released in xulrunner 1.9.1.
 
 More information is available at [Novell Bug #433687](https://bugzilla.novell.com/show_bug.cgi?id=433687), including a url to 1.9.0 xulrunner packages for SuSE which contain the backported fix.
-

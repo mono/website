@@ -9,10 +9,9 @@ One of the most common problems that people face when porting applications from 
 
 The IOMap feature is available in Mono versions higher than 1.1.18, **but has been deprecated in Mono versions higher than 6.0.0**
 
-The Problem
-===========
+## The Problem
 
-Windows developers are used to a case-insensitive file system, which means that they might create a file called "mydata" in one place, and try to access it somewhere else as "MyData" or as "MYDATA". This breaks on most Unix setups because Unix is case sensitive[1].
+Windows developers are used to a case-insensitive file system, which means that they might create a file called "mydata" in one place, and try to access it somewhere else as "MyData" or as "MYDATA". This breaks on most Unix setups because Unix is case sensitive\[1\].
 
 Another problem is that developers sometimes hardcode the directory separator character in their source code ("\\") instead of using Path.DirectorySeparator and using Path.Combine for combining this paths. This is a problem because "\\" is a valid file name components on Unix. This means that if an application hardcodes for example "Logs\\access_log", in Unix this will not store the contents in the "Logs" directory as the file "access_log". Instead, it will store the results in a file called "Logs\\access_log".
 
@@ -20,8 +19,7 @@ Only a few applications cope with drive letters, but they might still pose a pro
 
 Although .NET provides the tools to write code that is portable, in practice, they do not use these features (the exception is Path.Combine, which some people use, as it is genuinely useful on its own).
 
-The Usual Solution
-==================
+## The Usual Solution
 
 When moving applications from Windows to Linux, it is always necessary to run the application, run its test suite, and validate that the application works as intended. With the path problems described above, the process above included a number of iterations to fix the assumptions made by programmers about the file system.
 
@@ -29,8 +27,7 @@ This process could be time consuming, because identifying where the mistakes wer
 
 This process works as long as you have the source code to all the components that you are porting, but if you were using a third-party library that you had no source code for, you would not be able to fix the problems.
 
-The New Solution
-================
+## The New Solution
 
 Mono now has a portability layer into Mono that will address those problems without requiring changes to your code. This will remove a large component of the porting cycle as a whole class of obnoxious problems are gone.
 
@@ -57,10 +54,9 @@ This new feature appeared in Mono 1.1.18 and is available in all new Mono 1.2.x 
 
 The downside is that Mono will have to do some extra work when coping with your file system, to search for case insensitive file names. So if your application is still a portable application, you will be much better off without this switch.
 
-[1] Some Linux file systems are case insensitive, and some folks have used a combination of hacks, including doing loopback CIFS mounts to get case sensitivity issues out of the way; macOS does not have this particular problem, but it still has the others.
+\[1\] Some Linux file systems are case insensitive, and some folks have used a combination of hacks, including doing loopback CIFS mounts to get case sensitivity issues out of the way; macOS does not have this particular problem, but it still has the others.
 
-IOMAP reporting utility
------------------------
+### IOMAP reporting utility
 
 Mono 2.7 (trunk as of 21 Dec 2009, to become 2.8) includes a profiler module which aims at helping the developer/porter to find places in code which call .NET I/O routines passing them misformed file/directory paths as well as identify places where those strings are constructed.
 
@@ -79,4 +75,3 @@ If you're porting an ASP.NET application, use the following command line:
 ``` bash
    MONO_OPTIONS="--debug --profile=iomap" xsp2
 ```
-

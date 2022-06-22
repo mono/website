@@ -26,4 +26,3 @@ New Version of this page
 After a little discussion on the mono-docs-list to check if this little project is wanted I'm now trying to write a new version of this page under [New Version of the Use-Page](/New_Version_of_the_Use-Page). Please check it once in a while to give me some feedback (or contributions). For discussion about whether it makes sense to rewrite this page please answer to this Talk-Page or the docs list. If you have comments about my new Version of the page please write them down [here](/Talk:New_Version_of_the_Use-Page). Thanks
 
 --Valentin 14:10, 17 May 2007 (EDT)
-

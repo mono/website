@@ -159,5 +159,3 @@ Let's assume our current directory is `vc` in the hierarchy above.
       git push
 
 -   Do other work which depends on the new code in FOO_LIBRARY
-
-

@@ -200,5 +200,3 @@ public class Pilot {
 -   Create db4o database applications by programming against the db4o API.
 
 -   Deploy the single Db4objects.Db4o.dll along with your applications.
-
-

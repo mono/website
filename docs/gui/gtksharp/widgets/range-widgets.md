@@ -10,22 +10,23 @@ As mentioned in Adjustments above, all range widgets are associated with an adju
 
 The Range widget class is fairly complicated internally, but, like all the "base class" widgets, most of its complexity is only interesting if you want to hack on it. Also, almost all of the functions and events it defines are only really used in writing derived widgets. There are, however, a few useful methods that are defined for all Range widgets.
 
-Update Policy
-=============
+## Update Policy
 
 The [update policy](http://docs.go-mono.com/index.aspx?link=P:Gtk.Range.UpdatePolicy) of a range widget defines at what points during user interaction it will change the value field of its Adjustment and emit the [Gtk.Adjustment.ValueChanged](http://docs.go-mono.com/index.aspx?link=E:Gtk.Adjustment.ValueChanged) event for this Adjustment. The update policies are held in the [Gtk.UpdateType](http://docs.go-mono.com/index.aspx?link=T:Gtk.UpdateType) enumeration and can have one of three values.
 
-`Gtk.UpdateType.Continuous (default)`<br/>
+`Gtk.UpdateType.Continuous (default)`
+
 The ValueChanged event is emitted continuously, i.e., whenever the slider is moved by even the tiniest amount.
 
-`Gtk.UpdateType.Discontinuous`<br/>
+`Gtk.UpdateType.Discontinuous`
+
 The ValueChanged event is only emitted once the slider has stopped moving and the user has released the mouse button.
 
-`Gtk.UpdateType.Delayed`<br/>
+`Gtk.UpdateType.Delayed`
+
 The ValueChanged event is emitted when the user releases the mouse button, or if the slider stops moving for a short period of time.
 
-Mouse and Key Handling
-======================
+## Mouse and Key Handling
 
 All of the range widgets react to mouse clicks in more or less the same way. Clicking button-1 in the trough will cause its adjustment's *pageIncrement* to be added or subtracted from its value, and the slider to be moved accordingly. Clicking mouse button-2 in the trough will jump the slider to the point at which the button was clicked. Clicking button-3 in the trough of a range or any button on a scrollbar's arrows will cause its adjustment's value to change by *step_increment* at a time.
 
@@ -35,8 +36,7 @@ All range widgets can be operated with the left, right, up and down arrow keys, 
 
 The user can also move the slider all the way to one end or the other of the trough using the keyboard. This is done with the Home and End keys.
 
-Example
-=======
+## Example
 
 This example is a somewhat modified version of the "range controls" test from testgtk.c. It basically puts up a window with three range widgets all connected to the same adjustment, and a couple of controls for adjusting some of the parameters mentioned above and in the section on adjustments, so you can see how they affect the way these widgets work for the user.
 
@@ -330,4 +330,3 @@ namespace GtkSharpTutorial {
         }
 }
 ```
-

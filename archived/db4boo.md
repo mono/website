@@ -119,4 +119,3 @@ Pilot class
                but latexer mentionned that boo's string interpolation is best : */
             return "${_name}/${_points}"
 ```
-

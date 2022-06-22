@@ -89,5 +89,3 @@ Investigate how to perform mapping from at-spi accessibles to UIA AutomationElem
 ### Deliverables 3
 
 -   Email report summarizing findings. Summarize different approaches for getting "extra" data from Provider side to Client side, including comparisons of work involved. Include your recommendation of the course to follow, if you have one.
-
-

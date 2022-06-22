@@ -77,4 +77,3 @@ The following repository contains Moonlight 1.0, for i386 and amd64:
     deb-src http://ppa.launchpad.net/directhex/ubuntu jaunty main
 
 The package name is "moonlight-plugin-mozilla"
-

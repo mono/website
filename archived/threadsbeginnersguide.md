@@ -542,5 +542,3 @@ Resources and further reading
 1.  Multi-threading in .NET: Introduction and suggestions ([http://www.yoda.arachsys.com/csharp/threads/](http://www.yoda.arachsys.com/csharp/threads/))
 2.  Microsoft MSDN Library ([http://msdn2.microsoft.com/en-us/library/default.aspx](http://msdn2.microsoft.com/en-us/library/default.aspx))
 3.  Threading in C# by Joseph Albahari ([http://www.albahari.com/threading/index.html](http://www.albahari.com/threading/index.html))
-
-

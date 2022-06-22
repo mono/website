@@ -14,4 +14,3 @@ XSP
 ---
 
 You will need XSP, the mono runtime, and mcs and that should be it. With XSP2 you can package your site into a single dll so then you won't need mcs. No special scripts needed :-)
-

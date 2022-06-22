@@ -19,5 +19,3 @@ Photos from the Mono Meeting 2006:
 -   [Martin Baulig](http://www.flickr.com/photos/40709035@N00/)
 -   [JB Evain](http://www.flickr.com/photos/jbevain/sets/72157594348740457/)
 -   [Jackson Harper](http://www.flickr.com/photos/72243400@N00/tags/bostonmonoconf)
-
-

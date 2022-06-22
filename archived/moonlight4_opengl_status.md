@@ -18,6 +18,3 @@ Moonlight4 OpenGL Status
 |Quadro NVS 290/PCI/SSE2|3.3.0 NVIDIA 260.19.44|Working|
 |Quadro NVS 290/PCI/SSE2|3.3.0 NVIDIA 260.19.12|Not supported|
 |Gallium 0.4 on NV46|2.0 Mesa 7.8.2|Not supported|
-
-
-

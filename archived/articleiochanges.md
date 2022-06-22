@@ -122,4 +122,3 @@ As a result of the changes we now have:
     -   The current infrastructure for socket asynchronous IO allows for better integration with native event polling APIs. **kqueue** support is under testing now.
 
 If we're just receiving/sending, the actual read/write happens in a thread from the dedicated IO threadpool as soon as the socket is ready.
-

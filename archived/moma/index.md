@@ -46,4 +46,3 @@ The current version of MoMA scans for compatibility with Mono 2.8. If you need t
 -   [Mono 1.2.2](http://www.go-mono.com/archive/moma/defs/1.2.2-defs.zip)
 
 As of version 1.2.6, MoMA will not report missing functionality in Design namespaces. These classes are only used when creating an application using a designer such as Visual Studio. They are not used to run your application.
-

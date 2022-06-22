@@ -6,22 +6,20 @@ redirect_from:
   - /Guidelines/
 ---
 
- This document contains the coding guidelines for the Mono Project. It contains four major sections:
+This document contains the coding guidelines for the Mono Project. It contains four major sections:
 
 -   [Style Guidelines](#style-guidelines), on how to organize your source code.
 -   [Git Workflow Changes](#git-workflow-changes) discusses how our workflow has changed now that Mono is hosted on GitHub.
 -   [Source Code Control](#source-code-control) details our source code control use.
 -   [Best Practices](#best-practices), used in the project.
 
-Style Guidelines
-================
+## Style Guidelines
 
 In order to keep the code consistent, please use the following conventions. From here on \`good' and \`bad' are used to attribute things that would make the coding style match, or not match. It is not a judgment call on your coding abilities, but more of a style and look call. Please try to follow these guidelines to ensure prettiness.
 
 You may also wish to read the [.Net Framework Design Guidelines](http://msdn.microsoft.com/en-us/library/ms229042.aspx) as well, however the Mono guidelines below take precedent for Mono code if there is a conflict.
 
-Indentation
------------
+### Indentation
 
 Use tabs (and configure your IDE to show a size of 8 spaces for them) for writing your code (hopefully we can keep this consistent). If you are modifying someone else's code, try to keep the coding style similar.
 
@@ -45,7 +43,7 @@ for (i = 0; i < 10; i++) {
 }
 ```
 
- Switch statements have the case at the same indentation as the switch:
+Switch statements have the case at the same indentation as the switch:
 
 ``` csharp
 switch (x) {
@@ -56,8 +54,7 @@ case 'b':
 }
 ```
 
-Performance and Readability
----------------------------
+### Performance and Readability
 
 It is more important to be correct than to be fast.
 
@@ -65,8 +62,7 @@ It is more important to be maintainable than to be fast.
 
 Fast code that is difficult to maintain is likely going to be looked down upon.
 
-Where to put spaces
--------------------
+### Where to put spaces
 
 Use a space before an opening parenthesis when calling functions, or indexing, like this:
 
@@ -105,8 +101,7 @@ bad:
 var list = new List <int> ();
 ```
 
-Where to put braces
--------------------
+### Where to put braces
 
 Inside a code block, put the opening brace on the same line as the statement:
 
@@ -148,7 +143,7 @@ if (a) {
 
 Unless there are either multiple hierarchical conditions being used or that the condition cannot fit into a single line.
 
-good:﻿
+good:
 
 ``` csharp
 if (a) {
@@ -220,7 +215,7 @@ int Property {
 }
 ```
 
- Empty methods: They should have the body of code using two lines, in consistency with the rest:
+Empty methods: They should have the body of code using two lines, in consistency with the rest:
 
 good:
 
@@ -317,8 +312,7 @@ So, to summarize:
 | Control blocks (if, for...) | same line      |
 | Anonymous types and methods | same line      |
 
-Multiline Parameters
---------------------
+### Multiline Parameters
 
 When you need to write down parameters in multiple lines, indent the parameters to be below the previous line parameters, like this:
 
@@ -356,8 +350,7 @@ WriteLine (foo
            , baz);
 ```
 
-Use whitespace for clarity
---------------------------
+### Use whitespace for clarity
 
 Use white space in expressions liberally, except in the presence of parenthesis:
 
@@ -373,8 +366,7 @@ bad:
 if (a+5>method(blah()+4))
 ```
 
-File headers
-------------
+### File headers
 
 For any new files, please use a descriptive introduction, like this:
 
@@ -391,8 +383,7 @@ For any new files, please use a descriptive introduction, like this:
 
 If you are modyfing someone else's code, and your contribution is significant, please add yourself to the Authors list.
 
-Multiline comments
-------------------
+### Multiline comments
 
 For long, multiline comments use either:
 
@@ -414,8 +405,7 @@ Or:
 //
 ```
 
-Casing
-------
+### Casing
 
 Argument names should use the camel casing for identifiers, like this:
 
@@ -470,8 +460,7 @@ The use of "m\_" and "\_" as prefixes for instance members is highly discouraged
 
 An exception to this rule is serializable classes. In this case, if we desire to have our serialized data be compatible with Microsoft's, we must use the same field name.
 
-this
-----
+### this
 
 The use of "this." as a prefix in code is discouraged, it is mostly redundant. In general, since internal variables are lowercase and anything that becomes public starts with an uppercase letter, there is no ambiguity between what the "Foo" and "foo" are. The first is a public property or field, the second is internal property or field.
 
@@ -526,8 +515,7 @@ class Message {
 }
 ```
 
-Line length and alignment
--------------------------
+### Line length and alignment
 
 Line length: The line length for C# source code is 180 columns (Used to be 80).
 
@@ -555,8 +543,7 @@ void M ()
 }
 ```
 
-Initializing Instances
-----------------------
+### Initializing Instances
 
 Use the new C# syntax to initialize newly created objects.
 
@@ -577,8 +564,7 @@ Good:
      };
 ```
 
-Baroque Coding
---------------
+### Baroque Coding
 
 Baroque coding is discouraged.
 
@@ -586,15 +572,13 @@ We discourage the use of the "private" keyword to flag internal fields or method
 
 But the same principle applies everywhere else in Mono. Avoid complex code or redundant code for the sake of it. Try to write the minimum amount of text possible.
 
-Warnings
---------
+### Warnings
 
 Avoid committing code with warnings to the repository, the use of #pragmas to disable warnings is strongly discouraged, but can be used on unique cases. Please justify the use of the warning ignore clause on a comment.
 
 Do not commit changes to the Makefiles that removes warnings, if anything warnings should be eliminated one at a time, and if not possible, they must be flagged.
 
-Conditional compilation
------------------------
+### Conditional compilation
 
 Ideally we would not need conditional compilation, and the use of #ifdef is strongly discouraged. But due to our support for old C# 1.0 compilers we have to use it in a few places.
 
@@ -629,8 +613,7 @@ For 2.0 classes, this is even simpler as code can be trivially factored out into
 
 By using partial classes.
 
-Missing Implementation Bits
----------------------------
+### Missing Implementation Bits
 
 There are a number of attributes that can be used in the class libraries to flag the specific state of an API, class or field.
 
@@ -652,8 +635,7 @@ Ideally, write a human description of the reason why there is a MonoTODO, this w
 
 Do not use MonoTODO attributes for reminding yourself of internal changes that must be done. Use FIXMEs or other kinds of comments in the source code for that purpose, and if the problem requires to be followed up on, [file a bug](/community/bugs/).
 
-NotImplementedException
------------------------
+### NotImplementedException
 
 In the Mono class libraries, if a library is stubbed out, it is customary to insert the following code snippet:
 
@@ -679,8 +661,7 @@ void SomeMethod ()
 
 Remember the rule: NotImplementedExceptions should be exposed in the toplevel method that is exposed to developers for Moma to properly work.
 
-Use of var
-----------
+### Use of var
 
 Use var on the left-hand side of an assignment when the type name is repeated on the right hand side:
 
@@ -697,8 +678,7 @@ good:
     NSUuid something = RetrieveUUID ();
 ```
 
-Use Simple Identifiers
-----------------------
+### Use Simple Identifiers
 
 Use simple identifiers when possible.
 
@@ -719,8 +699,7 @@ var utterance = new AVSpeechUtterance ("Shall we play a game?");
 synthesizer.SpeakUtterance (utterance);
 ```
 
-Examples
---------
+### Examples
 
 ``` csharp
 class X : Y {
@@ -769,13 +748,11 @@ class X : Y {
 }
 ```
 
-Source Code Control
-===================
+## Source Code Control
 
 Many of us in the Mono team are still getting used to using Git. Some very useful hints are available in our [GitFAQ](/community/contributing/gitfaq/) that is geared specifically to the Mono team.
 
-Summary Description
--------------------
+### Summary Description
 
 Include a one-line summary description of your change at the top of your commit message to improve the rendering of the commit history on GitHub.
 
@@ -801,7 +778,7 @@ We will add more tags as time goes by.
 -   The commit message is mainly for the other people, so they should be able to understand it now and six months later.
 -   Always add a brief description of the commit to the first line of the commit and terminate by two newlines (it will work without the second newline, but that is not nice for the interfaces).
 -   First line (the brief description) must only be one sentence and should start with a capital letter unless it starts with a lowercase symbol or identifier. Don't use a trailing period either. Don't exceed 72 characters.
--   You can prefix the first line with one tag, to make it easier to know to which part of the module the commit applies. For example, a commit with "[monodoc] Improve the formatting" in the mono-tools module clearly applies to the monodoc tool.
+-   You can prefix the first line with one tag, to make it easier to know to which part of the module the commit applies. For example, a commit with "\[monodoc\] Improve the formatting" in the mono-tools module clearly applies to the monodoc tool.
 -   The main description (the body) is normal prose and should use normal punctuation and capital letters where appropriate. This main description can be empty if the change is self-explanatory (eg: "Add DOAP file").
 
 When committing code on behalf of others use the --author option, for example:
@@ -810,24 +787,21 @@ When committing code on behalf of others use the --author option, for example:
  git commit --author "Joe Coder <joe@coder.org>".
 ```
 
-Work Branches
--------------
+### Work Branches
 
 See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-master-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
-RCS and CVS tags
-----------------
+### RCS and CVS tags
 
-Some users like to use the special RCS/CVS tags in their source code: \$id\$, \$log\$ and so on.
+Some users like to use the special RCS/CVS tags in their source code: $id$, $log$ and so on.
 
 The use of these is not permitted on the Mono source code repository. This metadata belongs on a ChangeLog or in git metadata.
 
-Backporting Changes
--------------------
+### Backporting Changes
 
 If you want to backport an interesting change to a branch, you can follow these steps.
 
-Let us say that you want to backport this change: [https://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8](https://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8) into the remote branch monotouch-2-0.
+Let us say that you want to backport this change: [<https://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8>](https://github.com/mono/mono/commit/778694e1b85416a3abfdac4952dd85c8384e1cf8) into the remote branch monotouch-2-0.
 
 To do this, first you would create a local branch called "monotouch-2-0" that tracks the remote monotouch-2-0 branch:
 
@@ -871,8 +845,7 @@ Now that your changes are committed you can push them:
 git push
 ```
 
-ChangeLogs
-----------
+### ChangeLogs
 
 **Update**: ChangeLogs are no longer manually updated, instead just use the ChangeLog message on your commit. At release time, a script merges the commit messages into the proper ChangeLogs that are distributed. For a few examples on how the script operates on commit messages, see [this branch on our public repository](https://github.com/mono/mono/commits/commit-to-changelog-tests).
 
@@ -891,8 +864,7 @@ You would typically commit your message like this:
 
 From that point on a list of changes in a file-by-file basis, describing what changes were done.
 
-File formats
-------------
+### File formats
 
 Historically our repository has used a mix of line-endings, this is a mistake that we are trying hard to fix. We also have several files where each has itself a mix of line-endings.
 
@@ -917,8 +889,7 @@ If you're facing this issue a lot, you might want consider turning off the GIT c
 
 Caveat: We are trying to come up with better Git annotations so that all newly created code files have LF line endings. Git itself seems to be in a transition from one mechanism to another, and there are several edge cases that seem to trip us up. So, this is just an interim suggestion.
 
-Best Practices
-==============
+## Best Practices
 
 Correctness is essential for the Mono class libraries. Because our code is called by many other people, we often must be more pendantic than most people would be when writing code. These items are guidelines of some things you should check for.
 
@@ -932,13 +903,11 @@ We use a new build system which is described by various README files in mcs/buil
 
 The build process typically builds an assembly, but in some cases it also builds special versions of the assemblies intended to be used\\ for testing.
 
-Documentation
--------------
+### Documentation
 
 As you write new features, user visible or developer visible consider that the feature will be invisible to users unless it is documented. If you write new features and there is no accompanying documentation, the feature is for all purposes bloat as only a handful of developers will know about it, but everyone will pay the price by carrying this undocumented code with them.
 
-Tests
------
+### Tests
 
 When fixing a bug, write a test, so we can make sure that we do not re-introduce bugs in the future accidentally.
 
@@ -948,27 +917,23 @@ Write tests when you are exploring an API on Windows, you will have to write tes
 
 Code should never be checked into the repository that breaks the build, or breaks any of the existing tests.
 
-Check all arguments
--------------------
+### Check all arguments
 
 Public functions must check their arguments in exactly the same was as Microsoft's framework. It is important to throw exceptions such as ArgumentNullException rather than NullReferenceException. Adding test to the [Test Suite](/community/contributing/test-suite/) is important for these.
 
-Be careful about freeing memory
--------------------------------
+### Be careful about freeing memory
 
 In general, whenever you create a class that is disposeable, you need to use the using {} pattern. This way, resources get disposed. Do *not* rely on finalizers to get run. This can lead to performance problems.
 
-Watch for integer [under|over]flows
------------------------------------
+### Watch for integer \[under\|over\]flows
 
 Integer overflows and underflows are [possible](http://pages.infinit.net/ctech/20050610-0319.html) in managed code. They can lead to ugly problem if your code deals with unsafe code, internal calls or p/invokes. So for every integer parameter you should ask yourself how your code would react to a Int32.MaxValue or a Int32.MinValue (substitute Int32 for your integral type). Unit tests are a nice way to remember that you reviewed your code.
 
-Locking and Threading
----------------------
+### Locking and Threading
 
 As humans, we are trained to think about one thing at a time. We, by nature, are not multi-taskers. Thus, when we write code, we tend to think about it as if it was the only thing happening on the operating system. Sadly, this is not the case. In Mono, we are providing a base framework for others to use. This means that our code can often be called from multiple threads. Our code might be running on 8 cpu server with hyperthreading.
 
-### Deadlocks
+#### Deadlocks
 
 In managed code, the most common way to deadlock is to have reverse locking order:
 
@@ -1041,7 +1006,7 @@ class MyBlah : Blah {
 
 The same kind of deadlock that happened above happens here because the user acquired another lock inside ours. To avoid this, we must not call user code inside our locks.
 
-### Don't lock on Types and Strings
+#### Don't lock on Types and Strings
 
 Code like lock (typeof (T)) is not good. Type objects can be shared across appdomains, which can lead to unexpected behavior. Also, if the type is public, a user could lock on the type and create deadlocks. Strings are interned, and thus the same type of problems can occur. In general, the best practice is to do:
 
@@ -1055,18 +1020,15 @@ lock (lockobj) {
 }
 ```
 
-Git Workflow Changes
-====================
+## Git Workflow Changes
 
-One Line Summaries
-------------------
+### One Line Summaries
 
 Before your full commit message, use a one-line summary of the change as this improves the output of GitHub's rendering of changes done to the project.
 
 After this one line change, you can add the regular, full-documented version of the change.
 
-No more manual ChangeLog editing
---------------------------------
+### No more manual ChangeLog editing
 
 We no longer maintain ChangeLog files by hand. You still must create a commit message that contains a 1-line summary and a detailed description of the changes in your commit.
 
@@ -1074,12 +1036,11 @@ Remember, this is used by maintainers over the course of the project. Mono is al
 
 The ChangeLogs are automatically generated at distribution time from the Git commit messages.
 
-Personal Work Branches
-----------------------
+### Personal Work Branches
 
 See the description of [short term branches](/community/contributing/gitfaq/#workflow-2-use-master-as-integration-branch) and [long term branches](/community/contributing/gitfaq/#workflow-3-long-term-projects) in [GitFAQ](/community/contributing/gitfaq/).
 
-If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [https://github.com/mono](https://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
+If you publish any feature branches, you should do so on forked repositories, not on the main mono module. Branches on repositories under [<https://github.com/mono>](https://github.com/mono) should be used for release engineering, bugfixes and integration; not for feature development.
 
 As somewhat of a corollary, you need to fork only when you publish your feature branch. After all, Git treats your local clone as a first-class repository, not just as a mirror of some remote repository. You *don't* need to fork to create local branches.
 

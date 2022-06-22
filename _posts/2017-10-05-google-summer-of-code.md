@@ -64,5 +64,3 @@ Import Synchronization Primitives from CoreRT
 It is often the case that small differences in the implementations of core runtime functions can result in perceived bugs introduced by switching runtimes. The differences are due to depending on API behavior that may not be entirely defined by the specification, but works in a certain case on a certain machine. This sensitivity is nowhere more baffling to debug than around threading and synchronization primitives. The .NET Core Project contains an open-source, cross-platform implementation of C# synchronization primitives. We expect this to receive much community development and user testing. We hoped to import them to gain both consistent behavior and quality.
 
 This summer, [Alexander Efremov](https://github.com/mono/mono/pull/5054) imported EventWaitHandle, AutoResetEvent, ManualResetEvent, Mutex and Semaphore into Mono. He both manually integrated these libraries into Mono and automated the process of building them. System.Private.CoreLib.Native was successfully added to mono. System.Threading was identified as the next API to import, in order to enable importing Thread from CoreFX.
-
-

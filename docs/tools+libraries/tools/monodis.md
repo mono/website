@@ -4,8 +4,7 @@ redirect_from:
   - /Dis/Assembling_CIL_Code/
 ---
 
-IL Code
-=======
+## IL Code
 
 .NET compilers like mcs or mbas do not compile to native code, but to the Common Intermediate Language (CIL). IL code looks like this:
 
@@ -53,14 +52,15 @@ IL Code
 
 There are two Mono tools for using IL code:
 
- ilasm<br/>
-The Mono Assembler can be given disassembled text, and it creates an assembly file. This is very important, because many compilers don't create the assembly themselves, and depend on this tool. Of course it can be also seen as a form of a compiler.
+- `ilasm`
 
- monodis<br/>
-The Mono Disassembler extracts code like shown above from an assembly.
+  The Mono Assembler can be given disassembled text, and it creates an assembly file. This is very important, because many compilers don't create the assembly themselves, and depend on this tool. Of course it can be also seen as a form of a compiler.
 
-The Mono Disassembler
-=====================
+- `monodis`
+
+  The Mono Disassembler extracts code like shown above from an assembly.
+
+## The Mono Disassembler
 
 The monodis program is used to dump the contents of an ECMA CIL image. You can execute it by typing:
 
@@ -70,74 +70,94 @@ monodis FILE.exe
 
 The following options are supported:
 
-`--output=FILENAME`<br/>
+`--output=FILENAME`
+
 Write output into FILENAME.
 
-`--mscorlib`<br/>
+`--mscorlib`
+
 For non-corlib assemblies, use "mscorlib" as the assembly name. This is useful for round-tripping the IL with ilasm.
 
-`--assembly`<br/>
+`--assembly`
+
 Dumps the contents of the assembly table
 
-`--assemblyref`<br/>
+`--assemblyref`
+
 Dumps the contents of the assemblyref table
 
-`--classlayout`<br/>
+`--classlayout`
+
 Dumps the contents of the classlayout table
 
-`--constant`<br/>
+`--constant`
+
 Dumps the contents of the constant table
 
-`--event`<br/>
+`--event`
+
 Dumps the contents of the event table
 
-`--exported`<br/>
+`--exported`
+
 Dumps the contents of the ExportedTypes table
 
-`--fields`<br/>
+`--fields`
+
 Dumps the contents of the fields table
 
-`--file`<br/>
+`--file`
+
 Dumps the contents of the file table
 
-`--interface`<br/>
+`--interface`
+
 Dumps the contents of the interface table
 
-`--manifest`<br/>
+`--manifest`
+
 Dumps the contents of the manifest table.
 
-`--memberref`<br/>
+`--memberref`
+
 Dumps the contents of the memberref table
 
-`--method`<br/>
+`--method`
+
 Dumps the contents of the method table
 
-`--methodsem`<br/>
+`--methodsem`
+
 Dumps the contents of the methodsem table
 
-`--module`<br/>
+`--module`
+
 Dumps the contents of the module table
 
-`--moduleref`<br/>
+`--moduleref`
+
 Dumps the contents of the moduleref table
 
-`--mresources`<br/>
+`--mresources`
+
 Dumps embedded managed resources
 
-`--param`<br/>
+`--param`
+
 Dumps the contents of the param table
 
-`--property`<br/>
+`--property`
+
 Dumps the contents of the property table
 
-`--propertymap`<br/>
+`--propertymap`
+
 Dumps the contents of the propertymap table
 
-`--typedef`<br/>
+`--typedef`
+
 Dumps the contents of the typedef table
 
-`--typeref`<br/>
+`--typeref`
+
 Dumps the contents of the typeref table If no flags are specified the program dumps the content of the image in a format that can be used to rountrip the code.
-
-
-

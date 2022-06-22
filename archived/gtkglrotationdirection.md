@@ -9,4 +9,3 @@ GtkGL.Rotation.Direction
 ========================
 
 An enum. Values are Clockwise and CounterClockwise
-

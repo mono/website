@@ -9,8 +9,7 @@ If you've worked a lot with Windows GUI programming, you're probably used to pos
 -   Independent of screensize
 -   Easier Internationalization
 
-HBox and VBox
-=============
+## HBox and VBox
 
 [HBox](http://docs.go-mono.com/index.aspx?link=T:Gtk.HBox) and [VBox](http://docs.go-mono.com/index.aspx?link=T:Gtk.VBox) objects work similarly to Button objects or any other widget. After you've layed out an HBox or VBox, be sure to call one of the packing methods to set up the box.
 
@@ -18,12 +17,11 @@ For a VBox, PackStart will pack the box starting at the top, and PackEnd will pa
 
 PackStart and PackEnd tell Gtk# where you want to place your widgets; the library will handle automatic resizing and other nifty things. There are also a number of options as to how your widgets should be packed; read the API documentation for HBox and VBox for more details. The resulting layout system is significantly more flexible than pixel-by-pixel coordinate layouts.
 
-Using the Boxes
-===============
+## Using the Boxes
 
 Because the Gtk# packing system is so flexible, it can be confusing at first. In the end, however, there are basically five different styles of packing.
 
-[Image:packbox.png]
+\[Image:packbox.png\]
 
 In the image above, each line contains one horizontal box (HBox) with several buttons. The call to Pack() is shorthand for the call to pack each of the buttons into the HBox. Each of the buttons is packed into the HBox the same way (i.e., same arguments to the PackStart() method).
 
@@ -47,8 +45,7 @@ The homogeneous argument to HBox (and the same for VBox) controls whether each o
 
 What's the difference between spacing (set when the box is created) and padding (set when elements are packed)? Spacing is added between objects, and padding is added on either side of an object.
 
-Example
-=======
+## Example
 
 ``` csharp
 // packingdemo.cs - Gtk# Tutorial example
@@ -285,4 +282,3 @@ namespace GtkSharpTutorial {
         }
 }
 ```
-

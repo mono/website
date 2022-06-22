@@ -110,4 +110,3 @@ Contributors
 ============
 
 Johannes Roith, Norman Lorrain, Jon Kessler, Shane Landrum
-

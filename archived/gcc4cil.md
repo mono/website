@@ -81,4 +81,3 @@ How the linker handles external symbols
 Symbols that are functions (seen as static methods) are converted to the appropriate p/invoke call to the external function.
 
 For symbols that are global variables we are still building a solution.
-

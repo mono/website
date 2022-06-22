@@ -27,5 +27,3 @@ Advanced Topics
 
 -   [Connecting to events](/MonoTouch_Events).
 -   [Using MonoTouch with XCode](/MonoTouch_XCode).
-
-

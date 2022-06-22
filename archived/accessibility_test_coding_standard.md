@@ -78,7 +78,7 @@ Test scripts for application samples should be stored in the uia2atk/test/tester
 2.  an "\_\_init\_\_.py" explains to strongwind where the winforms application is.
 3.  an "\<controls\>frame.py" script that explains what winforms controls exist in the sample script.
 
-The full name of base test script should be like this: *the name of Winforms controls you have implemented* + _basic_ops.py. The name of test directory should be like this: *the name of Winforms controls you have implemented*. *\<controls\>_frame.py* file name should be like this: *the name of Winforms controls you have implemented* + "frame". so for example, if we create a test script for "Button" winforms control, this "Button" test script will include a base test script which name is **button_basic_ops.py** and a test directory named **button**. There would be two files in this directory. **__init__.py** and **buttonframe.py**.
+The full name of base test script should be like this: *the name of Winforms controls you have implemented* + _basic_ops.py. The name of test directory should be like this: *the name of Winforms controls you have implemented*. `<controls\>_frame.py` file name should be like this: *the name of Winforms controls you have implemented* + "frame". so for example, if we create a test script for "Button" winforms control, this "Button" test script will include a base test script which name is **button_basic_ops.py** and a test directory named **button**. There would be two files in this directory. `__init__.py` and `buttonframe.py`.
 
 Notice: the file names should be all lowercase with underscores, and do not use acronyms.
 
@@ -205,4 +205,3 @@ Files that will be executed directly should be given the permission 755 (-rwxr-x
 -   local_run.py and remote_run.py in the "uia2atk/test/drivers" directory.
 
 All other files should have the permission 644 (-rw-r--r--).
-

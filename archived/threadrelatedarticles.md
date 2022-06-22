@@ -28,5 +28,3 @@ A common problem faced by GUI application developers is keeping an application r
 There are a number of reasons why an application might become unresponsive to a user: the application might be performing a long-running computation or it might be blocking on data to become available from the network, a file system or the operating system. [Read more...](/Responsive_Applications)
 
 -   Work in Progress
-
-

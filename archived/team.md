@@ -2142,6 +2142,3 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Zoltan Varga'+'<\/'+'a'+'>
 </tr>
 </tbody>
 </table>
-
-
-

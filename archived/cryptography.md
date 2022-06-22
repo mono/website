@@ -251,5 +251,3 @@ How to Help
 -   Analyze the current coverage of the unit tests on the cryptographic classes and complete the unit tests. `monocov` does a great job at this! Now we just need to complete the missing unit tests.
 -   Optimization can also be done on most algorithms as crypto is never fast enough. Just be sure to test every optimization (using the unit tests) carefully - it's so fast to break an algorithm ;-).
 -   Write some documentation or add some sample code for the cryptographic classes in **monodoc**.
-
-

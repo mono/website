@@ -29,4 +29,3 @@ Projects using this package
 ---------------------------
 
 [GtkGLAreaSharp](/GtkGLAreaSharp)
-

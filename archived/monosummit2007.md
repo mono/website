@@ -98,5 +98,3 @@ Blog entries about Summit
 -   [Jeroen Frijters](http://weblog.ikvm.net/PermaLink.aspx?guid=fe8612d8-8968-4a93-a589-d529b3eb56af)
 -   [Jb Evain](http://evain.net/blog/articles/2007/12/02/mono-meeting-2007)
 -   [Andreia Gaita](http://worldofcoding.blogspot.com/2007/12/there-and-back-again-mono-summit-2007.html)
-
-

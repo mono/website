@@ -67,4 +67,3 @@ Download Repository
 -   [http://download.opensuse.org/repositories/Mono:/apps](http://download.opensuse.org/repositories/Mono:/apps)
 
 Follow the above link, open distro folder, and then click on noarch. The rpms are named according to the following convention: Mono_ASP.NET_\<name\>StarterKit.
-

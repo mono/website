@@ -140,4 +140,3 @@ Why use GNOME components?
 -------------------------
 
 GNOME is an umbrella project that consists of infrastructural components (GUI toolkit, XML libraries, CORBA implementation, printing architecture, imaging system), a desktop environment, and productivity applications. The GNOME infrastructural components can be used to quickly implement various pieces of the class libraries without reinventing the wheel, and since all those components are licensed under the terms of the GNU LGPL it is a perfect fit. Libart will be used to implement the Drawing.2D API; Gtk+ and the GNOME libraries will be used to implement the WinForms API and of course Glib and libxml will be used in various places
-

@@ -28,8 +28,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AddMissingTypeInheritanceDemandRule
 
@@ -256,8 +255,6 @@ public class Good : ISerializable {
 
 -   Before Gendarme 2.2 this rule was part of Gendarme.Rules.Security.
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

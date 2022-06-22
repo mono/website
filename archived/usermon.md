@@ -24,4 +24,3 @@ Contact
 -------
 
 **Email:** mattias dot ohlsson at inprose dot com
-

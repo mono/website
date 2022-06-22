@@ -10,15 +10,13 @@ If you have more than one Mono installation (for example to keep multiple versio
 
 **It is strongly advised not to install Mono from source in /usr as it might conflict with Mono as installed by the Mono package.**
 
-Building Mono
-=============
+## Building Mono
 
 Building Mono is a very simple process as Mono has very few external dependencies.
 
 On Mavericks and later versions you will need to install some tools that are no longer part of the developer SDK, but luckily this is a very simple process.
 
-Building Mono Dependencies
---------------------------
+### Building Mono Dependencies
 
 Mono uses GNU autoconf, automake and libtool. You need to install those in your path, e.g. through [Homebrew](https://brew.sh)
 
@@ -26,7 +24,7 @@ Mono uses GNU autoconf, automake and libtool. You need to install those in your 
 brew install autoconf automake libtool pkg-config cmake python3
 ```
 
----
+------------------------------------------------------------------------
 
 Mono releases are distributed as .tar.xz packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
@@ -48,8 +46,7 @@ If you wish to compile Mono in 64 bit mode instead use this to configure the bui
 
 By the end of this process, you will have Mono installed on your PREFIX directory.
 
-Building Mono From a Git Source Code Checkout
----------------------------------------------
+### Building Mono From a Git Source Code Checkout
 
 To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
 
@@ -68,8 +65,7 @@ To build Mono in 32 bit mode instead use this to configure the build:
 CFLAGS="-m32 -arch i386" LDFLAGS="-m32 -arch i386" ./autogen.sh --host=i386-apple-darwin13.0.0 --build=i386-apple-darwin13.0.0 --prefix=$PREFIX --disable-nls
 ```
 
-One Stop Shop Build Script
---------------------------
+### One Stop Shop Build Script
 
 If you just want to install Mono without thinking too much, just copy and paste the following script, and enter your root password when requested:
 
@@ -100,8 +96,7 @@ make
 make install
 ```
 
-Troubleshooting
-===============
+## Troubleshooting
 
 If you receive an error like:
 

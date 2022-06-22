@@ -32,4 +32,3 @@ Some distribution stats will be located at:
     output/distro_stats.txt
 
 that will give an idea of architecture and distribution popularity.
-

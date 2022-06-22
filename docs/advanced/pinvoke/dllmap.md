@@ -5,8 +5,7 @@ redirect_from:
   - /DllMap/
 ---
 
-Overview
---------
+### Overview
 
 DllMaps are used to map windows library names (.dll) to linux/unix library names (usually .so).
 
@@ -14,7 +13,7 @@ DllMaps are specfied in either the mono configuration file, or in assembly confi
 
 The `<dllmap>` is a directive that can be used directly in the `<configuration>` section.
 
-### Children
+#### Children
 
 The `<dllmap>` directive can be further tuned using the `<dllentry>` directive.
 
@@ -26,10 +25,9 @@ The `<dllentry>` element takes 3 attributes:
 
 -   `name`: This is the name of the function as it appears in the metadata: it is the name of the P/Invoke method.
 
--   `target`: This is the name of the function to lookup instead of the name specified in the P/Invoke method.   As of Mono 4.8.0, this element is optional, and if not specified, it will default to the same value as `name`.    In previous versions, you must specify the value.
+-   `target`: This is the name of the function to lookup instead of the name specified in the P/Invoke method. As of Mono 4.8.0, this element is optional, and if not specified, it will default to the same value as `name`. In previous versions, you must specify the value.
 
-Usage
------
+### Usage
 
 You use the `<dllmap>` directive to map shared libraries referenced by P/Invoke in your assemblies to a different shared library.
 
@@ -50,8 +48,7 @@ The attribute value for both attributes can be a comma-separated list of the all
 
 No spaces are allowed in any part of the value.
 
-Example
-=======
+## Example
 
 The following example maps references to the `cygwin1.dll` shared library to the `libc.so.6` file:
 
@@ -79,9 +76,9 @@ to a different function in libdifferent.so, but to the same function in the libr
 </configuration>
 ```
 
-Starting with Mono 4.8.0, you can also specify a different dll target on a per-`dllentry` basis.  Imagine that on Windows you have a library `SolarSystem.dll`, but on Unix the same functionality is available in two libraries `libearth.so` and `libmars.so`, so you can write:
+Starting with Mono 4.8.0, you can also specify a different dll target on a per-`dllentry` basis. Imagine that on Windows you have a library `SolarSystem.dll`, but on Unix the same functionality is available in two libraries `libearth.so` and `libmars.so`, so you can write:
 
-```xml
+``` xml
 <configuration>
   <dllmap os="!windows" dll="SolarSystem">
     <dllentry dll="libearth.so" name="get_Animals" />
@@ -90,7 +87,6 @@ Starting with Mono 4.8.0, you can also specify a different dll target on a per-`
 </configuration>
 ```
 
-Common Problems
----------------
+### Common Problems
 
 -   [DllNotFoundException](/docs/advanced/pinvoke/dllnotfoundexception/)

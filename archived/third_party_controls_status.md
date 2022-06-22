@@ -876,4 +876,3 @@ Dazzling WPF-like features with classic Windows Forms.
 |[![Dialog-warning.png](/archived/images/1/1a/Dialog-warning.png)](/archived/images/1/1a/Dialog-warning.png)|Methods called marked with [MonoTodo]: 162|
 
 [Full Report](http://www.jpobst.com/mono/TelerikRadControls.html)
-

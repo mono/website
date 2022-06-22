@@ -6,11 +6,9 @@ redirect_from:
 
 Here's are some initial ideas for students ... Most of them are "meta-ideas" that needs to be further detailed and split into (many) individual tasks.
 
-By Category
-===========
+## By Category
 
-Code
-----
+### Code
 
 -   Mono Class Library Parameter Names
 -   Mono Class Library Unit Tests
@@ -21,8 +19,7 @@ Code
 -   MonoDevelop bugfixes or enhancements
 -   MonoDevelop unit tests
 
-Documentation / Training
-------------------------
+### Documentation / Training
 
 -   Mono Command-Line Tools
 -   Mono API Documentation
@@ -30,8 +27,7 @@ Documentation / Training
 -   Gendarme Rules
 -   MonoDevelop documentation and tutorials
 
-Outreach / Research
--------------------
+### Outreach / Research
 
 -   Research the most common photo raw formats and recommend a priority list of formats to support.
 -   Update and improve the f-spot website
@@ -39,27 +35,23 @@ Outreach / Research
 -   Clean up the mono-project wiki
 -   Provide links to the various mono packages in different distributions
 
-Quality Assurance
------------------
+### Quality Assurance
 
 -   Mono Class Library Unit Tests
 -   Gendarme Rules
 -   Improve the unit tests in F-Spot.
 -   Improve the unit tests for tomboy-lib (formerly tomboy-library)
 
-User Interfaces
----------------
+### User Interfaces
 
 -   Porting Gtk+ Samples to GtkSharp
 -   Create user scenarios for f-spot to help improve searching tags
 -   Create mockups for an iOS version of Tomboy
 -   Create design suggestions for Rainy. The new online tomboy.
 
-Idea Descriptions
-=================
+## Idea Descriptions
 
-Mono Class Library Parameter Names
-----------------------------------
+### Mono Class Library Parameter Names
 
 Mono provides many class libraries (assemblies) that are (near 100%) compatible with Microsoft .NET. This is possible because we provide the same API to developers. However, for historic reasons, the parameter names in our class libraries do not always match the one provided by Microsoft.
 
@@ -69,8 +61,7 @@ We'll provide a tool (gui-compare) that allow people to spot all different names
 
 -   Since Mono's class libraries are quite huge this will be split into several, individual tasks.
 
-Port and fix existing libraries and applications to Linux
----------------------------------------------------------
+### Port and fix existing libraries and applications to Linux
 
 There are a number of popular libraries as well as applications that could be ported trivially to Linux. For the port to be useful, we need both the patches as well as the packaging in RPM form (or DEB form) to easily distribute them to Linux and macOS users.
 
@@ -82,8 +73,7 @@ Some projects include:
 -   Orchard
 -   NUget
 
-Mono Class Library Unit Tests
------------------------------
+### Mono Class Library Unit Tests
 
 A lot of Mono unit tests date back to the days of .NET 1.0. The collection has grown with time to include 1.1, 2.0 (and service packs), 3.0 (new assemblies), 3.5 (and service packs) to the recently released 4.0. Right now some of our test cases are still checking for 2.0 (or even earlier) specific behavior and do not reflect the exact results of .NET (3.5 or 4.0).
 
@@ -91,8 +81,7 @@ The task is to compile and run Mono unit tests against either .NET 3.5 or 4.0 an
 
 -   Since Mono's unit tests are quite huge this will be split into several, individual tasks.
 
-Mono Command-Line Tools
------------------------
+### Mono Command-Line Tools
 
 Mono provides a lot of development tools, most of them "command-line tools" and written in C#. Almost all of them implement their own way of dealing with command-line options.
 
@@ -100,8 +89,7 @@ The task is to migrate the custom command-line parsing code to use the excellent
 
 -   Since Mono provide a lots of tools this will be split into several, individual tasks (one complex tool, or a few simple ones).
 
-Mono API Documentation
-----------------------
+### Mono API Documentation
 
 Mono provides a lot of functionality not available in Microsoft .NET (e.g. Gtk#, Cecil...). However documentation for those API is completely missing, scarce or lack examples.
 
@@ -125,15 +113,13 @@ This task is limited to Mono specific APIs:
 
 -   Since Mono provide a lot of API this will be split into several, individual tasks (e.g. one namespace).
 
-Porting Gtk+ Samples to GtkSharp
---------------------------------
+### Porting Gtk+ Samples to GtkSharp
 
 A lot of sample code exists for Gtk+, most of them written in C or Python. The task is to translate those samples to Gtk# and make these available from our GitHub repository.
 
 -   Since a lot of Gtk+ samples exists this will be split into several, individual tasks.
 
-Gendarme Rules
---------------
+### Gendarme Rules
 
 Gendarme is a tool to find problems in programs. Gendarme inspects programs and libraries that contain code in ECMA CIL format (Mono and .NET) and looks for common problems with the code, problems that compiler do not typically check or have not historically checked.
 
@@ -143,23 +129,18 @@ The student must write the rule (C#), documentation (in source xmldoc) and unit 
 
 -   Many different tasks (i.e. different rules) will be available to students. The difficulty level will vary between the rules and will be noted in each task.
 
-MonoDevelop bugfixes or enhancements
-------------------------------------
+### MonoDevelop bugfixes or enhancements
 
 There are many minor bug reports and suggested enhancements in the MonoDevelop bug trackers for components outside the MD core, such as the C/C++ addin, the VB.NET addin, and so on. Tasks would involve picking a small feature or bug in a specific area, and implementing or fixing it. There will be a large selection of tasks to choose from - both specific suggestions, and "pick a bug" type tasks.
 
-MonoDevelop Source Analysis Rules
----------------------------------
+### MonoDevelop Source Analysis Rules
 
 MonoDevelop has a source analysis engine that finds potential issues in source code, underlines them, and offers automatic fixes. Your task would be to write a new rule (you can take inspiration from Gendarme, FXCop, ReSharper, IntelliJ, Eclipse, etc), or improve the accuracy of an existing rule.
 
-MonoDevelop unit tests
-----------------------
+### MonoDevelop unit tests
 
 Write units tests for MonoDevelop features, especially the parsers and completion engines, and the vi editor mode. Simple tests will generally involve writing some input data - for example a C# or XML snippet - and a set of expected values from the parser or completion engine. More advanced tests could involve manipulating the MD API to simulate common tasks, such as creating and compiling projects, and verifying the output.
 
-MonoDevelop documentation and tutorials
----------------------------------------
+### MonoDevelop documentation and tutorials
 
 We would like to have more documentation for MonoDevelop features, and walkthroughs for accomplishing common tasks.
-

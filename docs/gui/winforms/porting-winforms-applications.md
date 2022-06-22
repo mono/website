@@ -461,5 +461,3 @@ Advanced Guides
 ---------------
 
 -   [Guide: Debugging With MWF](/docs/gui/winforms/debugging-with-mwf/) - Shows how to use the MWF project file from Git to debug issues.
-
-

@@ -17,4 +17,3 @@ Miguel is also known for his mass league of followers. These people can be heard
 Miguel owns a small monkey that was frozen in the ice age, which he in a glass paper weight which sits on his desk, which he won at auction in 1992. Rumor is that Miguel gets strange super powers from the monkey, such as seeing through walls, the ability to maintain very large, world changing projects, and the ability to reverse engineer anything in less then a minute.
 
 Miguel also loves the daily show and is happily married.
-

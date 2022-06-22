@@ -61,5 +61,3 @@ Configuration
 =============
 
 -   [Configuring your applications using mconfig](/Howto_Mconfig)
-
-

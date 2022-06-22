@@ -34,5 +34,3 @@ Areas of work which are in progress:
     -   Moon-native + Moon-a11y XPI
     -   Moon-native + Moon-a11y native
     -   Moon XPI + Moon-a11y native
-
-

@@ -116,4 +116,3 @@ Sample application specifications:
 ### Running the Mono Server and Web Server on Different Machines
 
 Many web servers will let you connect to the FastCGI Mono Server on another machine over TCP. If you are using automatic application mapping, the paths it uses come from the web server and where it thinks the files should be. If you are your web server has a document root of `C:\Inetpub\wwwroot` and the machine running the Mono Server stores the files on `D:\Inetpub\wwwroot`, `C:\Mirror\Inetpub\wwwroot`, or anything other that `C:\Inetpub\wwwroot`, it will be unable to find or serve the files. Some servers will let you specify the document root to use, but **it is recommended that you have an identical directory structure on both machines**.
-

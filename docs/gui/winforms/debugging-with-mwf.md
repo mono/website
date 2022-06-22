@@ -40,4 +40,3 @@ Another nice feature of this setup is that it will show us exactly which methods
 Since GUI depends on GUI.Diagram, you'll have to fix or comment the build errors on GUI.Diagram first, before going on to GUI. The list of errors above shows errors for both projects, and I had to temporarily comment all the lines with errors on GUI.Diagram so that I could see the errors on the GUI project.
 
 Note that this setup only replaces System.Windows.Forms, and not other references like System or System.Drawing. The Microsoft version of these will still be used. This can be useful for narrowing down a bug to MWF and not one of its dependencies. Also, you cannot use the visual designers in Visual Studio while using this trick, as they are linked to .Net's System.Windows.Forms and not Mono's Managed.Windows.Forms.
-

@@ -226,5 +226,3 @@ Here are some pointers to dig deeper into MonoDevelop and Interface Builder:
 -   [Defining Outlets in Interface Builder](http://developer.apple.com/documentation/developertools/Conceptual/IB_UserGuide/CodeIntegration/CodeIntegration.html)
 -   [MonoDevelop](http://www.monodevelop.com)
 -   [MonoTouch API Design: events and outlets in C#](/MonoTouch_API)
-
-

@@ -21,5 +21,3 @@ Additionally, if you are integrating MonoTouch into an existing build system, yo
     -   [MonoTouch SDK Hello World, with Interface Builder](/MonoTouch_Tutorial_HelloIB).
 -   Using MonoTouch with XCode:
     -   [MonoTouch_XCode](/MonoTouch_XCode)
-
-

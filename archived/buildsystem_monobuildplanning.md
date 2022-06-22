@@ -143,4 +143,3 @@ Working example of /etc/apache2/conf.d/mod_perl.conf
         # The /cgi-bin/ ScriptAlias is already set up in httpd.conf
 
     </IfModule>
-

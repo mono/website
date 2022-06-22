@@ -51,4 +51,3 @@ The `~/ignorePaths.conf` file, located at the root of the aplication, may contai
 
     /SomeFileToIgnore.ascx
     ~/SubDir/IgnoreThisFile.aspx
-

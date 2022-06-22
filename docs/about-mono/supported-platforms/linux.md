@@ -9,4 +9,3 @@ Mono is primarily developed on Linux, and most of its users are Linux users, so 
 Packages for various distributions are available on our [Downloads](/download/stable/#download-lin) page.
 
 Mono on Linux supports a number of Linux-specific optimizations.
-

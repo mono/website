@@ -6,8 +6,7 @@ redirect_from:
 
 [Gendarme](/docs/tools+libraries/tools/gendarme/)'s rules about LINQ-related design issues are located in the **Gendarme.Rules.Design.Linq.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Design.Linq/).
 
-Rules
-=====
+## Rules
 
 ### AvoidExtensionMethodOnSystemObjectRule
 
@@ -41,8 +40,6 @@ public static class Extensions {
 
 -   This rule is available since Gendarme 2.2
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

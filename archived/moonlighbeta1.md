@@ -9,4 +9,3 @@ MoonlighBeta1
 =============
 
 All information on this page has been moved to [MoonlightBeta1](/MoonlightBeta1)
-

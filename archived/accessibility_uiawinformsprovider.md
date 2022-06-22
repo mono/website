@@ -9,4 +9,3 @@ Accessibility: UiaWinformsProvider
 ==================================
 
 [![WinformsAutomationProvider.png](/archived/images/f/f6/WinformsAutomationProvider.png)](/archived/images/f/f6/WinformsAutomationProvider.png)
-

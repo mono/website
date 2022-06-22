@@ -141,5 +141,3 @@ References
 -   [The Silverlight Security Model](http://blogs.msdn.com/shawnfa/archive/2007/05/09/the-silverlight-security-model.aspx), [Silverlight Security II: What Makes a Method Critical](http://blogs.msdn.com/shawnfa/archive/2007/05/10/silverlight-security-ii-what-makes-a-method-critical.aspx) and [Silverlight Security III: Inheritance](http://blogs.msdn.com/shawnfa/archive/2007/05/11/silverlight-security-iii-inheritance.aspx) by Shawn Farkas
 -   [CLR Inside Out: Security In Silverlight2](http://msdn.microsoft.com/en-us/magazine/cc765416.aspx) by Andrew Dai
 -   [Security Guidance for Writing and Deploying Silverlight Applications](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=7cef15a8-8ae6-48eb-9621-ee35c2547773)
-
-

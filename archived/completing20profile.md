@@ -225,5 +225,3 @@ Additional resources:
 
 -   [WinForms CodeOwners](/WinForms_CodeOwners)
 -   [Moma Reports](http://primates.ximian.com/~miguel/momareports).
-
-

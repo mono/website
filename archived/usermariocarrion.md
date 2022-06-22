@@ -21,4 +21,3 @@ Meet him in #monouml - irc.gimp.net
 **References**
 
 [Personal blog](http://mario.monouml.org)
-

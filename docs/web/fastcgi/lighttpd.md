@@ -323,4 +323,3 @@ Success
 -------
 
 You should now have ASP.NET working with Lighttpd. Enjoy!
-

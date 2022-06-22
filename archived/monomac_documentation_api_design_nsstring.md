@@ -53,4 +53,3 @@ class Foo {
      public NSString FooBarKey { get; }
 }
 ```
-

@@ -285,4 +285,3 @@ RAW IRC Capture
     <mgorse> calvin: Might be quicker to just have one go-round as you were suggesting; maybe try that next week and see how it goes
     <knocte> (well sorry guys I have to leave, I'll be here in an hour or so; thanks!)
     <calvin> ok, we're done
-

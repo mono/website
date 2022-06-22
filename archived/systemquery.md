@@ -26,4 +26,3 @@ The `System.Query.Sequence` class provides methods that work in `IEnumerable` ob
 Most of the functionality is indeed inside this class, except ordering, which occurs inside `OrderedSequence`. The algorithm used for ordering is the traditional QuickSort.
 
 Any compiler that would like to provide a set of à-la-SQL operators should rely on this library.
-

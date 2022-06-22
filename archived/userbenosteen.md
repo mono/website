@@ -74,6 +74,3 @@ I propose a series of tutorials, graded in difficultly. The narrative would be w
 4.  **Third intermediate example**
     -   Extend the previous example, using Menu Widgets, load and save, and XML...
     -   Sensible time to introduce NUnit testing? Or going even further, Test-Driven Development style of coding?
-
-
-

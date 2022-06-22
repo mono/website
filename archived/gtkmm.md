@@ -9,4 +9,3 @@ GTKMM
 =====
 
 C++ wrappers around gtk+
-

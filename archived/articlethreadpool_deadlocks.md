@@ -82,5 +82,3 @@ These include:
 -   Using a single thread to process most of the asynchronous I/O. **UPDATE:** Implemented as of 2005-04-15.
 
 -   Use the aio\* interfaces whenever available (not always easy or possible). **UPDATE:** Implemented as of 2005-04-15.
-
-

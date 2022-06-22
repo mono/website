@@ -74,4 +74,3 @@ Other thoughts
 [http://www.codeproject.com/aspnet/ASPNET2XHTML.asp](http://www.codeproject.com/aspnet/ASPNET2XHTML.asp)
 
 [http://www.liquid-internet.co.uk/content/dynamic/pages/series1article1.aspx](http://www.liquid-internet.co.uk/content/dynamic/pages/series1article1.aspx)
-

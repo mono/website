@@ -4,27 +4,23 @@ redirect_from:
   - /GtkSharpNodeViewTutorial/
 ---
 
-Introduction
-============
+## Introduction
 
 The GTK TreeView widget is used to display data in lists and hierarchical trees. Each row in the tree or list can contain multiple columns. The TreeView API can be a little overwhelming, so we've provided the NodeView convenience APIs in Gtk# to help simplify its use.
 
 This tutorial is a brief introduction to the NodeView, NodeSelection, and NodeStore APIs with small samples to help get you started. Keep in mind that the NodeView is a work in progress, and doesn't expose all of the underlying power of the TreeView, but is quite useful for simple List and Tree user interfaces.
 
-Model/View Separation
-=====================
+## Model/View Separation
 
 The NodeView, like TreeView, uses the Model-View-Controller (MVC) design pattern. The NodeStore model stores data to be displayed. The NodeView, which is a thin subclass of TreeView, displays the data. The NodeSelection allows access to the selection state of the NodeView.
 
-Model
------
+### Model
 
 The NodeStore implements the Gtk.TreeModel interface to provide both List and Tree data to a NodeView for display. When you create a NodeStore, you specify the node Type which it will contain. The Type must implement the ITreeNode interface. The NodeStore is then populated with instances of this type to expose your data.
 
 The TreeNode class is provided as a helper for exposing the ITreeNode interface. You can simply subclass TreeNode to create your node Type, or implement ITreeNode directly if you want to reuse an existing type to expose your data. The organization of the data within the Node is specified by annotating fields and properties with the TreeNodeValue attribute.
 
-View
-----
+### View
 
 The View is made up of three different elements - NodeView, TreeViewColumn, and CellRenderer.
 
@@ -42,11 +38,9 @@ The following cell renderers are available:
 
 CellRenderers are separate from TreeViewColumns for added flexibility, allowing you to have an extremely fine-tuned treeview tailored to your application. For example you can pack an image and text into the same column, which often makes much more sense than creating a separate column for each.
 
-Your first NodeView
-===================
+## Your first NodeView
 
-Setting it up
--------------
+### Setting it up
 
 Here is a basic example of how to use the NodeView and all its related components. In our example, we will show a simple list of song titles and artist names. The first step is defining our node type, which we do by subclassing the TreeNode helper class:
 
@@ -135,12 +129,11 @@ If we haven't already built it, we create a NodeStore which will contain MyTreeN
                 }
 ```
 
-The whole sample named "Simple NodeView" can be found [http:/GtkSharpNodeViewTutorialExamples here] and when compiled and executed it looks like this:
+The whole sample named "Simple NodeView" can be found \[http:/GtkSharpNodeViewTutorialExamples here\] and when compiled and executed it looks like this:
 
 [![GtkSharpNodeViewSimple.png](/archived/images/0/04/GtkSharpNodeViewSimple.png)](/archived/images/0/04/GtkSharpNodeViewSimple.png)
 
-Getting Interactive
-===================
+## Getting Interactive
 
 This sample demonstrates the use of NodeSelection to react to changes in the selection state of the NodeView. We'll build on the source of the previous example by adding a Label field to display information about the currently selected node in the NodeView.
 
@@ -163,7 +156,6 @@ The event handler grabs the currently selected node and updates the new label wi
 
 Note that all the complexity of TreeIters and GValues is removed and you can access your data in a nice object-oriented fashion. The NodeSelection API exposes ITreeNodes which can be cast to get directly at the data.
 
-The complete source for this sample, Interactive NodeView, can be found [http:/GtkSharpNodeViewTutorialExamples here] and when compiled and executed, it produces the following application:
+The complete source for this sample, Interactive NodeView, can be found \[http:/GtkSharpNodeViewTutorialExamples here\] and when compiled and executed, it produces the following application:
 
- [![GtkSharpNodeViewInteractive.png](/archived/images/9/96/GtkSharpNodeViewInteractive.png)](/archived/images/9/96/GtkSharpNodeViewInteractive.png)
-
+[![GtkSharpNodeViewInteractive.png](/archived/images/9/96/GtkSharpNodeViewInteractive.png)](/archived/images/9/96/GtkSharpNodeViewInteractive.png)

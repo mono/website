@@ -19,4 +19,3 @@ Uploaded my Version
 Hello,
 
 since this article has made little or no progress in quite some time I've taken myself the freedom of rewriting it completely. The new version of the article is now online. So if there's someone working still working on it without me knowing please take a look if there is a way that we could merge our efforts.
-

@@ -20,5 +20,3 @@ Recent writeups include:
 -   [Getting_Mono](/Obtaining_Mono)
 -   [Mono, a technical whitepaper](/Mono,_a_technical_whitepaper)
 -   [DB4BOO](/DB4BOO)
-
-

@@ -165,4 +165,3 @@ Lluis Sanchez
 **Wrap Up**
 
  [![Logo uned.gif](/archived/images/e/e1/Logo_uned.gif)](/archived/images/e/e1/Logo_uned.gif) [![Cindetec.png](/archived/images/8/86/Cindetec.png)](/archived/images/8/86/Cindetec.png)
-

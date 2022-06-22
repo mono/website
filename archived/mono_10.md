@@ -129,5 +129,3 @@ Virtual Machine
 -   JIT, 32 bits, unstable: S390
 
 -   Interpreter, 32 bits: s390, HPPA, StrongARM, SPARC v8
-
-

@@ -6,8 +6,7 @@ redirect_from:
 
 This document describes the state of SafeHandles and CriticalFinalizerObject and their supporting requirements in the Mono Runtime.
 
-Resources
-=========
+## Resources
 
 The following blog entries contain some important background on what SafeHandles are and what is their exposed behavior to programmers:
 
@@ -15,8 +14,7 @@ The following blog entries contain some important background on what SafeHandles
 
 [On implementing SafeHandles](https://docs.microsoft.com/en-us/archive/blogs/bclteam/safehandles-the-best-v2-0-feature-of-the-net-framework-ravi-krishnaswamy)
 
-SafeHandle
-==========
+## SafeHandle
 
 The runtime support currently has:
 
@@ -39,8 +37,7 @@ Open Research Issues:
 -   What happens is SafeHandle is null (parameters, fields)
 -   SafeHandles in classes (not structures)
 
-Notes on Limitations
---------------------
+### Notes on Limitations
 
 In one special case (SafeHandles in structures that are passed as parameters in P/Invoke functions) we are not calling AddRef/ReleaseRef because we would have to keep track of the original handle, but this data is currently not available in the release/cleanup code for marshalling.
 
@@ -54,17 +51,14 @@ The reason why we have to do this is that we need access to the original SafeHan
 
 A possible implementation strategy would be to use another pre-determined slot in marshal.c to keep track of all the SafeHandles that must be disposed, an ArrayList where we track all of the SafeHandles that must be validated or DangerousReleased.
 
-CriticalFinalizerObject
-=======================
+## CriticalFinalizerObject
 
 Any classes derived from CriticalFinalizerObject must have their Finalizers handled specially. Two features are important: pre-JITing of all the methods in the derived class, and ensuring that the finalizers for all of the derived objects from CriticalFinalizerObject are executed even during AppDomain unloads.
 
-Users of SafeHandles
-====================
+## Users of SafeHandles
 
 WaitHandle in the 2.0 profile uses SafeWaitHandles.
 
 Currently WaitHandles are using a fairly heavy-weight synchronization object for the refcount (lock on an internal object). It might be useful to look into using the interlocked compare and exchange routines.
 
 FileStream is still missing support for SafeFileHandle (decide whether to switch like WaitHandle did, or provide a simple wrapper).
-

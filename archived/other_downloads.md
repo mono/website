@@ -70,5 +70,3 @@ Then change the keyboard to English.
 -   Select your language (U.S.English) from the layout drop down
 -   Click on the Default radio button to make English the default layout.
 -   Click Close
-
-

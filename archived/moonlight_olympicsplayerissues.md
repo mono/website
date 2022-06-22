@@ -71,4 +71,3 @@ Downloads
 ---------
 
 You can always get the latest preview versions of Moonlight from [[4]](http://www.go-mono.com/moonlight/prerelease.aspx) and the firefox extension should notify you of updates automatically.
-

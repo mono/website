@@ -51,4 +51,3 @@ DependentTransaction is not implemented.
 Distributed transactions are not implemented, not because of a limitation in our code, but because we might end up with different behaviour.
 
 We want to implement this anyways.
-

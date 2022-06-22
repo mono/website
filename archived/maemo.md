@@ -114,5 +114,3 @@ You can develop powerful applications for Nokia using Mono right now, but some t
 -   Porting some Mono applications to Maemo. Basically what you would need to do is to change small classes to use the hildon libraries (included in maemo-sharp). This work was done in Paco's PEditGtkSharp by changing fewer than 20 lines of code. Documentation about this process is coming soon.
 -   Documentation and porting guide.
 -   MonoDevelop plugin to ease development. A good way would be to integrate Scratchbox and Maemo in the same way as the [Laika Eclipse plugin](http://www.cs.tut.fi/~laika/). This [link](http://www.scratchbox.org/download/files/sbox-releases/1.0/doc/ideintegration.html) also provides information about IDE integration, more information can be also founded [here](http://www.scratchbox.org/documentation/general/tutorials/idetools.html).
-
-

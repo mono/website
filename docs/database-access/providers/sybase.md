@@ -73,7 +73,7 @@ Testing
 -   When you install Sybase Adapter Server Enterprise 12.x from Sybase, the default port is 5000.
 
 Connection String Format
-========================
+------------------------
 
 -   Has a connection string format:
 
@@ -100,7 +100,7 @@ Connection String Format
 |Pooling|Specifies whether or not to use connection pooling. Valid values are TRUE or YES to use connection pooling or FALSE or NOT to not use connection pooling. Default is TRUE.|Pooling=true|
 
 C# Example
-===========
+----------
 
 ``` csharp
  using System;

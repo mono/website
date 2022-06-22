@@ -371,4 +371,3 @@ The above expression returns an Atk.Object in the managed side, but in the unman
 For these cases, you can bind the required GInterface by calling a static method on its adapter class:
 
     Atk.Text atkText = Atk.TextAdapter.GetObject (new Gtk.Label ().Handle, false);
-

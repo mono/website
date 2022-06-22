@@ -19,4 +19,3 @@ If a rebuild is required in gtk-sharp:
     !hudson build gtk-sharp212_branch_tarball
 
 The latest targets for the build command are available on [Hudson's web interface](http://build0.sled.lab.novell.com:8010/).
-

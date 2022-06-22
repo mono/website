@@ -11,4 +11,3 @@ User:MattHargett
 [web page](http://www.clock.org/~matt%7CMatt's)
 
 [blog](http://wiki.yak.net/~pretention%7CMatt's)
-

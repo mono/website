@@ -146,5 +146,3 @@ Other Dependencies
 -   Keep [http://cia.vc/stats/project/mono](http://cia.vc/stats/project/mono) working
 -   Keep [http://www.ohloh.net/p/mono](http://www.ohloh.net/p/mono) working
 -   Keep [http://build.mono-project.com/](http://build.mono-project.com/) working
-
-

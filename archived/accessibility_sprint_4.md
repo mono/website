@@ -81,5 +81,3 @@ Open Bugs
 
 -   [#447851 - Make all provider tests pass](https://bugzilla.novell.com/show_bug.cgi?id=447851)
 -   [#447852 - Make all Bridge tests pass](https://bugzilla.novell.com/show_bug.cgi?id=447852)
-
-

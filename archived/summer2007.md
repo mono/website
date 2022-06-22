@@ -15,4 +15,3 @@ Groups discussions: [mono-soc-2007](http://groups.google.com/group/mono-soc-2007
 Source Code Repository: [http://code.google.com/p/mono-soc-2007](http://code.google.com/p/mono-soc-2007/)
 
 List of [Accepted Projects](http://groups.google.com/group/mono-soc-2007/web)
-

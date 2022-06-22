@@ -30,4 +30,3 @@ Easy bugs
 =========
 
 We need to identify and tag the easy bugs that high school students could pick up.
-

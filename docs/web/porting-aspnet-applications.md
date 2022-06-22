@@ -30,8 +30,10 @@ If your application uses MS SQL then on your Unix system you will need to instal
 
 ### Prerequisite software
 
--   Npgsql version from [CVS](http://pgfoundry.org/scm/?group_id=1000140).<br/>
+-   Npgsql version from [CVS](http://pgfoundry.org/scm/?group_id=1000140).
+
     The CVS version is required, since the ASP.NET 2.0 Membership classes rely on the DbProviderFactories model which is not available in Npgsql shipped with Mono.
+
 -   ASP.NET PostgreSQL Membership/Role providers. I recommend the version from [Nauck, It](http://dev.nauck-it.de/projects/show/aspsqlprovider), which is the code I use in all the ported starter kits. Make sure that you use the version of the above provider from the [Mono branch](https://github.com/dnauck/AspSQLProvider/tree/mono) as it contains changes necessary for the provider to work correctly with the CVS version of Npgsql.
 -   [PostgreSQL 8.2](http://www.postgresql.org/ftp/binary/v8.2.4/)
 
@@ -429,8 +431,10 @@ If this is the case with your file(s), you should generate the code using the Mi
 
 Before processing the `.xsd` file on Windows you need to edit it to make sure the generated code is compatible with Npgsql. There are two sets of changes that need to be made in order to achieve the goal:
 
-1.  Make sure the provider mentioned in the file is Npgsql<br/>
+1.  Make sure the provider mentioned in the file is Npgsql
+
     To do so, locate the `<Connections>` section within the `<xs:appinfo>` element and modify each `<Connection>` element's `Provider` attribute to say **Npgsql**
+
 2.  Edit the queries and parameters as described [below](#editing-queries)
 
 #### Editing queries
@@ -491,35 +495,35 @@ Information below is based on [this document](http://www.postgresql.org/docs/tec
 
 The information below is only an excerpt from the document referenced above containing the most commonly occurring issues. It is advised that you read the above document in addition to this guide.
 
-**nvarchar** 
+**nvarchar**
 
 replace with **varchar**
 
-**ntext** 
+**ntext**
 
 replace with **text**
 
-**datetime** and **smalldatetime** 
+**datetime** and **smalldatetime**
 
 replace with **timestamptz**
 
-**bit** 
+**bit**
 
 can be replaced with either of **boolean**, **int2** or **smallint**. The difference is in the syntax when referring to the field's value in the queries (**boolean** accepts '0', '1', TRUE, FALSE, while the two integer fields accept only 0 and 1)
 
-**image** 
+**image**
 
 replace with **bytea**
 
-**decimal** 
+**decimal**
 
 even though PostgreSQL supports this type, it is deprecated in favor of **numeric**
 
-**tinyint** 
+**tinyint**
 
 replace with **smallint**
 
-**UniqueIdentifier** 
+**UniqueIdentifier**
 
 replace with **text** in the SQL definition and **String** in the `.xsd` file. Typically, the ASP.NET apps will use this type to store the value of a Guid. If it is so in your case, make sure any and all code in your application that passes a value of type Guid to a method, first converts this value to a string (using the `.ToString()` method called on the Guid object). If your application does not use the field to store Guid values, you can replace the type with **bigint**. Also, see the document referenced at the start of this section for more information about the type.
 
@@ -653,4 +657,3 @@ Nathan Bridgewater wrote this very nice 3-part tutorial on how to port an ASP.NE
 -   Part 3: [Walk through porting the ASP.NET MVC website](http://www.integratedwebsystems.com/2010/02/walkthrough-porting-asp-net-mvc-website-to-mono-2-6-1-and-mysql-on-linux-apache-porting-to-mono-part-3-of-3/).
 
 Novell: [From .NET to Linux in 5 Easy Steps](http://www.novell.com/connectionmagazine/2010/02/mono_tools.html)
-

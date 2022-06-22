@@ -88,4 +88,3 @@ Languages
 =========
 
 There are a couple of languages available for Mono right now. Please refer to the [Languages](/Languages)-Page for more information.
-

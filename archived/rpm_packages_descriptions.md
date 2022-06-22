@@ -168,4 +168,3 @@ This package provides a library that allows you to build fully native graphical 
 -   gtk-sharp2-gapi -- Glib and GObject C source parser and C generator for the creation and maintenance of managed bindings for Mono and .NET
 
 This package provides developer tools for the creation and maintainance of managed bindings to native libraries which utilize glib ([http://developer.gnome.org/doc/API/glib/](http://developer.gnome.org/doc/API/glib/)) and GObject ([http://developer.gnome.org/doc/API/2.0/gobject/](http://developer.gnome.org/doc/API/2.0/gobject/)). Some examples of libraries currently bound using the GAPI tools and found in Gtk# include Gtk, Atk, Pango, Gdk, libgnome, libgnomeuiand and libgnomecanvas. Gtk-sharp2-gapi is used to bind Gtk+ 2.4 and associated libraries.
-

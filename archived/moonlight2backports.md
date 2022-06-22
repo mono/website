@@ -62,7 +62,7 @@ r149495 moon - new a11y tests
 
 r149558 moon - [https://bugzilla.novell.com/show_bug.cgi?id=515189](https://bugzilla.novell.com/show_bug.cgi?id=515189) - Debugger.Break crashes firefox
 
-r149561, r149562, r150158 moon - Rename all the NPAPI NPP_ and NPN_ symbols to MOON_NPP_ and MOON_NPN_ in order to avoid conflicts with other plugins
+r149561, r149562, r150158 moon - Rename all the NPAPI `NPP_` and `NPN_` symbols to `MOON_NPP_` and `MOON_NPN_` in order to avoid conflicts with other plugins
 
 r149578 moon - Fixes exception when raising UIA event.
 
@@ -105,4 +105,3 @@ other
 r\<branch only, not committed anywhere yet\> - patch in [https://bugzilla.novell.com/show_bug.cgi?id=570144](https://bugzilla.novell.com/show_bug.cgi?id=570144) - Moonlight link navigates to beta page
 
 Security attributes needs to be regenerated (make detect) and **audit.sh** needs to be executed to review `[SecuritySafeCritical]` changes in the class libraries.
-

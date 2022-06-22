@@ -72,5 +72,3 @@ Team
     -   Renato Suga
 -   Manjula GHM
 -   Satya Sudha K
-
-

@@ -5,20 +5,17 @@ redirect_from:
   - /GitSVN/
 ---
 
-Availability
-============
+## Availability
 
 Mono is using GitHub's [Organizations](https://github.com/blog/674-introducing-organizations) functionality which allows us to keep all of the Mono modules that used to be hosted on our Subversion repository as repositories of the **mono** organization on GitHub.
 
-The Mono organization is available at [https://github.com/mono](https://github.com/mono)
+The Mono organization is available at [<https://github.com/mono>](https://github.com/mono)
 
-Windows Users
-=============
+## Windows Users
 
 To get started with Git on Windows, you can follow GitHub's [tutorial on Git on Windows](http://help.github.com/win-git-installation/)
 
-Workflow
-========
+## Workflow
 
 Since "git push" can have unintended consequences, only core developers will be given "git push" access to the repositories at GitHub.
 
@@ -30,8 +27,7 @@ All git commands support a "-n" option, which will do a dry run of the command. 
 
 For quick recipe to checkout, make your changes, and commit them, this [introduction](http://nakedstartup.com/2010/04/simple-daily-git-workflow/) is also useful.
 
-Workflow 1: Working on master
------------------------------
+### Workflow 1: Working on master
 
 After cloning, when working directly on the master branch, the workflow is pretty simple: commit your changes, update your local master with the latest changes from the remote repo, then push your commits.
 
@@ -52,8 +48,7 @@ Merge branch 'master' of git@github.com:/mono/repo
 
 This is a merge commit, and our policy is to avoid these for pushes with a small number of commits, especially for single commit pushes. So use `git pull --rebase`, and remember to make sure you're not pushing merge commits (check this [FAQ entry](/community/contributing/gitfaq/#how-do-i-know-whats-going-to-be-pushed))
 
-Workflow 2: Use 'master' as integration branch
-----------------------------------------------
+### Workflow 2: Use 'master' as integration branch
 
 If you have multiple small pieces that you're working on simultaneously, you can use a few local branches to maintain them independently, and switch among them when you want to switch mental context. Since it is an useful mode of operation, it might make sense to use this workflow even if you have only one thing you're working on, so that you're comfortable with the workflow.
 
@@ -104,9 +99,9 @@ Branches are useful to isolate several pieces of work, so you can have some chan
 
 Once you're working on branches instead of master, always update the branches by first going into master and updating it with git pull, then going into your branch and doing git rebase master, as detailed above. This is important to make sure no merge commits appear on your commit history. If, when you're ready to push, master is more up to date than your branch, don't forget to rebase your branch before merging into master and pushing, to avoid merge commits.
 
- It is easy to extend the workflow to merge our changes onto multiple integration branches (backporting).
+It is easy to extend the workflow to merge our changes onto multiple integration branches (backporting).
 
-### Backports
+#### Backports
 
 Suppose you decide that your changes in the current branch need to be applied to an older maintenance branch, `mono-2-6`. There are multiple ways to achieve this. However, in the spirit of the rest of this workflow, we describe a merge-avoiding workflow for backports. We can create a parallel backport branch with:
 
@@ -119,8 +114,7 @@ This creates a clone, `backport-work-on-topic`, of the original set of commits o
 
 Note also, that this is meaningful only *before* `work-on-topic` has been merged into `master`. A bit more manual work is involved after it's been merged, since our merge-avoiding workflow hides the branch-point of the branch. You might just need to count up the number of commits introduced in `work-on-topic` and, say you have 5 commits, use `work-on-topic~5` instead of `master` in the command above. Or, you can use `git cherry-pick`.
 
-Workflow 3: Long-term projects
-------------------------------
+### Workflow 3: Long-term projects
 
 Suppose you're embarking on a long-term project, like working on a new GC, new IR, or other major re-architecture of the code. In such a case, it is detrimental to productivity to always keep up-to-date on the latest changes in the tree, unless we want some crucial bug-fixes. This workflow, like workflow 2, uses branches.
 
@@ -147,7 +141,7 @@ If the push failed, it's not a quiet time: throw away the merge with: `git reset
 
 This procedure will create merge commits, so if you do this, make sure you're merging a large enough feature that it merits having a full merge commit: i.e., has more than a few commits, is a visible feature which merits a release note, and/or has significant testing which would be lost if you rebase.
 
-### Maintaining the branch: Throwaway merges
+#### Maintaining the branch: Throwaway merges
 
 Often, you want to verify that your branch is easily merge-able into the current development branch, without actually committing it. You can use a throwaway merge, described below. It helps to have git configuration variable 'rerere.enabled = true' for this step.
 
@@ -166,7 +160,7 @@ git reset --hard HEAD^
 
 If you actually wanted a bugfix from 'master', just skip the last step, while keeping in mind that you also get tons more changes along with the bugfix. IOW, if you choose to keep this merge, it becomes a sync point and a major event in the history of this branch. All future merges will use this as the reference point. So, it's suggested that you keep merges only if 'master' is in a well tested state.
 
-### Publishing the long-lived topic: Public Forks on Github
+#### Publishing the long-lived topic: Public Forks on Github
 
 If you want to publish the long-lived topic without integrating it into 'master', you should use a personal fork.
 
@@ -190,28 +184,23 @@ If you don't expect anyone else to be writing to 'myrepos', you don't need to pu
 
 On the other hand, if you have collaborators on your published branch, including yourself on another machine, you can use workflows 1 and 2 to manage this branch.
 
-Frequently Asked Questions
-==========================
+## Frequently Asked Questions
 
-I don't see a mcs module
-------------------------
+### I don't see a mcs module
 
 The mcs module is now part of the mono module.
 
-My commits are not linked to my GitHub Account
-----------------------------------------------
+### My commits are not linked to my GitHub Account
 
 If your commits to Mono are not linked from your GitHub account, you probably have not registered a public email address with GitHub.
 
 Use `git show <commit-id>` on a commit which you know belongs to you. Now, the e-mail id in the "author" field is the one that GitHub uses to identify committers. So, you need to add that e-mail id as an alternative address to your GitHub account, and eventually your commits will be linked to you.
 
-What tool was used to convert from SVN to GIT?
-----------------------------------------------
+### What tool was used to convert from SVN to GIT?
 
 We used a [heavily-modified version](http://gitorious.org/~harinath/svn2git/rrh-svn2git) of the KDE project's svn2git. Most of the modifications were to improve the fidelity of the import, and some more were to introduce a fairly convenient incremental import mode. The tool does a fair job of handling all the varied branch-handling haps and mishaps in the mono SVN tree.
 
-How can I tell GIT to push from my tracking branch ?
-----------------------------------------------------
+### How can I tell GIT to push from my tracking branch ?
 
 Add this to `.git/.config`:
 
@@ -236,8 +225,7 @@ git push
 
 will push to mono-2-6 at origin.
 
-I get an ambiguous warning when checking out a branch
------------------------------------------------------
+### I get an ambiguous warning when checking out a branch
 
 When you try to checkout a local branch, you get a
 
@@ -262,8 +250,7 @@ git fetch origin --tags
 
 In general, when creating tags, be careful not to have names that conflict with existing (local or remote) branches.
 
-After forking the official repo and cloning my fork, the branch I want to check out doesn't seem to exist
----------------------------------------------------------------------------------------------------------
+### After forking the official repo and cloning my fork, the branch I want to check out doesn't seem to exist
 
 A `git clone` only sets up one local branch, `master`, which tracks the origin repository. If you try to checkout any of the other branches, you might get
 
@@ -280,13 +267,11 @@ git checkout -t origin/mono-2-6
 
 This sets up a local tracking branch `mono-2-6` that tracks the `mono-2-6` branch of the remote `origin`. More importantly, since we spell out `mono-2-6` only once, we won't have accidental spelling errors confusing us at a later time.
 
-When merging between branches, there are frequent conflicts in the ChangeLog files
-----------------------------------------------------------------------------------
+### When merging between branches, there are frequent conflicts in the ChangeLog files
 
 Use [this](http://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob;f=lib/git-merge-changelog.c) ChangeLog merger.
 
-Useful git config settings
---------------------------
+### Useful git config settings
 
 Git reads settings from \~/.gitconfig. Some useful ones are:
 
@@ -311,8 +296,7 @@ Files that have conflicts cleanly resolved via rerere are automatically marked a
 
 When working in a local branch that tracks a remote one, you can send your changes to the remote branch by just doing **git push** with no arguments. Only the changes on the current branch will be pushed.
 
-I am on Windows and each commit changes file mode on Unix to executable
------------------------------------------------------------------------
+### I am on Windows and each commit changes file mode on Unix to executable
 
 Please add the following to either your Mono repository's .git/config or your global git configuration file:
 
@@ -321,8 +305,7 @@ Please add the following to either your Mono repository's .git/config or your gl
     fileMode = false
 ```
 
-When I commit, my commit "repeats" commits of other people
-----------------------------------------------------------
+### When I commit, my commit "repeats" commits of other people
 
 There's nothing to worry -- you don't need to do anything, there's nothing to "fix" on that commit. 'git' probably created a merge commit when it found that independent commits occurred on the repository while you were working on the current commit/push. In fact, it's the Github UI for displaying merges that misleads us to think that there are "repeats", and make us worry about unintended changes.
 
@@ -330,8 +313,7 @@ There's no information loss, and no duplication of work. Using a better UI, like
 
 Of course, in the longer term, a lot of such (mostly unnecessary) non-linearity is distracting. So, we discourage merges that involve very few commits. Just use workflows 1 or 2 above to avoid seeing unintended or unnecessary merges.
 
-How do I know what's going to be pushed?
-----------------------------------------
+### How do I know what's going to be pushed?
 
 This will give you a log of all the changes scheduled to be pushed.
 
@@ -347,11 +329,8 @@ git pull --rebase
 
 before trying to push again.
 
-Links
-=====
+## Links
 
 -   [Git community book](http://book.git-scm.com/)
 -   [Git User's manual](http://www.kernel.org/pub/software/scm/git/docs/user-manual.html)
 -   [Git - SVN Crash Course](http://git.or.cz/course/svn.html)
-
-

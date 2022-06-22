@@ -16,5 +16,3 @@ Releases
 -   [1.0](/Accessibility:_Release_Notes_1.0) - March 17, 2009
 -   [0.9.1](/Accessibility:_Release_Notes_0.9.1) - February 3, 2009
 -   [0.9](/Accessibility:_Release_Notes_0.9) - November 24, 2008
-
-

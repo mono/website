@@ -70,5 +70,3 @@ Tutorials
     -   a tutorial showing how to develop a [Gtk# program with Mono and the interface designer Glade](http://www.frenchguys.com/wordpress/?page_id=51).
     -   a tutorial showing how to use [db4o with Boo](/DB4BOO)
 -   The Code project has two great tutorials from [Hello World !](http://www.codeproject.com/cpnet/introtomono1.asp) to [using ASP.NET, Mono mod_mono and XSP](http://www.codeproject.com/cpnet/introtomono2.asp).
-
-

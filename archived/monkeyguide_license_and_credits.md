@@ -27,5 +27,3 @@ The following people have contributed to many pages throughout the Monkeyguide:
 -   Joshua Tauberer
 -   [Zac Bowling](/User:ZacBowling)
 -   [Erik Dasque](/User:Edasque)
-
-

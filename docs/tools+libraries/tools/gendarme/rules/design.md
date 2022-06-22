@@ -66,8 +66,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AbstractTypesShouldNotHavePublicConstructorsRule
 
@@ -1586,8 +1585,6 @@ enum Options {
 
 -   This rule is available since Gendarme 2.6
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

@@ -19,4 +19,3 @@ Most of the samples are built using the pure SDK and Unix makefiles. This is don
 There is one MonoDevelop for iPhone setup called `monocatalog-md` which is identical to `monocatalog`. The only difference is that this is a pre-made MonoDevelop solution file.
 
 The samples require [MonoTouch to be installed](/MonoTouch_Installation).
-

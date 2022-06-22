@@ -9,4 +9,3 @@ Category:Summer of Code
 =======================
 
 Summer Of Code Projects
-

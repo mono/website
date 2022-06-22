@@ -10,8 +10,7 @@ You must ensure that you have also built the libgdiplus on your system, if you h
 
 Fixing this issue is an operating-system specific problem.
 
-Linux
-=====
+## Linux
 
 Make sure that the file libgdiplus.so exists and that the directory containing it is listed in either the /etc/ld.so.conf file or in the LD_LIBRARY_PATH environment variable:
 
@@ -68,8 +67,7 @@ Or you can try:
 MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono glue.exe
 ```
 
-macOS
-=====
+## macOS
 
 Make sure that the file libgdiplus.dylib exists and that the directory containing it is listed in the DYLD_LIBRARY_PATH environment variable.
 
@@ -79,8 +77,6 @@ You might want to try the otool command to find if there are any missing depende
 otool -L /full/path/to/libgdiplus.dylib
 ```
 
-Windows
-=======
+## Windows
 
 We have never heard about a problem on Windows with libgdiplus.
-

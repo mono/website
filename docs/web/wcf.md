@@ -6,8 +6,7 @@ redirect_from:
   - /WCFNewPage/
 ---
 
-Brief History
-=============
+## Brief History
 
 WCF in Mono was originally developed as part of the "olive" module in our source repository, which is primarily a collection of early experimental development of .NET compatibility stack. Nowadays **WCF is part of the core Mono**. The WCF stack has been merged to mono module (under mcs/class) and is no longer developed in olive.
 
@@ -19,16 +18,13 @@ WCF development was started in 2005 and has been suspended and resumed various t
 -   Current phase, originally started as part of Moonlight 2.0 effort since 2009.
     -   We were working on WSHttpBinding support, which is mostly for the security stack (WS-Security, WS-Trust, WS-SecureConversation). It is left incomplete. For details, see [WCF_WSHttpBindingHacking](/archived/wcf_wshttpbindinghacking) page.
 
-Status
-======
+## Status
 
-Summary
--------
+### Summary
 
 We continue to fill missing functionality if they are for essential stack such as HTTP channels. There are tons of cosmetic features that were left not-implemented. For other stack such as P2P bindings, we may work on them from time to time, but they are not priority.
 
-Tasks remaining
----------------
+### Tasks remaining
 
 -   Bugfixes
     -   ~~WS-SecureConversation: get negotiation based on SecurityContextSecurityToken working.~~ Turned out that it is not a bug but there is insufficient information on negotiation tokens to implement. We'll leave it as is and go on other token support which are well documented and/or open.
@@ -46,8 +42,7 @@ Tasks remaining
         -   WsdlExporter likely needs better support.
         -   mex and policy support. Will be used in security stack.
 
-Components with no plan to support
-==================================
+## Components with no plan to support
 
 Items listed here are with no plan to support. Though anyone should feel free to hack and contribute in these areas.
 
@@ -68,8 +63,7 @@ Items listed here are with no plan to support. Though anyone should feel free to
 -   Data Services.
 -   Net peer channel improvements.
 
-Known issues
-============
+## Known issues
 
 In general, we keep fixing bugs and bugfixes are (very) often not in the latest release yet. Especially, for Mono 2.8, the branching was done much earlier than the actual release, and even if you reported bugs earlier than the release, it is often not fixed in it. The actual fixes would be available in the future release.
 
@@ -78,13 +72,11 @@ Based on the premise above, here I list some known issues and workarounds that w
 -   When you host a service that uses NetTcpBinding or CustomBinding with TcpTransportBinding on a ServiceHost and configure the binding (element) as TransferMode = Buffered, it could result in blocking when it receives more than ServiceThrottle.MaxConcurrentSessions or ServiceThrottle.MaxConcurrentCalls at a time. To avoid this issue, give large number for those ServiceThrottle properties.
 -   [Data Contract Names for Generic Types](http://msdn.microsoft.com/en-us/library/ms731045.aspx) is not implemented. The reason is, it does not fully explain \*exactly\* how to compute the hash (hash algorithm, how to concatenate namespace strings, conversion from namespace strings to bytes, and to result string back which must not be base64 as it contains '+' etc.). Since interoperable applications should use explicit xml element names (or do you expose "FooBarxxXxXxxX" in your app?), it is left as is so far.
 
-Status Details
-==============
+## Status Details
 
 I marked some areas that especially welcome contributions as "contribute" lines.
 
-Other than System.ServiceModel.dll
-----------------------------------
+### Other than System.ServiceModel.dll
 
 -   System.Runtime.Serialization.dll
     -   NetDataContractSerializer is not implemented. (contribute)
@@ -104,32 +96,31 @@ Other than System.ServiceModel.dll
 -   System.Data.Services.dll
     -   It is not really implemented, but we may start working on it. It is so far stubbed by Eric Maupin for NHibernate build and Marek (Habersack) is planning his hack.
 
-System.ServiceModel.dll
------------------------
+### System.ServiceModel.dll
 
-### Binding Elements
+#### Binding Elements
 
 Bindings should be regarded as explained here too, as they are almost mere collection of binding elements.
 
-#### Message encodings
+##### Message encodings
 
 All message encoding binding elements are implemented, except for some details. For example, ArraySegment support is not implemented. Message buffering is not always considered.
 
-#### Transports
+##### Transports
 
 HTTP, HTTPS (basically), TCP (both streaming and duplex) are implemented. NetPeer is in general implemented, but lacks some details. Named pipe code is written, but not really working yet. For others, it depends.
 
-#### Everything else
+##### Everything else
 
 are explained at corresponding sections (for example, no point of explaining TransactionFlowBoindingElement beyond Transaction section).
 
-### Communication objects
+#### Communication objects
 
 Client side would work better since they are actually used heavily in Moonlight.
 
 Session support depends on transports (as .NET WCF does), and since only TCP duplex channel is implemented so far, some other requirements may not be filled. (In Moonlight 2.0 compatibility layer, there is no binding element that supports sessions.)
 
-#### Core of IChannelFactory, IChannelListener and ChannelBase
+##### Core of IChannelFactory, IChannelListener and ChannelBase
 
 Every basic parts should work: CommunicationObject, ChannelBase, ChannelManagerBase, ChannelFactoryBase, ChannelListenerBase, etc.
 
@@ -139,27 +130,27 @@ Though note that not \*all\* of the members are ready to work.
 
 (All those derived types of channel factories and listeners depend on each layer.)
 
-### Service and contract description, and proxies
+#### Service and contract description, and proxies
 
-#### ContractDescription
+##### ContractDescription
 
 All description types should be working, including typed messages.
 
 Not all behaviors are supported.
 
-#### WSDL support
+##### WSDL support
 
 Binding export and import would work in general. Endpoint export and import don't work.
 
-#### IContextChannel (ChannelFactory and ClientBase)
+##### IContextChannel (ChannelFactory and ClientBase)
 
 Basic functionality in client factory should work, including duplex ones: ClientBase\<T\>, DuplexClientBase\<T\>, ChannelFactory\<T\>, DuplexChannelFactory\<T\>.
 
-### Security stack
+#### Security stack
 
 Incomplete work. WS-Trust authenticator hash was not clear at the development a few years ago (This might have changed by Windows Open Protocols).
 
-### Not supported
+#### Not supported
 
 -   transactions
 -   composite duplex and one way binding
@@ -169,8 +160,6 @@ Incomplete work. WS-Trust authenticator hash was not clear at the development a 
 -   SSL stream
 -   logging
 
-Old Milestones and status (for reference)
------------------------------------------
+## Old Milestones and status (for reference)
 
 For older status of WCF, see [WCFStatusOld](/archived/wcfstatusold).
-

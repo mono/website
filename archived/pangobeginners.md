@@ -81,4 +81,3 @@ The extra cool thing about layouts is that you can create your text using markup
 ```
 
 Very simple. Finally, the drawing object is added to the window widget and we are done.
-

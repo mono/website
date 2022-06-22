@@ -35,5 +35,3 @@ Our UIAutomationClient implementation supports using multiple a11y infrastructur
 -   **IAutomationSource** - Only one class in an assembly should implement this interface. UIAutomationClient uses reflection to search specified assemblies for a class implementing this interface, and creates only one instance. It provides a lot of the actual implementation of TreeWalker.
 -   **IElement** - This interface provides most of the implementation of the AutomationElement class. Each AutomationElement instance should contain a corresponding IElement instance.
 -   **IInvokePattern, etc** - For each \*Pattern class in UIAutomationClient, there is a corresponding I\*Pattern interface in UIAutomationSource. The \*Pattern classes are really just wrappers around the I\*Pattern interface. *It's possible that we could use the existing Provider interfaces to fill this niche, instead. Requires some research.*
-
-

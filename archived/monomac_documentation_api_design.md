@@ -575,4 +575,3 @@ Internally, when Mono creates [NSString references from C# strings](/MonoMac/Doc
 One side-effect that automatic memory management has is that the GC will get rid of unused objects as long as there are no references to them. This sometimes can have surprising side effects, for example, if you create a local variable to hold your toplevel view controller, or your toplevel window, and then having those vanish behind your back.
 
 If you do not keep a reference in your static or instance variables to your objects, Mono will happily call the Dispose() method on them, and they will release the reference to the object. Since this might be the only outstanding reference, the Objective-C runtime will destroy the object for you.
-

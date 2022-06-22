@@ -20,4 +20,3 @@ You can add and move widgets in the Layout container using the following two fun
 The size of the Layout container can be set using the next function:
 
     layout1.Size = new Size(width, height );
-

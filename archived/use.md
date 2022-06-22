@@ -73,4 +73,3 @@ Logos
 =====
 
 See our page with [Logos](/Logos).
-

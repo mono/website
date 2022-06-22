@@ -840,5 +840,3 @@ Problems found
 
 7.  We call the atk-bridge unmanaged module from the UiaAtkBridge managed library. Maybe it's better to put this call in Atk# in order for other people to benefit from it. In the end, who is going to use ATK without GTK and without calling this module?
 8.  The unmanaged module atk-bridge seems to call n times the function hello_util_add_global_event_listener (well, the equivalent to gail_util_add_global_event_listener in Gail) with parameters that include the keyword "Gtk" in the event_type (examples: Gtk:AtkHypertext:link-selected, Gtk:AtkObject:children-changed, Gtk:AtkComponent:bounds-changed...). This should be changed to a toolkit-agnostic methodology.
-
-

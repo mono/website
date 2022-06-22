@@ -5,7 +5,8 @@ redirect_from:
   - /Mono_Runtime/
 ---
 
-The Mono runtime implements the [ECMA Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLI). The Mono runtime implements this virtual machine.<br/>
+The Mono runtime implements the [ECMA Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLI). The Mono runtime implements this virtual machine.
+
 If you are interested in the technical aspects of the Mono runtime check the [Runtime Documentation](/docs/advanced/runtime/docs/).
 
 The runtime offers the following services:
@@ -298,4 +299,3 @@ COM and XPCOM
 Mono's COM support can be used to interop with system COM components in Windows and in Linux (if you use a COM implementation). Additionally, Mono's COM support can be used to access software based on Mozilla's XPCOM.
 
 For details on the progress, see the [COM Interop](/docs/advanced/com-interop/) page.
-

@@ -66,4 +66,3 @@ Contributors
 ============
 
 Johannes Roith, Jaime Anguiano Olarra, Hinne Hettema, Martin Willemoes Hansen
-

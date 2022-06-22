@@ -16,9 +16,9 @@ Generic shared code needs access to type information. This information is contai
 
 1.  Non-generic non-static methods of reference types have access to the RGCTX via the "this" argument (this-\>vtable-\>rgctx).
 
-1.  Non-generic static methods of reference types and non-generic methods of value types need to be passed a pointer to the caller's class's VTable in the MONO_ARCH_RGCTX_REG register.
+2.  Non-generic static methods of reference types and non-generic methods of value types need to be passed a pointer to the caller's class's VTable in the MONO_ARCH_RGCTX_REG register.
 
-1.  Generic methods need to be passed a pointer to the MRGCTX in the `MONO_ARCH_RGCTX_REG` register.
+3.  Generic methods need to be passed a pointer to the MRGCTX in the `MONO_ARCH_RGCTX_REG` register.
 
 The `MONO_ARCH_RGCTX_REG` must not be clobbered by trampolines.
 
@@ -105,7 +105,7 @@ The function to create the trampoline, mono_arch_create_rgctx_lazy_fetch_trampol
 The RGCTX fetch trampoline code doesn't return code that must be jumped to, so, like for those trampolines (see above), the generic trampoline code must do a normal return instead.
 
 Getting generics information about a stack frame
-================================================
+------------------------------------------------
 
 If a method is compiled with generic sharing, its `MonoJitInfo` has the `has_generic_jit_info` bit set. In that case, the `mono_jit_info_get_generic_jit_info()` function will return
 a `MonoGenericJitInfo` structure.
@@ -114,23 +114,23 @@ The `MonoGenericJitInfo` contains information about the location of the this/vta
 
 1.  `this_in_reg` is set. `this_reg` is the number of the register where the variable is stored.
 
-1.  `this_in_reg` is not set. The variable is stored at offset `this_offset` from the address in the register with number `this_reg`.
+2.  `this_in_reg` is not set. The variable is stored at offset `this_offset` from the address in the register with number `this_reg`.
 
 The variable can either point to the "this" object, to a vtable or to an MRGCTX:
 
 1.  If the method is a non-generic non-static method of a reference type, the variable points to the "this" object.
 
-1.  If the method is a non-generic static method or a non-generic method of a value type, the variable points to the vtable of the class.
+2.  If the method is a non-generic static method or a non-generic method of a value type, the variable points to the vtable of the class.
 
-1.  If the method is a generic method, the variable points to the MRGCTX of the method.
+3.  If the method is a generic method, the variable points to the MRGCTX of the method.
 
 Layout of the MRGCTX
-====================
+--------------------
 
 The MRGCTX is a structure that starts with `MonoMethodRuntimeGenericContext`, which contains a pointer to the vtable of the class and a pointer to the `MonoGenericInst` with the type arguments for the method.
 
 Blog posts about generic code sharing
-=====================================
+-------------------------------------
 
 -   [September 2007: Generics Sharing in Mono](http://schani.wordpress.com/2007/09/22/generics-sharing-in-mono/)
 -   [October 2007: The Trouble with Shared Generics](http://schani.wordpress.com/2007/10/12/the-trouble-with-shared-generics/)
@@ -141,5 +141,3 @@ Blog posts about generic code sharing
 -   [April 2008: Sharing Everything And Saving Memory](http://schani.wordpress.com/2008/04/22/sharing-everything-and-saving-memory/)
 -   [June 2008: Sharing Generic Methods](http://schani.wordpress.com/2008/06/02/sharing-generic-methods/)
 -   [June 2008: Another Generic Sharing Update](http://schani.wordpress.com/2008/06/27/another-generic-sharing-update/)
-
-

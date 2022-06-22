@@ -57,4 +57,3 @@ A: Mono is likely to remain behind .NET in terms of implementing new language fe
 A: \*\*\* I'm not sure about this one but someone should feel free to add their thoughts \*\*\*
 
 Notes: [Ubuntu Technical Board meeting minutes, 2009-06-16](https://lists.ubuntu.com/archives/ubuntu-devel/2009-June/028347.html)
-

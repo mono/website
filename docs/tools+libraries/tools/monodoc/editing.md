@@ -4,8 +4,7 @@ redirect_from:
   - /Monodoc_Editing/
 ---
 
-Writing XML Documentation
-=========================
+## Writing XML Documentation
 
 See the [mdoc(5)](http://docs.go-mono.com/monodoc.ashx?link=man:mdoc(5)) man page for more details about monodoc XML file format and document markup.
 
@@ -84,8 +83,7 @@ For example, if you want to link the following image `http://www.mono-project.co
 
 Note that bundled images must have unique names at the scope of the documentation bundle, so it may be wise to use a naming scheme that avoids collision, e.g., prepending the namespace to the filename.
 
-Monodoc browser editing
-=======================
+## Monodoc browser editing
 
 Editing from inside the [Monodoc](/docs/tools+libraries/tools/monodoc/) browser is simple. You have to navigate through the documentation and find where is the label *To be added* or *Documentation for this section has not yet been entered* and click on the [Edit] link near it (be sure the Editing option in the Edit menu is set or the [Edit] links won't be showed).
 

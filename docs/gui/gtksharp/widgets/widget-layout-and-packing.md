@@ -23,5 +23,3 @@ By far the most common packing widgets are the horizontal and vertical boxes, bu
 -   [Fixed Container](/docs/gui/gtksharp/widgets/fixed-container/)
 -   [Layout Container](/docs/gui/gtksharp/widgets/layout-container/)
 -   [Frames](/docs/gui/gtksharp/widgets/frames/)
-
-

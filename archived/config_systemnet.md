@@ -38,4 +38,3 @@ Inside a connectionManagement section, you can have the following tags:
 Where the **address** is the host name, or the wildcard "\*" to apply to all connections. And maxconnection is the maximum number of open connections on that host.
 
 Alternatively an application can change that setting by setting the [http:/monodoc/P:System.Net.ServicePointManager.DefaultConnectionLimit DefaultConnectionLimit] value in the [http:/monodoc/T:System.Net.ServicePointManager ServicePointManager].
-

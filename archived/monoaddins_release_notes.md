@@ -9,4 +9,3 @@ Mono.Addins Release Notes
 =========================
 
 This page has been moved [here](http://monoaddins.codeplex.com/releases/view/45628).
-

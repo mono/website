@@ -229,4 +229,3 @@ The features include: configuration management, call statistics, endpoint manage
 For now we lack detailed part of configuration support itself, so this component cannot be of an immediate task. On the other hand, things like configuration editor becomes less important once simplified default configuration is implemented.
 
 Regarding management, we actually lack diagnostics (logging) framework that WCF has. Hence things like SvcTraceViewer cannot be implemented. It will be a non-trivial task.
-

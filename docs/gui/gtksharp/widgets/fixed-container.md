@@ -13,4 +13,3 @@ The Fixed container allows you to place widgets at a fixed position within it's 
 Put() places a widget in the container fixed at the position specified by x and y. Move() allows the specified widget to be moved to a new position.
 
 Normally, Fixed widgets don't have their own X window. Since this is different from the behaviour of Fixed widgets in earlier releases of GTK, the property HasWindow allows the creation of Fixed widgets with their own window. It has to be called before realizing the widget.
-

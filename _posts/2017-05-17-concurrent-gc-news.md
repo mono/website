@@ -5,7 +5,7 @@ author: Rodrigo Kumpera, Miguel de Icaza
 tags: [runtime]
 ---
 
-# Concurrent GC
+## Concurrent GC
 
 In Mono 5.0 we are shipping a new operation mode for our Garbage Collector: Concurrent Garbage Collection.
 

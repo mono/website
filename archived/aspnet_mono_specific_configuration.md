@@ -73,4 +73,3 @@ This prevents situations when code similar to the one shown below would throw an
 **Note:** If you plan to use `#pragma warning reset 169` anywhere in your application code, your source will fail to compile - you need to either disable the compiler compatibility settings or override the C# compiler entry removing the `/nowarn:0169` option from the **compilerOptions** attribute.
 
 **Note:** An easy way exists to prevent this error from happening. It's sufficient to modify the code presented above by making the Page_Load method a `protected` one. No compiler warning will be reported then.
-

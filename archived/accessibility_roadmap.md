@@ -77,4 +77,3 @@ Bugfix release for 0.9.
 
 [Release Notes](/Accessibility:_Release_Notes_0.9)<br/>
 Initial preview release, not all controls covered.
-

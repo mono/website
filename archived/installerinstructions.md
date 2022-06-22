@@ -117,4 +117,3 @@ No, this installer is only built to run on 32 bit systems. Some distributions ha
 **Towards the end of the install I get this message: Syntax error: "(" unexpected**
 
 This is a warning while detecting whether MonoDevelop has the necessary libraries. It can safely be ignored, although you may have troubles running MonoDevelop. Newer versions of Debian/Ubuntu use 'dash' instead of 'bash' for /bin/sh. The post install script that runs is bash specific, and thus fails when running under dash. This will be fixed in 1.2.6.
-

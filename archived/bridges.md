@@ -42,4 +42,3 @@ SWIG
 ----
 
 Simplified Wrapper and Interface Generator [SWIG](http://www.swig.org) is a code generator that builds bindings for many languages including C# to communicate with C and C++. (It should be noted that most nearly all C interfaces can be handled by the built-in p/invoke interfaces without the need to use SWIG to do this)
-

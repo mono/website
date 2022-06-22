@@ -76,4 +76,3 @@ Visualizing Changes
 It is possible to examine which objects were created between two snapshots in time. To do this, snapshot the application twice, then set the checkbox on the snapshot that you want to use as a reference, and then select the second snapshot.
 
 The results displayed on the GUI will be only for the differences.
-

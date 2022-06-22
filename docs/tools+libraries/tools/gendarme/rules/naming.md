@@ -39,8 +39,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AvoidDeepNamespaceHierarchyRule
 
@@ -583,8 +582,6 @@ public enum MyCustomValues {
 }
 ```
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

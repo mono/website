@@ -14,4 +14,3 @@ Supported operating systems:
 
 Related documentation:
 [AMD64 Application Binary Interface (ABI) Specification](http://www.x86-64.org/documentation/), [AMD64 Programming Documentation](http://developer.amd.com/resources/documentation-articles/developer-guides-manuals/)
-

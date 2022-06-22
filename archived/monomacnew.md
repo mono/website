@@ -55,4 +55,3 @@ http://addins.monodevelop.com/Beta/Mac/2.4
 ```
 
 in order to download other available addins. In future versions of MonoDevelop the addins.monodevelop.com repositories will be registered by default.
-

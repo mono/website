@@ -177,4 +177,3 @@ In the meantime, we'll request to the [LinuxFoundation](http://www.linuxfoundati
 -   [2008, Jun 5](/Accessibility:_QA_Meetings_2008_Jun_5) IRC - QA Meeting #1
 
 (Generated using [Irc2Wiki](/Irc2Wiki))
-

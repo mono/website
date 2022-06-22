@@ -26,8 +26,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AvoidMethodWithUnusedGenericTypeRule
 
@@ -181,8 +180,6 @@ public event EventHandler<AuthenticityEventArgs> CheckedAuthenticity;
 
 -   This rule is available since Gendarme 2.2
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

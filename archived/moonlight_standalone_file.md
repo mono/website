@@ -36,6 +36,3 @@ This file references no external javascript or xaml file. It is completely indep
           </script>
        </body>
     </html>
-
-
-

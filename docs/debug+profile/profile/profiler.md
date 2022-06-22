@@ -274,4 +274,3 @@ For example, to print only the Monitor summary with stack trace information, you
 ### Editing this page
 
 This page is automatically generated from the log profiler information in git. Make sure any updates are done in the master version.
-

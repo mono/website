@@ -358,4 +358,3 @@ Listed in UISpy but not found in TableItemPatternIdentifiers.
 [TextChangedEvent](http://msdn.microsoft.com/en-us/library/system.windows.automation.textpatternidentifiers.textchangedevent.aspx)
 
 [TextSelectionChangedEvent](http://msdn.microsoft.com/en-us/library/system.windows.automation.textpatternidentifiers.textselectionchangedevent.aspx)
-

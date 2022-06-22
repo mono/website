@@ -64,4 +64,3 @@ The probe arguments are class name, method name and signature, and in case of me
 Begin and end of Garbage Collection.
 
 SGen, Mono's [Generational GC](/docs/advanced/garbage-collector/sgen/) supports many more probes, described, along with examples, on the [SGen DTrace](/docs/advanced/garbage-collector/sgen/dtrace) page.
-

@@ -7,8 +7,7 @@ redirect_from:
 
 This article covers multi-threaded GTK# programing as well as how to keep your GTK# application responsive.
 
-Background
-==========
+## Background
 
 The Gtk# toolkit is an event-based system. At the core of the Gtk.Application.Run method there is a loop like this:
 
@@ -44,8 +43,7 @@ There are a number of reasons why an application might become unresponsive to a 
 
 Threads are often used to overcome this problem, but as explained above you have to be careful when using them. In this document we explore the solutions available to Gtk# developers to keep your GUI responsive by using multiple threads and other approaches.
 
-Approaches
-==========
+## Approaches
 
 There are a number of approaches that can be used to make your application responsive in the presence of blocking operations:
 
@@ -57,8 +55,7 @@ Event-based programming is the best option as it avoids the complexity that come
 
 You should think twice before you start using threads. Not only because you have to be careful about the way you use Gtk# but also because it will make your code hard to debug, the bugs might be extremely hard to reproduce and you will need to become intimately familiar with a whole family of thread synchronization primitives and you must design your software in a way in which you avoid deadlocks.
 
-Idle Handlers
--------------
+### Idle Handlers
 
 The Gtk main loop has support for invoking routines when the application is idle. When no events are left to process the main loop will invoke all of the idle handlers. This technique is useful if you can break up the work that your application does into small units that take a small amount of time to process and can resume execution at any point.
 
@@ -89,8 +86,7 @@ For example, simple animations or status updates could be hooked up into an Idle
 
 For more details about using Idle handlers, see the [GLib.Idle](http://docs.go-mono.com/index.aspx?link=T:GLib.Idle) class library documentation.
 
-Timeouts
---------
+### Timeouts
 
 You can use timeouts to invoke routines at specified intervals of time. This can be used to update status at specified times for example while a background thread runs or to notify the user of an action at a given interval.
 
@@ -120,8 +116,7 @@ As described on the example, the timeout routine has to return a true or false v
 
 Look at the documentation for [GLib.Timeout](http://docs.go-mono.com/index.aspx?link=T:GLib.Timeout) for more examples and to learn more about timeouts.
 
-Gtk.Application.Invoke
-----------------------
+### Gtk.Application.Invoke
 
 With Gtk# 2 and C# it is possible to use Gtk.Application.Invoke and anonymous methods to request from a thread that the GUI thread should wake up and execute some code in the context of the main loop.
 
@@ -159,8 +154,7 @@ class Demo {
 }
 ```
 
-Gtk.ThreadNotify
-----------------
+### Gtk.ThreadNotify
 
 ``` csharp
 using Gtk;
@@ -200,8 +194,7 @@ class Demo {
 }
 ```
 
-Programming with Threads
-------------------------
+### Programming with Threads
 
 For certain kind of problems that are not easy to handle with event dispatching, timers or other simpler approaches, you can use threads.
 
@@ -209,8 +202,7 @@ Threads have a few downsides, for example, you need to worry about race conditio
 
 Read our [Thread Beginners Guide](/archived/threadsbeginnersguide) for an introduction to using threads with Mono.
 
-Asynchronous Mono Programmning
-------------------------------
+### Asynchronous Mono Programmning
 
 Programmers that use threads have to create their own communications protocols between the thread and the main application. Sometimes the features offered by the threads are enough, but some other times it might be useful to take advantage of a built-in protocol in the ECMA CLI for asynchronous programming.
 
@@ -373,8 +365,7 @@ In our sample, we can replace Console.ReadLine with:
 
 In the above invocation of WaitOne() you would wait until the async thread completes. But you can use other method overloads for more control, like only waiting for some amount of time before returning.
 
-Manual Event Processing
------------------------
+### Manual Event Processing
 
 You can also take control of the event loop, and instead of partitioning the problem in callback routines, put the code inline and put your computation code in the middle.
 
@@ -393,11 +384,9 @@ void LongComputation ()
 }
 ```
 
-Alternatives
-============
+## Alternatives
 
-Application.Invoke
-------------------
+### Application.Invoke
 
 Gtk# 2.0 includes a new mechanism to invoke code on the main thread, this is part of the Gtk.Application class, to do this, just call the Invoke method with a delegate or anonymous method:
 
@@ -411,16 +400,15 @@ void UpdatingThread ()
 }
 ```
 
-Other options
--------------
+### Other options
 
 Other options of doing the same are available for Gtk# but are now outdated:
 
-### GuiDispatch
+#### GuiDispatch
 
 Monodevelop has a class called GuiDispatch that automatically wraps delegates so they will be invoked on the main thread. This provides an extremely easy way to safely use threads in your application.
 
-Lots more information as well as many examples at [http://monodevelop.com/Thread_Management](http://monodevelop.com/Thread_Management).
+Lots more information as well as many examples at [<http://monodevelop.com/Thread_Management>](http://monodevelop.com/Thread_Management).
 
 ``` csharp
 Runtime.DispatchService.GuiDispatch (new StatefulMessageHandler (UpdateGui), n);
@@ -430,11 +418,11 @@ Runtime.DispatchService.GuiDispatch (new StatefulMessageHandler (UpdateGui), n);
 counter.TimeChanged += (EventHandler) Runtime.DispatchService.GuiDispatch (new EventHandler (UpdateTime));
 ```
 
-### RunOnMainThread
+#### RunOnMainThread
 
 A simple wrapper around GLib.Idle.Add that lets you easily run any method with arguments on the main thread.
 
-[http://eric.extremeboredom.net/2004/12/25/113/](http://eric.extremeboredom.net/2004/12/25/113/)
+[<http://eric.extremeboredom.net/2004/12/25/113/>](http://eric.extremeboredom.net/2004/12/25/113/)
 
 ``` csharp
 public class Example {
@@ -447,4 +435,3 @@ public class Example {
     }
 }
 ```
-

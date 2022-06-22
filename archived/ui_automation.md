@@ -43,5 +43,3 @@ The User Interface Automation (UIA) specification is an advanced accessibility f
 ### Additional Implementation
 
 -   [System.Windows](http://msdn2.microsoft.com/en-us/library/system.windows.aspx) Namespace
-
-

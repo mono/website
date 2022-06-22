@@ -58,15 +58,13 @@ The test log is used to log the relevant details about the execution of each rel
 Test Platforms:<br/>
  openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
 
-1. Closed bugs:
+**Closed bugs:**
+  - Bug 558289 - Slider: Key Navigation Does Not Update Slider's Value with SmallChange Property
 
--   Bug 558289 - Slider: Key Navigation Does Not Update Slider's Value with SmallChange Property
+**New bugs:**
+  - Bug 589269 - PrintPreviewDialog: modal dialog is missing 'active' state
 
-2. New bugs:
-
--   Bug 589269 - PrintPreviewDialog: modal dialog is missing 'active' state
-
- Some Winforms bugs cause test failure:
+Some Winforms bugs cause test failure:
 
 -   Bug 575635 - ThreadExceptionDialog: modal dialog should always be actived on the top of main form
 -   Bug 574257 - DataGridBoolColumn: Cells under doesn't supprot press key to check and uncheck
@@ -74,10 +72,12 @@ Test Platforms:<br/>
 -   Bug 590090 - ToolStripMenuItem: KeyCombo Has No Effect
 -   Bug 590093 - NotifyIcon: notifyicon doesn't appears on panel except for openSUSE11.2
 
-3. Bugs wait to be fixed:<br/>
- [Bug List](https://bugzilla.novell.com/buglist.cgi?classification=Mono&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&component=Winforms%20-%20ATK&component=Winforms%20-%20ATK%20Spec&component=Winforms%20-%20General&component=Winforms%20-%20UIA&product=UI%20Automation)
+**Bugs wait to be fixed:**
 
-4. Test result:<br/>
+[Bug List](https://bugzilla.novell.com/buglist.cgi?classification=Mono&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&component=Winforms%20-%20ATK&component=Winforms%20-%20ATK%20Spec&component=Winforms%20-%20General&component=Winforms%20-%20UIA&product=UI%20Automation)
+
+**Test result:**
+
  [Winforms test result on Dashboard](http://147.2.207.213/dashboard/winforms.xml) with VPN connection.<br/>
  DataGridBoolColumn: Bug 589987, Bug 574257<br/>
  DomainUpDown: Bug589989<br/>
@@ -89,7 +89,7 @@ Test Platforms:<br/>
 Test Platforms:<br/>
  openSUSE 11.2, Fedora 12, Ubuntu 9.10
 
-1. Closed bugs:
+**Closed bugs:**
 
 -   BUG 554025 CheckBox: is missing 'indeterminate' state
 -   BUG 556463 ListBox: select or clear selection on accerciser make the firefox \* BUG crashed
@@ -99,14 +99,15 @@ Test Platforms:<br/>
 -   BUG 567651 Calendar: week labels have extraneous 'selectable' state
 -   BUG 567653 Calendar: title buttons have extraneous 'selectable' state
 
-2. New bugs:
+**New bugs:**
 
 -   BUG 564820 REOP DatePicker control is missing Calendar child
 -   BUG 587783 NEW TabControl: 'page tab' has 2 extraneous labels
 -   BUG 587792 NEW TabControl: select invisible label child make the application crashed
 
-3. Bugs wait to be fixed:<br/>
- [Bug list](https://bugzilla.novell.com/buglist.cgi?bug_severity=Blocker&bug_severity=Critical&bug_severity=Major&bug_severity=Normal&bug_severity=Minor&classification=Mono&query_based_on=moon&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&component=Moonlight%20-%20ATK&component=Moonlight%20-%20General&component=Moonlight%20-%20UIA&product=UI%20Automation&known_name=moon)
+**Bugs wait to be fixed:**
+
+[Bug list](https://bugzilla.novell.com/buglist.cgi?bug_severity=Blocker&bug_severity=Critical&bug_severity=Major&bug_severity=Normal&bug_severity=Minor&classification=Mono&query_based_on=moon&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&component=Moonlight%20-%20ATK&component=Moonlight%20-%20General&component=Moonlight%20-%20UIA&product=UI%20Automation&known_name=moon)
 
 BUG references on strongwind tests:
 
@@ -121,7 +122,8 @@ BUG references on strongwind tests:
 -   textblock-regression.py:# BUG561268: Multi-line Name Is Parsed Incorrectly
 -   togglebutton-regression.py:# BUG554017: doesn't focus to the clicked button
 
-4. Test result:<br/>
+**Test result:**
+
  [Moonlight test result on Dashboard](http://147.2.207.213/dashboard/moonlight.xml) with VPN connection.<br/>
  We are going to test ComboBox and GridSplitter on 2.0.1 since BUG554449 and BUG555165 have been fixed.
 
@@ -130,16 +132,17 @@ BUG references on strongwind tests:
 Test Platforms:<br/>
  openSUSE 11.1, openSUSE 11.2, SLED 11, Fedora 12, Ubuntu 9.10
 
-1. Closed bugs:
+**Closed bugs:**
 
 -   BUG 569846 [uiaclient-winforms]:UIA Client matches wrong element for LabeledByproperty on Linux
 -   BUG 571799 [uiaclient-Winforms]：The dialog who has parent has been found twice
 -   BUG 574269 Cannot find pane control on Linux
 
-2. New bugs:<br/>
+**New bugs:**
+
  nope
 
-3. Remains of bugs
+**Remains of bugs**
 
 -   BUG 574242 Can't define custom provider by using the WM_GETOBJECT message
 -   BUG 573464 [uiaclient-winforms] Some dialog's name has been changed in Linux compares to in Windows.
@@ -155,7 +158,8 @@ Test Platforms:<br/>
 -   BUG 580452 [UIAClient-Winforms] The window is same size on Window and Linux, but the horizontal or vertical scroll percentage is not identical
 -   BUG 580447 The viewId is difference between on Linux and Windows
 
-4. Test result:<br/>
+**Test result:**
+
  The tests of Winforms applications via client api have been run successfully on all platforms.
 
 ### .NET 2.1 Release Test Result
@@ -195,4 +199,3 @@ Bug List:<br/>
 #### Bug Report List
 
 [Bug report](https://bugzilla.novell.com/report.cgi?x_axis_field=bug_status&y_axis_field=component&z_axis_field=&query_format=report-table&short_desc_type=allwordssubstr&short_desc=&longdesc_type=fulltext&longdesc=&classification=Mono&product=UI+Automation&component=at-spi-dbus&component=at-spi-sharp&component=Client+-+AT-SPI&component=Client+-+General&component=Client+-+QA&component=Client+-+UIA&component=Core-Provider&component=Moonlight+-+ATK&component=Moonlight+-+General&component=Moonlight+-+QA&component=Moonlight+-+UIA&component=Winforms+-+ATK&component=Winforms+-+ATK+Spec&component=Winforms+-+General&component=Winforms+-+UIA&bug_file_loc_type=allwordssubstr&bug_file_loc=&status_whiteboard_type=allwordssubstr&status_whiteboard=&keywords_type=anywords&keywords=&deadlinefrom=&deadlineto=&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=NEEDINFO&bug_status=REOPENED&bug_status=RESOLVED&bug_status=VERIFIED&bug_status=CLOSED&emailassigned_to1=1&emailtype1=substring&email1=&emailassigned_to2=1&emailreporter2=1&emailqa_contact2=1&emailcc2=1&emailtype2=substring&email2=&bugidtype=include&bug_id=&votes=&chfieldfrom=&chfieldto=2010-9-10&chfieldvalue=&format=table&action=wrap&field0-0-0=noop&type0-0-0=noop&value0-0-0=) of each Component in difference Status
-

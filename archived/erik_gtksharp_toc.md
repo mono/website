@@ -42,5 +42,3 @@ This is a new TOC for the Gtk# section of the Mono guide
     -   Glade
     -   Stetic
 -   Debugging Gtk# applications
-
-

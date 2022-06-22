@@ -9,4 +9,3 @@ Moonlight/Moonlight2GalleryIssues
 =================================
 
 - depreciated -
-

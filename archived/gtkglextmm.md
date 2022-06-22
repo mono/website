@@ -9,4 +9,3 @@ GtkGLExtMM
 ==========
 
 c++ wrapper around [GtkGLExt](/GtkGLExt)
-

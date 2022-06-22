@@ -391,4 +391,3 @@ Accessibility: Team Meetings 2008 Jul 30
     decriptor: and update iteration 10 with that information as well
     **<@bgmerrell> **
     Oh, Ray mentioned that he packaged Accerciser 1.35. Just wanted to let everyone know that this is awesome because 1.35 is a lot nicer/more stable than 1.0.1 that was the only thing we had packaged until now
-

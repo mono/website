@@ -68,7 +68,7 @@ The following are built on top of the basic of ASP.NET, so they are more of a co
 -   [Castle Project](http://www.castleproject.org/) inspired by Ruby on Rail, but this is for .NET languages
 
 Installation and Setup
-======================
+----------------------
 
 ### Does Mono's ASP.NET run on Linux ?
 
@@ -573,4 +573,3 @@ Memory Usage
 In the past, Mono used a conservative, non-moving, non-compacting garbage collector. This meant that the heap was not compacted when memory was released.
 
 It now uses a new collector, see the [Generational GC](/docs/advanced/garbage-collector/sgen/) page.
-

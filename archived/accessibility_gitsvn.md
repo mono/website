@@ -117,4 +117,3 @@ If you need to delete a branch from gitorious:
     git push origin :myobsoletebranch
 
 Please remember that this gitorious repository is intended as a bootstrap repo for mirroring uia2atk from SVN. Do not push personal git branches to this repository.
-

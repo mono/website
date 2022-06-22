@@ -24,5 +24,3 @@ Tutorials
 
 -   Getting gstreamer-sharp
     -   [Installing from source](/GStreamerSharpInstallingFromSource)
-
-

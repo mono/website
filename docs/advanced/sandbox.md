@@ -17,8 +17,7 @@ For more information on the Mono sandbox, see:
 -   [CoreCLR](/archived/coreclr/): The CoreCLR security system, as used in Silverlight.
 -   [SecurityValidation](/archived/securityvalidation): The process we used to secure the sandbox.
 
-Security Issues
-===============
+## Security Issues
 
 The sandbox is composed of various components to ensure that malicious code does not cause problems:
 
@@ -30,13 +29,11 @@ The sandbox is composed of various components to ensure that malicious code does
 
 The problem with building a sandbox is that it requires all of these mechanisms to be complete before the sandbox is secure and so useful. A sandbox without bytecode verfication is not useful.
 
-Metadata integrity
-------------------
+### Metadata integrity
 
 Metadata integrity ensures that assemblies (.exe or .dll) programs are well formed and that they conform to what the runtime engine expects. The metadata verifier ensures that the JIT compiler will not try to access invalid information, or trick the JIT engine into reading or writing data that it is not supposed to.
 
-CIL Verification and CoreCLR Security
--------------------------------------
+### CIL Verification and CoreCLR Security
 
 Mono implements the [CoreCLR](/archived/coreclr/) security model, this requires a CIL verifier to ensure that the CIL bytecodes represent a real program, and it is also used at verification time to ensure that the code being compiled only accesses methods that they are allowed to, and that they only use CIL instructions that they have permission to use.
 
@@ -46,8 +43,6 @@ Untrusted code, will not get access to any CIL pointer instructions and can only
 
 For example, the System.IO.File.Open() routine can be called by trusted code (this is used internally for example to read configuration files) but untrusted code can not call it. It can only reach Open through a gateway that would provide an open file from a secure location (IsolatedStorage for example).
 
-Audit of the codebase
----------------------
+### Audit of the codebase
 
 The [SecurityValidation](/archived/securityvalidation) page describes how the [Moonlight](/docs/web/moonlight/) managed assemblies are audited to allow the safe execution of untrusted code under the [CoreCLR](/archived/coreclr/).
-

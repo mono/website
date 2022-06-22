@@ -15,4 +15,3 @@ Common mistake #1: Using an out of date Silverlight.js. The original Silverlight
 Common mistake #2: Checking navigator.platform. Moonlight aims to one day support more architectures than just Intel, we have encountered custom javacsript htat limits the site to MacPPC, MacIntel, Intel.
 
 Common mistake #3: Parsing the UserAgent for supported browsers. Many Firefox extensions will change the UA making this method of detecting support unreliable at best. Additionally, we will support additional browsing platforms to Firefox such as WebKit, Epiphany, Konqueror and Opera.
-

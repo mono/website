@@ -161,5 +161,3 @@ Appendices
 -   [Other Resources](/Books)
 -   [Monkeyguide License and Credits](/Monkeyguide_License_and_Credits)
 -   [For Monkeyguide Authors](/For_Monkeyguide_Authors)
-
-

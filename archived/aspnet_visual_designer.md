@@ -117,4 +117,3 @@ Many thanks to **Google**, who originally funded the project as part of their [S
 ### Other contributors
 
 **Eric Butler** provided the initial GTK# property grid implementation
-

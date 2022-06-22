@@ -9,7 +9,7 @@ Code Coverage can be used to track how many of the code paths that your program 
 For more information see [Profile](/docs/debug+profile/profile/).
 
 MonoCov
-=======
+-------
 
 MonoCov is made up of two components: a code coverage module, and a GUI interface for doing code coverage. This is available as part of the package "monocov" (available [here](https://github.com/mono/monocov)).
 
@@ -54,7 +54,7 @@ Monocov can also generate a set of HTML pages that display the coverage data. [H
 Hopefully this tool will help both new and old contributors to easily find untested spots in our libraries and contribute tests for them.
 
 Built-in Code Coverage
-======================
+----------------------
 
 The built-in code coverage module is fairly limited
 

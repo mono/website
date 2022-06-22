@@ -69,6 +69,3 @@ linking and statically compiling everything to WebAssembly.  But for
 quick iterative development, clearly something like an interpreter or
 a JIT compiler in the browser with cached versions of `libmono` and
 the core managed libraries is desirable.
-
-
-

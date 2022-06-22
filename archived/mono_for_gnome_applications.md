@@ -47,4 +47,3 @@ Note
 ----
 
 This chapter does use some content from the GTK+ Tutorial by Tony Gale, Ian Main, & the GTK team
-

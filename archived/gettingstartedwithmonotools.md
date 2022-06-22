@@ -97,4 +97,3 @@ Installing the Linux Server Component on openSUSE or SLE
           [Monovs-1click.png](http://go-mono.com/monotools/monovs.ymp)
 
 **Everything should now be ready to go! Guides to using each feature are available from the [Mono Tools homepage](http://mono-tools.com/).**
-

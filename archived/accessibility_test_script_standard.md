@@ -7,6 +7,3 @@ redirect_from:
 
 Accessibility: Test Script Standard
 ===================================
-
-
-

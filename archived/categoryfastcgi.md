@@ -9,4 +9,3 @@ Category:FastCGI
 ================
 
 Pages containing information about [FastCGI](/FastCGI)
-

@@ -358,6 +358,3 @@ The JavaScript compiler does not look like it will be open sourced, but some com
 The size of the Javascript compiler in Silverlight and the runtime are 114,688 and 299,008 bytes respectively. Extrapolating this from the size of our C# 1.0 compiler means that their Javascript compiler is roughly 9,000 lines of code, and the supporting runtime is roughly 22,000 lines of code.
 
 We have a runtime we could start from already, but it will likely require some changes, while the Javascript compiler seems relatively trivial to implement.
-
-
-

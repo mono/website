@@ -18,5 +18,3 @@ Some related components being developed and designed include:
 
 -   [Transactions processing](/Transactions)
 -   [Messaging support](/System.Messaging)
-
-

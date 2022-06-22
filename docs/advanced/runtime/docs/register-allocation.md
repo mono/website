@@ -155,4 +155,3 @@ These macros usually receive a value from the machine description file (like the
     #define MONO_ARCH_INST_REGPAIR_REG2(desc,hreg1) (desc == 'l' ? X86_EDX : -1)
 
 [Original version of this document in git.](https://github.com/mono/mono/blob/4b2982c3096e3b17156bf00a062777ed364e3674/docs/jit-regalloc)
-

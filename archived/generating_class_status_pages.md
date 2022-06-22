@@ -71,4 +71,3 @@ For these files to work, you must insert the generated HTML into a container tha
      <script src="cm/cormissing.js"></script>
    </head>
 ```
-

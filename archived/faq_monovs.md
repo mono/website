@@ -120,4 +120,3 @@ At this time, we only support creating packages for SUSE Linux (.rpm). Creating 
 **How can I package a precompiled version of my web site?**
 
 If you are using the "Precompile Web Applications" option when running and debugging your ASP.NET solutions, you should package a precompiled version of your solution to ensure the same behavior within the packaged solution. This can be done in the "Files" tab of Package Configuration wizard by clicking the "Precompile this website to a temporary location and add files to list" link at the bottom of the form.
-

@@ -85,5 +85,3 @@ Feature requests
 -   An AutomationPropertyChangedEvent is not fired (for the property AutomationNameProperty) when a widget's AccessibleDescription property is changed. This is needed for Bug #457845.
 -   A PopupButton in an OpenFileDialog is using MenuItem control type instead of the logical Button control type. This is needed for bug #474647.
 -   ToolStripSplitButtons seems not to have a way to invoke them or to open their dropdown (because they don't implement any pattern and don't have children by default). Examples: a) on a SaveFileDialog, the Views button. b) [toolstripsplitbutton.py](http://anonsvn.mono-project.com/viewvc/trunk/uia2atk/test/samples/toolstripsplitbutton.py?view=markup)
-
-

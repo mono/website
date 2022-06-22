@@ -34,5 +34,3 @@ References
 
 -   [[NUnitLite Web Site](http://nunitlite.com)]
 -   [[NUnitLite Discussion Group](http://groups.google.com/group/nunitlite)]
-
-

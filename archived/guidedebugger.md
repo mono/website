@@ -877,4 +877,3 @@ Now you're stopped in *Main* and want to invoke methods.
     Method `Foo ()' doesn't return a value.
 
 Note how the debugger automatically does overload resolution when calling *Foo*.
-

@@ -74,4 +74,3 @@ UPDATE dbo.aspnet_Membership SET IsApproved=1
 ```
 
 It will approve all the users you have registered (if you want to do it for individual users, you need to consult the dbo.aspnet_Users table, look up your user, note its ID and append **WHERE UserId=YOUR_USER_ID** clause to the above query)
-

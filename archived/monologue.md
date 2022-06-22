@@ -27,4 +27,3 @@ The Monologue is put together be merging all the entrys of the personal blog of 
 The Worker is open source. It's code is avalailable in SVN using the command:
 
     svn co svn://anonsvn.mono-project.com/source/trunk/monologue
-

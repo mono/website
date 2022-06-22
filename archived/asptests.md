@@ -779,6 +779,3 @@ The table below lists the results of executing the System.Web.UI.Controls tests 
 </tr>
 </tbody>
 </table>
-
-
-

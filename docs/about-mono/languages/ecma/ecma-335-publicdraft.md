@@ -45,6 +45,3 @@ Available Documents (Documents current as of 27 March 2010) The following workin
 -   CLI Partition VI – Annexes ([word/pdf zip](http://www.go-mono.com/ecma/2010-draft/Partition_VI_Annexes.zip))
 -   Class Library XML ([xml zip](http://www.go-mono.com/ecma/2010-draft/CLIClassLibraryXML.zip))
 -   Class Library Detailed Specifications ([word/pdf zip](http://www.go-mono.com/ecma/2010-draft/CLIClassLibraryDocs.zip))
-
-
-

@@ -12,8 +12,7 @@ Gtk# solves this problem using the Adjustment object, which is not a widget but 
 
 You will see how adjustments fit in when you see the other widgets that incorporate them: Progress Bars, Viewports, Scrolled Windows, and others.
 
-Creating Adjustments
-====================
+## Creating Adjustments
 
 Many of the widgets which use adjustment objects do so automatically, but some cases will be shown in later examples where you may need to create one yourself. You create an adjustment using:
 
@@ -28,13 +27,11 @@ Gtk.Object adjustment = new Adjustment( double value,
 
 The value argument is the initial value you want to give to the adjustment, usually corresponding to the topmost or leftmost position of an adjustable widget. The lower argument specifies the lowest value which the adjustment can hold. The stepIncrement argument specifies the "smaller" of the two increments by which the user can change the value, while the pageIncrement is the "larger" one. The pageSize argument usually corresponds somehow to the visible area of a panning widget. The upper argument is used to represent the bottom most or right most coordinate in a panning widget's child. Therefore it is not always the largest number that value can take, since the pageSize of such widgets is usually non-zero.
 
-Using Adjustments
-=================
+## Using Adjustments
 
 The adjustable widgets can be roughly divided into those which use and require specific units for these values and those which treat them as arbitrary numbers.
 
-Specific Unit Adjustments
--------------------------
+### Specific Unit Adjustments
 
 The other group which treats the values as specific units includes the text widget, the viewport widget, the compound list widget, and the scrolled window widget. All of these widgets use pixel values for their adjustments. These are also all widgets which are typically "adjusted" indirectly using scrollbars. While all widgets which use adjustments can either create their own adjustments or use ones you supply, you'll generally want to let this particular category of widgets create its own adjustments. Usually, they will eventually override all the values except the value itself in whatever adjustments you give them, but the results are, in general, undefined (meaning, you'll have to read the source code to find out, and it may be different from widget to widget).
 
@@ -47,8 +44,6 @@ Now, you're probably thinking, since text widgets and viewports insist on settin
   VScrollbar vscrollbar = new VScrollbar(viewport.Adjustment);
 ```
 
-Arbitrary Number Adjustments
-----------------------------
+### Arbitrary Number Adjustments
 
 The other group includes the range widgets (scrollbars and scales, the progress bar widget, and the spin button widget). These widgets are all the widgets which are typically "adjusted" directly by the user with the mouse or keyboard. They will treat the lower and upper values of an adjustment as a range within which the user can manipulate the adjustment's value. By default, they will only modify the value of an adjustment.
-

@@ -26,4 +26,3 @@ MoMA.exe --nogui --out C:\app\momareport\report.html C:\app\myapp.exe
 ```
 
  If you encounter bugs, or need additional functionality, you can file a bug in Mono -\> Mono: Tools -\> MOMA category of bugzilla. See [Bugs](/community/bugs/).
-

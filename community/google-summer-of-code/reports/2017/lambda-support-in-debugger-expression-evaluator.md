@@ -4,15 +4,15 @@ title: "Lambda support in debugger expression evaluator (Haruka Matsumoto)"
 
 Author: Haruka Matsumoto
 
-# Abstract
+## Abstract
 
 My project is lambda support in the MonoDevelop debugger's expression evaluator, used in the Immediate pad.
 
-# Code
+## Code
 
 All of my work is covered by a single pull request: [here](https://github.com/mono/debugger-libs/pull/142#pull)
 
-# Summary of the implementation
+## Summary of the implementation
 
 ![Processing flow chart](/images/gsoc-2017-lambda-support-in-debugger-expression-evaluator.png "Processing flow chart")
 
@@ -41,7 +41,7 @@ public class Injected_
 
 We send the compiled assembly to runtime, and invoke `Assembly.Load` with it in runtime. By calling `injected_method` through reflection APIs, the lambda value becomes accessible from the debugger.
 
-# Difficulties
+## Difficulties
 
 ### Lambda types depends on debuggee's context
 
@@ -69,7 +69,7 @@ Users can omit a path to a method (e.g., namespace) when invoking methods inside
 It's not supported invocation of static/instance overloaded methods in an instance context. This is because we have no information of types for expression inside the lambda.
 (e.g., Assume that current context has `static Method2 (int x)` and `instance Method2 (string x)`. If lambda expression is `(x => Method2 (x))`, we can not resolve the overload until resolving parameters types.)
 
-# Supported Features
+## Supported Features
 
 Lambdas satisfying the following three conditions are supported.
 
@@ -83,7 +83,7 @@ Lambdas satisfying the following three conditions are supported.
 2. Public type / local variables access
 3. Public `this` or `base` references
 
-# Non-Supported Features
+## Non-Supported Features
 
 * Private type access
 * Lambdas in some kinds of generic methods
@@ -95,7 +95,7 @@ Lambdas satisfying the following three conditions are supported.
 * Async Lambdas
     * MonoDevelop's expression evaluator doesn't support `await` keyword.
 
-# Future Work
+## Future Work
 
 ### Merge
 
@@ -128,7 +128,7 @@ Currently, only public type access is supported. A tentative plan is following.
     }
     ```
 
-# Links
+## Links
 
 * Original project proposal: [here](https://docs.google.com/document/d/1BnTomd6Lgq3FT4MkNHhBkgYGFFpm4uyEDVt0Qabd4G8/edit)
 * List of possible lambda features: [here](https://docs.google.com/document/d/1QkdHHI5DgPMPG-T48neOjOix34QKycStEBe0sbRGxgc/edit)

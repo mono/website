@@ -216,4 +216,3 @@ Presenter: **Lluis Sanchez**
 This session will show how to use Mono.Addins to create extensible applications. It will explain the basics concepts of the library, and how to create a basic add-in and add-in host. We'll also discuss about design decisions to make when creating extensible applications, and how to get the most out of Mono.Addins.
 
  [![Logo uned.gif](/archived/images/e/e1/Logo_uned.gif)](/archived/images/e/e1/Logo_uned.gif) [![Cindetec.png](/archived/images/8/86/Cindetec.png)](/archived/images/8/86/Cindetec.png)
-

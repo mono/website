@@ -117,4 +117,3 @@ A: Somewhat. CoreCLR is heavily based on the transparency model which was introd
 Q: Does CoreCLR provides all the security for [Moon|Silver]light ?
 
 A: Not quite. It's a bit like saying "CAS == stack walk". Stack walks are an important part of [CAS](/docs/advanced/cas/) but, without all the other parts, would not provide any security. In this case **coreclr** enforce the security attributes in the platform code (along with a few other rules) but some other features are policy-based (e.g. cross-domain web access, socket support...)
-

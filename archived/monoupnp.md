@@ -9,4 +9,3 @@ Mono.Upnp
 =========
 
 This is a placeholder.
-

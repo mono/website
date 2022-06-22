@@ -182,5 +182,3 @@ When the add-in is run, the following options should be available to the user:
 -   Destination directory (by default, project name)
 -   Copy source /y/n)
 -   Copy debug files
-
-

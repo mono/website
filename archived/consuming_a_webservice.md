@@ -162,4 +162,3 @@ Contributors
 ============
 
 Johannes Roith, Shane Landrum
-

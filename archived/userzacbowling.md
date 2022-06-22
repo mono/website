@@ -17,4 +17,3 @@ Local Mono contributor based out of Dallas TX. Contributions to Gecko#, Gtk#, MW
 ``` rss
 http://zacbowling.com/feed/rss2/
 ```
-

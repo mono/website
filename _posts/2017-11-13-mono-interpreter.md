@@ -55,7 +55,7 @@ To address these issues, and to support some internal Microsoft
 products, we brought Mono's interpreter back to life, and it is back
 with a twist.
 
-# New Mono Interpreter
+## New Mono Interpreter
 
 We resuscitated Mono's old interpreter and upgraded its .NET support,
 adding the support for generics and upgraded it to run .NET as it
@@ -74,7 +74,7 @@ $ mono --interpreter yourassembly.exe
 ...
 ```
 
-# Mixed Mode Execution
+## Mixed Mode Execution
 
 While the interpreter alone is now in great shape, we are currently
 working on a configuration that will allow us to mix both interpreted
@@ -94,7 +94,7 @@ recompile their applications.
 It will open the doors for scriptable applications on device using
 .NET languages as well.
 
-# Future work
+## Future work
 
 We are extending the capabilities of the interpreter to handle various
 interesting scenarios. These are some of the projects ahead of us:
@@ -162,6 +162,3 @@ Another consideration is to run code in interpreted mode, and if we
 exceed some threshold switch to a JIT compiled implementation of the
 method, or use attributes to annotate methods that are worth the
 trouble and methods that are not worth the trouble optimizing.
-
-
-

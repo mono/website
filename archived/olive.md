@@ -27,4 +27,3 @@ Olive is available from our [SVN](/SourceCodeRepository) repository on the modul
 You can get a copy using an anonymous access:
 
 \$ svn co [svn://anonsvn.mono-project.com/source/trunk/olive](svn://anonsvn.mono-project.com/source/trunk/olive)
-

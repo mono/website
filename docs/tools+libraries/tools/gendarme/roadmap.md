@@ -6,8 +6,7 @@ redirect_from:
 
 Gendarme has synchronized it's version numbers with Mono since the 2.0 release. All future releases will share the same schedule. See Mono [Roadmap](/docs/about-mono/roadmap/) for the exact release dates planned for each version.
 
-Gendarme 2.8 (in progress)
-==========================
+## Gendarme 2.8 (in progress)
 
 -   Framework
     -   [in progress] Use System.ComponentModel to configure the rules
@@ -24,8 +23,7 @@ Gendarme 2.8 (in progress)
 -   Runners
     -   Add GUI configuration to the wizard runner
 
-Gendarme 3.0+ (in planning)
-===========================
+## Gendarme 3.0+ (in planning)
 
 -   General
     -   Start building against FX 4.0 and C# 4
@@ -35,18 +33,15 @@ Gendarme 3.0+ (in planning)
 -   Runners
     -   a more feature-full GUI runner
 
-Ideas
-=====
+## Ideas
 
 Ideas without specific timeframes or with a different release strategy.
 
-Mono Build
-----------
+### Mono Build
 
 -   Integrate into Mono build farm and publish the results (just like the API status pages) [bug report](https://bugzilla.novell.com/show_bug.cgi?id=403499)
 
-Runner-related
---------------
+### Runner-related
 
 -   New GUI-based runners, like
     -   standalone (Gtk#, Cocoa#...)
@@ -101,17 +96,13 @@ What to display if a type/module or assembly rule is hit and no member is specif
 
 -   [reference](https://lists.dot.net/pipermail/mono-devel-list/2006-September/020651.html)
 
-Framework
----------
+### Framework
 
 -   Localization support I18N
     -   [reference 1](https://lists.dot.net/pipermail/mono-devel-list/2006-September/020651.html)
     -   [reference 2](https://lists.dot.net/pipermail/mono-devel-list/2006-August/020161.html)
     -   [reference 3](https://lists.dot.net/pipermail/mono-devel-list/2006-August/020166.html)
 
-Rules
------
+### Rules
 
 -   Too many to list here - send your ideas to the [Gendarme Google Group](http://groups.google.com/group/gendarme)
-
-

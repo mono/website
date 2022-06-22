@@ -4,13 +4,11 @@ redirect_from:
   - /GtkSharpNodeViewTutorialExamples/
 ---
 
-Example Programs from the Gtk# NodeView Tutorial
-=================================================
+## Example Programs from the Gtk# NodeView Tutorial
 
 This page contains the sample applications and compile instructions for the applications described in the tutorial.
 
-Simple NodeView
----------------
+### Simple NodeView
 
 The first example can be compiled with the command:
 
@@ -88,8 +86,7 @@ namespace NodeViewTutorial {
 }
 ```
 
-Interactive NodeView
---------------------
+### Interactive NodeView
 
 This example can be compiled with the command:
 
@@ -180,4 +177,3 @@ namespace NodeViewTutorial {
         }
 }
 ```
-

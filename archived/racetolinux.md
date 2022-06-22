@@ -269,5 +269,3 @@ Includes Mono, Cocoa#, installs in /Library/Frameworks
 For help with the installation, see: [Instructions to use the Installer](/InstallerInstructions).
 
 -   [Mono 1.2.3.50_rtl1 Installer](http://mono.ximian.com/monobuild/rtl/archive/1.2.3.50/linux-installer/rtl1/mono-1.2.3.50_rtl1-installer.bin)
-
-

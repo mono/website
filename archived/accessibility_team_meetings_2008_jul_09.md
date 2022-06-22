@@ -345,4 +345,3 @@ Accessibility: Team Meetings 2008 Jul 09
     **<@Calen> **
     Okay, thanks for everyone. don't forget update status in schedule page.
     07:57
-

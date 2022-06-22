@@ -491,5 +491,3 @@ sh$ valgrind --tool=memcheck -v --leak-check=full \
 > --suppressions=libgdiplus/cairo/test/.valgrind-suppressions \
 >  mono app.exe
 ```
-
-

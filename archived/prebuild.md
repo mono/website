@@ -35,5 +35,3 @@ Prebuild is a cross-platform XML-driven pre-build tool which allows developers t
 ### Release Notes
 
 -   [Prebuild:2.0.1](/Prebuild:2.0.1) April 2007
-
-

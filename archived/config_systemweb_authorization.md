@@ -35,4 +35,3 @@ It should be either a wildcard or a comma-separated list of role names.
 ### "verbs"
 
 Comma-separated list of HTTP verbs (GET, POST, HEAD).
-

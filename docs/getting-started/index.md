@@ -6,14 +6,17 @@ redirect_from:
   - /Learn/
 ---
 
-[What is Mono?](/docs/about-mono/)<br/>
- Find out what Mono is and what it can help you do.
+[What is Mono?](/docs/about-mono/)
 
-[Mono Basics](/docs/getting-started/mono-basics/)<br/>
- Make sure Mono is installed correctly by compiling/running Hello World.
+Find out what Mono is and what it can help you do.
 
-[Compatibility](/docs/about-mono/compatibility/)<br/>
- Check Mono's compatibility with Microsoft .NET.
+[Mono Basics](/docs/getting-started/mono-basics/)
+
+Make sure Mono is installed correctly by compiling/running Hello World.
+
+[Compatibility](/docs/about-mono/compatibility/)
+
+Check Mono's compatibility with Microsoft .NET.
 
 Working with Mono
 -----------------

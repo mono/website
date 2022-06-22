@@ -5,8 +5,7 @@ redirect_from:
   - /GtkSharp%3A_Normal_Buttons/
 ---
 
-Normal Buttons
-==============
+## Normal Buttons
 
 There are two ways to create normal [buttons](http://docs.go-mono.com/index.aspx?link=T:Gtk.Button):
 
@@ -122,8 +121,7 @@ namespace GtkSharpTutorial {
 }
 ```
 
-Toggle Buttons
-==============
+## Toggle Buttons
 
 ToggleButtons are similiar to normal buttons, but they keep track of their state--- up or down. When you click on one, it will be pushed down, and when you click again, it will pop back up. Click again, and it will pop back down. When popped down, the button's Active property has the value "true". Toggle buttons are the basis for check buttons and radio buttons; as such, many of the calls used for toggle buttons are inherited by radio and check buttons.
 
@@ -175,8 +173,7 @@ ToggleButtons are similiar to normal buttons, but they keep track of their state
         }
 ```
 
-Check Buttons
-=============
+## Check Buttons
 
 Check buttons inherit many properties and functions from the the toggle buttons above, but look a little different. Rather than being buttons with text inside them, they are small squares with the text to the right of them. These are often used for toggling options on and off in applications.
 
@@ -190,8 +187,7 @@ GtkWidget CheckButton1 = new CheckButtonWithMnemonic(string label);
 
 The CheckButtonWithLabel() function creates a check button with a label beside it. Checking the state of the check button is identical to that of the toggle button.
 
-Radio Buttons
-=============
+## Radio Buttons
 
 ``` csharp
 // radiobuttons.cs - Gtk# Tutorial example
@@ -282,4 +278,3 @@ namespace GtkSharpTutorial {
         }
 }
 ```
-

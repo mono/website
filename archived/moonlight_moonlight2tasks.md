@@ -116,5 +116,3 @@ Specific things we need for the PDC player
 -   StaticResource - used for templates and styles only **(should be done)**
     -   toshok
 -   Missing **Control** features (should be done)
-
-

@@ -142,13 +142,11 @@ If your company uses Mono and would like to get it listed here, please contact [
 
 -   [MaxSoft](https://maxsoft.bg) is using Mono and .NET to develop Viber chat bots for Windows, Mac OS and Linux servers. They also develop [mobile apps](https://maxsoft.bg/apps) using Xamarin.
 
-MindTouch Based Projects
-========================
+## MindTouch Based Projects
 
 Mindtouch produces Deki an enterprise collaboration framework and many web sites are powered by it. A list of existing customers of Deki is available [here](http://www.mindtouch.com/Customers).
 
-Web Projects Using Mono
-=======================
+## Web Projects Using Mono
 
 -   [Developer.Mozilla.org](https://developer.mozilla.org/En): Mozilla's developer site is powered by Deki on Unix. Deki is a Mono/.NET-based collaboration management system.
 

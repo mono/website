@@ -301,4 +301,3 @@ See also
 --------
 
 Interesting as well are the [MWF-\>UIA mappings](/Accessibility:_Control_Status) and the [GTK-\>Gail-\>ATK-\>UIA mappings+candidates](/archived/accessibility_uiaatkbridge/#case-study-gtk).
-

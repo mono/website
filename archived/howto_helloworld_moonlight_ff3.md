@@ -97,4 +97,3 @@ Create helloWorld.htm html file to test Moonlight:
 ```
 
 Open your Web Browser and open your new helloWorld.htm html file, later clic on text.
-

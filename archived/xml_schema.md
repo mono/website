@@ -94,4 +94,3 @@ Another use case is ignoring errors, when you just wanted to add Post Schema Val
 In such cases, you can specify ValidationType property (type of ValidationType) as DTD, Schema, or None. When you specify "None", no validation errors are thrown.
 
 You can also use ValidationEventHandler event (of type ValidationEventHandler delegate) to catch validation error manually. When you specified it, it also never throws any validation errors unless you rethrow the error in the delegated method.
-

@@ -569,5 +569,3 @@ Notes
 -----
 
 1.  HelpProvider. Current implementation in mono supports HelpProvider, however the "?" button isn't shown in the titlebar, there's an explanation in [Bug 412849](https://bugzilla.novell.com/show_bug.cgi?id=412849) and the [working example](http://forge.novell.com/mailman/private/mono-a11y/2008-September/000100.html) to fake "?" button if you want to test the implementation in mono.
-
-

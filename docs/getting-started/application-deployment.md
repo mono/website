@@ -8,13 +8,11 @@ These guidelines are designed to help you plan the layout for your application o
 
 This document also discusses how to distribute libraries whose APIs are not frozen: how to distribute and consume them.
 
-Application Layout
-==================
+## Application Layout
 
 This section covers some guidelines on application deployment. They are not hard rules, but useful conventions that have grown out of various Mono applications.
 
-Assumptions
------------
+### Assumptions
 
 You will be distributing your software in binary or source code form to others, and the software will be installed in a specific prefix or a user-defined prefix. Applications typically scatter a number of files relative to this prefix. For example, if the prefix is /usr, packages tend to store their programs in /usr/bin, their libraries in /usr/lib, their data files in /usr/etc and so on.
 
@@ -22,8 +20,7 @@ The prefix is sometimes changed, for example some systems use /usr/local, or /op
 
 We will refer to your application as "APPLICATION" in the following discussion.
 
-Background
-----------
+### Background
 
 Mono applications have at least one executable (they typically end with the extension .exe) and possibly other components like:
 
@@ -37,8 +34,7 @@ Typically all these files have been scattered in multiple locations relative to 
 
 Some developers can embed some of these data files and resources inside their executable or library by using the -resource: command line option of the compiler.
 
-Layout Recommendation
----------------------
+### Layout Recommendation
 
 PREFIX/bin
 
@@ -77,8 +73,7 @@ If your application also contains shared libraries that you are going to P/Invok
 
 This will ensure that your shared libraries are loaded from your installation directory and that there is no need to pollute the PREFIX/lib directory.
 
-Relocation
-----------
+### Relocation
 
 As you might have noticed the only place with the above setup that hardcodes the PREFIX to the application in the source is the script. None of the libraries or executables located in PREFIX/lib/APPLICATION have to hardcode the values.
 
@@ -96,8 +91,7 @@ Then you can do things like:
    string splash_file = Path.Combine (base_directory, "splash.jpg");
 ```
 
-When to use the GAC
--------------------
+### When to use the GAC
 
 The [Global Assembly Cache](/docs/advanced/assemblies-and-the-gac/) or "GAC" for short is a location where assemblies can be installed for system-wide use. To install assemblies in the GAC it is necessary to give them a version and to sign them to create a "strong name", a name that can not be faked.
 
@@ -111,8 +105,7 @@ This is where the PREFIX/lib/APPLICATION directory comes into play. This for exa
 
 The subject of installing assemblies into the GAC is handled in more detail in the article [Assemblies and the GAC](/docs/advanced/assemblies-and-the-gac/).
 
-Libraries with Unstable APIs
-============================
+## Libraries with Unstable APIs
 
 Sometimes developers might want to distribute a library to other developers but they might not have a library that is API stable or has not matured enough over time to guarantee the backwards-compatibility of their libraries or they are not willing to maintain multiple packages of the various versions for users.
 
@@ -166,10 +159,9 @@ If the developer had been using the GAC for an unstable library, he would force 
 
 Note: a production-ready, detailed example of this can be found in the [Autotools](#auto-tools) section, and can be seen by checking out and exploring the source code in the monoskel and monoskel-lib modules from Mono git.
 
-Comparing this to other models
-------------------------------
+### Comparing this to other models
 
-### How is this better than using the GAC?
+#### How is this better than using the GAC?
 
 This model requires a minimal amount of work on various parts.
 
@@ -198,14 +190,13 @@ The end user:
 
 This puts the burden of fetching and distributing the correct library on the hands of the software developer consuming the library, the advantage is that there are no external requirements and the dependencies for deployment are minimized.
 
-### How is this better than the "egg" model?
+#### How is this better than the "egg" model?
 
 The "egg" model is a model used in Gnome, where a source code repository of useful routines is kept. The routines and libraries live in this "egg" module until they graduate and can live in an API stable library. Developers copy/paste this code from "egg" into their applications and distribute the result.
 
 The problem is that developers must integrate the configuration system and bring the source code into their projects to effectively use the routines. They also must do their own source code importing which is more complex than just copying the binary library.
 
-Small Libraries
-===============
+## Small Libraries
 
 Small libraries that can be made available as source code and that application developers are expected to integrate into their applications should ship a pkg-config file that contains the line:
 
@@ -220,8 +211,7 @@ File1.cs File2.cs:
 
 And distribute the results.
 
-Auto-tools
-==========
+## Auto-tools
 
 Autoconf and automake are two popular tools used in Unix to cope with the configuration of software in a particular platform and creating standard makefiles. This section covers how to setup a Mono project to use the autoconf and automake tools.
 
@@ -243,7 +233,7 @@ The source code is available from our git repository as the module "monoskel", y
 
 On a checked out copy of the source.
 
-The tarball can be found here: [http://www.go-mono.com/archive/monoskel-0.1.tar.gz](http://www.go-mono.com/archive/monoskel-0.1.tar.gz)
+The tarball can be found here: [<http://www.go-mono.com/archive/monoskel-0.1.tar.gz>](http://www.go-mono.com/archive/monoskel-0.1.tar.gz)
 
 The contents of the tarball are:
 
@@ -278,17 +268,17 @@ The contents of the tarball are:
     monoskel-0.1/resources/Makefile.in
     monoskel-0.1/resources/dummy.txt
 
- The following files play important roles:
+The following files play important roles:
 
-### autogen.sh
+#### autogen.sh
 
 This file is a shell script that is used to create and run the configure script, which will generate all the output files we need. Don't run anything yet.
 
-### Makefile.am
+#### Makefile.am
 
 In this file, we tell automake which subdirectories to process. They will be processed in the same order as they appear in the SUBDIRS variable.
 
-### configure.in
+#### configure.in
 
 This is the main file that autoconf looks for.
 
@@ -304,21 +294,21 @@ Similarly PKG_CHECK_MODULES is used to ensure that superstring-sharp is installe
 
 Finally, we tell configure to substitute the variable MCS with the path to the executable we found before and provide the list of files that will be generated.
 
-### man/Makefile.am
+#### man/Makefile.am
 
 Here we use man_MANS to tell automake to install the manual page. We also put that manual page in EXTRA_DIST so that the file is included in source tarballs
 
-### resources/Makefile.am
+#### resources/Makefile.am
 
 This directory contains resources that are embedded into the executable.
 
 This dummy.txt file here will not be installed, but it has to be included in the EXTRA_DIST target so that its distributed with the resulting tarball.
 
-### src/AssemblyInfo.cs.in
+#### src/AssemblyInfo.cs.in
 
 This file is a template in which configure will perform substitutions. We use it to get the VERSION variable replaced by the version we provided in AM_INIT_AUTOMAKE, which will be 0.0.1 for the first time. src/Makefile.am
 
-### src/Makefile.am
+#### src/Makefile.am
 
 And last, but not least, here's the file that tells how to build the executable and where to install it.
 
@@ -337,4 +327,3 @@ Now it's time to run some commands and enjoy. The first one you need to run is:
 ./autogen.sh --prefix=/usr/local --enable-maintainer-mode
 
 Then try make, make clean, make install, make uninstall, make dist, make distcheck.
-

@@ -29,4 +29,3 @@ tooltips1.SetTip(button, "This is button 1", null);
 ```
 
 You can use the Enable and Disable methods to turn tooltips on or off.
-

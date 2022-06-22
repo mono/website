@@ -1095,4 +1095,3 @@ Credits
 -------
 
 The FAQ contains material contributed by Miguel de Icaza, Jaime Anguiano, Lluis Sánchez, Niel Bornstein.
-

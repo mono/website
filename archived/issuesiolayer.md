@@ -16,34 +16,22 @@ The shared memory is used to keep track of information that must be made availab
 
 Shared information like thread handles is kept in this page and this page can grow up to NNN megabytes.
 
-<table>
-<col width="100%" />
-<tbody>
-<tr class="odd">
-<td align="left"><h2>Table of contents</h2>
-<ul>
-<li><a href="#disabling-shm-features">1 Disabling SHM features</a></li>
-<li><a href="#needs-test-suite-for-io-layer">2 Needs: Test Suite for IO-Layer</a></li>
-<li><a href="#questions-for-dick">3 Questions for Dick</a></li>
-<li><a href="#request">4 Request</a>
-<ul>
-<li><a href="#documentation">4.1 Documentation</a></li>
-<li><a href="#timeouts">4.2 Timeouts</a></li>
-<li><a href="#tuning-of-the-non-shm-case">4.3 Tuning of the non-SHM case</a></li>
-<li><a href="#tuning-for-embedded-systems">4.4 Tuning for embedded systems</a></li>
-<li><a href="#challenges-for-embedded-systems">4.5 Challenges for Embedded Systems</a></li>
-</ul></li>
-<li><a href="#proposals">5 Proposals</a>
-<ul>
-<li><a href="#process-id-storage">5.1 Process ID storage</a></li>
-<li><a href="#reducing-the-size-of-the-table">5.2 Reducing the size of the table</a></li>
-<li><a href="#mono-modes">5.3 Mono Modes</a></li>
-<li><a href="#_write-_read-operations">5.4 _write, _read operations</a></li>
-</ul></li>
-</ul></td>
-</tr>
-</tbody>
-</table>
+## Table of contents
+
+1. [Disabling SHM features](#disabling-shm-features)
+2. [Needs: Test Suite for IO-Layer](#needs-test-suite-for-io-layer)
+3. [Questions for Dick](#questions-for-dick)
+4. [Request](#request)
+    * [Documentation](#documentation)
+    * [Timeouts](#timeouts)
+    * [Tuning of the non-SHM case](#tuning-of-the-non-shm-case)
+    * [Tuning for embedded systems](#tuning-for-embedded-systems)
+    * [Challenges for Embedded Systems](#challenges-for-embedded-systems)
+5. [Proposals](#proposals)
+    * [Process ID storage](#process-id-storage)
+    * [Reducing the size of the table](#reducing-the-size-of-the-table)
+    * [Mono Modes](#mono-modes)
+    * [\_write, \_read operations](#write-read-operations)
 
 Disabling SHM features
 ======================
@@ -72,10 +60,10 @@ Documentation
 
 Our [Documentation](/Article:IOChanges) needs to be improved:
 
--   The documentation is based on some conversations with Dick.
--   It is not up-to-date.
--   It needs more technical information than it has today
--   Copy-pasting from the mono/docs there is fine.
+*   The documentation is based on some conversations with Dick.
+*   It is not up-to-date.
+*   It needs more technical information than it has today
+*   Copy-pasting from the mono/docs there is fine.
 
 Timeouts
 --------
@@ -120,7 +108,6 @@ Maybe have two Mono Modes: the Windows emulation mode which would allow things l
 
 A more "native" implementation of Mono, which would be lighter in many scenarios.
 
-### _write, _read operations
+### \_write, \_read operations
 
-Handle validation happens in ReadFile, WriteFile, aren't the tests in each one of the _write, _read operations redundant? Could we remove them?
-
+Handle validation happens in ReadFile, WriteFile, aren't the tests in each one of the `_write`, `_read` operations redundant? Could we remove them?

@@ -455,4 +455,3 @@ Licensing
 =========
 
 Mono.Addins is open source available under the terms of the [MIT X11](http://www.opensource.org/osi3.0/licenses/mit-license.php) license.
-

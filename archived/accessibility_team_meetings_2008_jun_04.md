@@ -255,4 +255,3 @@ RAW IRC Capture
     <calvin>  I think that is all I have
     <calvin>  to everyone in Beijing... Good Night!
     <calvin>  I'll of course post the log to the Wiki
-

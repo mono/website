@@ -12,6 +12,6 @@ Mono provides .NET API to communicate with the debugger in Mono.Debugger.Soft.dl
 In addition to managed code debugging, you can [use the Unix GDB debugger with Mono](/docs/debug+profile/debug/) to debug low level runtime problems.
 
 Bugs
-====
+----
 
 [Known issues](https://github.com/mono/mono/labels/area-Debugger)

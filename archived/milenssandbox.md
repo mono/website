@@ -45,5 +45,3 @@ Suggestions for Articles
 ========================
 
 -   Deploy Mono apps with autotools
-
-

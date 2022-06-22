@@ -611,4 +611,3 @@ Inheriting Protocols
 --------------------
 
 We support inheriting from protocols that have been marked with the [Model] property. This is useful in certain API patterns, such as in MapKit where the MKOverlay protocol, inherits from the MKAnnotation protocol, and is adopted by a number of classes which inherit from NSObject. Historically we required copying the protocol to every implementation, but in these cases now we can have the MKShape class inherit from the MKOverlay protocol and it will generate all the required methods automatically.
-

@@ -88,4 +88,3 @@ class Demo {
 In the above example we create a subclass of `UIApplicationDelegate` and we register this with the MonoTouch runtime by decorating the class with the [Register] attribute. Then we override the method `FinishedLaunching` to initialize our UI. In this method we use the C# 3.0 syntax to create in a single statement our toplevel window (using the current screen dimensions) as well as a label that is displayed at position 50, 50 with 230 pixels of width and 100 pixels of height. The label contains the world "Hello from MonoTouch".
 
 The last method call makes the window the key window and shows it on the screen.
-

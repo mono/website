@@ -95,5 +95,3 @@ This beta also contains some Silverlight 3.0 features
 -   MultiScaleImage 3.0 API enhancements
 -   MediaStreamSource now supports PCM audio data, RGBA and YV12 video data.
 -   WriteableBitmap is supported.
-
-

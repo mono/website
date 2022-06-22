@@ -28,5 +28,3 @@ Version 2.0
 -   Debugger support.
 -   Expand the API coverage to cover the rest of Apple's APIs.
 -   MonoTouch.framework for reuse in existing Objective-C apps.
-
-

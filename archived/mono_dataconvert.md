@@ -382,4 +382,3 @@ Problems with the CLI's System.BitConverter
 ===========================================
 
 The System.BitConverter class in the .NET framework 1.0 used to be a class that merely did conversions to and from host types into byte arrays. This means that developers had to roll their own routines and check for the endianness of the host system.
-

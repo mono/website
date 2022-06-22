@@ -41,5 +41,3 @@ These are the files we compare to when generating our class status pages (we cal
 -   [masterinfos-4.5.tar.gz](http://go-mono.com/masterinfos/2.8/masterinfos-4.5.tar.gz)
 
 -   [masterinfos-SL2.tar.gz](http://mono.ximian.com/masterinfos/2.4/masterinfos-SL2.tar.gz)
-
-

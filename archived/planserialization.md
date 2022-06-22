@@ -109,4 +109,3 @@ class Something : __ISerializable {
 We would have to alter our code in Mono that might check for whether something is ISerializable to also check for __ISerializable (it happens in a few formatters).
 
 This is a problem though, although we can fix our class libraries, the above solution would not work with custom formatters that are not aware of this new __ISerializable framework. Lluis points out that we can encapsulate some of this logic in "ObjectManager", but the use of ObjectManager is not mandatory by formatters, so we might miss a few.
-

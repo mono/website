@@ -8,7 +8,7 @@ When I joined the Mono voyage in June, I had my mind set on evaluating Clang's [
 
 Most of my adventures can be tracked via pull requests as well as on the website. Therefore, as there is a lot of material out there already, I will only list the major cornerstones. The observant and interested reader can find a great amount of links that will lead them to a world full of fascinating stories.
 
-# My Journey
+## My Journey
 
 Main Quests "Playing with TSan and ASan":
 * Find out how to work with [TSan](/docs/debug+profile/clang/threadsanitizer/) and [ASan](/docs/debug+profile/clang/addresssanitizer/) in combination with Mono
@@ -37,15 +37,15 @@ Side Quests "Improving Mono":
 * [`(monoeg_)g_strerr ()`](https://github.com/mono/mono/pull/5323)
 * [The little `void`](https://github.com/mono/mono/pull/5438)
 
-# Bottom Line
+## Bottom Line
 
-## What I Learned
+### What I Learned
 
 Like many GSoC students before me, I learned how to work properly with git and GitHub. Even though I used git before joining Mono, I never went further than `checkout`, `commit` and `merge`. Working with GitHub and pull requests introduced me to `rebase -i`, which opened up a colourful new universe full of unexpected possibilities.
 
 Apart from git(Hub), I also learned that obviously, I have a thing for fixing and validating code. When I joined in June, I already liked the idea of static analysers that help me find and fix hidden issues in my code. However, working with TSan this summer raised my interest in these things up to a point at which I can undoubtedly proclaim my passion for code validation. I will focus on (automated) validation of code during the rest of my studies.
 
-## What Comes Next
+### What Comes Next
 
 When talking about introducing TSan to Mono, I want to stress that my work should be seen as one first step of many more to come. After taming about 200 races, there is still a large amount of wild races out there. Until the majority of these wild races are taken care of, meaningful investigations with TSan will be difficult.
 

@@ -22,4 +22,3 @@ The MS implementation of WSE2 at this point is believed to have some very strong
 It is also believed that WSE, WSE2 and WSE3 will become outdated technologies when Indigo is released.
 
 We recommend that you look at the [Olive](/Olive) project if you are interested in the advanced Web Services functionality. It is project under development at this point.
-

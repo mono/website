@@ -120,4 +120,3 @@ Resolving colors goes like this:
  
 Gdk.Color clr = myStyle.Backgrounds[(int) StateType.Normal];
 ```
-

@@ -138,5 +138,3 @@ The beta is public, so download it now and let us know how it goes!
 
 -   [Submit a Bug](/Bugs)
 -   [Discuss in Forums](http://forums.mono-tools.com/)
-
-

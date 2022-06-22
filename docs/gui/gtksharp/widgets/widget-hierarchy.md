@@ -97,4 +97,3 @@ This is the class hierarchy tree used to implement widgets, with links to each c
      + Gtk.ItemFactory  ([Monodoc](http://docs.go-mono.com/index.aspx?link=T:Gtk.ItemFactory))
      + Gtk.Tooltips  ([Monodoc](http://docs.go-mono.com/index.aspx?link=T:Gtk.Tooltips))
      + Gtk.TreeViewColumn  ([Monodoc](http://docs.go-mono.com/index.aspx?link=T:Gtk.TreeViewColumn))
-

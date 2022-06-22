@@ -190,4 +190,3 @@ int call_filter (MonoContext *ctx, gpointer addr);
 ```
 
 This trampoline is used to call finally and filter clauses during exception handling. It should setup a new stack frame, save callee saved registers there, restore the same registers from CTX, then make a call to ADDR, restore the saved registers, and return the result returned by the call as its result. Finally clauses need access to the method state, but they need to make calls etc too, so they execute in a nonstandard stack frame, where FP points to the original FP of the method frame, while SP is normal, i.e. it is below the frame created by call_filter (). This means that call_filter () needs to load FP from CTX, but it shouldn't load SP.
-

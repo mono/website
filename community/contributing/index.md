@@ -34,8 +34,7 @@ If you are interested in contributing, here are some pointers:
 
 The project is under active development and has a vibrant community. If you are looking at ways of helping the project, you have come to the right web page.
 
-Important Rules
-===============
+## Important Rules
 
 -   <s>**Microsoft .NET source code:** If you have looked at Microsoft's proprietary implementation of .NET or their shared source code (which is also proprietary), you will not be able to contribute to Mono. If you would like to contribute in this area, be careful to not look into them in Visual Studio debugging experience.</s> Microsoft open-sourced parts of the .NET Framework, see [.NET Source Code Integration](/docs/about-mono/dotnet-integration/) for more details.
 
@@ -51,8 +50,7 @@ Important Rules
 
 Microsoft also publishes a lot of code under open source licenses (MS-PL or Apache2). Looking at that code poses no problem. Some examples of code that you can look at include Microsoft's DLR, Microsoft's MEF, Microsoft's ASP.NET MVC, Microsoft's OData client stack and Microsoft's TinyCLR all licensed with open source compatible licenses.
 
-Work Areas
-==========
+## Work Areas
 
 Our immediate goals are described in the [Mono Roadmap](/docs/about-mono/roadmap/), in general fixing bugs, improving performance, improving documentation, quality and the overall polish are all good ways of contributing to Mono. You can track the various technologies on the [Plans](/docs/about-mono/plans/) page.
 
@@ -64,16 +62,13 @@ You can help write documentation, please see [Mono Documentation Improvement Pro
 
 After you have commited your patches to our [git](/community/contributing/source-code-repository/) repository, please use the [build status page](https://jenkins.mono-project.com/) to keep track of how your changes affect the build. If your patches turned the tree red, please back it out immediately.
 
-Contributing to Mono
-====================
+## Contributing to Mono
 
-Mono now part of the .NET Foundation
-------------------------------------
+### Mono now part of the .NET Foundation
 
 The Mono project is now part of the .NET Foundation and contributors have to sign the [.NET Foundation CLA](https://cla.dotnetfoundation.org) before submitting a pull request.
 
-Contributing to the Class Libraries
------------------------------------
+### Contributing to the Class Libraries
 
 For class library developers, we typically ask that you build NUnit tests to understand the API that you are going to implement, this will give you an insight beyond what the documentation states about the class. Then you should implement the code.
 
@@ -83,8 +78,7 @@ You should test the NUnit test cases on the real framework and make sure that al
 
 When contributing to the class libraries, please have a look at our [Coding_Guidelines](/community/contributing/coding-guidelines/). Note that our coding format is different from the default style from Visual Studio.
 
-Testing on Various Platforms
-----------------------------
+### Testing on Various Platforms
 
 Mono runs on many different platforms on many different architectures. However, no one can be expected to test their changes on all these platforms. To facilitate this, we run continuous builds for many platforms. The results are available on the [Mono Build Status](https://jenkins.mono-project.com/) page.
 
@@ -95,13 +89,11 @@ This page allows you to ensure that:
 
 If you find that one of your commits broke something, don't panic! Just please either fix it or revert your change. This keeps Mono working for everyone, no matter what platform they use.
 
-Maintaining Multiple Trees
---------------------------
+### Maintaining Multiple Trees
 
 If you want to maintain multiple active Mono installations in your system (a stable release, and one or more development releases) read the [Parallel Mono Environments](/docs/compiling-mono/parallel-mono-environments/) page.
 
-Debugging with Visual Studio
-----------------------------
+### Debugging with Visual Studio
 
 If you plan on developing on Windows and testing your work using Visual Studio, you will want to edit the assembly that you are working on, and remove from the AssemblyInfo.cs file the line that "signs" your assembly.
 
@@ -109,8 +101,7 @@ By removing the assembly signing, this will allow you to create a test project t
 
 For example, if you want to debug Mono's Windows.Forms, you would load the solution from mcs/class/Managed.Windows.Forms, edit the AssemblyInfo to prevent the signing and rebuild the project. Then your test program can reference this assembly without loading the one from the GAC.
 
-Ways to Contribute
-==================
+## Ways to Contribute
 
 There are three different philosophical approaches to helping the Mono project:
 

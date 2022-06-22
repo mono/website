@@ -134,4 +134,3 @@ Some sites using a custom version of Silverlight.js are not detecting moonlight 
 ### GreaseMonkey
 
 Some sites are still using an outdated method of detecting the Silverlight/Moonlight plugin. This bug was published in Microsoft's early versions of Silverlight.js. It has since been fixed but some sites have not updated their file. To work around this, you can install the [GreaseMonkey](https://addons.mozilla.org/en-US/firefox/addon/748) plugin and [our script](http://anonsvn.mono-project.com/viewvc/trunk/moon/data/silverlight-ff3-quirks.user.js) to get these sites to work.
-

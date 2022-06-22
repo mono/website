@@ -80,4 +80,3 @@ Security
 ========
 
 The current state of all the Moonlight 2 security work is available at [Security Status](/Moonlight/SecurityStatus)
-

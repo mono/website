@@ -87,4 +87,3 @@ Most functions will take an extra MonoError struct to provide better error handl
 ### Open questions
 
 Should we provide some sort of backward compatibility with the V1 API using symbol renaming and linker tricks such as the one libc uses?
-

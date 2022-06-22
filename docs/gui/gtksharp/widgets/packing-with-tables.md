@@ -4,8 +4,7 @@ redirect_from:
   - /GtkSharp%3A_Packing_with_Tables/
 ---
 
-Using Tables
-============
+## Using Tables
 
 In addition to packing using HBox and VBox, you can pack using the [Table](http://docs.go-mono.com/index.aspx?link=T:Gtk.Table) object; this lets you create a grid for placing widgets. The first thing to look at is the Table constructor:
 
@@ -40,13 +39,16 @@ The first argument (child) is the widget you wish to place in the table. The lef
 
 The xOptions and yOptions parameters are used to specify packing options and may be bitwise OR'ed together to allow multiple options. These options are:
 
-`Gtk.AttachOptions.Fill`<br/>
+`Gtk.AttachOptions.Fill`
+
 If the table box is larger than the widget, and Fill is specified, the widget will expand to use all the room available.
 
-`Gtk.AttachOptions.Shrink`<br/>
+`Gtk.AttachOptions.Shrink`
+
 If the table widget was allocated less space then was requested (usually by the user resizing the window), then the widgets would normally just be pushed off the bottom of the window and disappear. If Shrink is specified, the widgets will shrink with the table.
 
-`Gtk.AttachOptions.Expand`<br/>
+`Gtk.AttachOptions.Expand`
+
 This will cause the table to expand to use up any remaining space in the window.
 
 Padding is just like in boxes, creating a clear area around the widget specified in pixels. Gtk.Table.Attach() has a lot of options. So, there's a shortcut:
@@ -59,7 +61,7 @@ table1.AttachDefaults(          Widget widget,
                                 int       bottomAttach );
 ```
 
-The X and Y options default to Gtk.AttachOptions.Fill | Gtk.AttachOptions.Expand, and X and Y padding are set to 0. The rest of the arguments are identical to the previous function.
+The X and Y options default to Gtk.AttachOptions.Fill \| Gtk.AttachOptions.Expand, and X and Y padding are set to 0. The rest of the arguments are identical to the previous function.
 
 We also have SetRowSpacing() and SetColSpacing(). These places spacing between the rows at the specified row or column.
 
@@ -77,12 +79,11 @@ table1.SetColSpacings(int spacing);
 
 Note that with these calls, the last row and last column do not get any spacing.
 
-Example
-=======
+## Example
 
 Here we make a window with three buttons in a 2x2 table. The first two buttons will be placed in the upper row. A third, the quit button, is placed in the lower row, spanning both columns. It should look something like this:
 
-[Image:tables.png]
+\[Image:tables.png\]
 
 ``` csharp
 // /samples/tutorial/table/table.cs - Gtk# Tutorial example
@@ -197,4 +198,3 @@ namespace GtkSharpTutorial {
         }
 }
 ```
-

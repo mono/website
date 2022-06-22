@@ -46,5 +46,3 @@ Expected result: Screenshot should look approximately like the following image f
 Expected result: Modulo some tests ignored (yellow) due to platform, it should be similar to the following image from MS.NET: [![Nunit-gui-2.2.5-msnet tests-run.PNG](/archived/images/7/7b/Nunit-gui-2.2.5-msnet_tests-run.PNG)](/archived/images/7/7b/Nunit-gui-2.2.5-msnet_tests-run.PNG)
 
 -   Focus should remain on the Errors and Failures tab after the run is complete.
-
-

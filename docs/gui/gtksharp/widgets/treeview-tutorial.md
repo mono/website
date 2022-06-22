@@ -4,25 +4,21 @@ redirect_from:
   - /GtkSharp_TreeView_Tutorial/
 ---
 
-Introduction
-============
+## Introduction
 
 The GTK TreeView widget is used to display data in one of the most basic and intuitive ways possible: a list. Each row in the list can be separated into multiple columns, and rows in the list can contain child rows to create an expandable-list, or tree.
 
 The TreeView can be extremely intimidating at first, but it is extremely powerful - especially when compared to the ListBox and ListView controls from the Windows Forms toolkit.
 
-Model, View, Controller
-=======================
+## Model, View, Controller
 
 The TreeView uses the Model-View-Controller (MVC) design pattern. Components of the TreeView are separated into these three categories: The Model, which stores data to be displayed, the View, which controls how to display the data, and the controller, which controls what data is displayed, how it is sorted, etc.
 
-Model
------
+### Model
 
 The TreeView has two basic models: ListStore, which stores a flat set of data, and TreeStore, which stores data that can contain sub-items (used for creating a Tree). All TreeView Models implement the Gtk.TreeModel interface.
 
-View
-----
+### View
 
 The View is made up of three different parts as well - The column, the cell renderers, and the widget itself.
 
@@ -40,16 +36,13 @@ The following cell renderers are available:
 
 CellRenderers are separate from TreeViewColumns for added flexibility, allowing you to have an extremely fine-tuned treeview tailored to your application. For example you can pack an image and text into the same column, which often makes much more sense than creating a separate column for each.
 
-Controller
-----------
+### Controller
 
 Controllers modify how the data in the model is passed off to the View, and let you do things such as sorting and filtering the data.
 
-Your first TreeView
-===================
+## Your first TreeView
 
-Setting it up
--------------
+### Setting it up
 
 Here is a basic example of how to use the TreeView and all its related components. In our example, we will show a simple list of song titles and artist names:
 
@@ -108,8 +101,7 @@ Compile and run the application, and you will end up with this:
 
 Cool! So we have our TreeView displaying our two desired columns, now lets add some data in there.
 
-Adding some data
-----------------
+### Adding some data
 
 ``` csharp
  // Add some data to the store
@@ -213,8 +205,7 @@ public class TreeViewExample
 }
 ```
 
-Creating a Tree
-===============
+## Creating a Tree
 
 To create a tree instead of a flat list, we use a Gtk.TreeStore as our model.
 
@@ -290,8 +281,7 @@ public class TreeViewExample
 }
 ```
 
-Filtering Data
-==============
+## Filtering Data
 
 The TreeView makes it very easy to prevent certain rows from being displayed, without having to remove them from the model.
 
@@ -454,8 +444,7 @@ public class TreeViewExample
 
 [![GtkSharpTreeViewTutorial8.png](/archived/images/8/87/GtkSharpTreeViewTutorial8.png)](/archived/images/8/87/GtkSharpTreeViewTutorial8.png)
 
-Controlling how the model is used
-=================================
+## Controlling how the model is used
 
 The TreeView allows you write methods that extract specific data from your Model, and link your CellRenderers to them, rather than directly to the model.
 
@@ -575,7 +564,7 @@ private void RenderArtistName (Gtk.TreeViewColumn column, Gtk.CellRenderer cell,
 }
 ```
 
- [![GtkSharpTreeViewTutorial4.png](/archived/images/0/07/GtkSharpTreeViewTutorial4.png)](/archived/images/0/07/GtkSharpTreeViewTutorial4.png)
+[![GtkSharpTreeViewTutorial4.png](/archived/images/0/07/GtkSharpTreeViewTutorial4.png)](/archived/images/0/07/GtkSharpTreeViewTutorial4.png)
 
 Here is the complete example:
 
@@ -668,8 +657,7 @@ public class TreeViewExample
 }
 ```
 
-Shortcuts - Writing Less Code
-=============================
+## Shortcuts - Writing Less Code
 
 The Gtk TreeView API provides several convinence methods that makes it possible to create a basic tree using much less code than we used above.
 
@@ -706,8 +694,7 @@ public class TreeViewExample
 }
 ```
 
-Editable Text Cells
-===================
+## Editable Text Cells
 
 Making an editable text cell (so the user can click on the cell and modify the value) is extremely easy.
 
@@ -735,8 +722,7 @@ And that's all there is to it!
 
 [![TreeViewTutorial-Editing1.png](/archived/images/d/d8/TreeViewTutorial-Editing1.png)](/archived/images/d/d8/TreeViewTutorial-Editing1.png)
 
-Drawing icons in rows
-=====================
+## Drawing icons in rows
 
 For using Pixbuf you need, first to change the ListStore constructor, (notice the Gdk.Pixbuf parameter)
 
@@ -799,4 +785,3 @@ public class TreeViewExample
     }
 }
 ```
-

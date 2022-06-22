@@ -137,4 +137,3 @@ Completed Projects
 -   [Linear](/docs/advanced/runtime/docs/linear-ir/): An update to the JIT's internal representation (IR).
 -   JIT Regalloc: A new register allocation framework.
 -   [SafeHandles](/docs/advanced/safehandles/): Support for 2.0 SafeHandles.
-

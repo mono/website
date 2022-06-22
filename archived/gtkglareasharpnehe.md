@@ -77,4 +77,3 @@ Output from [fifth NeHe Lesson](http://nehe.gamedev.net/data/lessons/lesson.asp?
 [![Lesson05.png](/archived/images/7/71/Lesson05.png)](/archived/images/7/71/Lesson05.png)
 
 Code can be found here: [http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/NeHe/Lessons/05/Lesson05.cs?view=markup](http://anonsvn.mono-project.com/viewvc/trunk/gtkglarea-sharp/examples/NeHe/Lessons/05/Lesson05.cs?view=markup)
-

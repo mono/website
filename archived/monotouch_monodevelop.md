@@ -66,4 +66,3 @@ To the AppStore
 
 Using Ad-hoc deployment
 -----------------------
-

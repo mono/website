@@ -56,4 +56,3 @@ Now when Mono FastCGI server is up and running, Nginx configuration is complete 
 - [NGINX - Server Block Examples](https://www.nginx.com/resources/wiki/start/topics/examples/server_blocks/)
 - [NGINX - Pitfalls and Common Mistakes](https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/)
 - [Linux startup script for mono FastCGI server](http://tomi.developmententity.sk/Blog/Post/2)
-

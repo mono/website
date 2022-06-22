@@ -14,4 +14,3 @@ VScrollbar vscrollbar1 = new VScrollbar( adjustment );
 ```
 
 and that's about it. The adjustment argument can either be a pointer to an existing Adjustment, or NULL, in which case one will be created for you. Specifying `null` might actually be useful in this case, if you wish to pass the newly-created adjustment to the constructor function of some other widget which will configure it for you, such as a text widget.
-

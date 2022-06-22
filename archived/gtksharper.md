@@ -65,4 +65,3 @@ Current Source Releases:
 [Packages and installers](/Downloads)
 
 Sources for older releases can be downloaded from [GNOME FTP](https://ftp.gnome.org/pub/gnome/sources/gtk-sharp).
-

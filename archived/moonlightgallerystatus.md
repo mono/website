@@ -13,4 +13,3 @@ MoonlightGalleryStatus
 Please refer to [http://go-mono.com/moonlight/MoonlightStatus.aspx?v=2](http://go-mono.com/moonlight/MoonlightStatus.aspx?v=2)
 
 To update the contents of that page, edit trunk/moon/demo-status.txt
-

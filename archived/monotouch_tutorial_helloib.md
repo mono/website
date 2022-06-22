@@ -113,4 +113,3 @@ Otherwise UIApplication will create the delegate twice: one from the NIB request
 
 What happens behind the scenes
 ==============================
-

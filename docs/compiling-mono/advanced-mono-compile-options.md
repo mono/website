@@ -23,4 +23,3 @@ This is a supported configuration option.
 There are a number of options that control where Mono will install its files.
 
 Usually Mono is rooted on a "prefix", and binaries, libraries, data files, manual pages are then based from this prefix. To customize the prefix, you pass the --prefix command line option to configure.
-

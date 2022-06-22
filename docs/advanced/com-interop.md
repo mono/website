@@ -211,5 +211,3 @@ In the future, we will have a tool **xptimport** that will be able to import typ
 1.  [IDispatch](https://docs.microsoft.com/en-us/windows/desktop/api/oaidl/nn-oaidl-idispatch) support, both for RCWs and for CCWs
 2.  [LCIDConversionAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.lcidconversionattribute) Unfortunately, this nasty little guy is used by Office Interop Assemblies.
 3.  Better [aggregation](https://docs.microsoft.com/en-us/windows/desktop/com/aggregation) support
-
-

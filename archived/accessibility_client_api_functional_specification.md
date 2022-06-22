@@ -272,5 +272,3 @@ Note that for Linux apps, we should still take the approach of writing QA tests 
     -   Control type: Hyperlink
 -   Role: InputMethodWindow
     -   Control type: Custom?
-
-

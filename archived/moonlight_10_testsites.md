@@ -9,4 +9,3 @@ Moonlight 1.0 TestSites
 =======================
 
 All data on this page has been moved to [http://go-mono.com/moonlight/MoonlightStatus.aspx](http://go-mono.com/moonlight/MoonlightStatus.aspx)
-

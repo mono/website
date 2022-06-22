@@ -89,6 +89,3 @@ WinForms CodeOwners
 |UserControl|?|complete|complete|
 |VScrollBar|Jackson|complete|complete|
 |WebBrowser|Andreia|n/a|under development|
-
-
-

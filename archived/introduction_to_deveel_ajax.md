@@ -338,4 +338,3 @@ Licensing
 =========
 
 Deveel AJAX is released under the terms of [LGPL license](http://www.gnu.org/licenses/lgpl.html) for the source code of the application and the [BSD license](http://www.opensource.org/licenses/bsd-license.html) for the source code of the scripts.
-

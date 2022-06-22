@@ -182,5 +182,3 @@ White's white list
         -   TitleBar.get\~
         -   ToolStrip.get
         -   ToolTip.get
-
-

@@ -124,4 +124,3 @@ What Now?
 ---------
 
 Make sure you have Accessibility turned on in your GNOME preferences, and everything should Just Work.
-

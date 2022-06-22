@@ -444,4 +444,3 @@ This will create a `stage/` directory containing all of the files required for a
 Now, when you run Firefox, our extension should load and you should be able to see a live accessibility hierarchy inside of Accerciser.
 
 When developing in MoonAtkBridge, just `make` after you make changes, and re-run Firefox to see the results.
-

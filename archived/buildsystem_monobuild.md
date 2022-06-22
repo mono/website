@@ -209,4 +209,3 @@ Update "Options" in the \<Directory\> stanza to be:
     Options FollowSymLinks Indexes MultiViews
 
 That should be it! The mime handling changes are for viewing the compressed log files that monobuild creates. Unfortunately, InternetExplorer opens these unix formatted files in notepad, which looks horrible. Open them instead in an editor that understands unix line endings.
-

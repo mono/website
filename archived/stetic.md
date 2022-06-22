@@ -44,5 +44,3 @@ Stetic was originally created by Dan Winship and is currently maintained by Llui
 In addition, Monologue tracks other developers involved in MonoDevelop:
 
 -   [Monologue](http://www.go-mono.com/monologue)
-
-

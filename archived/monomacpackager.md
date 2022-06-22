@@ -69,4 +69,3 @@ Even if your bundle is completely self-contained into the .app directory, if you
 You can distribute this .pkg file to your users, and it will guide them through the process of installing your application, this is what the generated installer looks like if you check this option:
 
 [![Md-monomac-installer.png](/archived/images/a/ad/Md-monomac-installer.png)](/archived/images/a/ad/Md-monomac-installer.png)
-

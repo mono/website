@@ -103,5 +103,3 @@ JScript - DLR:
 The DLR Console:
 
 -   [DLRConsole](http://localhost:2060/dlrconsole/index.html)
-
-

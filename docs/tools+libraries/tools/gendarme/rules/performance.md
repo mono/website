@@ -56,8 +56,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AvoidLargeNumberOfLocalVariablesRule
 
@@ -1057,8 +1056,6 @@ ConstructorInfo ci = type.GetConstructor (Type.EmptyTypes);
 
 -   This rule is available since Gendarme 2.0
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

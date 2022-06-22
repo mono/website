@@ -169,6 +169,3 @@ Command line method:
 7.  List the repos again and make sure the mono-preview repo is disabled:
 
     zypper lr
-
-
-

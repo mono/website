@@ -6,17 +6,14 @@ redirect_from:
 
 Here are some historical data points about Mono:
 
-Early Posts
-===========
+## Early Posts
 
 -   [Mono and GNOME, the long reply](http://mail.gnome.org/archives/gnome-hackers/2002-February/msg00031.html) [Local Copy](/archived/mailpostlongreply)
 -   [Mono early history](https://lists.dot.net/pipermail/mono-list/2003-October/016345.html) [Local Copy](/archived/mailpostearlystory)
 
-Milestones
-==========
+## Milestones
 
-2001
-----
+### 2001
 
 -   June 30: the Mono project is announced.
 
@@ -52,8 +49,7 @@ Milestones
 
 -   Dec 28th: The Mono C# compiler compiles itself, but the code generated is not correct yet.
 
-2002
-----
+## 2002
 
 -   Jan 3: Mono's C# compiler can bootstrap itself using the .NET runtime. The next stage is to get it bootstrapping with the Mono runtime.
 
@@ -83,12 +79,10 @@ Milestones
 
 -   June 30: The Mono C# compiler is able to build mscorlib, the last piece to achieve self-hosting of the Mono runtime.
 
-2004
-----
+## 2004
 
 -   June 30th: Mono 1.0 is released.
 
-2016
-----
+## 2016
 
 -   Mono joins the .NET Foundation

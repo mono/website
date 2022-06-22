@@ -16,5 +16,3 @@ Editing Help
 -   [Documentation on customizing the interface](http://meta.wikipedia.org/wiki/MediaWiki_i18n)
 
 -   [User's Guide](http://meta.wikipedia.org/wiki/MediaWiki_User%27s_Guide) for usage and configuration help.
-
-

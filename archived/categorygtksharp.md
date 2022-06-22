@@ -9,4 +9,3 @@ Category:GtkSharp
 =================
 
 Pages related to [Gtk#](/GtkSharp)
-

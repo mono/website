@@ -59,4 +59,3 @@ Other Gtk# Tutorials
 -   How to build a Gtk# application in Windows using glade and Visual Studio.Net 2003
 
 [http://www.mfconsulting.com/tutorial/newgladeapp/](http://www.mfconsulting.com/tutorial/newgladeapp/)
-

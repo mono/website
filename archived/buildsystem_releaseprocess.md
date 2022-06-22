@@ -179,4 +179,3 @@ An account is required in order to submit sources to the openSUSE Build Service.
 Usually it is best to disable publishing in OBS for the Mono project while builds are being done. That way if you have to rebuild a few times multiple rpms don't get distributed. Once everything is building fine, re-enable publishing.
 
 Autobuild submissions are done from macintyre.suse.de (although any autobuild machine will do). But, for opensuse 11.1 the distro will be built out of OBS.
-

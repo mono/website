@@ -119,4 +119,3 @@ Getting Involved
 ----------------
 
 What's most needed right now is users and testers. We really need a picture of what Mono users most want to see from its implementation of System.Messaging. Grab the latest release, try it out and raise bugs against the parts that don't work.
-

@@ -109,4 +109,3 @@ csc TestExample.cs -r System.Data.dll -r FirebirdSql.Data.Firebird.dll
 ``` bash
 mono TestExample.exe
 ```
-

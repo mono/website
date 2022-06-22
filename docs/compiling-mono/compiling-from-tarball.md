@@ -21,4 +21,3 @@ Then configure, compile and install:
 This will give you a runtime, C# compiler and runtime libraries, where /usr/local is the prefix where Mono will be installed. You can change this to suit your needs.
 
 If you are not using GNU/Linux system (such as Solaris or BSD variants), make sure to use GNU make.
-

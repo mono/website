@@ -1,11 +1,8 @@
 ---
-title: GtkSharpUpgrade
+title: Upgrading to the Latest Gtk# Version
 redirect_from:
   - /GtkSharpUpgrade/
 ---
-
-Upgrading to the Latest Gtk# Version
-=====================================
 
 This page is a repository of answers to typical upgrading related questions between major Gtk# releases.
 
@@ -23,4 +20,3 @@ The 2.x versions of the parser/generator are named gapi2-parser and gapi2-codege
 ### What happened to Gda# and GnomeDb#?
 
 We aren't aware of anyone who was actually using them, and it is not clear that they were even usable based on some fundamental broken-ness like Gda.Value. We have provided a patch to the gnomedb project to integrate the bindings directly into gda/gnomedb where they will hopefully receive much more attention than we were able to give them in Gtk# .
-

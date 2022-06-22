@@ -4,8 +4,7 @@ redirect_from:
   - /Monodocer/
 ---
 
-Overview
-========
+## Overview
 
 The `monodocer` tool is used to maintain and update the documentation XML files (ECMA-styled documentation) for your project.
 
@@ -19,13 +18,11 @@ With these considerations in mind, Mono is using external XML files for class do
 
 Monodocer is part of monodoc.
 
-Generating Documentation
-========================
+## Generating Documentation
 
 The initial stubs for the documentation are generated with [monodocer](/docs/tools+libraries/tools/monodocer/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
 
-Example Assembly
-----------------
+### Example Assembly
 
 For example, if we had these two files compiled into the library *example.dll*:
 
@@ -56,8 +53,7 @@ namespace B {
 }
 ```
 
-Generating Documentation Stubs
-------------------------------
+### Generating Documentation Stubs
 
 You next need to create some stub XML files where you will insert your own documentation. Run monodocer like so:
 
@@ -74,8 +70,7 @@ New Type: B.AnotherBClass
 Members Added: 0, Members Deleted: 0
 ```
 
-Importing Documentation
-=======================
+## Importing Documentation
 
 Monodocer supports importing two different documentation formats:
 
@@ -84,8 +79,7 @@ Monodocer supports importing two different documentation formats:
 
 Inline documentation is imported with '-importslashdoc', while ECMA documentation is imported with '-importecmadoc'.
 
-Importing XML Documentation
----------------------------
+### Importing XML Documentation
 
 If you use inline XML documentation, you'll first need to extract it:
 
@@ -99,8 +93,7 @@ Next you import 'MyDocs.xml' with monodocer:
 monodocer -importslashdoc:MyDocs.xml -assembly:MyAssembly.dll -path:en -pretty
 ```
 
-Updating Documentation
-======================
+## Updating Documentation
 
 When your assembly changes, run `monodocer` again, just as before, to update your XML documentation files. Any documentation you wrote will be preserved in the files, and new sections for added namespaces, classes, and members are created as needed. Deleted members that you've written documentation for won't be deleted in the XML files unless you provide the `--delete` option.
 
@@ -116,8 +109,7 @@ will insert a `<since version="2.0" />` element for *every* type and member that
 
 This is useful when you need to distinguish which members were added in later versions of an assembly.
 
-Documentation Stub Format
-=========================
+## Documentation Stub Format
 
 Monodocer will create documentation files in the `docfiles` directory. The `docfiles/index.xml` file lists all of the types and namespaces in the assembly, and provides `<Remarks/>` and `<Copyright/>` elements for assembly-wide documentation. There will also be an XML file and directory for each namespace. In the namespace XML files, you can fill in namespace-specific documentation. Within the namespace directories, there is an XML file for each class in that namespace.
 
@@ -164,8 +156,7 @@ The XML file for *B.ImportantBClass* contains:
 
 Every "To be added." is a place where you need to fill in documentation. The other nodes in the document shouldn't be edited. These are used later to render the documentation into other formats (without needing to look-up the information from the compiled assembly).
 
-Editing Documentation
-=====================
+## Editing Documentation
 
 You can edit these files by hand, or you can use [Monodoc](/docs/tools+libraries/tools/monodoc/), Mono's documentation browser to edit the files. To edit the files in Monodoc, run:
 
@@ -173,12 +164,10 @@ You can edit these files by hand, or you can use [Monodoc](/docs/tools+libraries
 monodoc --edit docfiles
 ```
 
-Your assembly will be listed last. Open up that node in the tree on the left, and you can browse your documentation on the right. Make sure the Editing option is checked in the Edit menu, and you'll see [Edit] links in various places. Clicking an [Edit] link brings up an editor where you can enter the XML documentation for that section. Some buttons for commonly used tags are available.
+Your assembly will be listed last. Open up that node in the tree on the left, and you can browse your documentation on the right. Make sure the Editing option is checked in the Edit menu, and you'll see \[Edit\] links in various places. Clicking an \[Edit\] link brings up an editor where you can enter the XML documentation for that section. Some buttons for commonly used tags are available.
 
 Changes made in Monodoc are saved immediately to your documentation files.
 
-Installing Documentation
-========================
+## Installing Documentation
 
 Documentation can be packaged for later installation with the **mdassembler** command. See the [Assembler](/docs/tools+libraries/tools/mdassembler/) page for more information.
-

@@ -24,4 +24,3 @@ GitSVN:create-repo.sh
     git fetch git://repo.or.cz/$REPO.git refs/heads/master:refs/remotes/git-svn/trunk refs/heads/branches/*:refs/remotes/git-svn/branches/* refs/tags/*:refs/remotes/git-svn/tags/* && \
     git reset --hard git-svn/trunk && \
     git svn rebase
-

@@ -23,4 +23,3 @@ Moonlight should work on any modern 32bit and 64bit Linux distributions under Fi
 We make sure that the plug-in available from this site works on the following platforms: SUSE Linux Enterprise Desktop 11, openSUSE 11.x, Ubuntu 9.10 (or later), and Fedora 12 (or later).
 
 Older distributions will run Moonlight, but may require that you build Moonlight from the source code.
-

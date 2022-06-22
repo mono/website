@@ -9,5 +9,3 @@ MonoTouch
 =========
 
 1.  REDIRECT [http://monotouch.net](http://monotouch.net)
-
-

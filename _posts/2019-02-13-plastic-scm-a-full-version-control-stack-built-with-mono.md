@@ -27,7 +27,7 @@ ago.
 And here goes the story.
 
 Mono shone light down the cross-platform way
-============================================
+--------------------------------------------
 
 When the first lines of Plastic SCM were written back in September 2005,
 the decision to go for C\# was already made. But we knew a new version

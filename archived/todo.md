@@ -172,5 +172,3 @@ There are different areas of interest where high-level contributions can be made
 -   **VM runtime:**optimizing the runtime data structures, experimenting with different garbage collectors, integration with different component models.
 -   **Class library:**many opportunities in the implementation of regular expressions, Xml related technologies (XPath, XLST, etc).
 -   **Compilers:**writing compilers, interpreters and runtimes for langauges so that they run on the CLR (using Reflection.Emit support, for example).
-
-

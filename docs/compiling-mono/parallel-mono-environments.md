@@ -187,4 +187,3 @@ Common Problems
 ---------------
 
 Sometimes, the wrapper shell scripts for system installed programs do not write out the full path to mono. For example, while in this new environment, you might execute /usr/bin/monodevelop. Sometimes, this results in the **new** mono being used. If this is the case, you should report a bug to the developer. Likewise, even if you specify a path like /opt/mono/bin/monodevelop, the old mono may be used.
-

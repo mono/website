@@ -216,4 +216,3 @@ Development Tools
 -----------------
 
 You can use [Gendarme](/Gendarme) and [bugfinder](http://forge.novell.com/modules/xfmod/project/?bugfinder) to look into your assemblies for common programming mistakes.
-

@@ -51,6 +51,3 @@ UIA Properties
 |Tree| | |x|x|x|Tree| |true|true|x| | |x|"tree"|x| | | |
 |TreeItem| | |x|x|x|TreeItem| |true|true|x| |x|null|"tree item"|x| | |x|
 |Window| | |x|x|x|Window| |true|true|x| | |null|"window"|x| | | |
-
-
-

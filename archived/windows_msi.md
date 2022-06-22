@@ -79,4 +79,3 @@ I don't know a lot about this, but I guess we need either eglib or custom versio
 ### Conclusion
 
 With these changes, I think we can get a learner, meaner installer that is .msi-based. My current estimation is we can get the installer under 30 MB. Currently, it is 75-80 MB.
-

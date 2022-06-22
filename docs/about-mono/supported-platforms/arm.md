@@ -14,8 +14,7 @@ It can run all of our software up to Gtk# and the startup time is outstanding on
 
 Work to bind the Hildon widget set is happening [here](http://maemo.ndesk.org/)
 
-Building Mono
-=============
+## Building Mono
 
 The mono build includes two major parts: the C-based code and the C# code. The C# code is compiled using mcs which is itself written in C# so both the compiler and some of the base libraries are built multiple times.
 
@@ -23,8 +22,7 @@ Building Mono natively on an ARM box can be a slow process due to the size of th
 
 We recommend that you cross-compile using Scratchbox on Linux for the unmanaged code, and you use your native host to build the managed code.
 
-With ScratchBox
----------------
+### With ScratchBox
 
 We recommend that you use [ScratchBox](http://www.scratchbox.org/) to do the build. Mono is made up of two chunks of code:
 
@@ -71,22 +69,18 @@ Now build and configure the ARM code, inside the scratchbox sandbox (note the us
 
 At this point you'll have two directories, one containing the managed code and the other containing the runtime binaries, config files and scripts. You can just merge the two or copy them both to the device. With the above steps the tmptree directory will contain a usr/loca/ dir that you'll copy to the same dir on the target. Remember to strip the binaries and remove unused assemblies to reduce disk-space requirements.
 
-Compiling on the device
------------------------
+### Compiling on the device
 
 Compilation on the device can be very slow, so using distcc is recommended, i.e. install the cross compiler on a desktop caliber machine, install distcc on the device, configure it to use the desktop machine, then configure mono using: ./configure CC="distcc arm-linux-gnueabi-gcc" or such.
 
-Screenshots and Movies
-======================
+## Screenshots and Movies
 
 [Gtk# app movie on Nokia](http://www.go-mono.com/nokia/nokia-gtksharp.mov)
 
 [Hello World!](http://www.go-mono.com/nokia/nokia-770-mono-small.jpeg)
 
-Technical Details
-=================
+## Technical Details
 
 Mono's port to the ARM uses the FPA mode for generating floating point instructions. Starting from mono 1.2.1 we also support the new soft-float Linux ABI as used, for example, on the nokia 770 OS 2006 (also known as armel ABI or gnueabi).
 
 Mono must be compiled with the ARM instruction set, not with the Thumb support. P/Invoked libraries can use the Thumb instruction set, though, since the JIT has been changed to support interworking with thumb code.
-

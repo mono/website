@@ -71,4 +71,3 @@ for i in $old_tags; do
 done
 EOF
 ```
-

@@ -53,4 +53,3 @@ Some obligatory bits about myself and Mono. I'm the FreeBSD port maintainer for 
 That quote basically explains how I became FreeBSD's Mono maintainer. One night I thought to myself, "Gee, I should really learn a programming language. That's a good idea." Liking Muine and knowing that Mono was maintainerless, I figured C# would be a good choice in spite of various FreeBSD specific issues. Like I said, I just showed up and got the job. :) Anyways, right now my Mono time is spent keeping the various ports up to date, trying to figure out what is causing Mono's FreeBSD crashes in our libpthread, attempting to cajole a FreeBSD developer into looking at our problems, and oh... Trying to learn C# when I have the time.
 
 That's about it right now. Hopefully there will be more on this page in the future but I have ports to play with and need to add a BSD page to the site.
-

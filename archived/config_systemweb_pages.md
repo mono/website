@@ -144,4 +144,3 @@ A usage example:
   </tagMapping>
 </pages>
 ```
-

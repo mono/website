@@ -168,5 +168,3 @@ Being very new to formal Linux development (using autoconf and the rest), I want
     make[1]: *** [install-am] Error 2
     make[1]: Leaving directory `/home/ala55/src/monoskel/src'
     make: *** [install-recursive] Error 1
-
-

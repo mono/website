@@ -119,7 +119,7 @@ When you run the program now, you can expect to receive the following error:
 
 Two things need to be fixed here.
 
-1. Mono needs a dll name translation
+\#1 Mono needs a dll name translation
 
 Mono is looking for the native libgtkglarea-win32-2.0-0.dll. We don't have this file on the system. But we do have libgtkgl-2.0.so which is the library that GtkGLAreaSharp wraps around. It's pretty important that Mono can load this file. Therefore we have to add a lookup to the Mono config file. In most installations, this config file is found at /etc/mono/config. You can add a lookup line into this with:
 
@@ -144,7 +144,7 @@ The inserted entry in the config should look something like this:
         ..etc etc
     </configuration>
 
-2. linux doesn't know what lib folder libgtkgl-2.0.so.1.0.0 lives in.
+\#2 linux doesn't know what lib folder libgtkgl-2.0.so.1.0.0 lives in.
 
 The libgtkgl-2.0.so.1.0.0 file was installed to \$HOME/opt/lib so therefore you need to add (for example) /home/wayne/opt/lib to your /etc/ld.so.conf file. Remember to do an ldconfig afterwards so that the path is added to the linux system permanently.
 
@@ -218,4 +218,3 @@ using GtkGL;
 ```
 
 Now your MonoDevelop work flow should be ready for tinkering.
-

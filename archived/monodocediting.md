@@ -78,5 +78,3 @@ Enhanced editing capabilities, beefing up the new editor. Potential features inc
 -   see cref validation/autocompletion.
 -   See Also Support for non-ecma-provider documents.
 -   Extending beyond ecma document catalog editing?
-
-

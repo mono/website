@@ -16,4 +16,3 @@ The Gtk2 mechanism for size negotiation was the OnSizeRequested virtual method a
 ### Drawing
 
 The ExposeEvent has been replaced with a Drawn event. If you were overriding OnExposeEvent previously, you will need to override OnDrawn now, which entails a switch to cairo-based drawing, since the sole parameter to OnDrawn is a Cairo.Context. Rewriting Gdk drawing code with Cairo is probably beyond the scope of a document like this. Hopefully we can link to some good tutorials, but in the meantime you can get the gist of the API by taking a look at the CairoSample in the gtk-sharp samples.
-

@@ -228,4 +228,3 @@ Fixes in Beta 2:
 ==========
 
 Initial Release.
-

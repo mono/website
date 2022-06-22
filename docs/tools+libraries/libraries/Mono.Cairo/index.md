@@ -218,5 +218,3 @@ void OnDrawingAreaExposed (object o, ExposeEventArgs args)
 -   If you need to draw sharp (crisp) 1 pixel lines, add 0.5 to the coordinates. This is related to how the anti-aliasing works. Normally a 1px line is drawn "between" two pixels, which means that two points get 1/2 of the color value (blur)
 -   Color (and Alpha) values are expressed in a 0-1 range not 0-255 range.
 -   Don't forget to manually dispose the `Context` and the target `Surface` at the end of the expose event. Automatic garbage collecting is not yet 100% working in Cairo.
-
-

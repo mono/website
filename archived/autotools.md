@@ -15,4 +15,3 @@ There is a series of articles which walk through the process of creating an auto
 [http://wp.colliertech.org/cj/writing-free-software](http://wp.colliertech.org/cj/writing-free-software)
 
 For more information, see the wikipedia entry on the [GNU build system](http://en.wikipedia.org/wiki/Autotools)
-

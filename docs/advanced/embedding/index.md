@@ -8,13 +8,11 @@ This document describes how to embed the Mono runtime in your application, and h
 
 For a general overview of why you would like to embed Mono in your application see the [Scripting With Mono](/docs/advanced/embedding/scripting/) article.
 
-Source Code
-===========
+## Source Code
 
 Source code and samples for Mono embedding can be found in the Mono distribution in the mono/samples/embed directory.
 
-How Embedding Works
-===================
+## How Embedding Works
 
 Typically you would begin with an existing C application:
 
@@ -50,8 +48,7 @@ The loaded assembly can be as simple as you want, some common things that develo
 
 Since the Mono framework is a fairly powerful framework there are almost no limitations on the different kind of applications that you can create with the above setup.
 
-Embedding the Runtime
-=====================
+## Embedding the Runtime
 
 Check the [reference guide](http://docs.go-mono.com/?link=root:/embed) for details on the API.
 
@@ -249,8 +246,7 @@ Notice that we have to return a \`MonoString', and we use the \`mono_string_new'
 
 On Windows, it is necessary for you to flag any methods that you want to expose through P/Invoke to be flagged with `__dllexport` or `__declspec(dllexport)`.
 
-Updates for Mono version 2.8+
-=============================
+## Updates for Mono version 2.8+
 
 To support advanced GC implementations, implement a few optimizations and to do a much needed cleanup, the API and ABI exposed by the Mono library starting with version 2.8 has changed. Most of the API remains unchanged, but a few tweaks may be needed in the build setup and in the code. As much as possible the changes needed will allow the code to compile with both API versions.
 
@@ -351,8 +347,7 @@ ves_icall_System_Environment_GetOSVersionString()
 mono_alloc_special_static_data()/mono_get_special_static_data()
 ```
 
-Invoking Methods in the CIL universe
-====================================
+## Invoking Methods in the CIL universe
 
 Calling a method in the CIL universe from C requires a number of steps:
 
@@ -402,8 +397,7 @@ MonoImage    *mono_assembly_get_image  (MonoAssembly *assembly);
 
 to search for the method in a class or in an image. You would typically do this just once at the start of the program and store the result for reuse somewhere.
 
-Invoking a Method
------------------
+### Invoking a Method
 
 You can invoke methods either with [Unmanaged to Managed Thunks](#unmanaged-to-managed-thunks) which create a custom version of an invocation method or by using the `mono_runtime_invoke ()` methods.
 
@@ -480,7 +474,7 @@ MonoObject *result = mono_runtime_invoke (bar_method, this_arg, args, NULL);
 int int_result = *(int*)mono_object_unbox (result);
 ```
 
-### Creating objects
+#### Creating objects
 
 Creating an object involves two separate actions: allocating the memory and invoking the constructor.
 
@@ -510,7 +504,7 @@ args [0] = mono_string_new (domain, "Mono rocks");
 mono_runtime_invoke (ctor_method, my_class_instance, args, NULL);
 ```
 
-### Data types
+#### Data types
 
 Unlike [PInvoke](/docs/advanced/pinvoke/), there is no intermediate layer that translates the managed types into unmanaged typed or the other way around. With the embedded runtime, when you register an internal call, or when you call a method, you need to use the data types expected by the runtime.
 
@@ -523,7 +517,7 @@ This means that you need to convert your C types into Mono runtime types before 
 
 See the embedded API documentation for more details about these.
 
-### Unmanaged to Managed Thunks
+#### Unmanaged to Managed Thunks
 
 With Mono 2.0 we introduced a new function that can wrap a MonoMethod into a function pointer:
 
@@ -543,7 +537,7 @@ gint32 hashvalue = func (myobject);
 
 Another approach is calling [Marshal.GetFunctionPointerForDelegate ()](http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.marshal.getfunctionpointerfordelegate.aspx) either from managed code, or using `mono_runtime_invoke ()`.
 
-### C# to C delegate registration
+#### C\# to C delegate registration
 
 Another common pattern to have C code invoke C# code is to pass C# delegates to C through the [Interop with Native Libraries](/docs/advanced/pinvoke/) support in Mono.
 
@@ -594,15 +588,13 @@ int InvokeManagedCode (int a, int b)
 }
 ```
 
-Threading issues
-----------------
+### Threading issues
 
 If your application creates threads on its own, and you want them to be able to interact with Mono, you have to register the thread so that the runtime knows about it.
 
 To do so, call the `mono_thread_attach()` function before you execute any other Mono API or before manipulating any managed object.
 
-Signal handling
----------------
+### Signal handling
 
 Mono consumes a set of signals during execution that your applications will not be able to consume, here is what these are:
 
@@ -620,26 +612,21 @@ Optionally:
 
 Currently Mono does not provide a mechanism for signal chaining, but one might be available in the future.
 
-API Documentation
-=================
+## API Documentation
 
 Mono's [API Documentation](http://docs.go-mono.com/?link=root:/embed) covers the various APIs that you can invoke from your C/C++ application.
 
-Common Problems
-===============
+## Common Problems
 
-Threads
--------
+### Threads
 
 If your applications has threads that will access Mono, access Mono variables, point to Mono objects, be called back by Mono, these threads must be registered with the Mono runtime using the `mono_thread_attach`.
 
-Missing functionality
----------------------
+### Missing functionality
 
 If the embedding API is missing some functionality, you might be able to work around it by invoking managed code using `mono_runtime_invoke ()`, i.e. for creating delegates you can call `Delegate.CreateDelegate ()` etc.
 
-Chicken/Egg
------------
+### Chicken/Egg
 
 If you have a .NET app which P/Invokes to an unmanaged library, which embeds Mono for basically 100% of its logic, bad things can happen:
 
@@ -647,12 +634,10 @@ Under Linux, libmono is statically linked by default. If you p/invoke a library 
 
 Even if you link libmono dynamically (there is a \`configure' switch for this), you must take care to initialize the runtime only once. This means that you can't call `mono_jit_init/cleanup` from the SO.
 
-Samples
-=======
+## Samples
 
 See the sample programs in [mono/samples/embed](https://github.com/mono/mono/tree/master/samples/embed) for examples of embedding the Mono runtime in your application.
 
-Outdated Presentation
-=====================
+## Outdated Presentation
 
 Paolo Molaro did a presentation on [embedding the Mono Runtime](/docs/advanced/embedding/embedslides/).

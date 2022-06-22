@@ -123,5 +123,3 @@ BEGIN LOGGING AT Wed Mar 25 09:48:46 2009
  Mar 25 10:48:31 \<ray\> thank u for good organized
  Mar 25 10:48:42 \<felicia\> you rocks, thanks.
  Mar 25 18:44:45 \* ray has quit (Leaving)
-
-

@@ -35,4 +35,3 @@ Then you can run:
      (cd mono; make install)
 
 Notice that following the above procedure does not require you to manually install the software in the \`mcs' directory, as the relevant files will be copied by the \`mono' makefiles.
-

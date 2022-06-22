@@ -274,5 +274,3 @@ References
 -   [GConf Web Site](http://www.gnome.org/projects/gconf/)
 -   [GConf# Documentation](http://docs.go-mono.com/index.aspx?link=N:GConf)
 -   [GNOME HIG](http://developer.gnome.org/projects/gup/hig/)
-
-

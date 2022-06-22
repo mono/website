@@ -38,4 +38,3 @@ If you are using a mono version from SVN or newer than mono-1.1.6, you may exper
 **Basic Usage**
 
 After installation, the command **nant** is available for use. Information on using the nant command can be found by running **nant -help**. By default, nant will search in the present working directory for any files ending in the extension *.build*. You can specify the build file explicitly by doing **nant -buildfile:foo.build**. Further information on using nant, and creating NAnt build files can be found on the NAnt site at [http://nant.sourceforge.net/release/latest/help/](http://nant.sourceforge.net/release/latest/help/).
-

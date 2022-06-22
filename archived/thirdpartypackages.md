@@ -62,4 +62,3 @@ Ubuntu
 Binary packages for Ubuntu live at:
 
 [http://archive.ubuntu.com/ubuntu/pool/main/m/mono/](http://archive.ubuntu.com/ubuntu/pool/main/m/mono/)
-

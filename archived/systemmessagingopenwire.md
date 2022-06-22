@@ -156,4 +156,3 @@ Receive:
         f.TargetTypes = new Type [] {typeof (string)};
         object o = f.Read (msg);
 ```
-

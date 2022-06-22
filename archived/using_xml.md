@@ -39,5 +39,3 @@ Mono also supports the entire [LINQ to XML](http://msdn.microsoft.com/en-us/libr
 We also support many ADO.NET classes as well.
 
 -   Treat XML documents as a set of data tables with ADO.NET
-
-

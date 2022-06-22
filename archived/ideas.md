@@ -16,5 +16,3 @@ Libraries
     Such an implementation could be used both with Microsoft .NET and Mono.
 
 -   Interfacing to Multimedia systems. You might want to look into the Quicktime API. I know [Vladimir](mailto:vladimir@ximian.com) has researched the problem before.
-
-

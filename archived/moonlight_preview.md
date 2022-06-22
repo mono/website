@@ -111,5 +111,3 @@ As always, you can get the development source from trunk:
 -   new managed parser for RuntimeVersion=4
 
 -   improved GC support - the GC is now the one-true means of freeing all objects, including c++ peers.
-
-

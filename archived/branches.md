@@ -341,4 +341,3 @@ We go as far back as 1-1-7 because SuSE is still providing security updates for 
 We created a 1-1-13-8 branch based off the 1-1-13-8 tag and added the patches that SuSE is shipping in SLE10 (s390 fixes and OO integration fix).
 
 Mono 1.2.2 (1-1-2) was accepted to SLE10 SP1, so we are no longer maintaining the 1-1-13-8 branch for SLE10, but we are doing security fixes in 1-1-13-8 for SuSE 10.1.
-

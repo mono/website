@@ -192,5 +192,3 @@ Controls in System.Windows.Controls.Data.dll
 ### DataGrid
 
 -   (**100% done**, included in the SL2 RTM source drop)
-
-

@@ -48,5 +48,3 @@ Implementation
 
 -   Two matches of "the first to reach 5 goals" per day.
 -   After the first match, players have to switch from defensive positions to offensive, and viceversa.
-
-

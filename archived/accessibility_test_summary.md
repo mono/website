@@ -69,4 +69,3 @@ In the future, this test summary will summarize the results of testing activitie
 #### Summary of activities
 
 #### Approvals
-

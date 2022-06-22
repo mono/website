@@ -33,7 +33,7 @@ Right now Tao has a number of build systems, including a NAnt-based one, a set o
 
 1. Simple cross-platform Makefile system
 
-This should support all the configurations that the current NAnt-system supports, but be easier to maintain. Support for mono on OS X should also be added to Tao. This will most likely depend on GNU make, though it may be possible to make the same files work with NMAKE.
+    This should support all the configurations that the current NAnt-system supports, but be easier to maintain. Support for mono on OS X should also be added to Tao. This will most likely depend on GNU make, though it may be possible to make the same files work with NMAKE.
 
 2. VS.NET Solution/Projects
 
@@ -56,4 +56,3 @@ Need to get inline documentation for OpenGL functions in, based on the OpenGL ma
 #### Extension support in OpenAL
 
 OpenAL uses an extension mechanism similar to OpenGL's (alGetProcAddress)... we need to add support for some of the more common extensions (EAX) in the same way that we handle OpenGL extensions.
-

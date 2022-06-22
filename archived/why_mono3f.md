@@ -55,4 +55,3 @@ Mono's advanced runtime gives developers many features for free: automatic garba
 The C# language incorporates various concepts that are normally used in GUI application development directly into the language as first-class language constructs like events, delegates, properties and attributes.
 
 The addition of Visual Basic and Windows.Forms (Q4/2004) to Mono will also help migrate this important group of developers from the Windows platform to Linux.
-

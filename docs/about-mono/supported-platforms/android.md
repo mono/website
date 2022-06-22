@@ -12,4 +12,3 @@ APIs.  It is available both as part of Microsoft Visual Studio, or as
 an open source project.
 
 Please visit the [Xamarin](https://visualstudio.microsoft.com/xamarin/) site for more information on Mono/.NET on Android.
-

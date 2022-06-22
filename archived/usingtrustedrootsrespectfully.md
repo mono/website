@@ -527,4 +527,3 @@ Appendix Approach #5: Application or global trust
 --------------------------------------------------
 
 No source code provided. You can easily merge both #3 and #4 source code to obtain a working sample.
-

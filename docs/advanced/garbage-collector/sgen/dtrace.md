@@ -6,8 +6,7 @@ redirect_from:
 
 On macOS Mono's [Generational GC](/docs/advanced/garbage-collector/sgen/) is instrumented with several [DTrace](/docs/debug+profile/profile/dtrace/) probes that give insight into the garbage collection process and can help in finding the causes for performance problems.
 
-The Probes
-==========
+## The Probes
 
 The DTrace provider name for all these probes is `monoPID`, where `PID` is the respective process's PID.
 
@@ -90,11 +89,9 @@ gc-obj-pinned (uintptr_t addr, uintptr_t size, char *ns_name, char *class_name, 
 
 Fires whenever an object is pinned.
 
-Example scripts
-===============
+## Example scripts
 
-Garbage collection times
-------------------------
+### Garbage collection times
 
 How long do garbage collections take for a specific workload?
 
@@ -136,8 +133,7 @@ Example output:
 
 The graph for `0` shows collection times for the nursery, the graph for `1` shows times for the major collections. We can see here that the majority of nursery collections took about half a millisecond, with 4 outliers taking around 10 ms. There were 3 major collections, two of which took around 16 ms and the third one barely took any time at all.
 
-GC lock
--------
+### GC lock
 
 Not counting garbage collections, how often and for how long is the GC lock held?
 
@@ -162,8 +158,7 @@ Output:
 
 SGen takes the lock quite often, but apart from one outlier at about 1 millisecond, it's released almost immediately. Further analysis (not presented here) shows that the outlier is a result of thread-pool initialization during startup, when a few objects are allocated pinned, requiring allocating some memory from the operating system.
 
-Objects pinned in the nursery
------------------------------
+### Objects pinned in the nursery
 
 How many objects of which types are pinned during nursery collections?
 
@@ -241,4 +236,3 @@ On 32-bit Mono the length of an array is at offset 12, so we read 4 bytes from t
 Each of them gives us the distribution of the array lengths for array objects of specific sizes. If everything is correct then for each array object size there must only be one array length, which is exactly what we get. For example, all 481 array objects of size 20 bytes have a length of one.
 
 In fact, the numbers show that the sizes we get are exactly what we should expect given Mono's object layout on 32-bits: A reference array with a given length has a size of 16+4n bytes.
-

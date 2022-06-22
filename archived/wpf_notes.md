@@ -33,4 +33,3 @@ Although there are various polygon clipping libraries available in the net, noth
 A performance improvement over Vatti's paper is [Efficient Clipping of Arbitrary Polygons](http://davis.wpi.edu/~matt/courses/clipping/). Notice that this does not deal with all of the operations that we need (but could be implemented on top of it).
 
 Not clear if we need the library to handle holes, but it seems that self-intersecting polygons is a must.
-

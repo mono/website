@@ -9,4 +9,3 @@ AtkSharp
 ========
 
 Go to the [MonoDoc API page](http://docs.go-mono.com/index.aspx?tlink=5@N%3aAtk) for reference.
-

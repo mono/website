@@ -54,6 +54,3 @@ System.Windows.Forms
 2.  Mono:
     1.  Mimics ListView implementation when View is Details, so implements DataGrid Control Type.
     2.  Children: 1 Header Item with n HeaderItem Items. n DataItem with n XXXX Control Type.
-
-
-

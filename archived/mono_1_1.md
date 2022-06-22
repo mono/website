@@ -128,5 +128,3 @@ Virtual Machine
 -   JIT, 64 bits: x86-64, SPARCv9
 
 -   Interpreter, 32 bits: s390, HPPA, StrongARM, SPARC v8
-
-

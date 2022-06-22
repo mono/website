@@ -49,4 +49,3 @@ void handler (object sender, EventArgs args)
 button1.Activated += handler;
 button2.Activated += handler;
 ```
-

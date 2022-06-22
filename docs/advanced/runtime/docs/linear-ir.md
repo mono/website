@@ -321,5 +321,3 @@ Improvements compared to the Mono 1.x and Mono 2.0 JITs
 -   The handling of soft-float on ARM is done in a separate pass instead of in a miriad places, hopefully getting rid of bugs in this area.
 
 -   In the old representation the tree to code transformations were easy only if the "expression" to transform was represented as a tree. If, for some reason, the operation was "linearized", using local variables as intermediate results instead of the tree nodes, then the optimization simply did not take place. Or the jit developer had to code twice: once for the tree case and once for the "linear" case.
-
-

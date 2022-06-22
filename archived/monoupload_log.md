@@ -92,5 +92,3 @@ Below is a list of the most recent file uploads. All times shown are server time
 -   20:11, 24 Feb 2005 NatFriedman uploaded "[Mono-powered-big.png](/archived/images/3/31/Mono-powered-big.png)" *(Powered by Mono, big version)*
 -   20:11, 24 Feb 2005 NatFriedman uploaded "[Mono-contributor-static.gif](/archived/images/9/9f/Mono-contributor-static.gif)" *(Mono contributor image)*
 -   20:11, 24 Feb 2005 NatFriedman uploaded "[Mono1.gif](/archived/images/3/31/Mono1.gif)" *(Mono 1.0 animation)*
-
-

@@ -88,4 +88,3 @@ What Now?
 Make sure you have Accessibility turned on in your GNOME preferences, and everything should Just Work.
 
 If you're interested in contributing to the project, see our [Getting Started Guide](/Accessibility:_Getting_Started_With_Development).
-

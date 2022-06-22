@@ -20,4 +20,3 @@ To fix this problem make sure that you keep a handle to the delegate that you ar
 This happens since Mono has no visibility into the unmanaged world and it does not know that the unmanaged world has kept a reference to your delegate. As far as the Mono runtime is concerned the delegate must be garbage collected.
 
 For more information see: [http://blogs.msdn.com/dangriff/archive/2003/11/19/51709.aspx](http://blogs.msdn.com/dangriff/archive/2003/11/19/51709.aspx)
-

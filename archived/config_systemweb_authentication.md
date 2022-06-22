@@ -104,4 +104,3 @@ Set to true when the cookie is to be sent through SSL connections only.
 When set to 'true', the cookie expiration time is updated is extended from the last request using the cookie until 'timeout' more minutes.
 
 **Default value:** "true"
-

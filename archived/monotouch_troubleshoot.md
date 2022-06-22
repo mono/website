@@ -31,4 +31,3 @@ Additionally, the class that hosts this code must have the [Register] attribute.
 #### You are getting a ModelNotImplementedException
 
 If you are getting this exception this means that you are calling base.Method () on a class that overrides a Model. You do not need to call the base method in a class for models (these are classes that are flagged with the [Model] attribute).
-

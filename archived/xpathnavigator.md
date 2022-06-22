@@ -144,4 +144,3 @@ The last pieces of XPathNavigator are tree node comparison methods.
 -   ComparePosition() returns the position represented as an enumeration type of XmlNodeOrder. It the argument node (pointed by XPathNavigator) is located after this node, it returns "After". If it is before this node then "Before", and "Same" if they are on the same position. If those document sources are different, then it returns "Unknown".
 
 Note that XML (and of course XPath) data model is not aware of the order of attributes. So you should not rely on these "order". However, you can rely on the fact that MoveToNextAttribute() iterates all attributes anyways.
-

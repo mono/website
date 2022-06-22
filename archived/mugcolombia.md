@@ -47,4 +47,3 @@ Links
 -----
 
 [Mono Colombia Website](http://www.monocolombia.com/)
-

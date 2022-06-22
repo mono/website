@@ -139,4 +139,3 @@ Contribute
 ----------
 
 Anybody willing to help? If so, contact any of the people working on the ADO.NET support in Mono: Rodrigo Moya, Tim Coleman, Daniel Morgan, Brian Ritchie, Vladimir Vukicevic, Ville Palo, Franklin Wise, and others.
-

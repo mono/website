@@ -98,4 +98,3 @@ Most people are not going to be interested in seeing every C function hit in a s
 #### Multi-mode profiling
 
 The mono logging profile support collection of profiling data for multiple modes at the same time. While calls and stat aren't a likely pair of modes to run concurrently, either of those modes with allocations is conceivably a reasonable multi-mode profile combination. There may be others that are interesting.
-

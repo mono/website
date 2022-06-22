@@ -209,4 +209,3 @@ packaging/upload-prod uses rsync commands to copy the sources, builds, and insta
 -   mk-repos.py: generate repos for opencarpet, yum, and yast.
 
 TODO: Wishlist features:
-

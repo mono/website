@@ -33,5 +33,3 @@ Here is the list of what we don't have in Mono yet. [foo] refers to the version.
     -   Cardspace [3.0] is an applied WS-\* support + UI (could be anything).
     -   System.WorkflowServices [3.5] depends on WF.
     -   Data Services [3.5+] depends on WebHttpBinding [3.5] (which is done) and EF.
-
-

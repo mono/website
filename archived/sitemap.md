@@ -28,5 +28,3 @@ SiteMap
 -   [Tutorial](/Category:Tutorial)
 -   [WinForms](/Category:WinForms)
 -   [Workflow](/Category:Workflow)
-
-

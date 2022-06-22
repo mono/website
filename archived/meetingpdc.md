@@ -93,5 +93,3 @@ Participants
 -   Zac Bowling: Gecko# developer.
 -   Joseph Hill: MonoLive CD creator.
 -   Christian Hergert: Monodevelop/Monoquery Developer.
-
-

@@ -74,4 +74,3 @@ Limitations
 -----------
 
 Since MonoTouch is a static compiler (no JIT engine), there are some [limitations](/MonoTouch:Limitations) that you should be aware of before you write your code.
-

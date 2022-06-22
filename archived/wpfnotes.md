@@ -210,5 +210,3 @@ Relationship of the various Path classes:
     -   PathGeometry (a kind of Geometry) contain PathFigureCollections
         -   PathFigureCollections are collections that contain PathFigures
             -   PathFigures are made up of PathSegments
-
-

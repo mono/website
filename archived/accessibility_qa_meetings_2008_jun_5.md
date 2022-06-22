@@ -309,4 +309,3 @@ RAW IRC Capture
     [12:33] <bgmerrell> Strongwind has some methods that coordinate with what accerciser can see.  So by using accerciser we can see what methods we can call in strongwind.
     [12:33] <bgmerrell> Does that help?
     [12:34] <Ray> yes
-

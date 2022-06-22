@@ -141,4 +141,3 @@ WriteString() and WriteCData()
 ------------------------------
 
 For text content of an element, I would recommend to use WriteString() rather than WriteCData(), because WriteCData() throws an exception if the argument string contains "]]\>", while WriteString() has no "taboo".
-

@@ -6,11 +6,9 @@ redirect_from:
 
 The following applications were developed with Mono and run on its runtime:
 
-Applications
-============
+### Applications
 
-Commercial Applications
------------------------
+### Commercial Applications
 
 -   [DekiWiki](http://wiki.mindtouch.com) is an advanced WYSIWYG Wiki system powered by Mono.
 -   [SplendidCRM](http://www.splendidcrm.com) Cross platform, CRM system.
@@ -45,8 +43,7 @@ Commercial Applications
 -   [OpenPGP BlackBox](http://www.eldos.com/sbb/desc-pgp2.php) interfaces for managing a PGP infrastructure.
 -   [Artisteer 2.2 beta](http://www.artisteer.com/) a tool to quickly create appealing Web design now is now powered by Mono starting with release 2.2 Beta.
 
-Commercial and Open Source Applications
----------------------------------------
+### Commercial and Open Source Applications
 
 -   [MapGuide's](http://mapguide.osgeo.org/) [Maestro](http://trac.osgeo.org/mapguide/wiki/maestro/Downloads) an map authoring tool for MapGuide Open Source.
 -   [Banshee](http://banshee.fm/) (formely known as Sonance), a great application for music management and playback on Gnome.
@@ -56,10 +53,9 @@ Commercial and Open Source Applications
 -   [Mainsoft](http://www.mainsoft.com/solutions/interoperability.html), an important contributor to Mono, bundles Mono libraries in its [Visual Mainwin for J2EE](http://www.mainsoft.com/products/vmw_j2ee.html) to deploy .NET web applications on J2EE application servers.
 -   [MonoSim](http://www.integrazioneweb.com/monosim): A cross-platform application that for handling SIM card contacts.
 
-Open Source applications
-------------------------
+### Open Source applications
 
-### GUI Applications
+#### GUI Applications
 
 -   [Appomattox](http://www.appomattox-project.org/) Windows and Linux Desktop GIS software.
 -   [BareFTP](http://www.bareftp.org/) a GUI FTP client built using Gtk#.
@@ -99,14 +95,14 @@ Open Source applications
 -   [MPlayerBuddy](http://penguindreams.org/page/see/MplayerBuddy) is a media bookmarking application designed to keep track of the user’s place when watching videos.
 -   [LongoMatch](http://www.longomatch.ylatuya.es/) is a sports video analysis tool for coaches and sports scientists, to assist them on making games video analysis.
 
-### Developer Tools
+#### Developer Tools
 
 -   [NAnt](http://nant.sourceforge.net/) is a free .NET build tool. For help installing NAnt, see the [NAnt Installation](/archived/nant_installation) guide.
 -   [Smokey](https://home.comcast.net/~jesse98/public/Smokey/) is a open source command line tool used to analyze .NET or Mono assemblies for problems. It's similar to tools like FxCop and [Gendarme](/docs/tools+libraries/tools/gendarme/). This version of Smokey has 81 rules. Currently Smokey runs on Mono 1.2.5 ( 1.2.4 should also work although it isn't officially supported).
 -   [Moonwalker](http://wwwhome.cs.utwente.nl/~ruys/moonwalker/): is a program to automatically detect errors in CIL bytecode programs, i.e. applications written for the .NET platform. The current version of Moonwalker is able to find deadlocks and assertion violations in CIL programs, generated with Mono's C# compiler.
 -   [BuildAMation](http://buildamation.com/) is an open source (BSD 3-clause) build system and project generator that runs on Windows, Linux and macOS, using Mono on the latter two platforms. Requires at least Mono 4. Build scripts are written in C#, and compiled at runtime. C, C++ and Objective C code are the main build targets. The current version of BuildAMation supports a multithreaded command line build, or generation of Visual Studio or Xcode projects, or MakeFiles.
 
-### Server Applications
+#### Server Applications
 
 -   [OpenOnPhoto](http://developer.novell.com/wiki/index.php/Openonphoto): An ASP.NET application for managing and sharing photos.
 -   [Landell](http://tapioca-voip.sourceforge.net/wiki/index.php/Landell): VOIP application based on the Tapioca framework.
@@ -117,18 +113,15 @@ Open Source applications
 -   [OpenSimulator](http://opensimulator.org/wiki/Main_Page): An open source simulator for the SecondLife client written in C# and that works on both .NET and Mono.
 -   [Yet Another Forum - YAF](http://forum.yetanotherforum.net/): software to power your forums, it is used for example in [http://forums.monotouch.net](http://forums.monotouch.net)
 
-Components & Libraries
-======================
+## Components & Libraries
 
 See our separate page on [Libraries](/docs/tools+libraries/libraries/) for more details.
 
-Mono Users
-==========
+## Mono Users
 
 [Companies Using Mono](/docs/about-mono/showcase/companies-using-mono/)
 
-Other Lists
-===========
+## Other Lists
 
 Some external list of Mono applications:
 

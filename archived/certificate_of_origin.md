@@ -30,4 +30,3 @@ By making a contribution to this project, I certify that:
 then you just add a line at the end of your patch description, saying
 
 Signed-off-by: Random J Developer \<random@developer.org\>
-

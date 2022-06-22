@@ -132,5 +132,3 @@ Emitting code at runtime is also possible with the CoreCLR (think DLR). Again so
 References:
 
 -   [MSDN: Security Issues in Reflection Emit](http://msdn.microsoft.com/en-us/library/9syytdak(VS.95).aspx)
-
-

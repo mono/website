@@ -7,8 +7,7 @@ redirect_from:
   - /PInvoke/
 ---
 
-Introduction
-============
+## Introduction
 
 The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principle, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
 
@@ -29,13 +28,11 @@ There are three problems with this:
 
 Existing code is a complex beast, and the interop layer needs to support this complexity.
 
-Library Handling
-================
+## Library Handling
 
 How does the runtime find the library specified in the **DllImport** attribute? This question is inherently platform specific.
 
-Windows DLL Search Path
------------------------
+### Windows DLL Search Path
 
 From the MSDN LoadLibrary documentation, the DLLs needed by the program are searched for in the following order:
 
@@ -52,8 +49,7 @@ Furthermore, on Windows Server 2003 and Windows XP SP1, the registry entry `HKEY
 
 See also: [LoadLibrary() Documentation at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dllproc/base/loadlibrary.asp)
 
-Linux Shared Library Search Path
---------------------------------
+### Linux Shared Library Search Path
 
 From the **dlopen**(3) man page, the necessary shared libraries needed by the program are searched for in the following order:
 
@@ -65,20 +61,23 @@ As a Mono extension, if the library being loaded is `__Internal`, then the main 
 
 See also: the **dlopen**(3) man page, the **ld.so**(8) man page, [Dissecting shared libraries](http://ibm.com/developerworks/linux/library/l-shlibs.html?ca=dgr-lnxw07SharedLib).
 
-macOS Framework and .dylib Search Path
------------------------------------------
+### macOS Framework and .dylib Search Path
 
 The Framework and library search path is:
 
 1.  A colon-separated list of directories in the user's `DYLD_FRAMEWORK_PATH` environment variable.
+
 2.  A colon-separated list of directories in the user's `DYLD_LIBRARY_PATH` environment variable.
+
 3.  A colon-separated list of directories in the user's `DYLD_FALLBACK_FRAMEWORK_PATH` environment variable, which defaults to the directories:
+
     -   `~/Library/Frameworks`
     -   `/Library/Frameworks`
     -   `/Network/Library/Frameworks`
     -   `/System/Library/Frameworks`
 
 4.  A colon-separated list of directories in the user's `DYLD_FALLBACK_LIBRARY_PATH` environment variable, which defaults to the directories:
+
     -   `~/lib`
     -   `/usr/local/lib`
     -   `/lib`
@@ -96,14 +95,13 @@ TODO: Will mono support both frameworks and dylibs?
 
 See also: [The Framework as a Library Package at Apple](http://developer.apple.com/documentation/MacOSX/Conceptual/SystemOverview/Frameworks/chapter_7_section_2.html), the [dyld(1) man page](http://www.hmug.org/man/1/dyld.html)
 
-Library Names
--------------
+### Library Names
 
 Knowing where to look for the library is only half of the problem. Knowing what library to load is the other half.
 
 Different platforms have different naming conventions. Windows platforms append `.DLL` to the library name, such as `OLE32.DLL`. Linux platforms use a `lib` prefix and a `.so` suffix<sup>(see Note 1)</sup>. macOS platforms have a `lib` prefix and a `.dylib` suffix, unless they're a Framework, in which case they're a directory and things get more complicated.
 
-Note 1: Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/\> mechanism; see below for details.
+Note 1: Strictly speaking, Unix shared libraries are typically versioned, and the version number follows the `.so` suffix. For example, `libfreetype.so.6.3.3` is a fully versioned library. Versioning throws a "wrench" into the works, and is best dealt with through Mono's \<dllmap/> mechanism; see below for details.
 
 If you have control over the library name, keep the above naming conventions in mind and don't use a platform-specific library name in the **DllImport** statement. Instead, just use the library name itself, without any prefixes or suffixes, and rely on the runtime to find the appropriate library at runtime. For example:
 
@@ -114,7 +112,7 @@ If you have control over the library name, keep the above naming conventions in 
 
 Then, you just need to provide `MyLibrary.dll` for Windows platforms, `libMyLibrary.so` for Unix platforms, and `libMyLibrary.dylib` for macOS platforms.
 
-Note: Windows will not automatically append a `.dll` extension to library names that already have a period (.) in their name, such as `libgtk-win32-2.0-0.dll`. If you try to use `libgtk-win32-2.0-0` as the library name, Windows won't automatically append `.dll`, resulting in a **DllNotFoundException**. Consequently you should either avoid periods in library names or always use the full filename (including the `.dll` extension) and rely on Mono's \<dllmap/\> mechanism.
+Note: Windows will not automatically append a `.dll` extension to library names that already have a period (.) in their name, such as `libgtk-win32-2.0-0.dll`. If you try to use `libgtk-win32-2.0-0` as the library name, Windows won't automatically append `.dll`, resulting in a **DllNotFoundException**. Consequently you should either avoid periods in library names or always use the full filename (including the `.dll` extension) and rely on Mono's \<dllmap/> mechanism.
 
 What if you don't have the same name across all platforms? For example, the GTK+ library name on Windows is `libgtk-win32-2.0-0.dll`, while the Unix equivalent library is `libgtk-x11-2.0.so`. How do you write portable Platform Invoke (P/Invoke) code that will work cross-platform?
 
@@ -140,8 +138,7 @@ This mechanism can also be used to load strongly-versioned libraries on Unix pla
  </configuration>
 ```
 
-Invoking Unmanaged Code
-=======================
+## Invoking Unmanaged Code
 
 As far as managed code is concerned, unmanaged code is invoked merely by invoking a method with an associated **DllImport** attribute. The CLI runtime must do more work to actually invoke the unmanaged code.
 
@@ -155,16 +152,18 @@ Either way, the string used is assumed to refer to a C ABI-compatible function e
 
 Note that a C ABI is assumed. This makes it nearly impossible to directly invoke functions that are not C ABI compatible, such as C++ library functions that are not `extern "C"`. Some variation on the C ABI is permitted, such as variation in the function's [CallingConvention](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.CallingConvention). The default CallingConvention is platform-specific. Under Windows, [Winapi](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CallingConvention.Winapi) is the default, as this is used for most Win32 API functions. (**Winapi** is equivalent to **Stdcall** for Windows 9x and Windows NT.) Under Unix platforms, [Cdecl](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.CallingConvention.Cdecl) is the default.
 
-Calling convention can be specified in C code   by using the `__stdcall` and `__cdecl` compiler intrinsics under Microsoft Visual C++, and by using the `__attribute__((stdcall))` and `__attribute__((cdecl))` compiler intrinsics under GCC.
+Calling convention can be specified in C code by using the `__stdcall` and `__cdecl` compiler intrinsics under Microsoft Visual C++, and by using the `__attribute__((stdcall))` and `__attribute__((cdecl))` compiler intrinsics under GCC.
 
 Does having the default CallingConvention vary between platforms cause portability problems? Yes. All the more reason to write as much code as possible as managed code, avoiding the whole P/Invoke/marshaling conundrum in the first place.
 
-If you need to invoke C++ code, you have two choices: (1) make the C++ function `extern "C"`, treat it as a C function,<br/>
-and make sure that it uses a known calling convention; (2) don't make the function `extern "C"`, but make sure it uses<br/>
-a known calling convention. If you use option (2), you'll need to set the
-[DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint)<br/>
-field to the C++ mangled function name, such as `_Z6getpidv`. You can retrieve the mangled name through your compiler's<br/>
-binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
+If you need to invoke C++ code, you have two choices:
+
+1. make the C++ function `extern "C"`, treat it as a C function, and make sure that it uses a known calling convention
+2. don't make the function `extern "C"`, but make sure it uses a known calling convention
+
+If you use option (2), you'll need to set the [DllImport.EntryPoint](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint) field to the C++ mangled function name, such as `_Z6getpidv`.
+
+You can retrieve the mangled name through your compiler's binary tools, such as `OBJDUMP.EXE` or **nm**(1). Note that C++ mangled names are *highly* compiler specific, and will:
 
 1.  make your .NET assembly platform specific (you'll need a different assembly for each different platform);
 2.  require updating the .NET assembly every time you change C++ compilers (as the C++ name mangling scheme varies by compiler and can -- and frequently will -- change); and
@@ -176,8 +175,7 @@ In case you call a function that is not present in the native library (or that i
 
     objdump -T /usr/lib/libsvn_client-1.so.0
 
-Runtime Exception Propagation
------------------------------
+### Runtime Exception Propagation
 
 The above section mentioned a key point: P/Invoke assumes that the unmanaged code conforms to the C ABI. C doesn't support exceptions. As such, it is assumed that runtime exceptions will not propagate through unmanaged code.
 
@@ -219,8 +217,7 @@ See also:
 -   [Structured Exception Handling Topics at MSDN](http://msdn.microsoft.com/en-us/library/aa269603(v=vs.60).aspx)
 -   [The .NET Exception Model](https://devblogs.microsoft.com/cbrumme/the-exception-model/): Another one of Chris Brumme's excellent blog entries. More information than you ever wanted to know about .NET exception handling.
 
-Marshaling
-==========
+## Marshaling
 
 How does Platform Invoke work? Given a managed call site (the function call), and an unmanaged callee site (the function that's being called), each parameter in the call site is "marshaled" (converted) into an unmanaged equivalent. The marshaled data is in turn placed on the runtime stack (along with other data), and the unmanaged function is invoked.
 
@@ -228,12 +225,9 @@ The complexity is due to the marshaling. For [simple types](#blittable-types), s
 
 String types introduce additional complexity, as you need to specify the form of string conversion. The runtime stores strings as UTF-16-encoded strings, and these will likely need to be marshaled to a more appropriate form (ANSI strings, UTF-8 encoded strings, etc.). Strings get some special support.
 
-Default marshaling behavior is controlled through the
-[DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) and
-[MarshalAs](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.MarshalAsAttribute) attributes.
+Default marshaling behavior is controlled through the [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) and [MarshalAs](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.MarshalAsAttribute) attributes.
 
-Memory Boundaries
------------------
+### Memory Boundaries
 
 Managed and unmanaged memory should be considered to be completely separate. Managed memory is typically memory allocated on a garbage-collected heap, while unmanaged memory is anything else: the ANSI C memory pool allocated through **malloc**(3), custom memory pools, and garbage-allocated heaps outside the control of the CLI implementation (such as a LISP or Scheme memory heap).
 
@@ -252,108 +246,26 @@ There is one key point to keep in mind: the memory management specified in the a
 
 The one pseudo-exception to this point is with delegates. The unmanaged function pointer that represents the managed delegate lasts as long as the managed delegate does. When the delegate is collected by the GC, the unmanaged function pointer will also be collected. This is also important: if the delegate is collected and unmanaged memory invokes the function pointer, you're treading on thin ground. Anything could happen, including a process seg-fault. Consequently, you *MUST* ensure that the lifetime of the unmanaged function pointer is a proper subset of the lifetime of the managed delegate instance.
 
-Blittable Types
----------------
+### Blittable Types
 
 Many types require minimal copying into native memory. Blittable types are types that conceptually only require a **memcpy**(3) or can be passed on the run-time stack without translation. These types include:
 
-<table>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<thead>
-<tr class="header">
-<th align="left">C# Type</th>
-<th align="left">C Type</th>
-<th align="left"><strong>&lt;stdint.h&gt;</strong> Type</th>
-<th align="left"><strong>&lt;glib.h&gt;</strong> Type</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><code>sbyte</code></td>
-<td align="left"><code>char</code></td>
-<td align="left"><code>int8_t</code></td>
-<td align="left"><code>gint8</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>byte</code></td>
-<td align="left"><code>unsigned char</code></td>
-<td align="left"><code>uint8_t</code></td>
-<td align="left"><code>guint8</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>short</code></td>
-<td align="left"><code>short</code></td>
-<td align="left"><code>int16_t</code></td>
-<td align="left"><code>gint16</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>ushort</code></td>
-<td align="left"><code>unsigned short</code></td>
-<td align="left"><code>uint16_t</code></td>
-<td align="left"><code>guint16</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>int</code></td>
-<td align="left"><code>int</code>
-<p><code>long</code> <em>32-bit platforms only</em></p></td>
-<td align="left"><code>int32_t</code></td>
-<td align="left"><code>gint32</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>uint</code></td>
-<td align="left"><code>unsigned int</code>
-<p><code>unsigned long</code> <em>32-bit platforms only</em></p></td>
-<td align="left"><code>uint32_t</code></td>
-<td align="left"><code>guint32</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>long</code></td>
-<td align="left"><code>long</code> <em>64-bit platforms only</em>
-<p><code>__int64</code> <em>MSVC</em></p>
-<p><code>long long</code> <em>GCC</em></p></td>
-<td align="left"><code>int64_t</code></td>
-<td align="left"><code>gint64</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>ulong</code></td>
-<td align="left"><code>unsigned long</code> <em>64-bit platforms only</em>
-<p><code>unsigned __int64</code> <em>MSVC</em></p>
-<p><code>unsigned long long</code> <em>GCC</em></p></td>
-<td align="left"><code>uint64_t</code></td>
-<td align="left"><code>guint64</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>char</code></td>
-<td align="left"><code>unsigned short</code></td>
-<td align="left"><code>uint16_t</code></td>
-<td align="left"><code>guint16</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>float</code></td>
-<td align="left"><code>float</code></td>
-<td align="left"></td>
-<td align="left"><code>gfloat</code></td>
-</tr>
-<tr class="odd">
-<td align="left"><code>double</code></td>
-<td align="left"><code>double</code></td>
-<td align="left"></td>
-<td align="left"><code>gdouble</code></td>
-</tr>
-<tr class="even">
-<td align="left"><code>bool</code></td>
-<td align="left"><a href="#boolean-members">Depends on context</a></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+| C# Type  | C Type                                                                                                                                        | **\<stdint.h>** Type | **\<glib.h>** Type |
+|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------|--------------------|
+| `sbyte`  | `char`                                                                                                                                        | `int8_t`             | `gint8`            |
+| `byte`   | `unsigned char`                                                                                                                               | `uint8_t`            | `guint8`           |
+| `short`  | `short`                                                                                                                                       | `int16_t`            | `gint16`           |
+| `ushort` | `unsigned short`                                                                                                                              | `uint16_t`           | `guint16`          |
+| `int`    | `int`<br/>`long` *32-bit platforms only*                                                                                                      | `int32_t`            | `gint32`           |
+| `uint`   | `unsigned int`<br/>`unsigned long` *32-bit platforms only*                                                                                    | `uint32_t`           | `guint32`          |
+| `long`   | `long` *64-bit platforms only*<br/>`__int64` *MSVC*<br/>`long long` *GCC*                                                                     | `int64_t`            | `gint64`           |
+| `ulong`  | `unsigned long` *64-bit platforms only*<br/>`unsigned __int64` *MSVC*<br/>`unsigned long long` *GCC*                                          | `uint64_t`           | `guint64`          |
+| `char`   | `unsigned short`                                                                                                                              | `uint16_t`           | `guint16`          |
+| `float`  | `float`                                                                                                                                       |                      | `gfloat`           |
+| `double` | `double`                                                                                                                                      |                      | `gdouble`          |
+| `bool`   | [Depends on context](https://file+.vscode-resource.vscode-cdn.net/Users/alexander/dev/website/docs/advanced/pinvoke/index.md#boolean-members) |                      |                    |
 
-Strings
--------
+### Strings
 
 [String](http://docs.go-mono.com/index.aspx?link=T:System.String)s are special. String marshaling behavior is also highly platform dependent.
 
@@ -392,15 +304,11 @@ If you don't want the runtime to search for the alternate unmanaged functions, s
 
 Perhaps in the future the [CharSet](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.CharSet) enumeration will contain more choices, such as UnicodeLE (little-endian), UnicodeBE (big-endian), Utf7, Utf8, and other common choices. Additionally, making such a change would also likely require changing the UnmanagedType enumeration. However, these would need to go through ECMA, so it won't happen next week. (Unless some time has passed since this was originally written, in which case it may very well be next week. But don't count on it.)
 
-### More Control
+#### More Control
 
-Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more<br/>
-control? You would need more control if a string is a member of a structure, or if the function uses multiple different<br/>
-types of strings as parameters. In these circumstances, the **MarshalAs** attribute can be used, setting the
-[Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value) property<br/>
-(which is set in the constructor) to a value from the
-[UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration.<br/>
-For example:
+Using the **DllImport** attribute works if you want to control all the strings in a function, but what if you need more control? You would need more control if a string is a member of a structure, or if the function uses multiple different types of strings as parameters.
+
+In these circumstances, the **MarshalAs** attribute can be used, setting the [Value](http://docs.go-mono.com/index.aspx?link=P:System.Runtime.InteropServices.MarshalAsAttribute.Value) property (which is set in the constructor) to a value from the [UnmanagedType](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.UnmanagedType) enumeration. For example:
 
 ``` csharp
  [DllImport ("does-not-exist")]
@@ -420,7 +328,7 @@ There are other **UnmangedType** string marshaling options, but they're primaril
 
 If **UnmanagedType** doesn't provide enough flexibility for your string marshaling needs (for example, you're wrapping GTK+ and you need to marshal strings in UTF-8 format), look at the [Custom Marshaling](#custom-marshaling) or [Manual Marshaling](#manual-marshaling) sections.
 
-### Passing Caller-Modifiable Strings
+#### Passing Caller-Modifiable Strings
 
 A common C language idiom is for the caller to provide the callee a buffer to fill. For example, consider **strncpy**(3):
 
@@ -449,7 +357,7 @@ Some things to note is that the return value of **strncpy**(3) was changed to *v
 
 TODO: How does StringBuilder interact with the specified CharSet?
 
-### Strings as Return Values
+#### Strings as Return Values
 
 The **String** type is a class, so [see the section on returning classes from functions](#classes-and-structures-as-return-values). Summary: the runtime will attempt to free the returned pointer. The usual symptom is a runtime crash like this:
 
@@ -471,14 +379,13 @@ See also:
 -   [Default marshaling for Strings at MSDN](http://msdn.microsoft.com/en-us/library/s9ts558h(VS.80).aspx)
 -   [An Overview of Managed/Unmanaged Code Interoperability](http://msdn.microsoft.com/netframework/default.aspx?pull=/library/en-us/dndotnet/html/manunmancode.asp)
 
-Class and Structure Marshaling
-------------------------------
+### Class and Structure Marshaling
 
 The conceptual steps that occur to marshal classes and structures is detailed above, in the [Memory Boundaries](#memory-boundaries) section.
 
 The main difference between class and structure marshaling is which ones, if any, of the conceptual steps actually occur.
 
-### Class Marshaling
+#### Class Marshaling
 
 Remember that classes are heap-allocated and garbage-collected in the CLI. As such, you cannot pass classes by value to unmanaged functions, only by reference:
 
@@ -512,7 +419,7 @@ See Also:
 
 -   [Directional Attributes (MSDN)](http://msdn.microsoft.com/en-us/library/77e6taeh(v=vs.110).aspx)
 
-### Structure Marshaling
+#### Structure Marshaling
 
 There are two primary differences between classes and structures. First, structures do not need to be allocated on the heap; they can be allocated on the runtime stack. Secondly, they are **LayoutKind.Sequential** by default, so structure declarations do not need any additional attributes to use them with unmanaged code (assuming that the default sequential layout rules are correct for the unmanaged structure).
 
@@ -520,7 +427,7 @@ These differences permit structures to be passed by-value to unmanaged functions
 
 Note that as soon as the structure contains a non-blittable type (such as System.Boolean, System.String, or an array), this optimization is no longer possible and a copy of the structure must be made as part of the marshaling process.
 
-### Classes and Structures as Return Values
+#### Classes and Structures as Return Values
 
 The differences in allocation behavior between classes and structures also affect how they're handled as return values from functions.
 
@@ -530,7 +437,7 @@ Structures can be used when the unmanaged function returns the structure by-valu
 
 Memory management is also heavily involved.
 
-### Memory Management
+#### Memory Management
 
 It's easy to skim over memory management for most of Platform Invoke and marshaling, but for return values the CLI implements some default handling which must be considered.
 
@@ -548,7 +455,7 @@ How is **Marshal.AllocCoTaskMem**, **Marshal.ReAllocCoTaskMem**, and **Marshal.F
 
 What do you do if you don't want the runtime to free the memory? Don't return a class. Instead, return an IntPtr (the moral equivalent of a C `void*` pointer), and then use the **Marshal** class methods to manipulate that pointer, such as [Marshal.PtrToStructure](http://docs.go-mono.com/index.aspx?link=M:System.Runtime.InteropServices.Marshal.PtrToStructure), which works for both C# **struct** types and **class** types marked `[StructLayout(LayoutKind.Sequential)]`.
 
-### Choosing between Classes and Structures
+#### Choosing between Classes and Structures
 
 So which should be used when wrapping unmanaged code, classes or structures?
 
@@ -556,8 +463,7 @@ Generally, the answer to this question depends upon what the unmanaged code requ
 
 For the large intersection of unmanaged code that doesn't have pass-by-value structures or return pointers to structures from functions? Use whichever is more convenient for the end user. Not all languages support passing types by reference (Java, for example), so using classes will permit a larger body of languages to use the wrapper library. Furthermore, Microsoft suggests that structure sizes not exceed 16 bytes.
 
-Summary
--------
+### Summary
 
 It's always easier to show the code, so... Given the following unmanaged code declarations:
 
@@ -681,8 +587,7 @@ While the structure wrapper could be:
  }
 ```
 
-Marshaling Class and Structure Members
---------------------------------------
+### Marshaling Class and Structure Members
 
 Aside from the major differences between classes and structures outlined above, the members of classes and structures are marshaled identically.
 
@@ -692,7 +597,7 @@ The immediate net effect of this is that you can't have array members in marshal
 
 Furthermore, the default string marshaling is the [platform default](#more-control), though this can be changed by setting the [StructLayoutAttribute.CharSet](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.StructLayoutAttribute.CharSet) field, which defaults to **CharSet.Auto**. Alternatively, you can adorn string members with the **MarshalAs** attribute to specify what kind of string they are.
 
-### Boolean Members
+#### Boolean Members
 
 The [System.Boolean](http://docs.go-mono.com/index.aspx?link=T:System.Boolean) (**bool** in C#) type is special. A `bool` within a structure is marshaled as an `int` (a 4-byte integer), with 0 being `false` and non-zero being `true`; see [UnmanagedType.Bool](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.Bool). A `bool` passed as an argument to a function is marshaled as a `short` (a 2-byte integer), with 0 being `false` and -1 being `true` (as all bits are set); see [UnmanagedType.VariantBool](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.UnmanagedType.VariantBool).
 
@@ -718,18 +623,18 @@ If you need to marshal as another data type, you should overload the method acce
 
 See also: [Default Marshaling for Boolean Types](http://msdn.microsoft.com/en-us/library/t2t3725f(v=vs.110).aspx)
 
-### Unions
+#### Unions
 
 A C union (in which multiple members share the same offset into a structure) can be simulated by using the [FieldOffset](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.FieldOffsetAttribute) attribute and specifying the same offset for the union members.
 
-### Longs
+#### Longs
 
 The C 'long' type is difficult to marshal as a struct member, since there is no CLR type which matches it, i.e. 'int' is 32 bit, 'long' is 64 bit, while C's 'long' can be 32 bit or 64 bit, dependending on the platform. There are two possible solutions:
 
 -   Using two sets of structures, one for 32 bit and one for 64 bit platforms.
 -   Mapping C 'long' to 'IntPtr'. This will work on all 32 bit and 64 bit platforms, \_except\_ 64 bit windows, where sizeof(long)==4 and sizeof(void\*)==8. See [This](http://stackoverflow.com/questions/384502/what-is-the-bit-size-of-long-on-64-bit-windows).
 
-### Arrays Embedded Within Structures
+#### Arrays Embedded Within Structures
 
 Inline arrays can be marshaled by using a **MarshalAs** attribute with **UnmanagedType.ByValArray** and specifying the [MarshalAsAttribute.SizeConst](http://docs.go-mono.com/index.aspx?link=F:System.Runtime.InteropServices.MarshalAsAttribute.SizeConst) field to the size of the array to marshal. Inline arrays which contain strings can use **UnmanagedType.ByValTStr** for a string.
 
@@ -786,7 +691,7 @@ Yet another alternative is to directly specify the size of the structure, instea
  }
 ```
 
-#### C# 2.0 Functionality
+##### C# 2.0 Functionality
 
 C# 2.0 adds language features to deal with inline arrays, using a **fixed** array syntax. This allows the previous structure to be declard as:
 
@@ -799,11 +704,11 @@ C# 2.0 adds language features to deal with inline arrays, using a **fixed** arra
 
 Fixed array syntax is still "unsafe", and requires elevated privilege to execute.
 
-#### Real World Experience
+##### Real World Experience
 
-This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.chat.net/~jeske/)):
+This might be of use. From David Jesk ([<http://www.chat.net/~jeske/>](http://www.chat.net/~jeske/)):
 
-> This time I have some PInvoke information to share, so that when someone else runs into this issue they can see what I've done. In my ClearSilver (www.clearsilver.net, an HTML template system) C# wrapper, I wanted to access this C-struct:
+> This time I have some PInvoke information to share, so that when someone else runs into this issue they can see what I've done. In my ClearSilver ([www.clearsilver.net](http://www.clearsilver.net), an HTML template system) C# wrapper, I wanted to access this C-struct:
 >
 > ``` c
 >  typedef struct _neo_err
@@ -820,7 +725,7 @@ This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.
 >  } NEOERR;
 > ```
 >
-> My philosophy of using unsafe struct pointers, and just accessing the struct out in unmanaged memory is great, and it's exactly what I want to do. However, handling "char dest[256]" is not straightforward.
+> My philosophy of using unsafe struct pointers, and just accessing the struct out in unmanaged memory is great, and it's exactly what I want to do. However, handling "char dest\[256\]" is not straightforward.
 >
 > In C# arrays are reference types. Using one makes the struct a managed type, and I can't put the array size in. The following is conceptually what I want to do, however, it's obviously invalid:
 >
@@ -866,15 +771,15 @@ This might be of use. From David Jesk ([http://www.chat.net/~jeske/](http://www.
 >  }
 > ```
 >
-> UGH! First, this is obviously annoying. Second, the only way I can figure to get access to "char dest[256]" is to use "char\* dest = &nerr-\>dest_first_char;" and then just use dest as a pointer to the string. I've dug through the documentation, and I can't find any better solution.
+> UGH! First, this is obviously annoying. Second, the only way I can figure to get access to "char dest\[256\]" is to use "char\* dest = &nerr->dest_first_char;" and then just use dest as a pointer to the string. I've dug through the documentation, and I can't find any better solution.
 >
-> Obviously it would be ideal if there were a way to represent a value-type array. I wonder how Managed C++ handles "char foo[256];" in a struct.
+> Obviously it would be ideal if there were a way to represent a value-type array. I wonder how Managed C++ handles "char foo\[256\];" in a struct.
 
 See also:
 
 -   [Eric Gunnerson's C# Blog: Arrays inside of structures](http://blogs.msdn.com/b/ericgu/archive/2004/08/12/213676.aspx)
 
-### Summary 2
+#### Summary 2
 
 Again, example native code...
 
@@ -917,7 +822,7 @@ Note that this isn't an exact match to the unmanaged code. This structure must b
  info.array = new int[32];
 ```
 
-### A Warning about FieldOffset
+#### A Warning about FieldOffset
 
 The **FieldOffset** attribute has one major pitfall: it makes offsets of types explicit. This is liable to break if (when) (1) the class/structure contains a pointer, reference, or array, and (2) you change the bitsize of your processor (move from a 32-bit processor to a 64-bit processor). It is preferable to use **LayoutKind.Sequential** if at all possible, as the runtime will take care of updating the structural offsets when the size of pointers changes.
 
@@ -925,13 +830,13 @@ TODO: include MSDN examples using the more esotoric **MarshalAs** fields, such a
 
 See also: \*[Marshaling Data with Platform Invoke at MSDN](http://msdn.microsoft.com/en-us/library/fzhhdwae(v=vs.110).aspx), \*[Arrays Sample at MSDN](http://msdn.microsoft.com/en-us/library/hk9wyw21(v=vs.110).aspx)
 
-### Marshaling Pointers
+#### Marshaling Pointers
 
 Didn't we start using a managed execution environment to *avoid* pointers? But I digress...
 
 Alas, pointers are a fact of life in unmanaged code. As the [Avoiding Marshaling](#avoiding-marshaling) section points out, there are two ways to represent pointers: the "safe" way, using [System.IntPtr](http://docs.go-mono.com/index.aspx?link=T:System.IntPtr) or [System.UIntPtr](http://docs.go-mono.com/index.aspx?link=T:System.UIntPtr) , and the "unsafe" way, by using `unsafe` code and pointers.
 
-#### Marshaling Embedded Strings
+##### Marshaling Embedded Strings
 
 *Behold the topic that just won't die!* "Inline" strings -- in which the storage for the string is part of the structure itself -- were covered [previously](#arrays-embedded-within-structures). Obviously, and likely more commonly, strings are not always allocated within the structure; typically a pointer to a null-terminated string is stored.
 
@@ -939,8 +844,7 @@ The typical approach is to map the string as an IntPtr, and use [Marshal.PtrToSt
 
 Why manually marshal? Because you typically use a custom memory allocator (such as **malloc**(3)), and don't want the runtime incorrectly freeing the memory that the string references. In this case, it's *essential* that you manually marshal the string to avoid memory corruption.
 
-Custom Marshaling
------------------
+### Custom Marshaling
 
 The [ICustomMarshaler](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.ICustomMarshaler) interface allows the CLI to invoke custom code as part of the P/Invoke call. Normal P/Invoke calls follow the structure:
 
@@ -1002,16 +906,15 @@ And the manual marshaler implementation:
 
 However, as the number of methods that require essentially identical marshaling increases, it becomes easier to maintain the custom marshaler than to maintain the *N* separate manual marshal copies that would otherwise be necessary.
 
- See also: \*[ICustomMarshaler Interface at MSDN](http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.icustommarshaler(v=vs.90).aspx)
+See also: \*[ICustomMarshaler Interface at MSDN](http://msdn.microsoft.com/en-us/library/system.runtime.interopservices.icustommarshaler(v=vs.90).aspx)
 
-Manual Marshaling
------------------
+### Manual Marshaling
 
 What do you do when the default marshaling rules (amid all the variations that the **DllImport** and **MarshalAs** attributes permit) don't allow you to invoke a given function? You do it manually by making extensive use of the [Marshal](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.Marshal) class methods.
 
 TODO: finish.
 
-### Marshaling char\*\*
+#### Marshaling char\*\*
 
 The key in the following tutorial is System.Runtime.InteropServices, where we can find the Marshal class. That class is very useful because it bridges created managed objects and unmanaged ones. Its functionalities are very similar to blocks, unsafe, and more. For example, let's say that all pointer types in .NET are saved in an instance of the type IntPtr. With the Marshal class, we can perform any operation like adding a determined number of bytes in order to point to other objects, and converting things that are there in a structure or a chain (other thing is if in that memory direction is something with sense or not).
 
@@ -1137,8 +1040,7 @@ After the following step, the final class is completely portable:
      }
 ```
 
-Avoiding Marshaling
-===================
+## Avoiding Marshaling
 
 Marshaling is no panacea, as marshaling implies copying data. Marshaling may be problematic because the data translation is a complex, time-consuming process. Alternatively, it may be problematic because it isn't possible to copy the data, as the data isn't known or is likely to change.
 
@@ -1224,8 +1126,7 @@ This is "unsafe" in that it is easier to accidentally mis-use pointers. For exam
 
 However, this isn't normally considered a problem, as most managed code shouldn't interact with P/Invoke code, but should instead interact with managed wrappers for the unmanaged code, which can provide a more natural interface to managed clients.
 
-GC-Safe P/Invoke code
----------------------
+### GC-Safe P/Invoke code
 
 There's one problem with the wrapper code described above: a race-condition between user code and the runtime Garbage Collector (GC).
 
@@ -1351,11 +1252,11 @@ This allows us to write the safe code:
 
 See also: [Chris Brumme's Blog: Lifetime, GC.KeepAlive, handle recycling](http://blogs.msdn.com/cbrumme/archive/2003/04/19/51365.aspx)
 
-### .NET 2.0 and SafeHandles
+#### .NET 2.0 and SafeHandles
 
 In .NET 2.0, a new mechanism for wrapping unmanaged handles was introduced. This new mechanism is exposed by the [SafeHandle](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.SafeHandle) class. SafeHandles encapsulate a handle in the form of an IntPtr, but by exposing it as a subclass of the SafeHandle class (for example [SafeFileHandle](http://docs.go-mono.com/index.aspx?link=T:Microsoft.Win32.SafeFileHandle) or [SafeWaitHandle](http://docs.go-mono.com/index.aspx?link=T:Microsoft.Win32.SafeWaitHandle)) developers gain type safety.
 
-SafeHandles in addition provide a mechanism to avoid inadvertent handle recycling (for references [[1]](http://blogs.msdn.com/cbrumme/archive/2004/02/20/77460.aspx) [[2]](http://blogs.msdn.com/bclteam/archive/2005/03/15/396335.aspx)).
+SafeHandles in addition provide a mechanism to avoid inadvertent handle recycling (for references [\[1\]](http://blogs.msdn.com/cbrumme/archive/2004/02/20/77460.aspx) [\[2\]](http://blogs.msdn.com/bclteam/archive/2005/03/15/396335.aspx)).
 
 The runtime treats SafeHandles specially and will automatically provide marshalling of these when used in P/Invoke calls. The behavior depends on its use:
 
@@ -1366,8 +1267,7 @@ The runtime treats SafeHandles specially and will automatically provide marshall
 
 For the actual implementation details in Mono, see the [SafeHandles](/docs/advanced/safehandles/) document.
 
-Properly Disposing of Resources
--------------------------------
+### Properly Disposing of Resources
 
 When avoiding marshaling, you're referencing unmanaged memory and other resources from managed code. This confers a great deal of responsibility. It also creates a great deal of concern, as more things can "go wrong" in managed code, particularly because of exceptions and related complexity. When any function can throw an exception, ensuring that resources are properly disposed of can be a tricky matter.
 
@@ -1378,7 +1278,8 @@ There are two problems with that approach, both of which have to do with the gar
 1.  The garbage collector cannot see into unmanaged memory, it only deals with managed memory. Thus, if you have a large amount of memory in unmanaged memory (such as images or video data), all the GC will see is the **IntPtr**(s) that refer to this data, and not the size of the unmanaged memory "held" by the managed code. Consequently, the GC won't know that a collection should be executed (there won't be any "memory pressure" to cause a collection).
 
     This is partially fixed in Microsoft's implementation of .NET 2.0 by using the [System.GC.AddMemoryPressure(long)](http://msdn2.microsoft.com/en-us/library/system.gc.addmemorypressure.aspx) method, which can be used to tell the GC how much unmanaged memory a managed object is referencing, which can improve the GC heuristics. However, code needs to be modified to support this approach and does not work with .NET 1.1 code.
-> At the the time of this writing (January 2015), this approach ***will not work on Mono***, as [System.GC.AddMemoryPressure(long)](http://msdn2.microsoft.com/en-us/library/system.gc.addmemorypressure.aspx) and [System.GC.RemoveMemoryPressure(long)](http://msdn2.microsoft.com/en-us/library/system.gc.removememorypressure.aspx) are implemented as no-ops. This means that some existing code that performs normally under Microsoft's CLR will quickly exhaust the unmanaged heap and cause both unmanaged and managed memory allocations to fail.
+
+    > At the the time of this writing (January 2015), this approach ***will not work on Mono***, as [System.GC.AddMemoryPressure(long)](http://msdn2.microsoft.com/en-us/library/system.gc.addmemorypressure.aspx) and [System.GC.RemoveMemoryPressure(long)](http://msdn2.microsoft.com/en-us/library/system.gc.removememorypressure.aspx) are implemented as no-ops. This means that some existing code that performs normally under Microsoft's CLR will quickly exhaust the unmanaged heap and cause both unmanaged and managed memory allocations to fail.
 
 2.  The .NET garbage collector does not execute an object's finalizer when the object is collected. Instead, the object is promoted a generation, and the object's finalizer is executed the next time that generation is collected.
 
@@ -1476,13 +1377,11 @@ See also:
 
 -   [Rico Mariani's Blog: Two things to avoid for better memory usage](https://docs.microsoft.com/en-us/archive/blogs/ricom/two-things-to-avoid-for-better-memory-usage).
 
-Miscellaneous Topics
-====================
+## Miscellaneous Topics
 
 Topics that didn't seem to fit in anywhere else, but might be useful.
 
-Meaning of "Unsafe"
--------------------
+### Meaning of "Unsafe"
 
 A "problem" is that "unsafe" is an overloaded term. It can refer to the use of the "unsafe" C# keyword, and it can be used as "anything that isn't safe", which may not require the "unsafe" keyword.
 
@@ -1492,8 +1391,7 @@ IntPtr doesn't require a violation of the type system, as you can't get the addr
 
 Surely, this is pure semantics, but I can see the designers perspective.
 
-Security
---------
+### Security
 
 .NET has a highly flexible security system. You can't invoke DllImported functions unless your app has the appropriate security rights -- generally, that the app is running on the local machine. If you're running it from a network share, or from a web site (similar to Java Applets), then your app will get a SecurityException.
 
@@ -1514,8 +1412,7 @@ That's about the limits of my knowledge -- Security isn't my forte. You might fi
 
 See also: [Unsafe Code at MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/csspec/html/vclrfcsharpspec_A_2.asp)
 
-Troubleshooting
-===============
+## Troubleshooting
 
 In Unix, sometimes P/Invoking a library can fail due to a number of reasons:
 
@@ -1530,58 +1427,58 @@ To identify the source of the problem if you get an error in your P/Invoke run M
 bash$ MONO_LOG_LEVEL="debug" MONO_LOG_MASK="dll" mono glue.exe
 ```
 
-Commentary
-==========
+## Commentary
 
 Interesting commentary that doesn't really belong elsewhere, but is still good to know.
 
-P/Invoke Specification
-----------------------
+### P/Invoke Specification
 
 From Paolo Molaro:
 
-Yes, the P/Invoke specification (or lack thereof) is a mess. It was done by people that didn't [think] through the portability issues and this is probably one of the reasons the MS CLR is not really supported on 9x-based platforms. Note: P/Invoke is intrinsically non-portable, the main issue is that P/Invoke is poorly defined in a non-win32 system. Think of Charset: they allow Ansi and Unicode (with Auto meaning one or the other according to the platform), but the world uses also other encodings. At the very least they should have added a Charset.Encoding or something, with the actual encoding specified separately as a string, for example (good luck, though, finding a UCS4 encoding implementation in the base assemblies...).
+Yes, the P/Invoke specification (or lack thereof) is a mess. It was done by people that didn't \[think\] through the portability issues and this is probably one of the reasons the MS CLR is not really supported on 9x-based platforms. Note: P/Invoke is intrinsically non-portable, the main issue is that P/Invoke is poorly defined in a non-win32 system. Think of Charset: they allow Ansi and Unicode (with Auto meaning one or the other according to the platform), but the world uses also other encodings. At the very least they should have added a Charset.Encoding or something, with the actual encoding specified separately as a string, for example (good luck, though, finding a UCS4 encoding implementation in the base assemblies...).
 
-Thanks
-======
+## Thanks
 
-Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [https://lists.dot.net/pipermail/mono-list/2003-July/014886.html](https://lists.dot.net/pipermail/mono-list/2003-July/014886.html).
+Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [<https://lists.dot.net/pipermail/mono-list/2003-July/014886.html>](https://lists.dot.net/pipermail/mono-list/2003-July/014886.html).
 
 Thanks also to Paolo Molaro, Bernie Solomon, and Marcus for reviews and comments.
 
-Copyright
-=========
+## Copyright
 
 To the greatest extent possible, this document is dedicated to the Public Domain. Please properly document [Jonathan Pryor](mailto:jonpryor@vt.edu) as the original author (you don't go quoting Mark Twain without mentioning him even though his works are all Public Domain), but I fully expect that this document can (and will) be massaged for other mediums.
 
 Note that some portions of this document are quotations from others; the original author is mentioned when quotations are made.
 
-Revision History
-================
+## Revision History
 
- August 15, 2005<br/>
+August 15, 2005
+
 Added char\*\* marshalling tutorial
 
- April 12, 2005<br/>
+April 12, 2005
+
 Moved into the wiki.
 
- February 3, 2005<br/>
-Revised navigation menu to show 1st and 2nd level links. Documented Mono's __Internal library name extension for importing symbols from within the loading program. Added Marshaling Arrays section, which clarifies array marshaling issues and includes the David Jesk commentary (which shouldn't have been in the "Avoiding Marshaling" section anyway). Added boolean marshaling information. Added Marshaling Embedded Strings information. Minor corrections, additional links to blogs and articles.
+February 3, 2005
 
- June 14, 2004<br/>
+Revised navigation menu to show 1st and 2nd level links. Documented Mono's \_\_Internal library name extension for importing symbols from within the loading program. Added Marshaling Arrays section, which clarifies array marshaling issues and includes the David Jesk commentary (which shouldn't have been in the "Avoiding Marshaling" section anyway). Added boolean marshaling information. Added Marshaling Embedded Strings information. Minor corrections, additional links to blogs and articles.
+
+June 14, 2004
+
 Added Properly Disposing of Resources section; changed title to clarify document's intent.
 
- June 6, 2004<br/>
+June 6, 2004
+
 Mono properly frees the memory of class-typed return values now. Remove comment stating otherwise. (miguel)
 
- May 15, 2004<br/>
+May 15, 2004
+
 Added Exception Propogation section, updated Mono's .config file handling; spelling correction: s/marshalling/marshaling/g (this matches MSDN spelling conventions).
 
- March 20, 2004<br/>
+March 20, 2004
+
 Added Memory Boundaries section based on suggestions from Marcus; formatting changes.
 
- August-October 2003<br/>
+August-October 2003
+
 Initial Version.
-
-
-

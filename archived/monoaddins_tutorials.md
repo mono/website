@@ -10,4 +10,3 @@ Mono.Addins Tutorials
 
 A simple extensible application
 ===============================
-

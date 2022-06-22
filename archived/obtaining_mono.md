@@ -25,4 +25,3 @@ Source Code
 -----------
 
 Mono is constantly under development and changes every day. If the packaged versions are not new enough, or you wish to track Mono development, you can get the source code directly and compile Mono yourself. For more details, see [Compiling Mono](/Compiling_Mono).
-

@@ -17,4 +17,3 @@ Examples
 --------
 
 [Jenkara](/Jenkara)
-

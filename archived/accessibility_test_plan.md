@@ -535,5 +535,3 @@ Based on Q2 in roadmap, our initial testing schedule is below:
 Brian Merrell<br/>
  Calen Chen<br/>
  Brad Taylor
-
-

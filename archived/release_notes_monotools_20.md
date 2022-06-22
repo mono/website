@@ -118,5 +118,3 @@ Links
 
 -   [Submit a Bug](/Bugs)
 -   [Discuss in Forums](http://forums.mono-tools.com/)
-
-

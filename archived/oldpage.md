@@ -117,6 +117,3 @@ Server: [Asp.net](/ASP.NET) | [Database Access](/Database_Access)
 </tr>
 </tbody>
 </table>
-
-
-

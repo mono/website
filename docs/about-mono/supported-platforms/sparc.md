@@ -35,4 +35,3 @@ To build Mono on Solaris you will need a complete GNU toolchain:
 
     cd /usr/local/lib/gcc-lib/sparc-sun-solaris<SOL VERSION>/<GCC VERSION>/install-tools
     ./mkheaders
-

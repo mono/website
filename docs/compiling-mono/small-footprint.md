@@ -1,12 +1,9 @@
 ---
-title: Small footprint
+title: How to make a smaller Mono install
 redirect_from:
   - /Small_footprint/
   - /Small/
 ---
-
-How to make a smaller Mono install
-==================================
 
 The most basic mono install currently takes about 3.7 MB of disk space, this includes about 1.7 MB for the JIT and 2 MB for mscorlib.dll.
 
@@ -65,4 +62,3 @@ Reducing code in assemblies
 ---------------------------
 
 To reduce the size of the managed assemblies, use the linker tool in the cecil git module.
-

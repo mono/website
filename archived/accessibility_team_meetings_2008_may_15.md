@@ -452,4 +452,3 @@ RAW IRC Capture
     <calvin> ok, then I'm going to officially end the meeting
     --- calvin has changed the topic to: Accessibility
     <calvin> Thanks everyone
-

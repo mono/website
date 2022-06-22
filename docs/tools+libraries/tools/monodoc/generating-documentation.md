@@ -8,8 +8,7 @@ Documenting your API is an important component of creating reusable libraries, a
 
 This page is about generating documentation for the first time for a new library. If you are interested in contributing to existing Mono API Documentation, see [Monodoc Contributing](/docs/tools+libraries/tools/monodoc/contributing/).
 
-Methods of Generating Documentation
-===================================
+## Methods of Generating Documentation
 
 There are two ways to create documentation for your libraries:
 
@@ -21,13 +20,11 @@ There are two ways to create documentation for your libraries:
 
 The underlying reason is that, while using inline XML tags to document classes is certainly convenient, properly verbose documentation quickly overwhelms the code, making the source quite difficult to read. Furthermore, multilingual documentation makes for significant additional text and the various attempts to address this problem are poor.
 
-Monodoc Documentation
-=====================
+## Monodoc Documentation
 
 The process for generating the documentation can be splitted in several parts.
 
-Generate the initial stubs
---------------------------
+### Generate the initial stubs
 
 The initial stubs for the documentation are generated with [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/). After running it, you will get a bunch of XML files from your public and protected members in a clear directory hierarchy.
 
@@ -100,13 +97,11 @@ Where *docfiles* is the name of the directory containing the documentation files
 
 When you are finished editing it, you can create the .zip, .tree and .source file to distribute the documentation as explained [here](/docs/tools+libraries/tools/monodoc/generating-documentation/#assemble-the-generated-documentation).
 
-Edit and write documentation
-----------------------------
+### Edit and write documentation
 
 After starting [Monodoc](/docs/tools+libraries/tools/monodoc/) browser you can navigate to the parts of the documentation to be edited. Those are labeled as *To be added* or as *Documentation for this section has not yet been entered*. Look [here](/docs/tools+libraries/tools/monodoc/editing/) for more information regarding the editing process or the XML format of the documentation.
 
-Synchronize Documentation with source code
-------------------------------------------
+### Synchronize Documentation with source code
 
 If your source code changes the documentation should be updated. You only need to run [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/) again and the documentation files will be updated without removing the already written documentation and adding the parts that were not missing from the XML files.
 
@@ -126,8 +121,7 @@ This is useful when you need to distinguish which members were added in later ve
 
 Both [monodocer](/docs/tools+libraries/tools/monodocer/) and [mdoc-update](/docs/tools+libraries/tools/mdoc/) insert the assembly versions that each member was found in, and the list of assembly versions is also displayed within [monodoc](/docs/tools+libraries/tools/monodoc/) and [http://docs.go-mono.com/](http://docs.go-mono.com/), for example the **Requirements** section at the [System.Environment documentation](http://docs.go-mono.com/monodoc.ashx?link=T:System.Environment).
 
-Assemble the generated Documentation
-------------------------------------
+### Assemble the generated Documentation
 
 For distributing our documentation, it is preferable to assemble all the files, so you don't have to deal with an entire directory. That way we achieve also a better integration with the monodoc browser.
 
@@ -188,7 +182,7 @@ pkg-config monodoc --variable=sourcesdir
 monodoc --get-sourcesdir #(deprecated)
 ```
 
-### Merging assembled documentation changes
+#### Merging assembled documentation changes
 
 The changes you made to your assembled library documentation will be stored in an XML file in `~/.config/monodoc/changeset.xml`. Thus, they are not created directly in the XML documentation files. To bring back those changes to the XML files you will need to merge them:
 
@@ -200,10 +194,9 @@ where *docdir* is the directory containing the .source file and the directory st
 
 However it is recommended to not edit files once being assembled, but when they are in XML form. The reason is that contributions are stored also in the *changeset.xml*, so contributions and your own library changes will be mixed.
 
-Other utilities
----------------
+### Other utilities
 
-### Generating static HTML Documentation
+#### Generating static HTML Documentation
 
 You can tranform documentation written with [monodocer](/docs/tools+libraries/tools/monodocer/) or [mdoc-update](/docs/tools+libraries/tools/mdoc/) into HTML documentation with the `monodocs2html` or [mdoc-export-html](/docs/tools+libraries/tools/mdoc/) programs:
 
@@ -237,7 +230,7 @@ $ monodocs2html --source docfiles --dest htmldocs --template doctemplate.xsl
 $ mdoc export-html --template doctemplate.xsl -o htmldocs docfiles
 ```
 
-### Validate Monodoc XML format
+#### Validate Monodoc XML format
 
 There is a tool for validating the correction of the XML format of every XML documentation file of a class. To use it:
 
@@ -257,8 +250,7 @@ Where *path-to-xml-file* is a path to a documentation file of a class. In the ex
 
 `mdvalidator` and [mdoc-validate](/docs/tools+libraries/tools/mdoc/) also accept directories as arguments, in which case all files underneath the specified directories will be validated.
 
-Inline XML Documentation
-========================
+## Inline XML Documentation
 
 The `/doc` option of [mcs](/docs/about-mono/languages/csharp/) provides the same functionality as the `/doc` command of csc, Microsoft's C# compiler (and it's an option in Visual Studio too). It looks for XML documentation comments within source code (comments that start with three slashes, ///), and puts them all into a single XML file. Here's an example:
 
@@ -304,7 +296,7 @@ Since this feature is modeled after Microsoft's compiler, please refer to [their
 
 Now, what you do with that XML file is up to you. [NDoc](http://ndoc.sourceforge.net/), a project separate from Mono, is an application that will take this XML file and render it in various formats, including CHM, JavaDoc-style HTML, and MSDN-style HTML. (In the past I've had trouble running NDoc under Mono. If you can run it in Windows, NDoc is very nice.)
 
-### Converting Inline XML Documentation to Monodoc format
+#### Converting Inline XML Documentation to Monodoc format
 
 If you have already some documentation generated from inline XML code and you want to convert it to the format used by Monodoc, you can use [monodocer](/docs/tools+libraries/tools/monodocer/)'s *-importslashdoc* argument:
 
@@ -320,7 +312,7 @@ mdoc update -i doc.xml -o A/en A.dll
 
 The *A/en* directory will contain documentation for each type within *A.dll* containing the documentation imported from *doc.xml*.
 
-### Converting Monodoc format XML into inline XML documentation
+#### Converting Monodoc format XML into inline XML documentation
 
 [mdoc-export-msxdoc](/docs/tools+libraries/tools/mdoc/) exports Monodoc XML to Microsoft XML Documentation:
 
@@ -329,4 +321,3 @@ mdoc export-msxdoc A/en
 ```
 
 will convert all Monodoc XML within *A/en* into Microsoft XML documentation. The file created is controlled by *A/en/index.xml* -- files will be created with the basenames of **/Overview//Assembly[@Name]]** and the file extension **.xml**.
-

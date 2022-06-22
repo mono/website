@@ -93,4 +93,3 @@ Prizes
 ======
 
 Novell will hopefully be able to offer mono schwag (stickers, t-shirts, etc.) as prizes to those who work on documentation, more information to come soon.
-

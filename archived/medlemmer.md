@@ -20,5 +20,3 @@ Medlemmer
 -   [Pauli Østerø](http://burningice.dk), pauli(at)burningice.dk
 -   [Troels Richter](http://troelsrichter.com), dommer(at)thinksharp.dk
 -   [René Madsen](http://www.schultzconsult.dk), rene(at)schultzconsult.dk
-
-

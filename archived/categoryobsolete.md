@@ -9,4 +9,3 @@ Category:Obsolete
 =================
 
 A list of articles which are now obsolete.
-

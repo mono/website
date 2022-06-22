@@ -184,4 +184,3 @@ Contributors
 ============
 
 Johannes Roith, Shane Landrum, Rolf Bjarne Kvinge, Lennie de Villiers
-

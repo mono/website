@@ -127,4 +127,3 @@ The contributor HOWTO is very outdated.
 Update the TODO list of tasks of things to do with Mono, for Mono.
 
 Update the list of Ideas of projects for people.
-

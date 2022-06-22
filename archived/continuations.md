@@ -50,4 +50,3 @@ When you call Store the current state of execution is recorded and it is possibl
 ```
 
 Tomi implemented a Microthreading library on top of this abstraction, this library has been [ported to Mono.Tasklets.Continuation](http://tirania.org/tmp/monoco-tasklets.tar.gz).
-

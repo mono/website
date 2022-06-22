@@ -15,7 +15,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 {% endcapture %}
 {% include note.html type='info' message=docNote %}
 
-# [Getting Started](/docs/getting-started)
+## [Getting Started](/docs/getting-started)
 
 * Install Mono on
     * [macOS](/docs/getting-started/install/mac/)
@@ -26,7 +26,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Application Portability](/docs/getting-started/application-portability/)
 * [Application Deployment](/docs/getting-started/application-deployment/)
 
-# [About Mono](/docs/about-mono/)
+## [About Mono](/docs/about-mono/)
 
 * [Supported Platforms](/docs/about-mono/supported-platforms/)
 * [Languages](/docs/about-mono/languages/)
@@ -40,14 +40,14 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Plans](/docs/about-mono/plans/)
 * [Vulnerabilities](/docs/about-mono/vulnerabilities/)
 
-## Showcases
+### Showcases
 
 * [Screenshots](/docs/about-mono/showcase/screenshots/)
 * [Software](/docs/about-mono/showcase/software/)
 * [Companies using Mono](/docs/about-mono/showcase/companies-using-mono/)
 * [Mono Logos](/docs/about-mono/logos/)
 
-# [Compiling Mono](/docs/compiling-mono/)
+## [Compiling Mono](/docs/compiling-mono/)
 
 * Platforms
     * [macOS](/docs/compiling-mono/mac/)
@@ -61,7 +61,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Parallel Mono environments](/docs/compiling-mono/parallel-mono-environments/)
 * [Small footprint](/docs/compiling-mono/small-footprint/)
 
-# [FAQ](/docs/faq/general/)
+## [FAQ](/docs/faq/general/)
 
 * [Security](/docs/faq/security/)
 * [Technical](/docs/faq/technical/)
@@ -71,28 +71,28 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [GTK](/docs/faq/gtk/)
 * [WinForms](/docs/faq/winforms/)
 
-# [Database Access](/docs/database-access/)
+## [Database Access](/docs/database-access/)
 
 * [ADO.NET](/docs/database-access/adonet/)
 * [EntityFramework](/docs/database-access/entityframework/)
 
-# [Debugging](/docs/debug+profile/debug/)
+## [Debugging](/docs/debug+profile/debug/)
 
 * [Debugger](/docs/debug+profile/debug/debugger/)
 
-# [Profiling](/docs/debug+profile/profile/)
+## [Profiling](/docs/debug+profile/profile/)
 
 * [Profiler](/docs/debug+profile/profile/profiler/)
 * [HeapShot](/docs/debug+profile/profile/heapshot/)
 * [DTrace](/docs/debug+profile/profile/dtrace/)
 * [Code Coverage](/docs/debug+profile/profile/code-coverage/)
 
-# [Clang Sanitizers](/docs/debug+profile/clang/)
+## [Clang Sanitizers](/docs/debug+profile/clang/)
 
 * [ThreadSanitizer (TSan)](/docs/debug+profile/clang/threadsanitizer/)
 * [AddressSanitizer (ASan)](/docs/debug+profile/clang/addresssanitizer/)
 
-# GUI
+## GUI
 
 * [Toolkits](/docs/gui/gui-toolkits/)
 * [WinForms](/docs/gui/winforms/)
@@ -101,7 +101,7 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [libgdiplus](/docs/gui/libgdiplus/)
 * [WPF](/docs/gui/wpf/)
 
-# Web
+## Web
 
 * [ASP.NET](/docs/web/aspnet/)
 * [WCF](/docs/web/wcf/)
@@ -110,23 +110,23 @@ Our website is open source on [GitHub](https://github.com/mono/website). If you 
 * [Moonlight](/docs/web/moonlight/)
 * [Porting ASP.NET applications](/docs/web/porting-aspnet-applications/)
 
-# [Tools](/docs/tools+libraries/tools/)
+## [Tools](/docs/tools+libraries/tools/)
 
 * [Linker](/docs/tools+libraries/tools/linker/)
 * [mkbundle](/docs/tools+libraries/tools/mkbundle/)
 * [Gendarme](/docs/tools+libraries/tools/gendarme/)
 * [MoMA](/docs/tools+libraries/tools/moma/)
 
-# [Libraries](/docs/tools+libraries/libraries/)
+## [Libraries](/docs/tools+libraries/libraries/)
 
 * [MonoMac](/docs/tools+libraries/libraries/monomac/)
 * [XML](/docs/tools+libraries/libraries/xml/)
 * [Mono.Cairo](/docs/tools+libraries/libraries/Mono.Cairo/)
 * [Mono.Cecil](/docs/tools+libraries/libraries/Mono.Cecil/)
 
-# Advanced Topics
+## Advanced Topics
 
-## [Runtime](/docs/advanced/runtime/)
+### [Runtime](/docs/advanced/runtime/)
 
 * [Runtime memory leaks](/docs/advanced/runtime/memory-leaks/)
 * [Garbage Collector](/docs/advanced/garbage-collector/sgen/)

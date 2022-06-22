@@ -1,8 +1,6 @@
 ---
-title: Cooperative Suspend
+title: Runtime Cooperative Suspend
 ---
-
-# Runtime Cooperative Suspend
 
 ## Intro: Preemptive, Cooperative and Hybrid Suspend
 
@@ -63,16 +61,16 @@ of how we access managed memory once we save the thread state.
 The current implementation is a state machine that tells what's the current status of a thread. These are the
 states:
 
-- Starting: Initial state of a thread, nothing interesting should happen while in this state.
-- Detached: Thread is shuting down, it won't touch managed memory or do any runtime work.
-- Running: The thread is running managed or runtime code.  There are no pending suspend requests.
-- AsyncSuspendRequested: The thread is running managed or runtime code and another thread requested that the current thread be suspended.
-- SelfSuspended: Thread suspended by itself.  This happens if a thread tried to switch to blocking, but there was a pending suspend requested and the thread suspended itself instead.  It will go back to running and the switch to blocking will be retried.
-- AsyncSuspended: Thread was async suspended, so it's on a signal handler or thread_suspend was called on it. (This state never happens when running threads are cooperatively suspended)
-- Blocking: The current thread is executing code that won't touch managed memory.  There are no pending suspend requests.
-- BlockingSuspendRequested: The current thread is executing code that won't touch managed memory, and someone requested it to suspend.  In full cooperative mode, the thread is assumed to still be suspended.
-- BlockingSelfSuspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed.
-- BlockingAsyncSuspended: The current thread was executing in blocking code, but it was preemptively suspended.  This is done in "hybrid" suspend mode.  When the thread resumes, it will go back to executing blocking code.
+* Starting: Initial state of a thread, nothing interesting should happen while in this state.
+* Detached: Thread is shuting down, it won't touch managed memory or do any runtime work.
+* Running: The thread is running managed or runtime code.  There are no pending suspend requests.
+* AsyncSuspendRequested: The thread is running managed or runtime code and another thread requested that the current thread be suspended.
+* SelfSuspended: Thread suspended by itself.  This happens if a thread tried to switch to blocking, but there was a pending suspend requested and the thread suspended itself instead.  It will go back to running and the switch to blocking will be retried.
+* AsyncSuspended: Thread was async suspended, so it's on a signal handler or thread_suspend was called on it. (This state never happens when running threads are cooperatively suspended)
+* Blocking: The current thread is executing code that won't touch managed memory.  There are no pending suspend requests.
+* BlockingSuspendRequested: The current thread is executing code that won't touch managed memory, and someone requested it to suspend.  In full cooperative mode, the thread is assumed to still be suspended.
+* BlockingSelfSuspended: The current thread finished executing blocking code but there was a pending suspend against it, it's waiting to be resumed.
+* BlockingAsyncSuspended: The current thread was executing in blocking code, but it was preemptively suspended.  This is done in "hybrid" suspend mode.  When the thread resumes, it will go back to executing blocking code.
 
 ![Coop state machine transition diagram](/docs/advanced/runtime/docs/coop-state-machine.png)
 
@@ -101,36 +99,36 @@ in one of 3 kinds, which tells what can and can't be done.
 
 Under this mode, the GC won't be able to proceed until explicit polling or a transition to GC Safe mode happens.
 
-- Can touch managed memory (read/write).
-- Can call GC Unsafe or GC Neutral functions.
-- Can pass managed pointers to GC Safe regions/functions through pinning
-- Can return managed pointers
-- Cannot call foreign native code (embedder callbacks, pinvokes, etc)
-- Cannot call into blocking functions/syscalls
-- Cannot be detached
+* Can touch managed memory (read/write).
+* Can call GC Unsafe or GC Neutral functions.
+* Can pass managed pointers to GC Safe regions/functions through pinning
+* Can return managed pointers
+* Cannot call foreign native code (embedder callbacks, pinvokes, etc)
+* Cannot call into blocking functions/syscalls
+* Cannot be detached
 
 ## GC safe mode
 
 Under this mode, the GC will assume the thread is suspended and will scan the last saved state.
 
-- Can call into foreign functions.
-- Can call into blocking functions/syscalls
-- Can call GC Safe or GC Neutral functions
-- Can read from pinned managed memory
-- Cannot touch managed memory (read/write)
-- Cannot be detached
+* Can call into foreign functions.
+* Can call into blocking functions/syscalls
+* Can call GC Safe or GC Neutral functions
+* Can read from pinned managed memory
+* Cannot touch managed memory (read/write)
+* Cannot be detached
 
 ## GC Neutral mode
 
 This mode only signals that the function works under Safe and Unsafe modes. The actual effect on the GC will depend
 on the dynamic mode the thread is when the function is executed.
 
-- Can call GC Neutral functions
-- Cannot call into foreign functions.
-- Cannot call into blocking functions/syscalls
-- Cannot read from pinned managed memory
-- Cannot touch managed memory (read/write)
-- Cannot be detached
+* Can call GC Neutral functions
+* Cannot call into foreign functions.
+* Cannot call into blocking functions/syscalls
+* Cannot read from pinned managed memory
+* Cannot touch managed memory (read/write)
+* Cannot be detached
 
 There's a special group of functions that are allowed to run detached. All they are allowed to do is
 attach, pick a GC mode and call into regular GC functions.
@@ -197,8 +195,8 @@ objects in a non-atomic manner and must not be interrupted by the GC.
 
 In a GC critical region:
 
-- The thread *must not* transition from Unsafe to Safe mode.
-- The thread *may* use `gc_handle_obj` to get a raw pointer to a managed object from a coop handle.
+* The thread *must not* transition from Unsafe to Safe mode.
+* The thread *may* use `gc_handle_obj` to get a raw pointer to a managed object from a coop handle.
 
 GC critical regions may be nested (for example, you may enter a GC
 critical region and then call a function that again enters a GC
@@ -242,6 +240,6 @@ could hide bugs in between the nesting. The downside is that it's hard to cover 
 
 This aspect of the runtime is due to some revision. I don't think it goes well with what we need now.
 
-# References
+## References
 
 [1] <https://github.com/mono/mono/commit/0e12ff3017d470676e94e561cd0de4ca22230532>

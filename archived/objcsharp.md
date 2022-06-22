@@ -67,4 +67,3 @@ Versions & Status
 -----------------
 
 ObjC# is currently at v0.1 and only available from SVN. It can successfully represent classes both ways across the bridge. It can also invoke events through the bridge. Marshalling of primitives works.
-

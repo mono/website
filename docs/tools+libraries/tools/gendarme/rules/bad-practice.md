@@ -40,8 +40,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AvoidAssemblyVersionMismatchRule
 
@@ -804,8 +803,6 @@ public override string ToString ()
 
 -   Before Gendarme 2.4 this rule was named ToStringReturnsNull.
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

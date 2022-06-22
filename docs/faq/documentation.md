@@ -29,4 +29,3 @@ A good article on how to create documentation can be found under: [Generating Do
 ### How can I write documentation for the base class libraries?
 
 At the moment only by using the [GTK# documentation browser](/docs/tools+libraries/tools/monodoc/#the-gtk-documentation-browser). [Monodoc Editing](/docs/tools+libraries/tools/monodoc/editing/) has a short tutorial on how to do so.
-

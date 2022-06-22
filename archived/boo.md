@@ -59,5 +59,3 @@ Additional Information
 ======================
 
 -   [Boo Project Home Page](https://github.com/boo-lang/boo)
-
-

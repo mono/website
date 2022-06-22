@@ -10,8 +10,7 @@ The two main toolkits offered by Mono are GTK# and Winforms, however there are s
 
 Both GTK# and Winforms, while being cross-platform, have clear roots in their original platforms. Gtk+ (the root of GTK#) began life on the Linux platform, and has since been ported to Windows and macOS. Likewise, Winforms started on Windows, and the Mono project has ported it to run on Linux and macOS. If the majority of your users will be on one platform, likely the best choice will be the toolkit native to that platform. Although steps can be taken to make your application blend on all platforms, the native toolkit will probably do the best on each platform, and will feel familiar to the majority of your users. If you do not have a platform preference, your toolkit choice will have to rely on other factors.
 
-Alternative Implementation Approaches
-=====================================
+## Alternative Implementation Approaches
 
 If your application is designed to be a long-running application and you have the extra resources to spare you might want to consider creating multiple operating system specific user interfaces, one for each major platform.
 
@@ -45,4 +44,3 @@ On Linux with Gnome:
 On macOS:
 
 [![Tangerine-preferences-mac.png](/archived/images/a/a6/Tangerine-preferences-mac.png)](/archived/images/a/a6/Tangerine-preferences-mac.png)
-

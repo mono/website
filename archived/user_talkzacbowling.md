@@ -15,4 +15,3 @@ Can you tell me why you deleted WayneJohnson's user page?
 Cheers,
 
 C.J.
-

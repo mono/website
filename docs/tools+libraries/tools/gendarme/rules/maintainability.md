@@ -45,8 +45,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### AvoidAlwaysNullFieldRule
 
@@ -266,8 +265,6 @@ public bool SendMessage (string message)
 
 -   This rule is available since Gendarme 2.0
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

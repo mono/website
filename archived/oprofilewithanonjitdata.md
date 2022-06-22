@@ -25,5 +25,3 @@ Issues I have to deal with
 ==========================
 
 -   Figure out where to put the elf file so that oprofile sees it. Need to work on this with the oprofile folks.
-
-

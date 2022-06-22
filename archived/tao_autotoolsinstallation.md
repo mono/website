@@ -46,4 +46,3 @@ Tao autotools:Installation
 // You can now install the package to \$HOME/opt:
 
     make install
-

@@ -234,4 +234,3 @@ You might not know, but DTD does not only affect to "validity", but also to "wel
 If you don't want to read external DTD resources which might affect to the parser performance, you can set XmlResolver = null.
 
 If you don't want to be reported any validation errors, you can specify ValidationEventHandler to XmlValidatingReader, or ValidationType = ValidationType.None. When you set the handler, it will never throw more validation errors unless you re-throw that error in your delegated method. Note that you cannot recover from any well-formedness errors.
-

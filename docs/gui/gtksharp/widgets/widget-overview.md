@@ -5,8 +5,7 @@ redirect_from:
   - /GtkSharp%3A_Widget_Overview/
 ---
 
-Widgets without Windows
-=======================
+## Widgets without Windows
 
 The following widgets do not have an associated window. If you want to capture events, you'll have to use the EventBox. For more information, see the section on the EventBox widget.
 
@@ -19,23 +18,31 @@ The following widgets do not have an associated window. If you want to capture e
     Gtk.AspectFrame         Gtk.Frame          Gtk.VBox
     Gtk.HBox                Gtk.VSeparator     Gtk.HSeparator
 
-Overview of the widgets used in GTK#
--------------------------------------
+### Overview of the widgets used in GTK\#
 
 **Widget Overview**
 
 -   [Widget Hierarchy](/docs/gui/gtksharp/widgets/widget-hierarchy/)
+
 -   [The Button Widget](/docs/gui/gtksharp/widgets/buttons/)
+
 -   [Labels](/docs/gui/gtksharp/widgets/labels/)
+
 -   [Arrows](/docs/gui/gtksharp/widgets/arrows/)
+
 -   [Tooltips](/docs/gui/gtksharp/widgets/tooltips/)
+
 -   [Progress Bars](/docs/gui/gtksharp/widgets/progress-bars/)
+
 -   [Adjustments](/docs/gui/gtksharp/widgets/adjustments/)
+
 -   [Range Widgets](/docs/gui/gtksharp/widgets/range-widgets/)
+
     -   [Scrollbar Widgets](/docs/gui/gtksharp/widgets/scrollbar-widgets/)
     -   [Scale Widgets](/docs/gui/gtksharp/widgets/scale-widgets/)
 
 -   [Dialogs](/docs/gui/gtksharp/widgets/dialogs/)
--   Menu Widget Example (unwritten)
--   [Widget Colours](/docs/gui/gtksharp/widgets/widget-colours/)
 
+-   Menu Widget Example (unwritten)
+
+-   [Widget Colours](/docs/gui/gtksharp/widgets/widget-colours/)

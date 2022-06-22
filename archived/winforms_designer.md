@@ -589,5 +589,3 @@ Documentation Resources
 -   [Building User Interface Design Tools](http://www.i-nz.net/files/docs/Building%20User%20Interface%20Design%20Tools%20-%20Ivan%20N.%20Zlatev.pdf)
 -   [Create And Host Custom Designers With The .NET Framework 2.0](http://www.i-nz.net/files/docs/designerhosting/create-and-host-custom-designers-dot-net.html)
 -   [Extending Design-Time Support](http://msdn2.microsoft.com/en-us/library/37899azc.aspx)
-
-

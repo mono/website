@@ -5,9 +5,6 @@ author: Miguel de Icaza
 tags: [plans]
 ---
 
-Mono's use of Reference Source Code
-===================================
-
 Since the first release of the .NET open source code, the Mono project
 has been integrating the published [Reference
 Source](https://github.com/microsoft/referencesource) code into Mono.
@@ -48,8 +45,7 @@ work that goes into `mscorlib.dll` is maintained in the
 level frameworks are maintained in the
 [corefx](https://github.com/dotnet/corefx) module.
 
-A New Approach
-==============
+## A New Approach
 
 Many of the APIs that were originally removed from CoreFX are now
 being added back, so we can start to consider switching away from

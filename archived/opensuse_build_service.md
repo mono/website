@@ -105,5 +105,3 @@ These are packages we have not yet packaged but are considering. Please contact 
 -   [Nini](http://nini.sourceforge.net/)
 -   [OpenTK](http://www.opentk.com/)
 -   [SDL.NET](http://cs-sdl.sourceforge.net)
-
-

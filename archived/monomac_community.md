@@ -21,6 +21,3 @@ The MonoMac team members as well as many members of the MonoMac user community c
 -   Cross-Platform (using GNOME) build on Mono: [Smuxi](http://www.smuxi.org/)
 
 A web interface to the #monomac channel can be accessed on the [MonoMac/Chat](/MonoMac/Chat) page.
-
- 
-

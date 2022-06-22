@@ -25,9 +25,8 @@ Hvis du er studerende kan du få et gratis foredrag om Mono ud på dit uddannels
 
  **Nyheder**
 
-24. maj 2005: Martin Hansen har lavet en [vejledning](http://home1.stofanet.dk/mh.homepage/docs/mono/vs/) til hans demoer.
+_24. maj 2005_: Martin Hansen har lavet en [vejledning](http://home1.stofanet.dk/mh.homepage/docs/mono/vs/) til hans demoer.
 
-11. maj 2005: Asbjørn Laurberg har taget initiativ til en IRC-kanal dedikeret til DKMUG, på irc.gnome.org, #dkmug
+_11. maj 2005_: Asbjørn Laurberg har taget initiativ til en IRC-kanal dedikeret til DKMUG, på irc.gnome.org, #dkmug
 
-10. maj 2005: Martin Hansen har lavet nogle [demoer](http://home1.stofanet.dk/mh.homepage/video/mono/) af hvordan man kan bruge Mono med Visual Studio.NET. Kom endelig med kommentarer og fejlrettelser.
-
+_10. maj 2005_: Martin Hansen har lavet nogle [demoer](http://home1.stofanet.dk/mh.homepage/video/mono/) af hvordan man kan bruge Mono med Visual Studio.NET. Kom endelig med kommentarer og fejlrettelser.

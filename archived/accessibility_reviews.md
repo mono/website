@@ -130,4 +130,3 @@ This process may go back and forth a few times. Anyone may leave comments on any
 Note that after updating your review in this way, you must visit the review page and Publish the change.
 
 Once two reviewers have checked the "Ship It" box, the original submitter may commit the diff. After committing, the original submitter should select the "Close" tab, then "Submitted".
-

@@ -6,7 +6,7 @@ Author: Georgios Athanasopoulos
 
 This is a report for my contribution to [Mono Project](http://www.mono-project.com/) as Google Summer of Code 2017 student
 
-# Description
+## Description
 
 Mono is a open source development platform based on the `.Net Framework` and allows developers to build cross-platform applications. Mono's .NET implementation is based on the ECMA standards for `C#` and the `Common Language Infrastructure`. It includes both developer tools and the infrastructure needed to run .NET client and server applications on `Linux, Microsoft Windows, macOS, BSD, Sun Solaris, Nintendo Wii, Sony PlayStation 3, Apple iPhone and Android`.
 
@@ -16,11 +16,11 @@ Mono is supported by Microsoft and .Net Foundation and consisted by:
 * `.NET Framework Class Library`
 * `Mono Class Library`
 
-# Goal
+## Goal
 
 The implementation of Pipe Streams in `Mono` doesn't support some functionalities such as parallel builds on msbuild. `CoreFX` is the foundational libraries for .NET Core. The implementation of Pipe Streams in CoreFx fixes the previous problems. So, the goal of the project was to import `System.IO.Pipes.PipeStream` from CoreFX to Mono. Doing this, new features are offered by Mono.
 
-# Work process
+## Work process
 
 Initially, I learned more about Mono Project and explored platform structure. Mono Project in order to manage running at different platforms, has implemented layer abstraction. There are source files (with .dll.sources extension) which are responsible for building of libraries. In these files are included source files of classes that will integrate every library. For example I worked on System.Core library that contains LINQ To Objects implementation and the classes HashSet, TimeZoneInfo, Pipes, ReaderWriteLockSlim, System.Security.*, System.Diagnostics.Eventing.* and System.Diagnostics.PerformanceData. For this library, there is the `common_System.Core.dll.sources` file in which independent classes from platforms or profiles, are included. One of profile specific files is the `net_4_x_System.Core.dll.sources`. This file import common classes from `common_System.Core.dll.sources` and additional classes that are required by net_4_x profile. Similarly the `win32_net_4_x_System.Core.dll.sources` file is windows platform specific and import classes from `net_4_x_System.Core.dll.sources` and additional classes that are required by windows platform. The schema of this structure is presented at Figure 1.
 
@@ -74,16 +74,16 @@ Here are the commits that I did in Mono and CoreFx repos:
 * [Mono](https://github.com/Geotha/mono/commits/gsoc-System.IO.Pipes?author=geotha)
 * [CoreFx](https://github.com/Geotha/corefx/commits/gsoc-System.IO.Pipes?author=geotha)
 
-# Extra Work
+## Extra Work
 
 In addition to proposed work, I undertook to run [`msbuild`](https://msdn.microsoft.com/en-us/library/dd393574.aspx) with parallel builds enabled on Linux using mono. Before my changes, parallel builds weren't possible. So, the purpose was to check if this important feature will work with CoreFx implementation. Running tests on msbuild with mono and without parallel builds enabled, I took errors both stable and my version of mono. Enabling parallel builds, errors were remaining and I couldn't determine if my version works properly.
 
-# Future work
+## Future work
 
 * Test CoreFx implementation to `testing_aot_full` and `testing_aot_hybrid` profiles, when runtime crash is resolved.
 * Test CoreFx implementation to `monotouch` and `monodroid` profiles, when there is suitable equipment.
 * Test mono on msbuild with `parallel builds` enabled, when tests will run successfully.
 
-# Acknowledgement
+## Acknowledgement
 
 Finally, I would like to thank my mentor **Ludovic Henry** for guidance, immense support and excellent collaboration that we had.

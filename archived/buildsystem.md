@@ -18,4 +18,3 @@ The output from the first system can be rsync'd to go-mono.com
 The second part is a buildbot-like system that will do automated building and testing. The system is being written in python, and is designed by Wade. Docs are at [BuildSystem/MonoBuild](/BuildSystem/MonoBuild)
 
 Packagers and developers may find it helpful to look at the packaging scripts and sources for [ThirdPartyPackages](/ThirdPartyPackages).
-

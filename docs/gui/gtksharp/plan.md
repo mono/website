@@ -55,4 +55,3 @@ We want to provide autogeneration of indexers and enumerators for types which ex
 ### GUI Designer Support Improvements
 
 We want to provide an attribute system to make it easier for Stetic to interface with not only the Gtk# widgets, but third party super-widgets.
-

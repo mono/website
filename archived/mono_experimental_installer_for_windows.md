@@ -13,4 +13,3 @@ Ever since Novell took over the process of creating and shipping the Mono Combin
 To avoid conflicts, the original Mono Combined Installer at Novell Forge was renamed to the Mono Experimental Combined Installer for Windows. Its installer file name and the destination directory it uses during setup are named very differently from Novell's one to allow parallel installation without conflict.
 
 This effort has already produced an installer that has Gnome Platform and Gnome Desktop components and a Gtk# complement that can take advantage of it -- like Gnome# which in turns gives access to gnomeprint, gnomecanvas as well as gtkhtml libraries in Windows. This permits that collections like mono-tools can build and run for the first time in Windows, giving way to MonoDoc and its documentation browser to work. The ultimate goal would be to have MonoDevelop running on Windows.
-

@@ -9,4 +9,3 @@ Category:Monkeyguide
 ====================
 
 Pages from the orginial Monkeyguide
-

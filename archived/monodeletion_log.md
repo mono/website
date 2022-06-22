@@ -54,5 +54,3 @@ Below is a list of the most recent deletions. All times shown are server time (U
 -   19:05, 24 Feb 2005 [Miguel](/User:Miguel) deleted "Tools Needed" *(Content was old)*
 -   14:24, 24 Feb 2005 [Miguel](/User:Miguel) restored "Books"
 -   14:23, 24 Feb 2005 [Miguel](/User:Miguel) deleted "Books" *(Replicated page with "Books")*
-
-

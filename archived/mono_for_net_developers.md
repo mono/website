@@ -127,6 +127,3 @@ More Resources
 </tr>
 </tbody>
 </table>
-
-
-

@@ -22,5 +22,3 @@ Chat
 -   Linux: [XChat](http://www.xchat.org/)
 -   Windows: [mIRC](http://www.mirc.com/)
 -   Cross-Platform (using GNOME) build on Mono: [Smuxi](http://www.smuxi.org/)
-
-

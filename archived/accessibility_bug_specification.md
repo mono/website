@@ -113,4 +113,3 @@ Define defect priority value by Bugzilla default priority definition. The priori
 -   P4-Low: Defects are not as strong as desirable.
 
 Bugzilla has many fields that provide additional information (e.g., environment details, found in version, etc.). Please provide as much information as possible when logging bugs.
-

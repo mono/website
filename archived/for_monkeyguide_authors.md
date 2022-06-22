@@ -142,6 +142,3 @@ http:/monodoc/P:System.String.Length
 ```
 
     to link to a property, and similarly F for fields and E for events
-
-
-

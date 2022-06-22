@@ -77,4 +77,3 @@ These trampolines are used to handle the first call made to the delegate though 
 These trampolines implement the fastpath of Monitor.Enter/Exit on some platforms.
 
 \<TODO REMAINING TRAMPOLINE TYPES\>
-

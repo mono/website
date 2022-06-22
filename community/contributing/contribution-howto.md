@@ -134,4 +134,3 @@ Enjoy!!.
 *The parts included in this document are property of their respective authors.*
 
 *Note: The identation of the source code has been changed a bit so it could fit better in the website. Anyway, as nothing more changed, the files should work as expected.*
-

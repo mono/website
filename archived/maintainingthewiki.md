@@ -21,5 +21,3 @@ In general, people are welcomed to add new content, add new questions and improv
 -   Avoid doing comparisons on the Wiki with other products unless you have been given approval by the Mono project.
 
 -   FAQ editing: try to use an impersonal tone, and not a personal tone for the FAQ as multiple people edit and contribute to the document.
-
-

@@ -116,5 +116,3 @@ Additional Information
 -   [Assemblies_and_the_GAC](/docs/advanced/assemblies-and-the-gac/)
 -   [DllMap](/docs/advanced/pinvoke/dllmap/)
 -   [How the Runtime Locates Assemblies (MSDN)](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconhowruntimelocatesassemblies.asp)
-
-

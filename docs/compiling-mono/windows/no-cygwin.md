@@ -36,4 +36,3 @@ msbuild msvc\mono.sln /p:Platform=x64 /p:Configuration=Release /p:MONO_TARGET_GC
 ## Build Mono 64-bit using Visual Studio
 
 Follow the git commands above, then open `msvc\mono.sln` in Visual Studio 2017. Ensure you do not open it in an older version you might have installed, like 2013 or 2015. Select the platform and configuration you prefer (Win32, x64, etc.) and then build.
-

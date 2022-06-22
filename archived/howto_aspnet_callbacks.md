@@ -100,4 +100,3 @@ this.ClientScript.RegisterClientScriptBlock(this.GetType(),"SumatoryOnServer",ca
 Now only run xsp2 command on a directory where you are editing this sample source files and later open your firefox web browser and pick this url:
 
 [http://0.0.0.0:8080/Default.aspx](http://0.0.0.0:8080/Default.aspx)
-

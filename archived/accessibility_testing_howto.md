@@ -1194,4 +1194,3 @@ Csharp Introduction
 We will use C# to write our samples and tests in Moonlight and ClientAPI test, so What we need to do the first is to study C#.
 
 Here is a link of a [C# Introduction PDF](http://www.ecma-international.org/activities/Languages/Introduction%20to%20Csharp.pdf), please download and study it if you need.
-

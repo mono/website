@@ -2,9 +2,6 @@
 title: Checked Builds
 ---
 
-Introduction
-============
-
 The Mono VM uses asserts throughout to ensure it is in a correct state. There are a few classes of asserts which are useful for debugging Mono, but which are too expensive to include in a production VM. If you are doing development on Mono, you can enable these with a specially built VM.
 
 ## Enabling
@@ -36,8 +33,7 @@ This mode causes assignments from one metadata mempool to another to be checked 
 
 This mode is most useful if you are seeing crashes following the unloading of an app domain. You are very likely to want to disable this mode if you do not need it, as it is very slow.
 
-Adding checked-build asserts
-============================
+## Adding checked-build asserts
 
 ### General asserts
 

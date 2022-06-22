@@ -38,5 +38,3 @@ Notes
 -   To get the project file generated from a solution file (.sln), set the environment variable *XBUILD_EMIT_SOLUTION*.
 -   The **Exec** task, writes the commands to a temporary file, and executes that with "cmd.exe /q /c" on Windows and "sh" on other platforms. This applies to the Pre and PostBuildEvents in the project files.
 -   Usually, dependencies for references are also resolved, like assemblies referenced by a reference itself. But incase an assembly gets resolved via pkg-config, then its dependencies are **not** resolved.
-
-

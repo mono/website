@@ -6,10 +6,9 @@ redirect_from:
 
 [Gendarme](/docs/tools+libraries/tools/gendarme/)'s user interface rules are located in the **Gendarme.Rules.Ui.dll** assembly. Latest sources are available from [git](https://github.com/mono/mono-tools/tree/master/gendarme/rules/Gendarme.Rules.Ui/).
 
-Rules
-=====
+## Rules
 
-### GtkSharpExecutableTargetRule
+#### GtkSharpExecutableTargetRule
 
 An executable assembly, i.e. an .exe, refers to the gtk-sharp assembly but isn't compiled using **-target:winexe**. A console window will be created and shown under Windows (MS runtime) when the application is executed.
 
@@ -21,7 +20,7 @@ An executable assembly, i.e. an .exe, refers to the gtk-sharp assembly but isn't
 
     mcs gtk.cs -pkg:gtk-sharp -target:winexe
 
-### SystemWindowsFormsExecutableTargetRule
+#### SystemWindowsFormsExecutableTargetRule
 
 An executable assembly, i.e. an .exe, refers to the System.Windows.Forms assembly but isn't compiled using **-target:winexe**. A console window will be created and shown under Windows (MS runtime) when the application is executed which is probably not desirable for a winforms application.
 
@@ -33,9 +32,9 @@ An executable assembly, i.e. an .exe, refers to the System.Windows.Forms assembl
 
     mcs swf.cs -pkg:dotnet -target:winexe
 
-### UseSTAThreadAttributeOnSWFEntryPointsRule
+#### UseSTAThreadAttributeOnSWFEntryPointsRule
 
-This rule checks executable assemblies, i.e. \*.exe's, that reference System.Windows.Forms to ensure that their entry point is decorated with **[System.STAThread]** attribute and is not decorated with **[System.MTAThread]** attribute to ensure that Windows Forms work properly.
+This rule checks executable assemblies, i.e. \*.exe's, that reference System.Windows.Forms to ensure that their entry point is decorated with **\[System.STAThread\]** attribute and is not decorated with **\[System.MTAThread\]** attribute to ensure that Windows Forms work properly.
 
 **Bad** example #1 (no attributes):
 
@@ -79,8 +78,6 @@ public class ConsoleAppEntryPoint {
 }
 ```
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

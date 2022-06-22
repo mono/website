@@ -266,5 +266,4 @@ To run an application under xsp: 1. Make sure you are running the xsp from the m
 
        MONO_IOMAP=all xsp
 
-5. The output from xsp should be something like: xsp2 Listening on address: 0.0.0.0 Root directory: / Listening on port: 8080 (non-secure) Hit Return to stop the server. 6. Open a web browser and connect to the linux box on port 8080 or whatever port xsp says it's Listening on. 7. To close xsp, press "\<enter\>" in the terminal where xsp is running.
-
+The output from xsp should be something like: xsp2 Listening on address: 0.0.0.0 Root directory: / Listening on port: 8080 (non-secure) Hit Return to stop the server. 6. Open a web browser and connect to the linux box on port 8080 or whatever port xsp says it's Listening on. 7. To close xsp, press "\<enter\>" in the terminal where xsp is running.

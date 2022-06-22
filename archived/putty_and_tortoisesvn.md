@@ -129,5 +129,3 @@ This is the part we've all been waiting for. You need to tell TortoiseSVN to use
     -   C:\\Documents and Settings\\\$USER\\Desktop\\src\\svn\\mono\\mono
 -   click the **OK** button
 -   When prompted whether you want to create the non-existent directory, say yes
-
-

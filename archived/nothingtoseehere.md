@@ -47,6 +47,3 @@ Quick Links
 -   [API Docs](http://docs.go-mono.com/)
 -   [Plans](/Plans)
 -   [Report Bugs](/Bugs)
-
- 
-

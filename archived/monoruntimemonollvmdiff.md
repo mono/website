@@ -38,4 +38,3 @@ Mono:Runtime:mono-llvm.diff
      endif
 
      common_sources = \
-

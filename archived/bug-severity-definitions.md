@@ -5,7 +5,7 @@ redirect_from:
   - /community/bugs/bug-severity-definitions/
 ---
 
-** Note: these guidelines were written for Bugzilla, Mono uses GitHub issues now. **
+**Note: these guidelines were written for Bugzilla, Mono uses GitHub issues now.**
 
 When filing a bug against Mono, here are the guidelines for determining the severity of a bug.
 
@@ -42,4 +42,3 @@ When filing a bug against Mono, here are the guidelines for determining the seve
 
 -   "Would be nice to have" Feature requests
 -   All functionality that is not currently implemented
-

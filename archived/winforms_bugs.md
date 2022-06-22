@@ -91,4 +91,3 @@ Reference
 
 This methodology is adapted from this article:<br/>
  [http://lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html](http://lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html)
-

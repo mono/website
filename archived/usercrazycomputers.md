@@ -16,4 +16,3 @@ Some quick facts about me:
 -   **Wikipedia userpage:** [User:Crazycomputers](http://en.wikipedia.org/wiki/User:Crazycomputers)
 
 More when I have the time.
-

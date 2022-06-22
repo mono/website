@@ -27,4 +27,3 @@ How can I unit-test silverlight applications?
 How can I record the history of unit tests? (failures?)
 
 How can I... (first questioner, please replace this)
-

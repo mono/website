@@ -36,5 +36,3 @@ Once the plugin is installed, the following should be possible from Visual Studi
     -   Create RPM and DEB packages for various distributions
         -   It could be easy to ship tools that do both on a single system
         -   Alternatively, for open source software, expose the openSUSE Build Service
-
-

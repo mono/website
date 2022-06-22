@@ -47,4 +47,3 @@ If you deployed this to your web server (say, with [Mod_mono](/Mod_mono)) you sh
 (Cool screenshot goes here!)
 
 To use this web service or any other web service in your application, see [Consuming Web Services](/Web_Services).
-

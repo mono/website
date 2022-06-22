@@ -60,4 +60,3 @@ Other settings
 ==============
 
 When you use the Mono.Http assembly, there is a set of configuration options that can be used. These are part of the \<mono.aspnet\> space, for details see the [ASP.NET Modules](/ASP.NET_Modules) page.
-

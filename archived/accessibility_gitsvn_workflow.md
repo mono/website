@@ -325,5 +325,3 @@ Helpful Resources
 -   [http://learn.github.com/p/git-svn.html](http://learn.github.com/p/git-svn.html) - A page that explains git-svn simply, in case you feel like you don't quite have your head wrapped around the concept yet.
 -   [http://www.gitready.com/](http://www.gitready.com/) - A great set of articles on beginner, intermediate, and advanced features of git.
 -   [http://git.or.cz/course/svn.html](http://git.or.cz/course/svn.html) - See the git equivalent of common svn commands
-
-

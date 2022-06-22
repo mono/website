@@ -414,5 +414,3 @@ Why ? beside the standard *less code, less vulnerabilities* it is also easier a
     -   Goal: Reduce surface and the download size of Moonlight
     -   How: Help the linker, with a few well placed `#if NET_2_1`, drop some code that Moonlight does not require
     -   status: **DONE** (more is possible/likely in future Moonlight releases)
-
-

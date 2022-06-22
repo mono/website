@@ -73,4 +73,3 @@ I think starting over with Pango is going to waste too much time, and will still
 #### WebControl
 
 As mentioned above, this is about half of our currently unimplemented 2.0 API. We need to figure up the effort required, and if we need to cut obscure API features based on MoMA reports.
-

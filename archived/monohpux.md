@@ -11,4 +11,3 @@ Mono:HPUX
 Currently only the Mono Interpreter (mint) will work on HPUX. At this time, Mono's JIT does not work with HPUX
 
 See [Supported_Platforms](/Supported_Platforms) for more information.
-

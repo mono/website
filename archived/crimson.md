@@ -100,5 +100,3 @@ Plans
 -   Copy managed cryptographic implementations of Mono into Crimson to optimize them (e.g. unrolling);
 -   Copy managed (and safe) cryptographic implementation of Mono into a Silverlight/Moonlight compatible assembly;
 -   Add more general benchmarking tools
-
-

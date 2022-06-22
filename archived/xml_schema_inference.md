@@ -402,4 +402,3 @@ That's all
 ----------
 
 XML Schema inference might sound a difficult thesis, but it could be simple as long as we keep simple rules. What we actually needed is an explicit guideline on how we can expect those inference engines to create schemas.
-

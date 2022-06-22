@@ -25,4 +25,3 @@ Of my personal life I am 28 years old and I am finishing a master in systems of 
 [Mono blog](http://www.enzolutions.com/mono) (spanish contents)
 
 [Personal blog](http://www.enzolutions.com/blog) (spanish contents)
-

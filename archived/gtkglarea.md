@@ -60,4 +60,3 @@ Download
 --------
 
 [https://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/](https://ftp.gnome.org/pub/GNOME/sources/gtkglarea/2.0/)
-

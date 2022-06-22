@@ -24,4 +24,3 @@ An example of this [\<system.web\>](/Config_system.web) section is:
 The default is **RemoteOnly**
 
 *defaultRedirect* is the redirection sent when no explicit \<error\> exists for a given error status code.
-

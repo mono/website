@@ -36,4 +36,3 @@ I've written the support part with the thought in mind that safety always comes 
 As for the rest of the page: I'm done so far and now waiting for reviews.
 
 --[Valentin](/User:ValentinSawadski) 12:43, 20 May 2007 (EDT)
-

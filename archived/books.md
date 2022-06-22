@@ -118,4 +118,3 @@ Reference Manuals
 [System V ABI - MIPS Processor supplement](http://www.caldera.com/developers/devspecs/mipsabi.pdf)
 
 [The SPARC Architecture Manual Version 8](http://www.sparc.org/standards/V8.pdf)
-

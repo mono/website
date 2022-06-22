@@ -70,4 +70,3 @@ Other Uses
 See [Embedding Mono](/docs/advanced/embedding/) for details on how to embed Mono.
 
 See [Scripting With Mono](/docs/advanced/embedding/scripting/) for strategies on how to script your application using the Mono runtime.
-

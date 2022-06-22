@@ -233,4 +233,3 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/build/lib
 ```
 
 At that point you can run MonoDevelop and your application, they will automatically pick up your new assemblies.
-

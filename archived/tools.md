@@ -36,6 +36,3 @@ Some tools created and maintained by the Mono community to facilitate writing an
 </tr>
 </tbody>
 </table>
-
-
-

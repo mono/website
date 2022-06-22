@@ -94,4 +94,3 @@ The result of running the above command will produce a few files:
 -   PkgInfo: a sample PkgInfo that you can use.
 
 You must add all of the `*.m` and `*.s` files to your build.
-

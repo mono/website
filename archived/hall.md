@@ -76,4 +76,3 @@ Nick Drochak
 ------------
 
 The first, deserved, entry in the Mono Hackers Hall Of Fame is for Nick Drochak, who joined us in the first days of Mono and built the testing infrastructure for the C# assemblies, fixed tons of bugs and even adventured himself in the lands of the C runtime. His work is invaluable for keeping Mono on the right track through the daily changes in the codebase.
-

@@ -152,4 +152,3 @@ Other Groups
 Other groups include developers that do not directly belong to any of the previous groups, that own code in various places, or that on temporary loans to other projects (Mike Kestner for Gtk#)
 
 Lead by default: Miguel de Icaza
-

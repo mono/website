@@ -289,6 +289,3 @@ The crash format gives a managed frame a GUID to their assembly, a token to the 
 
 For the purpose of reporting on failures on our testing cluster, we have created an integration with the popular, open-source framework [Sentry](https://sentry.io/).
 It works by reading the files created by `WriteStateToFile`. For embedders wishing to use the crash reporter with Sentry, or looking for executable examples of up-to-date crash file serialization, please follow the tool added in [mcs/tools/upload-to-sentry/](https://github.com/mono/mono/tree/master/mcs/tools/upload-to-sentry).
-
-
-

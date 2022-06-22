@@ -92,4 +92,3 @@ This results in a file hello.exe, that you can execute with mono:
 ``` bash
 mono hello.exe
 ```
-

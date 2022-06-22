@@ -76,4 +76,3 @@ Now we need to enable the corresponding module. This is done by adding the follo
 ```
 
 Again, replace "Basic" with "Digest" and you'll get the configuration for digest authentication.
-

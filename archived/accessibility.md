@@ -167,4 +167,3 @@ Project Origins
 ---------------
 
 On November 8, 2007 Novell [announced](http://www.novell.com/news/press/microsoft-and-novell-celebrate-year-of-interoperability-expand-collaboration-agreement) a collaborative effort with Microsoft to make this happen.
-

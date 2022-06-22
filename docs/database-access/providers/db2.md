@@ -61,5 +61,3 @@ In order to test.
 -   Install IBM DB2 and make sure you have created the links for the DB2 files using the db2ln command. You can register and download IBM DB2 Personal Developer Edition from [here](http://www14.software.ibm.com/webapp/download/search.jsp?rs=db2pde). If you cannot install DB2 using the automatic installation due to the java user interface issues, you can perform a manual installation following these [instructions](http://publib.boulder.ibm.com/infocenter/db2help/index.jsp?topic=/com.ibm.db2.udb.doc/start/t0006742.htm).
 
 -   Make sure the assembly IBM.Data.DB2.dll was built and installed where the other class libraries are installed.
-
-

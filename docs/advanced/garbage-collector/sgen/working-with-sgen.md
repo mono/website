@@ -10,8 +10,7 @@ Different workloads will require different options in the garbage collector to b
 
 This document describes the options that you have available when it comes to tuning the garbage collector as well as a basic explanation of the inner workings of the garbage collector.
 
-SGen Basics
-===========
+## SGen Basics
 
 SGen is a generational collector, which is a popular technique used by garbage collectors to improve the performance of the garbage collector.
 
@@ -35,8 +34,7 @@ As the objects are evacuated, they are moved into the major heap. If there is no
 
 SGen considers any objects using more than than 8,000 bytes to be large objects (`SGEN_MAX_SMALL_OBJ_SIZE`). Large objects are not actually allocated on the nursery, instead they are tracked by the Large Object Space (LOS) manager.
 
-Major Heap Collector
-====================
+## Major Heap Collector
 
 For collecting the major heap, SGen implements the mark and sweep/copying collector. The mark and sweep collector does not move the objects, but instead keeps the objects where they are. To avoid fragmentation, objects are distributed in buckets of different sizes and if these buckets reach a 66% of fragmentation then this automatically performs a copying evacuation. The mark and sweep collector basically provides the best of both worlds: fast execution and if the memory becomes fragmented, it automatically performs a copying collection.
 
@@ -44,8 +42,7 @@ The evacuation threshold for fragmented blocks is set to 66%, but you can change
 
 You can also disable evacuation completely, even if the blocks become fragmented, by setting the value to zero.
 
-Serial vs Concurrent Garbage Collection
-=======================================
+## Serial vs Concurrent Garbage Collection
 
 By default, the garbage collector will try to do most of the work concurrently with the mutator. Both the mark and the sweep phases can be run concurrently.
 
@@ -53,8 +50,7 @@ When concurrent mark is enabled, the GC will scan all the roots in the initial p
 
 When concurrent sweep is enabled, once the marking phase is finished, the mutator will be resumed and the sweep phase will run concurrently with the user application. The GC will not be able to allocate from major blocks that are not swept, but this is not a problem since, following the collection, allocation will mostly happen inside the emptied nursery. This can explicitly configured using `concurrent-sweep` / `no-concurrent-sweep` option.
 
-Single CPU vs Multiple CPU Garbage Collection
-=============================================
+## Single CPU vs Multiple CPU Garbage Collection
 
 Both the minor and major collector can make use of multiple worker threads to scan the heap.
 
@@ -62,13 +58,11 @@ For the major collector, parallel collection is only supported during the finish
 
 The minor collector also supports a parallel mode. By default, minor collections are single threaded (`minor=simple`). Parallel collection can be enabled with `minor=simple-par`. Since minor collections are very short, the parallel mode is usually not necessary. Applications with large memory usage, with large nursery size or that trigger a lot of object reference writes in the major heap can particularly benefit from a parallel minor.
 
-Low pause time
-==============
+## Low pause time
 
 SGen supports a few predefined modes which can be selected using the `mode` variable. These modes are `balanced`, `throughput` and `pause`. The low pause mode receives an argument, in milliseconds, which indicates the desired maximum duration for a minor collection. The GC will attempt to respect this constraint, by using a dynamic nursery size coupled with the parallel mode in order to reduce the likelihood of long minor collections. For example, in order to select a maximum pause time of 20ms the following environment configuration can be used `MONO_GC_PARAMS=mode=pause:20`
 
-Controlling Collections
-=======================
+## Controlling Collections
 
 Some interactive, and near-real time applications want to minimize pause times caused by the GC running in the middle of their work (for example, video games. Game users do not really appreciate pauses in their gaming experience). The best mechanism to avoid these pauses is to not allocate memory during time sensitive operations and instead move the majority of the object allocations out of the sensitive code paths or your main game loop for example.
 
@@ -84,8 +78,7 @@ This instructs the garbage collector to process the nursery, which is a relative
 
 If you call `GC.Collect` without a parameter or with any value higher than zero, Mono will perform a global garbage collection. This means that the garbage collector will look not only at the objects that live in the nursery, but also the objects that live in the mature object space.
 
-Nursery Size
-============
+## Nursery Size
 
 The default size of the nursery is four megabytes.
 
@@ -95,8 +88,7 @@ You might want to make it smaller, to make nursery collections take place more o
 
 To change the nursery size, set the `nursery-size` flag to the size in bytes that you want for the nursery. The nursery size must be a power of two and specified in bytes. Just like the major heap size configuration, you can use the “k”, “m” and “g” suffixes as shortcuts for kilobyte, megabyte and gigabyte respectively.
 
-Configuring SGen
-================
+## Configuring SGen
 
 To set any of the variables discussed so far, you must set the environment variable `MONO_GC_PARAMS` and pass the options discussed in this article separated by commas.
 
@@ -104,8 +96,6 @@ In addition to the various options to configure SGen, you can learn more about t
 
 You can learn more about the debugging options for SGen from Mono's manual page: [mono(1)](http://docs.go-mono.com/?link=man%3amono(1)).
 
-Profiling
-=========
+## Profiling
 
 On systems that have DTrace (Solaris, macOS), Mono is able to report the SGen Garbage Collector events to Dtrace. See the [SGen_DTrace](/docs/advanced/garbage-collector/sgen/dtrace) page for details on how to use DTrace with Sgen to profile your application.
-

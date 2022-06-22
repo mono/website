@@ -52,4 +52,3 @@ NOTE: on macOS you'll have to wait around a minute the very first time you run t
 [![Helloworld.png](/archived/images/f/f5/Helloworld.png)](/archived/images/f/f5/Helloworld.png)
 
 Results running on openSUSE 10.2
-

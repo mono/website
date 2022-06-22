@@ -13,5 +13,3 @@ Beyond Linux and Windows, Mono is also supported on the following platforms:
 -   [Mac OS X](/Mono:OSX)
 -   [BSDs](/Mono:BSD)
 -   Solaris
-
-

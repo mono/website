@@ -122,5 +122,3 @@ Release Notes
 
 -   [GtkGLAreaSharp:0.0.17](/GtkGLAreaSharp:0.0.17) - April 2007
 -   [GtkGLAreaSharp:0.0.8](/GtkGLAreaSharp:0.0.8)
-
-

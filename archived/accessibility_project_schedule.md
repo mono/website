@@ -1314,6 +1314,3 @@ upgrad test environment and verify bugs|Done|Calen||
 re-run strongwind tests, and file bugs|Done|Calen|checkbox:[Bug424681](https://bugzilla.novell.com/show_bug.cgi?id=424681)|
 |||||
 |**Iteration 16 Planning Meeting**||||
-
-
-

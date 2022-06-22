@@ -13,4 +13,3 @@ Monocharge is a minimal binary distribution of mono and mcs. Use this to bootstr
 The latest release can be found on the [Mono Daily Packages](http://mono.ximian.com/daily/) page:
 
 [http://mono.ximian.com/daily/monocharge-latest.tar.gz](http://mono.ximian.com/daily/monocharge-latest.tar.gz)
-

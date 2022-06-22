@@ -2,8 +2,6 @@
 title: Atomics and Memory Model
 ---
 
-# Atomics and Memory Model
-
 ## Introduction
 
 This document describes the semantics of atomic operations and the managed memory model in C#, CIL, and the BCL.

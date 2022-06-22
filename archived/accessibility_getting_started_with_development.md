@@ -184,4 +184,3 @@ Unless you have already customized yours, most of the file will be commented out
     Makefile = svn:eol-style=native
     ChangeLog = svn:eol-style=native
     *.dll.sources = svn:eol-style=native
-

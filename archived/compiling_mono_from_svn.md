@@ -87,4 +87,3 @@ Also to get the latest changes in System.Drawing.dll and System.Windows.Forms.dl
 If you use a different prefix then you may need to adjust your LD_LIBRARY_PATH environment variable to ensure libgdiplus.so can be loaded.
 
       export LD_LIBRARY_PATH=/your/own/prefix:$LD_LIBRARY_PATH
-

@@ -25,4 +25,3 @@ Architecture draft?
 Is there anything like an architecture draft document available for Cecil? Or is the only way to find out more about it by checking out the source?
 
 PS: My main machine is a Windows platform... is there any reason that Cecil would not work under MS Framework 1.1?
-

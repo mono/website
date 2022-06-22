@@ -98,5 +98,3 @@ Please write entries in the form of:
 -   Implement Client\* classes (includes research and quite a bit of testing in how client-side providers are used). (5 days)
 -   AutomationElement.FocusedElement, which I believe may not be support by at-spi. (3 days)
 -   AutomationElement:FromHandle, FromLocalProvider, FromPoint. (3 days)
-
-

@@ -53,4 +53,3 @@ Unmaintained Providers in Mono:
 -   [ByteFX.Data.MySqlClient](http://sourceforge.net/projects/mysqlnet/) is a MySQL Managed data provider. ByteFX.Data is no longer maintained, but it is included with Mono. Please use the MySQL Connector/Net provider from MySQL AB instead.
 -   [IBM DB2 Universal Database](/docs/database-access/providers/db2/) provider for IBM DB2 requires DB2 client software
 -   [Sybase](/docs/database-access/providers/sybase/) managed provider for Sybase ASE 12.0 and up databases
-

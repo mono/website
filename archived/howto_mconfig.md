@@ -777,4 +777,3 @@ Usage as a library
 ------------------
 
 `mconfig` can also be used as a library. This section will contain documentation of the public API once it is considered stable.
-

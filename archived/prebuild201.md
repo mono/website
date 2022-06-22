@@ -27,5 +27,3 @@ Version 2.0.1 incorporates the new Autotools target from the Prebuild-cjac branc
     -   support for /unsafe
     -   support for /key
     -   If there is an AssemblyInfo.cs for the project, it is queried for the assembly's version
-
-

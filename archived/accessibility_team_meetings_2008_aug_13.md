@@ -365,4 +365,3 @@ Accessibility: Team Meetings 2008 Aug 13
     **<@knocte> **
     well, I think we can close the meeting? :) thanks all for coming
     07:51
-

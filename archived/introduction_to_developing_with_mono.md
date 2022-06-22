@@ -54,4 +54,3 @@ If you have Mono installed, you can compile this source code with the command:
 Mono's C# compiler, mcs, creates in an assembly named `hello.exe` that you can execute on any platform supporting the CLR -- using Mono on any supported platform, or using .NET on Windows. To run the program using Mono, type:
 
     mono hello.exe
-

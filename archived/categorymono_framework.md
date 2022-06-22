@@ -9,4 +9,3 @@ Category:Mono Framework
 =======================
 
 Pages related to Mono and the Mono Framework in general
-

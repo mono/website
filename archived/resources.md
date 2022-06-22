@@ -100,4 +100,3 @@ Security Vulnerabilities
 ========================
 
 A list of known [vulnerabilities](/Vulnerabilities) affecting older versions of Mono is available.
-

@@ -94,4 +94,3 @@ Breakpoints are usually implemented similarly to single stepping, by reading fro
 AOTed code can be debugged by compiling it with the 'soft-debug' aot option, i.e: mono --debug --aot=soft-debug foo.dll
 
 In the AOT case, the code can'be be patched at runtime, so breakpoints are implemented by reading from per-method table with one entry per sequence point, which is either NULL or points to the breakpoint trigger page.
-

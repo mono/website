@@ -285,4 +285,3 @@ Future
 Mono.Zeroconf includes support for both mDNSResponder and Avahi, though it is possible to write new providers for Mono.Zeroconf, which are just plugins to the Mono.Zeroconf system.
 
 At this time however, we consider Mono.Zeroconf to be API stable and mostly feature complete. The only feature we may consider adding is support for domain enumeration.
-

@@ -52,4 +52,3 @@ More to come...
 ### My ideas
 
 I, Matthijs ter Woord, am willing to step up and act as maintainer of the appserver project. I will then import a private project, which implements all the above features, except the private communication channels one. If there is interest for this, please contact me at [[[1]](mailto:matthijsterwoord@gmail.com)]
-

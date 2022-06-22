@@ -531,4 +531,3 @@ NameValueCollection settings = (NameValueCollection) WebConfigurationManager.Get
 ```
 
 If you plan to run your application on MS.NET/IIS and Mono, then you should configure it for the Windows/MS.NET target and provide configuration settings mappers for other operating systems.
-

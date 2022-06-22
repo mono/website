@@ -265,4 +265,3 @@ Other resources on this site
 ### Known Vulnerabilities
 
 A list of known [vulnerabilities](/docs/about-mono/vulnerabilities/) affecting older versions of Mono is available.
-

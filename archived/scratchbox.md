@@ -88,4 +88,3 @@ To enable devkit for your ARMEL and X86 targets just type:
      [sbox-DIABLO_HOST: ~] > sb-conf setup DIABLO_X86 -f -d perl:debian-etch:maemo3-tools:mono
 
 Now you will be able to build Mono packages inside scratchbox!
-

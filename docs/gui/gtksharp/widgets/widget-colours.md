@@ -66,4 +66,3 @@ One: rarely, does a gtk# application contain just a Window widget and nothing el
 Two: although you really only need to change the background colour in the drawingarea widget to achieve the desired effect, I have elected to colour the window widget as well so that you don’t get an annoying white/grey flick the moment before the drawingarea object appears on the window when the .Show() method is called.
 
 Finally, I used the expose event of the drawingarea widget to draw a simple line to just give the program some real world practicality.
-

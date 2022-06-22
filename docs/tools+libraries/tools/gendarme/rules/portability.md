@@ -29,8 +29,7 @@ redirect_from:
 </tbody>
 </table>
 
-Rules
-=====
+## Rules
 
 ### DoNotHardcodePathsRule
 
@@ -155,8 +154,6 @@ Console.WriteLine ("Hello,\nYou should be using Gendarme!");
 Console.WriteLine ("Hello,{0}You must be using Gendarme!", Environment.NewLine);
 ```
 
-Feedback
-========
+## Feedback
 
 Please report any documentation errors, typos or suggestions to the [Gendarme Google Group](http://groups.google.com/group/gendarme). Thanks!
-

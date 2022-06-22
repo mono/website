@@ -212,4 +212,3 @@ Compilation
 -----------
 
 For instructions on how to build Mono, please refer to the [compiling](/Compiling_Mono) page.
-

@@ -439,5 +439,3 @@ The new features in .NET 2.0 include:
 -   **Console and Serial ports:**\</br\> Console terminal input/output is available as well as serial port handling.
 
 -   **Windows.Forms** Layout containers finally appeared on Windows.Forms as well as various new controls.
-
-

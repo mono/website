@@ -59,4 +59,3 @@ Known bugs
       }
 
 This causes the mini/exceptions.exe regression test to fail on sol 8-9.
-

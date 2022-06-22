@@ -25,5 +25,3 @@ Does not include:
 
 -   RTL
 -   Accessibility
-
-

@@ -4,7 +4,7 @@ title: "CppSharp / Continue Mono/.NET bindings for QtSharp (Dimitar Dobrev)"
 
 Author:  [Dimitar Dobrev](https://github.com/ddobrev)
 
-# Summary
+## Summary
 
 This summer was not as successful for QtSharp itself as it was for its underlying generator of CppSharp. There are two main reasons for this.
 
@@ -14,11 +14,11 @@ The second reason is that as I am also the maintainter of CppSharp, I had to spa
 
 As a result, of the 5 sub-tasks the first one is half-complete while the rest have yet to be started.
 
-# Work
+## Work
 
 As explained above, templates are what took most of my time and effort during the summer. I am going to explain the problem they present, the approach I came up with to solve it and the progress of its implementation so far.
 
-## Problem
+### Problem
 
 Templates serve the same purpose as generic classes in .NET but they are very different in implementation. A simple template class looks like this:
 
@@ -47,7 +47,7 @@ private:
 
 C++ is a compiled language so it lacks a virtual machine to produce the necessary binary code for specialisations of templates. This means that any specialisations must be compiled in advance since an external C++ library cannot "know" what specialisations it's going to need. Therefore when working in C++, specialisations are compiled to where they are used i.e. the programmer's own code. This is obviously impossible in the case of CppSharp because there's no C++ of the user's.
 
-## Approach
+### Approach
 
 Consequently a new approach is required. There were two major routes to take:
 1. Manual - consists of implementing each template in the target language. This would work with any type arguments but it is a large amount of work, per template and per binding. In addition, interaction with the bound C++ is impossible because in order to pass such an object to native code, it still has to be properly marshalled and this is simply impossible with random type arguments. For these reasons, I have completely ruled this option out even though it would have worked for just QtSharp rather than CppSharp in general;
@@ -56,37 +56,37 @@ Consequently a new approach is required. There were two major routes to take:
 Automatic, however, is too broad a term. There are many ways to automate binding of templates, some of them listed below:
 1. Generate a separate class for each specialisation - this involves the syntax for regular rather than generic classes. It is the approach used by SWIG and other generators. I have ruled it out mostly because the resulting API looks and feels different than the original C++ and also forces on users knowledge about templates and their representation which they don't necessarily need or care about. There's one more reason not to use this approach and it is that it lacks polymorphism unless a fake base class is introduced for all specialisations, and even that would only work in some cases. This approach can only be applied to the marshalling structures and I have done so:
 
-```csharp
-[StructLayout(LayoutKind.Explicit, Size = 8)]
-public unsafe partial struct __Internalc__S_DependentValueFields__b
-{
-    [FieldOffset(0)]
-    internal byte field;
+    ```csharp
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
+    public unsafe partial struct __Internalc__S_DependentValueFields__b
+    {
+        [FieldOffset(0)]
+        internal byte field;
 
-    [FieldOffset(4)]
-    internal global::CSharp.DependentValueFields._.__Internal _;
-}
+        [FieldOffset(4)]
+        internal global::CSharp.DependentValueFields._.__Internal _;
+    }
 
-[StructLayout(LayoutKind.Explicit, Size = 12)]
-public unsafe partial struct __Internalc__S_DependentValueFields____S_IndependentFields__I
-{
-    [FieldOffset(0)]
-    internal global::CSharp.IndependentFields.__Internal field;
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
+    public unsafe partial struct __Internalc__S_DependentValueFields____S_IndependentFields__I
+    {
+        [FieldOffset(0)]
+        internal global::CSharp.IndependentFields.__Internal field;
 
-    [FieldOffset(8)]
-    internal global::CSharp.DependentValueFields._.__Internal _;
-}
+        [FieldOffset(8)]
+        internal global::CSharp.DependentValueFields._.__Internal _;
+    }
 
-[StructLayout(LayoutKind.Explicit, Size = 8)]
-public unsafe partial struct __Internalc__S_DependentValueFields____S_T1
-{
-    [FieldOffset(0)]
-    internal global::CSharp.T1.__Internal field;
+    [StructLayout(LayoutKind.Explicit, Size = 8)]
+    public unsafe partial struct __Internalc__S_DependentValueFields____S_T1
+    {
+        [FieldOffset(0)]
+        internal global::CSharp.T1.__Internal field;
 
-    [FieldOffset(4)]
-    internal global::CSharp.DependentValueFields._.__Internal _;
-}
-```
+        [FieldOffset(4)]
+        internal global::CSharp.DependentValueFields._.__Internal _;
+    }
+    ```
 
 2. Generate one generic class with no methods in it and place all specialised methods in extensions - this is similar to the above but it has the advantage of providing a more natural syntax. On the other hand, since only the supported specialisations have extensions, the auto-completion would simply not show any members for unsupported ones. Virtual methods can be simulated too by calling regular protected internal methods in the class. That would be a step away from the real API but it's acceptable because they are at least not public. Unfortunately, the approach also has disadvantages, minor (no properties as extensions may only be methods), major (lack of polymorphism just as in the the first approach) and decisive (impossible to implement interface which is crucial in many cases, such as ``IList`` for ``std::vector`` or ``QList``). The last one caused me to rule this approach out too;
 3. Generate one generic class with each method containing a switch by type arguments - in each switch case the respective native code for the matched specialisation is called. If the user has provided unsupported type arguments, he gets an exception at run-time which explains in detail what happened. It is quite inconvenient to receive no warning about such an issue at compilation time but such a disadvantage is not as big as the ones the other two approaches have so this is my final choice. It would have worked if "where" constraints for generics could specify multiple conditions chained with a logical "or" but this is unfortunately not supported by C# and .NET:
@@ -124,7 +124,7 @@ public IndependentFields()
 }
 ```
 
-## Implementation
+### Implementation
 
 Once I had settled on the way to port them, I started work. For now templates are only supported in the C# generator. There were two major efforts, to make the generator capable of producing the generic syntax and to fix all cases of the various types of members, such as constructors, methods, properties and indexers. There was one problem which unfortunately forced me to partially involve the second automatic approach. I need to explain it with some C++ code:
 
@@ -170,7 +170,7 @@ public unsafe static partial class BasicStringExtensions
 }
 ```
 
-## Remaining work
+### Remaining work
 
 Once I overcame the major problems, work was a matter of running QtSharp and then fixing any invalid generated code as needed. Fortunately, each separate case could be fully tested so there are going to be no regressions. There are two major problems remaining:
 1. Removal of invalid specialised methods from the generated C++ - bodies of templated functions may include method calls, most often operators, involving type arguments. This cannot always work because a type argument might lack the required members. A simple example is a template list class with an method which finds the index of an object by using comparison. This problem can be solved by using the ``clang::Sema`` class and its ``InstantiateFunctionDefinition``. I would like to insert my special thanks to my mentor Joao Matos who had the brilliant idea of me compiling the offending code with my locally compiled Clang copy in order to see the right function in the stack trace. This function reports errors when the passed declaration cannot be compiled. So I can detect such functions early on and ignore then before they reach code generation. It has, however, yet to be done;
@@ -178,7 +178,7 @@ Once I overcame the major problems, work was a matter of running QtSharp and the
 
 Once the issues above are resolved, CppSharp is going to enjoy fully functional support for templates, which means QtSharp and any other binding would get them for free.
 
-# Commits
+## Commits
 
 This is a list of all my commits for the summer:
 

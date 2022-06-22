@@ -460,4 +460,3 @@ Meeting Log
     **<@calvin> **
     ok, thanks everyone
     08:01
-

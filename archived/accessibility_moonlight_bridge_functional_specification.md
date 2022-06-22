@@ -410,5 +410,3 @@ Exceptions
 
 -   GridSplitter: Implements Transform pattern (which is usually accessed in ATK via SetPosition) but Orca (TODO: check this) expects Atk.Value to be implemented instead. The feasibility of altering this in our design will have to be estimated by development.
 -   TODO: Possible exception for Tables and Table-like controls.
-
-

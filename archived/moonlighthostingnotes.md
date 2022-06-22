@@ -174,5 +174,3 @@ Just rough ideas:
     -   QueryString, string or dictionary
     -   Window, IntPtr to PluginInstance-\>window
 -   HtmlElement.SetStyleAttribute() and RemoveStyleAttribute() ; not sure how it is done.
-
-

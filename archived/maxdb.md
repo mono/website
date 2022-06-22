@@ -200,4 +200,3 @@ mcs TestExample.cs -r:System.Data.dll -r:MaxDB.Data.dll
 ``` bash
 mono TestExample.exe
 ```
-

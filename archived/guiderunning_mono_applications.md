@@ -172,4 +172,3 @@ For example the following commands are used to build the CurrencyConverter.exe i
             -r:CurrencyConverter.nib -n:CurrencyConverter -a:CurrencyConverter.exe
 
 The resulting CurrencyConverter.app is just another Mac OS X application as far as the Finder is concerned, and can be opened from Finder, or launched from Terminal using the open -a CurrencyConverter command.
-

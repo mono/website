@@ -101,5 +101,3 @@ Guidelines
 ----------
 
 -   It is recommended to create all the connected mode classes through Provider Factory classes. So that, if your test case is generic enough, it can be moved to ProviderIndependant tests without much code changes. Wherever possible, use IDb\* interfaces.
-
-

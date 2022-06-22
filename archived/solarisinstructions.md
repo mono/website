@@ -52,4 +52,3 @@ No, but expect to see a Solaris 10 x86 package in the future.
 **Why does my program crash saying it can't get access to a random source?**
 
 You need to have patch #112438 installed on Solaris 8. This enables the /dev/random and /dev/urandom devices.
-

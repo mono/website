@@ -8,22 +8,20 @@ If you have more than one Mono installation (for example to keep multiple versio
 
 **It is strongly advised not to install Mono from source in /usr as it might conflict with Mono as installed by the Mono package.**
 
-Building Mono
-=============
+## Building Mono
 
 Building Mono is a very simple process as Mono has very few external dependencies.
 
 On some distribution you will need to install some development tools which are not installed by default.
 
-Compiler/Build dependencies
----------------------------
+### Compiler/Build dependencies
 
 Mono depends on GCC 4.8+ or Clang 3.3+ (it needs to support C++11) and on CMake 2.8.10.
 
 The table below shows a (not necessarily complete list) of the compiler versions in various distributions. Strikethrough means it doesn't satisfy the version needed.
 
 | Distribution | GCC         | Clang   | CMake      |
-| ------------ | ----------- | ------- | ---------- |
+|--------------|-------------|---------|------------|
 | Debian 7     | ~~4.7/4.6~~ | ~~3.0~~ | ~~2.8.9~~  |
 | Debian 8     | 4.9         | 3.5     | 2.8.11     |
 | Raspbian 8   | 4.9 (?)     | 3.5 (?) | 2.8.11 (?) |
@@ -33,20 +31,19 @@ The table below shows a (not necessarily complete list) of the compiler versions
 | CentOS 6     | ~~4.4~~     | 3.4     | 2.8.12     |
 | CentOS 7     | 4.8         | 3.5 (?) | 2.8.12     |
 
-Debian based distributions
---------------------------
+### Debian based distributions
 
-On Debian based distribution you should guarantee that some packages are installed in order for the compilation process to succeed.<br/>
+On Debian based distribution you should guarantee that some packages are installed in order for the compilation process to succeed.
+
 This can be done easily by using *apt-get*:
 
-```bash
+``` bash
   $ sudo apt-get install git autoconf libtool automake build-essential gettext cmake python3 curl
 ```
 
 Note: if you are using Ubuntu 15.04/Debian 8 or later, you also need to install the `libtool-bin` package. Without it, you will get the following error: `**Error**: You must have 'libtool' installed to compile Mono.`
 
-Building Mono from a Release Package
-------------------------------------
+### Building Mono from a Release Package
 
 Mono releases are distributed as .tar.xz packages from the [Mono web site](https://download.mono-project.com/sources/mono/). Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 
@@ -62,8 +59,7 @@ make install
 
 By the end of this process, you will have Mono installed on your PREFIX directory.
 
-Building Mono From a Git Source Code Checkout
----------------------------------------------
+### Building Mono From a Git Source Code Checkout
 
 To build Mono from a Git Source Code checkout, you will want to have the official Mono installed on the system, as the build requires a working C# compiler to run. Once you do this, run the following commands, remember to replace PREFIX with your installation prefix that you selected:
 
@@ -78,8 +74,7 @@ make install
 
 Note that you have to have git installed on your distribution.
 
-One Stop Shop Build Script (Debian)
------------------------------------
+### One Stop Shop Build Script (Debian)
 
 If you are on a Debian system (Debian/Ubuntu) and you just want to install Mono without thinking too much, just cut and paste the following script, and enter your root password when requested:
 

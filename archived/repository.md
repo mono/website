@@ -31,5 +31,3 @@ Things other people think should be implemented
 -----------------------------------------------
 
 -   you put things here
-
-

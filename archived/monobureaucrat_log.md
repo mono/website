@@ -57,5 +57,3 @@ Mono:Bureaucrat log
 -   03:40, 24 Feb 2005 WikiSysop Rights for user "Miguel" set "+bureaucrat "
 -   03:39, 24 Feb 2005 WikiSysop Rights for user "NatFriedman" set "+sysop"
 -   03:30, 24 Feb 2005 WikiSysop Rights for user "Miguel" set "+sysop"
-
-

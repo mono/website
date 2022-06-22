@@ -16,8 +16,7 @@ Notice that Mono does not currently support the mixed-mode versions (there is no
 
 The following document describes the ways to produce platform independent pure CIL code using Microsoft compilers.
 
-The Compilers
-=============
+## The Compilers
 
 Currently only Microsoft ships compilers for C++ that target the CIL, so this document will focus on that, at the end we discuss projects to create free C++ compilers that target the CIL.
 
@@ -30,8 +29,7 @@ Both compilers produce CIL images, but the older compiler generated code that wa
 
 The new compiler has vastly improved this situation and supports a number of command line switches to choose the kind of CIL code produced.
 
-Code Generation
----------------
+### Code Generation
 
 Although /clr:pure generates 100% pure valid IL code, it will add CRT DLL references using P/Invoke that will not run under Mono because Mono hasn't got a compatible CRT DLL. Furthermore you even can't use MS CRT DLLs with Mono because managed objects are passed using P/Invoke to CRT DLL and it is not supported by the Mono runtime. In addition P/Invoke calls to kernel32.dll are added as well to the assembly.
 
@@ -69,8 +67,7 @@ After these things you have to be able to run your /clr:pure assembly on Mono. N
 
 If you are using Managed C++ see [Producing Verifiable Components with Managed Extensions for C++](http://msdn.microsoft.com/en-us/library/ms384352.aspx) on MSDN.
 
-Efforts
-=======
+## Efforts
 
 Through Google's Summer of Code funding work has been done to modify GCC to produce CIL code. When this code is complete it will be possible to have any of the GCC languages produce code that will run on Mono's VM.
 
@@ -89,4 +86,3 @@ Once this stage is done, there are two extra stages that are fairly complex:
 Each one of these three tasks are probably six months of work each.
 
 Given the complexity of C++ this is really the only choice, implementing a new C++ compiler just to support the CIL is not realistic.
-

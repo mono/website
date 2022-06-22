@@ -4,13 +4,11 @@ redirect_from:
   - /GtkSharpNotificationIcon/
 ---
 
-What is the Status Notification Area?
-=====================================
+## What is the Status Notification Area?
 
 [![TrayIcon.png](/archived/images/8/8c/TrayIcon.png)](/archived/images/8/8c/TrayIcon.png) [![TrayIconPopMenu.png](/archived/images/3/33/TrayIconPopMenu.png)](/archived/images/3/33/TrayIconPopMenu.png) Using the status notification area applications can notify the user of non-critical events (for example, arrival of new email, or a chat 'buddy' having logged on), and expose the status of active system processes (for example, a printing document, or a laptop's battery charging). Keep in mind that the utility of the notification area decreases rapidly when more than about four icons are always present. For this reason, icons that appear only temporarily in response to events are preferable.
 
-Let's write some code
-=====================
+## Let's write some code
 
 The Sample here creates an empty GTK-Window with an tray icon. The Application can be hidden, displayed and closed with the help of the tray icon.
 
@@ -81,8 +79,7 @@ mono TrayIcon.exe
 
 but please note that there must be an file named "theIcon.png" present in the folder of the application.
 
-References
-==========
+## References
 
 -   [Todd Berman's Homepage](http://off.net/~tberman/diary/)
 -   [System Tray Protocol](http://www.freedesktop.org/wiki/Standards_2fsystemtray_2dspec)
@@ -90,4 +87,3 @@ References
 -   [Use of Notification Area in GNOME](http://developer.gnome.org/projects/gup/hig/2.0/desktop-notification-area.html)
 
 And special thanks to Suco for [the original code sample](http://blog.wikifotos.org/2008/02/14/mono-c-y-los-iconos-en-la-bandeja-del-sistema/).
-

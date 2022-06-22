@@ -80,11 +80,11 @@ Tests are specified in an XML file called a drtlist. The drtlist should contain 
 |remote
 |Some tests may reside on remote file systems / on the web. This flag (valid value is &#39;True&#39;) tells the test harness that it shouldn&#39;t try to modify the test to make it run correctly, nor try to resolve any paths, prepend current directory, etc, which would otherwise be done.
 |}
- 
+
 == How to run tests ==
- 
+
 If you are running the test harness from the moon/test directory there are a couple of make targets you can use:
- 
+
 {| border=&quot;1&quot;
 |- valign=&quot;top&quot;
 |make run-tests
@@ -105,9 +105,9 @@ If you are running the test harness from the moon/test directory there are a cou
 |make run-gdb
 |This will run the drtlist specified in the environment variable DRTLIST with gdb, otherwise it&#39;ll work as &#39;make run-tests&#39;
 |}
- 
+
 If you are running the test harness outside of the make targets, these options are available to you:
- 
+
 {| border=&quot;1&quot;
 |-
 | -v, -verbose
@@ -150,60 +150,60 @@ drtlist.
 | -generate-master-files
 |Generate master files to be used with the compare-to-moon option.
 |}
- 
+
 There are two ways of running a subset of the drtlist.xml tests.  You can use categories or specify the tests you would like to use:
- 
+
 === Categories ===
- 
+
 Test categories are specified in the drtlist.xml with the categories=&quot;&lt;cat one&gt;,&lt;cat two&gt;,&lt;cat three&gt;,....&quot; attribute.  If a test was both a text test and a brushes test, it&#39;s XML would look like this:
- 
+
      &lt;Test id=&quot;MyTest&quot;
           inputFile=&quot;MyTest.xaml&quot;
           masterFile=&quot;MyTestMaster.png&quot;
           categories=&quot;text,brushes&quot;
       /&gt;
- 
+
 Category names are case sensitive strings. A new category can be created by adding it&#39;s name to the categories attribute. Currently these categories are used in our tests:
- 
+
 * text
 * animation
 * brushes
 * parser
- 
+
 There are two ways of running category tests.  If you are using the make targets mentioned above, the easiest way is to specify the categories with the MOON_DRT_CATEGORIES=&lt;cat name&gt;,&lt;cat name&gt;,... environment variable.  To run the text and animation tests using this variable your command line would look like this:
- 
+
     $ MOON_DRT_CATEGORIES=text,animation make run-tests
- 
+
 If you are not using the make targets you can specify the categories you would like to run on the command line with the -categories flag:
- 
+
     $ mono test-runner.exe -categories=text,animation
- 
+
 You can also exclude categories, if you want to run all tests except text and brushes tests, you could do:
- 
+
     $ MOON_DRT_EXCLUDE_CATEGORIES=text,brushes make run-tests
- 
+
 === Specifying tests ===
- 
+
 If you would like to limit a test run to just a single test, or a small set of tests, that aren&#39;t in the same category, you can specify the tests to run.  If you are using the make targets listed above, the easiest way to specify a single or set of tests to run is with the MOON_DRT_FIXTURE=&lt;test id&gt; and MOON_DRT_FIXTURES=&lt;test id&gt;,&lt;test id&gt;,&lt;test id&gt;,... environment variables.  To run tests 2 and 5 using this method your command line would look like this:
- 
+
      $ MOON_DRT_FIXTURES=2,5 make run-tests
- 
+
 If you aren&#39;t using the make targets you can specify the tests on the command line with the -fixture or -fixtures flags:
- 
+
      $ mono test-runner.exe -fixtures=2,5
- 
+
 Id&#39;s are specified in the drtlist.xml with the id attribute:
- 
+
      &lt;Test id=&quot;2&quot;
           inputFile=&quot;MyTest.xaml&quot;
           masterFile=&quot;MyTestMaster.png&quot;
           categories=&quot;text,brushes&quot;
      /&gt;
- 
+
 You can also specify a different drtlist.xml, this will run the drtlist in media/video/drtlist.xml:
- 
+
      $ DRTLIST=media/video/drtlist.xml make run-drtlist
- 
+
 === Using Xvfb ===
 When running the test suite, you may be interested in using Xvfb. Xvfb is a virtual buffer that can be used for screen captures instead of your screen. This allows you to continue working while the test suite is running in the back ground.
 Setup the virtual buffer like so:
@@ -214,11 +214,11 @@ Then in another terminal, run the test suite and redirect the display to the vir
 &lt;pre&gt;
      $ DISPLAY=:3 make run-tests
 &lt;/pre&gt;
- 
+
 == While the tests are running ==
- 
+
 Depending on the verbosity level and the reporting options, test results will print out on the console as they are completed.  The following legend is for the default verbose level and reporting options:
- 
+
 {| border=&quot;1&quot;
 |-
 |.
@@ -233,27 +233,26 @@ Depending on the verbosity level and the reporting options, test results will pr
 |I
 |The test was ignored, either because the master file couldn&#39;t be found, or because it was marked as ignore in the drtlist.
 |}
- 
+
 If you would like to abort a test run, press the Escape key while a test is running.  This will signal the test harness to stop the run once this test has completed.  If you press the escape key again, it will cause the currently running test to abort.
- 
+
 == When the test has finished ==
- 
+
 Generally any test will shutdown the browser when it has finished (the test harness waits for the browser to shut down before executing the next test). However, there may be times when you don&#39;t want the browser to shut down when the test has finished (to inspect state, you have other tabs open, etc). In this case you can use the MOONLIGHT_SHOCKER_DONT_DIE flag, which will prevent the browser from shutting down:
- 
+
     $ MOONLIGHT_SHOCKER_DONT_DIE=1 make run-tests
- 
+
 == Reading test output ==
- 
+
 By default the tests will output a summary of the test run on stdout. The verbosity level will effect the amount of data in the summary.  The verbosity levels are:
- 
-#Show data from the test plugin
-#Show data printed to stderr during the test run
-#Show data printed to stdout during the test run
- 
+
+# Show data from the test plugin
+
+# Show data printed to stderr during the test run
+
+# Show data printed to stdout during the test run
+
 If the -html-report option is used (our make targets use this option) there will also be an html_report/ directory created with an html report and all of the master files, result files and image comparison files.   Multiple image capture which are normally saved as tiffs will be converted into a png mosaic of all of the layers of the tiff.</code></pre></td>
 </tr>
 </tbody>
 </table>
-
-
-

@@ -60,4 +60,3 @@ Team
 ====
 
 Description of some members of the Team Mono Team.
-

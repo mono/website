@@ -229,4 +229,3 @@ ValueTests's test cases are defined in the "Tests: Pattern Specific" code region
 Then when we review the "SetValue_SetToRandomValue" method used by this test case, we'll find that each check/step in the description turns out an invocation to the corresponding test step method.
 
 And another thing: in the last step of **TestSetValue116**, actually whether the PropertyChangeEvent event is fired **is not** checked at all (EventFired.Undetermined is passed to the TSC_VerifyPropertyChangedListener method), since the UIAutomation spec didn't mention whether an PropertyChangeEvent shall be fired if the **Value** is modified by calling ValuePattern.SetValue. However, if the **Value** is modified by non-UIA methods, such as by sending native mouse/keyboard messages or by manually inputs, we should verify that a PropertyChangeEvent is fired.
-

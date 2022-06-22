@@ -32,5 +32,3 @@ There are various IRC clients available, here are some recommendations:
 -   MacOS X: [Colloquy](http://www.colloquy.info)
 -   Windows: [mIRC](http://www.mirc.com)
 -   Web Interface (via Mibbit): [http://go-mono.com/monotools/Chat.aspx](http://go-mono.com/monotools/Chat.aspx)
-
-

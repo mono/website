@@ -88,5 +88,3 @@ Be aware **ALL** children are added to the end of the navigation list, so the na
 -   Item0, Item1, VScrollBar, HScrollBar
 -   Item0, Item1, HScrollBar
 -   ...
-
-

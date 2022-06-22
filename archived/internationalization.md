@@ -544,4 +544,3 @@ References
 ----------
 
 [GNOME's Localization guidelines for developers](http://developer.gnome.org/doc/tutorials/gnome-i18n/developer.html)
-

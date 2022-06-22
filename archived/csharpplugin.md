@@ -1088,4 +1088,3 @@ All I can say is that it seems to work for now in that errors and warnings are r
 A LOT more could/should be done in this area.
 
 <sup>11</sup>Some of the better known regular expression ‘operators’ didn’t seem to work with this RE engine.
-

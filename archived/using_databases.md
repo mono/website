@@ -46,5 +46,3 @@ The following Mono tools are useful when working with ADO.NET:
     -   **XSD to DataSet**- used to generate DataSet classes from an XSD schema file. The DataSet classes created can then be used with XML data.
     -   **XSD to Classes**- used to generate classes from an XSD schema file. The classes created can be used with System.XML.Serialization.XMLSerializer to read and write XML code that follows the schema.
     -   **Classes to XSD**- used to generate an XML schema from type(s) in a assembly file. The XML schema created by the tool defines the XML format used by System.XML.Serialization.XMLSerializer.
-
-

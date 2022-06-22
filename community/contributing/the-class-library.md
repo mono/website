@@ -50,7 +50,7 @@ Coding conventions
 See our [Coding Guidelines](/community/contributing/coding-guidelines/) document for details on the coding conventions.
 
 Missing implementation bits
-===========================
+---------------------------
 
 If you implement a class and you are missing implementation bits, please use the MonoTODO attribute and a description of what is missing to be implemented, for example:
 
@@ -79,4 +79,3 @@ Frequently asked questions about the class library:
 I am writing a new class that overrides one of the system classes, and I am getting a 1595 warning from the compiler. Should we use a different namespace?
 
 There is a quick solution to the problem, you can pass the command line argument /nowarn:1595 and this will effectively let you use your implementation of the code, while overriding the ones from the system assemblies
-

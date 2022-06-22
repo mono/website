@@ -77,6 +77,3 @@ Microsoft has issued a [patent promise for Mono](https://github.com/mono/mono/bl
      (such as hardware, operating systems, or applications that run on
      Mono), (y) only as a consequence of modification of Mono, or (z) only
      by the combination of Mono with third party code.
-
-
-

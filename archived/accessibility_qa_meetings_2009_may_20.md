@@ -194,4 +194,3 @@ BEGIN LOGGING AT Wed May 20 22:17:02 2009
  May 20 23:38:19 \* ray has quit (Leaving)
  May 20 23:53:17 \* ngao|brb is now known as ngao
  May 21 00:01:54 \* ngao has quit (Leaving)
-

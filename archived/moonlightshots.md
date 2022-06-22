@@ -141,4 +141,3 @@ This was the first screenshot, video is rotated, but as you can see the video wa
 [![Screenshot3.png](/archived/images/7/70/Screenshot3.png)](/archived/images/7/70/Screenshot3.png)
 
 May 22nd, 2007
-

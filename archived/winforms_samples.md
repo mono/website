@@ -58,5 +58,3 @@ Samples sites
 -------------
 
 -   [Windows Forms Samples on WindowsClient.net](http://windowsclient.net/downloads/folders/applications/default.aspx) - Excellent collection of small, task-oriented samples.
-
-

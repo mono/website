@@ -6,11 +6,9 @@ redirect_from:
 
 Monodoc is a set of libraries and applications for viewing and editing Mono class library documentation. Monodoc is part of the [Mono Documentation Project](/docs/).
 
-Viewing The Documentation
-=========================
+## Viewing The Documentation
 
-The Gtk# Documentation Browser
--------------------------------
+### The Gtk# Documentation Browser
 
 The doc browser is part of the mono-tools package, avaliable from the [Downloads](/download/stable/) page.
 
@@ -34,13 +32,11 @@ Depending on the libraries installed on your system it can show additionally:
 
 Of course, more documentation sources can be added from installed libraries or from your own generated documentation as explained in [Generating Documentation](/docs/tools+libraries/tools/monodoc/generating-documentation/). Also, from inside the browser, you can [contribute](/docs/tools+libraries/tools/monodoc/contributing/) to the documentation of the Mono project.
 
-Online Documentation
---------------------
+### Online Documentation
 
-You can view the complete documentation library online (only API documentation) at [http://docs.go-mono.com/](http://docs.go-mono.com/).
+You can view the complete documentation library online (only API documentation) at [<http://docs.go-mono.com/>](http://docs.go-mono.com/).
 
-Mod (Command-Line Documentation Viewer)
----------------------------------------
+### Mod (Command-Line Documentation Viewer)
 
 To browse API documentation from a shell terminal, you can use the \`mod' command. Use it to lookup types, or see the members of a type. You get the same information as the Monodoc graphical application, but displayed in a text-only web browser.
 
@@ -71,14 +67,11 @@ To get one method, copy-and-paste the URL from the output in the above:
 mod 'M:System.Collections.ArrayList.ToArray(System.Type)'
 ```
 
-Creating Documentation, Contributing
-====================================
+## Creating Documentation, Contributing
 
 -   For information on how to document your own class libraries using monodoc, see [Generating Documentation](/docs/tools+libraries/tools/monodoc/generating-documentation/).
 -   If you would like to contribute to the mono class library documentation (and we would love it if you did!), see [Monodoc Contributing](/docs/tools+libraries/tools/monodoc/contributing/).
 
-My Documentation in Monodoc
-===========================
+## My Documentation in Monodoc
 
 See the [assembler](/docs/tools+libraries/tools/mdassembler/) page for a description how to add your documentation to monodoc permanently.
-

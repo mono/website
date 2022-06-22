@@ -30,4 +30,3 @@ Language Shootout
 =================
 
 The Language Shoutout compares a set of simple benchmarks with implementations on different languages and frameworks, it is available [here](http://shootout.alioth.debian.org/debian/csharp.php)
-

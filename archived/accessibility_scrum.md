@@ -66,4 +66,3 @@ Similar to the iterations that the team currently creates, Scrum iterations are 
 The Scrum Master traditionally assigns out enough work to keep each team member busy during the iteration. For our iterations, we'll assume that (on average) team members get 6 hours out of 8 to work on their tasks. This will give us 60 hours per person per iteration.
 
 During the course of the iteration, the progress is traditionally tracked using a [Burn-down](http://en.wikipedia.org/wiki/Burn_down_chart) chart which has time on the X axis, and number of hours remaining on the Y axis.
-

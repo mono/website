@@ -38,7 +38,7 @@ Current Release
 Moonlight 2
 -----------
 
-** Mooonlight 2 Final**
+**Mooonlight 2 Final**
 
 -   Silverlight 2 compatible engine.
     -   Deep Zoom
@@ -60,7 +60,7 @@ Upcoming Releases
 Moonlight 3
 -----------
 
-** Mooonlight 3 Pre-Alpha**
+**Mooonlight 3 Pre-Alpha**
 
 -   Silverlight 3 compatible engine.
     -   3D graphics
@@ -76,7 +76,7 @@ Most feature implemented, but will ship in Moonlight 4
 Moonlight 4
 -----------
 
-** Mooonlight 4 Planning**
+**Mooonlight 4 Planning**
 
 -   Silverlight 4 compatible engine.
     -   Webcam and microphone support
@@ -96,7 +96,7 @@ Past Releases
 Moonlight 1.0
 -------------
 
-** Mooonlight 1.0 Final**
+**Mooonlight 1.0 Final**
 
 This will be the first Moonlight release that uses Microsoft's Media Pack 1.0 for playing back video and audio.
 
@@ -110,6 +110,3 @@ This will be the first Moonlight release that uses Microsoft's Media Pack 1.0 fo
 |:------|:---|
 |Beta|December 2, 2008|
 |Final|February 9, 2009|
-
-
-

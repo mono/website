@@ -9,4 +9,3 @@ Talk:I18N with Mono.Unix
 ========================
 
 Removed content since this was a precursor to [Internationalization](/Internationalization).--Ghe22 21:23, 9 Aug 2006 (EDT)
-

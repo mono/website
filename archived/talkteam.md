@@ -63,6 +63,3 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Alejandro Sànchez Acosta'
 </tr>
 </tbody>
 </table>
-
-
-

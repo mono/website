@@ -80,4 +80,3 @@ For commands that have no corresponding tasks available and you don't want to wr
           <Exec Command="foo.exe arg1 arg2" Condition=" '$(OS)' == 'Windows_NT' " />
  </Target>
 ```
-

@@ -114,5 +114,3 @@ If you are a maintainer and you are not listed here, or the areas listed under y
 
 -   AOT compiler
 -   Runtime
-
-

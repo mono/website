@@ -96,5 +96,3 @@ ImageBrowser and ImageViewer
 ----------------------------
 
 -   [Image tools](http://primates.ximian.com/~duncan/Mono)
-
-

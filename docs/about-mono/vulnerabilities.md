@@ -4,20 +4,17 @@ redirect_from:
   - /Vulnerabilities/
 ---
 
-Reporting vulnerabilities
-=========================
+## Reporting vulnerabilities
 
 Please report security vulnerabilities by sending email to secure@microsoft.com
 
-Known vulnerabilities
-=====================
+## Known vulnerabilities
 
 Some versions of Mono had security vulnerabilities found after their
 public release. This page contains a list of the known
 vulnerabilities, starting with the most recent one.
 
-string-to-double parser bug
----------------------------
+### string-to-double parser bug
 
 CVE: [CVE-2009-0689](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0689)
 
@@ -55,8 +52,7 @@ Credits:
 - Peter McLarnan <Peter.McLarnan@nccgroup.trust>
 - Andy Schmitz <andy.schmitz@nccgroup.trust>
 
-TLS bugs
---------
+### TLS bugs
 
 CVE: [CVE-2015-2318](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2318), [CVE-2015-2319](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2319), [CVE-2015-2320](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-2320)
 
@@ -93,8 +89,7 @@ Credits:
 - Karthikeyan Bhargavan <karthikeyan.bhargavan@inria.fr>
 - [miTLS Team at INRIA](http://www.mitls.org/)
 
-Moonlight RuntimeHelpers.InitializeArray on non-primitive value types
----------------------------------------------------------------------
+### Moonlight RuntimeHelpers.InitializeArray on non-primitive value types
 
 CVE: [CVE-2011-0989](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0989)
 
@@ -121,8 +116,7 @@ Credits:
 
 -   Jeroen Frijters, [http://www.ikvm.net/](http://www.ikvm.net/)
 
-Moonlight Race in Array.Copy "FastCopy" Internal Call
------------------------------------------------------
+### Moonlight Race in Array.Copy "FastCopy" Internal Call
 
 CVE: [CVE-2011-0990](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0990)
 
@@ -150,8 +144,7 @@ Credits:
 
 -   Jeroen Frijters, [http://www.ikvm.net/](http://www.ikvm.net/)
 
-Moonlight DynamicMethod Resurrection
-------------------------------------
+### Moonlight DynamicMethod Resurrection
 
 CVE: [CVE-CVE-2011-0991](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0991)
 
@@ -176,8 +169,7 @@ Credits:
 
 -   Jeroen Frijters, [http://www.ikvm.net/](http://www.ikvm.net/)
 
-Moonlight Improper Thread Finalization
---------------------------------------
+### Moonlight Improper Thread Finalization
 
 CVE: [CVE-2011-0992](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0992)
 
@@ -198,8 +190,7 @@ Notes:
 -   Moonlight 1.x does not execute managed code (i.e. does not include Mono) so it is not affected by this vulnerability.
 -   The vulnerability is located in mono source code but can only be exploited (by untrusted applications) when used by Moonlight.
 
-XSP/mod_mono source code disclosure
-------------------------------------
+### XSP/mod_mono source code disclosure
 
 CVE: [CVE-2010-4225](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4225)
 
@@ -213,8 +204,7 @@ Version fixed:
 
 -   Mono / XSP / mod_mono 2.8.2
 
-Moonlight Generic Constraints Bypass Vulnerability
---------------------------------------------------
+### Moonlight Generic Constraints Bypass Vulnerability
 
 CVE: [CVE-2010-4254](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4254)
 
@@ -235,8 +225,7 @@ Notes:
 -   Moonlight 1.x does not execute managed code (i.e. does not include Mono) so it is not affected by this vulnerability.
 -   The bug (and fix) is in mono source code but can only be exploited (by untrusted applications) when used by Moonlight.
 
-mono-debugger Insecure Use of LD_LIBRARY_PATH
------------------------------------------------
+### mono-debugger Insecure Use of LD_LIBRARY_PATH
 
 CVE: [CVE-2010-3369](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3369)
 
@@ -250,8 +239,7 @@ Version fixed:
 
 -   mono-debugger 2.8.1
 
-Mono Runtime Insecure Native Library Loading
---------------------------------------------
+### Mono Runtime Insecure Native Library Loading
 
 CVE: [CVE-2010-4159](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4159)
 
@@ -267,8 +255,7 @@ Version fixed:
 
 Note: this does not affect loading managed assemblies, only native libraries.
 
-ASP.NET Padding Oracle
-----------------------
+### ASP.NET Padding Oracle
 
 CVE: [CVE-2010-3332](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3332)
 
@@ -286,8 +273,7 @@ References:
 
 -   [PaddingOraclesEverywhereEkoparty2010.pdf](http://netifera.com/research/poet//PaddingOraclesEverywhereEkoparty2010.pdf)
 
-Libgdiplus Integer Overflow Vulnerabilities
--------------------------------------------
+### Libgdiplus Integer Overflow Vulnerabilities
 
 CVE: [CVE-2010-1526](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1526)
 
@@ -304,8 +290,7 @@ Notes:
 -   Possible integer overflows, when opening untrusted BMP, JPEG or TIFF files, were fixed in order to avoid potential heap-based buffer overflow.
 -   Credits: Stefan Cornelius, Secunia Research
 
-ASP.NET View State Cross-Site Scripting
----------------------------------------
+### ASP.NET View State Cross-Site Scripting
 
 CVE: [CVE-2010-1459](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-1459)
 
@@ -322,8 +307,7 @@ Notes:
 -   Mono's ASP.NET EnableViewStateMac default was FALSE (like ASP.NET 1.0) and configuration bugs made it impossible to set it to TRUE.
 -   Credits: Web Security Research Group (WSRG) of Hewlett Packard (HP)
 
-XML signature HMAC truncation authentication bypass
----------------------------------------------------
+### XML signature HMAC truncation authentication bypass
 
 CVE: [CVE-2009-0217](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-0217)
 
@@ -340,8 +324,7 @@ Notes:
 -   [US-CERT Vulnerability Notes](http://www.kb.cert.org/vuls/id/466161)
 -   W3C XML Digital Signature [Errata](http://www.w3.org/2008/06/xmldsigcore-errata.html#e03), [Q&A](http://www.w3.org/QA/2009/07/hmac_truncation_in_xml_signatu.html)
 
-Mono System.Web Header Injection Attack
----------------------------------------
+### Mono System.Web Header Injection Attack
 
 CVE: [CVE-2008-3906](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3906)
 
@@ -353,8 +336,7 @@ Version fixed:
 
 -   Mono 2.0
 
-Mono ASP.NET Cross-Site Scripting
----------------------------------
+### Mono ASP.NET Cross-Site Scripting
 
 CVE: [CVE-2008-3422](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3422)
 
@@ -366,8 +348,7 @@ Version fixed:
 
 -   Mono 2.0
 
-BigInteger unsafe code overflow
--------------------------------
+### BigInteger unsafe code overflow
 
 CVE: [CVE-2007-5197](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5197)
 
@@ -383,8 +364,7 @@ Notes:
 
 -   beware unsafe code
 
-XSP source code disclosure [Windows]
-------------------------------------
+### XSP source code disclosure [Windows]
 
 CVE: [CVE-2007-5473](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-5473)
 
@@ -400,8 +380,7 @@ Notes:
 
 -   Mono's System.Web.dll assembly didn't consider, before version 1.2.5.2, some Win32-specific behavior affecting filenames ending with spaces or dots. Win32 operating systems ignores the trailing characters, even if the file-system supports them, and can access the similarly named files without reporting any error. This caused XSP to return ASP.NET source code, instead of rendered content, when executed with Mono under Windows
 
-XSP/mod_mono source code disclosure 2
---------------------------------------
+### XSP/mod_mono source code disclosure 2
 
 CVE: [CVE-2006-6104](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-6104)
 
@@ -423,8 +402,7 @@ Workaround
 
 -   Use Apache/[Mod_mono](/docs/web/mod_mono/) configured with **AddHander**.
 
-Local privilege escalation via System.Xml.Serialization
--------------------------------------------------------
+### Local privilege escalation via System.Xml.Serialization
 
 CVE: [CVE-2006-5072](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5072)
 
@@ -441,8 +419,7 @@ Workaround
 
 -   Code generation for serialization can be turned off using **export MONO_XMLSERIALIZER_THS=no** prior to executing Mono applications
 
-XSP/mod_mono directory traversal
----------------------------------
+### XSP/mod_mono directory traversal
 
 CVE: [CVE-2006-2658](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-2658)
 
@@ -460,8 +437,7 @@ Notes
 
 -   Yes the affected/fixed products are confusing. The bug was in XSP but only exposed when using mod_mono. You should update both packages to avoid compatibility issues.
 
-Mono ASP.NET Unicode Conversion Cross-Site Scripting
-----------------------------------------------------
+### Mono ASP.NET Unicode Conversion Cross-Site Scripting
 
 CVE: [CVE-2005-0509](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-0509)
 

@@ -123,4 +123,3 @@ namespace MonoTouch.Example.Binding {
     }
 }
 ```
-

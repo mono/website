@@ -112,4 +112,3 @@ To see which methods are currently missing from the git version of Mono, see the
 Compatibility.
 
 Although it is possible to run simple Windows.Forms applications with the Gtk#-based backend of Windows.Forms, it is very unlikely that the implementation will ever implement everything needed for full compatibility with Windows.Forms. The reason is that Windows.Forms is not a complete toolkit, and to work around this problem some of the underlying Win32 foundation is exposed to the programmer in the form of exposing the Windows message handler (WndProc). Any control can override this method. Also developers often P/Invoke into Win32 to get to functionality that was not wrapped. To achieve full compatibility, we would have to emulate this, and it would take too long. For more details see the [winforms page](/docs/gui/winforms/).
-

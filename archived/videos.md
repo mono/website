@@ -88,5 +88,3 @@ Beagle Demos
 [Demo:](http://www.nat.org/demos/beagle-4.html) We write a sample program that uses the Beagle APIs to perform a search over D-BUS. 2 minutes 31 seconds.
 
 [![Beagle-4-thumb.png](/archived/images/c/c8/Beagle-4-thumb.png)](/archived/images/c/c8/Beagle-4-thumb.png)
-
-

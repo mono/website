@@ -156,5 +156,3 @@ Currently, following providers can be accessed through this factory model.
 
 -   System.Data.SqlClient
 -   System.Data.Odbc
-
-

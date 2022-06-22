@@ -17,4 +17,3 @@ public Dialog (System.IntPtr raw)
 ``` csharp
 public Dialog (string title, string buttons)
 ```
-

@@ -15,4 +15,3 @@ This release follows closely on the release of [Prebuild](/Prebuild)'s greatly u
 The object selection example is now functioning correctly as well.
 
 More details than you can shake a stick at reside in the [ChangeLog](http://anonsvn.mono-project.com/source/trunk/gtkglarea-sharp/ChangeLog) file.
-

@@ -22,5 +22,3 @@ This example expands on many of the other examples written so far. Some of the t
 -   The [GtkGL.GLObjectRotationController](/GtkGL.GLObjectRotationController) class
 -   The [GtkGL.Rotation](/GtkGL.Rotation) class
 -   The [GtkGL.RotationUtil](/GtkGL.RotationUtil) class
-
-

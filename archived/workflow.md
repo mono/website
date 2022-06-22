@@ -124,5 +124,3 @@ Other open source workflow projects
 -   [NetBpm](http://www.netbpm.org./) is an open source platform for building, executing and managing workflows
 
 -   [Bossa](http://www.bigbross.com/bossa/) is a workflow engine written in Java
-
-

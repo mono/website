@@ -7,6 +7,3 @@ redirect_from:
 
 User:Rogerio
 ============
-
-
-

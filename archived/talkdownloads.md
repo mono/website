@@ -16,4 +16,3 @@ Problems on the Downloads Page
 -VBGuy (May 20th, 2006)
 
 Wrong, the download works just fine, I tested it from various different sites.
-

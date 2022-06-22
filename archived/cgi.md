@@ -197,4 +197,3 @@ You also will have to create a configuration file (*/home/username/public_html/c
 You also may have to use this to enable CGI script execution.
 
  *Author: Kornél Pál \<[http://www.kornelpal.com/](http://www.kornelpal.com/)\>*
-

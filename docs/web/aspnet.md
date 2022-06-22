@@ -24,8 +24,7 @@ Mono's ASP.NET implementations supports two kinds of applications:
 
 Status and tests for ASP.NET 2.0 are available in our [ASPTests](/archived/asptests) page.
 
-Running ASP.NET applications
-============================
+## Running ASP.NET applications
 
 To run your ASP.NET applications with Mono, you have three classes of options:
 
@@ -39,8 +38,7 @@ For quickly getting started, get familiar with Mono and ASP.NET, XSP is the idea
 
 More advanced users can use the HttpListener and the ASP.NET hosting to create their own hosts for ASP.NET applications.
 
-ASP.NET hosting with Apache
----------------------------
+### ASP.NET hosting with Apache
 
 The [mod_mono](/docs/web/mod_mono/) Apache module is used to run ASP.NET applications within the [Apache](http://httpd.apache.org) web server.
 
@@ -50,13 +48,11 @@ To use this, you must download and install the mod_mono and xsp components of Mo
 
 See the [mod_mono](/docs/web/mod_mono/) page for details on installation and configuration.
 
-ASP.NET hosting with Nginx
---------------------------
+### ASP.NET hosting with Nginx
 
 [Nginx](http://wiki.nginx.org/) is a high-performance HTTP server which support running ASP.NET and ASP.NET MVC web applications through FastCGI protocol. See the [FastCGI Nginx](/FastCGI_Nginx) page for details on installation and configuration.
 
-ASP.NET hosting with XSP
-------------------------
+### ASP.NET hosting with XSP
 
 XSP is a standalone web server written in C# that can be used to run your ASP.NET applications with minimal effort. XSP works under both the Mono and Microsoft runtimes. The code is available from our [download page](/download/stable/) (look for XSP web server) or from the [Git](/community/contributing/source-code-repository/) repository (module name: xsp).
 
@@ -77,24 +73,23 @@ For example, once you install XSP, you can try some samples like this:
 
 You can now browse to <http://localhost:8080> and see various sample programs
 
-### Configuration
+#### Configuration
 
 Applications can be configured through the web.config file, the full documentation is available from [MSDN](http://msdn2.microsoft.com/en-us/library/b5ysx397.aspx), and also a Mono-specific version is available on this site [here](/archived/config_systemweb).
 
 Additionally, you can configure Mono-specific ASP.NET settings (to have applications that behave differently depending on the operating system they are deployed in) using the [ASP.NET Settings Mapping](/archived/aspnet_settings_mapping) engine.
 
-### Other extensions
+#### Other extensions
 
 Check out [ASP.NET Modules](/archived/aspnet_modules) for details on how to support deflate/gzip encodings and authentication.
 
-Debugging
----------
+### Debugging
 
 By default xsp and xsp2 run in Release mode, which means that debugging line-number information will not be available in stack traces when errors occur.
 
 To obtain line numbers in stack traces you need to do two things:
 
-1. Enable Debug code generation in your page. 2. Run Mono with the --debug command line option.
+1.  Enable Debug code generation in your page. 2. Run Mono with the --debug command line option.
 
 You must enable debug code generation in your page using the **Debug="true"** in the top of your page, or setting the compilation flag in Web.config ([compilation option](/archived/config/#compilation)).
 
@@ -110,29 +105,23 @@ Hit Return to stop the server.
 
 To do the same with the Apache mod_mono module, use the **MonoDebug true** directive in your apache configuration file.
 
-Supported Versions
-==================
+## Supported Versions
 
 Mono supports ASP.NET 2.0, ASP.NET AJAX and a handful of 3.5 controls.
 
-Limitations
------------
+### Limitations
 
 Mono's ASP.NET does not implement the following features:
 
 -   Precompiled updatable web sites.
 -   WebParts APIs.
 
-Work in Progress
-================
+## Work in Progress
 
-Git access
-----------
+### Git access
 
 Users interested in the latest version of mod_mono and xsp can retrieve these from our public [Git](/community/contributing/source-code-repository/) repository. The module names are **mod_mono** and **xsp** respectively. You will also need to check out the **mcs** module as the System.Web classes are in mcs/class/System.Web.
 
-Designer
---------
+### Designer
 
 There is work in progress on an [ASP.NET Designer](/archived/aspnet_visual_designer) the designer will eventually be integrated into the [MonoDevelop IDE](/docs/getting-started/development-environments/).
-

@@ -79,4 +79,3 @@ Much of the original .NET 1.1 specification has been implemented in Mono. Most w
 Other technologies, such as ASP.NET, Database Access, and Gtk# are stable and completed. They are described in [Using Mono](/Use).
 
 Developers might be interested in the [various branches](/Branches) used in Mono development.
-

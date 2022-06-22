@@ -161,5 +161,3 @@ Types that should be (or actually are) tested include:
     -   with working PositionalParameters, top-level
 -   constructor-less types i.e. with FactoryMethod
 -   type and member attributed by TypeConverter
-
-

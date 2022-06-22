@@ -25,5 +25,3 @@ Gtk+ Issues
 
 -   [#112404](http://bugzilla.gnome.org/show_bug.cgi?id=112404) - Problem with focus when closing modal window
 -   [#164537](http://bugzilla.gnome.org/show_bug.cgi?id=164537) - Non-modal transient dialogs should iconify with parent
-
-

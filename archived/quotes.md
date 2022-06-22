@@ -80,4 +80,3 @@ From a satisfied user on our [mailing list](https://lists.dot.net/archives/publi
 
     As an experiment I ported it to mono and mysql in approximately 20
     hours, and had it running under apache on an ubuntu linux box.
-

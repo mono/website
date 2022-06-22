@@ -15,4 +15,3 @@ Developers are increasingly moving to managed runtime environments such as .NET 
 .NET and its new language, C#, however, offer the performance and appearance of native code. With the Common Language Specification for compilers, code can be mixed freely across languages: Java, C, C#, C++, Python, and so forth. In addition, .NET uses an intermediate compilation mechanism that allows cross-platform deployment of binary applications.
 
 The Mono implementation of the .NET development platform provides a superior development environment for writing Linux applications with unprecedented productivity by allowing developers to write rich clients, web services and server-side applications and deploy them on Linux, Netware, MacOS and Microsoft Windows.
-

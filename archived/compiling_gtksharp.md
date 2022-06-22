@@ -105,5 +105,3 @@ Links & Resources
 -   Gtk# installer for .net from [Downloads](/Downloads)
 
 -   Up to date glib ([http://anonsvn.mono-project.com/viewcvs/\*checkout\*/trunk/release/packaging/defs/mono](http://anonsvn.mono-project.com/viewcvs/*checkout*/trunk/release/packaging/defs/mono)) and gtk ([http://anonsvn.mono-project.com/viewcvs/\*checkout\*/trunk/release/packaging/defs/gtk-sharp](http://anonsvn.mono-project.com/viewcvs/*checkout*/trunk/release/packaging/defs/gtk-sharp)) dependencies that are being used for the Mono Windows Combined Installer.
-
-

@@ -281,4 +281,3 @@ Conclusion
 ==========
 
 At first glance using a client certificate for authentication to a web server may not seem a big deal but it also has it's share of inconveniences (certificate issuance, authentication is done on the transport level). So it's increased security also comes at increased cost (but be aware that password are also costly ;-) which explain why we rarely see technology this in our everyday lives.
-

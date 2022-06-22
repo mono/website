@@ -11,7 +11,7 @@ One area with multiple highly impactful changes to the runtime internals is libr
 
 The managed loading changes are fairly clear and well documented, but unmanaged library loading has changed in numerous ways, some of them far more subtle.
 
-# Summary of changes
+## Summary of changes
 
 * [New P/Invoke resolution algorithm](https://docs.microsoft.com/en-us/dotnet/core/dependency-loading/loading-unmanaged)
 * Dropped support for DllMap
@@ -52,6 +52,6 @@ This also means that dynamically linking libmonosgen and attempting to resolve M
 
 Mono now supports the `DefaultDllImportSearchPathsAttribute` attribute, which can be found in `System.Runtime.InteropServices`. In particular, passing `DllImportSearchPath.AssemblyDirectory` is now required to have the loader search the executing assembly's directory for native libraries, and the other Windows-specific loader options should be passed down when appropriate.
 
-# Fin
+## Fin
 
 And that's it! If you have any further questions, feel free to ping us on [Discord](https://aka.ms/dotnet-discord) or [Gitter](https://gitter.im/mono/mono).

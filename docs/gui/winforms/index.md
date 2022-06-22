@@ -120,4 +120,3 @@ WinForms Designer
 -----------------
 
 For more information [check here](/archived/winforms_designer).
-

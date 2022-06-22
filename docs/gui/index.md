@@ -9,8 +9,7 @@ This page contains a list with a couple of known toolkits for Graphical User Int
 
 If you need help to know which one is the best for your project, please have a look at [Choosing a GUI Toolkit](/docs/gui/choosing-a-gui-toolkit/).
 
-[Gtk#](/docs/gui/gtksharp/)
----------------------------
+### [Gtk#](/docs/gui/gtksharp/)
 
 [![Banshee1.png](/archived/images/5/5e/Banshee1.png)](/archived/images/5/5e/Banshee1.png)
 
@@ -44,8 +43,7 @@ Cons:
 -   Gtk+ apps run like foreign applications on macOS.
 -   Incomplete documentation.
 
-[MonoMac](/docs/tools+libraries/libraries/monomac/)
----------------------------------------------------
+### [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
 Homepage: [MonoMac](/docs/tools+libraries/libraries/monomac/)
 
@@ -64,8 +62,7 @@ Cons:
 
 -   Not portable outside of macOS.
 
-[Windows.Forms](/docs/gui/winforms/)
-------------------------------------
+### [Windows.Forms](/docs/gui/winforms/)
 
 [![Nunit1.png](/archived/images/7/71/Nunit1.png)](/archived/images/7/71/Nunit1.png)
 
@@ -97,8 +94,7 @@ Cons:
 -   Looks alien on non-Windows platforms.
 -   Code that calls the Win32 API is not portable.
 
-[Qml.Net](https://github.com/pauldotknopf/Qml.Net)
---------------------------------------------------
+### [Qml.Net](https://github.com/pauldotknopf/Qml.Net)
 
 Qml.Net is cross-platform integration of Qml/QtQuick for Mono/.NET/.NET Core. It is a binding that brings .NET types into JavaScript with full interoperability.
 
@@ -106,20 +102,18 @@ Pros:
 
 -   Leverage the power of an existing GUI framework with an existing track record.
 -   Cross-platform (Windows/Linux/OSX) for various .NET runtimes.
--   Support for language specific features, such as ```async``` and ```await```, and Qt's signals.
+-   Support for language specific features, such as `async` and `await`, and Qt's signals.
 -   Extensive unit tests. Extra care is taken to ensure memory safety and that there are no memory leaks.
 
 Cons:
 
 -   Documentation is lacking.
 
-Work in Progress
-===================
+## Work in Progress
 
 Listed below are some Toolkits that are in several stages of active development but don't have a stable release yet.
 
-Xwt
----
+### Xwt
 
 Homepage: <https://github.com/mono/xwt>
 
@@ -137,8 +131,7 @@ Cons:
 
 -   Poor documentation.
 
-QtSharp
--------
+### QtSharp
 
 Homepage: <https://github.com/ddobrev/QtSharp>
 
@@ -146,7 +139,6 @@ QtSharp started as a sucessor of the Qyoto project. It aims to create libraries 
 
 Still in early development.
 
-Dead efforts
-============
+## Dead efforts
 
 There are a couple of [Dead Toolkits](/docs/tools+libraries/dead-toolkits/) that have been developed in the past.

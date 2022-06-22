@@ -96,5 +96,3 @@ This means you need to setup an ASP.Net application for your site, just like you
 To do this:
 
 -   TODO
-
-

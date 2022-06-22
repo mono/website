@@ -9,4 +9,3 @@ Category:Developer Resource
 ===========================
 
 All the pages focused on providing information about programming with Mono to the developer.
-
