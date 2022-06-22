@@ -23,6 +23,6 @@ jobs:
     - name: Build Jekyll
       run: bundle exec jekyll build
     - name: Markdownlint
-      run: bundle exec mdl -s markdownlint-config.rb . || true  # markdownlint errors shouldn't fail the build for now
+      run: bundle exec mdl -s markdownlint-config.rb .
     - name: HTMLProofer
       run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --check-html

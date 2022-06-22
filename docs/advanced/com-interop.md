@@ -4,13 +4,11 @@ redirect_from:
   - /COM_Interop/
 ---
 
-Introduction
-============
+## Introduction
 
 Mono 1.0 and Mono 1.1.xx do not have support for COM, it is a known missing feature of Mono. Initial work has begun on supporting MS COM on Windows. The long term goal is to support a variety of unmanaged component technologies including [MS COM](https://docs.microsoft.com/en-us/windows/desktop/com/component-object-model--com--portal), [XPCOM](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM), and [UNO](http://www.openoffice.org/udk/).
 
-Roadmap
-=======
+## Roadmap
 
 The first goal is to get COM Interop working on Windows. This can be broken down into two stages, corresponding to the two types of [COM Wrappers](https://docs.microsoft.com/en-us/dotnet/framework/interop/com-wrappers).
 
@@ -19,8 +17,7 @@ The first goal is to get COM Interop working on Windows. This can be broken down
 
 After COM Interop is working on Windows, the next step is to extend the mechanism for other component systems. The current idea is to reuse the COM Interop paradigm, providing extension points to handle the differences in component systems. A current prototype exists for XPCOM.
 
-Progress
-========
+## Progress
 
 COM Interop support includes the following:
 
@@ -81,18 +78,15 @@ A large number of methods in the [Marshal Class](https://docs.microsoft.com/en-u
  }
 ```
 
-Example
-=======
+## Example
 
 I have run a large number of test apps. You should be able to interact with standard COM objects such as IE, Windows Media Player, Office, etc. As for examples, most people interested in this probably already know how to generate COM interop wrapper code using MS tools, but I'll post a hand coded example in the near future. Unfortunately the code can be quite verbose, so I'll try to think of a neat little sample to demonstrate COM Interop in mono.
 
-Non-Windows Platform Support
-============================
+## Non-Windows Platform Support
 
 Note that there is very little that ties COM Interop to Windows. COM is a binary standard, so anyone who follows that standard can use the COM Interop functionality in mono. XPCOM can easily be supported if anyone is interested in putting in a little work to support marshalling strings.
 
-XPCOM Support
--------------
+### XPCOM Support
 
 Some developers embed Mozilla's XPCOM in their applications. This is supported by Mono's runtime, all that is required is that you initialize the runtime properly. The following is an example of how you would initialize an embedded version of XPCOM:
 
@@ -196,8 +190,7 @@ public interface nsIServiceManager
 }
 ```
 
-Tools
-=====
+## Tools
 
 There is now a tool, **xpidl2cs**, that creates C# interfaces from idl files. It is available from git, [[1]](https://github.com/mono/mono/tree/master/mcs/class/Mono.WebBrowser/tools/xpidl2cs).
 
@@ -213,8 +206,7 @@ Usage: xpidl2cs.pl file.idl [/path/to/idl/]
 
 In the future, we will have a tool **xptimport** that will be able to import type libraries from your XPCOM components and generate the necessary C# interface declarations.
 
-TODO
-====
+## TODO
 
 1.  [IDispatch](https://docs.microsoft.com/en-us/windows/desktop/api/oaidl/nn-oaidl-idispatch) support, both for RCWs and for CCWs
 2.  [LCIDConversionAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.lcidconversionattribute) Unfortunately, this nasty little guy is used by Office Interop Assemblies.

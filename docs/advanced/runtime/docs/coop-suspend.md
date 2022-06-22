@@ -25,7 +25,6 @@ the industry does.
    Hybrid suspend requires even more bookkeeping (every embedding API function needs to switch from GC Safe mode to GC Unsafe on entry and back on exit), but all the bookkeeping is done by the runtime, not by the user code.
   So hybrid suspend is a good approach because the embedder code doesn't need to be aware of it - it behaves just like preemptive.  But at the same time it is less likely to suspend the thread in a state that is inconvenient for the runtime, unlike preemptive suspend.
 
-
 ## How cooperative and hybrid suspend works
 
 Cooperative suspend limits what a suspender thread can do to simply request that the target thread suspends itself.
