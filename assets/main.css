@@ -393,38 +393,6 @@ ul.doc-breadcrumbs-nav .here-note {
   color: #000;
 }
 
-#toc-dropdown-button-inline {
-  padding: 5px 20px 5px 5px;
-  margin-top: 5px;
-  margin-bottom: 0px;
-}
-
-#toc-dropdown-button-inline:after {
-  right: 5px;
-}
-
-#toc-dropdown-button-separate {
-  margin-top: 10px;
-  margin-bottom: 0px;
-  text-transform: uppercase;
-}
-
-#toc-dropdown li.toc-indent-h2 {
-  text-indent: 10px;
-}
-
-#toc-dropdown li.toc-indent-h3 {
-  line-height: 10px;
-  font-size: 12px;
-  text-indent: 20px;
-}
-
-#toc-dropdown li.toc-indent-h4 {
-  line-height: 8px;
-  font-size: 11px;
-  text-indent: 30px;
-}
-
 /* trick to make anchor links not jump to the very top of screen */
 .doc-content h1:not(#page-title):before,
 .doc-content h2:before,

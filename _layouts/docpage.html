@@ -11,13 +11,7 @@ layout: base
         {% assign title = crumb | replace: "-", " " %}
         <li class="{% if forloop.last %}current{% endif %}">{% if forloop.first %}<span class="here-note">You are here: </span>{% endif %}{% if forloop.last == false %}<a href="{{ url }}/">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
       {% endfor %}
-      <li class="toc right hidden-for-small-only">
-        <a id="toc-dropdown-button-inline" class="tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
-      </li>
     </ul>
-
-    <a id="toc-dropdown-button-separate" class="show-for-small-only tiny secondary button dropdown" href="#" data-dropdown="toc-dropdown">Table of contents</a>
-    <ul id="toc-dropdown" data-dropdown-content class="medium f-dropdown"></ul>
   </div>
 </div>
 <div class="row">
@@ -40,7 +34,6 @@ layout: base
 <script>
 function runScripts() {
   addHeadingAnchorChar();
-  addToc();
 }
 
 function addHeadingAnchorChar() {
@@ -54,25 +47,4 @@ function addHeadingAnchorChar() {
   });
 }
 
-function addToc() {
-  var headings = $("h1, h2, h3, h4");
-  var toc = $("#toc-dropdown");
-
-  // add each heading to the TOC
-  headings.each(function(i, el) {
-    var $el = $(el);
-    var id = $el.attr('id');
-    if (id) {
-      var elIndentation = el.localName; // h1, h2, h3, ...
-      var elText = el.innerText;
-
-      toc.append($("<li />").addClass("toc-indent-" + elIndentation).append($("<a />").attr("href", "#" + id).html(elText)));
-    }
-  });
-  
-  // close dropdown when one of the TOC links is clicked
-  toc.find('li').click(function () {
-      Foundation.libs.dropdown.close(toc);
-  });
-}
 </script>
