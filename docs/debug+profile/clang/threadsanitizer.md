@@ -29,7 +29,7 @@ While blacklist files are handy when it comes to debugging, they are less conven
 
 ### Function Annotation
 
-Functions that are flagged with [`MONO_NO_SANITIZE_THREAD`](https://github.com/mono/mono/blob/main/mono/utils/mono-compiler.h) behave exactly as if their name was found in a blacklist file. If, for example, `foo ()` contains a known race that should be ignored, the following code could be used:
+Functions that are flagged with [MONO_NO_SANITIZE_THREAD](https://github.com/mono/mono/blob/main/mono/utils/mono-compiler.h) behave exactly as if their name was found in a blacklist file. If, for example, `foo ()` contains a known race that should be ignored, the following code could be used:
 
 ``` c
 MONO_NO_SANITIZE_THREAD
@@ -44,7 +44,7 @@ Please note that these annotations should be used with **great caution**! Many f
 
 ### Unlocked Operations
 
-Closely related to [`atomic.h`](https://github.com/mono/mono/blob/main/mono/utils/atomic.h), [`unlocked.h`](https://github.com/mono/mono/blob/main/mono/utils/unlocked.h) provides a set of functions that can be used to blacklist simple load / store operations. Unlike `Interlocked* ()` functions, the `Unlocked* ()` functions do not guarantee atomicity but speed: due to inlining, they execute as fast as `x ++`, `x += y`, ... if the ThreadSanitizer is not active. Additionally, the signature of the `Unlocked* ()` functions should always match the signature of the `Interlocked* ()` functions (where interlocked functions exist) to make switching between `Interlocked* ()` and `Unlocked* ()` as easy as possible.
+Closely related to [atomic.h](https://github.com/mono/mono/blob/main/mono/utils/atomic.h), [unlocked.h](https://github.com/mono/mono/blob/main/mono/utils/unlocked.h) provides a set of functions that can be used to blacklist simple load / store operations. Unlike `Interlocked* ()` functions, the `Unlocked* ()` functions do not guarantee atomicity but speed: due to inlining, they execute as fast as `x ++`, `x += y`, ... if the ThreadSanitizer is not active. Additionally, the signature of the `Unlocked* ()` functions should always match the signature of the `Interlocked* ()` functions (where interlocked functions exist) to make switching between `Interlocked* ()` and `Unlocked* ()` as easy as possible.
 
 Compile Time Options
 --------------------
