@@ -44,11 +44,11 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li {% if page.navgroup == "home" or layout.navgroup == "home" %}class="active"{% endif %}><a href="/" tabindex="0"><i class="fas fa-home"></i> Home</a></li>
-              <li {% if page.navgroup == "download" or layout.navgroup == "download" %}class="active"{% endif %}><a href="/download/stable/"><i class="fas fa-download"></i> Download</a></li>
-              <li {% if page.navgroup == "docs" or layout.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fas fa-book"></i> Documentation</a></li>
-              <li {% if page.navgroup == "news" or layout.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fas fa-bullhorn"></i> News</a></li>
-              <li {% if page.navgroup == "community" or layout.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fab fa-github"></i> Community</a></li>
+              <li {% if page.navgroup == "home" or layout.navgroup == "home" %}class="active"{% endif %}><a href="/" tabindex="0"><i class="fas fa-home"></i>Home</a></li>
+              <li {% if page.navgroup == "download" or layout.navgroup == "download" %}class="active"{% endif %}><a href="/download/stable/"><i class="fas fa-download"></i>Download</a></li>
+              <li {% if page.navgroup == "docs" or layout.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fas fa-book"></i>Documentation</a></li>
+              <li {% if page.navgroup == "news" or layout.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fas fa-bullhorn"></i>News</a></li>
+              <li {% if page.navgroup == "community" or layout.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fab fa-github"></i>Community</a></li>
               <li class="has-form">
                 <form id="header-searchform" action="https://www.google.com/search" method="get">
                   <div class="row collapse">
@@ -84,13 +84,8 @@
             </div>
           </div>
           <div class="right">
-            <a href="/atom.xml" title="RSS feed">
-              <i class="fas fa-rss fa-2x"></i>
-            </a>
-            &nbsp;
-            <a href="https://github.com/mono/mono" title="GitHub repository">
-              <i class="fab fa-github fa-2x"></i>
-            </a>
+            <a href="/atom.xml" title="RSS feed" aria-label="RSS feed"><i class="fas fa-rss fa-2x"></i></a>
+            <a href="https://github.com/mono/mono" title="GitHub repository" aria-label="GitHub repository"><i class="fab fa-github fa-2x"></i></a>
           </div>
         </div>
       </div>

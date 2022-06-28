@@ -46,11 +46,11 @@
 
     <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
       <dt>Please choose your operating system to view the available packages</dt>
-      <dd class="active"><a href="#download-mac"><i class="fab fa-apple"></i>&nbsp;macOS</a></dd>
-      <dd><a href="#download-lin"><i class="fab fa-linux"></i>&nbsp;Linux</a></dd>
-      <dd><a href="#download-win"><i class="fab fa-windows"></i>&nbsp;Windows</a></dd>
+      <dd class="active"><a href="#download-mac"><i class="fab fa-apple"></i>macOS</a></dd>
+      <dd><a href="#download-lin"><i class="fab fa-linux"></i>Linux</a></dd>
+      <dd><a href="#download-win"><i class="fab fa-windows"></i>Windows</a></dd>
       {% if include.releasename == "Stable" %}
-      <dd><a href="#download-docker"><i class="fab fa-docker"></i>&nbsp;Docker</a></dd>
+      <dd><a href="#download-docker"><i class="fab fa-docker"></i>Docker</a></dd>
       {% endif %}
     </dl>
 
@@ -60,8 +60,8 @@
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           {% if include.releasename == "Stable" %}
-          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono {{ site.data.vsrelease.version | split: ' ' | first }} (Visual Studio channel*)</a>
-          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fas fa-download"></i> Download Mono {{ site.data.stablerelease.version | split: ' ' | first }} (Stable channel)</a>
+          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fas fa-download"></i>Download Mono {{ site.data.vsrelease.version | split: ' ' | first }} (Visual Studio channel*)</a>
+          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fas fa-download"></i>Download Mono {{ site.data.stablerelease.version | split: ' ' | first }} (Stable channel)</a>
           {% else %}
           {% if include.releasename == "Nightly" %}
           {% assign mono_mac_url = 'https://download.mono-project.com/archive/nightly/macos-10-universal/' %}
@@ -70,7 +70,7 @@
           {% else %}
           {% assign mono_mac_url = include.releasedata.mono_mac_url %}
           {% endif %}
-          <a href="{{mono_mac_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono</a>
+          <a href="{{mono_mac_url}}" class="button radius"><i class="fas fa-download"></i>Download Mono</a>
           {% endif %}
           <p>Supported on macOS 10.9 and later. Check the <a href="/docs/about-mono/supported-platforms/macos/#uninstalling-mono-on-macos">uninstall instructions</a> if you want to remove Mono from your Mac.</p>
         </div>
@@ -382,8 +382,8 @@ dnf update</code></pre>
           {% assign mono_windows_url = include.releasedata.mono_windows_url %}
           {% assign mono_windows64_url = include.releasedata.mono_windows64_url %}
           {% endif %}
-          <a href="{{mono_windows_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono 32-bit</a>
-          <a href="{{mono_windows64_url}}" class="button radius"><i class="fas fa-download"></i> Download Mono 64-bit (no GTK#)</a>
+          <a href="{{mono_windows_url}}" class="button radius"><i class="fas fa-download"></i>Download Mono 32-bit</a>
+          <a href="{{mono_windows64_url}}" class="button radius"><i class="fas fa-download"></i>Download Mono 64-bit (no GTK#)</a>
         </div>
         <p>Supported on Windows 7, 8, 10 or later.</p>
         {% if include.releasename != "Nightly" %}
@@ -391,7 +391,7 @@ dnf update</code></pre>
         <h5>GTK# for .NET</h5>
         <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
         <div>
-          <a href="{{ include.releasedata.gtksharp_windows_url }}" class="button radius small"><i class="fas fa-download"></i> Download Gtk#</a>
+          <a href="{{ include.releasedata.gtksharp_windows_url }}" class="button radius small"><i class="fas fa-download"></i>Download Gtk#</a>
         </div>
         {% endif %}
       </div>

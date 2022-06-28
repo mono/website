@@ -49,6 +49,15 @@ a {
 
 a:hover, a:focus {
   color: #006B8F;
+  text-decoration: underline;
+}
+
+a>i.fas, a>i.fab {
+  margin-right: 5px;
+}
+
+a>i.fas:hover, a>i.fab:hover {
+  text-decoration: underline;
 }
 
 #main-wrapper {
@@ -158,6 +167,7 @@ footer h6 a {
 
 .top-bar .name h1 a {
   width: 100%;
+  text-decoration: none;
 }
 
 .top-bar-section > ul { 
