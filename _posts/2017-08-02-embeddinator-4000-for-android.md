@@ -40,6 +40,6 @@ For detailed instructions on using Embeddinator-4000 for Android see our [Gettin
 
 For a complete walkthrough, check out this video embedding Charles Petzold's [FingerPaint demo](https://developer.xamarin.com/samples/monodroid/ApplicationFundamentals/FingerPaint/) in an Android Studio project here:
 
-[![Embeddinator-4000 for Android](https://img.youtube.com/vi/ZVcrXUpCNpI/0.jpg)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
+[Embeddinator-4000 for Android (YouTube)](https://www.youtube.com/watch?v=ZVcrXUpCNpI)
 
 For iOS support, you can use `objcgen.exe` included in the NuGet package. Additionally, you can follow the iOS [Getting Started](https://mono.github.io/Embeddinator-4000/getting-started-objc-ios.html) guide.
