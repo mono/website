@@ -3,13 +3,13 @@ layout: base
 ---
 <div class="row">
   <div class="small-12 columns">
-    <ul class="doc-breadcrumbs-nav breadcrumbs">
+    <ul class="doc-breadcrumbs-nav breadcrumbs" aria-label="Breadcrumbs">
       {% assign breadcrumbs = page.url | split: '/' %}
       {% assign url = '' %}
       {% for crumb in breadcrumbs offset:1 %}
         {% capture url %}{{ url }}/{{ crumb }}{% endcapture %}
         {% assign title = crumb | replace: "-", " " %}
-        <li class="{% if forloop.last %}current{% endif %}">{% if forloop.first %}<span class="here-note">You are here: </span>{% endif %}{% if forloop.last == false %}<a href="{{ url }}/">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
+        <li class="{% if forloop.last %}current{% endif %}" {% if forloop.last %}aria-current="page"{% endif %}>{% if forloop.first %}<span class="here-note">You are here: </span>{% endif %}{% if forloop.last == false %}<a href="{{ url }}/">{{ title }}</a>{% else %}{{ title }}{% endif %}</li>
       {% endfor %}
     </ul>
   </div>
