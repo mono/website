@@ -56,8 +56,8 @@ Testing
 
 -   Testing connection-oriented classes are done via the provider specific tests found in the mcs source at mcs/class/System.Data/Test. There is also a nunit based connected mode tests under mcs/class/System.Data/Test/ProviderTests. The following table shows the stand alone test files for specific providers. Refer [Writing Connected Mode Testcases](/archived/writing_connected_mode_testcases) also for testing specific Data Providers.
 
-||
-|**Name**|**Assembly /<br/> Namespace**|**Test**|
+|Name|Assembly /<br/> Namespace|Test|
+|----|-------------------------|----|
 |Microsoft<br/> SQL Server|System.Data /<br/> System.Data.SqlClient|SqlTest.cs at<br/> System.Data/Test|
 |PostgreSQL<br/> (Npgsql)|Npgsql /<br/> Npgsql|\*.cs at<br/> Npgsql/Test|
 |Oracle<br/> (Mono)|System.Data.OracleClient /<br/> System.Data.OracleClient|TestOracleClient.cs at<br/> System.Data.OracleClient/Test|
