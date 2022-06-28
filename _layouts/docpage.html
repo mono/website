@@ -19,7 +19,9 @@ layout: base
     <h1 id="page-title">{{ page.title }}</h1>
     {% if site.github.repository_url %}
     <div class="meta">
-      <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}"><i class="fab fa-github"></i> Edit page on GitHub</a>
+      <span class="has-tip">
+        <a href="{{site.github.repository_url}}/blob/gh-pages/{{page.path}}"><i class="fab fa-github"></i> Edit page on GitHub</a>
+      </span>
     </div>
     <p></p>
     {% endif %}
