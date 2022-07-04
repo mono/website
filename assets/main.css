@@ -64,6 +64,36 @@ a>i.fas:hover, a>i.fab:hover {
   text-decoration: underline;
 }
 
+a.m-skip-to-main, a.m-skip-to-main:hover {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -2
+}
+
+a.m-skip-to-main:active, a.m-skip-to-main:focus {
+  background: #E3E3E3;
+  color: #0067b8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 24px;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  text-decoration: underline;
+  text-align: center;
+  z-index: 800;
+  outline: 0
+}
+
+a.m-skip-to-main:focus {
+    border: 1px dashed #000
+}
+
 #main-wrapper {
   min-height: 100%;
   margin: 0 auto -100px;
