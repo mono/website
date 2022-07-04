@@ -290,6 +290,14 @@ footer h6 a {
   color: #fff;
 }
 
+@media (forced-colors: active) and (prefers-color-scheme: dark) {
+  #mono-download.tabs dd.active a, #mono-download-linux.tabs dd.active a {
+    background-color: #fff;
+    color: #333;
+    forced-color-adjust: none;
+  }
+}
+
 #mono-download.tabs dd {
   line-height: 0.9em;
 }
