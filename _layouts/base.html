@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/assets/normalize.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
     <link rel="stylesheet" href="/assets/foundation.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
     <link rel="stylesheet" href="/assets/highlightjs/a11y-dark.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <link rel="stylesheet" href="/assets/magnific-popup.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
 
     <link rel="stylesheet" href="/assets/fontawesome/css/solid.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
     <link rel="stylesheet" href="/assets/fontawesome/css/brands.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
@@ -96,7 +95,6 @@
     <script src="/assets/jquery.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
     <script src="/assets/foundation.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
     <script src="/assets/highlightjs/highlight.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
-    <script src="/assets/jquery.magnific-popup.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
 
     <script>
       // allow sub pages to run custom code
@@ -108,14 +106,6 @@
       hljs.highlightAll();
       // add tabindex=0 to all code blocks for keyboard accessibility
       $("code[class^='language']").attr("tabindex", 0);
-
-      $(document).ready(function() {
-        $('.image-link').magnificPopup({
-          disableOn: 400,
-          image: { verticalFit: false },
-          type: 'image'
-        });
-      });
 
       // init cookie banner
       function onConsentChanged(categoryPreferences) {
