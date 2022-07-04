@@ -46,7 +46,12 @@
             <ul class="right">
               <li {% if page.navgroup == "home" or layout.navgroup == "home" %}class="active"{% endif %}><a href="/" tabindex="0"><i class="fas fa-home"></i>Home</a></li>
               <li {% if page.navgroup == "download" or layout.navgroup == "download" %}class="active"{% endif %}><a href="/download/stable/"><i class="fas fa-download"></i>Download</a></li>
-              <li {% if page.navgroup == "docs" or layout.navgroup == "docs" %}class="active"{% endif %}><a href="/docs/"><i class="fas fa-book"></i>Documentation</a></li>
+              <li {% if page.navgroup == "docs" or layout.navgroup == "docs" %}class="active"{% endif %}>
+                <a href="/docs/">
+                  <div class="hide-for-medium-only"><i class="fas fa-book"></i>Documentation</div>
+                  <div class="show-for-medium-only"><i class="fas fa-book"></i>Docs</div>
+                </a>
+              </li>
               <li {% if page.navgroup == "news" or layout.navgroup == "news" %}class="active"{% endif %}><a href="/news/"><i class="fas fa-bullhorn"></i>News</a></li>
               <li {% if page.navgroup == "community" or layout.navgroup == "community" %}class="active"{% endif %}><a href="/community/"><i class="fab fa-github"></i>Community</a></li>
               <li class="has-form">
