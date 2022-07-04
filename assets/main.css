@@ -222,6 +222,10 @@ footer h6 a {
     color: #000;
     forced-color-adjust: none;
   }
+
+  .top-bar-section li.active:not(.has-form) a:not(.button):hover {
+    color: #fff;
+  }
 }
 
 .top-bar .toggle-topbar {
