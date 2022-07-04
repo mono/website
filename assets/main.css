@@ -194,13 +194,11 @@ footer h6 a {
   height: 60px;
 }
 
-.top-bar .name h1 {
+.top-bar .name #header-logo-link {
   line-height: 60px;
   font-size: 1.8em;
-}
-
-.top-bar .name h1 a {
-  width: 100%;
+  color: #fff;
+  padding-left: 15px;
   text-decoration: none;
 }
 
@@ -247,7 +245,7 @@ footer h6 a {
     padding: 0 5px;
   }
   
-  .top-bar .name h1 a  {
+  .top-bar .name #header-logo-link {
     padding: 0 5px;
   }
   
