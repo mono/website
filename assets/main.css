@@ -56,11 +56,11 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
-a>i.fas, a>i.fab {
+a>i.fas, a>i.fab, a>div>i.fas, a>div>i.fab {
   margin-right: 5px;
 }
 
-a>i.fas:hover, a>i.fab:hover {
+a>*i.fas:hover, a>*i.fab:hover {
   text-decoration: underline;
 }
 
