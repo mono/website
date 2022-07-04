@@ -30,7 +30,7 @@
   <body>
     <a class="m-skip-to-main" href="#mainContent" tabindex="1">Skip to main content</a>
     <div id="main-wrapper">
-      <div id="header-nav" class="contain-to-grid">
+      <div id="header-nav" class="contain-to-grid" role="banner">
         <div id="cookie-banner"></div>
 
         <nav class="top-bar" data-topbar>
@@ -67,8 +67,9 @@
         </nav>
       </div>
 
-      <div id="mainContent"></div>
+      <div id="mainContent" role="main">
       {{ content }}
+      </div>
 
       <div id="push"></div>
     </div>
