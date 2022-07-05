@@ -226,6 +226,14 @@ footer h6 a {
   }
 }
 
+@media (forced-colors: active) and (prefers-color-scheme: light) {
+  .top-bar-section li.active:not(.has-form) a:not(.button) {
+    background-color: #000;
+    color: #fff;
+    forced-color-adjust: none;
+  }
+}
+
 .top-bar .toggle-topbar {
   margin-top: 8px;
 }
@@ -304,6 +312,14 @@ footer h6 a {
   #mono-download.tabs dd.active a, #mono-download-linux.tabs dd.active a {
     background-color: #fff;
     color: #333;
+    forced-color-adjust: none;
+  }
+}
+
+@media (forced-colors: active) and (prefers-color-scheme: light) {
+  #mono-download.tabs dd.active a, #mono-download-linux.tabs dd.active a {
+    background-color: #333;
+    color: #fff;
     forced-color-adjust: none;
   }
 }
