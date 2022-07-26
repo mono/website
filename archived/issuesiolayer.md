@@ -31,7 +31,7 @@ Shared information like thread handles is kept in this page and this page can gr
     * [Process ID storage](#process-id-storage)
     * [Reducing the size of the table](#reducing-the-size-of-the-table)
     * [Mono Modes](#mono-modes)
-    * [\_write, \_read operations](#write-read-operations)
+    * [\_write, \_read operations](#_write-_read-operations)
 
 Disabling SHM features
 ======================
