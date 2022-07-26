@@ -24,7 +24,7 @@ Mono uses GNU autoconf, automake and libtool. You need to install those in your 
 brew install autoconf automake libtool pkg-config cmake python3
 ```
 
-------------------------------------------------------------------------
+---
 
 Mono releases are distributed as .tar.xz packages from the Mono web site. Once you have your dependencies installed all you need to do is run the following command where VERSION is the package version number and PREFIX is your installation prefix:
 

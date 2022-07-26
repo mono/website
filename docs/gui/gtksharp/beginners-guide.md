@@ -118,7 +118,7 @@ Window navigator construction kit library.
 
 **\*** *Not not available on the Windows GTK# package*
 
-### Choosing Gtk# or Glade#
+### Choosing Gtk\# or Glade\#
 
 When people start out they sometimes get confused on what to use, Gtk# or Glade#. For that you need to understand what Glade# is and what Gtk# is. Gtk# is the core of the windowing and widget system (a widget is like a control in SWF). Glade# inherits Gtk# so its a subset of Gtk# and usually compatible, but it automatically layouts out the widgets with an XML based resource file. The XML to layout your GUI can be generated with the Glade tool, a WYSIWYG GUI designer studio.
 
