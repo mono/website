@@ -33,7 +33,7 @@ jobs:
       uses: microsoft/accessibility-insights-action@v3
       with:
           static-site-dir: ${{ github.workspace }}/_site
-          scan-timeout: 600
+          scan-timeout: 600000
     - name: Upload accessibility report
       if: success() || failure()
       uses: actions/upload-artifact@v3
