@@ -181,7 +181,7 @@ Just import the Visual Studio 2005 .sln file in MonoDevelop and compile as usual
 
 ### installvsts
 
-You can use the **installvst** program to install the various starter kits that are distributed from the [<http://asp.net>](http://asp.net) site.
+You can use the **installvst** program to install the various starter kits that are distributed from the asp.net site.
 
 ### Prj2make
 

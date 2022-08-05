@@ -12,8 +12,6 @@ redirect_from:
 
 [GTK#](/docs/gui/gtksharp/) action with iFolder
 
-Hompepage: [<http://gtk-sharp.sf.net>](http://gtk-sharp.sf.net)
-
 Wiki: [GtkSharp](/docs/gui/gtksharp/)
 
 This toolkit is a .NET binding for the Gtk+ toolkit. It is in active development, and there are various applications in the Mono world that use it (Monodoc, Monocov, Mono's Debugger and various smaller applications, a more complete list is available on the Gtk# Wiki. Platforms: Unix, Windows, GPE, macOS (using the X server).
@@ -167,9 +165,7 @@ Cons:
 
 ### Xamarin.Mac
 
-Xamarin.Mac is a API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
-
-Homepage: [<http://xamarin.com/mac>](http://xamarin.com/mac)
+[Xamarin.Mac](http://xamarin.com/mac) is a API that binds the Cocoa API on the Mac and uses the same internals of Xamarin.iOS.
 
 Native MacOS toolkit.
 
@@ -187,7 +183,7 @@ Cons:
 
 ### MonObjc
 
-Homepage: [<http://www.monobjc.net>](http://www.monobjc.net)
+Homepage: [monobjc.net](http://www.monobjc.net)
 
 Native macOS toolkit.
 
@@ -264,7 +260,7 @@ MonoRail differs from the standard WebForms way of development as it enforces se
 
 ### Deveel Ajax
 
-[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([<http://www.prototypejs.org>](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax) on Mono Project.
+[Deveel Ajax](http://deveel-ajax.svn.sourceforge.net): Another great library from Antonello Provenzano, the aim of this project was to increase development speed of .NET/Mono web applications by replicating, through a JavaScript proxies, the OO structure of imported types, based on prototype ([prototypejs.org](http://www.prototypejs.org)) AJAX framework. Read an [introduction to Deveel AJAX](/archived/introduction_to_deveel_ajax) on Mono Project.
 
 ### Magic Ajax
 
@@ -629,7 +625,7 @@ For registered developers, CodePlex is a publicly accessible example of a Team F
 
 ### Exiv2Sharp
 
-This poject, created by Stephane Delcroix during Novell's HackWeek III, is a managed binding of the popular exiv2 ([<http://exiv2.org>](http://exiv2.org)) metadata editor.
+This poject, created by Stephane Delcroix during Novell's HackWeek III, is a managed binding of the popular exiv2 ([exiv2.org](http://exiv2.org)) metadata editor.
 
 The code is available from Mono's [git](/community/contributing/source-code-repository/) repository and can be browsed [here](https://github.com/mono/exiv2-sharp/).
 

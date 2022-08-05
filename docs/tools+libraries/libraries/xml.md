@@ -95,7 +95,7 @@ Our managed XSLT implementation is slower than MS XSLT for some kind of styleshe
 
 Atsushi implemented an experimental RelaxngValidatingReader. It is completed, except for some remaining simplification bugs. See mcs/class/Commons.Xml.Relaxng/README for details. Currently we have:
 
--   Custom datatype support. Right now, you can use XML schema datatypes ( [<http://www.w3.org/2001/XMLSchema-datatypes>](http://www.w3.org/2001/XMLSchema-datatypes) ) as well as RELAX NG default datatypes (as used in relaxng.rng).
+-   Custom datatype support. Right now, you can use [XML schema datatypes](http://www.w3.org/2001/XMLSchema-datatypes) as well as RELAX NG default datatypes (as used in relaxng.rng).
 
 -   RELAX NG Compact Syntax support, though not solid yet. See Commons.Xml.Relaxng.Rnc.RncParser class.
 

@@ -233,7 +233,7 @@ The source code is available from our git repository as the module "monoskel", y
 
 On a checked out copy of the source.
 
-The tarball can be found here: [<http://www.go-mono.com/archive/monoskel-0.1.tar.gz>](http://www.go-mono.com/archive/monoskel-0.1.tar.gz)
+The tarball can be found on the [download site](http://www.go-mono.com/archive/monoskel-0.1.tar.gz)
 
 The contents of the tarball are:
 

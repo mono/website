@@ -706,7 +706,7 @@ Fixed array syntax is still "unsafe", and requires elevated privilege to execute
 
 ##### Real World Experience
 
-This might be of use. From David Jesk ([<http://www.chat.net/~jeske/>](http://www.chat.net/~jeske/)):
+This might be of use. From David Jesk:
 
 > This time I have some PInvoke information to share, so that when someone else runs into this issue they can see what I've done. In my ClearSilver ([www.clearsilver.net](http://www.clearsilver.net), an HTML template system) C# wrapper, I wanted to access this C-struct:
 >
@@ -1439,7 +1439,7 @@ Yes, the P/Invoke specification (or lack thereof) is a mess. It was done by peop
 
 ## Thanks
 
-Portions of this document were generated as a result of a mono-list discussion between Jonathan Pryor and David Jeske. See: [<https://lists.dot.net/pipermail/mono-list/2003-July/014886.html>](https://lists.dot.net/pipermail/mono-list/2003-July/014886.html).
+Portions of this document were generated as a result of a [mono-list discussion](https://lists.dot.net/pipermail/mono-list/2003-July/014886.html) between Jonathan Pryor and David Jeske.
 
 Thanks also to Paolo Molaro, Bernie Solomon, and Marcus for reviews and comments.
 

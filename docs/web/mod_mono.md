@@ -68,7 +68,7 @@ You might want to consider modifying the apache configuration so that mod_mono p
 
 ### Keep alive
 
-The HTTP/1.1 protocol defines a theoretically performance-improving mechanism - keep alive. What it means is that the web server can keep the connection open for a while for the client to request several resources over the same connection. In reality, however, very often that feature becomes a performance killer. The reason is that each keep alive session requires the server to keep the process (or thread) busy in order for the timeout to happen or for the client to close the connection. Apache contains configuration directives to set the number of maximum clients serviced, the number of threads/processes (servers) to spawn etc (for more information see [<http://httpd.apache.org/docs/2.2/>](http://httpd.apache.org/docs/2.2/)). Each time a keep alive session is open and the client does not use it, Apache will still keep the server process/thread busy and thus it won't be able to accept another connection on that server - which will limit the throughput. There are two solutions to this problem. The better one, in my opinion, is to turn keep alive off completely by putting this directive somewhere in your Apache config:
+The HTTP/1.1 protocol defines a theoretically performance-improving mechanism - keep alive. What it means is that the web server can keep the connection open for a while for the client to request several resources over the same connection. In reality, however, very often that feature becomes a performance killer. The reason is that each keep alive session requires the server to keep the process (or thread) busy in order for the timeout to happen or for the client to close the connection. Apache contains configuration directives to set the number of maximum clients serviced, the number of threads/processes (servers) to spawn etc (for more information see [Apache docs](http://httpd.apache.org/docs/2.2/)). Each time a keep alive session is open and the client does not use it, Apache will still keep the server process/thread busy and thus it won't be able to accept another connection on that server - which will limit the throughput. There are two solutions to this problem. The better one, in my opinion, is to turn keep alive off completely by putting this directive somewhere in your Apache config:
 
     KeepAlive Off
 
@@ -98,7 +98,7 @@ The first line disables the [AutoHosting](/docs/web/mod_mono-autoconfiguration/)
 
 The second line instructs Apache that processing of files with .aspx, etc. extensions should be delegated to mod_mono (rather than Apache processing them itself as plain-text files).
 
-The third line instructs mod_mono that an ASP.NET application exists at the root directory of the web site (i.e. at [<http://www.example.com/>](http://www.example.com/)), and that this virtual path corresponds to the physical path on disk of /home/username/www. Normally, the physical path will match whatever Apache would map the given virtual path to. So if the virtual path is /, as in this example, the physical path matches what is in the DocumentRoot directive for Apache. This is important because in that virtual path, Apache itself will continue to serve images, static HTML, and other files, based on the physical path it knows in DocumentRoot, while mod_mono will handle files with .aspx, etc. extensions (or whatever was specified in AddHandler) based on the physical path provided in the MonoApplications directive.
+The third line instructs mod_mono that an ASP.NET application exists at the root directory of the web site (i.e. at [www.example.com](http://www.example.com/)), and that this virtual path corresponds to the physical path on disk of /home/username/www. Normally, the physical path will match whatever Apache would map the given virtual path to. So if the virtual path is /, as in this example, the physical path matches what is in the DocumentRoot directive for Apache. This is important because in that virtual path, Apache itself will continue to serve images, static HTML, and other files, based on the physical path it knows in DocumentRoot, while mod_mono will handle files with .aspx, etc. extensions (or whatever was specified in AddHandler) based on the physical path provided in the MonoApplications directive.
 
 Here is another configuration that sets up the ASP.NET test suite that comes with mod_mono.
 
@@ -163,7 +163,7 @@ If you serve mod_mono applications in multiple virtual hosts, you can use this s
     AddMonoApplications "www.example.com:/:/home/exampledotcom/www"
     AddMonoApplications "www.sample.com:/:/home/sampledotcom/www"
 
-The above example instructs mod-mono-server to create two applications, one mapping [<http://www.example.com/>](http://www.example.com/) to /home/exampledotcom/www and the other mapping [<http://www.sample.com/>](http://www.sample.com/) to /home/sampledotcom/www.
+The above example instructs mod-mono-server to create two applications, one mapping [www.example.com](http://www.example.com/) to /home/exampledotcom/www and the other mapping [www.sample.com](http://www.sample.com/) to /home/sampledotcom/www.
 
 ### Multiple Applications, Multiple mod-mono-servers
 
@@ -204,7 +204,7 @@ mod_mono provides a simple web-based control panel for restarting the mod-mono-s
 
 The Order/Deny/Allow access controls above restrict access to the control panel to the computer with IP address 127.0.0.1. Replace this (or add more Allow lines) with the IP address of your own computer so that you can access the control panel. Note that anyone on the machine 127.0.0.1 will have the ability to affect any configured mod_mono applications. (These directives placed in a VirtualHost section allow access to only mod_mono applications configured within that virtual host.)
 
-The control panel is then accessible at [<http://yourdomain.com/mono>](http://yourdomain.com/mono). It allows you to:
+The control panel is then accessible at [yourdomain.com/mono](http://yourdomain.com/mono). It allows you to:
 
 -   Restart mod-mono-server backends for all or individual applications.
 -   Stop or resume handling pages for all or individual applications.
