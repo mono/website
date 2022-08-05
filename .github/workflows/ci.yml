@@ -16,6 +16,9 @@ jobs:
     - uses: actions/setup-ruby@v1
       with:
         ruby-version: '2.6'
+    - uses: actions/setup-node@v3
+      with:
+          node-version: 16
     - name: Install dependencies
       run: |
         gem install bundler
@@ -26,3 +29,13 @@ jobs:
       run: bundle exec mdl -s markdownlint-config.rb .
     - name: HTMLProofer
       run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --enforce-https=false
+    - name: Scan for accessibility issues
+      uses: microsoft/accessibility-insights-action@v3
+      with:
+          static-site-dir: ${{ github.workspace }}/_site
+    - name: Upload accessibility report
+      if: success() || failure()
+      uses: actions/upload-artifact@v3
+      with:
+          name: accessibility-reports
+          path: ${{ github.workspace }}/_accessibility-reports
