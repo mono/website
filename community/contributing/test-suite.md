@@ -55,6 +55,15 @@ make run-test FIXTURE=MonoTests.System.DecimalTest
 
 That will run the fixture for MonoTests.System.DecimalTest.
 
+If you want to run a single test case, you can use the convenience parameter TESTNAME like this:
+
+``` bash
+cd mcs/class/corlib
+make run-test TESTNAME=MonoTests.System.DecimalTest.TestPercentPattern
+```
+
+That will run the single MonoTests.System.DecimalTest.TestPercentPattern test
+
 You can pass arbitrary command line options to nunit-console, like this:
 
 ``` bash
