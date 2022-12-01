@@ -31,6 +31,8 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 16
+    - name: Remove atom.xml to workaround accessibility insights issue
+      run: rm _site/atom.xml
     - name: Scan for accessibility issues
       uses: microsoft/accessibility-insights-action@v3
       with:
