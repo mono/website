@@ -91,7 +91,9 @@
             </div>
           </div>
           <div class="right">
+            {% unless site.data.workaround_accessibility_insights_bug.enabled %}
             <a href="/atom.xml" title="RSS feed" aria-label="RSS feed"><i class="fas fa-rss fa-2x"></i></a>
+            {% endunless %}
             <a href="https://github.com/mono/mono" title="GitHub repository" aria-label="GitHub repository"><i class="fab fa-github fa-2x"></i></a>
           </div>
         </div>

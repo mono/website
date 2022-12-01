@@ -20,6 +20,8 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+    - name: Workaround accessibility insights issue with atom.xml
+      run: "echo 'enabled: true' > _data/workaround_accessibility_insights_bug.yml"
     - name: Build Jekyll
       run: bundle exec jekyll build
     - name: Markdownlint
@@ -31,8 +33,6 @@ jobs:
     - uses: actions/setup-node@v3
       with:
           node-version: 16
-    - name: Remove atom.xml to workaround accessibility insights issue
-      run: rm _site/atom.xml
     - name: Scan for accessibility issues
       uses: microsoft/accessibility-insights-action@v3
       with:
