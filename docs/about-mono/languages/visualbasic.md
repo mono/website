@@ -8,11 +8,7 @@ redirect_from:
   - /VisualBasic/
 ---
 
-<div class="row">
-  <div class="small-12 columns">
-     <div data-alert class="alert-box warning"><h6><i class="fas fa-exclamation-triangle"></i> The information on this page is outdated. For new development you should look at the Visual Basic support included in the dotnet SDK.</div>
-  </div>
-</div>
+**NOTE: The information on this page is outdated. For new development you should look at the Visual Basic support included in the dotnet SDK.**
 
 Visual Basic support in Mono is relatively new. The Visual Basic runtime has been available for Mono for a while, and with the release of Mono 1.2.3, the Visual Basic support is complete, with the introduction of a self-hosting compiler and class libraries for Visual Basic development on any of the Mono supported systems.
 
