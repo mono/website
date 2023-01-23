@@ -8,6 +8,12 @@ redirect_from:
   - /VisualBasic/
 ---
 
+<div class="row">
+  <div class="small-12 columns">
+     <div data-alert class="alert-box warning"><h6><i class="fas fa-exclamation-triangle"></i> The information on this page is outdated. For new development you should look at the Visual Basic support included in the dotnet SDK.</div>
+  </div>
+</div>
+
 Visual Basic.NET support in Mono is relatively new. The Visual Basic runtime has been available for Mono for a while, and with the release of Mono 1.2.3, the Visual Basic support is complete, with the introduction of a self-hosting compiler and class libraries for Visual Basic development on any of the Mono supported systems. For more information, read [Novell's announcement](http://www.novell.com/news/press/item.jsp?id=1289) on the Visual Basic compiler.
 
 Having a native compiler for Visual Basic not only allows developers that wish to complete develop in a Mono supported platform, but also allows applications that depend on the CodeDOM (ASP.NET for example) to be developed using Visual Basic. Something that before the availability of the compiler was not possible.
