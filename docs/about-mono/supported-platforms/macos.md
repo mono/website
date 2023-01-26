@@ -106,10 +106,4 @@ Third Party Libraries
 Uninstalling Mono on macOS
 ---------------------------
 
-Run this script in a terminal:
-
-```bash
-sudo rm -rf /Library/Frameworks/Mono.framework
-sudo pkgutil --forget com.xamarin.mono-MDK.pkg
-sudo rm /etc/paths.d/mono-commands
-```
+See the script on the [Install Mono on macOS](/docs/getting-started/install/mac/#uninstalling-mono-on-macos) page.

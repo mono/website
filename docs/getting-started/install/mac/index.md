@@ -12,3 +12,13 @@ Installing Mono on macOS is very simple:
     [![mono-mac-install.png](/images/mono-mac-install.png)](/images/mono-mac-install.png)
 
 After the installation completed successfully, it's a good idea to run through the basic hello world examples on [this page](/docs/getting-started/mono-basics/) to verify Mono is working correctly.
+
+## Uninstalling Mono on macOS
+
+Run this script in a terminal:
+
+```bash
+sudo rm -rf /Library/Frameworks/Mono.framework
+sudo pkgutil --forget com.xamarin.mono-MDK.pkg
+sudo rm /etc/paths.d/mono-commands
+```
