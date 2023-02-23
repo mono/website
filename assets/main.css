@@ -133,6 +133,10 @@ a.m-skip-to-main:focus {
   color: #00678a;
 }
 
+.panel.info>p, .panel.success>p, .panel.alert>p {
+  color: #000000;
+}
+
 .alert-box.warning>* a {
   color: #1b3181;
 }
@@ -326,6 +330,10 @@ footer h6 a {
 
 #mono-download.tabs dd {
   line-height: 0.9em;
+}
+
+#mono-download-panel .panel.content>p, #mono-download-panel .panel.content>*>p {
+  color: #000000;
 }
 
 #mono-download-panel .panel.content>p a, #mono-download-panel .panel.content>*>p a {
