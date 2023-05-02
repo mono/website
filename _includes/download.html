@@ -94,7 +94,7 @@
             <p>The package repository hosts the packages you need, add it with the following commands.</p>
             <p><i>Note:</i> the packages should work on newer Ubuntu versions too but we only test the ones listed below.</p>
             <h3>Ubuntu 20.04 <small>(amd64, armhf, arm64, ppc64el)</small></h3>
-            {% if include.releasename == "Nightly" %}
+{% if include.releasename == "Nightly" %}
 <pre><code class="language-bash">sudo apt install ca-certificates gnupg
 sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
