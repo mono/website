@@ -528,7 +528,7 @@ void* mono_method_get_unmanaged_thunk (MonoMethod *method);
 You'll be able to store the returned pointer in a function pointer with the proper signature and call that directly from C:
 
 ``` c
-typedef gint32 (*GetHashCode) (MonoObject *obj);
+typedef gint32 (*GetHashCode) (MonoObject *obj, MonoException** exc);
 
 GetHashCode func = mono_method_get_unmanaged_thunk (System_Object_GetHashCode_method);
 
