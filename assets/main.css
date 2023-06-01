@@ -210,6 +210,10 @@ footer h6 a {
   margin-top: 8px;
 }
 
+.top-bar-section > ul > li {
+  margin-right: 3px;
+}
+
 .top-bar-section li.active:not(.has-form) a:not(.button) {
   background: #007EA8;
 }
@@ -330,6 +334,7 @@ footer h6 a {
 
 #mono-download.tabs dd {
   line-height: 0.9em;
+  margin-right: 2px;
 }
 
 #mono-download-panel .panel.content>p, #mono-download-panel .panel.content>*>p {
