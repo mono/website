@@ -45,15 +45,15 @@
             <!-- Right Nav Section -->
             <ul class="right">
               <li {% if page.navgroup == "home" or layout.navgroup == "home" %}class="active"{% endif %}><a href="/" tabindex="0" {% if page.navgroup == "home" or layout.navgroup == "home" %} aria-current="page"{% endif %}><i class="fas fa-home"></i>Home</a></li>
-              <li {% if page.navgroup == "download" or layout.navgroup == "download" %}class="active"{% endif %}><a href="/download/stable/" {% if page.navgroup == "home" or layout.navgroup == "home" %} aria-current="page"{% endif %}><i class="fas fa-download"></i>Download</a></li>
+              <li {% if page.navgroup == "download" or layout.navgroup == "download" %}class="active"{% endif %}><a href="/download/stable/" {% if page.navgroup == "download" or layout.navgroup == "download" %} aria-current="page"{% endif %}><i class="fas fa-download"></i>Download</a></li>
               <li {% if page.navgroup == "docs" or layout.navgroup == "docs" %}class="active"{% endif %}>
-                <a href="/docs/" {% if page.navgroup == "home" or layout.navgroup == "home" %} aria-current="page"{% endif %}>
+                <a href="/docs/" {% if page.navgroup == "docs" or layout.navgroup == "docs" %} aria-current="page"{% endif %}>
                   <div class="hide-for-medium-only"><i class="fas fa-book"></i>Documentation</div>
                   <div class="show-for-medium-only"><i class="fas fa-book"></i>Docs</div>
                 </a>
               </li>
-              <li {% if page.navgroup == "news" or layout.navgroup == "news" %}class="active"{% endif %}><a href="/news/" {% if page.navgroup == "home" or layout.navgroup == "home" %} aria-current="page"{% endif %}><i class="fas fa-bullhorn"></i>News</a></li>
-              <li {% if page.navgroup == "community" or layout.navgroup == "community" %}class="active"{% endif %}><a href="/community/" {% if page.navgroup == "home" or layout.navgroup == "home" %} aria-current="page"{% endif %}><i class="fab fa-github"></i>Community</a></li>
+              <li {% if page.navgroup == "news" or layout.navgroup == "news" %}class="active"{% endif %}><a href="/news/" {% if page.navgroup == "news" or layout.navgroup == "news" %} aria-current="page"{% endif %}><i class="fas fa-bullhorn"></i>News</a></li>
+              <li {% if page.navgroup == "community" or layout.navgroup == "community" %}class="active"{% endif %}><a href="/community/" {% if page.navgroup == "community" or layout.navgroup == "community" %} aria-current="page"{% endif %}><i class="fab fa-github"></i>Community</a></li>
               <li class="has-form">
                 <form id="header-searchform" action="https://www.google.com/search" method="get">
                   <div class="row collapse">
