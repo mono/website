@@ -44,15 +44,16 @@
 
     <p>Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/{% if include.releasename == "Nightly" %}nightly/{% endif %}">Tarball</a>.</p>
 
-    <dl id="mono-download" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
-      <dt>Please choose your operating system to view the available packages</dt>
-      <dd class="active" role="presentation"><a href="#download-mac" role="tab"><i class="fab fa-apple"></i>macOS</a></dd>
-      <dd role="presentation"><a href="#download-lin" role="tab"><i class="fab fa-linux"></i>Linux</a></dd>
-      <dd role="presentation"><a href="#download-win" role="tab"><i class="fab fa-windows"></i>Windows</a></dd>
+    <span><b>Please choose your operating system to view the available packages</b></span>
+    <ul id="mono-download" class="tabs horizontal" role="tablist" data-tab data-options="deep_linking: true; scroll_to_content: false" style="padding-top: 10px">
+      <li class="tab-title active" role="presentation"><a href="#download-mac" role="tab"><i class="fab fa-apple"></i>macOS</a></li>
+      <li class="tab-title" role="presentation"><a href="#download-lin" role="tab"><i class="fab fa-linux"></i>Linux</a></li>
+      <li class="tab-title" role="presentation"><a href="#download-win" role="tab"><i class="fab fa-windows"></i>Windows</a></li>
       {% if include.releasename == "Stable" %}
-      <dd role="presentation"><a href="#download-docker" role="tab"><i class="fab fa-docker"></i>Docker</a></dd>
+      <li class="tab-title" role="presentation"><a href="#download-docker" role="tab"><i class="fab fa-docker"></i>Docker</a></li>
       {% endif %}
-    </dl>
+      </li>
+    </ul>
 
     <div class="tabs-content" id="mono-download-panel">
       <div class="panel content active" id="download-mac">
@@ -79,14 +80,14 @@
         {% endif %}
       </div>
       <div class="panel content" id="download-lin">
-        <dl id="mono-download-linux" class="tabs horizontal" data-tab data-options="deep_linking: true; scroll_to_content: false">
-          <dt>Linux distribution</dt>
-          <dd class="active" role="presentation"><a href="#download-lin-ubuntu" role="tab"><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" style="margin-right: 5px;"/>Ubuntu</a></dd>
-          <dd role="presentation"><a href="#download-lin-debian" role="tab"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" style="margin-right: 5px;"/>Debian</a></dd>
-          <dd role="presentation"><a href="#download-lin-raspbian" role="tab"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" style="margin-right: 5px;"/>Raspbian</a></dd>
-          <dd role="presentation"><a href="#download-lin-centos" role="tab"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" style="margin-right: 5px;"/>CentOS/RHEL</a></dd>
-          <dd role="presentation"><a href="#download-lin-fedora" role="tab"><img src="/images/fedora-logo.svg" height="20px" width="20px" alt="Fedora Logo" style="margin-right: 5px;"/>Fedora</a></dd>
-        </dl>
+        <span><b>Linux distribution</b></span>
+        <ul id="mono-download-linux" class="tabs horizontal" role="tablist" data-tab data-options="deep_linking: true; scroll_to_content: false" style="padding-top: 10px">
+          <li class="tab-title active" role="presentation"><a href="#download-lin-ubuntu" role="tab"><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" style="margin-right: 5px;"/>Ubuntu</a></li>
+          <li class="tab-title" role="presentation"><a href="#download-lin-debian" role="tab"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" style="margin-right: 5px;"/>Debian</a></li>
+          <li class="tab-title" role="presentation"><a href="#download-lin-raspbian" role="tab"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" style="margin-right: 5px;"/>Raspbian</a></li>
+          <li class="tab-title" role="presentation"><a href="#download-lin-centos" role="tab"><img src="/images/centos-logo.svg" height="20px" width="20px" alt="CentOS Logo" style="margin-right: 5px;"/>CentOS/RHEL</a></li>
+          <li class="tab-title" role="presentation"><a href="#download-lin-fedora" role="tab"><img src="/images/fedora-logo.svg" height="20px" width="20px" alt="Fedora Logo" style="margin-right: 5px;"/>Fedora</a></li>
+        </ul>
         <div class="tabs-content horizontal">
           <div class="panel content panel-subcontainer active" id="download-lin-ubuntu">
             <h2>
