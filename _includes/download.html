@@ -37,9 +37,9 @@
     {% endif %}
 
     {% if include.releasename == "VS" %}
-    <h5>The latest Mono release in Visual Studio for Mac is: <strong>{{ include.releasedata.version }}</strong></h5>
+    <p>The latest Mono release in Visual Studio for Mac is: <strong>{{ include.releasedata.version }}</strong></p>
     {% elsif include.releasename != "Nightly" %}
-    <h5>The latest {{ include.releasename }} Mono release is: <strong>{{ include.releasedata.version }}</strong></h5>
+    <p>The latest {{ include.releasename }} Mono release is: <strong>{{ include.releasedata.version }}</strong></p>
     {% endif %}
 
     <p>Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/{% if include.releasename == "Nightly" %}nightly/{% endif %}">Tarball</a>.</p>
