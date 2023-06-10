@@ -1,6 +1,6 @@
 ---
 title: Install Mono on Windows
-redirect_from:Vst-Dock
+redirect_from:
   - /Using_Mono_on_Windows/
   - /Mono%3AWindows/
 ---
