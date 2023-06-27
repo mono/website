@@ -83,6 +83,8 @@
         <span><b>Linux distribution</b></span>
         <ul id="mono-download-linux" class="tabs horizontal" role="tablist" data-tab data-options="deep_linking: true; scroll_to_content: false" style="padding-top: 10px">
           <li class="tab-title active" role="presentation"><a href="#download-lin-ubuntu" role="tab"><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" style="margin-right: 5px;"/>Ubuntu</a></li>
+          <li class="tab-title" role="presentation"><a href="#download-lin-debian" role="tab"><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" style="margin-right: 5px;"/>Debian</a></li>
+          <li class="tab-title" role="presentation"><a href="#download-lin-raspbian" role="tab"><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" style="margin-right: 5px;"/>Raspbian</a></li>
         </ul>
         <div class="tabs-content horizontal">
           <div class="panel content panel-subcontainer active" id="download-lin-ubuntu">
@@ -129,6 +131,94 @@ sudo apt update</code></pre>
 <pre><code class="language-bash">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 sudo apt install apt-transport-https ca-certificates
 echo "deb https://download.mono-project.com/repo/ubuntu {{ include.releasename | downcase }}-xenial main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+sudo apt update</code></pre>
+{% endif %}
+            <hr />
+            <h2>
+              <span class="number-circle">2</span>
+              Install Mono
+            </h2>
+            <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            {% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+            <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
+            {% endif %}
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
+            <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span class="number-circle">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+            <h4>Notes</h4>
+            <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
+          </div>
+          <div class="panel content panel-subcontainer" id="download-lin-debian">
+            <h2>
+              <span class="number-circle">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <p><i>Note:</i> the packages should work on newer Debian versions too but we only test the ones listed below.</p>
+            <h3>Debian 10 <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h3>
+{% if include.releasename == "Nightly" %}
+<pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian preview-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+sudo apt update</code></pre>
+{% else %}
+<pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+sudo apt update</code></pre>
+{% endif %}
+            <hr />
+            <h2>
+              <span class="number-circle">2</span>
+              Install Mono
+            </h2>
+            <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
+            <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+            {% if include.releasename == "Nightly" or include.releasename == "Preview" %}
+            <p>The package <b>mono-llvm-support</b> should be installed for LLVM JIT/AOT support. See <a href="/docs/advanced/mono-llvm/">here</a> for more about LLVM Mono.</p>
+            {% endif %}
+            <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+            <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
+            <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+            <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
+            <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+            <hr />
+            <h2>
+              <span class="number-circle">3</span>
+              Verify Installation
+            </h2>
+            <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+            <h4>Notes</h4>
+            <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
+          </div>
+          <div class="panel content panel-subcontainer" id="download-lin-raspbian">
+            <h2>
+              <span class="number-circle">1</span>
+              Add the Mono repository to your system
+            </h2>
+            <p>The package repository hosts the packages you need, add it with the following commands.</p>
+            <p><i>Note:</i> the packages should work on newer Raspbian versions too but we only test the ones listed below.</p>
+            <h3>Raspbian 10 <small>(armhf)</small></h3>
+{% if include.releasename == "Nightly" %}
+<pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian preview-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-preview.list
+sudo apt update</code></pre>
+{% else %}
+<pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian {{ include.releasename | downcase }}-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-{{ include.releasename | downcase }}.list
 sudo apt update</code></pre>
 {% endif %}
             <hr />
