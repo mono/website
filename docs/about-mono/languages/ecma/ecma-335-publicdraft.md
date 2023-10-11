@@ -13,7 +13,7 @@ Since the initial submission, various Ecma member companies and individual contr
 A differently formatted version of each of these documents is being produced for final publication as
 
 1.  ISO/IEC standards and TR (1st edition). To monitor the progress of the publications, please visit [http://www.iso.org/iso/catalogue_detail.htm?csnumber=42927](http://www.iso.org/iso/catalogue_detail.htm?csnumber=42927)
-2.  ECMA standards and TR (2nd edition). To monitor the progress of the publications, please visit [http://www.ecma-international.org/publications/standards/Ecma-335.htm](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
+2.  ECMA standards and TR (2nd edition). To monitor the progress of the publications, please visit [https://www.ecma-international.org/publications-and-standards/standards/ecma-335/](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/)
 
 Work on the 5th edition of Ecma-335 CLI standard began in mid-2009. The TC49-TG3 task group is working on extending both the virtual machine and class libraries of the CLI specification. In addition, improvements are being made to clarify existing elements of the specification. Many of these improvements are the result of feedback received from outside the task group, for which the task group is grateful.
 

@@ -75,7 +75,7 @@ Members Added: 0, Members Deleted: 0
 Monodocer supports importing two different documentation formats:
 
 1.  Inline XML documentation extracted via 'csc /doc' or 'mcs /doc'.
-2.  ECMA documentation, found at the [ECMA-335 page](http://www.ecma-international.org/publications/standards/Ecma-335.htm) within the ECMA-335.zip file.
+2.  ECMA documentation, found at the [ECMA-335 page](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) within the ECMA-335.zip file.
 
 Inline documentation is imported with '-importslashdoc', while ECMA documentation is imported with '-importecmadoc'.
 

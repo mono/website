@@ -52,7 +52,7 @@ C#
 
 [A Programmer's Introduction to C# - Second Edition](http://www.amazon.com/exec/obidos/tg/detail/-/1893115623/qid=1086275793/sr=8-2/ref=sr_8_xs_ap_i2_xgl14/103-3987558-5955806?v=glance&s=books&n=507846): Eric Gunnerson
 
-[C# Language Specification](http://www.ecma-international.org/publications/standards/Ecma-334.htm). The ECMA standard contains a very good introduction to the language and goes in depth into it.
+[C# Language Specification](https://www.ecma-international.org/publications-and-standards/standards/ecma-334/). The ECMA standard contains a very good introduction to the language and goes in depth into it.
 
 .NET Framework
 --------------

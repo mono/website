@@ -9,7 +9,7 @@ redirect_from:
   - /What_is_Mono%3F/
 ---
 
-Mono, the open source development platform based on the .NET Framework, allows developers to build cross-platform applications with improved developer productivity. Mono's .NET implementation is based on the ECMA standards for [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm).
+Mono, the open source development platform based on the .NET Framework, allows developers to build cross-platform applications with improved developer productivity. Mono's .NET implementation is based on the ECMA standards for [C#](https://www.ecma-international.org/publications-and-standards/standards/ecma-334/) and the [Common Language Infrastructure](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/).
 
 Supported previously by Novell, [Xamarin](http://xamarin.com/) and now [Microsoft](http://www.microsoft.com) and the [.NET Foundation](http://www.dotnetfoundation.org/), the Mono project has an active and enthusiastic contributing community. Mono includes both developer tools and the infrastructure needed to run .NET client and server applications.
 
