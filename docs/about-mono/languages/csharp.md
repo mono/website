@@ -114,7 +114,7 @@ Experimental features that are being brainstormed for future versions of C# when
 
 ### Specification
 
-The C# 2.0 specification is available on the [third edition of the ECMA 334 standard](http://www.ecma-international.org/publications/standards/Ecma-334.htm).
+The C# 2.0 specification is available on the [third edition of the ECMA 334 standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-334/).
 
 An on-line and hyperlinked version of the C# 1.0 specification is available from [Jon Jagger's](http://www.jaggersoft.com) site [here](http://www.jaggersoft.com/csharp_standard/).
 

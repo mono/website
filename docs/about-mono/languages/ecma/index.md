@@ -16,7 +16,7 @@ If you are interested in obtaining copies of the 2010 Draft for ECMA 335, visit 
 
 ## Latest Standards
 
-The following official Ecma documents are available for [C#](http://www.ecma-international.org/publications/standards/Ecma-334.htm) and the [CLI](http://www.ecma-international.org/publications/standards/Ecma-335.htm) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm), [TR-89](http://www.ecma-international.org/publications/techreports/E-TR-089.htm)).
+The following official Ecma documents are available for [C#](https://www.ecma-international.org/publications-and-standards/standards/ecma-334/) and the [CLI](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) ([TR-84](http://www.ecma-international.org/publications/techreports/E-TR-084.htm), [TR-89](http://www.ecma-international.org/publications/techreports/E-TR-089.htm)).
 
 -   [Ecma-334](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-334.pdf): C# Specification (pdf)
 -   [Ecma-335](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-335.pdf): CLI Specification – Virtual Machine (pdf)

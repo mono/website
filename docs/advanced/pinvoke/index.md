@@ -9,7 +9,7 @@ redirect_from:
 
 ## Introduction
 
-The [Common Language Infrastructure](http://www.ecma-international.org/publications/standards/ecma-335.htm) (CLI) is designed to make it "easy" to interoperate with existing code. In principle, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
+The [Common Language Infrastructure](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) (CLI) is designed to make it "easy" to interoperate with existing code. In principle, all you need to do is create a [DllImport](http://docs.go-mono.com/index.aspx?link=T:System.Runtime.InteropServices.DllImportAttribute) function declaration for the existing code to invoke, and the runtime will handle the rest. For example:
 
 ``` csharp
  [DllImport ("libc.so")]

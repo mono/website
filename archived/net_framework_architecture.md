@@ -77,14 +77,14 @@ An assembly can also be composed of several files.
 Common Language Infrastructure
 ==============================
 
-More commonly known as the Common Language Runtime , this is implemented by the Mono executable. This runtime is used to execute the compiled .NET application. The common language infrastructure is defined by ECMA standard [ECMA-335](http://www.ecma-international.org/publications/standards/Ecma-335.htm) .
+More commonly known as the Common Language Runtime , this is implemented by the Mono executable. This runtime is used to execute the compiled .NET application. The common language infrastructure is defined by ECMA standard [ECMA-335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) .
 
 To run your application, you must invoke the runtime with the relevant parameters.
 
 Common Language Specification
 =============================
 
-This is specified in [ECMA-335](http://www.ecma-international.org/publications/standards/Ecma-335.htm),chapter 6. It defines the interface to the CLI, such as conventions like the underlying types for Enum.
+This is specified in [ECMA-335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/),chapter 6. It defines the interface to the CLI, such as conventions like the underlying types for Enum.
 
 The Mono compiler generates an image that conforms to the CLS. This is the Common Intermediate Language . The Mono runtime takes this image and runs it.
 
@@ -98,9 +98,9 @@ Within a native .NET/Mono application, all code is *managed*; that is, it is gov
 Bibliography
 ============
 
-ECMA Standard [334](http://www.ecma-international.org/publications/standards/Ecma-334.htm) , the C# language specification.
+ECMA Standard [334](https://www.ecma-international.org/publications-and-standards/standards/ecma-334/) , the C# language specification.
 
-ECMA Standard [335](http://www.ecma-international.org/publications/standards/Ecma-335.htm) , the Common Language Infrastructure.
+ECMA Standard [335](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) , the Common Language Infrastructure.
 
 MSDN documentation for the .NET framework is [here.](http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpguide/html/cpconinsidenetframework.asp)
 
