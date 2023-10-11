@@ -5,7 +5,7 @@ redirect_from:
   - /Mono_Runtime/
 ---
 
-The Mono runtime implements the [ECMA Common Language Infrastructure](http://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLI). The Mono runtime implements this virtual machine.
+The Mono runtime implements the [ECMA Common Language Infrastructure](https://www.ecma-international.org/publications-and-standards/standards/ecma-335/) (CLI). The Mono runtime implements this virtual machine.
 
 If you are interested in the technical aspects of the Mono runtime check the [Runtime Documentation](/docs/advanced/runtime/docs/).
 
