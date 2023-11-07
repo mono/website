@@ -43,3 +43,6 @@ exclude_rule 'MD006' # Consider starting bulleted lists at the beginning of the 
 exclude_rule 'MD007' # Unordered list indentation
 exclude_rule 'MD030' # Spaces after list markers
 exclude_rule 'MD032' # Lists should be surrounded by blank lines
+exclude_rule 'MD055' # Table row doesn't begin/end with pipes
+exclude_rule 'MD056' # Table has inconsistent number of columns
+exclude_rule 'MD057' # Table has missing or invalid header separation (second row)
