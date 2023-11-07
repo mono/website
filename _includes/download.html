@@ -23,22 +23,10 @@
         {% else %}
         <a href="/download/stable/">Stable</a>
         {% endif %}
-        -
-        {% if include.releasename == "VS" %}
-        <b>Visual Studio</b>
-        {% else %}
-        <a href="/download/vs/">Visual Studio</a>
-        {% endif %}
       </span>
     </p>
 
-    {% if include.releasename == "VS" %}
-    <div data-alert class="alert-box secondary"><h6><i class="fas fa-info-circle"></i> The Visual Studio release channel contains packages which are shipped as part of a Visual Studio for Mac release. They are the most tested but also the least frequently updated packages.</h6></div>
-    {% endif %}
-
-    {% if include.releasename == "VS" %}
-    <p>The latest Mono release in Visual Studio for Mac is: <strong>{{ include.releasedata.version }}</strong></p>
-    {% elsif include.releasename != "Nightly" %}
+    {% if include.releasename != "Nightly" %}
     <p>The latest {{ include.releasename }} Mono release is: <strong>{{ include.releasedata.version }}</strong></p>
     {% endif %}
 
@@ -61,13 +49,10 @@
         <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
         <div>
           {% if include.releasename == "Stable" %}
-          <a href="{{site.data.vsrelease.mono_mac_url}}" class="button radius"><i class="fas fa-download"></i>Download Mono {{ site.data.vsrelease.version | split: ' ' | first }} (Visual Studio channel*)</a>
-          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fas fa-download"></i>Download Mono {{ site.data.stablerelease.version | split: ' ' | first }} (Stable channel)</a>
+          <a href="{{site.data.stablerelease.mono_mac_url}}" class="button radius button-less-important"><i class="fas fa-download"></i>Download Mono {{ site.data.stablerelease.version | split: ' ' | first }}</a>
           {% else %}
           {% if include.releasename == "Nightly" %}
           {% assign mono_mac_url = 'https://download.mono-project.com/archive/nightly/macos-10-universal/' %}
-          {% elsif include.releasename == "VS" %}
-          {% assign mono_mac_url = site.data.vsrelease.mono_mac_url %}
           {% else %}
           {% assign mono_mac_url = include.releasedata.mono_mac_url %}
           {% endif %}
