@@ -450,7 +450,7 @@ The TreeView allows you write methods that extract specific data from your Model
 
 This is one of the extremely useful features of TreeModel because it means you can store a reference any .NET object in the model that contains all the data you want your TreeView to display, instead of storing each piece of data individually as a string, so you don't have to maintain it in two places.
 
-In the preveous examples we inserted both the song and artist into each row of the ListStore. If the TreeView is displaying a large amount of data this can use a lot of memory, and if the backend data changes (song title changes, etc.) the TreeModel doesnt know about it and you have to keep it in-sync manually.
+In the previous examples we inserted both the song and artist into each row of the ListStore. If the TreeView is displaying a large amount of data this can use a lot of memory, and if the backend data changes (song title changes, etc.) the TreeModel doesnt know about it and you have to keep it in-sync manually.
 
 Lets take the following example, and say we want to create a TreeView to display the data:
 
