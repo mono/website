@@ -46,7 +46,7 @@ The following applications were developed with Mono and run on its runtime:
 ### Commercial and Open Source Applications
 
 -   [MapGuide's](http://mapguide.osgeo.org/) [Maestro](http://trac.osgeo.org/mapguide/wiki/maestro/Downloads) an map authoring tool for MapGuide Open Source.
--   [Banshee](http://banshee.fm/) (formely known as Sonance), a great application for music management and playback on Gnome.
+-   [Banshee](https://bansheemediaplayer.github.io/) (formely known as Sonance), a great application for music management and playback on Gnome.
 -   [Beagle](http://www.gnome.org/projects/beagle) is a desktop search tool.
 -   [F-spot](http://www.gnome.org/projects/f-spot/) is a convenient photo management program.
 -   [iFolder 3](http://www.ifolder.com/) is a simple solution to sharing files and folders by using a simple peer-to-peer fashion or Novell's groupware server products.
