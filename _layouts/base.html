@@ -9,16 +9,16 @@
     <title>{{ page.title }} | Mono</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     {% feed_meta %}
-    <link rel="stylesheet" href="/assets/normalize.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <link rel="stylesheet" href="/assets/foundation.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <link rel="stylesheet" href="/assets/highlightjs/a11y-dark.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/normalize.min.css?version={{site.data.assetsversions.normalize}}" />
+    <link rel="stylesheet" href="/assets/foundation.min.css?version={{site.data.assetsversions.foundation}}" />
+    <link rel="stylesheet" href="/assets/highlightjs/a11y-dark.min.css?version={{site.data.assetsversions.highlightjs}}" />
 
-    <link rel="stylesheet" href="/assets/fontawesome/css/solid.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <link rel="stylesheet" href="/assets/fontawesome/css/brands.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.min.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/solid.min.css?version={{site.data.assetsversions.fontawesome}}" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/brands.min.css?version={{site.data.assetsversions.fontawesome}}" />
+    <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.min.css?version={{site.data.assetsversions.fontawesome}}" />
 
-    <link rel="stylesheet" href="/assets/main.css?version={{site.time | date_to_xmlschema | cgi_escape}}" />
-    <script src="/assets/modernizr.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
+    <link rel="stylesheet" href="/assets/main.css?version={{site.data.assetsversions.main}}" />
+    <script src="/assets/modernizr.min.js?version={{site.data.assetsversions.modernizr}}"></script>
     <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
     <script>
       // redirect to the real domain in case someone visits the GitHub Pages domain
@@ -101,9 +101,9 @@
       </div>
     </footer>
 
-    <script src="/assets/jquery.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
-    <script src="/assets/foundation.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
-    <script src="/assets/highlightjs/highlight.min.js?version={{site.time | date_to_xmlschema | cgi_escape}}"></script>
+    <script src="/assets/jquery.min.js?version={{site.data.assetsversions.jquery}}"></script>
+    <script src="/assets/foundation.min.js?version={{site.data.assetsversions.foundation}}"></script>
+    <script src="/assets/highlightjs/highlight.min.js?version={{site.data.assetsversions.highlightjs}}"></script>
 
     <script>
       // allow sub pages to run custom code

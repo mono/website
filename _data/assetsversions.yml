@@ -1,0 +1,8 @@
+# bump this whenever you make changes to the corresponding .css/.js files in the assets folder
+fontawesome: 6.1.1
+highlightjs: 11.5.1
+foundation: 5.3.0
+main: 1
+jquery: 2.1.1
+modernizr: 3.7.0
+normalize: 3.0.1
