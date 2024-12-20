@@ -34,6 +34,12 @@ defaults:
       navgroup: "docs"
   -
     scope:
+      path: "docs/gui/gtksharp"
+    values:
+      layout: "obsolete-gtksharp"
+      navgroup: "docs"
+  -
+    scope:
       path: ""
       type: "posts"
     values:
