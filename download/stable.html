@@ -8,6 +8,127 @@ redirect_from:
   - /download/
   - /Download/
   - /download/vs/
+  - /docs/getting-started/install/weekly-packages/
+  - /alpha/
+  - /Alpha/
+  - /download/alpha/
+  - /beta/
+  - /Beta/
+  - /download/beta/
 ---
 
-{% include download.html releasename="Stable" releasedata=site.data.stablerelease %}
+<div class="panel alert">
+  <p>The <a href="https://github.com/mono/mono">Mono Project (mono/mono)</a> (‘original mono’) has been an important part of the .NET ecosystem since it was launched in 2001. Microsoft became the steward of the Mono Project when it acquired Xamarin in 2016.</p>
+  <p>The last major release of the Mono Project was in July 2019, with minor patch releases since that time. The last patch release was February 2024.</p>
+  <p>We are happy to announce that the WineHQ organization will be taking over as the stewards of the Mono Project upstream at <a href="https://gitlab.winehq.org/wine-mono/mono">wine-mono / Mono · GitLab (winehq.org)</a>.  Source code in existing <a href="https://github.com/mono/mono">mono/mono</a> and other repos will remain available, although repos may be archived. Binaries will remain available for up to four years.</p>
+  <p>Microsoft maintains a modern fork of <a href="https://github.com/dotnet/runtime/tree/main/src/mono">Mono runtime in the dotnet/runtime repo</a> and has been progressively moving workloads to that fork. That work is now complete, and we recommend that active Mono users and maintainers of Mono-based app frameworks migrate to <a href="https://github.com/dotnet/core">.NET</a> which includes work from this fork.</p>
+  <p>We want to recognize that the Mono Project was the first .NET implementation on Android, iOS, Linux, and other operating systems. The Mono Project was a trailblazer for the .NET platform across many operating systems. It helped make cross-platform .NET a reality and enabled .NET in many new places and we appreciate the work of those who came before us.</p>
+  <p>Thank you to all the Mono developers!</p>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Download</h1>
+
+    <p>The latest Mono release is: <strong>6.12.0 Stable (6.12.0.206)</strong></p>
+
+    <p>Source code is available on <a href="https://github.com/mono/mono">GitHub</a> (viewing only) or as a <a href="https://download.mono-project.com/sources/mono/">Tarball</a>.</p>
+
+    <p>
+      <span><b>Choose your operating system:</b></span>
+      <a href="#download-mac"><i class="fab fa-apple"></i>macOS</a> |
+      <a href="#download-lin"><i class="fab fa-linux"></i>Linux</a> |
+      <a href="#download-win"><i class="fab fa-windows"></i>Windows</a> |
+      <a href="#download-docker"><i class="fab fa-docker"></i>Docker</a>
+    </p>
+
+    <h2 id="download-mac"><i class="fab fa-apple"></i> macOS</h2>
+    <span><b>Mono for macOS is available as a Mac Package (.pkg)</b></span>
+    <p>Please refer to the <a href="/docs/getting-started/install/mac">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+    <div>
+      <a href="https://download.mono-project.com/archive/6.12.0/macos-10-universal/MonoFramework-MDK-6.12.0.206.macos10.xamarin.universal.pkg" class="button radius"><i class="fas fa-download"></i>Download Mono 6.12.0.206</a>
+      <p>Supported on macOS 10.9 and later. Check the <a href="/docs/getting-started/install/mac/#uninstalling-mono-on-macos">uninstall instructions</a> if you want to remove Mono from your Mac.</p>
+    </div>
+
+    <hr />
+
+    <h2 id="download-lin"><i class="fab fa-linux"></i> Linux</h2>
+    <h3>1. Add the Mono repository to your system</h3>
+    <p>The package repository hosts the packages you need, add it with the following commands.</p>
+    <h4><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" style="margin-right: 5px;"/>Ubuntu 20.04 and later <small>(amd64, armhf, arm64, ppc64el)</small></h4>
+
+    <pre><code class="language-bash">sudo apt install ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update</code></pre>
+
+    <h4><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" style="margin-right: 5px;"/>Debian 10 and later <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h4>
+<pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian stable-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update</code></pre>
+
+    <h4><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" style="margin-right: 5px;"/>Raspbian 10 and later <small>(armhf)</small></h4>
+<pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
+sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian stable-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+sudo apt update</code></pre>
+
+    <h3>2. Install Mono</h3>
+    <pre class="install-example"><code class="language-bash">sudo apt install mono-devel</code></pre>
+    <p>The package <b>mono-devel</b> should be installed to compile code.</p>
+    <p>The package <b>mono-complete</b> should be installed to install everything - this should cover most cases of "assembly not found" errors.</p>
+    <p>The package <b>mono-dbg</b> should be installed to get debugging symbols for framework libraries - allowing you to get line numbers in stack traces.</p>
+    <p>The package <b>referenceassemblies-pcl</b> should be installed for PCL compilation support - this will resolve most cases of "Framework not installed: .NETPortable" errors during software compilation.</p>
+    <p>The package <b>ca-certificates-mono</b> should be installed to get SSL certificates for HTTPS connections. Install this package if you run into trouble making HTTPS connections.</p>
+    <p>The package <b>mono-xsp4</b> should be installed for running ASP.NET applications.</p>
+
+    <h3>3. Verify Installation</h3>
+    <p>After the installation completed successfully, it's a good idea to run through the basic hello world examples on <a href="/docs/getting-started/mono-basics/">this page</a> to verify Mono is working correctly.</p>
+    <h4>Notes</h4>
+    <p>Mono on Linux before 3.12 by default didn't trust any SSL certificates so you got errors when accessing HTTPS resources. This is not required anymore as 3.12 and later include a new tool that runs on package installation and syncs Mono's certificate store with the system certificate store (on older versions you had to import Mozilla's list of trusted certificates by running <code>mozroots --import --sync</code>). Some systems are configured in a way so that the necessary package isn't pulled in when Mono is installed, in those cases <b>make sure the <code>ca-certificates-mono</code> package</b> is installed.</p>
+
+    <hr />
+
+    <h2 id="download-win"><i class="fab fa-windows"></i> Windows</h2>
+    <span><b>Mono for Windows is available as a Windows Installer file</b></span>
+    <p>Please refer to the <a href="/docs/getting-started/install/windows">installation guide</a> for more information about how to install and configure your Mono environment.</p>
+    <div>
+      <a href="https://download.mono-project.com/archive/6.12.0/windows-installer/mono-6.12.0.206-gtksharp-2.12.45-win32-0.msi" class="button radius"><i class="fas fa-download"></i>Download Mono 32-bit</a>
+      <a href="https://download.mono-project.com/archive/6.12.0/windows-installer/mono-6.12.0.206-x64-0.msi" class="button radius"><i class="fas fa-download"></i>Download Mono 64-bit (no GTK#)</a>
+    </div>
+    <p>Supported on Windows 7, 8, 10 or later.</p>
+
+    <h3>GTK# for .NET</h3>
+    <p>Installer for running Gtk#-based applications on Microsoft .NET:</p>
+    <div>
+      <a href="https://github.com/mono/gtk-sharp/releases/download/2.12.45/gtk-sharp-2.12.45.msi" class="button radius small"><i class="fas fa-download"></i>Download Gtk#</a>
+    </div>
+
+    <hr />
+
+    <h2 id="download-docker"><i class="fab fa-docker"></i> Docker</h2>
+    <span><b>Mono is available on <a href="https://hub.docker.com/_/mono/">Docker Hub</a></b></span>
+    <p>The simplest way to get started is:</p>
+    <pre><code class="language-bash">$ docker run -it mono:latest bash</code></pre>
+    <p>This will download the latest Mono Docker image, create a container and put you into an interactive shell.</p>
+    <h3>Available tags</h3>
+    <p>There are several tags for selecting the desired Mono version:</p>
+    <ul>
+      <li><code>latest</code> - Always points to the latest release</li>
+      <li><code>X.X.X.X</code> - points to a specific version, e.g. 5.8.0.108</li>
+      <li><code>X.X.X</code> - points to the latest version in the X.X.X series, e.g. 5.8.0</li>
+      <li><code>X.X</code> - points to the latest version in the X.X series, e.g. 5.8</li>
+      <li><code>X</code> - points to the latest version in the X series, e.g. 5</li>
+    </ul>
+    <p>The latest version, one minor version before that and the last version before a major version bump are periodically rebuilt by Docker Hub to pull in updates from the base Debian image.</p>
+    <p>All other version tags are still available, but won't get those updates so you need to keep your images up to date by running <code>apt update</code> yourself. We encourage you to move to latest Mono releases as soon as they're available.</p>
+    <p>Starting with Mono 5.2 we provide a slim variant (e.g. <code>latest-slim</code>) which only contains the bare minimum to run a simple console app. You can use this as a base and add just what you need.</p>
+
+    <h2>Release Notes</h2>
+    <p>Check out the release notes of all Mono versions on the <a href="/docs/about-mono/releases/">releases page</a>.</p>
+
+    <h2>Older releases</h2>
+    <p>To access older Mono releases for macOS and Windows, check the <a href="https://download.mono-project.com/archive/">archive</a> on the download server. For Linux, please check the "Accessing older releases" section in the <a href="/docs/getting-started/install/linux/#accessing-older-releases">installation guide</a>.</p>
+  </div>
+</div>

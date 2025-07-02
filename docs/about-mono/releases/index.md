@@ -63,7 +63,7 @@ redirect_from:
   - /OldReleases/
 ---
 
-This page contains a list of all Mono releases. The latest stable release is {{ site.data.stablerelease.version }}.<br/>
+This page contains a list of all Mono releases. The latest stable release is 6.12.0.206.<br/>
 Mono version numbers follow a specific policy, learn more [here](/docs/about-mono/versioning/).
 
 {% assign release_notes = site.pages | where: "layout", "releasenotes" | sort: "releasedate" | reverse %}

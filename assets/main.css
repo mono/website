@@ -306,61 +306,6 @@ footer h6 a {
 /* --- --- */
 
 /* --- Download page --- */
-#mono-download.tabs li > a {
-  font-size: 1.5em;
-  white-space: nowrap;
-}
-
-#mono-download.tabs li.active a {
-  background-color: #333;
-  color: #fff;
-}
-
-@media (forced-colors: active) and (prefers-color-scheme: dark) {
-  #mono-download.tabs li.active a, #mono-download-linux.tabs li.active a {
-    background-color: #fff;
-    color: #333;
-    forced-color-adjust: none;
-  }
-}
-
-@media (forced-colors: active) and (prefers-color-scheme: light) {
-  #mono-download.tabs li.active a, #mono-download-linux.tabs li.active a {
-    background-color: #333;
-    color: #fff;
-    forced-color-adjust: none;
-  }
-}
-
-#mono-download.tabs li {
-  line-height: 0.9em;
-  margin-right: 2px;
-}
-
-#mono-download-panel .panel.content>p, #mono-download-panel .panel.content>*>p {
-  color: #000000;
-}
-
-#mono-download-panel .panel.content>p a, #mono-download-panel .panel.content>*>p a {
-  color: #02779e;
-}
-
-#mono-download-panel .panel.content>h3 a {
-  color: #02779e;
-}
-
-#mono-download-panel h3 small {
-  color: #6e6e6e;
-}
-
-#download-mac, #download-lin, #download-win, #download-docker {
-  padding: 20px 10px 10px 10px;
-}
-
-#download-lin {
-  padding-top: 10px;
-}
-
 a.button-less-important {
   background-color: #767676;
 }
