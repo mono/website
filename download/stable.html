@@ -60,19 +60,24 @@ redirect_from:
     <h4><img src="/images/ubuntu-logo.svg" height="20px" width="20px" alt="Ubuntu Logo" style="margin-right: 5px;"/>Ubuntu 20.04 and later <small>(amd64, armhf, arm64, ppc64el)</small></h4>
 
     <pre><code class="language-bash">sudo apt install ca-certificates gnupg
-sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo gpg --homedir /tmp --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo chmod +r /usr/share/keyrings/mono-official-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update</code></pre>
 
     <h4><img src="/images/debian-logo.svg" height="20px" width="20px" alt="Debian Logo" style="margin-right: 5px;"/>Debian 10 and later <small>(i386, amd64, armhf, arm64, armel, ppc64el)</small></h4>
 <pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
-sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo gpg --homedir /tmp --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo chmod +r /usr/share/keyrings/mono-official-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian stable-buster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update</code></pre>
 
+    <p>Note: On Debian 13 (Trixie) and later you'll get an expiration warning for the SHA1 algorithm used by the key. You can extend the expiry date by following the instructions in <code>/usr/share/apt/default-sequoia.config</code></p>
+
     <h4><img src="/images/raspbian-logo.svg" height="20px" width="20px" alt="Raspbian Logo" style="margin-right: 5px;"/>Raspbian 10 and later <small>(armhf)</small></h4>
 <pre><code class="language-bash">sudo apt install dirmngr ca-certificates gnupg
-sudo gpg --homedir /tmp --no-default-keyring --keyring /usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo gpg --homedir /tmp --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/mono-official-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo chmod +r /usr/share/keyrings/mono-official-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/debian stable-raspbianbuster main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo apt update</code></pre>
 
