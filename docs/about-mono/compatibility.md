@@ -13,6 +13,12 @@ Here is a slightly more detailed view, by .NET framework version:
 
 |<i class="fas fa-check"/>|Implemented|<i class="fas fa-exclamation-triangle"/>|Partially Implemented|<i class="fas fa-ban"/>|Not Implemented|
 
+.NET 4.8
+--------
+
+|<i class="fas fa-check"/>|.NET Framework 4.8 profile reference assemblies|
+|<i class="fas fa-ban"/>|.NET Framework 4.8.1|
+
 .NET 4.7
 --------
 
