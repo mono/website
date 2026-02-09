@@ -51,11 +51,12 @@ GEM
       logger
     eventmachine (1.2.7)
     execjs (2.9.1)
-    faraday (2.11.0)
-      faraday-net_http (>= 2.0, < 3.4)
+    faraday (2.14.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
       logger
-    faraday-net_http (3.3.0)
-      net-http
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
     ffi (1.17.3-aarch64-linux-gnu)
     ffi (1.17.3-x86_64-linux-gnu)
     fiber-annotation (0.2.0)
@@ -272,8 +273,8 @@ GEM
       tomlrb
     mixlib-shellout (3.3.9)
       chef-utils
-    net-http (0.4.1)
-      uri
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     nokogiri (1.19.0-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.0-x86_64-linux-gnu)
@@ -321,7 +322,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
-    uri (0.13.3)
+    uri (1.1.1)
     webrick (1.9.1)
     yell (2.2.2)
     zeitwerk (2.7.4)
