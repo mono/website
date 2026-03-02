@@ -16,7 +16,6 @@ For more information regarding specific BSD flavors:
 - FreeBSD [(Port)](https://www.freshports.org/lang/mono/)
 - NetBSD [(Port)](https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc/lang/mono/index.html)
 - OpenBSD [(Port)](https://www.openports.se/lang/mono)
-- [Debian GNU/kFreeBSD](https://www.debian.org/ports/kfreebsd-gnu/) [(Package)](https://packages.debian.org/stable/interpreters/mono-runtime)
 
 Using Mono under BSD
 --------------------
