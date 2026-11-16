@@ -2,7 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     Ascii85 (2.0.1)
-    activesupport (7.2.3.1)
+    activesupport (8.0.5.2)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -11,9 +11,10 @@ GEM
       drb
       i18n (>= 1.6, < 2)
       logger (>= 1.4.2)
-      minitest (>= 5.1, < 6)
+      minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
     addressable (2.9.2)
       public_suffix (>= 2.0.2, < 8.0)
     afm (1.0.1)
@@ -32,7 +33,7 @@ GEM
     coffee-script-source (1.12.2)
     colorator (1.1.0)
     commonmarker (0.23.10)
-    concurrent-ruby (1.3.7)
+    concurrent-ruby (1.3.8)
     connection_pool (3.0.2)
     console (1.38.0)
       fiber-annotation
@@ -131,7 +132,7 @@ GEM
       yell (~> 2.0)
       zeitwerk (~> 2.5)
     http_parser.rb (0.8.0)
-    i18n (1.14.8)
+    i18n (1.15.2)
       concurrent-ruby (~> 1.0)
     io-event (1.22.3)
     jekyll (3.10.0)
@@ -265,7 +266,9 @@ GEM
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
-    minitest (5.27.0)
+    minitest (6.1.0)
+      drb (~> 2.0)
+      prism (>= 1.5, < 3)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
       tomlrb
@@ -287,6 +290,8 @@ GEM
       afm (>= 0.2.1, < 2)
       hashery (~> 2.0)
       ttfunk
+    prism (2.1.0-aarch64-linux-gnu)
+    prism (2.1.0-x86_64-linux-gnu)
     public_suffix (5.1.1)
     racc (1.8.1)
     rainbow (3.1.1)
